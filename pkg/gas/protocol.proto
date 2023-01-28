@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+option go_package = "../gas";
+
+// import "vtproto/ext.proto";
+
+enum DiffType {
+  DIFF_TYPE_UNKNOWN = 0;
+  CREATE            = 1;
+  UPDATE            = 2;
+  DELETE            = 3;
+}
+
+enum ContentType {
+  CONTENT_TYPE_UNKNOWN = 0;
+  TEXT                 = 1;
+  HTML                 = 2;
+  ATTRIBUTE            = 3;
+  EMPTY_FROM_REMOVAL   = 4;
+}
+
+message Diff {
+  // option (vtproto.mempool) = true;
+  oneof root {
+    bool document           = 1;
+    string element_selector = 2;
+  }
+
+  // Position of each child
+  repeated uint32 path_indicies = 3;
+  DiffType diff_type            = 4;
+  ContentType content_type      = 5;
+
+  string contents = 6;
+}
+
+message Diffs {
+  repeated Diff values = 1;
+}
+
+message SessionInfo {
+  uint64 id = 1;
+}
+
+message ToClient {
+  oneof message {
+    Diffs diffs              = 1;
+    SessionInfo session_info = 2;
+  }
+}
+
+message FromClient {
+  enum Type {
+    TYPE_UNKNOWN = 0;
+    LOG          = 1;
+    EVENT        = 2;
+  }
+
+  message File {
+    string name              = 1;
+    int64 SizeBytes          = 2;
+    string mime_type         = 3;
+    bytes data               = 4;
+    uint32 total_files_index = 5;
+    uint32 total_file_count  = 6;
+  }
+
+  Type type                   = 1;
+  repeated string ids         = 2;
+  bool selected               = 3;
+  repeated string value_multi = 4;
+  map<string, string> data    = 5;
+  map<string, string> extra   = 6;
+  File file                   = 7;
+}

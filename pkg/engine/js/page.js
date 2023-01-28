@@ -75,6 +75,7 @@ hlive.removeHLiveEventHandlers = (el) => {
 }
 
 hlive.eventHandlerHelper = (e, handlerID, isInitial) => {
+    debugger
     const el = e.currentTarget;
 
     let msg = {

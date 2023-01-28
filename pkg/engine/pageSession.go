@@ -1,21 +1,19 @@
-package gas
+package engine
 
 import (
 	"context"
 	"sync"
 	"time"
 
+	"github.com/gogoracer/racer/pkg/gas"
 	"github.com/gorilla/websocket"
 	"github.com/rs/zerolog"
 )
 
 type PageSession struct {
-	// Buffered channel of outbound messages.
-	Send chan MessageWS
-	// Buffered channel of inbound messages.
-	Receive chan MessageWS
-
-	id               string
+	Send             chan *gas.ToClient   // Buffered channel of outbound messages.
+	Receive          chan *gas.FromClient // Buffered channel of inbound messages.
+	id               uint64
 	connected        bool
 	connectedAt      time.Time
 	lastActive       time.Time
@@ -25,16 +23,11 @@ type PageSession struct {
 	ctxPageCancel    context.CancelFunc
 	ctxInitialCancel context.CancelFunc
 	done             chan bool
-	wsConn           *websocket.Conn
+	websocketConn    *websocket.Conn
 	logger           zerolog.Logger
 	muSess           sync.RWMutex
 	muWrite          sync.RWMutex
 	muRead           sync.RWMutex
-}
-
-type MessageWS struct {
-	Message  []byte
-	IsBinary bool
 }
 
 // readPump pumps messages from the websocket connection to the hub.
@@ -49,10 +42,10 @@ func (sess *PageSession) readPump() {
 		sess.muSess.Unlock()
 
 		sess.muWrite.Lock()
-		if err := sess.wsConn.Close(); err != nil {
-			sess.logger.Err(err).Str("sess", sess.id).Msg("ws conn close")
+		if err := sess.websocketConn.Close(); err != nil {
+			sess.logger.Err(err).Uint64("sess", sess.id).Msg("ws conn close")
 		} else {
-			sess.logger.Debug().Str("sess", sess.id).Msg("ws conn close")
+			sess.logger.Debug().Uint64("sess", sess.id).Msg("ws conn close")
 		}
 		sess.muWrite.Unlock()
 	}()
@@ -60,16 +53,16 @@ func (sess *PageSession) readPump() {
 	sess.muWrite.Lock()
 
 	// c.conn.SetReadLimit(maxMessageSize)
-	if err := sess.wsConn.SetReadDeadline(time.Now().Add(pongWait)); err != nil {
+	if err := sess.websocketConn.SetReadDeadline(time.Now().Add(pongWait)); err != nil {
 		sess.logger.Err(err).Msg("read pump set read deadline")
 	}
 
-	sess.wsConn.SetPongHandler(func(string) error {
+	sess.websocketConn.SetPongHandler(func(string) error {
 		sess.logger.Trace().Msg("ws pong")
 
 		sess.muWrite.Lock()
 
-		if err := sess.wsConn.SetReadDeadline(time.Now().Add(pongWait)); err != nil {
+		if err := sess.websocketConn.SetReadDeadline(time.Now().Add(pongWait)); err != nil {
 			sess.logger.Err(err).Msg("pong handler: set read deadline")
 		}
 
@@ -87,7 +80,7 @@ func (sess *PageSession) readPump() {
 		default:
 			sess.muRead.Lock()
 
-			mt, message, err := sess.wsConn.ReadMessage()
+			mt, fromClientBytes, err := sess.websocketConn.ReadMessage()
 			if err != nil {
 				if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
 					sess.logger.Debug().Err(err).Msg("unexpected close error")
@@ -96,15 +89,20 @@ func (sess *PageSession) readPump() {
 				return
 			}
 
+			if mt != websocket.BinaryMessage {
+				sess.logger.Debug().Msg("not binary message")
+				sess.websocketConn.Close()
+			}
+
 			sess.muRead.Unlock()
 
 			sess.muSess.Lock()
 			sess.lastActive = time.Now()
 			sess.muSess.Unlock()
 
-			sess.Receive <- MessageWS{
-				Message:  message,
-				IsBinary: mt == websocket.BinaryMessage,
+			fromClient := &gas.FromClient{}
+			if err := fromClient.UnmarshalVT(fromClientBytes); err != nil {
+				sess.Receive <- fromClient
 			}
 		}
 	}
@@ -124,10 +122,10 @@ func (sess *PageSession) writePump() {
 			ticker.Stop()
 
 			return
-		case message, ok := <-sess.Send:
+		case toClient, ok := <-sess.Send:
 			sess.muWrite.Lock()
 
-			if err := sess.wsConn.SetWriteDeadline(time.Now().Add(writeWait)); err != nil {
+			if err := sess.websocketConn.SetWriteDeadline(time.Now().Add(writeWait)); err != nil {
 				sess.logger.Err(err).Msg("write pump: message set write deadline")
 			}
 
@@ -137,7 +135,7 @@ func (sess *PageSession) writePump() {
 				// Send channel closed.
 				sess.muWrite.Lock()
 
-				if err := sess.wsConn.WriteMessage(websocket.CloseMessage, []byte{}); err != nil {
+				if err := sess.websocketConn.WriteMessage(websocket.CloseMessage, []byte{}); err != nil {
 					sess.logger.Err(err).Msg("write pump: write close message")
 				}
 
@@ -146,14 +144,9 @@ func (sess *PageSession) writePump() {
 				return
 			}
 
-			mt := websocket.TextMessage
-			if message.IsBinary {
-				mt = websocket.BinaryMessage
-			}
-
 			sess.muWrite.Lock()
 
-			w, err := sess.wsConn.NextWriter(mt)
+			w, err := sess.websocketConn.NextWriter(websocket.BinaryMessage)
 			if err != nil {
 				sess.logger.Err(err).Msg("write pump: create writer")
 
@@ -162,7 +155,12 @@ func (sess *PageSession) writePump() {
 				continue
 			}
 
-			if _, err := w.Write(message.Message); err != nil {
+			b, err := toClient.MarshalVT()
+			if err != nil {
+				sess.logger.Err(err).Msg("write pump: marshal to client")
+			}
+
+			if _, err := w.Write(b); err != nil {
 				sess.logger.Err(err).Msg("write pump: write first message")
 			}
 
@@ -177,11 +175,11 @@ func (sess *PageSession) writePump() {
 
 			sess.muWrite.Lock()
 
-			if err := sess.wsConn.SetWriteDeadline(time.Now().Add(writeWait)); err != nil {
+			if err := sess.websocketConn.SetWriteDeadline(time.Now().Add(writeWait)); err != nil {
 				sess.logger.Err(err).Msg("write pump: ping tick: set write deadline")
 			}
 
-			if err := sess.wsConn.WriteMessage(websocket.PingMessage, nil); err != nil {
+			if err := sess.websocketConn.WriteMessage(websocket.PingMessage, nil); err != nil {
 				sess.logger.Err(err).Msg("write pump: ping tick: write write message")
 			}
 
@@ -203,7 +201,7 @@ func (sess *PageSession) SetPage(page *Page) {
 	sess.muSess.Unlock()
 }
 
-func (sess *PageSession) GetID() string {
+func (sess *PageSession) GetID() uint64 {
 	sess.muSess.RLock()
 	defer sess.muSess.RUnlock()
 

@@ -1,4 +1,4 @@
-package gas
+package engine
 
 type DOM struct {
 	// Root DOM elements

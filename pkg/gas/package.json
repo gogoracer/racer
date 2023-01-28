@@ -1,0 +1,19 @@
+{
+  "name": "@gogoracer/gas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "gen": "protoc --ts_out . --go_out . --go-vtproto_out=. --go-vtproto_opt=features=marshal+unmarshal+size+pool --proto_path . *.proto "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@protobuf-ts/plugin": "^2.8.2",
+    "@protobuf-ts/protoc": "^2.8.2"
+  },
+  "dependencies": {
+    "@protobuf-ts/runtime": "^2.8.2"
+  }
+}

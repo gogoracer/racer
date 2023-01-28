@@ -1,51 +1,72 @@
-package gas
+package engine
 
 import (
 	_ "embed"
 	"fmt"
-	"regexp"
-	"strconv"
-	"strings"
+	"log"
+	"path/filepath"
 
+	esbuild "github.com/evanw/esbuild/pkg/api"
 	"github.com/rs/zerolog"
-	"github.com/tdewolff/minify/v2"
-	"github.com/tdewolff/minify/v2/js"
+
+	"github.com/gogoracer/racer/pkg/gas"
 )
 
 //go:embed js/page.js
 var PageJavaScript []byte
 
 // Diff Diffs are from old to new
-type Diff struct {
+type diffInfo struct {
 	// Root element, where to start the path search from, "doc" is a special case that means the browser document
 	Root string
 	// Position of each child
-	Path      string
-	Type      DiffType
-	Tag       Tagger
-	Text      *string
-	Attribute *Attribute
-	HTML      *HTML
+	PathIndicies []int
+	Type         gas.DiffType
+	Tag          Tagger
+	Text         *string
+	Attribute    *Attribute
+	HTML         *HTML
 	// Not used for render but for Lifecycle events
-	Old any
+	OldNode any
 }
 
 func NewDiffer() *Differ {
-	jsB := PageJavaScript
+	// jsB := PageJavaScript
 
-	m := minify.New()
-	m.AddFuncRegexp(regexp.MustCompile("^(application|text)/(x-)?(java|ecma)script$"), js.Minify)
-	jsMin, err := m.Bytes("application/javascript", jsB)
-	if err == nil {
-		jsB = jsMin
-	} else {
-		_ = "TODO: DELANEY deal with logging"
-		// LoggerDev.Err(err).Msg("NewDiffer: minify")
+	// m := minify.New()
+	// m.AddFuncRegexp(regexp.MustCompile("^(application|text)/(x-)?(java|ecma)script$"), js.Minify)
+	// jsMin, err := m.Bytes("application/javascript", jsB)
+	// if err == nil {
+	// 	jsB = jsMin
+	// } else {
+	// 	_ = "TODO: DELANEY deal with logging"
+	// 	// LoggerDev.Err(err).Msg("NewDiffer: minify")
+	// }
+
+	rootPath, err := filepath.Abs("../../pkg/headlamp/src/")
+	if err != nil {
+		panic(err)
 	}
+
+	result := esbuild.Build(esbuild.BuildOptions{
+		EntryPoints: []string{
+			filepath.Join(rootPath, "index.ts"),
+		},
+		// Sourcemap:  esbuild.SourceMapInline,
+		SourceRoot: rootPath,
+		Target:     esbuild.ESNext,
+		Bundle:     true,
+	})
+
+	if len(result.Errors) > 0 {
+		panic(fmt.Sprintf("esbuild: %v", result.Errors))
+	}
+	bundle := result.OutputFiles[0].Contents
+	log.Printf("bundle size: %02f", float64(len(bundle))/1024)
 
 	return &Differ{
 		logger:     zerolog.Nop(),
-		JavaScript: jsB,
+		JavaScript: result.OutputFiles[0].Contents,
 	}
 }
 
@@ -64,25 +85,25 @@ func (d *Differ) SetLogger(logger zerolog.Logger) {
 // Path: 0>1>3
 //
 // After tree copy you only have Tagger (with []Attribute), HTML, and strings. Then can be grouped in a NodeGroup
-func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, error) {
-	var diffs []Diff
+func (d *Differ) Trees(selector string, pathIndicies []int, oldNode, newNode any) ([]*diffInfo, error) {
+	diffs := []*diffInfo{}
 
-	d.logger.Trace().Str("sel", selector).Str("path", path).Msg("diffTrees")
+	d.logger.Trace().Str("sel", selector).Any("path", pathIndicies).Msg("diffTrees")
 
 	// More nodes in new node
 	if oldNode == nil && newNode != nil {
-		diffs = append(diffs, diffCreate(selector, path, newNode)...)
+		diffs = append(diffs, diffCreate(selector, pathIndicies, newNode)...)
 
 		return diffs, nil
 	}
 
 	// Old node doesn't exist in new node
 	if oldNode != nil && newNode == nil {
-		diffs = append(diffs, Diff{
-			Root: selector,
-			Path: path,
-			Type: DiffDelete,
-			Old:  oldNode,
+		diffs = append(diffs, &diffInfo{
+			Type:         gas.DiffType_DELETE,
+			Root:         selector,
+			PathIndicies: pathIndicies,
+			OldNode:      oldNode,
 		})
 
 		return diffs, nil
@@ -90,14 +111,14 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 
 	// Not the same type, remove current node and replace with new
 	if !diffTreeNodeTypeMatch(oldNode, newNode) {
-		diffs = append(diffs, Diff{
-			Root: selector,
-			Path: path,
-			Type: DiffDelete,
-			Old:  oldNode,
+		diffs = append(diffs, &diffInfo{
+			Root:         selector,
+			PathIndicies: pathIndicies,
+			Type:         gas.DiffType_DELETE,
+			OldNode:      oldNode,
 		})
 
-		diffs = append(diffs, diffCreate(selector, path, newNode)...)
+		diffs = append(diffs, diffCreate(selector, pathIndicies, newNode)...)
 
 		return diffs, nil
 	}
@@ -115,7 +136,7 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 				n = newList[i]
 			}
 
-			subDiffs, err := d.Trees(selector, path+strconv.Itoa(i-indexOffset), oldList[i], n)
+			subDiffs, err := d.Trees(selector, append(pathIndicies, i-indexOffset), oldList[i], n)
 			if err != nil {
 				return nil, fmt.Errorf("diff NodeGroup: %w", err)
 			}
@@ -128,11 +149,11 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 
 		// content doesn't match, update content
 		if v != newStr {
-			diffs = append(diffs, Diff{
-				Root: selector,
-				Path: path,
-				Type: DiffUpdate,
-				Text: &newStr,
+			diffs = append(diffs, &diffInfo{
+				Root:         selector,
+				PathIndicies: pathIndicies,
+				Type:         gas.DiffType_UPDATE,
+				Text:         &newStr,
 			})
 		}
 	case HTML:
@@ -140,11 +161,11 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 
 		// content doesn't match, update content
 		if v != newHTML {
-			diffs = append(diffs, Diff{
-				Root: selector,
-				Path: path,
-				Type: DiffUpdate,
-				HTML: &newHTML,
+			diffs = append(diffs, &diffInfo{
+				Root:         selector,
+				PathIndicies: pathIndicies,
+				Type:         gas.DiffType_UPDATE,
+				HTML:         &newHTML,
 			})
 		}
 	case Tagger:
@@ -152,11 +173,11 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 
 		// Different tag?
 		if v.GetName() != newTag.GetName() || v.IsVoid() != newTag.IsVoid() {
-			diffs = append(diffs, Diff{
-				Root: selector,
-				Path: path,
-				Type: DiffUpdate,
-				Tag:  newTag,
+			diffs = append(diffs, &diffInfo{
+				Root:         selector,
+				PathIndicies: pathIndicies,
+				Type:         gas.DiffType_UPDATE,
+				Tag:          newTag,
 			})
 
 			return diffs, nil
@@ -185,16 +206,16 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 			oldAttr, exits := oldAttrsMap[newAttrs[i].GetName()]
 
 			if !exits || newAttrs[i].GetValue() != oldAttr.GetValue() {
-				dt := DiffUpdate
+				dt := gas.DiffType_UPDATE
 				if !exits {
-					dt = DiffCreate
+					dt = gas.DiffType_CREATE
 				}
 
-				diffs = append(diffs, Diff{
-					Root:      selector,
-					Path:      path,
-					Type:      dt,
-					Attribute: newAttrs[i].Clone(),
+				diffs = append(diffs, &diffInfo{
+					Root:         selector,
+					PathIndicies: pathIndicies,
+					Type:         dt,
+					Attribute:    newAttrs[i].Clone(),
 				})
 			}
 		}
@@ -203,11 +224,11 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 		for i := 0; i < len(oldAttrs); i++ {
 			_, exits := newAttrsMap[oldAttrs[i].GetName()]
 			if !exits {
-				diffs = append(diffs, Diff{
-					Root:      selector,
-					Path:      path,
-					Type:      DiffDelete,
-					Attribute: oldAttrs[i].Clone(),
+				diffs = append(diffs, &diffInfo{
+					Root:         selector,
+					PathIndicies: pathIndicies,
+					Type:         gas.DiffType_DELETE,
+					Attribute:    oldAttrs[i].Clone(),
 				})
 			}
 		}
@@ -216,7 +237,7 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 		// TODO: add tests to ensure this always works
 		if attr, exits := newAttrsMap[AttrID]; exits {
 			selector = attr.GetValue()
-			path = ""
+			pathIndicies = nil
 		}
 
 		oldKids := v.GetNodes().Get()
@@ -230,7 +251,7 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 				newKid = newKids[i]
 			}
 
-			kidDiffs, err := d.Trees(selector, path+">"+strconv.Itoa(i), oldKids[i], newKid)
+			kidDiffs, err := d.Trees(selector, append(pathIndicies, i), oldKids[i], newKid)
 			if err != nil {
 				return nil, fmt.Errorf("tag diff kids: %w", err)
 			}
@@ -239,8 +260,8 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 			// TODO: make tests
 			if len(kidDiffs) > 1 {
 				var (
-					newKids     = make([]Diff, 0, len(kidDiffs))
-					deleteBatch []Diff
+					newKids     = make([]*diffInfo, 0, len(kidDiffs))
+					deleteBatch []*diffInfo
 				)
 
 				for j := 0; j < len(kidDiffs); j++ {
@@ -248,7 +269,7 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 					var (
 						// this diff
 						isEndOfLoop   = len(kidDiffs)-1 == j
-						thisDiffIsDel = kidDiffs[j].Type == DiffDelete
+						thisDiffIsDel = kidDiffs[j].Type == gas.DiffType_DELETE
 
 						// Init for next diff
 						nextPathGreater = false
@@ -258,8 +279,8 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 					)
 					// Next diff vars
 					if !isEndOfLoop {
-						nextPathGreater = pathGreater(kidDiffs[j+1].Path, kidDiffs[j].Path)
-						nextDiffIsDel = kidDiffs[j+1].Type == DiffDelete
+						nextPathGreater = pathGreaterLoop(kidDiffs[j+1].PathIndicies, kidDiffs[j].PathIndicies)
+						nextDiffIsDel = kidDiffs[j+1].Type == gas.DiffType_DELETE
 					}
 
 					// Next in batch
@@ -292,64 +313,42 @@ func (d *Differ) Trees(selector, path string, oldNode, newNode any) ([]Diff, err
 
 		// Any extra new kids?
 		for ; i < len(newKids); i++ {
-			diffs = append(diffs, diffCreate(selector, path+">"+strconv.Itoa(i), newKids[i])...)
+			diffs = append(diffs, diffCreate(selector, append(pathIndicies, i), newKids[i])...)
 		}
 	}
 
 	return diffs, nil
 }
 
-func diffCreate(compID, path string, el any) []Diff {
+func diffCreate(compID string, pathIndicies []int, el any) (diffs []*diffInfo) {
+	createDiff := &diffInfo{
+		Type:         gas.DiffType_CREATE,
+		Root:         compID,
+		PathIndicies: pathIndicies,
+	}
+
 	switch v := el.(type) {
 	case *NodeGroup:
 		g := v.Get()
-		var diffs []Diff
 		for i := 0; i < len(g); i++ {
-			diffs = append(diffs, diffCreate(compID, path, g[i])...)
+			diffs = append(diffs, diffCreate(compID, pathIndicies, g[i])...)
 		}
-
 		return diffs
 	case string:
-		return []Diff{
-			{
-				Root: compID,
-				Path: path,
-				Type: DiffCreate,
-				Text: &v,
-			},
-		}
+		createDiff.Text = &v
 	case *HTML:
-		return []Diff{
-			{
-				Root: compID,
-				Path: path,
-				Type: DiffCreate,
-				HTML: v,
-			},
-		}
+		createDiff.HTML = v
 	case Tagger:
-		return []Diff{
-			{
-				Root: compID,
-				Path: path,
-				Type: DiffCreate,
-				Tag:  v,
-			},
-		}
+		createDiff.Tag = v
 	case *Attribute:
-		return []Diff{
-			{
-				Root:      compID,
-				Path:      path,
-				Type:      DiffCreate,
-				Attribute: v,
-			},
-		}
+		createDiff.Attribute = v
 	case nil:
 		return nil
 	default:
 		panic(fmt.Errorf("unexpected type: %#v", el))
 	}
+
+	return []*diffInfo{createDiff}
 }
 
 func diffTreeNodeTypeMatch(oldNode, newNode any) bool {
@@ -380,23 +379,6 @@ func diffTreeNodeTypeMatch(oldNode, newNode any) bool {
 	default:
 		panic(fmt.Sprintf("unexpected type: %#v", oldNode))
 	}
-}
-
-// Is path a great than path b
-func pathGreater(pathA, pathB string) bool {
-	aPartsStr := strings.Split(pathA, ">")
-	aParts := make([]int, len(aPartsStr))
-	for i := 0; i < len(aPartsStr); i++ {
-		aParts[i], _ = strconv.Atoi(aPartsStr[i])
-	}
-
-	bPartsStr := strings.Split(pathB, ">")
-	bParts := make([]int, len(bPartsStr))
-	for i := 0; i < len(bPartsStr); i++ {
-		bParts[i], _ = strconv.Atoi(bPartsStr[i])
-	}
-
-	return pathGreaterLoop(aParts, bParts)
 }
 
 func pathGreaterLoop(pathA, pathB []int) bool {

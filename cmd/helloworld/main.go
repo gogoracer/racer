@@ -5,14 +5,15 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gogoracer/racer/pkg/gas"
-	. "github.com/gogoracer/racer/pkg/handlebars"
+	"github.com/gogoracer/racer/pkg/engine"
+
+	. "github.com/gogoracer/racer/pkg/handlebars" //lint:ignore ST1001 we have a DSL
 	"github.com/rs/zerolog/log"
 )
 
 // Step 1
-func homeStep1() *gas.Page {
-	page := gas.NewPage()
+func homeStep1() *engine.Page {
+	page := engine.NewPage()
 	page.DOM().Body().Add("Hello, world!")
 
 	// Ignore this, well explain it later
@@ -22,18 +23,18 @@ func homeStep1() *gas.Page {
 }
 
 // Step 2
-func homeStep2() *gas.Page {
+func homeStep2() *engine.Page {
 	var message string
 
-	input := gas.NewComponent("input")
-	input.Add(gas.Attrs{"type": "text"})
-	input.Add(gas.On("keyup", func(ctx context.Context, e gas.Event) {
+	input := engine.NewComponent("input")
+	input.Add(engine.Attrs{"type": "text"})
+	input.Add(engine.On("keyup", func(ctx context.Context, e engine.Event) {
 		message = e.Value
 	}))
 
-	page := gas.NewPage()
-	page.DOM().Body().Add(gas.NewTag("div", input))
-	page.DOM().Body().Add(gas.NewTag("hr"))
+	page := engine.NewPage()
+	page.DOM().Body().Add(engine.NewTag("div", input))
+	page.DOM().Body().Add(engine.NewTag("hr"))
 	page.DOM().Body().Add("Hello, ", &message)
 
 	// Ignore this, well explain it later
@@ -43,20 +44,20 @@ func homeStep2() *gas.Page {
 }
 
 // Step 2.1
-func homeStep3() *gas.Page {
+func homeStep3() *engine.Page {
 	var message string
 
-	page := gas.NewPage()
+	page := engine.NewPage()
 	page.DOM().Body().Add(
-		gas.NewTag(
+		engine.NewTag(
 			"div",
-			gas.NewComponent("input",
-				gas.Attrs{"type": "text"},
-				gas.On("keyup", func(_ context.Context, e gas.Event) {
+			engine.NewComponent("input",
+				engine.Attrs{"type": "text"},
+				engine.On("keyup", func(_ context.Context, e engine.Event) {
 					message = e.Value
 				}),
 			)),
-		gas.NewTag("hr"),
+		engine.NewTag("hr"),
 		"Hello!!, ", &message,
 	)
 
@@ -67,23 +68,31 @@ func homeStep3() *gas.Page {
 }
 
 // Use the DSL
-func homeStep4() *gas.Page {
-	var message string
+func homeStep4() *engine.Page {
+	message := "abc"
 
-	page := gas.NewPage()
+	page := engine.NewPage()
 	page.DOM().Body().Add(
 		Division(
 			InputComponent(
 				InputAttributes(
 					AttrType, "text",
+					AttrValue, message,
 				),
-				OnKeyDown(func(ctx context.Context, e gas.Event) {
+				OnKeyUp(func(ctx context.Context, e engine.Event) {
 					message = e.Value
 				}),
 			),
 		),
 		HorizontalRule(),
 		"Hello, ", &message,
+
+		ButtonComponent(
+			OnClick(func(ctx context.Context, e engine.Event) {
+				message = ""
+			}),
+			"Clear",
+		),
 	)
 
 	// Ignore this, well explain it later
@@ -93,10 +102,10 @@ func homeStep4() *gas.Page {
 }
 
 func main() {
-	http.Handle("/step1", gas.NewPageServer(homeStep1))
-	http.Handle("/step2", gas.NewPageServer(homeStep2))
-	http.Handle("/step3", gas.NewPageServer(homeStep3))
-	http.Handle("/step4", gas.NewPageServer(homeStep4))
+	http.Handle("/step1", engine.MustNewPageServer(homeStep1))
+	http.Handle("/step2", engine.MustNewPageServer(homeStep2))
+	http.Handle("/step3", engine.MustNewPageServer(homeStep3))
+	http.Handle("/step4", engine.MustNewPageServer(homeStep4))
 	http.Handle("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/step1", http.StatusFound)
 	}))
@@ -112,7 +121,7 @@ func main() {
 	}
 }
 
-func addStageButtons(page *gas.Page, stage int) {
+func addStageButtons(page *engine.Page, stage int) {
 	body := page.DOM().Body()
 
 	body.Add(HorizontalRule())
@@ -121,7 +130,7 @@ func addStageButtons(page *gas.Page, stage int) {
 		body.Add(
 			ButtonComponent(
 				ButtonAttributes(
-					"onclick", fmt.Sprintf("window.location.href = '/step%d'", stage-1),
+					AttrOnClick, fmt.Sprintf("window.location.href = '/step%d'", stage-1),
 				),
 				"Previous",
 			),
@@ -132,7 +141,7 @@ func addStageButtons(page *gas.Page, stage int) {
 		body.Add(
 			ButtonComponent(
 				ButtonAttributes(
-					"onclick", fmt.Sprintf("window.location.href = '/step%d'", stage+1),
+					AttrOnClick, fmt.Sprintf("window.location.href = '/step%d'", stage+1),
 				),
 				"Next",
 			),

@@ -29,18 +29,26 @@ type MessagePartsKey = keyof typeof messageParts
 export type MessageParts = typeof messageParts[MessagePartsKey]
 const messageParts = {
   Type: 0,
-}
+} as const
+
+type DiffTypeKey = keyof typeof diffTypes
+export type DiffType = typeof diffTypes[DiffTypeKey]
+const diffTypes = {
+  Create : 'c',
+  Update : 'u',
+  Delete : 'd',
+} as const
 
 type ElementFunc = (el: HTMLElement, msg?: Message) => Message | undefined
 type EventFunc = (el: Event, msg?: Message) => Message | undefined
 type PluginFunc = (page: Page) => void
 
 export class Page {
-  debug = false
+  debug = true
   reconnectLimit = 0
   reconnectCount = 0
   initSyncDone = false
-  sessID = 1
+  sessionID = 1
   connection!: WebSocket
   afterMessage = new Map<string, () => void>()
   beforeRemoveEventHandlers = new Map<string, ElementFunc>()
@@ -80,38 +88,26 @@ export class Page {
     }
 
     // Add Session ID to query params
-    let q = window.location.search
-    if (q === '') {
-      q = '?'
-    } else {
-      q += '&'
-    }
-    q += `hlive=${this.sessID}`
+    const { search } = window.location
+    let q = `${search ? `${search}&` : '?'}hlive=${this.sessionID}`
 
     const hhash = document.documentElement.getAttribute('data-hlive-hash')
-    if (hhash != null) {
-      if (q === '') {
-        q = '?'
-      } else {
-        q += '&'
-      }
-      q += 'hhash=' + hhash
-    }
+    if (hhash) q += `&hhash=${hhash}`
 
     this.connection = new WebSocket(
       ws + '://' + window.location.host + window.location.pathname + q,
     )
 
-    // hlive.onclose =
-
     this.connection.onopen = (evt) => {
       this.log('connection: open')
       this.reconnectCount = 0
     }
+
     this.connection.onmessage = (evt) => {
       this.processMsg(evt)
       this.postMessage()
     }
+
     this.connection.onclose = (evt) => {
       this.log(
         'con: closed: ' +
@@ -422,33 +418,41 @@ export class Page {
   }
 
   findDiffTarget(diff: string) {
+    debugger
+
     const parts = diff.split('|')
+    const root = parts[diffParts.Root]
 
+    let docTarget = document
     let target: Element | null = null
-    if (parts[diffParts.Root] !== 'doc') {
+    if (root !== 'doc') {
       target = document.querySelector(`[hid="${parts[diffParts.Root]}"]`)
-    }
 
-    if (!target) {
-      this.log('root element not found: ' + parts[diffParts.Root])
-      return null
+      if (!target) {
+        debugger
+       throw new Error(`root element not found: ${parts[diffParts.Root]}`)
+      }
     }
 
     // TODO: talk to Sam about this
-    const path = parts[diffParts.Path].split('>').map((s) => parseInt(s))
+    const domPath = parts[diffParts.Path]
+    const domPathParts = domPath.split('>').map((s) => parseInt(s))
 
-    for (let j = 0; j < path.length; j++) {
+    for (let j = 0; j < domPathParts.length; j++) {
+      const diffType = parts[diffParts.DiffType] as DiffType
+      const contentType = parts[diffParts.ContentType]
+
       // Doesn't exist
-      if (
-        parts[1] === 'c' &&
-        (parts[4] === 'h' || parts[4] === 't') &&
-        j === path.length - 1
+      if (diffType === diffTypes.Create
+         &&
+        (contentType === 'h' || contentType === 't') &&
+        j === domPathParts.length - 1
       ) {
         continue
       }
 
       // Happens when we start the path for a new component
-      if (isNaN(path[j])) continue
+      if (isNaN(domPathParts[j])) continue
 
       // Skip and child nodes found above the head.
       // Often added by browser plugins
@@ -456,7 +460,7 @@ export class Page {
         for (let i = 0; i < target.childNodes.length; i++) {
           const child = target.childNodes[i] as HTMLElement
           if (!child || child?.tagName !== 'HEAD') {
-            path[j]++
+            domPathParts[j]++
           } else {
             break
           }
@@ -465,18 +469,20 @@ export class Page {
 
       // TODO: talk to Sam about this
       if (!target?.childNodes.length) {
+        debugger
         this.log('no child nodes found at section : ' + j + ' : for: ' + diff)
         target = null
         break
       }
 
-      if (path[j] >= target.childNodes.length) {
+      if (domPathParts[j] >= target.childNodes.length) {
+        debugger
         this.log('child not found at section : ' + j + ' : for: ' + diff)
         target = null
         break
       }
 
-      target = target.childNodes[path[j]] as Element
+      target = target.childNodes[domPathParts[j]] as Element
     }
 
     return target
@@ -501,6 +507,7 @@ export class Page {
       // DOM Diffs
       if (parts[messageParts.Type] === 'd') {
         if (parts.length !== 6) {
+          debugger
           this.log('invalid diff message format')
           continue
         }
@@ -542,6 +549,7 @@ export class Page {
 
           // TODO: talk to Sam about this
           if (!template.content.firstChild) {
+            debugger
             this.log('template content is empty')
             continue
           }
@@ -565,6 +573,7 @@ export class Page {
 
           // TODO: talk to Sam about this
           if (!template.content.firstChild) {
+            debugger
             this.log('template content is empty')
             continue
           }
@@ -595,6 +604,7 @@ export class Page {
               if (target === document.activeElement && attrValue !== '') {
                 // Don't update when someone is typing
               } else {
+                debugger
                 // TODO: this is terrible, fix it ASAP
                 const targetAny = target as any
                 targetAny.value = attrValue
@@ -621,13 +631,14 @@ export class Page {
         // Sessions
       } else if (parts[messageParts.Type] === 's') {
         if (parts.length === 3) {
-          this.sessID = parts[2]
+          this.sessionID = parts[2]
         }
       }
     }
   }
 
   connectWails() {
+    debugger
     console.error(
       'TODO: not sure what to do here yet, seems like a plugin kind of thing',
     )

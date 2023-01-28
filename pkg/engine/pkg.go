@@ -1,4 +1,4 @@
-package gas
+package engine
 
 import (
 	"errors"
@@ -32,20 +32,9 @@ type CtxKey string
 
 // Context keys
 const (
-	CtxRender          CtxKey = "render"
-	CtxRenderComponent CtxKey = "render_comp"
+	CtxRenderKey          CtxKey = "render"
+	CtxRenderComponentKey CtxKey = "render_comp"
 )
-
-type DiffType string
-
-// Diff types
-const (
-	DiffUpdate DiffType = "u"
-	DiffCreate DiffType = "c"
-	DiffDelete DiffType = "d"
-)
-
-var newline = []byte{'\n'}
 
 const (
 	// Time allowed to write a message to the peer.

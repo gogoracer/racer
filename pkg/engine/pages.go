@@ -1,20 +1,18 @@
-package gas
+package engine
 
 import (
-	"bytes"
 	"context"
-	"encoding/base64"
-	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
 	"net/http"
 	"strconv"
-	"strings"
 	"sync"
 
 	"github.com/cornelk/hashmap"
+	"github.com/gogoracer/racer/pkg/gas"
 	"github.com/rs/zerolog"
+	"github.com/valyala/bytebufferpool"
 )
 
 const EventBindingsCacheDefault = 10 // Default for a small page
@@ -52,13 +50,13 @@ type Page struct {
 	mu sync.RWMutex
 	// sessID is the WebSocket connection session id
 	// only one page will have this at a time but is can be passed from page to page if connection is kept open
-	sessID string
+	sessID uint64
 	// Component caches, to prevent walking to tree to find something
 	eventBindings *hashmap.Map[string, *EventBinding]
 	// Channel of outbound messages.
-	send chan<- MessageWS
+	send chan<- *gas.ToClient
 	// Channel of inbound messages.
-	receive <-chan MessageWS
+	receive <-chan *gas.FromClient
 	// cache async safe
 	cache Cache
 	//
@@ -69,7 +67,7 @@ type Page struct {
 	// After each event
 	hookAfterEvent []func(ctx context.Context, e Event) (context.Context, Event)
 	// After each render
-	hookAfterRender []func(context.Context, []Diff, chan<- MessageWS)
+	hookAfterRender []func(context.Context, []*gas.Diff, chan<- *gas.ToClient)
 	hookClose       []func(context.Context, *Page)
 	// Before we do the initial render and send to the browser
 	hookBeforeMount []func(context.Context, *Page)
@@ -99,7 +97,12 @@ func NewPage(options ...PageOption) *Page {
 
 	if p.differ == nil {
 		p.differ = NewDiffer()
-		p.dom.head.Add(NewTag("script", HTML(p.differ.JavaScript)))
+		p.dom.head.Add(
+			NewTag(
+				"script",
+				Attrs{"type": "module"},
+				HTML(p.differ.JavaScript),
+			))
 	}
 
 	// Differ Pipeline
@@ -130,16 +133,17 @@ func NewPage(options ...PageOption) *Page {
 	return p
 }
 
-type websocketMessage struct {
-	Typ        string            `json:"t"`
-	ID         string            `json:"i,omitempty"`
-	Data       map[string]string `json:"d,omitempty"`
-	File       *File             `json:"file,omitempty"`
-	ValueMulti []string          `json:"vm,omitempty"`
-	Selected   bool              `json:"s,omitempty"`
-	Extra      map[string]string `json:"e,omitempty"`
-	fileData   []byte
-}
+// type fromClientInfo struct {
+// 	fromClient *gas.FromClient
+
+// 	// Typ        string            `json:"t"`
+// 	// ID         string            `json:"i,omitempty"`
+// 	// Data       map[string]string `json:"d,omitempty"`
+// 	File *File `json:"file,omitempty"`
+// 	// ValueMulti []string          `json:"vm,omitempty"`
+// 	// Selected   bool              `json:"s,omitempty"`
+// 	// Extra      map[string]string `json:"e,omitempty"`
+// }
 
 func (p *Page) SetLogger(logger zerolog.Logger) {
 	p.logger = logger
@@ -147,7 +151,7 @@ func (p *Page) SetLogger(logger zerolog.Logger) {
 	p.differ.SetLogger(p.logger)
 }
 
-func (p *Page) GetSessionID() string {
+func (p *Page) GetSessionID() uint64 {
 	p.mu.RLock()
 	defer p.mu.RUnlock()
 
@@ -212,7 +216,7 @@ start:
 	return tree, err
 }
 
-func (p *Page) ServeWS(ctx context.Context, sessID string, send chan<- MessageWS, receive <-chan MessageWS) error {
+func (p *Page) ServeWS(ctx context.Context, sessID uint64, send chan<- *gas.ToClient, receive <-chan *gas.FromClient) error {
 	var err error
 	p.mu.Lock()
 
@@ -226,7 +230,14 @@ func (p *Page) ServeWS(ctx context.Context, sessID string, send chan<- MessageWS
 
 	// Send session id, it may be new or have changed
 	p.sessID = sessID
-	p.wsSend(ctx, "s|id|"+sessID)
+
+	p.wsSend(ctx, &gas.ToClient{
+		Message: &gas.ToClient_SessionInfo{
+			SessionInfo: &gas.SessionInfo{
+				Id: sessID,
+			},
+		},
+	})
 
 	// Do an initial render
 	if p.domBrowser == nil {
@@ -239,8 +250,8 @@ func (p *Page) ServeWS(ctx context.Context, sessID string, send chan<- MessageWS
 	}
 
 	// Add render function to context
-	ctx = context.WithValue(ctx, CtxRender, p.executeRenderWS)
-	ctx = context.WithValue(ctx, CtxRenderComponent, p.renderComponentWS)
+	ctx = context.WithValue(ctx, CtxRenderKey, p.executeRenderWS)
+	ctx = context.WithValue(ctx, CtxRenderComponentKey, p.renderComponentWS)
 
 	p.mu.Unlock()
 
@@ -279,7 +290,7 @@ func (p *Page) ServeWS(ctx context.Context, sessID string, send chan<- MessageWS
 		select {
 		case <-ctx.Done():
 			return nil
-		case messageWS, ok := <-p.receive:
+		case fromClient, ok := <-p.receive:
 			if !ok {
 				return nil
 			}
@@ -287,44 +298,19 @@ func (p *Page) ServeWS(ctx context.Context, sessID string, send chan<- MessageWS
 			// We can't block here else we can't close and events here can trigger a close
 			go func() {
 				f := func() {
-					message := messageWS.Message
-					msg := websocketMessage{Data: map[string]string{}}
 
-					if messageWS.IsBinary {
-						msgParts := bytes.SplitN(message, []byte("\n\n"), 2)
+					p.logger.Trace().Str("msg", fromClient.String()).Msg("ws msg recv")
 
-						if len(msgParts) != 2 {
-							p.logger.Error().Msg("invalid binary message")
-
-							return
-						}
-
-						message = msgParts[0]
-						msg.fileData = msgParts[1]
-					}
-
-					p.logger.Trace().Str("msg", string(message)).Msg("ws msg recv")
-
-					if err := json.Unmarshal(message, &msg); err != nil {
-						p.logger.Err(err).Str("json", string(message)).Msg("ws msg unmarshal")
-
-						return
-					}
-
-					switch msg.Typ {
+					switch fromClient.Type {
 					// log
-					case "l":
-						p.logger.Info().Str("log", msg.Data["m"]).Str("sess", sessID).Msg("ws log")
+					case gas.FromClient_LOG:
+						p.logger.Info().Str("log", fromClient.Data["m"]).Uint64("sess", sessID).Msg("ws log")
 					// Event
-					case "e":
-						if len(msg.fileData) != 0 && msg.File != nil {
-							msg.File.Data = msg.fileData
-						}
-
+					case gas.FromClient_EVENT:
 						// Call handler
-						go p.processMsgEvent(ctx, msg)
+						go p.processMsgEvent(ctx, fromClient)
 					default:
-						p.logger.Error().Str("msg", string(message)).Msg("ws msg recv: unexpected message format")
+						p.logger.Error().Str("msg", fromClient.String()).Msg("ws msg recv: unexpected message format")
 					}
 				}
 
@@ -349,8 +335,15 @@ func (p *Page) executeRenderWS(ctx context.Context) {
 	}
 	// Any DOM updates?
 
-	if len(diffs) != 0 {
-		p.wsSend(ctx, p.diffsToMsg(diffs))
+	if len(diffs) > 0 {
+		toClient := &gas.ToClient{
+			Message: &gas.ToClient_Diffs{
+				Diffs: &gas.Diffs{
+					Values: diffs,
+				},
+			},
+		}
+		p.wsSend(ctx, toClient)
 	}
 
 	for i := 0; i < len(p.hookAfterRender); i++ {
@@ -358,64 +351,80 @@ func (p *Page) executeRenderWS(ctx context.Context) {
 	}
 }
 
-func (p *Page) wsSend(ctx context.Context, message string) {
-	p.logger.Trace().Str("msg", message).Msg("ws send")
+func (p *Page) wsSend(ctx context.Context, toClient *gas.ToClient) {
+	p.logger.Trace().Str("msg", toClient.String()).Msg("ws send")
 
 	select {
 	case <-ctx.Done():
-	case p.send <- MessageWS{Message: []byte(message)}:
+	case p.send <- toClient:
 	}
 }
 
 // Create and deletes should only happen at the end of a tag or attr list?
-func (p *Page) diffsToMsg(diffs []Diff) string {
-	message := ""
+func (p *Page) diffInfosToProtobuf(diffInfos []*diffInfo) []*gas.Diff {
+	diffValues := make([]*gas.Diff, 0, len(diffInfos))
+
 	// Reverse order to help with offset changes when adding new nodes
-	for i := 0; i < len(diffs); i++ {
-		diff := diffs[i]
-		// Diff
-		message += "d|"
-		message += string(diff.Type) + "|"
-		message += diff.Root + "|"
-		message += diff.Path + "|"
+	for i := 0; i < len(diffInfos); i++ {
+		diffInfo := diffInfos[i]
 
-		bb := bytes.NewBuffer(nil)
+		diff := &gas.Diff{
+			DiffType: diffInfo.Type,
+		}
 
-		var el any
-
-		if diff.Type == DiffDelete && diff.Attribute == nil {
-			message += "|"
-		} else if diff.Text != nil {
-			// We use node.textContent in the browser which doesn't require us to encode
-			el = HTML(*diff.Text)
-			message += "t|"
-		} else if diff.HTML != nil {
-			el = *diff.HTML
-			message += "h|"
-		} else if diff.Attribute != nil {
-			message += "a|"
-
-			if err := p.renderer.Attribute([]Attributer{diff.Attribute}, bb); err != nil {
-				p.logger.Err(err).Msg("diffs to msg: render attribute")
+		if diffInfo.Root == "doc" {
+			diff.Root = &gas.Diff_Document{}
+		} else {
+			diff.Root = &gas.Diff_ElementSelector{
+				ElementSelector: diffInfo.Root,
 			}
-		} else if diff.Tag != nil {
-			el = diff.Tag
-			message += "h|"
+		}
+		if cap(diff.PathIndicies) < len(diffInfo.PathIndicies) {
+			diff.PathIndicies = make([]uint32, 0, len(diffInfo.PathIndicies))
+		}
+		for _, index := range diffInfo.PathIndicies {
+			diff.PathIndicies = append(diff.PathIndicies, uint32(index))
 		}
 
-		if err := p.renderer.HTML(bb, el); err != nil {
-			p.logger.Err(err).Msg("diffs to msg: render children")
-		}
-
-		message += base64.StdEncoding.EncodeToString(bb.Bytes())
-
-		message += "\n"
+		p.updateDiffContents(diffInfo, diff)
+		diffValues[i] = diff
 	}
 
-	return message
+	return diffValues
 }
 
-func (p *Page) processMsgEvent(ctx context.Context, msg websocketMessage) {
+func (p *Page) updateDiffContents(diffInfo *diffInfo, diff *gas.Diff) {
+	buf := bytebufferpool.Get()
+	defer bytebufferpool.Put(buf)
+
+	var el any
+	if diffInfo.Type == gas.DiffType_DELETE && diffInfo.Attribute == nil {
+		diff.ContentType = gas.ContentType_EMPTY_FROM_REMOVAL
+	} else if diffInfo.Text != nil {
+		// We use node.textContent in the browser which doesn't require us to encode
+		diff.ContentType = gas.ContentType_TEXT
+		el = HTML(*diffInfo.Text)
+	} else if diffInfo.HTML != nil {
+		diff.ContentType = gas.ContentType_HTML
+		el = *diffInfo.HTML
+	} else if diffInfo.Attribute != nil {
+		diff.ContentType = gas.ContentType_ATTRIBUTE
+		if err := p.renderer.Attribute([]Attributer{diffInfo.Attribute}, buf); err != nil {
+			p.logger.Err(err).Msg("diffs to msg: render attribute")
+		}
+	} else if diffInfo.Tag != nil {
+		diff.ContentType = gas.ContentType_HTML
+		el = diffInfo.Tag
+	}
+
+	if err := p.renderer.HTML(buf, el); err != nil {
+		p.logger.Err(err).Msg("diffs to msg: render children")
+	}
+	diff.Contents = string(buf.Bytes())
+
+}
+
+func (p *Page) processMsgEvent(ctx context.Context, msg *gas.FromClient) {
 	keyCode, _ := strconv.Atoi(msg.Data["keyCode"])
 	charCode, _ := strconv.Atoi(msg.Data["charCode"])
 	shiftKey, _ := strconv.ParseBool(msg.Data["shiftKey"])
@@ -438,10 +447,7 @@ func (p *Page) processMsgEvent(ctx context.Context, msg websocketMessage) {
 		Extra:     msg.Extra,
 	}
 
-	ids := strings.Split(msg.ID, ",")
-	for i := 0; i < len(ids); i++ {
-		id := ids[i]
-
+	for _, id := range msg.Ids {
 		p.logger.Trace().Str("id", id).Msg("call event handler")
 
 		binding, _ := p.eventBindings.Get(id)
@@ -462,15 +468,15 @@ func (p *Page) processMsgEvent(ctx context.Context, msg websocketMessage) {
 		}
 
 		// Hook
-		for j := 0; j < len(p.hookBeforeEvent); j++ {
-			ctx, e = p.hookBeforeEvent[j](ctx, e)
+		for _, hook := range p.hookBeforeEvent {
+			ctx, e = hook(ctx, e)
 		}
 
 		e.Binding.Handler(ctx, e)
 
 		// Hook
-		for j := 0; j < len(p.hookAfterEvent); j++ {
-			ctx, e = p.hookAfterEvent[j](ctx, e)
+		for _, hook := range p.hookAfterEvent {
+			ctx, e = hook(ctx, e)
 		}
 
 		// Once, do this after calling the handler so the developer can change their mind
@@ -486,21 +492,20 @@ func (p *Page) processMsgEvent(ctx context.Context, msg websocketMessage) {
 	}
 }
 
-func (p *Page) renderWS(ctx context.Context) ([]Diff, error) {
+func (p *Page) renderWS(ctx context.Context) ([]*gas.Diff, error) {
 	// TODO: replace discard with something useful
 	tree, err := p.runDiffPipeline(ctx, io.Discard)
 	if err != nil {
 		return nil, fmt.Errorf("run pipeline: %w", err)
 	}
 
-	diffs, err := p.differ.Trees("doc", "", p.domBrowser, tree)
+	diffInfos, err := p.differ.Trees("doc", nil, p.domBrowser, tree)
 	if err != nil {
 		return nil, fmt.Errorf("diff old and new tag trees: %w", err)
 	}
-
 	p.domBrowser = tree
 
-	return diffs, nil
+	return p.diffInfosToProtobuf(diffInfos), nil
 }
 
 func (p *Page) GetNodes() *NodeGroup {
@@ -559,15 +564,22 @@ func (p *Page) renderComponentWS(ctx context.Context, comp Componenter) {
 		return
 	}
 
-	diffs, err := p.differ.Trees(comp.GetID(), "", oldTag, newTag)
+	diffInfos, err := p.differ.Trees(comp.GetID(), nil, oldTag, newTag)
 	if err != nil {
 		p.logger.Err(err).Str("id", comp.GetID()).Str("name", comp.GetName()).Msg("diff trees")
 
 		return
 	}
 
-	if len(diffs) != 0 {
-		p.wsSend(ctx, p.diffsToMsg(diffs))
+	if len(diffInfos) > 0 {
+		toClient := &gas.ToClient{
+			Message: &gas.ToClient_Diffs{
+				Diffs: &gas.Diffs{
+					Values: p.diffInfosToProtobuf(diffInfos),
+				},
+			},
+		}
+		p.wsSend(ctx, toClient)
 
 		oldTag.name = newTag.name
 		oldTag.void = newTag.void
@@ -624,7 +636,7 @@ func (p *Page) HookBeforeEventAdd(hook func(context.Context, Event) (context.Con
 	p.hookBeforeEvent = append(p.hookBeforeEvent, hook)
 }
 
-func (p *Page) HookAfterRenderAdd(hook func(ctx context.Context, diffs []Diff, send chan<- MessageWS)) {
+func (p *Page) HookAfterRenderAdd(hook func(ctx context.Context, diffs []*gas.Diff, send chan<- *gas.ToClient)) {
 	p.hookAfterRender = append(p.hookAfterRender, hook)
 }
 

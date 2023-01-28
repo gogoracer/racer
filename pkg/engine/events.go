@@ -1,8 +1,10 @@
-package gas
+package engine
 
 import (
 	"context"
 	"strings"
+
+	"github.com/gogoracer/racer/pkg/gas"
 )
 
 type Event struct {
@@ -27,24 +29,9 @@ type Event struct {
 	AltKey   bool
 	CtrlKey  bool
 	// Used for file inputs and uploads
-	File *File
+	File *gas.FromClient_File
 	// Extra, for non-browser related data, for use by plugins
 	Extra map[string]string
-}
-
-type File struct {
-	// File name
-	Name string
-	// Size of the file in bytes
-	Size int
-	// Mime type
-	Type string
-	// The file contents
-	Data []byte
-	// Which file is this in the total file count, 0 index
-	Index int
-	// How many files are being uploaded in total
-	Total int
 }
 
 type EventHandler func(ctx context.Context, e Event)

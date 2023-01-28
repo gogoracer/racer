@@ -1,7 +1,8 @@
-package gas
+package engine
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -10,8 +11,21 @@ import (
 	"github.com/vmihailenco/msgpack/v5"
 )
 
-func NewPageServer(pf func() *Page) *PageServer {
-	return NewPageServerWithSessionStore(pf, NewPageSessionStore())
+func NewPageServer(pf func() *Page) (*PageServer, error) {
+	store, err := NewPageSessionStore()
+	if err != nil {
+		return nil, fmt.Errorf("failed to create page session store: %w", err)
+	}
+	p := NewPageServerWithSessionStore(pf, store)
+	return p, nil
+}
+
+func MustNewPageServer(pf func() *Page) *PageServer {
+	p, err := NewPageServer(pf)
+	if err != nil {
+		panic(err)
+	}
+	return p
 }
 
 func NewPageServerWithSessionStore(pf func() *Page, sess *PageSessionStore) *PageServer {
@@ -40,10 +54,18 @@ func (s *PageServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var sess *PageSession
+	var (
+		sess *PageSession
+		err  error
+	)
+
 	// New
 	if sessID == "1" {
-		sess = s.Sessions.New()
+		sess, err = s.Sessions.New()
+		if err != nil {
+			s.logger.Error().Err(err).Msg("ws connect: failed to create new session")
+			return
+		}
 		sess.muSess.Lock()
 		sess.page = s.pageFunc()
 		sess.connectedAt = time.Now()
@@ -109,8 +131,7 @@ func (s *PageServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	sess.muSess.Lock()
 
-	var err error
-	sess.wsConn, err = s.Upgrader.Upgrade(w, r, nil)
+	sess.websocketConn, err = s.Upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		sess.muSess.Unlock()
 		s.logger.Err(err).Msg("ws upgrade")

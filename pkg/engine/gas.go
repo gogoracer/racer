@@ -1,4 +1,4 @@
-package gas
+package engine
 
 import (
 	"context"
@@ -308,7 +308,7 @@ func (g *ElementGroup) Get() []any {
 
 // Render will trigger a WebSocket render for the current page
 func Render(ctx context.Context) {
-	render, ok := ctx.Value(CtxRender).(func(context.Context))
+	render, ok := ctx.Value(CtxRenderKey).(func(context.Context))
 	if !ok {
 		_ = "TODO: DELANEY deal with logging"
 		// LoggerDev.Error().Str("callers", CallerStackStr()).Msg("render not found in context")
@@ -321,7 +321,7 @@ func Render(ctx context.Context) {
 
 // RenderComponent will trigger a WebSocket render for the current page from the passed Componenter down only
 func RenderComponent(ctx context.Context, comp Componenter) {
-	render, ok := ctx.Value(CtxRenderComponent).(func(context.Context, Componenter))
+	render, ok := ctx.Value(CtxRenderComponentKey).(func(context.Context, Componenter))
 	if !ok {
 		_ = "TODO: DELANEY deal with logging"
 		// LoggerDev.Error().Str("callers", CallerStackStr()).Msg("component render not found in context")
