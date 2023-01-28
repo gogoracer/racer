@@ -15,3 +15,5 @@
 # vendor/
 
 __debug_bin
+
+node_modules
