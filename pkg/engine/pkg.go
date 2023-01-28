@@ -22,10 +22,9 @@ const (
 
 // Defaults
 const (
-	HTML5DocType                      HTML = "<!doctype html>"
-	WebSocketDisconnectTimeoutDefault      = time.Second * 5
-	PageSessionLimitDefault                = 1000
-	PageSessionGarbageCollectionTick       = time.Second
+	WebSocketDisconnectTimeoutDefault = time.Second * 5
+	PageSessionLimitDefault           = 1000
+	PageSessionGarbageCollectionTick  = time.Second
 )
 
 type CtxKey string

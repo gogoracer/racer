@@ -3,5 +3,14 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
-  "cSpell.words": ["gogoracer", "hhash", "hlive", "sess"]
+  "cSpell.words": [
+    "codepaths",
+    "gogoracer",
+    "hhash",
+    "hlive",
+    "Indicies",
+    "oneof",
+    "sess",
+    "tsbuildinfo"
+  ]
 }

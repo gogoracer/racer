@@ -12,7 +12,7 @@ type DOM struct {
 
 func NewDOM() DOM {
 	dom := DOM{
-		docType: HTML5DocType,
+		docType: "<!doctype html>",
 		html:    NewComponent("html", Attrs{"lang": "en"}),
 		head:    NewComponent("head"),
 		meta:    NewTag("meta", Attrs{"charset": "utf-8"}),

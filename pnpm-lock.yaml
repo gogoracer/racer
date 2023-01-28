@@ -15,11 +15,14 @@ importers:
 
   pkg/headlamp:
     specifiers:
+      '@gogoracer/gas': workspace:^1.0.0
       '@gogoracer/trim': workspace:^0.0.1
       '@types/node': ^18.11.18
       typescript: ^4.9.4
       vite: ^4.0.4
       vite-plugin-dts: ^1.7.1
+    dependencies:
+      '@gogoracer/gas': link:../gas
     devDependencies:
       '@gogoracer/trim': link:../trim
       '@types/node': 18.11.18
