@@ -362,7 +362,7 @@ func (p *Page) wsSend(ctx context.Context, toClient *gas.ToClient) {
 
 // Create and deletes should only happen at the end of a tag or attr list?
 func (p *Page) diffInfosToProtobuf(diffInfos []*diffInfo) []*gas.Diff {
-	diffValues := make([]*gas.Diff, 0, len(diffInfos))
+	diffValues := make([]*gas.Diff, len(diffInfos))
 
 	// Reverse order to help with offset changes when adding new nodes
 	for i := 0; i < len(diffInfos); i++ {

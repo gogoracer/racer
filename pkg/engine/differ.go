@@ -52,7 +52,7 @@ func NewDiffer() *Differ {
 		EntryPoints: []string{
 			filepath.Join(rootPath, "index.ts"),
 		},
-		// Sourcemap:  esbuild.SourceMapInline,
+		Sourcemap:  esbuild.SourceMapInline,
 		SourceRoot: rootPath,
 		Target:     esbuild.ESNext,
 		Bundle:     true,

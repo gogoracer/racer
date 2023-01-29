@@ -76,9 +76,13 @@ export class Page {
       this.reconnectCount = 0
     }
 
-    this.connection.onmessage = (evt) => {
-      debugger
-      const toClient = ToClient.fromBinary(evt.data)
+    this.connection.onmessage = async (evt) => {
+      const blob = evt.data as Blob
+      if (!blob.arrayBuffer)
+        throw new Error('MessageEvent does not support arrayBuffer')
+      const buf = await blob.arrayBuffer()
+      const view = new Uint8Array(buf)
+      const toClient = ToClient.fromBinary(view)
 
       switch (toClient.message.oneofKind) {
         case 'diffs':
@@ -120,15 +124,15 @@ export class Page {
     }
   }
 
-  eventHandler(e: Event) {
+  eventHandler = (e: Event) => {
     const eventTarget = e.currentTarget as HTMLElement
     if (!eventTarget?.getAttribute) return
-
-    const pairs = eventTarget.getAttribute('hon')?.split(',') || []
+    const hon = eventTarget.getAttribute('hon')
+    const pairs = hon?.split(',') || []
     for (let i = 0; i < pairs.length; i++) {
-      const parts = pairs[i].split('|')
-      if (parts[1].toLowerCase() === e.type.toLowerCase()) {
-        this.eventHandlerHelper(e, parts[0], false)
+      const [handlerID, eventName] = pairs[i].split('|')
+      if (eventName.toLowerCase() === e.type.toLowerCase()) {
+        this.eventHandlerHelper(e, handlerID, false)
       }
     }
   }
@@ -154,11 +158,8 @@ export class Page {
     }
   }
 
-  eventHandlerHelper(e: Event, handlerID: string, isInitial: boolean) {
-    // TODO: this is terrible, fix it ASAP
-    const el = e.currentTarget as any
-
-    debugger
+  eventHandlerHelper(evt: Event, handlerID: string, isInitial: boolean) {
+    const el = evt.currentTarget
 
     const fromClient = FromClient.create({
       type: FromClient_Type.EVENT,
@@ -166,14 +167,16 @@ export class Page {
     })
 
     const inputEl = el as HTMLInputElement
-    if (inputEl?.value) {
+    if (el instanceof HTMLInputElement) {
       fromClient.data.value = String(inputEl.value)
       if (isInitial) {
         fromClient.data.init = 'true'
       }
     }
 
-    if (el?.selected) {
+    const anyEl = el as any
+    if (anyEl?.selected) {
+      debugger
       fromClient.selected = true
     }
 
@@ -181,7 +184,8 @@ export class Page {
       fromClient.selected = true
     }
 
-    if (el.selectedOptions && el.selectedOptions.length !== 0) {
+    if (anyEl.selectedOptions && anyEl.selectedOptions.length !== 0) {
+      debugger
       // TODO: Looks like the server doesn't use VM at all
       // fromClient.vm = []
       // for (let i = 0; i < el.selectedOptions.length; i++) {
@@ -191,27 +195,25 @@ export class Page {
     }
 
     // TODO: this is terrible, needs to be fix it ASAP
-    const eAny = e as any
-    if (eAny.key !== undefined) {
-      fromClient.data.key = eAny.key
-      fromClient.data.charCode = String(eAny.charCode)
-      fromClient.data.keyCode = String(eAny.keyCode)
-      fromClient.data.shiftKey = String(eAny.shiftKey)
-      fromClient.data.altKey = String(eAny.altKey)
-      fromClient.data.ctrlKey = String(eAny.ctrlKey)
+    if (evt instanceof KeyboardEvent) {
+      fromClient.data.key = evt.key
+      fromClient.data.charCode = evt.code
+      fromClient.data.keyCode = evt.key
+      fromClient.data.shiftKey = String(evt.shiftKey)
+      fromClient.data.altKey = String(evt.altKey)
+      fromClient.data.ctrlKey = String(evt.ctrlKey)
     }
 
     // File
-    const fileInput = el as HTMLInputElement
     // TODO: move out to plugin
-    if (fileInput.files) {
+    if (el instanceof HTMLInputElement && el?.files?.length) {
       // No files
       const f = FromClient_File.create()
       fromClient.file = f
 
       // Single file
-      if (fileInput.files.length === 1) {
-        const { name, size, type } = fileInput.files[0]
+      if (el.files.length === 1) {
+        const { name, size, type } = el.files[0]
         const index = 0
         const total = 1
         f.name = name
@@ -223,11 +225,11 @@ export class Page {
       }
       // Multiple files
       // Need to send multiple messages
-      if (fileInput.files.length > 1) {
-        for (let i = 0; i < fileInput.files.length; i++) {
-          const { name, size, type } = fileInput.files[i]
+      if (el.files.length > 1) {
+        for (let i = 0; i < el.files.length; i++) {
+          const { name, size, type } = el.files[i]
           const index = i
-          const total = fileInput.files.length
+          const total = el.files.length
 
           f.name = name
           f.sizeBytes = BigInt(size)
@@ -242,7 +244,7 @@ export class Page {
       }
     }
 
-    this.beforeSendEvent.forEach((fn) => fn(e, fromClient))
+    this.beforeSendEvent.forEach((fn) => fn(evt, fromClient))
     this.sendMsg(fromClient)
   }
 
@@ -252,7 +254,7 @@ export class Page {
       // TODO: maybe add to a retry queue?
       if (this.connection.readyState === 1) {
         const buf = FromClient.toBinary(fromClient)
-        this.connection.send(JSON.stringify(fromClient))
+        this.connection.send(buf)
       }
     })
   }
@@ -405,12 +407,11 @@ export class Page {
   }
 
   findDiffTarget(diff: Diff) {
-    debugger
-
-    let target: Element | null
+    let target: Node | null
     switch (diff.root.oneofKind) {
       case 'document':
-        target = document.firstChild as HTMLElement
+        // TODO: this is a hack, my eyes are bleeding
+        target = document
         break
       case 'elementSelector':
         const possibleTarget = document.querySelector(
@@ -443,12 +444,14 @@ export class Page {
       // Happens when we start the path for a new component
       if (j >= diff.pathIndicies.length) continue
 
+      const htmlElementTarget = target as HTMLElement
+
       // Skip and child nodes found above the head.
       // Often added by browser plugins
-      if (target?.tagName === 'HTML') {
+      if (htmlElementTarget?.tagName === 'HTML') {
         for (let i = 0; i < target.childNodes.length; i++) {
           const child = target.childNodes[i] as HTMLElement
-          if (!child || child?.tagName !== 'HEAD') {
+          if (child?.tagName !== 'HEAD') {
             diff.pathIndicies[j]++
           } else {
             break
@@ -471,7 +474,7 @@ export class Page {
         break
       }
 
-      target = target.childNodes[diff.pathIndicies[j]] as Element
+      target = target.childNodes[diff.pathIndicies[j]]
     }
 
     return target

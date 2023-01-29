@@ -85,7 +85,6 @@ func (sess *PageSession) readPump() {
 				if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure) {
 					sess.logger.Debug().Err(err).Msg("unexpected close error")
 				}
-
 				return
 			}
 
@@ -102,8 +101,11 @@ func (sess *PageSession) readPump() {
 
 			fromClient := &gas.FromClient{}
 			if err := fromClient.UnmarshalVT(fromClientBytes); err != nil {
-				sess.Receive <- fromClient
+				sess.logger.Err(err).Msg("read pump: unmarshal from client")
+				return
 			}
+
+			sess.Receive <- fromClient
 		}
 	}
 }
