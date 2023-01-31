@@ -71,31 +71,33 @@ func homeStep3() *engine.Page {
 func homeStep4() *engine.Page {
 	message := "abc"
 
-	page := engine.NewPage()
-	page.DOM().Body().Add(
-		Division(
-			InputComponent(
-				InputAttributes(
-					AttrType, "text",
-					AttrValue, message,
-				),
-				OnKeyUp(func(ctx context.Context, e engine.Event) {
-					message = e.Value
-				}),
+	page := engine.NewPage().AppendToBody(
+		DIV(
+			INPUT_AE(
+				InputAttributes{
+					Type:  "text",
+					Value: message,
+				},
+				InputEventHandlers{
+					OnKeyup: func(ctx context.Context, e engine.Event) {
+						message = e.Value
+					},
+				},
 			),
 		),
-		HorizontalRule(),
+		HR(),
 		"Hello, ", &message,
 
-		ButtonComponent(
-			OnClick(func(ctx context.Context, e engine.Event) {
-				message = ""
-			}),
+		BUTTON_E(
+			ButtonEventHandlers{
+				OnClick: func(ctx context.Context, e engine.Event) {
+					message = ""
+				},
+			},
 			"Clear",
 		),
 	)
 
-	// Ignore this, well explain it later
 	addStageButtons(page, 4)
 
 	return page
@@ -122,29 +124,26 @@ func main() {
 }
 
 func addStageButtons(page *engine.Page, stage int) {
-	body := page.DOM().Body()
-
-	body.Add(HorizontalRule())
+	children := []interface{}{HR()}
 
 	if stage > 1 {
-		body.Add(
-			ButtonComponent(
-				ButtonAttributes(
-					AttrOnClick, fmt.Sprintf("window.location.href = '/step%d'", stage-1),
-				),
-				"Previous",
-			),
-		)
+		children = append(children, BUTTON_A(
+			ButtonAttributes{
+				ClientSideClick: fmt.Sprintf("window.location.href = '/step%d'", stage-1),
+			},
+			"Previous",
+		))
+
 	}
 
 	if stage < 4 {
-		body.Add(
-			ButtonComponent(
-				ButtonAttributes(
-					AttrOnClick, fmt.Sprintf("window.location.href = '/step%d'", stage+1),
-				),
-				"Next",
-			),
-		)
+		children = append(children, BUTTON_A(
+			ButtonAttributes{
+				ClientSideClick: fmt.Sprintf("window.location.href = '/step%d'", stage+1),
+			},
+			"Next",
+		))
 	}
+
+	page.AppendToBody(children...)
 }

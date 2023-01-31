@@ -1,0 +1,17 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+interval: 200ms
+
+tasks:
+  default:
+    sources:
+      - "**/*.qtpl"
+    cmds:
+      - qtc
+      - go run ./main/main.go
+      - gofmt -w ..
