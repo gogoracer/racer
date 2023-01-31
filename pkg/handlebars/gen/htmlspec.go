@@ -5,10 +5,12 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 	"strings"
 	"time"
 
 	"github.com/goccy/go-json"
+	"github.com/iancoleman/strcase"
 
 	"github.com/cenkalti/backoff/v4"
 	"github.com/chromedp/cdproto/cdp"
@@ -38,8 +40,28 @@ type Element struct {
 	EventHandlers []*EventHandler
 }
 
+func GenerateElements(ctx context.Context, handlebarsPath string) error {
+
+	elements, err := scrapeHTMLSpec(ctx)
+	if err != nil {
+		return fmt.Errorf("could not scrape HTML spec: %v", err)
+	}
+
+	for _, element := range elements {
+		contents := GenerateElement(element)
+		filename := fmt.Sprintf("element_%s.go", strcase.ToSnake(element.Tag))
+		fullPath := filepath.Join(handlebarsPath, filename)
+
+		if err := os.WriteFile(fullPath, []byte(contents), 0644); err != nil {
+			return fmt.Errorf("could not write file %s: %v", fullPath, err)
+		}
+	}
+
+	return nil
+}
+
 // Scrapes the W3C HTML spec for information about HTML elements and attributes.
-func ScrapeHTMLSpec(ctx context.Context) ([]*Element, error) {
+func scrapeHTMLSpec(ctx context.Context) ([]*Element, error) {
 	cachedJSON := "html_spec.json"
 	if _, err := os.Stat(cachedJSON); err == nil {
 		b, err := os.ReadFile(cachedJSON)
@@ -63,7 +85,7 @@ func ScrapeHTMLSpec(ctx context.Context) ([]*Element, error) {
 	opts := append(chromedp.DefaultExecAllocatorOptions[:],
 		chromedp.DisableGPU,
 		// chromedp.UserDataDir("someUserDir"),
-		chromedp.Flag("headless", false),
+		chromedp.Flag("headless", true),
 		chromedp.Flag("enable-automation", false),
 		chromedp.Flag("restore-on-startup", false),
 	)

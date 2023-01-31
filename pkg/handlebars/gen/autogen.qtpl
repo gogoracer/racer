@@ -22,6 +22,10 @@ func upper(s string) string {
     return strings.ToUpper(s)
 }
 
+func lower(s string) string {
+    return strings.ToLower(s)
+}
+
 %}
 
 {%- func GenerateElement(e *Element) -%}
@@ -30,120 +34,98 @@ func upper(s string) string {
 
 tagPascal := pascal(e.Tag)
 elementName := "Element" + tagPascal
-attributesName := tagPascal + "Attributes"
-eventHandlersName := tagPascal + "EventHandlers"
+// attributesName := tagPascal + "Attributes"
+// eventHandlersName := tagPascal + "EventHandlers"
 %}
 /* cSpell:disable */
 
-package handlebars
+package  handlebars
 
 import "github.com/gogoracer/racer/pkg/engine"
 
-type {%s attributesName %} struct {
-    {% for _, a := range e.Attributes %}
-    {%- code attrPascal := pascal(a.Name) -%}
-    // {%s attrPascal %} is the "{%s a.Name %}"" attribute.
-    // {%s a.Description %}
-    // Valid values are constrained to the following:
-    {%- for _, v := range a.ValidValueTypes -%}
-    //   * {%s v %}
-    {%- endfor -%}
-    {%s attrPascal %} string `json:"{%s camel(a.Name) %}"`
-    {%- endfor -%}
-
-    {% for _, eh := range e.EventHandlers %}
-    // {%s= eh.Description  %}
-    ClientSide{%s pascal(eh.Name[2:]) %} string
-    {%- endfor -%}
-}
-
-type {%s eventHandlersName %} struct {
-    {% for _, eh := range e.EventHandlers %}
-    {%- code evt := "On" + pascal(eh.Name[2:]) -%}
-    // {%s= eh.Description  %}
-    {%s evt %} engine.EventHandler
-    {%- endfor -%}
-}
-
 type {%s elementName %} struct {
-    Attributes {%s attributesName %}
-    EventHandlers {%s eventHandlersName %}
-
-    // Children is the list of child nodes.
-    Children []any
+    shouldBeComponent bool
+    attrs map[string]interface{}
+    children []any
 }
 
 func {%s upper(tagPascal) %}(children ...any) *{%s elementName %} {
     return &{%s elementName %}{
-        Children: children,
+        attrs: map[string]interface{}{},
+        children: children,
     }
 }
 
-func {%s upper(tagPascal) %}_A(attributes {%s attributesName %},children ...any) *{%s elementName %} {
-    return &{%s elementName %}{
-        Attributes: attributes,
-        Children: children,
+func (e *{%s elementName %}) Add(children ...any) *{%s elementName %} {
+    e.children = append(e.children, children...)
+    return e
+}
+
+func (e *{%s elementName %}) Custom(k,v string) *{%s elementName %} {
+    e.attrs[k] = v
+    return e
+}
+
+func (e *{%s elementName %}) BindCustom(k string, v bool) *{%s elementName %} {
+    e.shouldBeComponent = true
+    return e
+}
+
+func (e {%s elementName %}) HandlebarElement() {}
+
+func(e {%s elementName %}) GenerateVDOM() interface{} {
+    all := append([]any{ e.attrs }, e.children...)
+    if e.shouldBeComponent {
+        return engine.NewComponent("{%s e.Tag %}", all... )
+    }else {
+        return engine.NewTag("{%s e.Tag %}", all ...)
     }
 }
 
-func {%s upper(tagPascal) %}_E(eventHandlers {%s eventHandlersName %},children ...any) *{%s elementName %} {
-    return &{%s elementName %}{
-        EventHandlers: eventHandlers,
-        Children: children,
+{% for _, a := range e.Attributes %}
+{%- code attrPascal := pascal(a.Name) -%}
+// {%s attrPascal %} is the "{%s a.Name %}"" attribute.
+// {%s a.Description %}
+// Valid values are constrained to the following:
+{%- for _, v := range a.ValidValueTypes -%}
+//   * {%s v %}
+{%- endfor -%}
+func (e *{%s elementName %}) {%s attrPascal %}(v string) (*{%s elementName %}) {
+    if v == "" {
+        return e
     }
+    e.attrs["{%s a.Name %}"] = v
+    return e
 }
+{%- endfor -%}
 
-func {%s upper(tagPascal) %}_AE(attributes {%s attributesName %}, eventHandlers {%s eventHandlersName %},children ...any) *{%s elementName %} {
-    return &{%s elementName %}{
-        Attributes: attributes,
-        EventHandlers: eventHandlers,
-        Children: children,
+{% for _, eh := range e.EventHandlers %}
+{%- code evt := "On" + pascal(eh.Name[2:]) -%}
+// {%s eh.Description %}
+func (e *{%s elementName %}) {%s evt %}(fn engine.EventHandler) (*{%s elementName %}) {
+    if fn == nil {
+        return e
     }
+
+    e.shouldBeComponent = true
+    e.children = append(
+        e.children,
+        engine.On("{%s eh.Name[2:] %}", fn),
+    )
+    return e
 }
+{%- endfor -%}
 
+{%- endfunc -%}
 
-func (element {%s elementName %}) HandlebarElement() {}
+{%- func GenerateIcon(details iconCollectionDetailsInfo) -%}
+/* cSpell:disable */
+package iconify
 
-func(element {%s elementName %}) GenerateVDOM() interface{} {
-    eventHandlers := map[string]engine.EventHandler{}
-    {%- for _, eh := range e.EventHandlers -%}
-    {%- code
-        evtName := eh.Name[2:]
-        evtHandlerName := "On" + pascal(evtName)
-    -%}
-    if element.EventHandlers.{%s evtHandlerName %} != nil {
-        eventHandlers["{%s evtName %}"] = element.EventHandlers.{%s evtHandlerName %}
-    }
-    {%- endfor -%}
-
-    attrs := engine.Attrs {}
-    {%- for _, a := range e.Attributes -%}
-    {%- code attrPascal := pascal(a.Name) -%}
-    if element.Attributes.{%s attrPascal %} != "" {
-        attrs["{%s a.Name %}"] = string( element.Attributes.{%s attrPascal %})
-    }
-    {%- endfor -%}
-    {% for _, eh := range e.EventHandlers %}
-    {%- code ehPascal := "ClientSide"+pascal(eh.Name[2:]) -%}
-    if element.Attributes.{%s ehPascal %} != "" {
-        attrs["{%s eh.Name[2:] %}"] = string( element.Attributes.{%s ehPascal %})
-    }
-    {%- endfor -%}
-
-    var virtualDOMElement interface{}
-    if len(eventHandlers) == 0 {
-        tag := engine.NewTag("{%s e.Tag %}", attrs)
-        virtualDOMElement = tag
-    } else {
-        component := engine.NewComponent("{%s e.Tag %}", attrs)
-
-        for evt, h := range eventHandlers {
-            component.Add(engine.On(evt, h))
-        }
-        virtualDOMElement = component
-    }
-
-    return virtualDOMElement
-
-}
+import "github.com/gogoracer/racer/pkg/handlebars"
+var (
+{%- for name, icon := range details.Icons -%}
+ {%s pascal(details.Prefix) %}{%s pascal(name) %} = handlebars.DIV(`{%s= icon.SvgBody %}`)
+{%- endfor -%}
+)
 {%- endfunc -%}

@@ -490,7 +490,7 @@ export class Page {
 
       // DOM Diffs
 
-      const target = this.findDiffTarget(diff)
+      const target = this.findDiffTarget(diff) as Element
       if (!target) return
 
       // Text

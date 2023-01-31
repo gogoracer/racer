@@ -4,1237 +4,1366 @@ package handlebars
 
 import "github.com/gogoracer/racer/pkg/engine"
 
-type SupAttributes struct {
-
-	// Accesskey is the "accesskey"" attribute.
-	// Keyboard shortcut to activate or focus element
-	// Valid values are constrained to the following:
-	//   * ordered-set-of-unique-space-separated-tokens
-	//   * string-is
-	Accesskey string `json:"accesskey"`
-
-	// Autocapitalize is the "autocapitalize"" attribute.
-	// Recommended autocapitalization behavior (for supported input methods)
-	// Valid values are constrained to the following:
-	//   *
-	//   *
-	//   *
-	//   *
-	//   *
-	//   *
-	Autocapitalize string `json:"autocapitalize"`
-
-	// Autofocus is the "autofocus"" attribute.
-	// Automatically focus the element when the page is loaded
-	// Valid values are constrained to the following:
-	//   * boolean-attribute
-	Autofocus string `json:"autofocus"`
-
-	// Class is the "class"" attribute.
-	// Classes to which the element belongs
-	// Valid values are constrained to the following:
-	//   * set-of-space-separated-tokens
-	Class string `json:"class"`
-
-	// Contenteditable is the "contenteditable"" attribute.
-	// Whether the element is editable
-	// Valid values are constrained to the following:
-	//   * true
-	//   * false
-	Contenteditable string `json:"contenteditable"`
-
-	// Dir is the "dir"" attribute.
-	//
-	// Valid values are constrained to the following:
-	//   *
-	//   *
-	//   *
-	Dir string `json:"dir"`
-
-	// Draggable is the "draggable"" attribute.
-	// Whether the element is draggable
-	// Valid values are constrained to the following:
-	//   * true
-	//   * false
-	Draggable string `json:"draggable"`
-
-	// Enterkeyhint is the "enterkeyhint"" attribute.
-	// Hint for selecting an enter key action
-	// Valid values are constrained to the following:
-	//   *
-	//   *
-	//   *
-	//   *
-	//   *
-	//   *
-	//   *
-	Enterkeyhint string `json:"enterkeyhint"`
-
-	// Hidden is the "hidden"" attribute.
-	// Whether the element is relevant
-	// Valid values are constrained to the following:
-	//   *
-	//   *
-	Hidden string `json:"hidden"`
-
-	// Id is the "id"" attribute.
-	// The element&#39;s
-	// Valid values are constrained to the following:
-	//   * attribute-text
-	Id string `json:"id"`
-
-	// Inert is the "inert"" attribute.
-	// Whether the element is
-	// Valid values are constrained to the following:
-	//   * boolean-attribute
-	Inert string `json:"inert"`
-
-	// Inputmode is the "inputmode"" attribute.
-	// Hint for selecting an input modality
-	// Valid values are constrained to the following:
-	//   *
-	//   *
-	//   *
-	//   *
-	//   *
-	//   *
-	//   *
-	//   *
-	Inputmode string `json:"inputmode"`
-
-	// Is is the "is"" attribute.
-	// Creates a
-	// Valid values are constrained to the following:
-	//   * valid-custom-element-name
-	//   * customized-built-in-element
-	Is string `json:"is"`
-
-	// Itemid is the "itemid"" attribute.
-	//
-	// Valid values are constrained to the following:
-	//   * valid-url-potentially-surrounded-by-spaces
-	Itemid string `json:"itemid"`
-
-	// Itemprop is the "itemprop"" attribute.
-	//
-	// Valid values are constrained to the following:
-	//   * unordered-set-of-unique-space-separated-tokens
-	//   * syntax-url-absolute
-	//   * defined-property-name
-	Itemprop string `json:"itemprop"`
-
-	// Itemref is the "itemref"" attribute.
-	//
-	// Valid values are constrained to the following:
-	//   * unordered-set-of-unique-space-separated-tokens
-	Itemref string `json:"itemref"`
-
-	// Itemscope is the "itemscope"" attribute.
-	// Introduces a microdata item
-	// Valid values are constrained to the following:
-	//   * boolean-attribute
-	Itemscope string `json:"itemscope"`
-
-	// Itemtype is the "itemtype"" attribute.
-	//
-	// Valid values are constrained to the following:
-	//   * unordered-set-of-unique-space-separated-tokens
-	//   * syntax-url-absolute
-	Itemtype string `json:"itemtype"`
-
-	// Lang is the "lang"" attribute.
-	//
-	// Valid values are constrained to the following:
-	Lang string `json:"lang"`
-
-	// Nonce is the "nonce"" attribute.
-	// Cryptographic nonce used in
-	// Valid values are constrained to the following:
-	//   * attribute-text
-	Nonce string `json:"nonce"`
-
-	// Popover is the "popover"" attribute.
-	// Makes the element a
-	// Valid values are constrained to the following:
-	//   *
-	//   *
-	Popover string `json:"popover"`
-
-	// Slot is the "slot"" attribute.
-	// The element&#39;s desired slot
-	// Valid values are constrained to the following:
-	//   * attribute-text
-	Slot string `json:"slot"`
-
-	// Spellcheck is the "spellcheck"" attribute.
-	// Whether the element is to have its spelling and grammar checked
-	// Valid values are constrained to the following:
-	//   * true
-	//   * false
-	Spellcheck string `json:"spellcheck"`
-
-	// Style is the "style"" attribute.
-	// Presentational and formatting instructions
-	// Valid values are constrained to the following:
-	Style string `json:"style"`
-
-	// Tabindex is the "tabindex"" attribute.
-	// Whether the element is
-	// Valid values are constrained to the following:
-	//   * valid-integer
-	Tabindex string `json:"tabindex"`
-
-	// Title is the "title"" attribute.
-	// Advisory information for the element
-	// Valid values are constrained to the following:
-	//   * attribute-text
-	Title string `json:"title"`
-
-	// Translate is the "translate"" attribute.
-	// Whether the element is to be translated when the page is localized
-	// Valid values are constrained to the following:
-	//   * yes
-	//   * no
-	Translate string `json:"translate"`
-
-	// <code id="attributes-3:event-auxclick"><a data-x-internal="event-auxclick" href="https://w3c.github.io/uievents/#event-type-auxclick">auxclick</a></code>  event handler
-	ClientSideAuxclick string
-
-	// <code id="attributes-3:event-beforematch"><a href="#event-beforematch">beforematch</a></code>  event handler
-	ClientSideBeforematch string
-
-	// <code id="attributes-3:event-beforetoggle"><a href="#event-beforetoggle">beforetoggle</a></code>  event handler
-	ClientSideBeforetoggle string
-
-	// <code id="attributes-3:event-blur"><a href="#event-blur">blur</a></code>  event handler
-	ClientSideBlur string
-
-	// <code id="attributes-3:event-cancel"><a href="#event-cancel">cancel</a></code>  event handler
-	ClientSideCancel string
-
-	// <code id="attributes-3:event-media-canplay"><a href="media.html#event-media-canplay">canplay</a></code>  event handler
-	ClientSideCanplay string
-
-	// <code id="attributes-3:event-media-canplaythrough"><a href="media.html#event-media-canplaythrough">canplaythrough</a></code>  event handler
-	ClientSideCanplaythrough string
-
-	// <code id="attributes-3:event-change"><a href="#event-change">change</a></code>  event handler
-	ClientSideChange string
-
-	// <code id="attributes-3:event-click"><a data-x-internal="event-click" href="https://w3c.github.io/uievents/#event-type-click">click</a></code>  event handler
-	ClientSideClick string
-
-	// <code id="attributes-3:event-close"><a href="#event-close">close</a></code>  event handler
-	ClientSideClose string
-
-	// <code id="attributes-3:event-contextlost"><a href="#event-contextlost">contextlost</a></code>  event handler
-	ClientSideContextlost string
-
-	// <code id="attributes-3:event-contextmenu"><a data-x-internal="event-contextmenu" href="https://w3c.github.io/uievents/#event-type-contextmenu">contextmenu</a></code>  event handler
-	ClientSideContextmenu string
-
-	// <code id="attributes-3:event-contextrestored"><a href="#event-contextrestored">contextrestored</a></code>  event handler
-	ClientSideContextrestored string
-
-	// <code id="attributes-3:event-copy"><a data-x-internal="event-copy" href="https://w3c.github.io/clipboard-apis/#clipboard-event-copy">copy</a></code>  event handler
-	ClientSideCopy string
-
-	// <code id="attributes-3:event-media-cuechange"><a href="media.html#event-media-cuechange">cuechange</a></code>  event handler
-	ClientSideCuechange string
-
-	// <code id="attributes-3:event-cut"><a data-x-internal="event-cut" href="https://w3c.github.io/clipboard-apis/#clipboard-event-cut">cut</a></code>  event handler
-	ClientSideCut string
-
-	// <code id="attributes-3:event-dblclick"><a data-x-internal="event-dblclick" href="https://w3c.github.io/uievents/#event-type-dblclick">dblclick</a></code>  event handler
-	ClientSideDblclick string
-
-	// <code id="attributes-3:event-dnd-drag"><a href="dnd.html#event-dnd-drag">drag</a></code>  event handler
-	ClientSideDrag string
-
-	// <code id="attributes-3:event-dnd-dragend"><a href="dnd.html#event-dnd-dragend">dragend</a></code>  event handler
-	ClientSideDragend string
-
-	// <code id="attributes-3:event-dnd-dragenter"><a href="dnd.html#event-dnd-dragenter">dragenter</a></code>  event handler
-	ClientSideDragenter string
-
-	// <code id="attributes-3:event-dnd-dragleave"><a href="dnd.html#event-dnd-dragleave">dragleave</a></code>  event handler
-	ClientSideDragleave string
-
-	// <code id="attributes-3:event-dnd-dragover"><a href="dnd.html#event-dnd-dragover">dragover</a></code>  event handler
-	ClientSideDragover string
-
-	// <code id="attributes-3:event-dnd-dragstart"><a href="dnd.html#event-dnd-dragstart">dragstart</a></code>  event handler
-	ClientSideDragstart string
-
-	// <code id="attributes-3:event-dnd-drop"><a href="dnd.html#event-dnd-drop">drop</a></code>  event handler
-	ClientSideDrop string
-
-	// <code id="attributes-3:event-media-durationchange"><a href="media.html#event-media-durationchange">durationchange</a></code>  event handler
-	ClientSideDurationchange string
-
-	// <code id="attributes-3:event-media-emptied"><a href="media.html#event-media-emptied">emptied</a></code>  event handler
-	ClientSideEmptied string
-
-	// <code id="attributes-3:event-media-ended"><a href="media.html#event-media-ended">ended</a></code>  event handler
-	ClientSideEnded string
-
-	// <code id="attributes-3:event-error"><a href="#event-error">error</a></code>  event handler
-	ClientSideError string
-
-	// <code id="attributes-3:event-focus"><a href="#event-focus">focus</a></code>  event handler
-	ClientSideFocus string
-
-	// <code id="attributes-3:event-formdata"><a href="#event-formdata">formdata</a></code>  event handler
-	ClientSideFormdata string
-
-	// <code id="attributes-3:event-input"><a data-x-internal="event-input" href="https://w3c.github.io/uievents/#event-type-input">input</a></code>  event handler
-	ClientSideInput string
-
-	// <code id="attributes-3:event-invalid"><a href="#event-invalid">invalid</a></code>  event handler
-	ClientSideInvalid string
-
-	// <code id="attributes-3:event-keydown"><a data-x-internal="event-keydown" href="https://w3c.github.io/uievents/#event-type-keydown">keydown</a></code>  event handler
-	ClientSideKeydown string
-
-	// <code id="attributes-3:event-keypress"><a data-x-internal="event-keypress" href="https://w3c.github.io/uievents/#event-type-keypress">keypress</a></code>  event handler
-	ClientSideKeypress string
-
-	// <code id="attributes-3:event-keyup"><a data-x-internal="event-keyup" href="https://w3c.github.io/uievents/#event-type-keyup">keyup</a></code>  event handler
-	ClientSideKeyup string
-
-	// <code id="attributes-3:event-load"><a href="#event-load">load</a></code>  event handler
-	ClientSideLoad string
-
-	// <code id="attributes-3:event-media-loadeddata"><a href="media.html#event-media-loadeddata">loadeddata</a></code>  event handler
-	ClientSideLoadeddata string
-
-	// <code id="attributes-3:event-media-loadedmetadata"><a href="media.html#event-media-loadedmetadata">loadedmetadata</a></code>  event handler
-	ClientSideLoadedmetadata string
-
-	// <code id="attributes-3:event-media-loadstart"><a href="media.html#event-media-loadstart">loadstart</a></code>  event handler
-	ClientSideLoadstart string
-
-	// <code id="attributes-3:event-mousedown"><a data-x-internal="event-mousedown" href="https://w3c.github.io/uievents/#event-type-mousedown">mousedown</a></code>  event handler
-	ClientSideMousedown string
-
-	// <code id="attributes-3:event-mouseenter"><a data-x-internal="event-mouseenter" href="https://w3c.github.io/uievents/#event-type-mouseenter">mouseenter</a></code>  event handler
-	ClientSideMouseenter string
-
-	// <code id="attributes-3:event-mouseleave"><a data-x-internal="event-mouseleave" href="https://w3c.github.io/uievents/#event-type-mouseleave">mouseleave</a></code>  event handler
-	ClientSideMouseleave string
-
-	// <code id="attributes-3:event-mousemove"><a data-x-internal="event-mousemove" href="https://w3c.github.io/uievents/#event-type-mousemove">mousemove</a></code>  event handler
-	ClientSideMousemove string
-
-	// <code id="attributes-3:event-mouseout"><a data-x-internal="event-mouseout" href="https://w3c.github.io/uievents/#event-type-mouseout">mouseout</a></code>  event handler
-	ClientSideMouseout string
-
-	// <code id="attributes-3:event-mouseover"><a data-x-internal="event-mouseover" href="https://w3c.github.io/uievents/#event-type-mouseover">mouseover</a></code>  event handler
-	ClientSideMouseover string
-
-	// <code id="attributes-3:event-mouseup"><a data-x-internal="event-mouseup" href="https://w3c.github.io/uievents/#event-type-mouseup">mouseup</a></code>  event handler
-	ClientSideMouseup string
-
-	// <code id="attributes-3:event-paste"><a data-x-internal="event-paste" href="https://w3c.github.io/clipboard-apis/#clipboard-event-paste">paste</a></code>  event handler
-	ClientSidePaste string
-
-	// <code id="attributes-3:event-media-pause"><a href="media.html#event-media-pause">pause</a></code>  event handler
-	ClientSidePause string
-
-	// <code id="attributes-3:event-media-play"><a href="media.html#event-media-play">play</a></code>  event handler
-	ClientSidePlay string
-
-	// <code id="attributes-3:event-media-playing"><a href="media.html#event-media-playing">playing</a></code>  event handler
-	ClientSidePlaying string
-
-	// <code id="attributes-3:event-media-progress"><a href="media.html#event-media-progress">progress</a></code>  event handler
-	ClientSideProgress string
-
-	// <code id="attributes-3:event-media-ratechange"><a href="media.html#event-media-ratechange">ratechange</a></code>  event handler
-	ClientSideRatechange string
-
-	// <code id="attributes-3:event-reset"><a href="#event-reset">reset</a></code>  event handler
-	ClientSideReset string
-
-	// <code id="attributes-3:event-resize"><a data-x-internal="event-resize" href="https://drafts.csswg.org/cssom-view/#eventdef-window-resize">resize</a></code>  event handler
-	ClientSideResize string
-
-	// <code id="attributes-3:event-scroll"><a data-x-internal="event-scroll" href="https://drafts.csswg.org/cssom-view/#eventdef-document-scroll">scroll</a></code>  event handler
-	ClientSideScroll string
-
-	// <code id="attributes-3:event-scrollend"><a data-x-internal="event-scrollend" href="https://drafts.csswg.org/cssom-view/#eventdef-document-scrollend">scrollend</a></code>  event handler
-	ClientSideScrollend string
-
-	// <code id="attributes-3:event-securitypolicyviolation"><a data-x-internal="event-securitypolicyviolation" href="https://w3c.github.io/webappsec-csp/#eventdef-globaleventhandlers-securitypolicyviolation">securitypolicyviolation</a></code>  event handler
-	ClientSideSecuritypolicyviolation string
-
-	// <code id="attributes-3:event-media-seeked"><a href="media.html#event-media-seeked">seeked</a></code>  event handler
-	ClientSideSeeked string
-
-	// <code id="attributes-3:event-media-seeking"><a href="media.html#event-media-seeking">seeking</a></code>  event handler
-	ClientSideSeeking string
-
-	// <code id="attributes-3:event-select"><a href="#event-select">select</a></code>  event handler
-	ClientSideSelect string
-
-	// <code id="attributes-3:event-slotchange"><a data-x-internal="event-slotchange" href="https://dom.spec.whatwg.org/#eventdef-htmlslotelement-slotchange">slotchange</a></code>  event handler
-	ClientSideSlotchange string
-
-	// <code id="attributes-3:event-media-stalled"><a href="media.html#event-media-stalled">stalled</a></code>  event handler
-	ClientSideStalled string
-
-	// <code id="attributes-3:event-submit"><a href="#event-submit">submit</a></code>  event handler
-	ClientSideSubmit string
-
-	// <code id="attributes-3:event-media-suspend"><a href="media.html#event-media-suspend">suspend</a></code>  event handler
-	ClientSideSuspend string
-
-	// <code id="attributes-3:event-media-timeupdate"><a href="media.html#event-media-timeupdate">timeupdate</a></code>  event handler
-	ClientSideTimeupdate string
-
-	// <code id="attributes-3:event-toggle"><a href="#event-toggle">toggle</a></code>  event handler
-	ClientSideToggle string
-
-	// <code id="attributes-3:event-media-volumechange"><a href="media.html#event-media-volumechange">volumechange</a></code>  event handler
-	ClientSideVolumechange string
-
-	// <code id="attributes-3:event-media-waiting"><a href="media.html#event-media-waiting">waiting</a></code>  event handler
-	ClientSideWaiting string
-
-	// <code id="attributes-3:event-wheel"><a data-x-internal="event-wheel" href="https://w3c.github.io/uievents/#event-type-wheel">wheel</a></code>  event handler
-	ClientSideWheel string
-}
-
-type SupEventHandlers struct {
-
-	// <code id="attributes-3:event-auxclick"><a data-x-internal="event-auxclick" href="https://w3c.github.io/uievents/#event-type-auxclick">auxclick</a></code>  event handler
-	OnAuxclick engine.EventHandler
-
-	// <code id="attributes-3:event-beforematch"><a href="#event-beforematch">beforematch</a></code>  event handler
-	OnBeforematch engine.EventHandler
-
-	// <code id="attributes-3:event-beforetoggle"><a href="#event-beforetoggle">beforetoggle</a></code>  event handler
-	OnBeforetoggle engine.EventHandler
-
-	// <code id="attributes-3:event-blur"><a href="#event-blur">blur</a></code>  event handler
-	OnBlur engine.EventHandler
-
-	// <code id="attributes-3:event-cancel"><a href="#event-cancel">cancel</a></code>  event handler
-	OnCancel engine.EventHandler
-
-	// <code id="attributes-3:event-media-canplay"><a href="media.html#event-media-canplay">canplay</a></code>  event handler
-	OnCanplay engine.EventHandler
-
-	// <code id="attributes-3:event-media-canplaythrough"><a href="media.html#event-media-canplaythrough">canplaythrough</a></code>  event handler
-	OnCanplaythrough engine.EventHandler
-
-	// <code id="attributes-3:event-change"><a href="#event-change">change</a></code>  event handler
-	OnChange engine.EventHandler
-
-	// <code id="attributes-3:event-click"><a data-x-internal="event-click" href="https://w3c.github.io/uievents/#event-type-click">click</a></code>  event handler
-	OnClick engine.EventHandler
-
-	// <code id="attributes-3:event-close"><a href="#event-close">close</a></code>  event handler
-	OnClose engine.EventHandler
-
-	// <code id="attributes-3:event-contextlost"><a href="#event-contextlost">contextlost</a></code>  event handler
-	OnContextlost engine.EventHandler
-
-	// <code id="attributes-3:event-contextmenu"><a data-x-internal="event-contextmenu" href="https://w3c.github.io/uievents/#event-type-contextmenu">contextmenu</a></code>  event handler
-	OnContextmenu engine.EventHandler
-
-	// <code id="attributes-3:event-contextrestored"><a href="#event-contextrestored">contextrestored</a></code>  event handler
-	OnContextrestored engine.EventHandler
-
-	// <code id="attributes-3:event-copy"><a data-x-internal="event-copy" href="https://w3c.github.io/clipboard-apis/#clipboard-event-copy">copy</a></code>  event handler
-	OnCopy engine.EventHandler
-
-	// <code id="attributes-3:event-media-cuechange"><a href="media.html#event-media-cuechange">cuechange</a></code>  event handler
-	OnCuechange engine.EventHandler
-
-	// <code id="attributes-3:event-cut"><a data-x-internal="event-cut" href="https://w3c.github.io/clipboard-apis/#clipboard-event-cut">cut</a></code>  event handler
-	OnCut engine.EventHandler
-
-	// <code id="attributes-3:event-dblclick"><a data-x-internal="event-dblclick" href="https://w3c.github.io/uievents/#event-type-dblclick">dblclick</a></code>  event handler
-	OnDblclick engine.EventHandler
-
-	// <code id="attributes-3:event-dnd-drag"><a href="dnd.html#event-dnd-drag">drag</a></code>  event handler
-	OnDrag engine.EventHandler
-
-	// <code id="attributes-3:event-dnd-dragend"><a href="dnd.html#event-dnd-dragend">dragend</a></code>  event handler
-	OnDragend engine.EventHandler
-
-	// <code id="attributes-3:event-dnd-dragenter"><a href="dnd.html#event-dnd-dragenter">dragenter</a></code>  event handler
-	OnDragenter engine.EventHandler
-
-	// <code id="attributes-3:event-dnd-dragleave"><a href="dnd.html#event-dnd-dragleave">dragleave</a></code>  event handler
-	OnDragleave engine.EventHandler
-
-	// <code id="attributes-3:event-dnd-dragover"><a href="dnd.html#event-dnd-dragover">dragover</a></code>  event handler
-	OnDragover engine.EventHandler
-
-	// <code id="attributes-3:event-dnd-dragstart"><a href="dnd.html#event-dnd-dragstart">dragstart</a></code>  event handler
-	OnDragstart engine.EventHandler
-
-	// <code id="attributes-3:event-dnd-drop"><a href="dnd.html#event-dnd-drop">drop</a></code>  event handler
-	OnDrop engine.EventHandler
-
-	// <code id="attributes-3:event-media-durationchange"><a href="media.html#event-media-durationchange">durationchange</a></code>  event handler
-	OnDurationchange engine.EventHandler
-
-	// <code id="attributes-3:event-media-emptied"><a href="media.html#event-media-emptied">emptied</a></code>  event handler
-	OnEmptied engine.EventHandler
-
-	// <code id="attributes-3:event-media-ended"><a href="media.html#event-media-ended">ended</a></code>  event handler
-	OnEnded engine.EventHandler
-
-	// <code id="attributes-3:event-error"><a href="#event-error">error</a></code>  event handler
-	OnError engine.EventHandler
-
-	// <code id="attributes-3:event-focus"><a href="#event-focus">focus</a></code>  event handler
-	OnFocus engine.EventHandler
-
-	// <code id="attributes-3:event-formdata"><a href="#event-formdata">formdata</a></code>  event handler
-	OnFormdata engine.EventHandler
-
-	// <code id="attributes-3:event-input"><a data-x-internal="event-input" href="https://w3c.github.io/uievents/#event-type-input">input</a></code>  event handler
-	OnInput engine.EventHandler
-
-	// <code id="attributes-3:event-invalid"><a href="#event-invalid">invalid</a></code>  event handler
-	OnInvalid engine.EventHandler
-
-	// <code id="attributes-3:event-keydown"><a data-x-internal="event-keydown" href="https://w3c.github.io/uievents/#event-type-keydown">keydown</a></code>  event handler
-	OnKeydown engine.EventHandler
-
-	// <code id="attributes-3:event-keypress"><a data-x-internal="event-keypress" href="https://w3c.github.io/uievents/#event-type-keypress">keypress</a></code>  event handler
-	OnKeypress engine.EventHandler
-
-	// <code id="attributes-3:event-keyup"><a data-x-internal="event-keyup" href="https://w3c.github.io/uievents/#event-type-keyup">keyup</a></code>  event handler
-	OnKeyup engine.EventHandler
-
-	// <code id="attributes-3:event-load"><a href="#event-load">load</a></code>  event handler
-	OnLoad engine.EventHandler
-
-	// <code id="attributes-3:event-media-loadeddata"><a href="media.html#event-media-loadeddata">loadeddata</a></code>  event handler
-	OnLoadeddata engine.EventHandler
-
-	// <code id="attributes-3:event-media-loadedmetadata"><a href="media.html#event-media-loadedmetadata">loadedmetadata</a></code>  event handler
-	OnLoadedmetadata engine.EventHandler
-
-	// <code id="attributes-3:event-media-loadstart"><a href="media.html#event-media-loadstart">loadstart</a></code>  event handler
-	OnLoadstart engine.EventHandler
-
-	// <code id="attributes-3:event-mousedown"><a data-x-internal="event-mousedown" href="https://w3c.github.io/uievents/#event-type-mousedown">mousedown</a></code>  event handler
-	OnMousedown engine.EventHandler
-
-	// <code id="attributes-3:event-mouseenter"><a data-x-internal="event-mouseenter" href="https://w3c.github.io/uievents/#event-type-mouseenter">mouseenter</a></code>  event handler
-	OnMouseenter engine.EventHandler
-
-	// <code id="attributes-3:event-mouseleave"><a data-x-internal="event-mouseleave" href="https://w3c.github.io/uievents/#event-type-mouseleave">mouseleave</a></code>  event handler
-	OnMouseleave engine.EventHandler
-
-	// <code id="attributes-3:event-mousemove"><a data-x-internal="event-mousemove" href="https://w3c.github.io/uievents/#event-type-mousemove">mousemove</a></code>  event handler
-	OnMousemove engine.EventHandler
-
-	// <code id="attributes-3:event-mouseout"><a data-x-internal="event-mouseout" href="https://w3c.github.io/uievents/#event-type-mouseout">mouseout</a></code>  event handler
-	OnMouseout engine.EventHandler
-
-	// <code id="attributes-3:event-mouseover"><a data-x-internal="event-mouseover" href="https://w3c.github.io/uievents/#event-type-mouseover">mouseover</a></code>  event handler
-	OnMouseover engine.EventHandler
-
-	// <code id="attributes-3:event-mouseup"><a data-x-internal="event-mouseup" href="https://w3c.github.io/uievents/#event-type-mouseup">mouseup</a></code>  event handler
-	OnMouseup engine.EventHandler
-
-	// <code id="attributes-3:event-paste"><a data-x-internal="event-paste" href="https://w3c.github.io/clipboard-apis/#clipboard-event-paste">paste</a></code>  event handler
-	OnPaste engine.EventHandler
-
-	// <code id="attributes-3:event-media-pause"><a href="media.html#event-media-pause">pause</a></code>  event handler
-	OnPause engine.EventHandler
-
-	// <code id="attributes-3:event-media-play"><a href="media.html#event-media-play">play</a></code>  event handler
-	OnPlay engine.EventHandler
-
-	// <code id="attributes-3:event-media-playing"><a href="media.html#event-media-playing">playing</a></code>  event handler
-	OnPlaying engine.EventHandler
-
-	// <code id="attributes-3:event-media-progress"><a href="media.html#event-media-progress">progress</a></code>  event handler
-	OnProgress engine.EventHandler
-
-	// <code id="attributes-3:event-media-ratechange"><a href="media.html#event-media-ratechange">ratechange</a></code>  event handler
-	OnRatechange engine.EventHandler
-
-	// <code id="attributes-3:event-reset"><a href="#event-reset">reset</a></code>  event handler
-	OnReset engine.EventHandler
-
-	// <code id="attributes-3:event-resize"><a data-x-internal="event-resize" href="https://drafts.csswg.org/cssom-view/#eventdef-window-resize">resize</a></code>  event handler
-	OnResize engine.EventHandler
-
-	// <code id="attributes-3:event-scroll"><a data-x-internal="event-scroll" href="https://drafts.csswg.org/cssom-view/#eventdef-document-scroll">scroll</a></code>  event handler
-	OnScroll engine.EventHandler
-
-	// <code id="attributes-3:event-scrollend"><a data-x-internal="event-scrollend" href="https://drafts.csswg.org/cssom-view/#eventdef-document-scrollend">scrollend</a></code>  event handler
-	OnScrollend engine.EventHandler
-
-	// <code id="attributes-3:event-securitypolicyviolation"><a data-x-internal="event-securitypolicyviolation" href="https://w3c.github.io/webappsec-csp/#eventdef-globaleventhandlers-securitypolicyviolation">securitypolicyviolation</a></code>  event handler
-	OnSecuritypolicyviolation engine.EventHandler
-
-	// <code id="attributes-3:event-media-seeked"><a href="media.html#event-media-seeked">seeked</a></code>  event handler
-	OnSeeked engine.EventHandler
-
-	// <code id="attributes-3:event-media-seeking"><a href="media.html#event-media-seeking">seeking</a></code>  event handler
-	OnSeeking engine.EventHandler
-
-	// <code id="attributes-3:event-select"><a href="#event-select">select</a></code>  event handler
-	OnSelect engine.EventHandler
-
-	// <code id="attributes-3:event-slotchange"><a data-x-internal="event-slotchange" href="https://dom.spec.whatwg.org/#eventdef-htmlslotelement-slotchange">slotchange</a></code>  event handler
-	OnSlotchange engine.EventHandler
-
-	// <code id="attributes-3:event-media-stalled"><a href="media.html#event-media-stalled">stalled</a></code>  event handler
-	OnStalled engine.EventHandler
-
-	// <code id="attributes-3:event-submit"><a href="#event-submit">submit</a></code>  event handler
-	OnSubmit engine.EventHandler
-
-	// <code id="attributes-3:event-media-suspend"><a href="media.html#event-media-suspend">suspend</a></code>  event handler
-	OnSuspend engine.EventHandler
-
-	// <code id="attributes-3:event-media-timeupdate"><a href="media.html#event-media-timeupdate">timeupdate</a></code>  event handler
-	OnTimeupdate engine.EventHandler
-
-	// <code id="attributes-3:event-toggle"><a href="#event-toggle">toggle</a></code>  event handler
-	OnToggle engine.EventHandler
-
-	// <code id="attributes-3:event-media-volumechange"><a href="media.html#event-media-volumechange">volumechange</a></code>  event handler
-	OnVolumechange engine.EventHandler
-
-	// <code id="attributes-3:event-media-waiting"><a href="media.html#event-media-waiting">waiting</a></code>  event handler
-	OnWaiting engine.EventHandler
-
-	// <code id="attributes-3:event-wheel"><a data-x-internal="event-wheel" href="https://w3c.github.io/uievents/#event-type-wheel">wheel</a></code>  event handler
-	OnWheel engine.EventHandler
-}
-
 type ElementSup struct {
-	Attributes    SupAttributes
-	EventHandlers SupEventHandlers
-
-	// Children is the list of child nodes.
-	Children []any
+	shouldBeComponent bool
+	attrs             map[string]interface{}
+	children          []any
 }
 
 func SUP(children ...any) *ElementSup {
 	return &ElementSup{
-		Children: children,
+		attrs:    map[string]interface{}{},
+		children: children,
 	}
 }
 
-func SUP_A(attributes SupAttributes, children ...any) *ElementSup {
-	return &ElementSup{
-		Attributes: attributes,
-		Children:   children,
-	}
+func (e *ElementSup) Add(children ...any) *ElementSup {
+	e.children = append(e.children, children...)
+	return e
 }
 
-func SUP_E(eventHandlers SupEventHandlers, children ...any) *ElementSup {
-	return &ElementSup{
-		EventHandlers: eventHandlers,
-		Children:      children,
-	}
+func (e *ElementSup) Custom(k, v string) *ElementSup {
+	e.attrs[k] = v
+	return e
 }
 
-func SUP_AE(attributes SupAttributes, eventHandlers SupEventHandlers, children ...any) *ElementSup {
-	return &ElementSup{
-		Attributes:    attributes,
-		EventHandlers: eventHandlers,
-		Children:      children,
-	}
+func (e *ElementSup) BindCustom(k string, v bool) *ElementSup {
+	e.shouldBeComponent = true
+	return e
 }
 
-func (element ElementSup) HandlebarElement() {}
-
-func (element ElementSup) GenerateVDOM() interface{} {
-	eventHandlers := map[string]engine.EventHandler{}
-	if element.EventHandlers.OnAuxclick != nil {
-		eventHandlers["auxclick"] = element.EventHandlers.OnAuxclick
-	}
-	if element.EventHandlers.OnBeforematch != nil {
-		eventHandlers["beforematch"] = element.EventHandlers.OnBeforematch
-	}
-	if element.EventHandlers.OnBeforetoggle != nil {
-		eventHandlers["beforetoggle"] = element.EventHandlers.OnBeforetoggle
-	}
-	if element.EventHandlers.OnBlur != nil {
-		eventHandlers["blur"] = element.EventHandlers.OnBlur
-	}
-	if element.EventHandlers.OnCancel != nil {
-		eventHandlers["cancel"] = element.EventHandlers.OnCancel
-	}
-	if element.EventHandlers.OnCanplay != nil {
-		eventHandlers["canplay"] = element.EventHandlers.OnCanplay
-	}
-	if element.EventHandlers.OnCanplaythrough != nil {
-		eventHandlers["canplaythrough"] = element.EventHandlers.OnCanplaythrough
-	}
-	if element.EventHandlers.OnChange != nil {
-		eventHandlers["change"] = element.EventHandlers.OnChange
-	}
-	if element.EventHandlers.OnClick != nil {
-		eventHandlers["click"] = element.EventHandlers.OnClick
-	}
-	if element.EventHandlers.OnClose != nil {
-		eventHandlers["close"] = element.EventHandlers.OnClose
-	}
-	if element.EventHandlers.OnContextlost != nil {
-		eventHandlers["contextlost"] = element.EventHandlers.OnContextlost
-	}
-	if element.EventHandlers.OnContextmenu != nil {
-		eventHandlers["contextmenu"] = element.EventHandlers.OnContextmenu
-	}
-	if element.EventHandlers.OnContextrestored != nil {
-		eventHandlers["contextrestored"] = element.EventHandlers.OnContextrestored
-	}
-	if element.EventHandlers.OnCopy != nil {
-		eventHandlers["copy"] = element.EventHandlers.OnCopy
-	}
-	if element.EventHandlers.OnCuechange != nil {
-		eventHandlers["cuechange"] = element.EventHandlers.OnCuechange
-	}
-	if element.EventHandlers.OnCut != nil {
-		eventHandlers["cut"] = element.EventHandlers.OnCut
-	}
-	if element.EventHandlers.OnDblclick != nil {
-		eventHandlers["dblclick"] = element.EventHandlers.OnDblclick
-	}
-	if element.EventHandlers.OnDrag != nil {
-		eventHandlers["drag"] = element.EventHandlers.OnDrag
-	}
-	if element.EventHandlers.OnDragend != nil {
-		eventHandlers["dragend"] = element.EventHandlers.OnDragend
-	}
-	if element.EventHandlers.OnDragenter != nil {
-		eventHandlers["dragenter"] = element.EventHandlers.OnDragenter
-	}
-	if element.EventHandlers.OnDragleave != nil {
-		eventHandlers["dragleave"] = element.EventHandlers.OnDragleave
-	}
-	if element.EventHandlers.OnDragover != nil {
-		eventHandlers["dragover"] = element.EventHandlers.OnDragover
-	}
-	if element.EventHandlers.OnDragstart != nil {
-		eventHandlers["dragstart"] = element.EventHandlers.OnDragstart
-	}
-	if element.EventHandlers.OnDrop != nil {
-		eventHandlers["drop"] = element.EventHandlers.OnDrop
-	}
-	if element.EventHandlers.OnDurationchange != nil {
-		eventHandlers["durationchange"] = element.EventHandlers.OnDurationchange
-	}
-	if element.EventHandlers.OnEmptied != nil {
-		eventHandlers["emptied"] = element.EventHandlers.OnEmptied
-	}
-	if element.EventHandlers.OnEnded != nil {
-		eventHandlers["ended"] = element.EventHandlers.OnEnded
-	}
-	if element.EventHandlers.OnError != nil {
-		eventHandlers["error"] = element.EventHandlers.OnError
-	}
-	if element.EventHandlers.OnFocus != nil {
-		eventHandlers["focus"] = element.EventHandlers.OnFocus
-	}
-	if element.EventHandlers.OnFormdata != nil {
-		eventHandlers["formdata"] = element.EventHandlers.OnFormdata
-	}
-	if element.EventHandlers.OnInput != nil {
-		eventHandlers["input"] = element.EventHandlers.OnInput
-	}
-	if element.EventHandlers.OnInvalid != nil {
-		eventHandlers["invalid"] = element.EventHandlers.OnInvalid
-	}
-	if element.EventHandlers.OnKeydown != nil {
-		eventHandlers["keydown"] = element.EventHandlers.OnKeydown
-	}
-	if element.EventHandlers.OnKeypress != nil {
-		eventHandlers["keypress"] = element.EventHandlers.OnKeypress
-	}
-	if element.EventHandlers.OnKeyup != nil {
-		eventHandlers["keyup"] = element.EventHandlers.OnKeyup
-	}
-	if element.EventHandlers.OnLoad != nil {
-		eventHandlers["load"] = element.EventHandlers.OnLoad
-	}
-	if element.EventHandlers.OnLoadeddata != nil {
-		eventHandlers["loadeddata"] = element.EventHandlers.OnLoadeddata
-	}
-	if element.EventHandlers.OnLoadedmetadata != nil {
-		eventHandlers["loadedmetadata"] = element.EventHandlers.OnLoadedmetadata
-	}
-	if element.EventHandlers.OnLoadstart != nil {
-		eventHandlers["loadstart"] = element.EventHandlers.OnLoadstart
-	}
-	if element.EventHandlers.OnMousedown != nil {
-		eventHandlers["mousedown"] = element.EventHandlers.OnMousedown
-	}
-	if element.EventHandlers.OnMouseenter != nil {
-		eventHandlers["mouseenter"] = element.EventHandlers.OnMouseenter
-	}
-	if element.EventHandlers.OnMouseleave != nil {
-		eventHandlers["mouseleave"] = element.EventHandlers.OnMouseleave
-	}
-	if element.EventHandlers.OnMousemove != nil {
-		eventHandlers["mousemove"] = element.EventHandlers.OnMousemove
-	}
-	if element.EventHandlers.OnMouseout != nil {
-		eventHandlers["mouseout"] = element.EventHandlers.OnMouseout
-	}
-	if element.EventHandlers.OnMouseover != nil {
-		eventHandlers["mouseover"] = element.EventHandlers.OnMouseover
-	}
-	if element.EventHandlers.OnMouseup != nil {
-		eventHandlers["mouseup"] = element.EventHandlers.OnMouseup
-	}
-	if element.EventHandlers.OnPaste != nil {
-		eventHandlers["paste"] = element.EventHandlers.OnPaste
-	}
-	if element.EventHandlers.OnPause != nil {
-		eventHandlers["pause"] = element.EventHandlers.OnPause
-	}
-	if element.EventHandlers.OnPlay != nil {
-		eventHandlers["play"] = element.EventHandlers.OnPlay
-	}
-	if element.EventHandlers.OnPlaying != nil {
-		eventHandlers["playing"] = element.EventHandlers.OnPlaying
-	}
-	if element.EventHandlers.OnProgress != nil {
-		eventHandlers["progress"] = element.EventHandlers.OnProgress
-	}
-	if element.EventHandlers.OnRatechange != nil {
-		eventHandlers["ratechange"] = element.EventHandlers.OnRatechange
-	}
-	if element.EventHandlers.OnReset != nil {
-		eventHandlers["reset"] = element.EventHandlers.OnReset
-	}
-	if element.EventHandlers.OnResize != nil {
-		eventHandlers["resize"] = element.EventHandlers.OnResize
-	}
-	if element.EventHandlers.OnScroll != nil {
-		eventHandlers["scroll"] = element.EventHandlers.OnScroll
-	}
-	if element.EventHandlers.OnScrollend != nil {
-		eventHandlers["scrollend"] = element.EventHandlers.OnScrollend
-	}
-	if element.EventHandlers.OnSecuritypolicyviolation != nil {
-		eventHandlers["securitypolicyviolation"] = element.EventHandlers.OnSecuritypolicyviolation
-	}
-	if element.EventHandlers.OnSeeked != nil {
-		eventHandlers["seeked"] = element.EventHandlers.OnSeeked
-	}
-	if element.EventHandlers.OnSeeking != nil {
-		eventHandlers["seeking"] = element.EventHandlers.OnSeeking
-	}
-	if element.EventHandlers.OnSelect != nil {
-		eventHandlers["select"] = element.EventHandlers.OnSelect
-	}
-	if element.EventHandlers.OnSlotchange != nil {
-		eventHandlers["slotchange"] = element.EventHandlers.OnSlotchange
-	}
-	if element.EventHandlers.OnStalled != nil {
-		eventHandlers["stalled"] = element.EventHandlers.OnStalled
-	}
-	if element.EventHandlers.OnSubmit != nil {
-		eventHandlers["submit"] = element.EventHandlers.OnSubmit
-	}
-	if element.EventHandlers.OnSuspend != nil {
-		eventHandlers["suspend"] = element.EventHandlers.OnSuspend
-	}
-	if element.EventHandlers.OnTimeupdate != nil {
-		eventHandlers["timeupdate"] = element.EventHandlers.OnTimeupdate
-	}
-	if element.EventHandlers.OnToggle != nil {
-		eventHandlers["toggle"] = element.EventHandlers.OnToggle
-	}
-	if element.EventHandlers.OnVolumechange != nil {
-		eventHandlers["volumechange"] = element.EventHandlers.OnVolumechange
-	}
-	if element.EventHandlers.OnWaiting != nil {
-		eventHandlers["waiting"] = element.EventHandlers.OnWaiting
-	}
-	if element.EventHandlers.OnWheel != nil {
-		eventHandlers["wheel"] = element.EventHandlers.OnWheel
-	}
-
-	attrs := engine.Attrs{}
-	if element.Attributes.Accesskey != "" {
-		attrs["accesskey"] = string(element.Attributes.Accesskey)
-	}
-	if element.Attributes.Autocapitalize != "" {
-		attrs["autocapitalize"] = string(element.Attributes.Autocapitalize)
-	}
-	if element.Attributes.Autofocus != "" {
-		attrs["autofocus"] = string(element.Attributes.Autofocus)
-	}
-	if element.Attributes.Class != "" {
-		attrs["class"] = string(element.Attributes.Class)
-	}
-	if element.Attributes.Contenteditable != "" {
-		attrs["contenteditable"] = string(element.Attributes.Contenteditable)
-	}
-	if element.Attributes.Dir != "" {
-		attrs["dir"] = string(element.Attributes.Dir)
-	}
-	if element.Attributes.Draggable != "" {
-		attrs["draggable"] = string(element.Attributes.Draggable)
-	}
-	if element.Attributes.Enterkeyhint != "" {
-		attrs["enterkeyhint"] = string(element.Attributes.Enterkeyhint)
-	}
-	if element.Attributes.Hidden != "" {
-		attrs["hidden"] = string(element.Attributes.Hidden)
-	}
-	if element.Attributes.Id != "" {
-		attrs["id"] = string(element.Attributes.Id)
-	}
-	if element.Attributes.Inert != "" {
-		attrs["inert"] = string(element.Attributes.Inert)
-	}
-	if element.Attributes.Inputmode != "" {
-		attrs["inputmode"] = string(element.Attributes.Inputmode)
-	}
-	if element.Attributes.Is != "" {
-		attrs["is"] = string(element.Attributes.Is)
-	}
-	if element.Attributes.Itemid != "" {
-		attrs["itemid"] = string(element.Attributes.Itemid)
-	}
-	if element.Attributes.Itemprop != "" {
-		attrs["itemprop"] = string(element.Attributes.Itemprop)
-	}
-	if element.Attributes.Itemref != "" {
-		attrs["itemref"] = string(element.Attributes.Itemref)
-	}
-	if element.Attributes.Itemscope != "" {
-		attrs["itemscope"] = string(element.Attributes.Itemscope)
-	}
-	if element.Attributes.Itemtype != "" {
-		attrs["itemtype"] = string(element.Attributes.Itemtype)
-	}
-	if element.Attributes.Lang != "" {
-		attrs["lang"] = string(element.Attributes.Lang)
-	}
-	if element.Attributes.Nonce != "" {
-		attrs["nonce"] = string(element.Attributes.Nonce)
-	}
-	if element.Attributes.Popover != "" {
-		attrs["popover"] = string(element.Attributes.Popover)
-	}
-	if element.Attributes.Slot != "" {
-		attrs["slot"] = string(element.Attributes.Slot)
-	}
-	if element.Attributes.Spellcheck != "" {
-		attrs["spellcheck"] = string(element.Attributes.Spellcheck)
-	}
-	if element.Attributes.Style != "" {
-		attrs["style"] = string(element.Attributes.Style)
-	}
-	if element.Attributes.Tabindex != "" {
-		attrs["tabindex"] = string(element.Attributes.Tabindex)
-	}
-	if element.Attributes.Title != "" {
-		attrs["title"] = string(element.Attributes.Title)
-	}
-	if element.Attributes.Translate != "" {
-		attrs["translate"] = string(element.Attributes.Translate)
-	}
-
-	if element.Attributes.ClientSideAuxclick != "" {
-		attrs["auxclick"] = string(element.Attributes.ClientSideAuxclick)
-	}
-
-	if element.Attributes.ClientSideBeforematch != "" {
-		attrs["beforematch"] = string(element.Attributes.ClientSideBeforematch)
-	}
-
-	if element.Attributes.ClientSideBeforetoggle != "" {
-		attrs["beforetoggle"] = string(element.Attributes.ClientSideBeforetoggle)
-	}
-
-	if element.Attributes.ClientSideBlur != "" {
-		attrs["blur"] = string(element.Attributes.ClientSideBlur)
-	}
-
-	if element.Attributes.ClientSideCancel != "" {
-		attrs["cancel"] = string(element.Attributes.ClientSideCancel)
-	}
-
-	if element.Attributes.ClientSideCanplay != "" {
-		attrs["canplay"] = string(element.Attributes.ClientSideCanplay)
-	}
-
-	if element.Attributes.ClientSideCanplaythrough != "" {
-		attrs["canplaythrough"] = string(element.Attributes.ClientSideCanplaythrough)
-	}
-
-	if element.Attributes.ClientSideChange != "" {
-		attrs["change"] = string(element.Attributes.ClientSideChange)
-	}
-
-	if element.Attributes.ClientSideClick != "" {
-		attrs["click"] = string(element.Attributes.ClientSideClick)
-	}
-
-	if element.Attributes.ClientSideClose != "" {
-		attrs["close"] = string(element.Attributes.ClientSideClose)
-	}
-
-	if element.Attributes.ClientSideContextlost != "" {
-		attrs["contextlost"] = string(element.Attributes.ClientSideContextlost)
-	}
-
-	if element.Attributes.ClientSideContextmenu != "" {
-		attrs["contextmenu"] = string(element.Attributes.ClientSideContextmenu)
-	}
-
-	if element.Attributes.ClientSideContextrestored != "" {
-		attrs["contextrestored"] = string(element.Attributes.ClientSideContextrestored)
-	}
-
-	if element.Attributes.ClientSideCopy != "" {
-		attrs["copy"] = string(element.Attributes.ClientSideCopy)
-	}
-
-	if element.Attributes.ClientSideCuechange != "" {
-		attrs["cuechange"] = string(element.Attributes.ClientSideCuechange)
-	}
-
-	if element.Attributes.ClientSideCut != "" {
-		attrs["cut"] = string(element.Attributes.ClientSideCut)
-	}
-
-	if element.Attributes.ClientSideDblclick != "" {
-		attrs["dblclick"] = string(element.Attributes.ClientSideDblclick)
-	}
-
-	if element.Attributes.ClientSideDrag != "" {
-		attrs["drag"] = string(element.Attributes.ClientSideDrag)
-	}
-
-	if element.Attributes.ClientSideDragend != "" {
-		attrs["dragend"] = string(element.Attributes.ClientSideDragend)
-	}
-
-	if element.Attributes.ClientSideDragenter != "" {
-		attrs["dragenter"] = string(element.Attributes.ClientSideDragenter)
-	}
-
-	if element.Attributes.ClientSideDragleave != "" {
-		attrs["dragleave"] = string(element.Attributes.ClientSideDragleave)
-	}
-
-	if element.Attributes.ClientSideDragover != "" {
-		attrs["dragover"] = string(element.Attributes.ClientSideDragover)
-	}
-
-	if element.Attributes.ClientSideDragstart != "" {
-		attrs["dragstart"] = string(element.Attributes.ClientSideDragstart)
-	}
-
-	if element.Attributes.ClientSideDrop != "" {
-		attrs["drop"] = string(element.Attributes.ClientSideDrop)
-	}
-
-	if element.Attributes.ClientSideDurationchange != "" {
-		attrs["durationchange"] = string(element.Attributes.ClientSideDurationchange)
-	}
-
-	if element.Attributes.ClientSideEmptied != "" {
-		attrs["emptied"] = string(element.Attributes.ClientSideEmptied)
-	}
-
-	if element.Attributes.ClientSideEnded != "" {
-		attrs["ended"] = string(element.Attributes.ClientSideEnded)
-	}
-
-	if element.Attributes.ClientSideError != "" {
-		attrs["error"] = string(element.Attributes.ClientSideError)
-	}
-
-	if element.Attributes.ClientSideFocus != "" {
-		attrs["focus"] = string(element.Attributes.ClientSideFocus)
-	}
-
-	if element.Attributes.ClientSideFormdata != "" {
-		attrs["formdata"] = string(element.Attributes.ClientSideFormdata)
-	}
-
-	if element.Attributes.ClientSideInput != "" {
-		attrs["input"] = string(element.Attributes.ClientSideInput)
-	}
-
-	if element.Attributes.ClientSideInvalid != "" {
-		attrs["invalid"] = string(element.Attributes.ClientSideInvalid)
-	}
-
-	if element.Attributes.ClientSideKeydown != "" {
-		attrs["keydown"] = string(element.Attributes.ClientSideKeydown)
-	}
-
-	if element.Attributes.ClientSideKeypress != "" {
-		attrs["keypress"] = string(element.Attributes.ClientSideKeypress)
-	}
-
-	if element.Attributes.ClientSideKeyup != "" {
-		attrs["keyup"] = string(element.Attributes.ClientSideKeyup)
-	}
-
-	if element.Attributes.ClientSideLoad != "" {
-		attrs["load"] = string(element.Attributes.ClientSideLoad)
-	}
-
-	if element.Attributes.ClientSideLoadeddata != "" {
-		attrs["loadeddata"] = string(element.Attributes.ClientSideLoadeddata)
-	}
-
-	if element.Attributes.ClientSideLoadedmetadata != "" {
-		attrs["loadedmetadata"] = string(element.Attributes.ClientSideLoadedmetadata)
-	}
-
-	if element.Attributes.ClientSideLoadstart != "" {
-		attrs["loadstart"] = string(element.Attributes.ClientSideLoadstart)
-	}
-
-	if element.Attributes.ClientSideMousedown != "" {
-		attrs["mousedown"] = string(element.Attributes.ClientSideMousedown)
-	}
-
-	if element.Attributes.ClientSideMouseenter != "" {
-		attrs["mouseenter"] = string(element.Attributes.ClientSideMouseenter)
-	}
-
-	if element.Attributes.ClientSideMouseleave != "" {
-		attrs["mouseleave"] = string(element.Attributes.ClientSideMouseleave)
-	}
-
-	if element.Attributes.ClientSideMousemove != "" {
-		attrs["mousemove"] = string(element.Attributes.ClientSideMousemove)
-	}
-
-	if element.Attributes.ClientSideMouseout != "" {
-		attrs["mouseout"] = string(element.Attributes.ClientSideMouseout)
-	}
-
-	if element.Attributes.ClientSideMouseover != "" {
-		attrs["mouseover"] = string(element.Attributes.ClientSideMouseover)
-	}
-
-	if element.Attributes.ClientSideMouseup != "" {
-		attrs["mouseup"] = string(element.Attributes.ClientSideMouseup)
-	}
-
-	if element.Attributes.ClientSidePaste != "" {
-		attrs["paste"] = string(element.Attributes.ClientSidePaste)
-	}
-
-	if element.Attributes.ClientSidePause != "" {
-		attrs["pause"] = string(element.Attributes.ClientSidePause)
-	}
-
-	if element.Attributes.ClientSidePlay != "" {
-		attrs["play"] = string(element.Attributes.ClientSidePlay)
-	}
-
-	if element.Attributes.ClientSidePlaying != "" {
-		attrs["playing"] = string(element.Attributes.ClientSidePlaying)
-	}
-
-	if element.Attributes.ClientSideProgress != "" {
-		attrs["progress"] = string(element.Attributes.ClientSideProgress)
-	}
-
-	if element.Attributes.ClientSideRatechange != "" {
-		attrs["ratechange"] = string(element.Attributes.ClientSideRatechange)
-	}
-
-	if element.Attributes.ClientSideReset != "" {
-		attrs["reset"] = string(element.Attributes.ClientSideReset)
-	}
-
-	if element.Attributes.ClientSideResize != "" {
-		attrs["resize"] = string(element.Attributes.ClientSideResize)
-	}
-
-	if element.Attributes.ClientSideScroll != "" {
-		attrs["scroll"] = string(element.Attributes.ClientSideScroll)
-	}
-
-	if element.Attributes.ClientSideScrollend != "" {
-		attrs["scrollend"] = string(element.Attributes.ClientSideScrollend)
-	}
-
-	if element.Attributes.ClientSideSecuritypolicyviolation != "" {
-		attrs["securitypolicyviolation"] = string(element.Attributes.ClientSideSecuritypolicyviolation)
-	}
-
-	if element.Attributes.ClientSideSeeked != "" {
-		attrs["seeked"] = string(element.Attributes.ClientSideSeeked)
-	}
-
-	if element.Attributes.ClientSideSeeking != "" {
-		attrs["seeking"] = string(element.Attributes.ClientSideSeeking)
-	}
-
-	if element.Attributes.ClientSideSelect != "" {
-		attrs["select"] = string(element.Attributes.ClientSideSelect)
-	}
-
-	if element.Attributes.ClientSideSlotchange != "" {
-		attrs["slotchange"] = string(element.Attributes.ClientSideSlotchange)
-	}
-
-	if element.Attributes.ClientSideStalled != "" {
-		attrs["stalled"] = string(element.Attributes.ClientSideStalled)
-	}
-
-	if element.Attributes.ClientSideSubmit != "" {
-		attrs["submit"] = string(element.Attributes.ClientSideSubmit)
-	}
-
-	if element.Attributes.ClientSideSuspend != "" {
-		attrs["suspend"] = string(element.Attributes.ClientSideSuspend)
-	}
-
-	if element.Attributes.ClientSideTimeupdate != "" {
-		attrs["timeupdate"] = string(element.Attributes.ClientSideTimeupdate)
-	}
-
-	if element.Attributes.ClientSideToggle != "" {
-		attrs["toggle"] = string(element.Attributes.ClientSideToggle)
-	}
-
-	if element.Attributes.ClientSideVolumechange != "" {
-		attrs["volumechange"] = string(element.Attributes.ClientSideVolumechange)
-	}
-
-	if element.Attributes.ClientSideWaiting != "" {
-		attrs["waiting"] = string(element.Attributes.ClientSideWaiting)
-	}
-
-	if element.Attributes.ClientSideWheel != "" {
-		attrs["wheel"] = string(element.Attributes.ClientSideWheel)
-	}
-
-	var virtualDOMElement interface{}
-	if len(eventHandlers) == 0 {
-		tag := engine.NewTag("sup", attrs)
-		virtualDOMElement = tag
+func (e ElementSup) HandlebarElement() {}
+
+func (e ElementSup) GenerateVDOM() interface{} {
+	all := append([]any{e.attrs}, e.children...)
+	if e.shouldBeComponent {
+		return engine.NewComponent("sup", all...)
 	} else {
-		component := engine.NewComponent("sup", attrs)
+		return engine.NewTag("sup", all...)
+	}
+}
 
-		for evt, h := range eventHandlers {
-			component.Add(engine.On(evt, h))
-		}
-		virtualDOMElement = component
+// Accesskey is the "accesskey"" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered-set-of-unique-space-separated-tokens
+//   - string-is
+func (e *ElementSup) Accesskey(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["accesskey"] = v
+	return e
+}
+
+// Autocapitalize is the "autocapitalize"" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
+// Valid values are constrained to the following:
+//
+//	*
+//	*
+//	*
+//	*
+//	*
+//	*
+func (e *ElementSup) Autocapitalize(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["autocapitalize"] = v
+	return e
+}
+
+// Autofocus is the "autofocus"" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean-attribute
+func (e *ElementSup) Autofocus(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["autofocus"] = v
+	return e
+}
+
+// Class is the "class"" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set-of-space-separated-tokens
+func (e *ElementSup) Class(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["class"] = v
+	return e
+}
+
+// Contenteditable is the "contenteditable"" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (e *ElementSup) Contenteditable(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["contenteditable"] = v
+	return e
+}
+
+// Dir is the "dir"" attribute.
+//
+// Valid values are constrained to the following:
+//
+//	*
+//	*
+//	*
+func (e *ElementSup) Dir(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["dir"] = v
+	return e
+}
+
+// Draggable is the "draggable"" attribute.
+// Whether the element is draggable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (e *ElementSup) Draggable(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["draggable"] = v
+	return e
+}
+
+// Enterkeyhint is the "enterkeyhint"" attribute.
+// Hint for selecting an enter key action
+// Valid values are constrained to the following:
+//
+//	*
+//	*
+//	*
+//	*
+//	*
+//	*
+//	*
+func (e *ElementSup) Enterkeyhint(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["enterkeyhint"] = v
+	return e
+}
+
+// Hidden is the "hidden"" attribute.
+// Whether the element is relevant
+// Valid values are constrained to the following:
+//
+//	*
+//	*
+func (e *ElementSup) Hidden(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["hidden"] = v
+	return e
+}
+
+// Id is the "id"" attribute.
+// The element&#39;s
+// Valid values are constrained to the following:
+//   - attribute-text
+func (e *ElementSup) Id(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["id"] = v
+	return e
+}
+
+// Inert is the "inert"" attribute.
+// Whether the element is
+// Valid values are constrained to the following:
+//   - boolean-attribute
+func (e *ElementSup) Inert(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["inert"] = v
+	return e
+}
+
+// Inputmode is the "inputmode"" attribute.
+// Hint for selecting an input modality
+// Valid values are constrained to the following:
+//
+//	*
+//	*
+//	*
+//	*
+//	*
+//	*
+//	*
+//	*
+func (e *ElementSup) Inputmode(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["inputmode"] = v
+	return e
+}
+
+// Is is the "is"" attribute.
+// Creates a
+// Valid values are constrained to the following:
+//   - valid-custom-element-name
+//   - customized-built-in-element
+func (e *ElementSup) Is(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["is"] = v
+	return e
+}
+
+// Itemid is the "itemid"" attribute.
+//
+// Valid values are constrained to the following:
+//   - valid-url-potentially-surrounded-by-spaces
+func (e *ElementSup) Itemid(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["itemid"] = v
+	return e
+}
+
+// Itemprop is the "itemprop"" attribute.
+//
+// Valid values are constrained to the following:
+//   - unordered-set-of-unique-space-separated-tokens
+//   - syntax-url-absolute
+//   - defined-property-name
+func (e *ElementSup) Itemprop(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["itemprop"] = v
+	return e
+}
+
+// Itemref is the "itemref"" attribute.
+//
+// Valid values are constrained to the following:
+//   - unordered-set-of-unique-space-separated-tokens
+func (e *ElementSup) Itemref(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["itemref"] = v
+	return e
+}
+
+// Itemscope is the "itemscope"" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean-attribute
+func (e *ElementSup) Itemscope(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["itemscope"] = v
+	return e
+}
+
+// Itemtype is the "itemtype"" attribute.
+//
+// Valid values are constrained to the following:
+//   - unordered-set-of-unique-space-separated-tokens
+//   - syntax-url-absolute
+func (e *ElementSup) Itemtype(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["itemtype"] = v
+	return e
+}
+
+// Lang is the "lang"" attribute.
+//
+// Valid values are constrained to the following:
+func (e *ElementSup) Lang(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["lang"] = v
+	return e
+}
+
+// Nonce is the "nonce"" attribute.
+// Cryptographic nonce used in
+// Valid values are constrained to the following:
+//   - attribute-text
+func (e *ElementSup) Nonce(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["nonce"] = v
+	return e
+}
+
+// Popover is the "popover"" attribute.
+// Makes the element a
+// Valid values are constrained to the following:
+//
+//	*
+//	*
+func (e *ElementSup) Popover(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["popover"] = v
+	return e
+}
+
+// Slot is the "slot"" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - attribute-text
+func (e *ElementSup) Slot(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["slot"] = v
+	return e
+}
+
+// Spellcheck is the "spellcheck"" attribute.
+// Whether the element is to have its spelling and grammar checked
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (e *ElementSup) Spellcheck(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["spellcheck"] = v
+	return e
+}
+
+// Style is the "style"" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (e *ElementSup) Style(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["style"] = v
+	return e
+}
+
+// Tabindex is the "tabindex"" attribute.
+// Whether the element is
+// Valid values are constrained to the following:
+//   - valid-integer
+func (e *ElementSup) Tabindex(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["tabindex"] = v
+	return e
+}
+
+// Title is the "title"" attribute.
+// Advisory information for the element
+// Valid values are constrained to the following:
+//   - attribute-text
+func (e *ElementSup) Title(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["title"] = v
+	return e
+}
+
+// Translate is the "translate"" attribute.
+// Whether the element is to be translated when the page is localized
+// Valid values are constrained to the following:
+//   - yes
+//   - no
+func (e *ElementSup) Translate(v string) *ElementSup {
+	if v == "" {
+		return e
+	}
+	e.attrs["translate"] = v
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-auxclick&quot;&gt;&lt;a data-x-internal=&quot;event-auxclick&quot; href=&quot;https://w3c.github.io/uievents/#event-type-auxclick&quot;&gt;auxclick&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnAuxclick(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
 	}
 
-	return virtualDOMElement
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("auxclick", fn),
+	)
+	return e
+}
 
+// &lt;code id=&quot;attributes-3:event-beforematch&quot;&gt;&lt;a href=&quot;#event-beforematch&quot;&gt;beforematch&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnBeforematch(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("beforematch", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-beforetoggle&quot;&gt;&lt;a href=&quot;#event-beforetoggle&quot;&gt;beforetoggle&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnBeforetoggle(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("beforetoggle", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-blur&quot;&gt;&lt;a href=&quot;#event-blur&quot;&gt;blur&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnBlur(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("blur", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-cancel&quot;&gt;&lt;a href=&quot;#event-cancel&quot;&gt;cancel&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnCancel(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("cancel", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-canplay&quot;&gt;&lt;a href=&quot;media.html#event-media-canplay&quot;&gt;canplay&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnCanplay(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("canplay", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-canplaythrough&quot;&gt;&lt;a href=&quot;media.html#event-media-canplaythrough&quot;&gt;canplaythrough&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnCanplaythrough(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("canplaythrough", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-change&quot;&gt;&lt;a href=&quot;#event-change&quot;&gt;change&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnChange(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("change", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-click&quot;&gt;&lt;a data-x-internal=&quot;event-click&quot; href=&quot;https://w3c.github.io/uievents/#event-type-click&quot;&gt;click&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnClick(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("click", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-close&quot;&gt;&lt;a href=&quot;#event-close&quot;&gt;close&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnClose(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("close", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-contextlost&quot;&gt;&lt;a href=&quot;#event-contextlost&quot;&gt;contextlost&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnContextlost(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("contextlost", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-contextmenu&quot;&gt;&lt;a data-x-internal=&quot;event-contextmenu&quot; href=&quot;https://w3c.github.io/uievents/#event-type-contextmenu&quot;&gt;contextmenu&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnContextmenu(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("contextmenu", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-contextrestored&quot;&gt;&lt;a href=&quot;#event-contextrestored&quot;&gt;contextrestored&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnContextrestored(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("contextrestored", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-copy&quot;&gt;&lt;a data-x-internal=&quot;event-copy&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-copy&quot;&gt;copy&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnCopy(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("copy", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-cuechange&quot;&gt;&lt;a href=&quot;media.html#event-media-cuechange&quot;&gt;cuechange&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnCuechange(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("cuechange", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-cut&quot;&gt;&lt;a data-x-internal=&quot;event-cut&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-cut&quot;&gt;cut&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnCut(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("cut", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-dblclick&quot;&gt;&lt;a data-x-internal=&quot;event-dblclick&quot; href=&quot;https://w3c.github.io/uievents/#event-type-dblclick&quot;&gt;dblclick&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnDblclick(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("dblclick", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-dnd-drag&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-drag&quot;&gt;drag&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnDrag(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("drag", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-dnd-dragend&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragend&quot;&gt;dragend&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnDragend(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("dragend", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-dnd-dragenter&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragenter&quot;&gt;dragenter&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnDragenter(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("dragenter", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-dnd-dragleave&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragleave&quot;&gt;dragleave&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnDragleave(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("dragleave", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-dnd-dragover&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragover&quot;&gt;dragover&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnDragover(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("dragover", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-dnd-dragstart&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragstart&quot;&gt;dragstart&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnDragstart(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("dragstart", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-dnd-drop&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-drop&quot;&gt;drop&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnDrop(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("drop", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-durationchange&quot;&gt;&lt;a href=&quot;media.html#event-media-durationchange&quot;&gt;durationchange&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnDurationchange(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("durationchange", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-emptied&quot;&gt;&lt;a href=&quot;media.html#event-media-emptied&quot;&gt;emptied&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnEmptied(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("emptied", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-ended&quot;&gt;&lt;a href=&quot;media.html#event-media-ended&quot;&gt;ended&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnEnded(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("ended", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-error&quot;&gt;&lt;a href=&quot;#event-error&quot;&gt;error&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnError(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("error", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-focus&quot;&gt;&lt;a href=&quot;#event-focus&quot;&gt;focus&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnFocus(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("focus", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-formdata&quot;&gt;&lt;a href=&quot;#event-formdata&quot;&gt;formdata&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnFormdata(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("formdata", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-input&quot;&gt;&lt;a data-x-internal=&quot;event-input&quot; href=&quot;https://w3c.github.io/uievents/#event-type-input&quot;&gt;input&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnInput(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("input", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-invalid&quot;&gt;&lt;a href=&quot;#event-invalid&quot;&gt;invalid&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnInvalid(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("invalid", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-keydown&quot;&gt;&lt;a data-x-internal=&quot;event-keydown&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keydown&quot;&gt;keydown&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnKeydown(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("keydown", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-keypress&quot;&gt;&lt;a data-x-internal=&quot;event-keypress&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keypress&quot;&gt;keypress&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnKeypress(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("keypress", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-keyup&quot;&gt;&lt;a data-x-internal=&quot;event-keyup&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keyup&quot;&gt;keyup&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnKeyup(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("keyup", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-load&quot;&gt;&lt;a href=&quot;#event-load&quot;&gt;load&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnLoad(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("load", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-loadeddata&quot;&gt;&lt;a href=&quot;media.html#event-media-loadeddata&quot;&gt;loadeddata&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnLoadeddata(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("loadeddata", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-loadedmetadata&quot;&gt;&lt;a href=&quot;media.html#event-media-loadedmetadata&quot;&gt;loadedmetadata&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnLoadedmetadata(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("loadedmetadata", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-loadstart&quot;&gt;&lt;a href=&quot;media.html#event-media-loadstart&quot;&gt;loadstart&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnLoadstart(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("loadstart", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-mousedown&quot;&gt;&lt;a data-x-internal=&quot;event-mousedown&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mousedown&quot;&gt;mousedown&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnMousedown(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("mousedown", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-mouseenter&quot;&gt;&lt;a data-x-internal=&quot;event-mouseenter&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseenter&quot;&gt;mouseenter&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnMouseenter(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("mouseenter", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-mouseleave&quot;&gt;&lt;a data-x-internal=&quot;event-mouseleave&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseleave&quot;&gt;mouseleave&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnMouseleave(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("mouseleave", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-mousemove&quot;&gt;&lt;a data-x-internal=&quot;event-mousemove&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mousemove&quot;&gt;mousemove&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnMousemove(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("mousemove", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-mouseout&quot;&gt;&lt;a data-x-internal=&quot;event-mouseout&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseout&quot;&gt;mouseout&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnMouseout(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("mouseout", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-mouseover&quot;&gt;&lt;a data-x-internal=&quot;event-mouseover&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseover&quot;&gt;mouseover&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnMouseover(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("mouseover", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-mouseup&quot;&gt;&lt;a data-x-internal=&quot;event-mouseup&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseup&quot;&gt;mouseup&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnMouseup(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("mouseup", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-paste&quot;&gt;&lt;a data-x-internal=&quot;event-paste&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-paste&quot;&gt;paste&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnPaste(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("paste", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-pause&quot;&gt;&lt;a href=&quot;media.html#event-media-pause&quot;&gt;pause&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnPause(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("pause", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-play&quot;&gt;&lt;a href=&quot;media.html#event-media-play&quot;&gt;play&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnPlay(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("play", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-playing&quot;&gt;&lt;a href=&quot;media.html#event-media-playing&quot;&gt;playing&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnPlaying(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("playing", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-progress&quot;&gt;&lt;a href=&quot;media.html#event-media-progress&quot;&gt;progress&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnProgress(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("progress", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-ratechange&quot;&gt;&lt;a href=&quot;media.html#event-media-ratechange&quot;&gt;ratechange&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnRatechange(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("ratechange", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-reset&quot;&gt;&lt;a href=&quot;#event-reset&quot;&gt;reset&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnReset(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("reset", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-resize&quot;&gt;&lt;a data-x-internal=&quot;event-resize&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-window-resize&quot;&gt;resize&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnResize(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("resize", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-scroll&quot;&gt;&lt;a data-x-internal=&quot;event-scroll&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-document-scroll&quot;&gt;scroll&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnScroll(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("scroll", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-scrollend&quot;&gt;&lt;a data-x-internal=&quot;event-scrollend&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-document-scrollend&quot;&gt;scrollend&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnScrollend(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("scrollend", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-securitypolicyviolation&quot;&gt;&lt;a data-x-internal=&quot;event-securitypolicyviolation&quot; href=&quot;https://w3c.github.io/webappsec-csp/#eventdef-globaleventhandlers-securitypolicyviolation&quot;&gt;securitypolicyviolation&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnSecuritypolicyviolation(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("securitypolicyviolation", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-seeked&quot;&gt;&lt;a href=&quot;media.html#event-media-seeked&quot;&gt;seeked&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnSeeked(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("seeked", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-seeking&quot;&gt;&lt;a href=&quot;media.html#event-media-seeking&quot;&gt;seeking&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnSeeking(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("seeking", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-select&quot;&gt;&lt;a href=&quot;#event-select&quot;&gt;select&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnSelect(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("select", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-slotchange&quot;&gt;&lt;a data-x-internal=&quot;event-slotchange&quot; href=&quot;https://dom.spec.whatwg.org/#eventdef-htmlslotelement-slotchange&quot;&gt;slotchange&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnSlotchange(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("slotchange", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-stalled&quot;&gt;&lt;a href=&quot;media.html#event-media-stalled&quot;&gt;stalled&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnStalled(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("stalled", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-submit&quot;&gt;&lt;a href=&quot;#event-submit&quot;&gt;submit&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnSubmit(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("submit", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-suspend&quot;&gt;&lt;a href=&quot;media.html#event-media-suspend&quot;&gt;suspend&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnSuspend(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("suspend", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-timeupdate&quot;&gt;&lt;a href=&quot;media.html#event-media-timeupdate&quot;&gt;timeupdate&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnTimeupdate(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("timeupdate", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-toggle&quot;&gt;&lt;a href=&quot;#event-toggle&quot;&gt;toggle&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnToggle(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("toggle", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-volumechange&quot;&gt;&lt;a href=&quot;media.html#event-media-volumechange&quot;&gt;volumechange&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnVolumechange(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("volumechange", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-media-waiting&quot;&gt;&lt;a href=&quot;media.html#event-media-waiting&quot;&gt;waiting&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnWaiting(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("waiting", fn),
+	)
+	return e
+}
+
+// &lt;code id=&quot;attributes-3:event-wheel&quot;&gt;&lt;a data-x-internal=&quot;event-wheel&quot; href=&quot;https://w3c.github.io/uievents/#event-type-wheel&quot;&gt;wheel&lt;/a&gt;&lt;/code&gt;  event handler
+func (e *ElementSup) OnWheel(fn engine.EventHandler) *ElementSup {
+	if fn == nil {
+		return e
+	}
+
+	e.shouldBeComponent = true
+	e.children = append(
+		e.children,
+		engine.On("wheel", fn),
+	)
+	return e
 }

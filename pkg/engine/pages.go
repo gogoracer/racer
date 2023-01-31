@@ -133,16 +133,6 @@ func NewPage(options ...PageOption) *Page {
 	return p
 }
 
-func (p *Page) AppendToHead(children ...any) *Page {
-	p.dom.head.Add(children...)
-	return p
-}
-
-func (p *Page) AppendToBody(children ...any) *Page {
-	p.dom.body.Add(children...)
-	return p
-}
-
 // type fromClientInfo struct {
 // 	fromClient *gas.FromClient
 

@@ -4,11 +4,10 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"os"
 	"path/filepath"
 
 	"github.com/gogoracer/racer/pkg/handlebars/gen"
-	"github.com/iancoleman/strcase"
+	"golang.org/x/sync/errgroup"
 )
 
 func main() {
@@ -25,19 +24,18 @@ func run(ctx context.Context) error {
 		return fmt.Errorf("could not get absolute path for %s: %v", handlebarsPath, err)
 	}
 
-	elements, err := gen.ScrapeHTMLSpec(ctx)
-	if err != nil {
-		return fmt.Errorf("could not scrape HTML spec: %v", err)
-	}
+	eg := errgroup.Group{}
 
-	for _, element := range elements {
-		contents := gen.GenerateElement(element)
-		filename := fmt.Sprintf("element_%s.go", strcase.ToSnake(element.Tag))
-		fullPath := filepath.Join(handlebarsPath, filename)
+	eg.Go(func() error {
+		return gen.GenerateElements(ctx, handlebarsPath)
+	})
 
-		if err := os.WriteFile(fullPath, []byte(contents), 0644); err != nil {
-			return fmt.Errorf("could not write file %s: %v", fullPath, err)
-		}
+	eg.Go(func() error {
+		return gen.GenerateIconify(ctx, handlebarsPath)
+	})
+
+	if err := eg.Wait(); err != nil {
+		return fmt.Errorf("could not generate handlebars: %v", err)
 	}
 
 	return nil

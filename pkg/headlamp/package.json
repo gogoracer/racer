@@ -23,12 +23,17 @@
   },
   "devDependencies": {
     "@gogoracer/trim": "workspace:^0.0.1",
+    "@types/alpinejs": "^3.7.1",
     "@types/node": "^18.11.18",
+    "rollup-plugin-visualizer": "^5.9.0",
     "typescript": "^4.9.4",
     "vite": "^4.0.4",
     "vite-plugin-dts": "^1.7.1"
   },
   "dependencies": {
-    "@gogoracer/gas": "workspace:^1.0.0"
+    "@alpinejs/morph": "^3.11.1",
+    "@gogoracer/gas": "workspace:^1.0.0",
+    "alpinejs": "^3.11.1",
+    "nats.ws": "^1.12.0"
   }
 }
