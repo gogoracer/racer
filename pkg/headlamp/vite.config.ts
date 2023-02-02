@@ -10,18 +10,19 @@ module.exports = defineConfig({
     }),
     visualizer({
       gzipSize: true,
-      open: true,
+      // open: true,
       brotliSize: true,
       template: 'treemap',
     }),
   ],
   build: {
     target: 'esnext',
-    sourcemap: true,
+    sourcemap: 'inline',
+
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'MyComponentLib',
-      fileName: (format: string) => `gogoracer-headlamp-lib.${format}.js`,
+      name: 'GoGoRacerHeadlamp',
+      fileName: (format: string) => `gogoracer-headlamp-lib-dev.${format}.js`,
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

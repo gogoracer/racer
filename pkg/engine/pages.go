@@ -11,6 +11,7 @@ import (
 
 	"github.com/cornelk/hashmap"
 	"github.com/gogoracer/racer/pkg/gas"
+	"github.com/gogoracer/racer/pkg/headlamp"
 	"github.com/rs/zerolog"
 	"github.com/valyala/bytebufferpool"
 )
@@ -77,6 +78,24 @@ type Page struct {
 	hookUnmount []func(context.Context, *Page)
 }
 
+var frontendShim *Tag
+
+func headlampShim() *Tag {
+	if frontendShim == nil {
+		dev, err := headlamp.DistFS.ReadFile("dist/gogoracer-headlamp-lib-dev.es.js")
+		if err != nil {
+			panic(err)
+		}
+
+		frontendShim = NewTag(
+			"script",
+			Attrs{"type": "module"},
+			HTML(dev),
+		)
+	}
+	return frontendShim
+}
+
 func NewPage(options ...PageOption) *Page {
 	p := &Page{
 		dom:    NewDOM(),
@@ -97,12 +116,7 @@ func NewPage(options ...PageOption) *Page {
 
 	if p.differ == nil {
 		p.differ = NewDiffer()
-		p.dom.head.Add(
-			NewTag(
-				"script",
-				Attrs{"type": "module"},
-				HTML(p.differ.JavaScript),
-			))
+		p.dom.head.Add(headlampShim())
 	}
 
 	// Differ Pipeline

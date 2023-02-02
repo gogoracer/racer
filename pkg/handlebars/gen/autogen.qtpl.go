@@ -58,16 +58,16 @@ func StreamGenerateElement(qw422016 *qt422016.Writer, e *Element) {
 
 package  handlebars
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+    "github.com/gogoracer/racer/pkg/engine"
+)
 
 type `)
-//line autogen.qtpl:46
+//line autogen.qtpl:48
 	qw422016.E().S(elementName)
-//line autogen.qtpl:46
+//line autogen.qtpl:48
 	qw422016.N().S(` struct {
-    shouldBeComponent bool
-    attrs map[string]interface{}
-    children []any
+    *baseElement
 }
 
 func `)
@@ -84,170 +84,165 @@ func `)
 	qw422016.E().S(elementName)
 //line autogen.qtpl:53
 	qw422016.N().S(`{
-        attrs: map[string]interface{}{},
-        children: children,
+        baseElement: newBaseElement("`)
+//line autogen.qtpl:54
+	qw422016.E().S(e.Tag)
+//line autogen.qtpl:54
+	qw422016.N().S(`", children...),
     }
 }
 
 func (e *`)
-//line autogen.qtpl:59
+//line autogen.qtpl:58
 	qw422016.E().S(elementName)
-//line autogen.qtpl:59
+//line autogen.qtpl:58
 	qw422016.N().S(`) Add(children ...any) *`)
-//line autogen.qtpl:59
+//line autogen.qtpl:58
 	qw422016.E().S(elementName)
-//line autogen.qtpl:59
+//line autogen.qtpl:58
 	qw422016.N().S(` {
-    e.children = append(e.children, children...)
-    return e
+	e.baseElement.add(children...)
+	return e
 }
 
 func (e *`)
-//line autogen.qtpl:64
+//line autogen.qtpl:63
 	qw422016.E().S(elementName)
-//line autogen.qtpl:64
-	qw422016.N().S(`) Custom(k,v string) *`)
-//line autogen.qtpl:64
+//line autogen.qtpl:63
+	qw422016.N().S(`) Custom(k, v string, dontEscape ...bool) *`)
+//line autogen.qtpl:63
 	qw422016.E().S(elementName)
-//line autogen.qtpl:64
+//line autogen.qtpl:63
 	qw422016.N().S(` {
-    e.attrs[k] = v
-    return e
+	e.baseElement.custom(k, v, dontEscape...)
+	return e
 }
 
 func (e *`)
-//line autogen.qtpl:69
+//line autogen.qtpl:68
 	qw422016.E().S(elementName)
-//line autogen.qtpl:69
-	qw422016.N().S(`) BindCustom(k string, v bool) *`)
-//line autogen.qtpl:69
+//line autogen.qtpl:68
+	qw422016.N().S(`) BindCustom(k string, v string,  dontEscape ...bool) *`)
+//line autogen.qtpl:68
 	qw422016.E().S(elementName)
-//line autogen.qtpl:69
+//line autogen.qtpl:68
 	qw422016.N().S(` {
-    e.shouldBeComponent = true
-    return e
+    e.baseElement.bindCustom(k, v, dontEscape...)
+	return e
 }
 
-func (e `)
-//line autogen.qtpl:74
+func (e *`)
+//line autogen.qtpl:73
 	qw422016.E().S(elementName)
-//line autogen.qtpl:74
-	qw422016.N().S(`) HandlebarElement() {}
+//line autogen.qtpl:73
+	qw422016.N().S(`) setAttribute(k string, v string, dontEscape ...bool) *`)
+//line autogen.qtpl:73
+	qw422016.E().S(elementName)
+//line autogen.qtpl:73
+	qw422016.N().S(` {
+	e.baseElement.setAttribute(k, v, dontEscape...)
+	return e
+}
 
-func(e `)
-//line autogen.qtpl:76
+
+func (e *`)
+//line autogen.qtpl:79
 	qw422016.E().S(elementName)
-//line autogen.qtpl:76
+//line autogen.qtpl:79
 	qw422016.N().S(`) GenerateVDOM() interface{} {
-    all := append([]any{ e.attrs }, e.children...)
-    if e.shouldBeComponent {
-        return engine.NewComponent("`)
-//line autogen.qtpl:79
-	qw422016.E().S(e.Tag)
-//line autogen.qtpl:79
-	qw422016.N().S(`", all... )
-    }else {
-        return engine.NewTag("`)
-//line autogen.qtpl:81
-	qw422016.E().S(e.Tag)
-//line autogen.qtpl:81
-	qw422016.N().S(`", all ...)
-    }
+	return e.baseElement.generateVDOM()
 }
 
 `)
-//line autogen.qtpl:85
+//line autogen.qtpl:83
 	for _, a := range e.Attributes {
-//line autogen.qtpl:85
+//line autogen.qtpl:83
 		qw422016.N().S(`
 `)
-//line autogen.qtpl:86
+//line autogen.qtpl:84
 		attrPascal := pascal(a.Name)
 
-//line autogen.qtpl:86
+//line autogen.qtpl:84
 		qw422016.N().S(`// `)
-//line autogen.qtpl:87
+//line autogen.qtpl:85
 		qw422016.E().S(attrPascal)
-//line autogen.qtpl:87
+//line autogen.qtpl:85
 		qw422016.N().S(` is the "`)
-//line autogen.qtpl:87
+//line autogen.qtpl:85
 		qw422016.E().S(a.Name)
-//line autogen.qtpl:87
-		qw422016.N().S(`"" attribute.
+//line autogen.qtpl:85
+		qw422016.N().S(`" attribute.
 // `)
-//line autogen.qtpl:88
-		qw422016.E().S(a.Description)
-//line autogen.qtpl:88
+//line autogen.qtpl:86
+		qw422016.E().S(strings.ReplaceAll(a.Description, "\n", "  "))
+//line autogen.qtpl:86
 		qw422016.N().S(`
 // Valid values are constrained to the following:
 `)
-//line autogen.qtpl:90
+//line autogen.qtpl:88
 		for _, v := range a.ValidValueTypes {
-//line autogen.qtpl:90
+//line autogen.qtpl:88
 			qw422016.N().S(`//   * `)
-//line autogen.qtpl:91
+//line autogen.qtpl:89
 			qw422016.E().S(v)
-//line autogen.qtpl:91
+//line autogen.qtpl:89
 			qw422016.N().S(`
 `)
-//line autogen.qtpl:92
+//line autogen.qtpl:90
 		}
-//line autogen.qtpl:92
-		qw422016.N().S(`func (e *`)
-//line autogen.qtpl:93
+//line autogen.qtpl:90
+		qw422016.N().S(`func (element *`)
+//line autogen.qtpl:91
 		qw422016.E().S(elementName)
-//line autogen.qtpl:93
+//line autogen.qtpl:91
 		qw422016.N().S(`) `)
-//line autogen.qtpl:93
+//line autogen.qtpl:91
 		qw422016.E().S(attrPascal)
-//line autogen.qtpl:93
-		qw422016.N().S(`(v string) (*`)
-//line autogen.qtpl:93
+//line autogen.qtpl:91
+		qw422016.N().S(`(v string, dontEscape ...bool) *`)
+//line autogen.qtpl:91
 		qw422016.E().S(elementName)
-//line autogen.qtpl:93
-		qw422016.N().S(`) {
-    if v == "" {
-        return e
-    }
-    e.attrs["`)
-//line autogen.qtpl:97
+//line autogen.qtpl:91
+		qw422016.N().S(` {
+    element.setAttribute("`)
+//line autogen.qtpl:92
 		qw422016.E().S(a.Name)
-//line autogen.qtpl:97
-		qw422016.N().S(`"] = v
-    return e
+//line autogen.qtpl:92
+		qw422016.N().S(`", v, dontEscape...)
+    return element
 }
 `)
-//line autogen.qtpl:100
+//line autogen.qtpl:95
 	}
-//line autogen.qtpl:100
+//line autogen.qtpl:95
 	qw422016.N().S(`
 `)
-//line autogen.qtpl:102
+//line autogen.qtpl:97
 	for _, eh := range e.EventHandlers {
-//line autogen.qtpl:102
+//line autogen.qtpl:97
 		qw422016.N().S(`
 `)
-//line autogen.qtpl:103
+//line autogen.qtpl:98
 		evt := "On" + pascal(eh.Name[2:])
 
-//line autogen.qtpl:103
+//line autogen.qtpl:98
 		qw422016.N().S(`// `)
-//line autogen.qtpl:104
+//line autogen.qtpl:99
 		qw422016.E().S(eh.Description)
-//line autogen.qtpl:104
+//line autogen.qtpl:99
 		qw422016.N().S(`
 func (e *`)
-//line autogen.qtpl:105
+//line autogen.qtpl:100
 		qw422016.E().S(elementName)
-//line autogen.qtpl:105
+//line autogen.qtpl:100
 		qw422016.N().S(`) `)
-//line autogen.qtpl:105
+//line autogen.qtpl:100
 		qw422016.E().S(evt)
-//line autogen.qtpl:105
+//line autogen.qtpl:100
 		qw422016.N().S(`(fn engine.EventHandler) (*`)
-//line autogen.qtpl:105
+//line autogen.qtpl:100
 		qw422016.E().S(elementName)
-//line autogen.qtpl:105
+//line autogen.qtpl:100
 		qw422016.N().S(`) {
     if fn == nil {
         return e
@@ -257,68 +252,75 @@ func (e *`)
     e.children = append(
         e.children,
         engine.On("`)
-//line autogen.qtpl:113
+//line autogen.qtpl:108
 		qw422016.E().S(eh.Name[2:])
-//line autogen.qtpl:113
+//line autogen.qtpl:108
 		qw422016.N().S(`", fn),
     )
     return e
 }
 `)
-//line autogen.qtpl:117
+//line autogen.qtpl:112
 	}
-//line autogen.qtpl:117
+//line autogen.qtpl:112
 	qw422016.N().S(`
 `)
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 }
 
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 func WriteGenerateElement(qq422016 qtio422016.Writer, e *Element) {
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 	qw422016 := qt422016.AcquireWriter(qq422016)
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 	StreamGenerateElement(qw422016, e)
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 	qt422016.ReleaseWriter(qw422016)
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 }
 
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 func GenerateElement(e *Element) string {
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 	qb422016 := qt422016.AcquireByteBuffer()
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 	WriteGenerateElement(qb422016, e)
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 	qs422016 := string(qb422016.B)
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 	qt422016.ReleaseByteBuffer(qb422016)
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 	return qs422016
-//line autogen.qtpl:119
+//line autogen.qtpl:114
 }
 
-//line autogen.qtpl:121
+//line autogen.qtpl:116
 func StreamGenerateIcon(qw422016 *qt422016.Writer, details iconCollectionDetailsInfo) {
-//line autogen.qtpl:121
+//line autogen.qtpl:118
+	w := unknownToDimension(details.Width)
+	h := unknownToDimension(details.Width)
+
+//line autogen.qtpl:120
 	qw422016.N().S(`/* cSpell:disable */
-package iconify
+package `)
+//line autogen.qtpl:122
+	qw422016.E().S(lower(camel(details.Prefix)))
+//line autogen.qtpl:122
+	qw422016.N().S(`
 
 import "github.com/gogoracer/racer/pkg/handlebars"
-var (
+
 `)
-//line autogen.qtpl:127
+//line autogen.qtpl:126
 	for name, icon := range details.Icons {
+//line autogen.qtpl:126
+		qw422016.N().S(`func `)
 //line autogen.qtpl:127
-		qw422016.N().S(` `)
-//line autogen.qtpl:128
-		qw422016.E().S(pascal(details.Prefix))
-//line autogen.qtpl:128
 		qw422016.E().S(pascal(name))
-//line autogen.qtpl:128
-		qw422016.N().S(` = handlebars.DIV(`)
-//line autogen.qtpl:128
+//line autogen.qtpl:127
+		qw422016.N().S(`() *handlebars.ElementSVG {
+    return handlebars.SVG(`)
+//line autogen.qtpl:127
 		qw422016.N().S("`")
 //line autogen.qtpl:128
 		qw422016.N().S(icon.SvgBody)
@@ -327,38 +329,51 @@ var (
 //line autogen.qtpl:128
 		qw422016.N().S("`")
 //line autogen.qtpl:128
-		qw422016.N().S(`)
-`)
+		qw422016.N().S(`).
+        Custom("viewBox","0,0,`)
 //line autogen.qtpl:129
+		qw422016.N().D(w)
+//line autogen.qtpl:129
+		qw422016.N().S(`,`)
+//line autogen.qtpl:129
+		qw422016.N().D(h)
+//line autogen.qtpl:129
+		qw422016.N().S(`").
+        Custom("width","1em").
+        Custom("height","1em")
+}
+`)
+//line autogen.qtpl:133
 	}
-//line autogen.qtpl:129
-	qw422016.N().S(`)
+//line autogen.qtpl:133
+	qw422016.N().S(`
+
 `)
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 }
 
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 func WriteGenerateIcon(qq422016 qtio422016.Writer, details iconCollectionDetailsInfo) {
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 	qw422016 := qt422016.AcquireWriter(qq422016)
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 	StreamGenerateIcon(qw422016, details)
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 	qt422016.ReleaseWriter(qw422016)
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 }
 
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 func GenerateIcon(details iconCollectionDetailsInfo) string {
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 	qb422016 := qt422016.AcquireByteBuffer()
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 	WriteGenerateIcon(qb422016, details)
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 	qs422016 := string(qb422016.B)
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 	qt422016.ReleaseByteBuffer(qb422016)
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 	return qs422016
-//line autogen.qtpl:131
+//line autogen.qtpl:135
 }

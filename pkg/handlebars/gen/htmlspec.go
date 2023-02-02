@@ -4,19 +4,16 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"net/http"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
-	"time"
 
+	"github.com/PuerkitoBio/goquery"
 	"github.com/goccy/go-json"
 	"github.com/iancoleman/strcase"
-
-	"github.com/cenkalti/backoff/v4"
-	"github.com/chromedp/cdproto/cdp"
-	"github.com/chromedp/cdproto/dom"
-	"github.com/chromedp/cdproto/page"
-	"github.com/chromedp/chromedp"
+	"k8s.io/apimachinery/pkg/util/sets"
 )
 
 type Attribute struct {
@@ -28,16 +25,31 @@ type Attribute struct {
 type EventHandler struct {
 	Name        string
 	Description string
-	TargetsBody bool
+	Event       *Event
+}
+
+type Event struct {
+	Name        string
+	Description string
+	Interface   string
+	Attributes  []EventAttribute
+}
+
+type EventAttribute struct {
+	Name     string
+	Type     string
+	Optional bool
+	Comment  string
 }
 
 type Element struct {
-	Tag           string
-	Description   string
-	Interface     string
-	Categories    []string
-	Attributes    []*Attribute
-	EventHandlers []*EventHandler
+	Tag                       string
+	Description               string
+	Interface                 string
+	Categories                []string
+	ChildElementsOrCategories []string
+	Attributes                []*Attribute
+	EventHandlers             []*EventHandler
 }
 
 func GenerateElements(ctx context.Context, handlebarsPath string) error {
@@ -45,6 +57,26 @@ func GenerateElements(ctx context.Context, handlebarsPath string) error {
 	elements, err := scrapeHTMLSpec(ctx)
 	if err != nil {
 		return fmt.Errorf("could not scrape HTML spec: %v", err)
+	}
+
+	categoryElements := map[string][]*Element{}
+	for _, element := range elements {
+		for _, category := range element.Categories {
+			categoryElements[category] = append(categoryElements[category], element)
+		}
+	}
+
+	validChildElements := map[string][]string{}
+	for _, element := range elements {
+		for _, child := range element.ChildElementsOrCategories {
+			if _, ok := categoryElements[child]; ok {
+				childElements := categoryElements[child]
+
+				for _, childElement := range childElements {
+					validChildElements[element.Tag] = append(validChildElements[element.Tag], childElement.Tag)
+				}
+			}
+		}
 	}
 
 	for _, element := range elements {
@@ -82,34 +114,21 @@ func scrapeHTMLSpec(ctx context.Context) ([]*Element, error) {
 		}
 	}
 
-	opts := append(chromedp.DefaultExecAllocatorOptions[:],
-		chromedp.DisableGPU,
-		// chromedp.UserDataDir("someUserDir"),
-		chromedp.Flag("headless", true),
-		chromedp.Flag("enable-automation", false),
-		chromedp.Flag("restore-on-startup", false),
-	)
-	allocCtx, _ := chromedp.NewExecAllocator(ctx, opts...)
-	ctx, _ = chromedp.NewContext(allocCtx)
-
-	defer closeSpec(ctx)
-
-	if err := chromedp.Run(ctx,
-		chromedp.Navigate(`https://html.spec.whatwg.org/multipage/indices.html`),
-	); err != nil {
-		return nil, fmt.Errorf("could not navigate to HTML spec: %v", err)
+	htmlSpecDoc, err := getDoc("https://html.spec.whatwg.org")
+	if err != nil {
+		return nil, fmt.Errorf("could not get HTML spec: %v", err)
 	}
 
-	elementsMap, err := ReadElements(ctx)
+	elementsMap, err := readElements(htmlSpecDoc)
 	if err != nil {
 		return nil, fmt.Errorf("could not read elements: %v", err)
 	}
 
-	if err := ApplyAttributes(ctx, elementsMap); err != nil {
+	if err := applyAttributes(htmlSpecDoc, elementsMap); err != nil {
 		return nil, fmt.Errorf("could not read attributes: %v", err)
 	}
 
-	if err := ApplyEventHandlers(ctx, elementsMap); err != nil {
+	if err := applyEventHandlers(htmlSpecDoc, elementsMap); err != nil {
 		return nil, fmt.Errorf("could not read event handlers: %v", err)
 	}
 
@@ -126,383 +145,324 @@ func scrapeHTMLSpec(ctx context.Context) ([]*Element, error) {
 	for _, element := range elementsMap {
 		elements = append(elements, element)
 	}
+
 	return elements, nil
 }
 
-func closeSpec(ctx context.Context) error {
-	if err := chromedp.Run(ctx,
-		page.Close(),
-		chromedp.Stop()); err != nil {
-		log.Fatal(err)
-	}
-	return nil
-}
-
-func ApplyAttributes(ctx context.Context, elements map[string]*Element) error {
-
-	var (
-		expectedColumns = int64(4)
-		nodes           []*cdp.Node
-		table           *cdp.Node
-	)
-	if err := chromedp.Run(ctx,
-		chromedp.Nodes("#attributes-3 ~ table", &nodes, chromedp.ByQuery),
-		chromedp.ActionFunc(func(c context.Context) error {
-			table = nodes[0]
-			if err := dom.RequestChildNodes(table.NodeID).WithDepth(-1).Do(c); err != nil {
-				return fmt.Errorf("could not request child nodes: %v", err)
+func readElements(htmlSpecDoc *goquery.Document) (map[string]*Element, error) {
+	expectedColumns := 7
+	elements := map[string]*Element{}
+	var err error
+	htmlSpecDoc.Find("#elements-3 ~ table").First().Find("tbody > tr").EachWithBreak(func(i int, s *goquery.Selection) bool {
+		trChildren := s.Children()
+		columnCount := trChildren.Length()
+		if columnCount != expectedColumns {
+			var html string
+			html, err = s.Html()
+			if err != nil {
+				log.Fatal(err)
 			}
+			err = fmt.Errorf("unexpected column count for row %d: %d, %s", i, columnCount, html)
+			return false
+		}
 
-			waitForNodeChildren(table)
+		el := &Element{
+			Tag:         trChildren.Eq(0).Find("a").Text(),
+			Description: trChildren.Eq(1).Text(),
+			Interface:   trChildren.Eq(6).Children().Filter("a").First().Text(),
+		}
+		trChildren.Eq(2).Children().Filter("a").Each(func(i int, s *goquery.Selection) {
+			c := strcase.ToSnake(s.Text())
+			el.Categories = append(el.Categories, c)
+		})
+		trChildren.Eq(4).Children().Filter("a").Each(func(i int, s *goquery.Selection) {
+			el.ChildElementsOrCategories = append(el.ChildElementsOrCategories, s.Text())
+		})
 
-			if table.NodeName != "TABLE" {
-				return fmt.Errorf("expected table, got %q", table.NodeName)
-			}
+		elements[el.Tag] = el
 
-			thead := table.Children[1]
-			if thead.Children[0].ChildNodeCount != expectedColumns {
-				return fmt.Errorf("expected %d headings, got %d", expectedColumns, len(thead.Children))
-			}
-
-			tbody := table.Children[2]
-
-			for _, tr := range tbody.Children {
-				if tr.ChildNodeCount != expectedColumns {
-					return fmt.Errorf("expected %d columns, got %d", expectedColumns, tr.ChildNodeCount)
-				}
-
-				if err := dom.ScrollIntoViewIfNeeded().WithNodeID(tr.NodeID).Do(c); err != nil {
-					return err
-				}
-
-				attr := &Attribute{}
-
-				td := tr.Children[0]
-				code := td.Children[0]
-				inner := code.Children[0]
-				name := clean(inner.NodeValue)
-				if name == "" {
-					continue
-				}
-				attr.Name = name
-
-				td = tr.Children[2]
-				code = td.Children[0]
-				attr.Description = clean(code.NodeValue)
-
-				validValueLinks := tr.Children[3].Children
-				for _, child := range validValueLinks {
-					switch child.NodeName {
-					case "A":
-						for i := 0; i < len(child.Attributes); i += 2 {
-							if child.Attributes[i] != "href" {
-								continue
-							}
-							val := child.Attributes[i+1]
-							end := strings.Split(val, "#")[1]
-							attr.ValidValueTypes = append(attr.ValidValueTypes, clean(end))
-						}
-					case "CODE":
-						inner := child.Children[0]
-						v := clean(inner.NodeValue)
-						attr.ValidValueTypes = append(attr.ValidValueTypes, clean(v))
-					}
-				}
-
-				td = tr.Children[1]
-				for _, child := range td.Children {
-					v := child
-					for v.NodeName != "#text" {
-						v = v.Children[0]
-					}
-
-					name := clean(v.NodeValue)
-					allHTMLElements := name == "HTML elements"
-					el, knownElementName := elements[name]
-
-					if !allHTMLElements && !knownElementName {
-						continue
-					}
-
-					log.Print(attr.Name, " ", name)
-					if allHTMLElements {
-						for _, element := range elements {
-							element.Attributes = append(element.Attributes, attr)
-						}
-					} else {
-						alreadyHasAttributeIndex := -1
-						for i, a := range el.Attributes {
-							if a.Name == attr.Name {
-								alreadyHasAttributeIndex = i
-								break
-							}
-						}
-
-						if alreadyHasAttributeIndex != -1 {
-							el.Attributes[alreadyHasAttributeIndex] = attr
-						} else {
-							el.Attributes = append(el.Attributes, attr)
-						}
-					}
-				}
-			}
-
-			return nil
-		}),
-	); err != nil {
-		return fmt.Errorf("could not read elements: %v", err)
-	}
-
-	return nil
-
-}
-
-// func LoadGlobalAttributeNames(ctx context.Context) ([]string, error) {
-// 	nodes := []*cdp.Node{}
-// 	globalAttributes := []string{}
-// 	if err := chromedp.Run(ctx,
-// 		chromedp.Nodes("#global-attributes ~ ul", &nodes, chromedp.ByQuery),
-// 		chromedp.ActionFunc(func(c context.Context) error {
-// 			ul := nodes[0]
-// 			if err := dom.RequestChildNodes(ul.NodeID).WithDepth(-1).Do(c); err != nil {
-// 				return err
-// 			}
-
-// 			waitForNodeChildren(ul)
-
-// 			for _, li := range ul.Children {
-// 				if li.NodeName != "LI" {
-// 					continue
-// 				}
-
-// 				code := li.Children[0]
-// 				if code.NodeName != "CODE" {
-// 					continue
-// 				}
-
-// 				a := code.Children[0]
-// 				if a.NodeName != "A" {
-// 					continue
-// 				}
-
-// 				if err := dom.ScrollIntoViewIfNeeded().WithNodeID(a.NodeID).Do(c); err != nil {
-// 					return err
-// 				}
-
-// 				v := a.Children[0].NodeValue
-// 				v = clean(v)
-
-// 				globalAttributes = append(globalAttributes, v)
-// 			}
-
-// 			return nil
-// 		}),
-// 	); err != nil {
-// 		return nil, fmt.Errorf("could not load spec: %v", err)
-// 	}
-
-// 	return globalAttributes, nil
-// }
-
-func ReadElements(ctx context.Context) (map[string]*Element, error) {
-	// globalAttributeNames, err := LoadGlobalAttributeNames(ctx)
-	// if err != nil {
-	// 	return nil, fmt.Errorf("could not load global attributes: %v", err)
-	// }
-
-	// globalAttributes := []*Attribute{}
-	// for _, name := range globalAttributeNames {
-	// 	globalAttributes = append(globalAttributes, attributes[name])
-	// }
-
-	var (
-		expectedColumns = int64(7)
-		nodes           []*cdp.Node
-		table           *cdp.Node
-		elements        = []*Element{}
-	)
-	if err := chromedp.Run(ctx,
-		chromedp.WaitVisible("#elements-3 ~ table"),
-		chromedp.Nodes("#elements-3 ~ table", &nodes, chromedp.ByQuery),
-		chromedp.ActionFunc(func(c context.Context) error {
-			table = nodes[0]
-			if err := dom.RequestChildNodes(table.NodeID).WithDepth(-1).Do(c); err != nil {
-				return fmt.Errorf("could not request child nodes: %v", err)
-			}
-
-			waitForNodeChildren(table)
-
-			if table.NodeName != "TABLE" {
-				return fmt.Errorf("expected table, got %q", table.NodeName)
-			}
-
-			thead := table.Children[1]
-			if thead.Children[0].ChildNodeCount != expectedColumns {
-				return fmt.Errorf("expected 7 headings, got %d", len(thead.Children))
-			}
-
-			tbody := table.Children[2]
-
-			for _, tr := range tbody.Children {
-				if tr.ChildNodeCount != expectedColumns {
-					return fmt.Errorf("expected 7 columns, got %d", tr.ChildNodeCount)
-				}
-
-				if err := dom.ScrollIntoViewIfNeeded().WithNodeID(tr.NodeID).Do(c); err != nil {
-					return err
-				}
-
-				el := &Element{}
-
-				td := tr.Children[0]
-				tdInner := td.Children[0]
-				for _, child := range tdInner.Children {
-					if child.ChildNodeCount == 0 {
-						continue
-					}
-					a := tdInner.Children[0]
-					if a.NodeName != "A" {
-						continue
-					}
-					aInner := a.Children[0]
-					el.Tag = clean(aInner.NodeValue)
-					break
-				}
-
-				if el.Tag == "" {
-					continue
-				}
-
-				td = tr.Children[1]
-				tdInner = td.Children[0]
-				el.Description = clean(tdInner.NodeValue)
-
-				categoryLinks := tr.Children[2].Children
-				for _, child := range categoryLinks {
-					if child.NodeName != "A" {
-						continue
-					}
-					el.Categories = append(el.Categories, clean(child.Children[0].NodeValue))
-				}
-
-				td = tr.Children[6]
-				code := td.Children[0]
-				a := code.Children[0]
-				v := a.Children[0].NodeValue
-				el.Interface = clean(v)
-
-				elements = append(elements, el)
-			}
-
-			return nil
-		}),
-	); err != nil {
+		return true
+	})
+	if err != nil {
 		return nil, fmt.Errorf("could not read elements: %v", err)
 	}
 
-	elementsMap := map[string]*Element{}
-	for _, el := range elements {
-		elementsMap[el.Tag] = el
-	}
-
-	return elementsMap, nil
+	return elements, nil
 }
 
-func ApplyEventHandlers(ctx context.Context, elements map[string]*Element) error {
+func applyAttributes(htmlSpecDoc *goquery.Document, elements map[string]*Element) error {
+	if len(elements) == 0 {
+		return fmt.Errorf("no elements")
+	}
+	expectedColumns := 4
+
+	const validAllHTMLElementsText = "HTML elements"
+
+	categoriesElements := map[string]map[string]*Element{}
+	for _, element := range elements {
+		for _, category := range element.Categories {
+			if _, ok := categoriesElements[category]; !ok {
+				categoriesElements[category] = map[string]*Element{}
+			}
+			categoriesElements[category][element.Tag] = element
+		}
+	}
+	attributes := map[string]*Attribute{}
+	elementsAttributeNames := map[string]sets.Set[string]{}
+	for _, element := range elements {
+		elementsAttributeNames[element.Tag] = sets.New[string]()
+	}
 
 	var (
-		expectedColumns = int64(4)
-		nodes           []*cdp.Node
-		table           *cdp.Node
-		eventHandlers   = []*EventHandler{}
+		err                error
+		knownBadCategories = sets.NewString(
+			"form_associated_custom_elements",
+		)
 	)
-	if err := chromedp.Run(ctx,
-		chromedp.WaitVisible("#ix-event-handlers"),
-		chromedp.Nodes("#ix-event-handlers", &nodes, chromedp.ByQuery),
-		chromedp.ActionFunc(func(c context.Context) error {
-			table = nodes[0]
-			if err := dom.RequestChildNodes(table.NodeID).WithDepth(-1).Do(c); err != nil {
-				return fmt.Errorf("could not request child nodes: %v", err)
-			}
+	htmlSpecDoc.Find("#attributes-1 > tbody > tr").EachWithBreak(func(i int, rows *goquery.Selection) bool {
+		columns := rows.Children()
+		if columns.Length() != expectedColumns {
+			err = fmt.Errorf("expected %d columns, got %d", expectedColumns, columns.Length())
+			return false
+		}
 
-			waitForNodeChildren(table)
+		attr := &Attribute{
+			Name:        columns.Eq(0).Find("code").Text(),
+			Description: strings.TrimSpace(columns.Eq(2).Text()),
+		}
+		columns.Eq(3).Find("a, code").Each(func(i int, a *goquery.Selection) {
+			attr.ValidValueTypes = append(attr.ValidValueTypes, strcase.ToSnake(a.Text()))
+		})
+		attributes[attr.Name] = attr
 
-			if table.NodeName != "TABLE" {
-				return fmt.Errorf("expected table, got %q", table.NodeName)
-			}
-
-			thead := table.Children[1]
-			if thead.Children[0].ChildNodeCount != expectedColumns {
-				return fmt.Errorf("expected %d headings, got %d", expectedColumns, len(thead.Children))
-			}
-
-			tbody := table.Children[2]
-
-			for _, tr := range tbody.Children {
-				if tr.ChildNodeCount != expectedColumns {
-					return fmt.Errorf("expected %d columns, got %d", expectedColumns, tr.ChildNodeCount)
+		columns.Eq(1).Find("a").EachWithBreak(func(i int, a *goquery.Selection) bool {
+			text := a.Text()
+			if text == validAllHTMLElementsText {
+				for _, set := range elementsAttributeNames {
+					set.Insert(attr.Name)
 				}
+			} else {
+				element, ok := elements[text]
+				if !ok {
+					// not element, but maybe an category
+					c := strcase.ToSnake(text)
+					categoryElements, ok := categoriesElements[c]
+					if !ok {
+						if knownBadCategories.Has(c) {
+							return true
+						}
 
-				if err := dom.ScrollIntoViewIfNeeded().WithNodeID(tr.NodeID).Do(c); err != nil {
-					return err
-				}
+						// if it's not a category, then it's an error
+						err = fmt.Errorf("could not category element %s", text)
+						return false
+					}
 
-				evtHandler := &EventHandler{}
-
-				td := tr.Children[0]
-				tdInner := td.Children[0]
-				code := tdInner.Children[0]
-				evtHandler.Name = clean(code.NodeValue)
-
-				td = tr.Children[1]
-				v := td
-				for v.NodeName != "#text" {
-					v = v.Children[0]
-				}
-				evtHandler.TargetsBody = v.NodeValue == "body"
-
-				td = tr.Children[2]
-				parts := make([]string, len(td.Children))
-				var err error
-				for i, child := range td.Children {
-					parts[i], err = dom.GetOuterHTML().WithNodeID(child.NodeID).Do(c)
-					if err != nil {
-						return fmt.Errorf("could not get outer html: %v", err)
+					for _, element := range categoryElements {
+						elementsAttributeNames[element.Tag].Insert(attr.Name)
 					}
 				}
-				evtHandler.Description = clean(strings.Join(parts, " "))
 
-				for _, el := range elements {
-					isBody := el.Tag == "body"
-					if !isBody && evtHandler.TargetsBody {
-						continue
-					}
-					el.EventHandlers = append(el.EventHandlers, evtHandler)
-				}
-
-				eventHandlers = append(eventHandlers, evtHandler)
+				elementsAttributeNames[element.Tag].Insert(attr.Name)
 			}
 
-			return nil
-		}),
-	); err != nil {
-		return fmt.Errorf("could not read elements: %v", err)
+			return true
+		})
+		return err == nil
+	})
+	if err != nil {
+		return fmt.Errorf("could not read attributes: %v", err)
+	}
+
+	for elementTag, attributeNames := range elementsAttributeNames {
+		e, ok := elements[elementTag]
+		if !ok {
+			return fmt.Errorf("could not find element %s", elementTag)
+		}
+		for _, attributeName := range attributeNames.UnsortedList() {
+			a, ok := attributes[attributeName]
+			if !ok {
+				return fmt.Errorf("could not find attribute %s", attributeName)
+			}
+			e.Attributes = append(e.Attributes, a)
+		}
 	}
 
 	return nil
 }
 
-func waitForNodeChildren(n *cdp.Node) {
-	b := backoff.NewExponentialBackOff()
-	for len(n.Children) != int(n.ChildNodeCount) {
-		d := b.NextBackOff()
-		log.Printf("waiting for children to load, got %d, expected %d, waiting %s", len(n.Children), n.ChildNodeCount, d)
-		time.Sleep(d)
+func applyEventHandlers(htmlSpecDoc *goquery.Document, elements map[string]*Element) (err error) {
+	const domSpecURL = "https://dom.spec.whatwg.org"
+	domSpecDoc, err := getDoc(domSpecURL)
+	if err != nil {
+		return fmt.Errorf("could not get dom spec: %v", err)
 	}
+
+	const pointerSpecURL = "https://w3c.github.io/pointerevents" // hot garbage
+	const workingSpecURLWorking = "https://www.w3.org/TR/pointerevents"
+	pointerSpecDoc, err := getDoc(workingSpecURLWorking)
+	if err != nil {
+		return fmt.Errorf("could not get pointer spec: %v", err)
+	}
+
+	attributeInfoRegex := regexp.MustCompile(`attribute (?P<type>[\w]*)(?P<optional>\?*) (?P<name>\w*);( // (?P<comment>(.*)))?`)
+	pointerAttributeInfoRegex := regexp.MustCompile(`attribute (?P<type>\w*)\s*(?P<name>\w*)`)
+
+	events := map[string]*Event{}
+	htmlSpecDoc.Find("#events-2 ~ table").First().Find("tbody > tr").EachWithBreak(func(i int, rows *goquery.Selection) bool {
+		columns := rows.Children()
+
+		event := &Event{
+			Name:        columns.Eq(0).Find("code").Text(),
+			Description: strings.TrimSpace(columns.Eq(3).Text()),
+			Interface:   columns.Eq(1).Find("code").Text(),
+		}
+
+		link, exists := columns.Eq(1).Find("a").Attr("href")
+		if !exists {
+			return true
+		}
+		relativeLink := link[strings.Index(link, "#"):]
+
+		var (
+			idlBlock string
+			idlRegex = attributeInfoRegex
+		)
+		switch {
+		case strings.HasPrefix(link, domSpecURL):
+			idlBlock = domSpecDoc.Find(relativeLink + " ~ pre.idl").First().Text()
+		case strings.HasPrefix(link, "#"):
+			idlBlock = htmlSpecDoc.Find(link).Parent().Parent().Text()
+		case strings.HasPrefix(link, pointerSpecURL):
+			idlBlock = pointerSpecDoc.Find(relativeLink).Text()
+			idlRegex = pointerAttributeInfoRegex
+		default:
+			err = fmt.Errorf("expected link to be relative to spec, got %s", link)
+			return false
+		}
+		if idlBlock == "" {
+			err = fmt.Errorf("could not find IDL block for %s", link)
+			return false
+		}
+
+		matches := idlRegex.FindAllStringSubmatch(idlBlock, -1)
+		for _, match := range matches {
+			evtAttribute := EventAttribute{
+				Name: match[idlRegex.SubexpIndex("name")],
+				Type: match[idlRegex.SubexpIndex("type")],
+			}
+			event.Attributes = append(event.Attributes, evtAttribute)
+
+		}
+		events[event.Name] = event
+		return true
+	})
+	if err != nil {
+		return fmt.Errorf("could not read events: %v", err)
+	}
+
+	htmlSpecDoc.Find("#ix-event-handlers > tbody > tr").EachWithBreak(func(i int, rows *goquery.Selection) bool {
+		columns := rows.Children()
+		if columns.Length() != 4 {
+			err = fmt.Errorf("expected %d columns, got %d", 4, columns.Length())
+			return false
+		}
+
+		evtHandler := &EventHandler{
+			Name:        columns.Eq(0).Find("code").Text(),
+			Description: strings.TrimSpace(columns.Eq(2).Text()),
+		}
+
+		target := columns.Eq(1).Find("a").Text()
+		targetsBody := strings.Contains(target, "body")
+		if targetsBody {
+			elements["body"].EventHandlers = append(elements["body"].EventHandlers, evtHandler)
+		} else {
+			for _, element := range elements {
+				element.EventHandlers = append(element.EventHandlers, evtHandler)
+			}
+		}
+
+		// TODO: Can't get this in a clean way from the spec, so we'll just hardcode it
+		// https://html.spec.whatwg.org/multipage/indices.html#events-2
+
+		return true
+	})
+	if err != nil {
+		return fmt.Errorf("could not read event handlers: %v", err)
+	}
+
+	return nil
+
+	// 		thead := table.Children[1]
+	// 		if thead.Children[0].ChildNodeCount != expectedColumns {
+	// 			return fmt.Errorf("expected %d headings, got %d", expectedColumns, len(thead.Children))
+	// 		}
+
+	// 		tbody := table.Children[2]
+
+	// 		for _, tr := range tbody.Children {
+	// 			if tr.ChildNodeCount != expectedColumns {
+	// 				return fmt.Errorf("expected %d columns, got %d", expectedColumns, tr.ChildNodeCount)
+	// 			}
+
+	// 			if err := dom.ScrollIntoViewIfNeeded().WithNodeID(tr.NodeID).Do(c); err != nil {
+	// 				return err
+	// 			}
+
+	// 			evtHandler := &EventHandler{}
+
+	// 			td := tr.Children[0]
+	// 			tdInner := td.Children[0]
+	// 			code := tdInner.Children[0]
+	// 			evtHandler.Name = code.NodeValue
+
+	// 			td = tr.Children[1]
+	// 			v := td
+	// 			for v.NodeName != "#text" {
+	// 				v = v.Children[0]
+	// 			}
+	// 			evtHandler.TargetsBody = v.NodeValue == "body"
+
+	// 			td = tr.Children[2]
+	// 			parts := make([]string, len(td.Children))
+	// 			var err error
+	// 			for i, child := range td.Children {
+	// 				parts[i], err = dom.GetOuterHTML().WithNodeID(child.NodeID).Do(c)
+	// 				if err != nil {
+	// 					return fmt.Errorf("could not get outer html: %v", err)
+	// 				}
+	// 			}
+	// 			evtHandler.Description = strings.Join(parts, " ")
+
+	// 			for _, el := range elements {
+	// 				isBody := el.Tag == "body"
+	// 				if !isBody && evtHandler.TargetsBody {
+	// 					continue
+	// 				}
+	// 				el.EventHandlers = append(el.EventHandlers, evtHandler)
+	// 			}
+
+	// 			eventHandlers = append(eventHandlers, evtHandler)
+	// 		}
+
+	// 		return nil
+	// 	}),
+	// ); err != nil {
+	// 	return fmt.Errorf("could not read elements: %v", err)
+	// }
+
 }
-func clean(v string) string {
 
-	v = strings.TrimSpace(v)
-	return v
+func getDoc(url string) (*goquery.Document, error) {
+	res, err := http.DefaultClient.Get(url)
+	if err != nil {
+		return nil, fmt.Errorf("could not get UI events spec: %v", err)
+	}
+	defer res.Body.Close()
+	domSpecDoc, err := goquery.NewDocumentFromReader(res.Body)
+	if err != nil {
+		return nil, fmt.Errorf("could not parse UI events spec: %v", err)
+	}
 
+	return domSpecDoc, nil
 }

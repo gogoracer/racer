@@ -41,61 +41,56 @@ elementName := "Element" + tagPascal
 
 package  handlebars
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+    "github.com/gogoracer/racer/pkg/engine"
+)
 
 type {%s elementName %} struct {
-    shouldBeComponent bool
-    attrs map[string]interface{}
-    children []any
+    *baseElement
 }
 
 func {%s upper(tagPascal) %}(children ...any) *{%s elementName %} {
     return &{%s elementName %}{
-        attrs: map[string]interface{}{},
-        children: children,
+        baseElement: newBaseElement("{%s e.Tag %}", children...),
     }
 }
 
 func (e *{%s elementName %}) Add(children ...any) *{%s elementName %} {
-    e.children = append(e.children, children...)
-    return e
+	e.baseElement.add(children...)
+	return e
 }
 
-func (e *{%s elementName %}) Custom(k,v string) *{%s elementName %} {
-    e.attrs[k] = v
-    return e
+func (e *{%s elementName %}) Custom(k, v string, dontEscape ...bool) *{%s elementName %} {
+	e.baseElement.custom(k, v, dontEscape...)
+	return e
 }
 
-func (e *{%s elementName %}) BindCustom(k string, v bool) *{%s elementName %} {
-    e.shouldBeComponent = true
-    return e
+func (e *{%s elementName %}) BindCustom(k string, v string,  dontEscape ...bool) *{%s elementName %} {
+    e.baseElement.bindCustom(k, v, dontEscape...)
+	return e
 }
 
-func (e {%s elementName %}) HandlebarElement() {}
+func (e *{%s elementName %}) setAttribute(k string, v string, dontEscape ...bool) *{%s elementName %} {
+	e.baseElement.setAttribute(k, v, dontEscape...)
+	return e
+}
 
-func(e {%s elementName %}) GenerateVDOM() interface{} {
-    all := append([]any{ e.attrs }, e.children...)
-    if e.shouldBeComponent {
-        return engine.NewComponent("{%s e.Tag %}", all... )
-    }else {
-        return engine.NewTag("{%s e.Tag %}", all ...)
-    }
+
+func (e *{%s elementName %}) GenerateVDOM() interface{} {
+	return e.baseElement.generateVDOM()
 }
 
 {% for _, a := range e.Attributes %}
 {%- code attrPascal := pascal(a.Name) -%}
-// {%s attrPascal %} is the "{%s a.Name %}"" attribute.
-// {%s a.Description %}
+// {%s attrPascal %} is the "{%s a.Name %}" attribute.
+// {%s strings.ReplaceAll(a.Description,"\n","  ") %}
 // Valid values are constrained to the following:
 {%- for _, v := range a.ValidValueTypes -%}
 //   * {%s v %}
 {%- endfor -%}
-func (e *{%s elementName %}) {%s attrPascal %}(v string) (*{%s elementName %}) {
-    if v == "" {
-        return e
-    }
-    e.attrs["{%s a.Name %}"] = v
-    return e
+func (element *{%s elementName %}) {%s attrPascal %}(v string, dontEscape ...bool) *{%s elementName %} {
+    element.setAttribute("{%s a.Name %}", v, dontEscape...)
+    return element
 }
 {%- endfor -%}
 
@@ -119,13 +114,22 @@ func (e *{%s elementName %}) {%s evt %}(fn engine.EventHandler) (*{%s elementNam
 {%- endfunc -%}
 
 {%- func GenerateIcon(details iconCollectionDetailsInfo) -%}
+{%- code
+w := unknownToDimension(details.Width)
+h := unknownToDimension(details.Width)
+-%}
 /* cSpell:disable */
-package iconify
+package {%s lower(camel(details.Prefix)) %}
 
 import "github.com/gogoracer/racer/pkg/handlebars"
-var (
+
 {%- for name, icon := range details.Icons -%}
- {%s pascal(details.Prefix) %}{%s pascal(name) %} = handlebars.DIV(`{%s= icon.SvgBody %}`)
-{%- endfor -%}
-)
+func {%s pascal(name) %}() *handlebars.ElementSVG {
+    return handlebars.SVG(`{%s= icon.SvgBody %}`).
+        Custom("viewBox","0,0,{%d w %},{%d h %}").
+        Custom("width","1em").
+        Custom("height","1em")
+}
+{% endfor %}
+
 {%- endfunc -%}

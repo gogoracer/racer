@@ -6,13 +6,13 @@ import "github.com/gogoracer/racer/pkg/engine"
 
 type ElementH1 struct {
 	shouldBeComponent bool
-	attrs             map[string]interface{}
+	attrs             engine.Attrs
 	children          []any
 }
 
 func H1(children ...any) *ElementH1 {
 	return &ElementH1{
-		attrs:    map[string]interface{}{},
+		attrs:    engine.Attrs{},
 		children: children,
 	}
 }
@@ -35,11 +35,20 @@ func (e *ElementH1) BindCustom(k string, v bool) *ElementH1 {
 func (e ElementH1) HandlebarElement() {}
 
 func (e ElementH1) GenerateVDOM() interface{} {
-	all := append([]any{e.attrs}, e.children...)
+	childVDOMs := make([]interface{}, len(e.children)+1)
+	childVDOMs[0] = e.attrs
+	for i, child := range e.children {
+		switch c := child.(type) {
+		case IsHandlebarElement:
+			childVDOMs[i+1] = c.GenerateVDOM()
+		default:
+			childVDOMs[i+1] = c
+		}
+	}
 	if e.shouldBeComponent {
-		return engine.NewComponent("h1", all...)
+		return engine.NewComponent("h1", childVDOMs...)
 	} else {
-		return engine.NewTag("h1", all...)
+		return engine.NewTag("h1", childVDOMs...)
 	}
 }
 

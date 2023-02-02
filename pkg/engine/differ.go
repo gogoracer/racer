@@ -3,17 +3,14 @@ package engine
 import (
 	_ "embed"
 	"fmt"
-	"log"
-	"path/filepath"
 
-	esbuild "github.com/evanw/esbuild/pkg/api"
 	"github.com/rs/zerolog"
 
 	"github.com/gogoracer/racer/pkg/gas"
 )
 
-//go:embed js/page.js
-var PageJavaScript []byte
+// //go:embed js/page.js
+// var PageJavaScript []byte
 
 // Diff Diffs are from old to new
 type diffInfo struct {
@@ -43,30 +40,30 @@ func NewDiffer() *Differ {
 	// 	// LoggerDev.Err(err).Msg("NewDiffer: minify")
 	// }
 
-	rootPath, err := filepath.Abs("../../pkg/headlamp/src/")
-	if err != nil {
-		panic(err)
-	}
+	// rootPath, err := filepath.Abs("../../pkg/headlamp/src/")
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	result := esbuild.Build(esbuild.BuildOptions{
-		EntryPoints: []string{
-			filepath.Join(rootPath, "index.ts"),
-		},
-		Sourcemap:  esbuild.SourceMapInline,
-		SourceRoot: rootPath,
-		Target:     esbuild.ESNext,
-		Bundle:     true,
-	})
+	// result := esbuild.Build(esbuild.BuildOptions{
+	// 	EntryPoints: []string{
+	// 		filepath.Join(rootPath, "index.ts"),
+	// 	},
+	// 	Sourcemap:  esbuild.SourceMapInline,
+	// 	SourceRoot: rootPath,
+	// 	Target:     esbuild.ESNext,
+	// 	Bundle:     true,
+	// })
 
-	if len(result.Errors) > 0 {
-		panic(fmt.Sprintf("esbuild: %v", result.Errors))
-	}
-	bundle := result.OutputFiles[0].Contents
-	log.Printf("bundle size: %02f", float64(len(bundle))/1024)
+	// if len(result.Errors) > 0 {
+	// 	panic(fmt.Sprintf("esbuild: %v", result.Errors))
+	// }
+	// bundle := result.OutputFiles[0].Contents
+	// log.Printf("bundle size: %02f", float64(len(bundle))/1024)
 
 	return &Differ{
-		logger:     zerolog.Nop(),
-		JavaScript: result.OutputFiles[0].Contents,
+		logger: zerolog.Nop(),
+		// JavaScript: result.OutputFiles[0].Contents,
 	}
 }
 

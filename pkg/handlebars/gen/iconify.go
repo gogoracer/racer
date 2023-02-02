@@ -75,7 +75,13 @@ func GenerateIconify(ctx context.Context, handlebarsPath string) error {
 		}
 
 		content := GenerateIcon(details)
-		fullPath := filepath.Join(iconifyPath, fmt.Sprintf("%s.go", strcase.ToSnake(details.Prefix)))
+		snaked := strcase.ToSnake(details.Prefix)
+		packageName := lower(snaked)
+		packageDir := filepath.Join(iconifyPath, packageName)
+		if err := os.MkdirAll(packageDir, 0755); err != nil {
+			return fmt.Errorf("could not create iconify directory: %v", err)
+		}
+		fullPath := filepath.Join(packageDir, fmt.Sprintf("%s.go", snaked))
 		if err := os.WriteFile(fullPath, []byte(content), 0644); err != nil {
 			return fmt.Errorf("could not write file %s: %v", fullPath, err)
 		}
@@ -184,4 +190,17 @@ type icon struct {
 	SvgBody string      `json:"body,omitempty"`
 	Width   interface{} `json:"width,omitempty"`
 	Height  interface{} `json:"height,omitempty"`
+}
+
+func unknownToDimension(x interface{}) int {
+	switch v := x.(type) {
+	case int:
+		return v
+	case float64:
+		return int(v)
+	case []int:
+		return v[0]
+	default:
+		return 0
+	}
 }

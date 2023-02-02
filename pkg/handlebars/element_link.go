@@ -2,594 +2,491 @@
 
 package handlebars
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 type ElementLink struct {
-	shouldBeComponent bool
-	attrs             map[string]interface{}
-	children          []any
+	*baseElement
 }
 
 func LINK(children ...any) *ElementLink {
 	return &ElementLink{
-		attrs:    map[string]interface{}{},
-		children: children,
+		baseElement: newBaseElement("link", children...),
 	}
 }
 
 func (e *ElementLink) Add(children ...any) *ElementLink {
-	e.children = append(e.children, children...)
+	e.baseElement.add(children...)
 	return e
 }
 
-func (e *ElementLink) Custom(k, v string) *ElementLink {
-	e.attrs[k] = v
+func (e *ElementLink) Custom(k, v string, dontEscape ...bool) *ElementLink {
+	e.baseElement.custom(k, v, dontEscape...)
 	return e
 }
 
-func (e *ElementLink) BindCustom(k string, v bool) *ElementLink {
-	e.shouldBeComponent = true
+func (e *ElementLink) BindCustom(k string, v string, dontEscape ...bool) *ElementLink {
+	e.baseElement.bindCustom(k, v, dontEscape...)
 	return e
 }
 
-func (e ElementLink) HandlebarElement() {}
-
-func (e ElementLink) GenerateVDOM() interface{} {
-	all := append([]any{e.attrs}, e.children...)
-	if e.shouldBeComponent {
-		return engine.NewComponent("link", all...)
-	} else {
-		return engine.NewTag("link", all...)
-	}
-}
-
-// Accesskey is the "accesskey"" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered-set-of-unique-space-separated-tokens
-//   - string-is
-func (e *ElementLink) Accesskey(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["accesskey"] = v
+func (e *ElementLink) setAttribute(k string, v string, dontEscape ...bool) *ElementLink {
+	e.baseElement.setAttribute(k, v, dontEscape...)
 	return e
 }
 
-// As is the "as"" attribute.
-//
-// Valid values are constrained to the following:
-//   - concept-potential-destination
-//     *
-//     *
-//   - request-destination-script-like
-//     *
-//     *
-func (e *ElementLink) As(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["as"] = v
-	return e
+func (e *ElementLink) GenerateVDOM() interface{} {
+	return e.baseElement.generateVDOM()
 }
 
-// Autocapitalize is the "autocapitalize"" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementLink) Autocapitalize(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["autocapitalize"] = v
-	return e
-}
-
-// Autofocus is the "autofocus"" attribute.
-// Automatically focus the element when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementLink) Autofocus(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["autofocus"] = v
-	return e
-}
-
-// Blocking is the "blocking"" attribute.
-// Whether the element is
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-func (e *ElementLink) Blocking(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["blocking"] = v
-	return e
-}
-
-// Class is the "class"" attribute.
-// Classes to which the element belongs
-// Valid values are constrained to the following:
-//   - set-of-space-separated-tokens
-func (e *ElementLink) Class(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["class"] = v
-	return e
-}
-
-// Color is the "color"" attribute.
-// Color to use when customizing a site&#39;s icon (for
-// Valid values are constrained to the following:
-//   - typedef-color
-func (e *ElementLink) Color(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["color"] = v
-	return e
-}
-
-// Contenteditable is the "contenteditable"" attribute.
-// Whether the element is editable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (e *ElementLink) Contenteditable(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["contenteditable"] = v
-	return e
-}
-
-// Crossorigin is the "crossorigin"" attribute.
-// How the element handles crossorigin requests
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-func (e *ElementLink) Crossorigin(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["crossorigin"] = v
-	return e
-}
-
-// Dir is the "dir"" attribute.
-//
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-func (e *ElementLink) Dir(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["dir"] = v
-	return e
-}
-
-// Disabled is the "disabled"" attribute.
-// Whether the link is disabled
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementLink) Disabled(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["disabled"] = v
-	return e
-}
-
-// Draggable is the "draggable"" attribute.
-// Whether the element is draggable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (e *ElementLink) Draggable(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["draggable"] = v
-	return e
-}
-
-// Enterkeyhint is the "enterkeyhint"" attribute.
-// Hint for selecting an enter key action
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementLink) Enterkeyhint(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["enterkeyhint"] = v
-	return e
-}
-
-// Hidden is the "hidden"" attribute.
-// Whether the element is relevant
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-func (e *ElementLink) Hidden(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["hidden"] = v
-	return e
-}
-
-// Href is the "href"" attribute.
-// Address of the
-// Valid values are constrained to the following:
-//   - valid-non-empty-url-potentially-surrounded-by-spaces
-func (e *ElementLink) Href(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["href"] = v
-	return e
-}
-
-// Hreflang is the "hreflang"" attribute.
-// Language of the linked resource
-// Valid values are constrained to the following:
-func (e *ElementLink) Hreflang(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["hreflang"] = v
-	return e
-}
-
-// Id is the "id"" attribute.
-// The element&#39;s
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementLink) Id(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["id"] = v
-	return e
-}
-
-// Imagesizes is the "imagesizes"" attribute.
-// Image sizes for different page layouts (for
-// Valid values are constrained to the following:
-//   - valid-source-size-list
-func (e *ElementLink) Imagesizes(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["imagesizes"] = v
-	return e
-}
-
-// Imagesrcset is the "imagesrcset"" attribute.
-// Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for
-// Valid values are constrained to the following:
-//   - image-candidate-string
-func (e *ElementLink) Imagesrcset(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["imagesrcset"] = v
-	return e
-}
-
-// Inert is the "inert"" attribute.
-// Whether the element is
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementLink) Inert(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["inert"] = v
-	return e
-}
-
-// Inputmode is the "inputmode"" attribute.
-// Hint for selecting an input modality
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementLink) Inputmode(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["inputmode"] = v
-	return e
-}
-
-// Integrity is the "integrity"" attribute.
-// Integrity metadata used in
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementLink) Integrity(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["integrity"] = v
-	return e
-}
-
-// Is is the "is"" attribute.
-// Creates a
-// Valid values are constrained to the following:
-//   - valid-custom-element-name
-//   - customized-built-in-element
-func (e *ElementLink) Is(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["is"] = v
-	return e
-}
-
-// Itemid is the "itemid"" attribute.
-//
-// Valid values are constrained to the following:
-//   - valid-url-potentially-surrounded-by-spaces
-func (e *ElementLink) Itemid(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemid"] = v
-	return e
-}
-
-// Itemprop is the "itemprop"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-//   - syntax-url-absolute
-//   - defined-property-name
-func (e *ElementLink) Itemprop(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemprop"] = v
-	return e
-}
-
-// Itemref is the "itemref"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-func (e *ElementLink) Itemref(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemref"] = v
-	return e
-}
-
-// Itemscope is the "itemscope"" attribute.
-// Introduces a microdata item
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementLink) Itemscope(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemscope"] = v
-	return e
-}
-
-// Itemtype is the "itemtype"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-//   - syntax-url-absolute
-func (e *ElementLink) Itemtype(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemtype"] = v
-	return e
-}
-
-// Lang is the "lang"" attribute.
-//
-// Valid values are constrained to the following:
-func (e *ElementLink) Lang(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["lang"] = v
-	return e
-}
-
-// Media is the "media"" attribute.
+// Media is the "media" attribute.
 // Applicable media
 // Valid values are constrained to the following:
-//   - valid-media-query-list
-func (e *ElementLink) Media(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["media"] = v
-	return e
+//   - valid_media_query_list
+func (element *ElementLink) Media(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("media", v, dontEscape...)
+	return element
 }
 
-// Nonce is the "nonce"" attribute.
-// Cryptographic nonce used in
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementLink) Nonce(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["nonce"] = v
-	return e
-}
-
-// Popover is the "popover"" attribute.
-// Makes the element a
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-func (e *ElementLink) Popover(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["popover"] = v
-	return e
-}
-
-// Referrerpolicy is the "referrerpolicy"" attribute.
-//
-// Valid values are constrained to the following:
-//   - referrer-policy
-func (e *ElementLink) Referrerpolicy(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["referrerpolicy"] = v
-	return e
-}
-
-// Rel is the "rel"" attribute.
-// Relationship between the document containing the
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-func (e *ElementLink) Rel(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["rel"] = v
-	return e
-}
-
-// Sizes is the "sizes"" attribute.
-// Sizes of the icons (for
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-//   - ascii-case-insensitive
-func (e *ElementLink) Sizes(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["sizes"] = v
-	return e
-}
-
-// Slot is the "slot"" attribute.
-// The element&#39;s desired slot
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementLink) Slot(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["slot"] = v
-	return e
-}
-
-// Spellcheck is the "spellcheck"" attribute.
-// Whether the element is to have its spelling and grammar checked
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (e *ElementLink) Spellcheck(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["spellcheck"] = v
-	return e
-}
-
-// Style is the "style"" attribute.
-// Presentational and formatting instructions
-// Valid values are constrained to the following:
-func (e *ElementLink) Style(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["style"] = v
-	return e
-}
-
-// Tabindex is the "tabindex"" attribute.
-// Whether the element is
-// Valid values are constrained to the following:
-//   - valid-integer
-func (e *ElementLink) Tabindex(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["tabindex"] = v
-	return e
-}
-
-// Title is the "title"" attribute.
-//
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementLink) Title(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["title"] = v
-	return e
-}
-
-// Translate is the "translate"" attribute.
+// Translate is the "translate" attribute.
 // Whether the element is to be translated when the page is localized
 // Valid values are constrained to the following:
 //   - yes
 //   - no
-func (e *ElementLink) Translate(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["translate"] = v
-	return e
+func (element *ElementLink) Translate(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("translate", v, dontEscape...)
+	return element
 }
 
-// Type is the "type"" attribute.
-// Hint for the type of the referenced resource
+// Type is the "type" attribute.
+// Type of script
 // Valid values are constrained to the following:
-//   - valid-mime-type
-func (e *ElementLink) Type(v string) *ElementLink {
-	if v == "" {
-		return e
-	}
-	e.attrs["type"] = v
-	return e
+//   - module
+//   - valid_mime_type_string
+//   - java_script_mime_type_essence_match
+func (element *ElementLink) Type(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("type", v, dontEscape...)
+	return element
 }
 
-// &lt;code id=&quot;attributes-3:event-auxclick&quot;&gt;&lt;a data-x-internal=&quot;event-auxclick&quot; href=&quot;https://w3c.github.io/uievents/#event-type-auxclick&quot;&gt;auxclick&lt;/a&gt;&lt;/code&gt;  event handler
+// As is the "as" attribute.
+// Potential destination for a preload request (for rel=&quot;preload&quot; and rel=&quot;modulepreload&quot;)
+// Valid values are constrained to the following:
+//   - potential_destination
+//   - rel
+//   - rel
+//   - preload
+//   - preload
+//   - script_like_destination
+//   - rel
+//   - rel
+//   - modulepreload
+//   - modulepreload
+func (element *ElementLink) As(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("as", v, dontEscape...)
+	return element
+}
+
+// Enterkeyhint is the "enterkeyhint" attribute.
+// Hint for selecting an enter key action
+// Valid values are constrained to the following:
+//   - enter
+//   - enter
+//   - done
+//   - done
+//   - go
+//   - go
+//   - next
+//   - next
+//   - previous
+//   - previous
+//   - search
+//   - search
+//   - send
+//   - send
+func (element *ElementLink) Enterkeyhint(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("enterkeyhint", v, dontEscape...)
+	return element
+}
+
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementLink) Itemprop(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("itemprop", v, dontEscape...)
+	return element
+}
+
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementLink) Nonce(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("nonce", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementLink) Style(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("style", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementLink) Title(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
+// Valid values are constrained to the following:
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementLink) Hidden(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("hidden", v, dontEscape...)
+	return element
+}
+
+// Hreflang is the "hreflang" attribute.
+// Language of the linked resource
+// Valid values are constrained to the following:
+func (element *ElementLink) Hreflang(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("hreflang", v, dontEscape...)
+	return element
+}
+
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementLink) Itemid(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("itemid", v, dontEscape...)
+	return element
+}
+
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementLink) Itemtype(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("itemtype", v, dontEscape...)
+	return element
+}
+
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementLink) Accesskey(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementLink) Dir(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementLink) Draggable(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Inputmode is the "inputmode" attribute.
+// Hint for selecting an input modality
+// Valid values are constrained to the following:
+//   - none
+//   - none
+//   - text
+//   - text
+//   - tel
+//   - tel
+//   - email
+//   - email
+//   - url
+//   - url
+//   - numeric
+//   - numeric
+//   - decimal
+//   - decimal
+//   - search
+//   - search
+func (element *ElementLink) Inputmode(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("inputmode", v, dontEscape...)
+	return element
+}
+
+// Itemref is the "itemref" attribute.
+// Referenced elements
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementLink) Itemref(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("itemref", v, dontEscape...)
+	return element
+}
+
+// Spellcheck is the "spellcheck" attribute.
+// Whether the element is to have its spelling and grammar checked
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementLink) Spellcheck(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("spellcheck", v, dontEscape...)
+	return element
+}
+
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
+// Valid values are constrained to the following:
+//   - valid_integer
+func (element *ElementLink) Tabindex(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("tabindex", v, dontEscape...)
+	return element
+}
+
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
+// Valid values are constrained to the following:
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementLink) Autocapitalize(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("autocapitalize", v, dontEscape...)
+	return element
+}
+
+// Disabled is the "disabled" attribute.
+// Whether the link is disabled
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementLink) Disabled(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("disabled", v, dontEscape...)
+	return element
+}
+
+// Imagesizes is the "imagesizes" attribute.
+// Image sizes for different page layouts (for rel=&quot;preload&quot;)
+// Valid values are constrained to the following:
+//   - valid_source_size_list
+func (element *ElementLink) Imagesizes(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("imagesizes", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementLink) Contenteditable(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("contenteditable", v, dontEscape...)
+	return element
+}
+
+// Crossorigin is the "crossorigin" attribute.
+// How the element handles crossorigin requests
+// Valid values are constrained to the following:
+//   - anonymous
+//   - anonymous
+//   - use_credentials
+//   - use_credentials
+func (element *ElementLink) Crossorigin(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("crossorigin", v, dontEscape...)
+	return element
+}
+
+// Href is the "href" attribute.
+// Document base URL
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementLink) Href(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("href", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementLink) Inert(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Integrity is the "integrity" attribute.
+// Integrity metadata used in Subresource Integrity checks [SRI]
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementLink) Integrity(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("integrity", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementLink) Autofocus(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementLink) Class(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Color is the "color" attribute.
+// Color to use when customizing a site&#39;s icon (for rel=&quot;mask-icon&quot;)
+// Valid values are constrained to the following:
+//   - &lt;color&gt;
+func (element *ElementLink) Color(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("color", v, dontEscape...)
+	return element
+}
+
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementLink) Itemscope(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("itemscope", v, dontEscape...)
+	return element
+}
+
+// Popover is the "popover" attribute.
+// Makes the element a popover element
+// Valid values are constrained to the following:
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementLink) Popover(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("popover", v, dontEscape...)
+	return element
+}
+
+// Referrerpolicy is the "referrerpolicy" attribute.
+// Referrer policy for fetches initiated by the element
+// Valid values are constrained to the following:
+//   - referrer_policy
+func (element *ElementLink) Referrerpolicy(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("referrerpolicy", v, dontEscape...)
+	return element
+}
+
+// Sizes is the "sizes" attribute.
+// Image sizes for different page layouts
+// Valid values are constrained to the following:
+//   - valid_source_size_list
+func (element *ElementLink) Sizes(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("sizes", v, dontEscape...)
+	return element
+}
+
+// Blocking is the "blocking" attribute.
+// Whether the element is potentially render-blocking
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementLink) Blocking(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("blocking", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementLink) Id(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Lang is the "lang" attribute.
+// Language of the element
+// Valid values are constrained to the following:
+func (element *ElementLink) Lang(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("lang", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementLink) Slot(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("slot", v, dontEscape...)
+	return element
+}
+
+// Imagesrcset is the "imagesrcset" attribute.
+// Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for rel=&quot;preload&quot;)
+// Valid values are constrained to the following:
+//   - image_candidate_strings
+func (element *ElementLink) Imagesrcset(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("imagesrcset", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementLink) Is(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Rel is the "rel" attribute.
+// Relationship between the document containing the hyperlink and the destination resource
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementLink) Rel(v string, dontEscape ...bool) *ElementLink {
+	element.setAttribute("rel", v, dontEscape...)
+	return element
+}
+
+// auxclick event handler
 func (e *ElementLink) OnAuxclick(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -603,7 +500,7 @@ func (e *ElementLink) OnAuxclick(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-beforematch&quot;&gt;&lt;a href=&quot;#event-beforematch&quot;&gt;beforematch&lt;/a&gt;&lt;/code&gt;  event handler
+// beforematch event handler
 func (e *ElementLink) OnBeforematch(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -617,7 +514,7 @@ func (e *ElementLink) OnBeforematch(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-beforetoggle&quot;&gt;&lt;a href=&quot;#event-beforetoggle&quot;&gt;beforetoggle&lt;/a&gt;&lt;/code&gt;  event handler
+// beforetoggle event handler
 func (e *ElementLink) OnBeforetoggle(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -631,7 +528,7 @@ func (e *ElementLink) OnBeforetoggle(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-blur&quot;&gt;&lt;a href=&quot;#event-blur&quot;&gt;blur&lt;/a&gt;&lt;/code&gt;  event handler
+// blur event handler
 func (e *ElementLink) OnBlur(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -645,7 +542,7 @@ func (e *ElementLink) OnBlur(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-cancel&quot;&gt;&lt;a href=&quot;#event-cancel&quot;&gt;cancel&lt;/a&gt;&lt;/code&gt;  event handler
+// cancel event handler
 func (e *ElementLink) OnCancel(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -659,7 +556,7 @@ func (e *ElementLink) OnCancel(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-canplay&quot;&gt;&lt;a href=&quot;media.html#event-media-canplay&quot;&gt;canplay&lt;/a&gt;&lt;/code&gt;  event handler
+// canplay event handler
 func (e *ElementLink) OnCanplay(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -673,7 +570,7 @@ func (e *ElementLink) OnCanplay(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-canplaythrough&quot;&gt;&lt;a href=&quot;media.html#event-media-canplaythrough&quot;&gt;canplaythrough&lt;/a&gt;&lt;/code&gt;  event handler
+// canplaythrough event handler
 func (e *ElementLink) OnCanplaythrough(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -687,7 +584,7 @@ func (e *ElementLink) OnCanplaythrough(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-change&quot;&gt;&lt;a href=&quot;#event-change&quot;&gt;change&lt;/a&gt;&lt;/code&gt;  event handler
+// change event handler
 func (e *ElementLink) OnChange(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -701,7 +598,7 @@ func (e *ElementLink) OnChange(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-click&quot;&gt;&lt;a data-x-internal=&quot;event-click&quot; href=&quot;https://w3c.github.io/uievents/#event-type-click&quot;&gt;click&lt;/a&gt;&lt;/code&gt;  event handler
+// click event handler
 func (e *ElementLink) OnClick(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -715,7 +612,7 @@ func (e *ElementLink) OnClick(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-close&quot;&gt;&lt;a href=&quot;#event-close&quot;&gt;close&lt;/a&gt;&lt;/code&gt;  event handler
+// close event handler
 func (e *ElementLink) OnClose(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -729,7 +626,7 @@ func (e *ElementLink) OnClose(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextlost&quot;&gt;&lt;a href=&quot;#event-contextlost&quot;&gt;contextlost&lt;/a&gt;&lt;/code&gt;  event handler
+// contextlost event handler
 func (e *ElementLink) OnContextlost(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -743,7 +640,7 @@ func (e *ElementLink) OnContextlost(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextmenu&quot;&gt;&lt;a data-x-internal=&quot;event-contextmenu&quot; href=&quot;https://w3c.github.io/uievents/#event-type-contextmenu&quot;&gt;contextmenu&lt;/a&gt;&lt;/code&gt;  event handler
+// contextmenu event handler
 func (e *ElementLink) OnContextmenu(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -757,7 +654,7 @@ func (e *ElementLink) OnContextmenu(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextrestored&quot;&gt;&lt;a href=&quot;#event-contextrestored&quot;&gt;contextrestored&lt;/a&gt;&lt;/code&gt;  event handler
+// contextrestored event handler
 func (e *ElementLink) OnContextrestored(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -771,7 +668,7 @@ func (e *ElementLink) OnContextrestored(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-copy&quot;&gt;&lt;a data-x-internal=&quot;event-copy&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-copy&quot;&gt;copy&lt;/a&gt;&lt;/code&gt;  event handler
+// copy event handler
 func (e *ElementLink) OnCopy(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -785,7 +682,7 @@ func (e *ElementLink) OnCopy(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-cuechange&quot;&gt;&lt;a href=&quot;media.html#event-media-cuechange&quot;&gt;cuechange&lt;/a&gt;&lt;/code&gt;  event handler
+// cuechange event handler
 func (e *ElementLink) OnCuechange(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -799,7 +696,7 @@ func (e *ElementLink) OnCuechange(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-cut&quot;&gt;&lt;a data-x-internal=&quot;event-cut&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-cut&quot;&gt;cut&lt;/a&gt;&lt;/code&gt;  event handler
+// cut event handler
 func (e *ElementLink) OnCut(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -813,7 +710,7 @@ func (e *ElementLink) OnCut(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dblclick&quot;&gt;&lt;a data-x-internal=&quot;event-dblclick&quot; href=&quot;https://w3c.github.io/uievents/#event-type-dblclick&quot;&gt;dblclick&lt;/a&gt;&lt;/code&gt;  event handler
+// dblclick event handler
 func (e *ElementLink) OnDblclick(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -827,7 +724,7 @@ func (e *ElementLink) OnDblclick(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-drag&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-drag&quot;&gt;drag&lt;/a&gt;&lt;/code&gt;  event handler
+// drag event handler
 func (e *ElementLink) OnDrag(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -841,7 +738,7 @@ func (e *ElementLink) OnDrag(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragend&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragend&quot;&gt;dragend&lt;/a&gt;&lt;/code&gt;  event handler
+// dragend event handler
 func (e *ElementLink) OnDragend(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -855,7 +752,7 @@ func (e *ElementLink) OnDragend(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragenter&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragenter&quot;&gt;dragenter&lt;/a&gt;&lt;/code&gt;  event handler
+// dragenter event handler
 func (e *ElementLink) OnDragenter(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -869,7 +766,7 @@ func (e *ElementLink) OnDragenter(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragleave&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragleave&quot;&gt;dragleave&lt;/a&gt;&lt;/code&gt;  event handler
+// dragleave event handler
 func (e *ElementLink) OnDragleave(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -883,7 +780,7 @@ func (e *ElementLink) OnDragleave(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragover&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragover&quot;&gt;dragover&lt;/a&gt;&lt;/code&gt;  event handler
+// dragover event handler
 func (e *ElementLink) OnDragover(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -897,7 +794,7 @@ func (e *ElementLink) OnDragover(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragstart&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragstart&quot;&gt;dragstart&lt;/a&gt;&lt;/code&gt;  event handler
+// dragstart event handler
 func (e *ElementLink) OnDragstart(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -911,7 +808,7 @@ func (e *ElementLink) OnDragstart(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-drop&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-drop&quot;&gt;drop&lt;/a&gt;&lt;/code&gt;  event handler
+// drop event handler
 func (e *ElementLink) OnDrop(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -925,7 +822,7 @@ func (e *ElementLink) OnDrop(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-durationchange&quot;&gt;&lt;a href=&quot;media.html#event-media-durationchange&quot;&gt;durationchange&lt;/a&gt;&lt;/code&gt;  event handler
+// durationchange event handler
 func (e *ElementLink) OnDurationchange(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -939,7 +836,7 @@ func (e *ElementLink) OnDurationchange(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-emptied&quot;&gt;&lt;a href=&quot;media.html#event-media-emptied&quot;&gt;emptied&lt;/a&gt;&lt;/code&gt;  event handler
+// emptied event handler
 func (e *ElementLink) OnEmptied(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -953,7 +850,7 @@ func (e *ElementLink) OnEmptied(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-ended&quot;&gt;&lt;a href=&quot;media.html#event-media-ended&quot;&gt;ended&lt;/a&gt;&lt;/code&gt;  event handler
+// ended event handler
 func (e *ElementLink) OnEnded(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -967,7 +864,7 @@ func (e *ElementLink) OnEnded(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-error&quot;&gt;&lt;a href=&quot;#event-error&quot;&gt;error&lt;/a&gt;&lt;/code&gt;  event handler
+// error event handler
 func (e *ElementLink) OnError(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -981,7 +878,7 @@ func (e *ElementLink) OnError(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-focus&quot;&gt;&lt;a href=&quot;#event-focus&quot;&gt;focus&lt;/a&gt;&lt;/code&gt;  event handler
+// focus event handler
 func (e *ElementLink) OnFocus(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -995,7 +892,7 @@ func (e *ElementLink) OnFocus(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-formdata&quot;&gt;&lt;a href=&quot;#event-formdata&quot;&gt;formdata&lt;/a&gt;&lt;/code&gt;  event handler
+// formdata event handler
 func (e *ElementLink) OnFormdata(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1009,7 +906,7 @@ func (e *ElementLink) OnFormdata(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-input&quot;&gt;&lt;a data-x-internal=&quot;event-input&quot; href=&quot;https://w3c.github.io/uievents/#event-type-input&quot;&gt;input&lt;/a&gt;&lt;/code&gt;  event handler
+// input event handler
 func (e *ElementLink) OnInput(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1023,7 +920,7 @@ func (e *ElementLink) OnInput(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-invalid&quot;&gt;&lt;a href=&quot;#event-invalid&quot;&gt;invalid&lt;/a&gt;&lt;/code&gt;  event handler
+// invalid event handler
 func (e *ElementLink) OnInvalid(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1037,7 +934,7 @@ func (e *ElementLink) OnInvalid(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keydown&quot;&gt;&lt;a data-x-internal=&quot;event-keydown&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keydown&quot;&gt;keydown&lt;/a&gt;&lt;/code&gt;  event handler
+// keydown event handler
 func (e *ElementLink) OnKeydown(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1051,7 +948,7 @@ func (e *ElementLink) OnKeydown(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keypress&quot;&gt;&lt;a data-x-internal=&quot;event-keypress&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keypress&quot;&gt;keypress&lt;/a&gt;&lt;/code&gt;  event handler
+// keypress event handler
 func (e *ElementLink) OnKeypress(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1065,7 +962,7 @@ func (e *ElementLink) OnKeypress(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keyup&quot;&gt;&lt;a data-x-internal=&quot;event-keyup&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keyup&quot;&gt;keyup&lt;/a&gt;&lt;/code&gt;  event handler
+// keyup event handler
 func (e *ElementLink) OnKeyup(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1079,7 +976,7 @@ func (e *ElementLink) OnKeyup(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-load&quot;&gt;&lt;a href=&quot;#event-load&quot;&gt;load&lt;/a&gt;&lt;/code&gt;  event handler
+// load event handler
 func (e *ElementLink) OnLoad(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1093,7 +990,7 @@ func (e *ElementLink) OnLoad(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadeddata&quot;&gt;&lt;a href=&quot;media.html#event-media-loadeddata&quot;&gt;loadeddata&lt;/a&gt;&lt;/code&gt;  event handler
+// loadeddata event handler
 func (e *ElementLink) OnLoadeddata(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1107,7 +1004,7 @@ func (e *ElementLink) OnLoadeddata(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadedmetadata&quot;&gt;&lt;a href=&quot;media.html#event-media-loadedmetadata&quot;&gt;loadedmetadata&lt;/a&gt;&lt;/code&gt;  event handler
+// loadedmetadata event handler
 func (e *ElementLink) OnLoadedmetadata(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1121,7 +1018,7 @@ func (e *ElementLink) OnLoadedmetadata(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadstart&quot;&gt;&lt;a href=&quot;media.html#event-media-loadstart&quot;&gt;loadstart&lt;/a&gt;&lt;/code&gt;  event handler
+// loadstart event handler
 func (e *ElementLink) OnLoadstart(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1135,7 +1032,7 @@ func (e *ElementLink) OnLoadstart(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mousedown&quot;&gt;&lt;a data-x-internal=&quot;event-mousedown&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mousedown&quot;&gt;mousedown&lt;/a&gt;&lt;/code&gt;  event handler
+// mousedown event handler
 func (e *ElementLink) OnMousedown(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1149,7 +1046,7 @@ func (e *ElementLink) OnMousedown(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseenter&quot;&gt;&lt;a data-x-internal=&quot;event-mouseenter&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseenter&quot;&gt;mouseenter&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseenter event handler
 func (e *ElementLink) OnMouseenter(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1163,7 +1060,7 @@ func (e *ElementLink) OnMouseenter(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseleave&quot;&gt;&lt;a data-x-internal=&quot;event-mouseleave&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseleave&quot;&gt;mouseleave&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseleave event handler
 func (e *ElementLink) OnMouseleave(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1177,7 +1074,7 @@ func (e *ElementLink) OnMouseleave(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mousemove&quot;&gt;&lt;a data-x-internal=&quot;event-mousemove&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mousemove&quot;&gt;mousemove&lt;/a&gt;&lt;/code&gt;  event handler
+// mousemove event handler
 func (e *ElementLink) OnMousemove(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1191,7 +1088,7 @@ func (e *ElementLink) OnMousemove(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseout&quot;&gt;&lt;a data-x-internal=&quot;event-mouseout&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseout&quot;&gt;mouseout&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseout event handler
 func (e *ElementLink) OnMouseout(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1205,7 +1102,7 @@ func (e *ElementLink) OnMouseout(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseover&quot;&gt;&lt;a data-x-internal=&quot;event-mouseover&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseover&quot;&gt;mouseover&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseover event handler
 func (e *ElementLink) OnMouseover(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1219,7 +1116,7 @@ func (e *ElementLink) OnMouseover(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseup&quot;&gt;&lt;a data-x-internal=&quot;event-mouseup&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseup&quot;&gt;mouseup&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseup event handler
 func (e *ElementLink) OnMouseup(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1233,7 +1130,7 @@ func (e *ElementLink) OnMouseup(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-paste&quot;&gt;&lt;a data-x-internal=&quot;event-paste&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-paste&quot;&gt;paste&lt;/a&gt;&lt;/code&gt;  event handler
+// paste event handler
 func (e *ElementLink) OnPaste(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1247,7 +1144,7 @@ func (e *ElementLink) OnPaste(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-pause&quot;&gt;&lt;a href=&quot;media.html#event-media-pause&quot;&gt;pause&lt;/a&gt;&lt;/code&gt;  event handler
+// pause event handler
 func (e *ElementLink) OnPause(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1261,7 +1158,7 @@ func (e *ElementLink) OnPause(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-play&quot;&gt;&lt;a href=&quot;media.html#event-media-play&quot;&gt;play&lt;/a&gt;&lt;/code&gt;  event handler
+// play event handler
 func (e *ElementLink) OnPlay(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1275,7 +1172,7 @@ func (e *ElementLink) OnPlay(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-playing&quot;&gt;&lt;a href=&quot;media.html#event-media-playing&quot;&gt;playing&lt;/a&gt;&lt;/code&gt;  event handler
+// playing event handler
 func (e *ElementLink) OnPlaying(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1289,7 +1186,7 @@ func (e *ElementLink) OnPlaying(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-progress&quot;&gt;&lt;a href=&quot;media.html#event-media-progress&quot;&gt;progress&lt;/a&gt;&lt;/code&gt;  event handler
+// progress event handler
 func (e *ElementLink) OnProgress(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1303,7 +1200,7 @@ func (e *ElementLink) OnProgress(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-ratechange&quot;&gt;&lt;a href=&quot;media.html#event-media-ratechange&quot;&gt;ratechange&lt;/a&gt;&lt;/code&gt;  event handler
+// ratechange event handler
 func (e *ElementLink) OnRatechange(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1317,7 +1214,7 @@ func (e *ElementLink) OnRatechange(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-reset&quot;&gt;&lt;a href=&quot;#event-reset&quot;&gt;reset&lt;/a&gt;&lt;/code&gt;  event handler
+// reset event handler
 func (e *ElementLink) OnReset(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1331,7 +1228,7 @@ func (e *ElementLink) OnReset(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-resize&quot;&gt;&lt;a data-x-internal=&quot;event-resize&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-window-resize&quot;&gt;resize&lt;/a&gt;&lt;/code&gt;  event handler
+// resize event handler
 func (e *ElementLink) OnResize(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1345,7 +1242,7 @@ func (e *ElementLink) OnResize(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-scroll&quot;&gt;&lt;a data-x-internal=&quot;event-scroll&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-document-scroll&quot;&gt;scroll&lt;/a&gt;&lt;/code&gt;  event handler
+// scroll event handler
 func (e *ElementLink) OnScroll(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1359,7 +1256,7 @@ func (e *ElementLink) OnScroll(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-scrollend&quot;&gt;&lt;a data-x-internal=&quot;event-scrollend&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-document-scrollend&quot;&gt;scrollend&lt;/a&gt;&lt;/code&gt;  event handler
+// scrollend event handler
 func (e *ElementLink) OnScrollend(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1373,7 +1270,7 @@ func (e *ElementLink) OnScrollend(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-securitypolicyviolation&quot;&gt;&lt;a data-x-internal=&quot;event-securitypolicyviolation&quot; href=&quot;https://w3c.github.io/webappsec-csp/#eventdef-globaleventhandlers-securitypolicyviolation&quot;&gt;securitypolicyviolation&lt;/a&gt;&lt;/code&gt;  event handler
+// securitypolicyviolation event handler
 func (e *ElementLink) OnSecuritypolicyviolation(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1387,7 +1284,7 @@ func (e *ElementLink) OnSecuritypolicyviolation(fn engine.EventHandler) *Element
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-seeked&quot;&gt;&lt;a href=&quot;media.html#event-media-seeked&quot;&gt;seeked&lt;/a&gt;&lt;/code&gt;  event handler
+// seeked event handler
 func (e *ElementLink) OnSeeked(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1401,7 +1298,7 @@ func (e *ElementLink) OnSeeked(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-seeking&quot;&gt;&lt;a href=&quot;media.html#event-media-seeking&quot;&gt;seeking&lt;/a&gt;&lt;/code&gt;  event handler
+// seeking event handler
 func (e *ElementLink) OnSeeking(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1415,7 +1312,7 @@ func (e *ElementLink) OnSeeking(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-select&quot;&gt;&lt;a href=&quot;#event-select&quot;&gt;select&lt;/a&gt;&lt;/code&gt;  event handler
+// select event handler
 func (e *ElementLink) OnSelect(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1429,7 +1326,7 @@ func (e *ElementLink) OnSelect(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-slotchange&quot;&gt;&lt;a data-x-internal=&quot;event-slotchange&quot; href=&quot;https://dom.spec.whatwg.org/#eventdef-htmlslotelement-slotchange&quot;&gt;slotchange&lt;/a&gt;&lt;/code&gt;  event handler
+// slotchange event handler
 func (e *ElementLink) OnSlotchange(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1443,7 +1340,7 @@ func (e *ElementLink) OnSlotchange(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-stalled&quot;&gt;&lt;a href=&quot;media.html#event-media-stalled&quot;&gt;stalled&lt;/a&gt;&lt;/code&gt;  event handler
+// stalled event handler
 func (e *ElementLink) OnStalled(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1457,7 +1354,7 @@ func (e *ElementLink) OnStalled(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-submit&quot;&gt;&lt;a href=&quot;#event-submit&quot;&gt;submit&lt;/a&gt;&lt;/code&gt;  event handler
+// submit event handler
 func (e *ElementLink) OnSubmit(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1471,7 +1368,7 @@ func (e *ElementLink) OnSubmit(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-suspend&quot;&gt;&lt;a href=&quot;media.html#event-media-suspend&quot;&gt;suspend&lt;/a&gt;&lt;/code&gt;  event handler
+// suspend event handler
 func (e *ElementLink) OnSuspend(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1485,7 +1382,7 @@ func (e *ElementLink) OnSuspend(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-timeupdate&quot;&gt;&lt;a href=&quot;media.html#event-media-timeupdate&quot;&gt;timeupdate&lt;/a&gt;&lt;/code&gt;  event handler
+// timeupdate event handler
 func (e *ElementLink) OnTimeupdate(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1499,7 +1396,7 @@ func (e *ElementLink) OnTimeupdate(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-toggle&quot;&gt;&lt;a href=&quot;#event-toggle&quot;&gt;toggle&lt;/a&gt;&lt;/code&gt;  event handler
+// toggle event handler
 func (e *ElementLink) OnToggle(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1513,7 +1410,7 @@ func (e *ElementLink) OnToggle(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-volumechange&quot;&gt;&lt;a href=&quot;media.html#event-media-volumechange&quot;&gt;volumechange&lt;/a&gt;&lt;/code&gt;  event handler
+// volumechange event handler
 func (e *ElementLink) OnVolumechange(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1527,7 +1424,7 @@ func (e *ElementLink) OnVolumechange(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-waiting&quot;&gt;&lt;a href=&quot;media.html#event-media-waiting&quot;&gt;waiting&lt;/a&gt;&lt;/code&gt;  event handler
+// waiting event handler
 func (e *ElementLink) OnWaiting(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e
@@ -1541,7 +1438,7 @@ func (e *ElementLink) OnWaiting(fn engine.EventHandler) *ElementLink {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-wheel&quot;&gt;&lt;a data-x-internal=&quot;event-wheel&quot; href=&quot;https://w3c.github.io/uievents/#event-type-wheel&quot;&gt;wheel&lt;/a&gt;&lt;/code&gt;  event handler
+// wheel event handler
 func (e *ElementLink) OnWheel(fn engine.EventHandler) *ElementLink {
 	if fn == nil {
 		return e

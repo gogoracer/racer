@@ -81,7 +81,10 @@ type StyleOff []string
 
 // NewAttribute create a new Attribute
 func NewAttribute(name string, value string) *Attribute {
-	return &Attribute{name: strings.ToLower(name), value: NewLockBox(value)}
+	return &Attribute{
+		name:  strings.ToLower(name),
+		value: NewLockBox(value),
+	}
 }
 
 // NewAttributeLockBox create a new Attribute using the passed LockBox value

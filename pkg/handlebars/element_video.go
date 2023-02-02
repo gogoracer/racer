@@ -2,544 +2,450 @@
 
 package handlebars
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 type ElementVideo struct {
-	shouldBeComponent bool
-	attrs             map[string]interface{}
-	children          []any
+	*baseElement
 }
 
 func VIDEO(children ...any) *ElementVideo {
 	return &ElementVideo{
-		attrs:    map[string]interface{}{},
-		children: children,
+		baseElement: newBaseElement("video", children...),
 	}
 }
 
 func (e *ElementVideo) Add(children ...any) *ElementVideo {
-	e.children = append(e.children, children...)
+	e.baseElement.add(children...)
 	return e
 }
 
-func (e *ElementVideo) Custom(k, v string) *ElementVideo {
-	e.attrs[k] = v
+func (e *ElementVideo) Custom(k, v string, dontEscape ...bool) *ElementVideo {
+	e.baseElement.custom(k, v, dontEscape...)
 	return e
 }
 
-func (e *ElementVideo) BindCustom(k string, v bool) *ElementVideo {
-	e.shouldBeComponent = true
+func (e *ElementVideo) BindCustom(k string, v string, dontEscape ...bool) *ElementVideo {
+	e.baseElement.bindCustom(k, v, dontEscape...)
 	return e
 }
 
-func (e ElementVideo) HandlebarElement() {}
-
-func (e ElementVideo) GenerateVDOM() interface{} {
-	all := append([]any{e.attrs}, e.children...)
-	if e.shouldBeComponent {
-		return engine.NewComponent("video", all...)
-	} else {
-		return engine.NewTag("video", all...)
-	}
-}
-
-// Accesskey is the "accesskey"" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered-set-of-unique-space-separated-tokens
-//   - string-is
-func (e *ElementVideo) Accesskey(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["accesskey"] = v
+func (e *ElementVideo) setAttribute(k string, v string, dontEscape ...bool) *ElementVideo {
+	e.baseElement.setAttribute(k, v, dontEscape...)
 	return e
 }
 
-// Autocapitalize is the "autocapitalize"" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementVideo) Autocapitalize(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["autocapitalize"] = v
-	return e
+func (e *ElementVideo) GenerateVDOM() interface{} {
+	return e.baseElement.generateVDOM()
 }
 
-// Autofocus is the "autofocus"" attribute.
+// Autofocus is the "autofocus" attribute.
 // Automatically focus the element when the page is loaded
 // Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementVideo) Autofocus(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["autofocus"] = v
-	return e
+//   - boolean_attribute
+func (element *ElementVideo) Autofocus(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("autofocus", v, dontEscape...)
+	return element
 }
 
-// Autoplay is the "autoplay"" attribute.
-// Hint that the
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
 // Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementVideo) Autoplay(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["autoplay"] = v
-	return e
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementVideo) Itemprop(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("itemprop", v, dontEscape...)
+	return element
 }
 
-// Class is the "class"" attribute.
-// Classes to which the element belongs
+// Title is the "title" attribute.
+// CSS style sheet set name
 // Valid values are constrained to the following:
-//   - set-of-space-separated-tokens
-func (e *ElementVideo) Class(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["class"] = v
-	return e
+//   - text
+func (element *ElementVideo) Title(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("title", v, dontEscape...)
+	return element
 }
 
-// Contenteditable is the "contenteditable"" attribute.
-// Whether the element is editable
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
 // Valid values are constrained to the following:
-//   - true
-//   - false
-func (e *ElementVideo) Contenteditable(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["contenteditable"] = v
-	return e
+//   - valid_integer
+func (element *ElementVideo) Tabindex(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("tabindex", v, dontEscape...)
+	return element
 }
 
-// Controls is the "controls"" attribute.
-// Show user agent controls
+// Autoplay is the "autoplay" attribute.
+// Hint that the media resource can be started automatically when the page is loaded
 // Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementVideo) Controls(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["controls"] = v
-	return e
+//   - boolean_attribute
+func (element *ElementVideo) Autoplay(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("autoplay", v, dontEscape...)
+	return element
 }
 
-// Crossorigin is the "crossorigin"" attribute.
-// How the element handles crossorigin requests
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-func (e *ElementVideo) Crossorigin(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["crossorigin"] = v
-	return e
-}
-
-// Dir is the "dir"" attribute.
-//
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-func (e *ElementVideo) Dir(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["dir"] = v
-	return e
-}
-
-// Draggable is the "draggable"" attribute.
-// Whether the element is draggable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (e *ElementVideo) Draggable(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["draggable"] = v
-	return e
-}
-
-// Enterkeyhint is the "enterkeyhint"" attribute.
-// Hint for selecting an enter key action
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementVideo) Enterkeyhint(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["enterkeyhint"] = v
-	return e
-}
-
-// Height is the "height"" attribute.
-// Vertical dimension
-// Valid values are constrained to the following:
-//   - valid-non-negative-integer
-func (e *ElementVideo) Height(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["height"] = v
-	return e
-}
-
-// Hidden is the "hidden"" attribute.
+// Hidden is the "hidden" attribute.
 // Whether the element is relevant
 // Valid values are constrained to the following:
-//
-//	*
-//	*
-func (e *ElementVideo) Hidden(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["hidden"] = v
-	return e
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementVideo) Hidden(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("hidden", v, dontEscape...)
+	return element
 }
 
-// Id is the "id"" attribute.
-// The element&#39;s
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
 // Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementVideo) Id(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["id"] = v
-	return e
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementVideo) Itemtype(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("itemtype", v, dontEscape...)
+	return element
 }
 
-// Inert is the "inert"" attribute.
-// Whether the element is
+// Lang is the "lang" attribute.
+// Language of the element
 // Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementVideo) Inert(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["inert"] = v
-	return e
+func (element *ElementVideo) Lang(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("lang", v, dontEscape...)
+	return element
 }
 
-// Inputmode is the "inputmode"" attribute.
-// Hint for selecting an input modality
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
 // Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementVideo) Inputmode(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["inputmode"] = v
-	return e
+//   - text
+func (element *ElementVideo) Nonce(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("nonce", v, dontEscape...)
+	return element
 }
 
-// Is is the "is"" attribute.
-// Creates a
-// Valid values are constrained to the following:
-//   - valid-custom-element-name
-//   - customized-built-in-element
-func (e *ElementVideo) Is(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["is"] = v
-	return e
-}
-
-// Itemid is the "itemid"" attribute.
-//
-// Valid values are constrained to the following:
-//   - valid-url-potentially-surrounded-by-spaces
-func (e *ElementVideo) Itemid(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemid"] = v
-	return e
-}
-
-// Itemprop is the "itemprop"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-//   - syntax-url-absolute
-//   - defined-property-name
-func (e *ElementVideo) Itemprop(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemprop"] = v
-	return e
-}
-
-// Itemref is the "itemref"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-func (e *ElementVideo) Itemref(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemref"] = v
-	return e
-}
-
-// Itemscope is the "itemscope"" attribute.
-// Introduces a microdata item
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementVideo) Itemscope(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemscope"] = v
-	return e
-}
-
-// Itemtype is the "itemtype"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-//   - syntax-url-absolute
-func (e *ElementVideo) Itemtype(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemtype"] = v
-	return e
-}
-
-// Lang is the "lang"" attribute.
-//
-// Valid values are constrained to the following:
-func (e *ElementVideo) Lang(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["lang"] = v
-	return e
-}
-
-// Loop is the "loop"" attribute.
-// Whether to loop the
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementVideo) Loop(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["loop"] = v
-	return e
-}
-
-// Muted is the "muted"" attribute.
-// Whether to mute the
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementVideo) Muted(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["muted"] = v
-	return e
-}
-
-// Nonce is the "nonce"" attribute.
-// Cryptographic nonce used in
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementVideo) Nonce(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["nonce"] = v
-	return e
-}
-
-// Playsinline is the "playsinline"" attribute.
-// Encourage the user agent to display video content within the element&#39;s playback area
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementVideo) Playsinline(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["playsinline"] = v
-	return e
-}
-
-// Popover is the "popover"" attribute.
-// Makes the element a
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-func (e *ElementVideo) Popover(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["popover"] = v
-	return e
-}
-
-// Poster is the "poster"" attribute.
-// Poster frame to show prior to video playback
-// Valid values are constrained to the following:
-//   - valid-non-empty-url-potentially-surrounded-by-spaces
-func (e *ElementVideo) Poster(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["poster"] = v
-	return e
-}
-
-// Preload is the "preload"" attribute.
-// Hints how much buffering the
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-func (e *ElementVideo) Preload(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["preload"] = v
-	return e
-}
-
-// Slot is the "slot"" attribute.
+// Slot is the "slot" attribute.
 // The element&#39;s desired slot
 // Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementVideo) Slot(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["slot"] = v
-	return e
+//   - text
+func (element *ElementVideo) Slot(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("slot", v, dontEscape...)
+	return element
 }
 
-// Spellcheck is the "spellcheck"" attribute.
+// Spellcheck is the "spellcheck" attribute.
 // Whether the element is to have its spelling and grammar checked
 // Valid values are constrained to the following:
 //   - true
 //   - false
-func (e *ElementVideo) Spellcheck(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["spellcheck"] = v
-	return e
+func (element *ElementVideo) Spellcheck(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("spellcheck", v, dontEscape...)
+	return element
 }
 
-// Src is the "src"" attribute.
-// Address of the resource
+// Poster is the "poster" attribute.
+// Poster frame to show prior to video playback
 // Valid values are constrained to the following:
-//   - valid-non-empty-url-potentially-surrounded-by-spaces
-func (e *ElementVideo) Src(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["src"] = v
-	return e
+//   - valid_non_empty_url_potentially_surrounded_by_spaces
+func (element *ElementVideo) Poster(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("poster", v, dontEscape...)
+	return element
 }
 
-// Style is the "style"" attribute.
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementVideo) Accesskey(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Enterkeyhint is the "enterkeyhint" attribute.
+// Hint for selecting an enter key action
+// Valid values are constrained to the following:
+//   - enter
+//   - enter
+//   - done
+//   - done
+//   - go
+//   - go
+//   - next
+//   - next
+//   - previous
+//   - previous
+//   - search
+//   - search
+//   - send
+//   - send
+func (element *ElementVideo) Enterkeyhint(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("enterkeyhint", v, dontEscape...)
+	return element
+}
+
+// Height is the "height" attribute.
+// Vertical dimension
+// Valid values are constrained to the following:
+//   - valid_non_negative_integer
+func (element *ElementVideo) Height(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("height", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementVideo) Id(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Inputmode is the "inputmode" attribute.
+// Hint for selecting an input modality
+// Valid values are constrained to the following:
+//   - none
+//   - none
+//   - text
+//   - text
+//   - tel
+//   - tel
+//   - email
+//   - email
+//   - url
+//   - url
+//   - numeric
+//   - numeric
+//   - decimal
+//   - decimal
+//   - search
+//   - search
+func (element *ElementVideo) Inputmode(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("inputmode", v, dontEscape...)
+	return element
+}
+
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementVideo) Itemid(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("itemid", v, dontEscape...)
+	return element
+}
+
+// Playsinline is the "playsinline" attribute.
+// Encourage the user agent to display video content within the element&#39;s playback area
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementVideo) Playsinline(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("playsinline", v, dontEscape...)
+	return element
+}
+
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementVideo) Draggable(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementVideo) Inert(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementVideo) Is(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Controls is the "controls" attribute.
+// Show user agent controls
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementVideo) Controls(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("controls", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
 // Presentational and formatting instructions
 // Valid values are constrained to the following:
-func (e *ElementVideo) Style(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["style"] = v
-	return e
+func (element *ElementVideo) Style(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("style", v, dontEscape...)
+	return element
 }
 
-// Tabindex is the "tabindex"" attribute.
-// Whether the element is
+// Width is the "width" attribute.
+// Horizontal dimension
 // Valid values are constrained to the following:
-//   - valid-integer
-func (e *ElementVideo) Tabindex(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["tabindex"] = v
-	return e
+//   - valid_non_negative_integer
+func (element *ElementVideo) Width(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("width", v, dontEscape...)
+	return element
 }
 
-// Title is the "title"" attribute.
-// Advisory information for the element
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
 // Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementVideo) Title(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["title"] = v
-	return e
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementVideo) Autocapitalize(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("autocapitalize", v, dontEscape...)
+	return element
 }
 
-// Translate is the "translate"" attribute.
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementVideo) Class(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementVideo) Dir(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Muted is the "muted" attribute.
+// Whether to mute the media resource by default
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementVideo) Muted(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("muted", v, dontEscape...)
+	return element
+}
+
+// Translate is the "translate" attribute.
 // Whether the element is to be translated when the page is localized
 // Valid values are constrained to the following:
 //   - yes
 //   - no
-func (e *ElementVideo) Translate(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["translate"] = v
-	return e
+func (element *ElementVideo) Translate(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("translate", v, dontEscape...)
+	return element
 }
 
-// Width is the "width"" attribute.
-// Horizontal dimension
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
 // Valid values are constrained to the following:
-//   - valid-non-negative-integer
-func (e *ElementVideo) Width(v string) *ElementVideo {
-	if v == "" {
-		return e
-	}
-	e.attrs["width"] = v
-	return e
+//   - true
+//   - false
+func (element *ElementVideo) Contenteditable(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("contenteditable", v, dontEscape...)
+	return element
 }
 
-// &lt;code id=&quot;attributes-3:event-auxclick&quot;&gt;&lt;a data-x-internal=&quot;event-auxclick&quot; href=&quot;https://w3c.github.io/uievents/#event-type-auxclick&quot;&gt;auxclick&lt;/a&gt;&lt;/code&gt;  event handler
+// Crossorigin is the "crossorigin" attribute.
+// How the element handles crossorigin requests
+// Valid values are constrained to the following:
+//   - anonymous
+//   - anonymous
+//   - use_credentials
+//   - use_credentials
+func (element *ElementVideo) Crossorigin(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("crossorigin", v, dontEscape...)
+	return element
+}
+
+// Itemref is the "itemref" attribute.
+// Referenced elements
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementVideo) Itemref(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("itemref", v, dontEscape...)
+	return element
+}
+
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementVideo) Itemscope(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("itemscope", v, dontEscape...)
+	return element
+}
+
+// Popover is the "popover" attribute.
+// Makes the element a popover element
+// Valid values are constrained to the following:
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementVideo) Popover(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("popover", v, dontEscape...)
+	return element
+}
+
+// Preload is the "preload" attribute.
+// Hints how much buffering the media resource will likely need
+// Valid values are constrained to the following:
+//   - none
+//   - none
+//   - metadata
+//   - metadata
+//   - auto
+//   - auto
+func (element *ElementVideo) Preload(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("preload", v, dontEscape...)
+	return element
+}
+
+// Src is the "src" attribute.
+// Address of the resource
+// Valid values are constrained to the following:
+//   - valid_non_empty_url_potentially_surrounded_by_spaces
+func (element *ElementVideo) Src(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("src", v, dontEscape...)
+	return element
+}
+
+// Loop is the "loop" attribute.
+// Whether to loop the media resource
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementVideo) Loop(v string, dontEscape ...bool) *ElementVideo {
+	element.setAttribute("loop", v, dontEscape...)
+	return element
+}
+
+// auxclick event handler
 func (e *ElementVideo) OnAuxclick(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -553,7 +459,7 @@ func (e *ElementVideo) OnAuxclick(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-beforematch&quot;&gt;&lt;a href=&quot;#event-beforematch&quot;&gt;beforematch&lt;/a&gt;&lt;/code&gt;  event handler
+// beforematch event handler
 func (e *ElementVideo) OnBeforematch(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -567,7 +473,7 @@ func (e *ElementVideo) OnBeforematch(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-beforetoggle&quot;&gt;&lt;a href=&quot;#event-beforetoggle&quot;&gt;beforetoggle&lt;/a&gt;&lt;/code&gt;  event handler
+// beforetoggle event handler
 func (e *ElementVideo) OnBeforetoggle(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -581,7 +487,7 @@ func (e *ElementVideo) OnBeforetoggle(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-blur&quot;&gt;&lt;a href=&quot;#event-blur&quot;&gt;blur&lt;/a&gt;&lt;/code&gt;  event handler
+// blur event handler
 func (e *ElementVideo) OnBlur(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -595,7 +501,7 @@ func (e *ElementVideo) OnBlur(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-cancel&quot;&gt;&lt;a href=&quot;#event-cancel&quot;&gt;cancel&lt;/a&gt;&lt;/code&gt;  event handler
+// cancel event handler
 func (e *ElementVideo) OnCancel(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -609,7 +515,7 @@ func (e *ElementVideo) OnCancel(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-canplay&quot;&gt;&lt;a href=&quot;media.html#event-media-canplay&quot;&gt;canplay&lt;/a&gt;&lt;/code&gt;  event handler
+// canplay event handler
 func (e *ElementVideo) OnCanplay(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -623,7 +529,7 @@ func (e *ElementVideo) OnCanplay(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-canplaythrough&quot;&gt;&lt;a href=&quot;media.html#event-media-canplaythrough&quot;&gt;canplaythrough&lt;/a&gt;&lt;/code&gt;  event handler
+// canplaythrough event handler
 func (e *ElementVideo) OnCanplaythrough(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -637,7 +543,7 @@ func (e *ElementVideo) OnCanplaythrough(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-change&quot;&gt;&lt;a href=&quot;#event-change&quot;&gt;change&lt;/a&gt;&lt;/code&gt;  event handler
+// change event handler
 func (e *ElementVideo) OnChange(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -651,7 +557,7 @@ func (e *ElementVideo) OnChange(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-click&quot;&gt;&lt;a data-x-internal=&quot;event-click&quot; href=&quot;https://w3c.github.io/uievents/#event-type-click&quot;&gt;click&lt;/a&gt;&lt;/code&gt;  event handler
+// click event handler
 func (e *ElementVideo) OnClick(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -665,7 +571,7 @@ func (e *ElementVideo) OnClick(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-close&quot;&gt;&lt;a href=&quot;#event-close&quot;&gt;close&lt;/a&gt;&lt;/code&gt;  event handler
+// close event handler
 func (e *ElementVideo) OnClose(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -679,7 +585,7 @@ func (e *ElementVideo) OnClose(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextlost&quot;&gt;&lt;a href=&quot;#event-contextlost&quot;&gt;contextlost&lt;/a&gt;&lt;/code&gt;  event handler
+// contextlost event handler
 func (e *ElementVideo) OnContextlost(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -693,7 +599,7 @@ func (e *ElementVideo) OnContextlost(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextmenu&quot;&gt;&lt;a data-x-internal=&quot;event-contextmenu&quot; href=&quot;https://w3c.github.io/uievents/#event-type-contextmenu&quot;&gt;contextmenu&lt;/a&gt;&lt;/code&gt;  event handler
+// contextmenu event handler
 func (e *ElementVideo) OnContextmenu(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -707,7 +613,7 @@ func (e *ElementVideo) OnContextmenu(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextrestored&quot;&gt;&lt;a href=&quot;#event-contextrestored&quot;&gt;contextrestored&lt;/a&gt;&lt;/code&gt;  event handler
+// contextrestored event handler
 func (e *ElementVideo) OnContextrestored(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -721,7 +627,7 @@ func (e *ElementVideo) OnContextrestored(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-copy&quot;&gt;&lt;a data-x-internal=&quot;event-copy&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-copy&quot;&gt;copy&lt;/a&gt;&lt;/code&gt;  event handler
+// copy event handler
 func (e *ElementVideo) OnCopy(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -735,7 +641,7 @@ func (e *ElementVideo) OnCopy(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-cuechange&quot;&gt;&lt;a href=&quot;media.html#event-media-cuechange&quot;&gt;cuechange&lt;/a&gt;&lt;/code&gt;  event handler
+// cuechange event handler
 func (e *ElementVideo) OnCuechange(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -749,7 +655,7 @@ func (e *ElementVideo) OnCuechange(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-cut&quot;&gt;&lt;a data-x-internal=&quot;event-cut&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-cut&quot;&gt;cut&lt;/a&gt;&lt;/code&gt;  event handler
+// cut event handler
 func (e *ElementVideo) OnCut(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -763,7 +669,7 @@ func (e *ElementVideo) OnCut(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dblclick&quot;&gt;&lt;a data-x-internal=&quot;event-dblclick&quot; href=&quot;https://w3c.github.io/uievents/#event-type-dblclick&quot;&gt;dblclick&lt;/a&gt;&lt;/code&gt;  event handler
+// dblclick event handler
 func (e *ElementVideo) OnDblclick(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -777,7 +683,7 @@ func (e *ElementVideo) OnDblclick(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-drag&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-drag&quot;&gt;drag&lt;/a&gt;&lt;/code&gt;  event handler
+// drag event handler
 func (e *ElementVideo) OnDrag(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -791,7 +697,7 @@ func (e *ElementVideo) OnDrag(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragend&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragend&quot;&gt;dragend&lt;/a&gt;&lt;/code&gt;  event handler
+// dragend event handler
 func (e *ElementVideo) OnDragend(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -805,7 +711,7 @@ func (e *ElementVideo) OnDragend(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragenter&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragenter&quot;&gt;dragenter&lt;/a&gt;&lt;/code&gt;  event handler
+// dragenter event handler
 func (e *ElementVideo) OnDragenter(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -819,7 +725,7 @@ func (e *ElementVideo) OnDragenter(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragleave&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragleave&quot;&gt;dragleave&lt;/a&gt;&lt;/code&gt;  event handler
+// dragleave event handler
 func (e *ElementVideo) OnDragleave(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -833,7 +739,7 @@ func (e *ElementVideo) OnDragleave(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragover&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragover&quot;&gt;dragover&lt;/a&gt;&lt;/code&gt;  event handler
+// dragover event handler
 func (e *ElementVideo) OnDragover(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -847,7 +753,7 @@ func (e *ElementVideo) OnDragover(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragstart&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragstart&quot;&gt;dragstart&lt;/a&gt;&lt;/code&gt;  event handler
+// dragstart event handler
 func (e *ElementVideo) OnDragstart(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -861,7 +767,7 @@ func (e *ElementVideo) OnDragstart(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-drop&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-drop&quot;&gt;drop&lt;/a&gt;&lt;/code&gt;  event handler
+// drop event handler
 func (e *ElementVideo) OnDrop(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -875,7 +781,7 @@ func (e *ElementVideo) OnDrop(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-durationchange&quot;&gt;&lt;a href=&quot;media.html#event-media-durationchange&quot;&gt;durationchange&lt;/a&gt;&lt;/code&gt;  event handler
+// durationchange event handler
 func (e *ElementVideo) OnDurationchange(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -889,7 +795,7 @@ func (e *ElementVideo) OnDurationchange(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-emptied&quot;&gt;&lt;a href=&quot;media.html#event-media-emptied&quot;&gt;emptied&lt;/a&gt;&lt;/code&gt;  event handler
+// emptied event handler
 func (e *ElementVideo) OnEmptied(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -903,7 +809,7 @@ func (e *ElementVideo) OnEmptied(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-ended&quot;&gt;&lt;a href=&quot;media.html#event-media-ended&quot;&gt;ended&lt;/a&gt;&lt;/code&gt;  event handler
+// ended event handler
 func (e *ElementVideo) OnEnded(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -917,7 +823,7 @@ func (e *ElementVideo) OnEnded(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-error&quot;&gt;&lt;a href=&quot;#event-error&quot;&gt;error&lt;/a&gt;&lt;/code&gt;  event handler
+// error event handler
 func (e *ElementVideo) OnError(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -931,7 +837,7 @@ func (e *ElementVideo) OnError(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-focus&quot;&gt;&lt;a href=&quot;#event-focus&quot;&gt;focus&lt;/a&gt;&lt;/code&gt;  event handler
+// focus event handler
 func (e *ElementVideo) OnFocus(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -945,7 +851,7 @@ func (e *ElementVideo) OnFocus(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-formdata&quot;&gt;&lt;a href=&quot;#event-formdata&quot;&gt;formdata&lt;/a&gt;&lt;/code&gt;  event handler
+// formdata event handler
 func (e *ElementVideo) OnFormdata(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -959,7 +865,7 @@ func (e *ElementVideo) OnFormdata(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-input&quot;&gt;&lt;a data-x-internal=&quot;event-input&quot; href=&quot;https://w3c.github.io/uievents/#event-type-input&quot;&gt;input&lt;/a&gt;&lt;/code&gt;  event handler
+// input event handler
 func (e *ElementVideo) OnInput(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -973,7 +879,7 @@ func (e *ElementVideo) OnInput(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-invalid&quot;&gt;&lt;a href=&quot;#event-invalid&quot;&gt;invalid&lt;/a&gt;&lt;/code&gt;  event handler
+// invalid event handler
 func (e *ElementVideo) OnInvalid(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -987,7 +893,7 @@ func (e *ElementVideo) OnInvalid(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keydown&quot;&gt;&lt;a data-x-internal=&quot;event-keydown&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keydown&quot;&gt;keydown&lt;/a&gt;&lt;/code&gt;  event handler
+// keydown event handler
 func (e *ElementVideo) OnKeydown(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1001,7 +907,7 @@ func (e *ElementVideo) OnKeydown(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keypress&quot;&gt;&lt;a data-x-internal=&quot;event-keypress&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keypress&quot;&gt;keypress&lt;/a&gt;&lt;/code&gt;  event handler
+// keypress event handler
 func (e *ElementVideo) OnKeypress(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1015,7 +921,7 @@ func (e *ElementVideo) OnKeypress(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keyup&quot;&gt;&lt;a data-x-internal=&quot;event-keyup&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keyup&quot;&gt;keyup&lt;/a&gt;&lt;/code&gt;  event handler
+// keyup event handler
 func (e *ElementVideo) OnKeyup(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1029,7 +935,7 @@ func (e *ElementVideo) OnKeyup(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-load&quot;&gt;&lt;a href=&quot;#event-load&quot;&gt;load&lt;/a&gt;&lt;/code&gt;  event handler
+// load event handler
 func (e *ElementVideo) OnLoad(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1043,7 +949,7 @@ func (e *ElementVideo) OnLoad(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadeddata&quot;&gt;&lt;a href=&quot;media.html#event-media-loadeddata&quot;&gt;loadeddata&lt;/a&gt;&lt;/code&gt;  event handler
+// loadeddata event handler
 func (e *ElementVideo) OnLoadeddata(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1057,7 +963,7 @@ func (e *ElementVideo) OnLoadeddata(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadedmetadata&quot;&gt;&lt;a href=&quot;media.html#event-media-loadedmetadata&quot;&gt;loadedmetadata&lt;/a&gt;&lt;/code&gt;  event handler
+// loadedmetadata event handler
 func (e *ElementVideo) OnLoadedmetadata(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1071,7 +977,7 @@ func (e *ElementVideo) OnLoadedmetadata(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadstart&quot;&gt;&lt;a href=&quot;media.html#event-media-loadstart&quot;&gt;loadstart&lt;/a&gt;&lt;/code&gt;  event handler
+// loadstart event handler
 func (e *ElementVideo) OnLoadstart(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1085,7 +991,7 @@ func (e *ElementVideo) OnLoadstart(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mousedown&quot;&gt;&lt;a data-x-internal=&quot;event-mousedown&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mousedown&quot;&gt;mousedown&lt;/a&gt;&lt;/code&gt;  event handler
+// mousedown event handler
 func (e *ElementVideo) OnMousedown(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1099,7 +1005,7 @@ func (e *ElementVideo) OnMousedown(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseenter&quot;&gt;&lt;a data-x-internal=&quot;event-mouseenter&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseenter&quot;&gt;mouseenter&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseenter event handler
 func (e *ElementVideo) OnMouseenter(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1113,7 +1019,7 @@ func (e *ElementVideo) OnMouseenter(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseleave&quot;&gt;&lt;a data-x-internal=&quot;event-mouseleave&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseleave&quot;&gt;mouseleave&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseleave event handler
 func (e *ElementVideo) OnMouseleave(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1127,7 +1033,7 @@ func (e *ElementVideo) OnMouseleave(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mousemove&quot;&gt;&lt;a data-x-internal=&quot;event-mousemove&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mousemove&quot;&gt;mousemove&lt;/a&gt;&lt;/code&gt;  event handler
+// mousemove event handler
 func (e *ElementVideo) OnMousemove(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1141,7 +1047,7 @@ func (e *ElementVideo) OnMousemove(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseout&quot;&gt;&lt;a data-x-internal=&quot;event-mouseout&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseout&quot;&gt;mouseout&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseout event handler
 func (e *ElementVideo) OnMouseout(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1155,7 +1061,7 @@ func (e *ElementVideo) OnMouseout(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseover&quot;&gt;&lt;a data-x-internal=&quot;event-mouseover&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseover&quot;&gt;mouseover&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseover event handler
 func (e *ElementVideo) OnMouseover(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1169,7 +1075,7 @@ func (e *ElementVideo) OnMouseover(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseup&quot;&gt;&lt;a data-x-internal=&quot;event-mouseup&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseup&quot;&gt;mouseup&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseup event handler
 func (e *ElementVideo) OnMouseup(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1183,7 +1089,7 @@ func (e *ElementVideo) OnMouseup(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-paste&quot;&gt;&lt;a data-x-internal=&quot;event-paste&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-paste&quot;&gt;paste&lt;/a&gt;&lt;/code&gt;  event handler
+// paste event handler
 func (e *ElementVideo) OnPaste(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1197,7 +1103,7 @@ func (e *ElementVideo) OnPaste(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-pause&quot;&gt;&lt;a href=&quot;media.html#event-media-pause&quot;&gt;pause&lt;/a&gt;&lt;/code&gt;  event handler
+// pause event handler
 func (e *ElementVideo) OnPause(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1211,7 +1117,7 @@ func (e *ElementVideo) OnPause(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-play&quot;&gt;&lt;a href=&quot;media.html#event-media-play&quot;&gt;play&lt;/a&gt;&lt;/code&gt;  event handler
+// play event handler
 func (e *ElementVideo) OnPlay(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1225,7 +1131,7 @@ func (e *ElementVideo) OnPlay(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-playing&quot;&gt;&lt;a href=&quot;media.html#event-media-playing&quot;&gt;playing&lt;/a&gt;&lt;/code&gt;  event handler
+// playing event handler
 func (e *ElementVideo) OnPlaying(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1239,7 +1145,7 @@ func (e *ElementVideo) OnPlaying(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-progress&quot;&gt;&lt;a href=&quot;media.html#event-media-progress&quot;&gt;progress&lt;/a&gt;&lt;/code&gt;  event handler
+// progress event handler
 func (e *ElementVideo) OnProgress(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1253,7 +1159,7 @@ func (e *ElementVideo) OnProgress(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-ratechange&quot;&gt;&lt;a href=&quot;media.html#event-media-ratechange&quot;&gt;ratechange&lt;/a&gt;&lt;/code&gt;  event handler
+// ratechange event handler
 func (e *ElementVideo) OnRatechange(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1267,7 +1173,7 @@ func (e *ElementVideo) OnRatechange(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-reset&quot;&gt;&lt;a href=&quot;#event-reset&quot;&gt;reset&lt;/a&gt;&lt;/code&gt;  event handler
+// reset event handler
 func (e *ElementVideo) OnReset(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1281,7 +1187,7 @@ func (e *ElementVideo) OnReset(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-resize&quot;&gt;&lt;a data-x-internal=&quot;event-resize&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-window-resize&quot;&gt;resize&lt;/a&gt;&lt;/code&gt;  event handler
+// resize event handler
 func (e *ElementVideo) OnResize(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1295,7 +1201,7 @@ func (e *ElementVideo) OnResize(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-scroll&quot;&gt;&lt;a data-x-internal=&quot;event-scroll&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-document-scroll&quot;&gt;scroll&lt;/a&gt;&lt;/code&gt;  event handler
+// scroll event handler
 func (e *ElementVideo) OnScroll(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1309,7 +1215,7 @@ func (e *ElementVideo) OnScroll(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-scrollend&quot;&gt;&lt;a data-x-internal=&quot;event-scrollend&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-document-scrollend&quot;&gt;scrollend&lt;/a&gt;&lt;/code&gt;  event handler
+// scrollend event handler
 func (e *ElementVideo) OnScrollend(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1323,7 +1229,7 @@ func (e *ElementVideo) OnScrollend(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-securitypolicyviolation&quot;&gt;&lt;a data-x-internal=&quot;event-securitypolicyviolation&quot; href=&quot;https://w3c.github.io/webappsec-csp/#eventdef-globaleventhandlers-securitypolicyviolation&quot;&gt;securitypolicyviolation&lt;/a&gt;&lt;/code&gt;  event handler
+// securitypolicyviolation event handler
 func (e *ElementVideo) OnSecuritypolicyviolation(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1337,7 +1243,7 @@ func (e *ElementVideo) OnSecuritypolicyviolation(fn engine.EventHandler) *Elemen
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-seeked&quot;&gt;&lt;a href=&quot;media.html#event-media-seeked&quot;&gt;seeked&lt;/a&gt;&lt;/code&gt;  event handler
+// seeked event handler
 func (e *ElementVideo) OnSeeked(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1351,7 +1257,7 @@ func (e *ElementVideo) OnSeeked(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-seeking&quot;&gt;&lt;a href=&quot;media.html#event-media-seeking&quot;&gt;seeking&lt;/a&gt;&lt;/code&gt;  event handler
+// seeking event handler
 func (e *ElementVideo) OnSeeking(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1365,7 +1271,7 @@ func (e *ElementVideo) OnSeeking(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-select&quot;&gt;&lt;a href=&quot;#event-select&quot;&gt;select&lt;/a&gt;&lt;/code&gt;  event handler
+// select event handler
 func (e *ElementVideo) OnSelect(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1379,7 +1285,7 @@ func (e *ElementVideo) OnSelect(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-slotchange&quot;&gt;&lt;a data-x-internal=&quot;event-slotchange&quot; href=&quot;https://dom.spec.whatwg.org/#eventdef-htmlslotelement-slotchange&quot;&gt;slotchange&lt;/a&gt;&lt;/code&gt;  event handler
+// slotchange event handler
 func (e *ElementVideo) OnSlotchange(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1393,7 +1299,7 @@ func (e *ElementVideo) OnSlotchange(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-stalled&quot;&gt;&lt;a href=&quot;media.html#event-media-stalled&quot;&gt;stalled&lt;/a&gt;&lt;/code&gt;  event handler
+// stalled event handler
 func (e *ElementVideo) OnStalled(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1407,7 +1313,7 @@ func (e *ElementVideo) OnStalled(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-submit&quot;&gt;&lt;a href=&quot;#event-submit&quot;&gt;submit&lt;/a&gt;&lt;/code&gt;  event handler
+// submit event handler
 func (e *ElementVideo) OnSubmit(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1421,7 +1327,7 @@ func (e *ElementVideo) OnSubmit(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-suspend&quot;&gt;&lt;a href=&quot;media.html#event-media-suspend&quot;&gt;suspend&lt;/a&gt;&lt;/code&gt;  event handler
+// suspend event handler
 func (e *ElementVideo) OnSuspend(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1435,7 +1341,7 @@ func (e *ElementVideo) OnSuspend(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-timeupdate&quot;&gt;&lt;a href=&quot;media.html#event-media-timeupdate&quot;&gt;timeupdate&lt;/a&gt;&lt;/code&gt;  event handler
+// timeupdate event handler
 func (e *ElementVideo) OnTimeupdate(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1449,7 +1355,7 @@ func (e *ElementVideo) OnTimeupdate(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-toggle&quot;&gt;&lt;a href=&quot;#event-toggle&quot;&gt;toggle&lt;/a&gt;&lt;/code&gt;  event handler
+// toggle event handler
 func (e *ElementVideo) OnToggle(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1463,7 +1369,7 @@ func (e *ElementVideo) OnToggle(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-volumechange&quot;&gt;&lt;a href=&quot;media.html#event-media-volumechange&quot;&gt;volumechange&lt;/a&gt;&lt;/code&gt;  event handler
+// volumechange event handler
 func (e *ElementVideo) OnVolumechange(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1477,7 +1383,7 @@ func (e *ElementVideo) OnVolumechange(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-waiting&quot;&gt;&lt;a href=&quot;media.html#event-media-waiting&quot;&gt;waiting&lt;/a&gt;&lt;/code&gt;  event handler
+// waiting event handler
 func (e *ElementVideo) OnWaiting(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e
@@ -1491,7 +1397,7 @@ func (e *ElementVideo) OnWaiting(fn engine.EventHandler) *ElementVideo {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-wheel&quot;&gt;&lt;a data-x-internal=&quot;event-wheel&quot; href=&quot;https://w3c.github.io/uievents/#event-type-wheel&quot;&gt;wheel&lt;/a&gt;&lt;/code&gt;  event handler
+// wheel event handler
 func (e *ElementVideo) OnWheel(fn engine.EventHandler) *ElementVideo {
 	if fn == nil {
 		return e

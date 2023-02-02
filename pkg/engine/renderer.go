@@ -219,7 +219,9 @@ func (r *Renderer) text(text string, w io.Writer) error {
 		return nil
 	}
 
-	if _, err := w.Write([]byte(html.EscapeString(text))); err != nil {
+	// TODO: This is because of script, ask Delaney
+	// text = html.EscapeString(text)
+	if _, err := w.Write([]byte(text)); err != nil {
 		return fmt.Errorf("write to writer: %w", err)
 	}
 

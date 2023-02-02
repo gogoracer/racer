@@ -2,407 +2,343 @@
 
 package handlebars
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 type ElementSummary struct {
-	shouldBeComponent bool
-	attrs             map[string]interface{}
-	children          []any
+	*baseElement
 }
 
 func SUMMARY(children ...any) *ElementSummary {
 	return &ElementSummary{
-		attrs:    map[string]interface{}{},
-		children: children,
+		baseElement: newBaseElement("summary", children...),
 	}
 }
 
 func (e *ElementSummary) Add(children ...any) *ElementSummary {
-	e.children = append(e.children, children...)
+	e.baseElement.add(children...)
 	return e
 }
 
-func (e *ElementSummary) Custom(k, v string) *ElementSummary {
-	e.attrs[k] = v
+func (e *ElementSummary) Custom(k, v string, dontEscape ...bool) *ElementSummary {
+	e.baseElement.custom(k, v, dontEscape...)
 	return e
 }
 
-func (e *ElementSummary) BindCustom(k string, v bool) *ElementSummary {
-	e.shouldBeComponent = true
+func (e *ElementSummary) BindCustom(k string, v string, dontEscape ...bool) *ElementSummary {
+	e.baseElement.bindCustom(k, v, dontEscape...)
 	return e
 }
 
-func (e ElementSummary) HandlebarElement() {}
-
-func (e ElementSummary) GenerateVDOM() interface{} {
-	all := append([]any{e.attrs}, e.children...)
-	if e.shouldBeComponent {
-		return engine.NewComponent("summary", all...)
-	} else {
-		return engine.NewTag("summary", all...)
-	}
-}
-
-// Accesskey is the "accesskey"" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered-set-of-unique-space-separated-tokens
-//   - string-is
-func (e *ElementSummary) Accesskey(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["accesskey"] = v
+func (e *ElementSummary) setAttribute(k string, v string, dontEscape ...bool) *ElementSummary {
+	e.baseElement.setAttribute(k, v, dontEscape...)
 	return e
 }
 
-// Autocapitalize is the "autocapitalize"" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementSummary) Autocapitalize(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["autocapitalize"] = v
-	return e
+func (e *ElementSummary) GenerateVDOM() interface{} {
+	return e.baseElement.generateVDOM()
 }
 
-// Autofocus is the "autofocus"" attribute.
-// Automatically focus the element when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementSummary) Autofocus(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["autofocus"] = v
-	return e
-}
-
-// Class is the "class"" attribute.
-// Classes to which the element belongs
-// Valid values are constrained to the following:
-//   - set-of-space-separated-tokens
-func (e *ElementSummary) Class(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["class"] = v
-	return e
-}
-
-// Contenteditable is the "contenteditable"" attribute.
-// Whether the element is editable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (e *ElementSummary) Contenteditable(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["contenteditable"] = v
-	return e
-}
-
-// Dir is the "dir"" attribute.
-//
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-func (e *ElementSummary) Dir(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["dir"] = v
-	return e
-}
-
-// Draggable is the "draggable"" attribute.
+// Draggable is the "draggable" attribute.
 // Whether the element is draggable
 // Valid values are constrained to the following:
 //   - true
 //   - false
-func (e *ElementSummary) Draggable(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["draggable"] = v
-	return e
+func (element *ElementSummary) Draggable(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("draggable", v, dontEscape...)
+	return element
 }
 
-// Enterkeyhint is the "enterkeyhint"" attribute.
-// Hint for selecting an enter key action
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
 // Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementSummary) Enterkeyhint(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["enterkeyhint"] = v
-	return e
+//   - valid_integer
+func (element *ElementSummary) Tabindex(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("tabindex", v, dontEscape...)
+	return element
 }
 
-// Hidden is the "hidden"" attribute.
-// Whether the element is relevant
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-func (e *ElementSummary) Hidden(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["hidden"] = v
-	return e
-}
-
-// Id is the "id"" attribute.
-// The element&#39;s
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementSummary) Id(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["id"] = v
-	return e
-}
-
-// Inert is the "inert"" attribute.
-// Whether the element is
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementSummary) Inert(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["inert"] = v
-	return e
-}
-
-// Inputmode is the "inputmode"" attribute.
-// Hint for selecting an input modality
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementSummary) Inputmode(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["inputmode"] = v
-	return e
-}
-
-// Is is the "is"" attribute.
-// Creates a
-// Valid values are constrained to the following:
-//   - valid-custom-element-name
-//   - customized-built-in-element
-func (e *ElementSummary) Is(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["is"] = v
-	return e
-}
-
-// Itemid is the "itemid"" attribute.
-//
-// Valid values are constrained to the following:
-//   - valid-url-potentially-surrounded-by-spaces
-func (e *ElementSummary) Itemid(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemid"] = v
-	return e
-}
-
-// Itemprop is the "itemprop"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-//   - syntax-url-absolute
-//   - defined-property-name
-func (e *ElementSummary) Itemprop(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemprop"] = v
-	return e
-}
-
-// Itemref is the "itemref"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-func (e *ElementSummary) Itemref(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemref"] = v
-	return e
-}
-
-// Itemscope is the "itemscope"" attribute.
-// Introduces a microdata item
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementSummary) Itemscope(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemscope"] = v
-	return e
-}
-
-// Itemtype is the "itemtype"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-//   - syntax-url-absolute
-func (e *ElementSummary) Itemtype(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemtype"] = v
-	return e
-}
-
-// Lang is the "lang"" attribute.
-//
-// Valid values are constrained to the following:
-func (e *ElementSummary) Lang(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["lang"] = v
-	return e
-}
-
-// Nonce is the "nonce"" attribute.
-// Cryptographic nonce used in
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementSummary) Nonce(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["nonce"] = v
-	return e
-}
-
-// Popover is the "popover"" attribute.
-// Makes the element a
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-func (e *ElementSummary) Popover(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["popover"] = v
-	return e
-}
-
-// Slot is the "slot"" attribute.
-// The element&#39;s desired slot
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementSummary) Slot(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["slot"] = v
-	return e
-}
-
-// Spellcheck is the "spellcheck"" attribute.
-// Whether the element is to have its spelling and grammar checked
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (e *ElementSummary) Spellcheck(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["spellcheck"] = v
-	return e
-}
-
-// Style is the "style"" attribute.
-// Presentational and formatting instructions
-// Valid values are constrained to the following:
-func (e *ElementSummary) Style(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["style"] = v
-	return e
-}
-
-// Tabindex is the "tabindex"" attribute.
-// Whether the element is
-// Valid values are constrained to the following:
-//   - valid-integer
-func (e *ElementSummary) Tabindex(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["tabindex"] = v
-	return e
-}
-
-// Title is the "title"" attribute.
-// Advisory information for the element
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementSummary) Title(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["title"] = v
-	return e
-}
-
-// Translate is the "translate"" attribute.
+// Translate is the "translate" attribute.
 // Whether the element is to be translated when the page is localized
 // Valid values are constrained to the following:
 //   - yes
 //   - no
-func (e *ElementSummary) Translate(v string) *ElementSummary {
-	if v == "" {
-		return e
-	}
-	e.attrs["translate"] = v
-	return e
+func (element *ElementSummary) Translate(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("translate", v, dontEscape...)
+	return element
 }
 
-// &lt;code id=&quot;attributes-3:event-auxclick&quot;&gt;&lt;a data-x-internal=&quot;event-auxclick&quot; href=&quot;https://w3c.github.io/uievents/#event-type-auxclick&quot;&gt;auxclick&lt;/a&gt;&lt;/code&gt;  event handler
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementSummary) Itemtype(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("itemtype", v, dontEscape...)
+	return element
+}
+
+// Enterkeyhint is the "enterkeyhint" attribute.
+// Hint for selecting an enter key action
+// Valid values are constrained to the following:
+//   - enter
+//   - enter
+//   - done
+//   - done
+//   - go
+//   - go
+//   - next
+//   - next
+//   - previous
+//   - previous
+//   - search
+//   - search
+//   - send
+//   - send
+func (element *ElementSummary) Enterkeyhint(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("enterkeyhint", v, dontEscape...)
+	return element
+}
+
+// Spellcheck is the "spellcheck" attribute.
+// Whether the element is to have its spelling and grammar checked
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementSummary) Spellcheck(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("spellcheck", v, dontEscape...)
+	return element
+}
+
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementSummary) Accesskey(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementSummary) Is(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementSummary) Nonce(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("nonce", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementSummary) Contenteditable(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("contenteditable", v, dontEscape...)
+	return element
+}
+
+// Itemref is the "itemref" attribute.
+// Referenced elements
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementSummary) Itemref(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("itemref", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementSummary) Class(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementSummary) Itemprop(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("itemprop", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementSummary) Style(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("style", v, dontEscape...)
+	return element
+}
+
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementSummary) Itemscope(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("itemscope", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementSummary) Slot(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("slot", v, dontEscape...)
+	return element
+}
+
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
+// Valid values are constrained to the following:
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementSummary) Autocapitalize(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("autocapitalize", v, dontEscape...)
+	return element
+}
+
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
+// Valid values are constrained to the following:
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementSummary) Hidden(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("hidden", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementSummary) Inert(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Inputmode is the "inputmode" attribute.
+// Hint for selecting an input modality
+// Valid values are constrained to the following:
+//   - none
+//   - none
+//   - text
+//   - text
+//   - tel
+//   - tel
+//   - email
+//   - email
+//   - url
+//   - url
+//   - numeric
+//   - numeric
+//   - decimal
+//   - decimal
+//   - search
+//   - search
+func (element *ElementSummary) Inputmode(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("inputmode", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementSummary) Autofocus(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Lang is the "lang" attribute.
+// Language of the element
+// Valid values are constrained to the following:
+func (element *ElementSummary) Lang(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("lang", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementSummary) Title(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Popover is the "popover" attribute.
+// Makes the element a popover element
+// Valid values are constrained to the following:
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementSummary) Popover(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("popover", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementSummary) Dir(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementSummary) Id(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementSummary) Itemid(v string, dontEscape ...bool) *ElementSummary {
+	element.setAttribute("itemid", v, dontEscape...)
+	return element
+}
+
+// auxclick event handler
 func (e *ElementSummary) OnAuxclick(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -416,7 +352,7 @@ func (e *ElementSummary) OnAuxclick(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-beforematch&quot;&gt;&lt;a href=&quot;#event-beforematch&quot;&gt;beforematch&lt;/a&gt;&lt;/code&gt;  event handler
+// beforematch event handler
 func (e *ElementSummary) OnBeforematch(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -430,7 +366,7 @@ func (e *ElementSummary) OnBeforematch(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-beforetoggle&quot;&gt;&lt;a href=&quot;#event-beforetoggle&quot;&gt;beforetoggle&lt;/a&gt;&lt;/code&gt;  event handler
+// beforetoggle event handler
 func (e *ElementSummary) OnBeforetoggle(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -444,7 +380,7 @@ func (e *ElementSummary) OnBeforetoggle(fn engine.EventHandler) *ElementSummary 
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-blur&quot;&gt;&lt;a href=&quot;#event-blur&quot;&gt;blur&lt;/a&gt;&lt;/code&gt;  event handler
+// blur event handler
 func (e *ElementSummary) OnBlur(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -458,7 +394,7 @@ func (e *ElementSummary) OnBlur(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-cancel&quot;&gt;&lt;a href=&quot;#event-cancel&quot;&gt;cancel&lt;/a&gt;&lt;/code&gt;  event handler
+// cancel event handler
 func (e *ElementSummary) OnCancel(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -472,7 +408,7 @@ func (e *ElementSummary) OnCancel(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-canplay&quot;&gt;&lt;a href=&quot;media.html#event-media-canplay&quot;&gt;canplay&lt;/a&gt;&lt;/code&gt;  event handler
+// canplay event handler
 func (e *ElementSummary) OnCanplay(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -486,7 +422,7 @@ func (e *ElementSummary) OnCanplay(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-canplaythrough&quot;&gt;&lt;a href=&quot;media.html#event-media-canplaythrough&quot;&gt;canplaythrough&lt;/a&gt;&lt;/code&gt;  event handler
+// canplaythrough event handler
 func (e *ElementSummary) OnCanplaythrough(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -500,7 +436,7 @@ func (e *ElementSummary) OnCanplaythrough(fn engine.EventHandler) *ElementSummar
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-change&quot;&gt;&lt;a href=&quot;#event-change&quot;&gt;change&lt;/a&gt;&lt;/code&gt;  event handler
+// change event handler
 func (e *ElementSummary) OnChange(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -514,7 +450,7 @@ func (e *ElementSummary) OnChange(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-click&quot;&gt;&lt;a data-x-internal=&quot;event-click&quot; href=&quot;https://w3c.github.io/uievents/#event-type-click&quot;&gt;click&lt;/a&gt;&lt;/code&gt;  event handler
+// click event handler
 func (e *ElementSummary) OnClick(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -528,7 +464,7 @@ func (e *ElementSummary) OnClick(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-close&quot;&gt;&lt;a href=&quot;#event-close&quot;&gt;close&lt;/a&gt;&lt;/code&gt;  event handler
+// close event handler
 func (e *ElementSummary) OnClose(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -542,7 +478,7 @@ func (e *ElementSummary) OnClose(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextlost&quot;&gt;&lt;a href=&quot;#event-contextlost&quot;&gt;contextlost&lt;/a&gt;&lt;/code&gt;  event handler
+// contextlost event handler
 func (e *ElementSummary) OnContextlost(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -556,7 +492,7 @@ func (e *ElementSummary) OnContextlost(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextmenu&quot;&gt;&lt;a data-x-internal=&quot;event-contextmenu&quot; href=&quot;https://w3c.github.io/uievents/#event-type-contextmenu&quot;&gt;contextmenu&lt;/a&gt;&lt;/code&gt;  event handler
+// contextmenu event handler
 func (e *ElementSummary) OnContextmenu(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -570,7 +506,7 @@ func (e *ElementSummary) OnContextmenu(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextrestored&quot;&gt;&lt;a href=&quot;#event-contextrestored&quot;&gt;contextrestored&lt;/a&gt;&lt;/code&gt;  event handler
+// contextrestored event handler
 func (e *ElementSummary) OnContextrestored(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -584,7 +520,7 @@ func (e *ElementSummary) OnContextrestored(fn engine.EventHandler) *ElementSumma
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-copy&quot;&gt;&lt;a data-x-internal=&quot;event-copy&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-copy&quot;&gt;copy&lt;/a&gt;&lt;/code&gt;  event handler
+// copy event handler
 func (e *ElementSummary) OnCopy(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -598,7 +534,7 @@ func (e *ElementSummary) OnCopy(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-cuechange&quot;&gt;&lt;a href=&quot;media.html#event-media-cuechange&quot;&gt;cuechange&lt;/a&gt;&lt;/code&gt;  event handler
+// cuechange event handler
 func (e *ElementSummary) OnCuechange(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -612,7 +548,7 @@ func (e *ElementSummary) OnCuechange(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-cut&quot;&gt;&lt;a data-x-internal=&quot;event-cut&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-cut&quot;&gt;cut&lt;/a&gt;&lt;/code&gt;  event handler
+// cut event handler
 func (e *ElementSummary) OnCut(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -626,7 +562,7 @@ func (e *ElementSummary) OnCut(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dblclick&quot;&gt;&lt;a data-x-internal=&quot;event-dblclick&quot; href=&quot;https://w3c.github.io/uievents/#event-type-dblclick&quot;&gt;dblclick&lt;/a&gt;&lt;/code&gt;  event handler
+// dblclick event handler
 func (e *ElementSummary) OnDblclick(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -640,7 +576,7 @@ func (e *ElementSummary) OnDblclick(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-drag&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-drag&quot;&gt;drag&lt;/a&gt;&lt;/code&gt;  event handler
+// drag event handler
 func (e *ElementSummary) OnDrag(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -654,7 +590,7 @@ func (e *ElementSummary) OnDrag(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragend&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragend&quot;&gt;dragend&lt;/a&gt;&lt;/code&gt;  event handler
+// dragend event handler
 func (e *ElementSummary) OnDragend(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -668,7 +604,7 @@ func (e *ElementSummary) OnDragend(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragenter&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragenter&quot;&gt;dragenter&lt;/a&gt;&lt;/code&gt;  event handler
+// dragenter event handler
 func (e *ElementSummary) OnDragenter(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -682,7 +618,7 @@ func (e *ElementSummary) OnDragenter(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragleave&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragleave&quot;&gt;dragleave&lt;/a&gt;&lt;/code&gt;  event handler
+// dragleave event handler
 func (e *ElementSummary) OnDragleave(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -696,7 +632,7 @@ func (e *ElementSummary) OnDragleave(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragover&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragover&quot;&gt;dragover&lt;/a&gt;&lt;/code&gt;  event handler
+// dragover event handler
 func (e *ElementSummary) OnDragover(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -710,7 +646,7 @@ func (e *ElementSummary) OnDragover(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragstart&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragstart&quot;&gt;dragstart&lt;/a&gt;&lt;/code&gt;  event handler
+// dragstart event handler
 func (e *ElementSummary) OnDragstart(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -724,7 +660,7 @@ func (e *ElementSummary) OnDragstart(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-drop&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-drop&quot;&gt;drop&lt;/a&gt;&lt;/code&gt;  event handler
+// drop event handler
 func (e *ElementSummary) OnDrop(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -738,7 +674,7 @@ func (e *ElementSummary) OnDrop(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-durationchange&quot;&gt;&lt;a href=&quot;media.html#event-media-durationchange&quot;&gt;durationchange&lt;/a&gt;&lt;/code&gt;  event handler
+// durationchange event handler
 func (e *ElementSummary) OnDurationchange(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -752,7 +688,7 @@ func (e *ElementSummary) OnDurationchange(fn engine.EventHandler) *ElementSummar
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-emptied&quot;&gt;&lt;a href=&quot;media.html#event-media-emptied&quot;&gt;emptied&lt;/a&gt;&lt;/code&gt;  event handler
+// emptied event handler
 func (e *ElementSummary) OnEmptied(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -766,7 +702,7 @@ func (e *ElementSummary) OnEmptied(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-ended&quot;&gt;&lt;a href=&quot;media.html#event-media-ended&quot;&gt;ended&lt;/a&gt;&lt;/code&gt;  event handler
+// ended event handler
 func (e *ElementSummary) OnEnded(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -780,7 +716,7 @@ func (e *ElementSummary) OnEnded(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-error&quot;&gt;&lt;a href=&quot;#event-error&quot;&gt;error&lt;/a&gt;&lt;/code&gt;  event handler
+// error event handler
 func (e *ElementSummary) OnError(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -794,7 +730,7 @@ func (e *ElementSummary) OnError(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-focus&quot;&gt;&lt;a href=&quot;#event-focus&quot;&gt;focus&lt;/a&gt;&lt;/code&gt;  event handler
+// focus event handler
 func (e *ElementSummary) OnFocus(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -808,7 +744,7 @@ func (e *ElementSummary) OnFocus(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-formdata&quot;&gt;&lt;a href=&quot;#event-formdata&quot;&gt;formdata&lt;/a&gt;&lt;/code&gt;  event handler
+// formdata event handler
 func (e *ElementSummary) OnFormdata(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -822,7 +758,7 @@ func (e *ElementSummary) OnFormdata(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-input&quot;&gt;&lt;a data-x-internal=&quot;event-input&quot; href=&quot;https://w3c.github.io/uievents/#event-type-input&quot;&gt;input&lt;/a&gt;&lt;/code&gt;  event handler
+// input event handler
 func (e *ElementSummary) OnInput(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -836,7 +772,7 @@ func (e *ElementSummary) OnInput(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-invalid&quot;&gt;&lt;a href=&quot;#event-invalid&quot;&gt;invalid&lt;/a&gt;&lt;/code&gt;  event handler
+// invalid event handler
 func (e *ElementSummary) OnInvalid(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -850,7 +786,7 @@ func (e *ElementSummary) OnInvalid(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keydown&quot;&gt;&lt;a data-x-internal=&quot;event-keydown&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keydown&quot;&gt;keydown&lt;/a&gt;&lt;/code&gt;  event handler
+// keydown event handler
 func (e *ElementSummary) OnKeydown(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -864,7 +800,7 @@ func (e *ElementSummary) OnKeydown(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keypress&quot;&gt;&lt;a data-x-internal=&quot;event-keypress&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keypress&quot;&gt;keypress&lt;/a&gt;&lt;/code&gt;  event handler
+// keypress event handler
 func (e *ElementSummary) OnKeypress(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -878,7 +814,7 @@ func (e *ElementSummary) OnKeypress(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keyup&quot;&gt;&lt;a data-x-internal=&quot;event-keyup&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keyup&quot;&gt;keyup&lt;/a&gt;&lt;/code&gt;  event handler
+// keyup event handler
 func (e *ElementSummary) OnKeyup(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -892,7 +828,7 @@ func (e *ElementSummary) OnKeyup(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-load&quot;&gt;&lt;a href=&quot;#event-load&quot;&gt;load&lt;/a&gt;&lt;/code&gt;  event handler
+// load event handler
 func (e *ElementSummary) OnLoad(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -906,7 +842,7 @@ func (e *ElementSummary) OnLoad(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadeddata&quot;&gt;&lt;a href=&quot;media.html#event-media-loadeddata&quot;&gt;loadeddata&lt;/a&gt;&lt;/code&gt;  event handler
+// loadeddata event handler
 func (e *ElementSummary) OnLoadeddata(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -920,7 +856,7 @@ func (e *ElementSummary) OnLoadeddata(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadedmetadata&quot;&gt;&lt;a href=&quot;media.html#event-media-loadedmetadata&quot;&gt;loadedmetadata&lt;/a&gt;&lt;/code&gt;  event handler
+// loadedmetadata event handler
 func (e *ElementSummary) OnLoadedmetadata(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -934,7 +870,7 @@ func (e *ElementSummary) OnLoadedmetadata(fn engine.EventHandler) *ElementSummar
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadstart&quot;&gt;&lt;a href=&quot;media.html#event-media-loadstart&quot;&gt;loadstart&lt;/a&gt;&lt;/code&gt;  event handler
+// loadstart event handler
 func (e *ElementSummary) OnLoadstart(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -948,7 +884,7 @@ func (e *ElementSummary) OnLoadstart(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mousedown&quot;&gt;&lt;a data-x-internal=&quot;event-mousedown&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mousedown&quot;&gt;mousedown&lt;/a&gt;&lt;/code&gt;  event handler
+// mousedown event handler
 func (e *ElementSummary) OnMousedown(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -962,7 +898,7 @@ func (e *ElementSummary) OnMousedown(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseenter&quot;&gt;&lt;a data-x-internal=&quot;event-mouseenter&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseenter&quot;&gt;mouseenter&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseenter event handler
 func (e *ElementSummary) OnMouseenter(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -976,7 +912,7 @@ func (e *ElementSummary) OnMouseenter(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseleave&quot;&gt;&lt;a data-x-internal=&quot;event-mouseleave&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseleave&quot;&gt;mouseleave&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseleave event handler
 func (e *ElementSummary) OnMouseleave(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -990,7 +926,7 @@ func (e *ElementSummary) OnMouseleave(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mousemove&quot;&gt;&lt;a data-x-internal=&quot;event-mousemove&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mousemove&quot;&gt;mousemove&lt;/a&gt;&lt;/code&gt;  event handler
+// mousemove event handler
 func (e *ElementSummary) OnMousemove(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1004,7 +940,7 @@ func (e *ElementSummary) OnMousemove(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseout&quot;&gt;&lt;a data-x-internal=&quot;event-mouseout&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseout&quot;&gt;mouseout&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseout event handler
 func (e *ElementSummary) OnMouseout(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1018,7 +954,7 @@ func (e *ElementSummary) OnMouseout(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseover&quot;&gt;&lt;a data-x-internal=&quot;event-mouseover&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseover&quot;&gt;mouseover&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseover event handler
 func (e *ElementSummary) OnMouseover(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1032,7 +968,7 @@ func (e *ElementSummary) OnMouseover(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseup&quot;&gt;&lt;a data-x-internal=&quot;event-mouseup&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseup&quot;&gt;mouseup&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseup event handler
 func (e *ElementSummary) OnMouseup(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1046,7 +982,7 @@ func (e *ElementSummary) OnMouseup(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-paste&quot;&gt;&lt;a data-x-internal=&quot;event-paste&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-paste&quot;&gt;paste&lt;/a&gt;&lt;/code&gt;  event handler
+// paste event handler
 func (e *ElementSummary) OnPaste(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1060,7 +996,7 @@ func (e *ElementSummary) OnPaste(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-pause&quot;&gt;&lt;a href=&quot;media.html#event-media-pause&quot;&gt;pause&lt;/a&gt;&lt;/code&gt;  event handler
+// pause event handler
 func (e *ElementSummary) OnPause(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1074,7 +1010,7 @@ func (e *ElementSummary) OnPause(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-play&quot;&gt;&lt;a href=&quot;media.html#event-media-play&quot;&gt;play&lt;/a&gt;&lt;/code&gt;  event handler
+// play event handler
 func (e *ElementSummary) OnPlay(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1088,7 +1024,7 @@ func (e *ElementSummary) OnPlay(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-playing&quot;&gt;&lt;a href=&quot;media.html#event-media-playing&quot;&gt;playing&lt;/a&gt;&lt;/code&gt;  event handler
+// playing event handler
 func (e *ElementSummary) OnPlaying(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1102,7 +1038,7 @@ func (e *ElementSummary) OnPlaying(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-progress&quot;&gt;&lt;a href=&quot;media.html#event-media-progress&quot;&gt;progress&lt;/a&gt;&lt;/code&gt;  event handler
+// progress event handler
 func (e *ElementSummary) OnProgress(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1116,7 +1052,7 @@ func (e *ElementSummary) OnProgress(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-ratechange&quot;&gt;&lt;a href=&quot;media.html#event-media-ratechange&quot;&gt;ratechange&lt;/a&gt;&lt;/code&gt;  event handler
+// ratechange event handler
 func (e *ElementSummary) OnRatechange(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1130,7 +1066,7 @@ func (e *ElementSummary) OnRatechange(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-reset&quot;&gt;&lt;a href=&quot;#event-reset&quot;&gt;reset&lt;/a&gt;&lt;/code&gt;  event handler
+// reset event handler
 func (e *ElementSummary) OnReset(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1144,7 +1080,7 @@ func (e *ElementSummary) OnReset(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-resize&quot;&gt;&lt;a data-x-internal=&quot;event-resize&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-window-resize&quot;&gt;resize&lt;/a&gt;&lt;/code&gt;  event handler
+// resize event handler
 func (e *ElementSummary) OnResize(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1158,7 +1094,7 @@ func (e *ElementSummary) OnResize(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-scroll&quot;&gt;&lt;a data-x-internal=&quot;event-scroll&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-document-scroll&quot;&gt;scroll&lt;/a&gt;&lt;/code&gt;  event handler
+// scroll event handler
 func (e *ElementSummary) OnScroll(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1172,7 +1108,7 @@ func (e *ElementSummary) OnScroll(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-scrollend&quot;&gt;&lt;a data-x-internal=&quot;event-scrollend&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-document-scrollend&quot;&gt;scrollend&lt;/a&gt;&lt;/code&gt;  event handler
+// scrollend event handler
 func (e *ElementSummary) OnScrollend(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1186,7 +1122,7 @@ func (e *ElementSummary) OnScrollend(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-securitypolicyviolation&quot;&gt;&lt;a data-x-internal=&quot;event-securitypolicyviolation&quot; href=&quot;https://w3c.github.io/webappsec-csp/#eventdef-globaleventhandlers-securitypolicyviolation&quot;&gt;securitypolicyviolation&lt;/a&gt;&lt;/code&gt;  event handler
+// securitypolicyviolation event handler
 func (e *ElementSummary) OnSecuritypolicyviolation(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1200,7 +1136,7 @@ func (e *ElementSummary) OnSecuritypolicyviolation(fn engine.EventHandler) *Elem
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-seeked&quot;&gt;&lt;a href=&quot;media.html#event-media-seeked&quot;&gt;seeked&lt;/a&gt;&lt;/code&gt;  event handler
+// seeked event handler
 func (e *ElementSummary) OnSeeked(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1214,7 +1150,7 @@ func (e *ElementSummary) OnSeeked(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-seeking&quot;&gt;&lt;a href=&quot;media.html#event-media-seeking&quot;&gt;seeking&lt;/a&gt;&lt;/code&gt;  event handler
+// seeking event handler
 func (e *ElementSummary) OnSeeking(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1228,7 +1164,7 @@ func (e *ElementSummary) OnSeeking(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-select&quot;&gt;&lt;a href=&quot;#event-select&quot;&gt;select&lt;/a&gt;&lt;/code&gt;  event handler
+// select event handler
 func (e *ElementSummary) OnSelect(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1242,7 +1178,7 @@ func (e *ElementSummary) OnSelect(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-slotchange&quot;&gt;&lt;a data-x-internal=&quot;event-slotchange&quot; href=&quot;https://dom.spec.whatwg.org/#eventdef-htmlslotelement-slotchange&quot;&gt;slotchange&lt;/a&gt;&lt;/code&gt;  event handler
+// slotchange event handler
 func (e *ElementSummary) OnSlotchange(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1256,7 +1192,7 @@ func (e *ElementSummary) OnSlotchange(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-stalled&quot;&gt;&lt;a href=&quot;media.html#event-media-stalled&quot;&gt;stalled&lt;/a&gt;&lt;/code&gt;  event handler
+// stalled event handler
 func (e *ElementSummary) OnStalled(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1270,7 +1206,7 @@ func (e *ElementSummary) OnStalled(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-submit&quot;&gt;&lt;a href=&quot;#event-submit&quot;&gt;submit&lt;/a&gt;&lt;/code&gt;  event handler
+// submit event handler
 func (e *ElementSummary) OnSubmit(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1284,7 +1220,7 @@ func (e *ElementSummary) OnSubmit(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-suspend&quot;&gt;&lt;a href=&quot;media.html#event-media-suspend&quot;&gt;suspend&lt;/a&gt;&lt;/code&gt;  event handler
+// suspend event handler
 func (e *ElementSummary) OnSuspend(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1298,7 +1234,7 @@ func (e *ElementSummary) OnSuspend(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-timeupdate&quot;&gt;&lt;a href=&quot;media.html#event-media-timeupdate&quot;&gt;timeupdate&lt;/a&gt;&lt;/code&gt;  event handler
+// timeupdate event handler
 func (e *ElementSummary) OnTimeupdate(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1312,7 +1248,7 @@ func (e *ElementSummary) OnTimeupdate(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-toggle&quot;&gt;&lt;a href=&quot;#event-toggle&quot;&gt;toggle&lt;/a&gt;&lt;/code&gt;  event handler
+// toggle event handler
 func (e *ElementSummary) OnToggle(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1326,7 +1262,7 @@ func (e *ElementSummary) OnToggle(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-volumechange&quot;&gt;&lt;a href=&quot;media.html#event-media-volumechange&quot;&gt;volumechange&lt;/a&gt;&lt;/code&gt;  event handler
+// volumechange event handler
 func (e *ElementSummary) OnVolumechange(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1340,7 +1276,7 @@ func (e *ElementSummary) OnVolumechange(fn engine.EventHandler) *ElementSummary 
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-waiting&quot;&gt;&lt;a href=&quot;media.html#event-media-waiting&quot;&gt;waiting&lt;/a&gt;&lt;/code&gt;  event handler
+// waiting event handler
 func (e *ElementSummary) OnWaiting(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e
@@ -1354,7 +1290,7 @@ func (e *ElementSummary) OnWaiting(fn engine.EventHandler) *ElementSummary {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-wheel&quot;&gt;&lt;a data-x-internal=&quot;event-wheel&quot; href=&quot;https://w3c.github.io/uievents/#event-type-wheel&quot;&gt;wheel&lt;/a&gt;&lt;/code&gt;  event handler
+// wheel event handler
 func (e *ElementSummary) OnWheel(fn engine.EventHandler) *ElementSummary {
 	if fn == nil {
 		return e

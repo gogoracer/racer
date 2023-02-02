@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "Academicons",
     "alpinejs",
     "apimachinery",
     "attributers",
@@ -16,6 +17,7 @@
     "containedctx",
     "cornelk",
     "Dendron",
+    "dont",
     "errgroup",
     "esbuild",
     "evanw",
@@ -27,6 +29,7 @@
     "goccy",
     "gofmt",
     "gogoracer",
+    "goquery",
     "Handlerbar",
     "hasher",
     "hhash",
@@ -36,6 +39,7 @@
     "Idxs",
     "Indicies",
     "keyup",
+    "Msgf",
     "msgpack",
     "multierr",
     "nats",
@@ -48,6 +52,7 @@
     "protoc",
     "protoimpl",
     "protoreflect",
+    "Puerkito",
     "qtpl",
     "sanic",
     "sess",

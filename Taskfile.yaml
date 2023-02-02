@@ -1,0 +1,26 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+interval: 100ms
+
+
+
+tasks:
+  build:
+    sources:
+      - "**/*.go"
+    cmds:
+      - go build -o helloworld_dev_bin ./cmd/helloworld/*.go
+  run:
+    deps:
+      - build
+    cmds:
+      - killall -q helloworld_dev_bin || echo "Process was not running."
+      - ./helloworld_dev_bin
+  default:
+    deps:
+      - run

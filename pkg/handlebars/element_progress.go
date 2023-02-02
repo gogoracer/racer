@@ -2,431 +2,361 @@
 
 package handlebars
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 type ElementProgress struct {
-	shouldBeComponent bool
-	attrs             map[string]interface{}
-	children          []any
+	*baseElement
 }
 
 func PROGRESS(children ...any) *ElementProgress {
 	return &ElementProgress{
-		attrs:    map[string]interface{}{},
-		children: children,
+		baseElement: newBaseElement("progress", children...),
 	}
 }
 
 func (e *ElementProgress) Add(children ...any) *ElementProgress {
-	e.children = append(e.children, children...)
+	e.baseElement.add(children...)
 	return e
 }
 
-func (e *ElementProgress) Custom(k, v string) *ElementProgress {
-	e.attrs[k] = v
+func (e *ElementProgress) Custom(k, v string, dontEscape ...bool) *ElementProgress {
+	e.baseElement.custom(k, v, dontEscape...)
 	return e
 }
 
-func (e *ElementProgress) BindCustom(k string, v bool) *ElementProgress {
-	e.shouldBeComponent = true
+func (e *ElementProgress) BindCustom(k string, v string, dontEscape ...bool) *ElementProgress {
+	e.baseElement.bindCustom(k, v, dontEscape...)
 	return e
 }
 
-func (e ElementProgress) HandlebarElement() {}
-
-func (e ElementProgress) GenerateVDOM() interface{} {
-	all := append([]any{e.attrs}, e.children...)
-	if e.shouldBeComponent {
-		return engine.NewComponent("progress", all...)
-	} else {
-		return engine.NewTag("progress", all...)
-	}
+func (e *ElementProgress) setAttribute(k string, v string, dontEscape ...bool) *ElementProgress {
+	e.baseElement.setAttribute(k, v, dontEscape...)
+	return e
 }
 
-// Accesskey is the "accesskey"" attribute.
-// Keyboard shortcut to activate or focus element
+func (e *ElementProgress) GenerateVDOM() interface{} {
+	return e.baseElement.generateVDOM()
+}
+
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
 // Valid values are constrained to the following:
-//   - ordered-set-of-unique-space-separated-tokens
-//   - string-is
-func (e *ElementProgress) Accesskey(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["accesskey"] = v
-	return e
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementProgress) Itemtype(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("itemtype", v, dontEscape...)
+	return element
 }
 
-// Autocapitalize is the "autocapitalize"" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
 // Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementProgress) Autocapitalize(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["autocapitalize"] = v
-	return e
+//   - text
+func (element *ElementProgress) Nonce(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("nonce", v, dontEscape...)
+	return element
 }
 
-// Autofocus is the "autofocus"" attribute.
-// Automatically focus the element when the page is loaded
+// Itemref is the "itemref" attribute.
+// Referenced elements
 // Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementProgress) Autofocus(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["autofocus"] = v
-	return e
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementProgress) Itemref(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("itemref", v, dontEscape...)
+	return element
 }
 
-// Class is the "class"" attribute.
-// Classes to which the element belongs
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
 // Valid values are constrained to the following:
-//   - set-of-space-separated-tokens
-func (e *ElementProgress) Class(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["class"] = v
-	return e
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementProgress) Itemid(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("itemid", v, dontEscape...)
+	return element
 }
 
-// Contenteditable is the "contenteditable"" attribute.
-// Whether the element is editable
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
 // Valid values are constrained to the following:
-//   - true
-//   - false
-func (e *ElementProgress) Contenteditable(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["contenteditable"] = v
-	return e
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementProgress) Itemprop(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("itemprop", v, dontEscape...)
+	return element
 }
 
-// Dir is the "dir"" attribute.
-//
+// Lang is the "lang" attribute.
+// Language of the element
 // Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-func (e *ElementProgress) Dir(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["dir"] = v
-	return e
+func (element *ElementProgress) Lang(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("lang", v, dontEscape...)
+	return element
 }
 
-// Draggable is the "draggable"" attribute.
-// Whether the element is draggable
+// Popover is the "popover" attribute.
+// Makes the element a popover element
 // Valid values are constrained to the following:
-//   - true
-//   - false
-func (e *ElementProgress) Draggable(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["draggable"] = v
-	return e
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementProgress) Popover(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("popover", v, dontEscape...)
+	return element
 }
 
-// Enterkeyhint is the "enterkeyhint"" attribute.
-// Hint for selecting an enter key action
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementProgress) Enterkeyhint(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["enterkeyhint"] = v
-	return e
-}
-
-// Hidden is the "hidden"" attribute.
+// Hidden is the "hidden" attribute.
 // Whether the element is relevant
 // Valid values are constrained to the following:
-//
-//	*
-//	*
-func (e *ElementProgress) Hidden(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["hidden"] = v
-	return e
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementProgress) Hidden(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("hidden", v, dontEscape...)
+	return element
 }
 
-// Id is the "id"" attribute.
-// The element&#39;s
+// Is is the "is" attribute.
+// Creates a customized built-in element
 // Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementProgress) Id(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["id"] = v
-	return e
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementProgress) Is(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("is", v, dontEscape...)
+	return element
 }
 
-// Inert is the "inert"" attribute.
-// Whether the element is
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementProgress) Inert(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["inert"] = v
-	return e
-}
-
-// Inputmode is the "inputmode"" attribute.
-// Hint for selecting an input modality
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-//	*
-func (e *ElementProgress) Inputmode(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["inputmode"] = v
-	return e
-}
-
-// Is is the "is"" attribute.
-// Creates a
-// Valid values are constrained to the following:
-//   - valid-custom-element-name
-//   - customized-built-in-element
-func (e *ElementProgress) Is(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["is"] = v
-	return e
-}
-
-// Itemid is the "itemid"" attribute.
-//
-// Valid values are constrained to the following:
-//   - valid-url-potentially-surrounded-by-spaces
-func (e *ElementProgress) Itemid(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemid"] = v
-	return e
-}
-
-// Itemprop is the "itemprop"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-//   - syntax-url-absolute
-//   - defined-property-name
-func (e *ElementProgress) Itemprop(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemprop"] = v
-	return e
-}
-
-// Itemref is the "itemref"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-func (e *ElementProgress) Itemref(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemref"] = v
-	return e
-}
-
-// Itemscope is the "itemscope"" attribute.
-// Introduces a microdata item
-// Valid values are constrained to the following:
-//   - boolean-attribute
-func (e *ElementProgress) Itemscope(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemscope"] = v
-	return e
-}
-
-// Itemtype is the "itemtype"" attribute.
-//
-// Valid values are constrained to the following:
-//   - unordered-set-of-unique-space-separated-tokens
-//   - syntax-url-absolute
-func (e *ElementProgress) Itemtype(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["itemtype"] = v
-	return e
-}
-
-// Lang is the "lang"" attribute.
-//
-// Valid values are constrained to the following:
-func (e *ElementProgress) Lang(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["lang"] = v
-	return e
-}
-
-// Max is the "max"" attribute.
+// Max is the "max" attribute.
 // Upper bound of range
 // Valid values are constrained to the following:
-//   - valid-floating-point-number
-func (e *ElementProgress) Max(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["max"] = v
-	return e
+//   - valid_floating_point_number
+func (element *ElementProgress) Max(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("max", v, dontEscape...)
+	return element
 }
 
-// Nonce is the "nonce"" attribute.
-// Cryptographic nonce used in
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementProgress) Nonce(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["nonce"] = v
-	return e
-}
-
-// Popover is the "popover"" attribute.
-// Makes the element a
-// Valid values are constrained to the following:
-//
-//	*
-//	*
-func (e *ElementProgress) Popover(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["popover"] = v
-	return e
-}
-
-// Slot is the "slot"" attribute.
+// Slot is the "slot" attribute.
 // The element&#39;s desired slot
 // Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementProgress) Slot(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["slot"] = v
-	return e
+//   - text
+func (element *ElementProgress) Slot(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("slot", v, dontEscape...)
+	return element
 }
 
-// Spellcheck is the "spellcheck"" attribute.
+// Spellcheck is the "spellcheck" attribute.
 // Whether the element is to have its spelling and grammar checked
 // Valid values are constrained to the following:
 //   - true
 //   - false
-func (e *ElementProgress) Spellcheck(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["spellcheck"] = v
-	return e
+func (element *ElementProgress) Spellcheck(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("spellcheck", v, dontEscape...)
+	return element
 }
 
-// Style is the "style"" attribute.
-// Presentational and formatting instructions
+// Id is the "id" attribute.
+// The element&#39;s ID
 // Valid values are constrained to the following:
-func (e *ElementProgress) Style(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["style"] = v
-	return e
+//   - text
+func (element *ElementProgress) Id(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("id", v, dontEscape...)
+	return element
 }
 
-// Tabindex is the "tabindex"" attribute.
-// Whether the element is
+// Value is the "value" attribute.
+// Current value of the element
 // Valid values are constrained to the following:
-//   - valid-integer
-func (e *ElementProgress) Tabindex(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["tabindex"] = v
-	return e
+//   - valid_floating_point_number
+func (element *ElementProgress) Value(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("value", v, dontEscape...)
+	return element
 }
 
-// Title is the "title"" attribute.
-// Advisory information for the element
-// Valid values are constrained to the following:
-//   - attribute-text
-func (e *ElementProgress) Title(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["title"] = v
-	return e
-}
-
-// Translate is the "translate"" attribute.
+// Translate is the "translate" attribute.
 // Whether the element is to be translated when the page is localized
 // Valid values are constrained to the following:
 //   - yes
 //   - no
-func (e *ElementProgress) Translate(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["translate"] = v
-	return e
+func (element *ElementProgress) Translate(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("translate", v, dontEscape...)
+	return element
 }
 
-// Value is the "value"" attribute.
-// Current value of the element
+// Style is the "style" attribute.
+// Presentational and formatting instructions
 // Valid values are constrained to the following:
-//   - valid-floating-point-number
-func (e *ElementProgress) Value(v string) *ElementProgress {
-	if v == "" {
-		return e
-	}
-	e.attrs["value"] = v
-	return e
+func (element *ElementProgress) Style(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("style", v, dontEscape...)
+	return element
 }
 
-// &lt;code id=&quot;attributes-3:event-auxclick&quot;&gt;&lt;a data-x-internal=&quot;event-auxclick&quot; href=&quot;https://w3c.github.io/uievents/#event-type-auxclick&quot;&gt;auxclick&lt;/a&gt;&lt;/code&gt;  event handler
+// Inputmode is the "inputmode" attribute.
+// Hint for selecting an input modality
+// Valid values are constrained to the following:
+//   - none
+//   - none
+//   - text
+//   - text
+//   - tel
+//   - tel
+//   - email
+//   - email
+//   - url
+//   - url
+//   - numeric
+//   - numeric
+//   - decimal
+//   - decimal
+//   - search
+//   - search
+func (element *ElementProgress) Inputmode(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("inputmode", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementProgress) Autofocus(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementProgress) Contenteditable(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("contenteditable", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementProgress) Dir(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
+// Valid values are constrained to the following:
+//   - valid_integer
+func (element *ElementProgress) Tabindex(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("tabindex", v, dontEscape...)
+	return element
+}
+
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementProgress) Accesskey(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Enterkeyhint is the "enterkeyhint" attribute.
+// Hint for selecting an enter key action
+// Valid values are constrained to the following:
+//   - enter
+//   - enter
+//   - done
+//   - done
+//   - go
+//   - go
+//   - next
+//   - next
+//   - previous
+//   - previous
+//   - search
+//   - search
+//   - send
+//   - send
+func (element *ElementProgress) Enterkeyhint(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("enterkeyhint", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementProgress) Class(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementProgress) Draggable(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementProgress) Inert(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementProgress) Itemscope(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("itemscope", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementProgress) Title(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
+// Valid values are constrained to the following:
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementProgress) Autocapitalize(v string, dontEscape ...bool) *ElementProgress {
+	element.setAttribute("autocapitalize", v, dontEscape...)
+	return element
+}
+
+// auxclick event handler
 func (e *ElementProgress) OnAuxclick(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -440,7 +370,7 @@ func (e *ElementProgress) OnAuxclick(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-beforematch&quot;&gt;&lt;a href=&quot;#event-beforematch&quot;&gt;beforematch&lt;/a&gt;&lt;/code&gt;  event handler
+// beforematch event handler
 func (e *ElementProgress) OnBeforematch(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -454,7 +384,7 @@ func (e *ElementProgress) OnBeforematch(fn engine.EventHandler) *ElementProgress
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-beforetoggle&quot;&gt;&lt;a href=&quot;#event-beforetoggle&quot;&gt;beforetoggle&lt;/a&gt;&lt;/code&gt;  event handler
+// beforetoggle event handler
 func (e *ElementProgress) OnBeforetoggle(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -468,7 +398,7 @@ func (e *ElementProgress) OnBeforetoggle(fn engine.EventHandler) *ElementProgres
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-blur&quot;&gt;&lt;a href=&quot;#event-blur&quot;&gt;blur&lt;/a&gt;&lt;/code&gt;  event handler
+// blur event handler
 func (e *ElementProgress) OnBlur(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -482,7 +412,7 @@ func (e *ElementProgress) OnBlur(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-cancel&quot;&gt;&lt;a href=&quot;#event-cancel&quot;&gt;cancel&lt;/a&gt;&lt;/code&gt;  event handler
+// cancel event handler
 func (e *ElementProgress) OnCancel(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -496,7 +426,7 @@ func (e *ElementProgress) OnCancel(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-canplay&quot;&gt;&lt;a href=&quot;media.html#event-media-canplay&quot;&gt;canplay&lt;/a&gt;&lt;/code&gt;  event handler
+// canplay event handler
 func (e *ElementProgress) OnCanplay(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -510,7 +440,7 @@ func (e *ElementProgress) OnCanplay(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-canplaythrough&quot;&gt;&lt;a href=&quot;media.html#event-media-canplaythrough&quot;&gt;canplaythrough&lt;/a&gt;&lt;/code&gt;  event handler
+// canplaythrough event handler
 func (e *ElementProgress) OnCanplaythrough(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -524,7 +454,7 @@ func (e *ElementProgress) OnCanplaythrough(fn engine.EventHandler) *ElementProgr
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-change&quot;&gt;&lt;a href=&quot;#event-change&quot;&gt;change&lt;/a&gt;&lt;/code&gt;  event handler
+// change event handler
 func (e *ElementProgress) OnChange(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -538,7 +468,7 @@ func (e *ElementProgress) OnChange(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-click&quot;&gt;&lt;a data-x-internal=&quot;event-click&quot; href=&quot;https://w3c.github.io/uievents/#event-type-click&quot;&gt;click&lt;/a&gt;&lt;/code&gt;  event handler
+// click event handler
 func (e *ElementProgress) OnClick(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -552,7 +482,7 @@ func (e *ElementProgress) OnClick(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-close&quot;&gt;&lt;a href=&quot;#event-close&quot;&gt;close&lt;/a&gt;&lt;/code&gt;  event handler
+// close event handler
 func (e *ElementProgress) OnClose(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -566,7 +496,7 @@ func (e *ElementProgress) OnClose(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextlost&quot;&gt;&lt;a href=&quot;#event-contextlost&quot;&gt;contextlost&lt;/a&gt;&lt;/code&gt;  event handler
+// contextlost event handler
 func (e *ElementProgress) OnContextlost(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -580,7 +510,7 @@ func (e *ElementProgress) OnContextlost(fn engine.EventHandler) *ElementProgress
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextmenu&quot;&gt;&lt;a data-x-internal=&quot;event-contextmenu&quot; href=&quot;https://w3c.github.io/uievents/#event-type-contextmenu&quot;&gt;contextmenu&lt;/a&gt;&lt;/code&gt;  event handler
+// contextmenu event handler
 func (e *ElementProgress) OnContextmenu(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -594,7 +524,7 @@ func (e *ElementProgress) OnContextmenu(fn engine.EventHandler) *ElementProgress
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-contextrestored&quot;&gt;&lt;a href=&quot;#event-contextrestored&quot;&gt;contextrestored&lt;/a&gt;&lt;/code&gt;  event handler
+// contextrestored event handler
 func (e *ElementProgress) OnContextrestored(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -608,7 +538,7 @@ func (e *ElementProgress) OnContextrestored(fn engine.EventHandler) *ElementProg
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-copy&quot;&gt;&lt;a data-x-internal=&quot;event-copy&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-copy&quot;&gt;copy&lt;/a&gt;&lt;/code&gt;  event handler
+// copy event handler
 func (e *ElementProgress) OnCopy(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -622,7 +552,7 @@ func (e *ElementProgress) OnCopy(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-cuechange&quot;&gt;&lt;a href=&quot;media.html#event-media-cuechange&quot;&gt;cuechange&lt;/a&gt;&lt;/code&gt;  event handler
+// cuechange event handler
 func (e *ElementProgress) OnCuechange(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -636,7 +566,7 @@ func (e *ElementProgress) OnCuechange(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-cut&quot;&gt;&lt;a data-x-internal=&quot;event-cut&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-cut&quot;&gt;cut&lt;/a&gt;&lt;/code&gt;  event handler
+// cut event handler
 func (e *ElementProgress) OnCut(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -650,7 +580,7 @@ func (e *ElementProgress) OnCut(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dblclick&quot;&gt;&lt;a data-x-internal=&quot;event-dblclick&quot; href=&quot;https://w3c.github.io/uievents/#event-type-dblclick&quot;&gt;dblclick&lt;/a&gt;&lt;/code&gt;  event handler
+// dblclick event handler
 func (e *ElementProgress) OnDblclick(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -664,7 +594,7 @@ func (e *ElementProgress) OnDblclick(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-drag&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-drag&quot;&gt;drag&lt;/a&gt;&lt;/code&gt;  event handler
+// drag event handler
 func (e *ElementProgress) OnDrag(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -678,7 +608,7 @@ func (e *ElementProgress) OnDrag(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragend&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragend&quot;&gt;dragend&lt;/a&gt;&lt;/code&gt;  event handler
+// dragend event handler
 func (e *ElementProgress) OnDragend(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -692,7 +622,7 @@ func (e *ElementProgress) OnDragend(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragenter&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragenter&quot;&gt;dragenter&lt;/a&gt;&lt;/code&gt;  event handler
+// dragenter event handler
 func (e *ElementProgress) OnDragenter(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -706,7 +636,7 @@ func (e *ElementProgress) OnDragenter(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragleave&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragleave&quot;&gt;dragleave&lt;/a&gt;&lt;/code&gt;  event handler
+// dragleave event handler
 func (e *ElementProgress) OnDragleave(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -720,7 +650,7 @@ func (e *ElementProgress) OnDragleave(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragover&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragover&quot;&gt;dragover&lt;/a&gt;&lt;/code&gt;  event handler
+// dragover event handler
 func (e *ElementProgress) OnDragover(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -734,7 +664,7 @@ func (e *ElementProgress) OnDragover(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-dragstart&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-dragstart&quot;&gt;dragstart&lt;/a&gt;&lt;/code&gt;  event handler
+// dragstart event handler
 func (e *ElementProgress) OnDragstart(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -748,7 +678,7 @@ func (e *ElementProgress) OnDragstart(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-dnd-drop&quot;&gt;&lt;a href=&quot;dnd.html#event-dnd-drop&quot;&gt;drop&lt;/a&gt;&lt;/code&gt;  event handler
+// drop event handler
 func (e *ElementProgress) OnDrop(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -762,7 +692,7 @@ func (e *ElementProgress) OnDrop(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-durationchange&quot;&gt;&lt;a href=&quot;media.html#event-media-durationchange&quot;&gt;durationchange&lt;/a&gt;&lt;/code&gt;  event handler
+// durationchange event handler
 func (e *ElementProgress) OnDurationchange(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -776,7 +706,7 @@ func (e *ElementProgress) OnDurationchange(fn engine.EventHandler) *ElementProgr
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-emptied&quot;&gt;&lt;a href=&quot;media.html#event-media-emptied&quot;&gt;emptied&lt;/a&gt;&lt;/code&gt;  event handler
+// emptied event handler
 func (e *ElementProgress) OnEmptied(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -790,7 +720,7 @@ func (e *ElementProgress) OnEmptied(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-ended&quot;&gt;&lt;a href=&quot;media.html#event-media-ended&quot;&gt;ended&lt;/a&gt;&lt;/code&gt;  event handler
+// ended event handler
 func (e *ElementProgress) OnEnded(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -804,7 +734,7 @@ func (e *ElementProgress) OnEnded(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-error&quot;&gt;&lt;a href=&quot;#event-error&quot;&gt;error&lt;/a&gt;&lt;/code&gt;  event handler
+// error event handler
 func (e *ElementProgress) OnError(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -818,7 +748,7 @@ func (e *ElementProgress) OnError(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-focus&quot;&gt;&lt;a href=&quot;#event-focus&quot;&gt;focus&lt;/a&gt;&lt;/code&gt;  event handler
+// focus event handler
 func (e *ElementProgress) OnFocus(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -832,7 +762,7 @@ func (e *ElementProgress) OnFocus(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-formdata&quot;&gt;&lt;a href=&quot;#event-formdata&quot;&gt;formdata&lt;/a&gt;&lt;/code&gt;  event handler
+// formdata event handler
 func (e *ElementProgress) OnFormdata(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -846,7 +776,7 @@ func (e *ElementProgress) OnFormdata(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-input&quot;&gt;&lt;a data-x-internal=&quot;event-input&quot; href=&quot;https://w3c.github.io/uievents/#event-type-input&quot;&gt;input&lt;/a&gt;&lt;/code&gt;  event handler
+// input event handler
 func (e *ElementProgress) OnInput(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -860,7 +790,7 @@ func (e *ElementProgress) OnInput(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-invalid&quot;&gt;&lt;a href=&quot;#event-invalid&quot;&gt;invalid&lt;/a&gt;&lt;/code&gt;  event handler
+// invalid event handler
 func (e *ElementProgress) OnInvalid(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -874,7 +804,7 @@ func (e *ElementProgress) OnInvalid(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keydown&quot;&gt;&lt;a data-x-internal=&quot;event-keydown&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keydown&quot;&gt;keydown&lt;/a&gt;&lt;/code&gt;  event handler
+// keydown event handler
 func (e *ElementProgress) OnKeydown(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -888,7 +818,7 @@ func (e *ElementProgress) OnKeydown(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keypress&quot;&gt;&lt;a data-x-internal=&quot;event-keypress&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keypress&quot;&gt;keypress&lt;/a&gt;&lt;/code&gt;  event handler
+// keypress event handler
 func (e *ElementProgress) OnKeypress(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -902,7 +832,7 @@ func (e *ElementProgress) OnKeypress(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-keyup&quot;&gt;&lt;a data-x-internal=&quot;event-keyup&quot; href=&quot;https://w3c.github.io/uievents/#event-type-keyup&quot;&gt;keyup&lt;/a&gt;&lt;/code&gt;  event handler
+// keyup event handler
 func (e *ElementProgress) OnKeyup(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -916,7 +846,7 @@ func (e *ElementProgress) OnKeyup(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-load&quot;&gt;&lt;a href=&quot;#event-load&quot;&gt;load&lt;/a&gt;&lt;/code&gt;  event handler
+// load event handler
 func (e *ElementProgress) OnLoad(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -930,7 +860,7 @@ func (e *ElementProgress) OnLoad(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadeddata&quot;&gt;&lt;a href=&quot;media.html#event-media-loadeddata&quot;&gt;loadeddata&lt;/a&gt;&lt;/code&gt;  event handler
+// loadeddata event handler
 func (e *ElementProgress) OnLoadeddata(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -944,7 +874,7 @@ func (e *ElementProgress) OnLoadeddata(fn engine.EventHandler) *ElementProgress 
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadedmetadata&quot;&gt;&lt;a href=&quot;media.html#event-media-loadedmetadata&quot;&gt;loadedmetadata&lt;/a&gt;&lt;/code&gt;  event handler
+// loadedmetadata event handler
 func (e *ElementProgress) OnLoadedmetadata(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -958,7 +888,7 @@ func (e *ElementProgress) OnLoadedmetadata(fn engine.EventHandler) *ElementProgr
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-loadstart&quot;&gt;&lt;a href=&quot;media.html#event-media-loadstart&quot;&gt;loadstart&lt;/a&gt;&lt;/code&gt;  event handler
+// loadstart event handler
 func (e *ElementProgress) OnLoadstart(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -972,7 +902,7 @@ func (e *ElementProgress) OnLoadstart(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mousedown&quot;&gt;&lt;a data-x-internal=&quot;event-mousedown&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mousedown&quot;&gt;mousedown&lt;/a&gt;&lt;/code&gt;  event handler
+// mousedown event handler
 func (e *ElementProgress) OnMousedown(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -986,7 +916,7 @@ func (e *ElementProgress) OnMousedown(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseenter&quot;&gt;&lt;a data-x-internal=&quot;event-mouseenter&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseenter&quot;&gt;mouseenter&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseenter event handler
 func (e *ElementProgress) OnMouseenter(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1000,7 +930,7 @@ func (e *ElementProgress) OnMouseenter(fn engine.EventHandler) *ElementProgress 
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseleave&quot;&gt;&lt;a data-x-internal=&quot;event-mouseleave&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseleave&quot;&gt;mouseleave&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseleave event handler
 func (e *ElementProgress) OnMouseleave(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1014,7 +944,7 @@ func (e *ElementProgress) OnMouseleave(fn engine.EventHandler) *ElementProgress 
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mousemove&quot;&gt;&lt;a data-x-internal=&quot;event-mousemove&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mousemove&quot;&gt;mousemove&lt;/a&gt;&lt;/code&gt;  event handler
+// mousemove event handler
 func (e *ElementProgress) OnMousemove(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1028,7 +958,7 @@ func (e *ElementProgress) OnMousemove(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseout&quot;&gt;&lt;a data-x-internal=&quot;event-mouseout&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseout&quot;&gt;mouseout&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseout event handler
 func (e *ElementProgress) OnMouseout(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1042,7 +972,7 @@ func (e *ElementProgress) OnMouseout(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseover&quot;&gt;&lt;a data-x-internal=&quot;event-mouseover&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseover&quot;&gt;mouseover&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseover event handler
 func (e *ElementProgress) OnMouseover(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1056,7 +986,7 @@ func (e *ElementProgress) OnMouseover(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-mouseup&quot;&gt;&lt;a data-x-internal=&quot;event-mouseup&quot; href=&quot;https://w3c.github.io/uievents/#event-type-mouseup&quot;&gt;mouseup&lt;/a&gt;&lt;/code&gt;  event handler
+// mouseup event handler
 func (e *ElementProgress) OnMouseup(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1070,7 +1000,7 @@ func (e *ElementProgress) OnMouseup(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-paste&quot;&gt;&lt;a data-x-internal=&quot;event-paste&quot; href=&quot;https://w3c.github.io/clipboard-apis/#clipboard-event-paste&quot;&gt;paste&lt;/a&gt;&lt;/code&gt;  event handler
+// paste event handler
 func (e *ElementProgress) OnPaste(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1084,7 +1014,7 @@ func (e *ElementProgress) OnPaste(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-pause&quot;&gt;&lt;a href=&quot;media.html#event-media-pause&quot;&gt;pause&lt;/a&gt;&lt;/code&gt;  event handler
+// pause event handler
 func (e *ElementProgress) OnPause(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1098,7 +1028,7 @@ func (e *ElementProgress) OnPause(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-play&quot;&gt;&lt;a href=&quot;media.html#event-media-play&quot;&gt;play&lt;/a&gt;&lt;/code&gt;  event handler
+// play event handler
 func (e *ElementProgress) OnPlay(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1112,7 +1042,7 @@ func (e *ElementProgress) OnPlay(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-playing&quot;&gt;&lt;a href=&quot;media.html#event-media-playing&quot;&gt;playing&lt;/a&gt;&lt;/code&gt;  event handler
+// playing event handler
 func (e *ElementProgress) OnPlaying(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1126,7 +1056,7 @@ func (e *ElementProgress) OnPlaying(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-progress&quot;&gt;&lt;a href=&quot;media.html#event-media-progress&quot;&gt;progress&lt;/a&gt;&lt;/code&gt;  event handler
+// progress event handler
 func (e *ElementProgress) OnProgress(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1140,7 +1070,7 @@ func (e *ElementProgress) OnProgress(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-ratechange&quot;&gt;&lt;a href=&quot;media.html#event-media-ratechange&quot;&gt;ratechange&lt;/a&gt;&lt;/code&gt;  event handler
+// ratechange event handler
 func (e *ElementProgress) OnRatechange(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1154,7 +1084,7 @@ func (e *ElementProgress) OnRatechange(fn engine.EventHandler) *ElementProgress 
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-reset&quot;&gt;&lt;a href=&quot;#event-reset&quot;&gt;reset&lt;/a&gt;&lt;/code&gt;  event handler
+// reset event handler
 func (e *ElementProgress) OnReset(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1168,7 +1098,7 @@ func (e *ElementProgress) OnReset(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-resize&quot;&gt;&lt;a data-x-internal=&quot;event-resize&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-window-resize&quot;&gt;resize&lt;/a&gt;&lt;/code&gt;  event handler
+// resize event handler
 func (e *ElementProgress) OnResize(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1182,7 +1112,7 @@ func (e *ElementProgress) OnResize(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-scroll&quot;&gt;&lt;a data-x-internal=&quot;event-scroll&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-document-scroll&quot;&gt;scroll&lt;/a&gt;&lt;/code&gt;  event handler
+// scroll event handler
 func (e *ElementProgress) OnScroll(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1196,7 +1126,7 @@ func (e *ElementProgress) OnScroll(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-scrollend&quot;&gt;&lt;a data-x-internal=&quot;event-scrollend&quot; href=&quot;https://drafts.csswg.org/cssom-view/#eventdef-document-scrollend&quot;&gt;scrollend&lt;/a&gt;&lt;/code&gt;  event handler
+// scrollend event handler
 func (e *ElementProgress) OnScrollend(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1210,7 +1140,7 @@ func (e *ElementProgress) OnScrollend(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-securitypolicyviolation&quot;&gt;&lt;a data-x-internal=&quot;event-securitypolicyviolation&quot; href=&quot;https://w3c.github.io/webappsec-csp/#eventdef-globaleventhandlers-securitypolicyviolation&quot;&gt;securitypolicyviolation&lt;/a&gt;&lt;/code&gt;  event handler
+// securitypolicyviolation event handler
 func (e *ElementProgress) OnSecuritypolicyviolation(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1224,7 +1154,7 @@ func (e *ElementProgress) OnSecuritypolicyviolation(fn engine.EventHandler) *Ele
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-seeked&quot;&gt;&lt;a href=&quot;media.html#event-media-seeked&quot;&gt;seeked&lt;/a&gt;&lt;/code&gt;  event handler
+// seeked event handler
 func (e *ElementProgress) OnSeeked(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1238,7 +1168,7 @@ func (e *ElementProgress) OnSeeked(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-seeking&quot;&gt;&lt;a href=&quot;media.html#event-media-seeking&quot;&gt;seeking&lt;/a&gt;&lt;/code&gt;  event handler
+// seeking event handler
 func (e *ElementProgress) OnSeeking(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1252,7 +1182,7 @@ func (e *ElementProgress) OnSeeking(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-select&quot;&gt;&lt;a href=&quot;#event-select&quot;&gt;select&lt;/a&gt;&lt;/code&gt;  event handler
+// select event handler
 func (e *ElementProgress) OnSelect(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1266,7 +1196,7 @@ func (e *ElementProgress) OnSelect(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-slotchange&quot;&gt;&lt;a data-x-internal=&quot;event-slotchange&quot; href=&quot;https://dom.spec.whatwg.org/#eventdef-htmlslotelement-slotchange&quot;&gt;slotchange&lt;/a&gt;&lt;/code&gt;  event handler
+// slotchange event handler
 func (e *ElementProgress) OnSlotchange(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1280,7 +1210,7 @@ func (e *ElementProgress) OnSlotchange(fn engine.EventHandler) *ElementProgress 
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-stalled&quot;&gt;&lt;a href=&quot;media.html#event-media-stalled&quot;&gt;stalled&lt;/a&gt;&lt;/code&gt;  event handler
+// stalled event handler
 func (e *ElementProgress) OnStalled(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1294,7 +1224,7 @@ func (e *ElementProgress) OnStalled(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-submit&quot;&gt;&lt;a href=&quot;#event-submit&quot;&gt;submit&lt;/a&gt;&lt;/code&gt;  event handler
+// submit event handler
 func (e *ElementProgress) OnSubmit(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1308,7 +1238,7 @@ func (e *ElementProgress) OnSubmit(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-suspend&quot;&gt;&lt;a href=&quot;media.html#event-media-suspend&quot;&gt;suspend&lt;/a&gt;&lt;/code&gt;  event handler
+// suspend event handler
 func (e *ElementProgress) OnSuspend(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1322,7 +1252,7 @@ func (e *ElementProgress) OnSuspend(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-timeupdate&quot;&gt;&lt;a href=&quot;media.html#event-media-timeupdate&quot;&gt;timeupdate&lt;/a&gt;&lt;/code&gt;  event handler
+// timeupdate event handler
 func (e *ElementProgress) OnTimeupdate(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1336,7 +1266,7 @@ func (e *ElementProgress) OnTimeupdate(fn engine.EventHandler) *ElementProgress 
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-toggle&quot;&gt;&lt;a href=&quot;#event-toggle&quot;&gt;toggle&lt;/a&gt;&lt;/code&gt;  event handler
+// toggle event handler
 func (e *ElementProgress) OnToggle(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1350,7 +1280,7 @@ func (e *ElementProgress) OnToggle(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-volumechange&quot;&gt;&lt;a href=&quot;media.html#event-media-volumechange&quot;&gt;volumechange&lt;/a&gt;&lt;/code&gt;  event handler
+// volumechange event handler
 func (e *ElementProgress) OnVolumechange(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1364,7 +1294,7 @@ func (e *ElementProgress) OnVolumechange(fn engine.EventHandler) *ElementProgres
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-media-waiting&quot;&gt;&lt;a href=&quot;media.html#event-media-waiting&quot;&gt;waiting&lt;/a&gt;&lt;/code&gt;  event handler
+// waiting event handler
 func (e *ElementProgress) OnWaiting(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
@@ -1378,7 +1308,7 @@ func (e *ElementProgress) OnWaiting(fn engine.EventHandler) *ElementProgress {
 	return e
 }
 
-// &lt;code id=&quot;attributes-3:event-wheel&quot;&gt;&lt;a data-x-internal=&quot;event-wheel&quot; href=&quot;https://w3c.github.io/uievents/#event-type-wheel&quot;&gt;wheel&lt;/a&gt;&lt;/code&gt;  event handler
+// wheel event handler
 func (e *ElementProgress) OnWheel(fn engine.EventHandler) *ElementProgress {
 	if fn == nil {
 		return e
