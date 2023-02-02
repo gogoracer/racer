@@ -91,6 +91,7 @@ func GenerateIconify(ctx context.Context, gogglesPath string) error {
 		// use of numbers, dashes, and underscores.  We need to convert these to valid
 		// Go identifiers.
 
+		namesUsed := sets.NewString()
 		namedIcons := []namedIcon{}
 		for iconName, icon := range details.Icons {
 			matches := numberWordGroupsRegex.FindAllStringSubmatch(iconName, -1)
@@ -106,7 +107,7 @@ func GenerateIconify(ctx context.Context, gogglesPath string) error {
 						if err != nil {
 							return fmt.Errorf("could not convert %s to number: %v", numbersStr, err)
 						}
-						numbersStr = num2words.Convert(number)
+						numbersStr = num2words.Convert(number) + "_"
 					}
 
 					word := match[numberWordGroupsRegex.SubexpIndex("word")]
@@ -115,10 +116,16 @@ func GenerateIconify(ctx context.Context, gogglesPath string) error {
 
 				revisedName = pascal(strings.Join(parts, " "))
 			}
+
+			if namesUsed.Has(revisedName) {
+				continue
+			}
+
 			namedIcons = append(namedIcons, namedIcon{
 				Name: revisedName,
 				Icon: icon,
 			})
+			namesUsed.Insert(revisedName)
 		}
 
 		slices.SortFunc(namedIcons, func(a, b namedIcon) bool {
