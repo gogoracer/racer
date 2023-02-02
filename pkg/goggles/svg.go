@@ -1,4 +1,4 @@
-package handlebars
+package goggles
 
 type ElementSVG struct {
 	*baseElement

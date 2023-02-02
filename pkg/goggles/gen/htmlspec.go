@@ -52,7 +52,7 @@ type Element struct {
 	EventHandlers             []*EventHandler
 }
 
-func GenerateElements(ctx context.Context, handlebarsPath string) error {
+func GenerateElements(ctx context.Context, gogglesPath string) error {
 
 	elements, err := scrapeHTMLSpec(ctx)
 	if err != nil {
@@ -82,7 +82,7 @@ func GenerateElements(ctx context.Context, handlebarsPath string) error {
 	for _, element := range elements {
 		contents := GenerateElement(element)
 		filename := fmt.Sprintf("element_%s.go", strcase.ToSnake(element.Tag))
-		fullPath := filepath.Join(handlebarsPath, filename)
+		fullPath := filepath.Join(gogglesPath, filename)
 
 		if err := os.WriteFile(fullPath, []byte(contents), 0644); err != nil {
 			return fmt.Errorf("could not write file %s: %v", fullPath, err)

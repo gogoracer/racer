@@ -25,6 +25,7 @@
     "extendee",
     "flakeid",
     "frontends",
+    "gentmp",
     "gillilan",
     "goccy",
     "gofmt",

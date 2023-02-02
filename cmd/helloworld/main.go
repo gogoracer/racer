@@ -10,9 +10,8 @@ import (
 	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/launcher"
 	"github.com/gogoracer/racer/pkg/engine"
-	"github.com/gogoracer/racer/pkg/handlebars/iconify/academicons"
 
-	. "github.com/gogoracer/racer/pkg/handlebars" //lint:ignore ST1001 we have a DSL
+	. "github.com/gogoracer/racer/pkg/goggles" //lint:ignore ST1001 we have a DSL
 	"github.com/rs/zerolog/log"
 )
 
@@ -150,7 +149,7 @@ func homeStep5() *engine.Page {
 					OnClick(func(ctx context.Context, e engine.Event) {
 						message = ""
 					}),
-				academicons.GoogleScholar(),
+				// academicons.GoogleScholar(),
 			).Class("flex gap-4"),
 		).GenerateVDOM()
 

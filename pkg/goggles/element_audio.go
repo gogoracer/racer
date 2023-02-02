@@ -1,6 +1,6 @@
 /* cSpell:disable */
 
-package handlebars
+package goggles
 
 import (
 	"github.com/gogoracer/racer/pkg/engine"
@@ -31,22 +31,13 @@ func (e *ElementAudio) BindCustom(k string, v string, dontEscape ...bool) *Eleme
 	return e
 }
 
-func (e *ElementAudio) setAttribute(k string, v string, dontEscape ...bool) *ElementAudio {
-	e.baseElement.setAttribute(k, v, dontEscape...)
+func (e *ElementAudio) appendAttribute(k string, v string, dontEscape ...bool) *ElementAudio {
+	e.baseElement.appendAttribute(k, v, dontEscape...)
 	return e
 }
 
 func (e *ElementAudio) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
-}
-
-// Class is the "class" attribute.
-// Classes to which the element belongs
-// Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementAudio) Class(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("class", v, dontEscape...)
-	return element
 }
 
 // Hidden is the "hidden" attribute.
@@ -57,7 +48,7 @@ func (element *ElementAudio) Class(v string, dontEscape ...bool) *ElementAudio {
 //   - hidden
 //   - hidden
 func (element *ElementAudio) Hidden(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("hidden", v, dontEscape...)
+	element.appendAttribute("hidden", v, dontEscape...)
 	return element
 }
 
@@ -67,47 +58,34 @@ func (element *ElementAudio) Hidden(v string, dontEscape ...bool) *ElementAudio 
 //   - valid_custom_element_name
 //   - customized_built_in_element
 func (element *ElementAudio) Is(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("is", v, dontEscape...)
+	element.appendAttribute("is", v, dontEscape...)
 	return element
 }
 
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Lang is the "lang" attribute.
+// Language of the element
 // Valid values are constrained to the following:
-//   - text
-func (element *ElementAudio) Nonce(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("nonce", v, dontEscape...)
+func (element *ElementAudio) Lang(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("lang", v, dontEscape...)
 	return element
 }
 
-// Popover is the "popover" attribute.
-// Makes the element a popover element
+// Loop is the "loop" attribute.
+// Whether to loop the media resource
 // Valid values are constrained to the following:
-//   - auto
-//   - auto
-//   - manual
-//   - manual
-func (element *ElementAudio) Popover(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("popover", v, dontEscape...)
+//   - boolean_attribute
+func (element *ElementAudio) Loop(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("loop", v, dontEscape...)
 	return element
 }
 
-// Title is the "title" attribute.
-// CSS style sheet set name
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementAudio) Title(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("title", v, dontEscape...)
-	return element
-}
-
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
 // Valid values are constrained to the following:
 //   - true
 //   - false
-func (element *ElementAudio) Contenteditable(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("contenteditable", v, dontEscape...)
+func (element *ElementAudio) Draggable(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("draggable", v, dontEscape...)
 	return element
 }
 
@@ -116,7 +94,16 @@ func (element *ElementAudio) Contenteditable(v string, dontEscape ...bool) *Elem
 // Valid values are constrained to the following:
 //   - text
 func (element *ElementAudio) Id(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("id", v, dontEscape...)
+	element.appendAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementAudio) Itemid(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("itemid", v, dontEscape...)
 	return element
 }
 
@@ -127,7 +114,7 @@ func (element *ElementAudio) Id(v string, dontEscape ...bool) *ElementAudio {
 //   - valid_absolute_ur_ls
 //   - defined_property_names
 func (element *ElementAudio) Itemprop(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("itemprop", v, dontEscape...)
+	element.appendAttribute("itemprop", v, dontEscape...)
 	return element
 }
 
@@ -137,16 +124,77 @@ func (element *ElementAudio) Itemprop(v string, dontEscape ...bool) *ElementAudi
 //   - true
 //   - false
 func (element *ElementAudio) Spellcheck(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("spellcheck", v, dontEscape...)
+	element.appendAttribute("spellcheck", v, dontEscape...)
 	return element
 }
 
-// Src is the "src" attribute.
-// Address of the resource
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
 // Valid values are constrained to the following:
-//   - valid_non_empty_url_potentially_surrounded_by_spaces
-func (element *ElementAudio) Src(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("src", v, dontEscape...)
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementAudio) Accesskey(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementAudio) Contenteditable(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("contenteditable", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementAudio) Title(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Enterkeyhint is the "enterkeyhint" attribute.
+// Hint for selecting an enter key action
+// Valid values are constrained to the following:
+//   - enter
+//   - enter
+//   - done
+//   - done
+//   - go
+//   - go
+//   - next
+//   - next
+//   - previous
+//   - previous
+//   - search
+//   - search
+//   - send
+//   - send
+func (element *ElementAudio) Enterkeyhint(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("enterkeyhint", v, dontEscape...)
+	return element
+}
+
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementAudio) Itemtype(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("itemtype", v, dontEscape...)
+	return element
+}
+
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementAudio) Nonce(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("nonce", v, dontEscape...)
 	return element
 }
 
@@ -155,34 +203,16 @@ func (element *ElementAudio) Src(v string, dontEscape ...bool) *ElementAudio {
 // Valid values are constrained to the following:
 //   - valid_integer
 func (element *ElementAudio) Tabindex(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("tabindex", v, dontEscape...)
+	element.appendAttribute("tabindex", v, dontEscape...)
 	return element
 }
 
-// Autoplay is the "autoplay" attribute.
-// Hint that the media resource can be started automatically when the page is loaded
+// Inert is the "inert" attribute.
+// Whether the element is inert.
 // Valid values are constrained to the following:
 //   - boolean_attribute
-func (element *ElementAudio) Autoplay(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("autoplay", v, dontEscape...)
-	return element
-}
-
-// Controls is the "controls" attribute.
-// Show user agent controls
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementAudio) Controls(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("controls", v, dontEscape...)
-	return element
-}
-
-// Loop is the "loop" attribute.
-// Whether to loop the media resource
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementAudio) Loop(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("loop", v, dontEscape...)
+func (element *ElementAudio) Inert(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("inert", v, dontEscape...)
 	return element
 }
 
@@ -191,7 +221,42 @@ func (element *ElementAudio) Loop(v string, dontEscape ...bool) *ElementAudio {
 // Valid values are constrained to the following:
 //   - text
 func (element *ElementAudio) Slot(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("slot", v, dontEscape...)
+	element.appendAttribute("slot", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementAudio) Style(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("style", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementAudio) Autofocus(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Itemref is the "itemref" attribute.
+// Referenced elements
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementAudio) Itemref(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("itemref", v, dontEscape...)
+	return element
+}
+
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementAudio) Itemscope(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("itemscope", v, dontEscape...)
 	return element
 }
 
@@ -201,16 +266,101 @@ func (element *ElementAudio) Slot(v string, dontEscape ...bool) *ElementAudio {
 //   - yes
 //   - no
 func (element *ElementAudio) Translate(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("translate", v, dontEscape...)
+	element.appendAttribute("translate", v, dontEscape...)
 	return element
 }
 
-// Autofocus is the "autofocus" attribute.
-// Automatically focus the element when the page is loaded
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
+// Valid values are constrained to the following:
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementAudio) Autocapitalize(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("autocapitalize", v, dontEscape...)
+	return element
+}
+
+// Autoplay is the "autoplay" attribute.
+// Hint that the media resource can be started automatically when the page is loaded
 // Valid values are constrained to the following:
 //   - boolean_attribute
-func (element *ElementAudio) Autofocus(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("autofocus", v, dontEscape...)
+func (element *ElementAudio) Autoplay(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("autoplay", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementAudio) Class(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Controls is the "controls" attribute.
+// Show user agent controls
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementAudio) Controls(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("controls", v, dontEscape...)
+	return element
+}
+
+// Crossorigin is the "crossorigin" attribute.
+// How the element handles crossorigin requests
+// Valid values are constrained to the following:
+//   - anonymous
+//   - anonymous
+//   - use_credentials
+//   - use_credentials
+func (element *ElementAudio) Crossorigin(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("crossorigin", v, dontEscape...)
+	return element
+}
+
+// Muted is the "muted" attribute.
+// Whether to mute the media resource by default
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementAudio) Muted(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("muted", v, dontEscape...)
+	return element
+}
+
+// Preload is the "preload" attribute.
+// Hints how much buffering the media resource will likely need
+// Valid values are constrained to the following:
+//   - none
+//   - none
+//   - metadata
+//   - metadata
+//   - auto
+//   - auto
+func (element *ElementAudio) Preload(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("preload", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementAudio) Dir(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("dir", v, dontEscape...)
 	return element
 }
 
@@ -234,178 +384,28 @@ func (element *ElementAudio) Autofocus(v string, dontEscape ...bool) *ElementAud
 //   - search
 //   - search
 func (element *ElementAudio) Inputmode(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("inputmode", v, dontEscape...)
+	element.appendAttribute("inputmode", v, dontEscape...)
 	return element
 }
 
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
+// Popover is the "popover" attribute.
+// Makes the element a popover element
 // Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementAudio) Itemid(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("itemid", v, dontEscape...)
-	return element
-}
-
-// Itemref is the "itemref" attribute.
-// Referenced elements
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementAudio) Itemref(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("itemref", v, dontEscape...)
-	return element
-}
-
-// Muted is the "muted" attribute.
-// Whether to mute the media resource by default
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementAudio) Muted(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("muted", v, dontEscape...)
-	return element
-}
-
-// Preload is the "preload" attribute.
-// Hints how much buffering the media resource will likely need
-// Valid values are constrained to the following:
-//   - none
-//   - none
-//   - metadata
-//   - metadata
 //   - auto
 //   - auto
-func (element *ElementAudio) Preload(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("preload", v, dontEscape...)
+//   - manual
+//   - manual
+func (element *ElementAudio) Popover(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("popover", v, dontEscape...)
 	return element
 }
 
-// Draggable is the "draggable" attribute.
-// Whether the element is draggable
+// Src is the "src" attribute.
+// Address of the resource
 // Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementAudio) Draggable(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("draggable", v, dontEscape...)
-	return element
-}
-
-// Itemtype is the "itemtype" attribute.
-// Item types of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-func (element *ElementAudio) Itemtype(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Lang is the "lang" attribute.
-// Language of the element
-// Valid values are constrained to the following:
-func (element *ElementAudio) Lang(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("lang", v, dontEscape...)
-	return element
-}
-
-// Style is the "style" attribute.
-// Presentational and formatting instructions
-// Valid values are constrained to the following:
-func (element *ElementAudio) Style(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("style", v, dontEscape...)
-	return element
-}
-
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementAudio) Accesskey(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("accesskey", v, dontEscape...)
-	return element
-}
-
-// Itemscope is the "itemscope" attribute.
-// Introduces a microdata item
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementAudio) Itemscope(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("itemscope", v, dontEscape...)
-	return element
-}
-
-// Autocapitalize is the "autocapitalize" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
-// Valid values are constrained to the following:
-//   - on
-//   - on
-//   - off
-//   - off
-//   - none
-//   - none
-//   - sentences
-//   - sentences
-//   - words
-//   - words
-//   - characters
-//   - characters
-func (element *ElementAudio) Autocapitalize(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("autocapitalize", v, dontEscape...)
-	return element
-}
-
-// Crossorigin is the "crossorigin" attribute.
-// How the element handles crossorigin requests
-// Valid values are constrained to the following:
-//   - anonymous
-//   - anonymous
-//   - use_credentials
-//   - use_credentials
-func (element *ElementAudio) Crossorigin(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("crossorigin", v, dontEscape...)
-	return element
-}
-
-// Dir is the "dir" attribute.
-// The text directionality of the element
-// Valid values are constrained to the following:
-//   - ltr
-//   - ltr
-//   - rtl
-//   - rtl
-func (element *ElementAudio) Dir(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("dir", v, dontEscape...)
-	return element
-}
-
-// Enterkeyhint is the "enterkeyhint" attribute.
-// Hint for selecting an enter key action
-// Valid values are constrained to the following:
-//   - enter
-//   - enter
-//   - done
-//   - done
-//   - go
-//   - go
-//   - next
-//   - next
-//   - previous
-//   - previous
-//   - search
-//   - search
-//   - send
-//   - send
-func (element *ElementAudio) Enterkeyhint(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("enterkeyhint", v, dontEscape...)
-	return element
-}
-
-// Inert is the "inert" attribute.
-// Whether the element is inert.
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementAudio) Inert(v string, dontEscape ...bool) *ElementAudio {
-	element.setAttribute("inert", v, dontEscape...)
+//   - valid_non_empty_url_potentially_surrounded_by_spaces
+func (element *ElementAudio) Src(v string, dontEscape ...bool) *ElementAudio {
+	element.appendAttribute("src", v, dontEscape...)
 	return element
 }
 

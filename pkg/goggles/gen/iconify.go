@@ -8,22 +8,29 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"strconv"
+	"strings"
+
+	"github.com/divan/num2words"
+	"k8s.io/apimachinery/pkg/util/sets"
 
 	"github.com/goccy/go-json"
-	"github.com/iancoleman/strcase"
 	"github.com/valyala/bytebufferpool"
+	"golang.org/x/exp/slices"
 	"golang.org/x/sync/errgroup"
 )
 
-func GenerateIconify(ctx context.Context, handlebarsPath string) error {
-	detailsDir := "iconify/json"
-	if _, err := os.Stat("iconify/collections.json"); os.IsNotExist(err) {
-		if err := os.MkdirAll(detailsDir, 0755); err != nil {
+func GenerateIconify(ctx context.Context, gogglesPath string) error {
+
+	tmpParentDir := "gentmp/iconify"
+	tmpIconSetsDir := filepath.Join(tmpParentDir, "json")
+	if _, err := os.Stat(filepath.Join(tmpParentDir, "collections.json")); os.IsNotExist(err) {
+		if err := os.MkdirAll(tmpParentDir, 0755); err != nil {
 			return fmt.Errorf("could not create iconify directory: %v", err)
 		}
 
 		iconCollections := map[string]iconBasicCollectionInfo{}
-		if err := updateIconifyCache(ctx, "collections", &iconCollections); err != nil {
+		if err := updateIconifyCache(ctx, tmpParentDir, "collections.json", &iconCollections); err != nil {
 			return fmt.Errorf("could not get iconify collections: %v", err)
 		}
 		log.Print("got icon collections")
@@ -35,7 +42,8 @@ func GenerateIconify(ctx context.Context, handlebarsPath string) error {
 			collectionName := collectionName
 
 			eg.Go(func() error {
-				if err := updateIconifyCache(ctx, "json/"+collectionName, &details); err != nil {
+				iconifyAssetPath := filepath.Join(tmpIconSetsDir, collectionName+".json")
+				if err := updateIconifyCache(ctx, tmpParentDir, iconifyAssetPath, &details); err != nil {
 					log.Printf("!!!! could not get iconify collection %s: %v", collectionName, err)
 				} else {
 					log.Printf("got icon collection %s", collectionName)
@@ -49,13 +57,18 @@ func GenerateIconify(ctx context.Context, handlebarsPath string) error {
 		}
 	}
 
-	iconifyPath := filepath.Join(handlebarsPath, "iconify")
+	iconifyPath := filepath.Join(gogglesPath, "iconify")
+	if err := os.RemoveAll(iconifyPath); err != nil {
+		return fmt.Errorf("could not remove iconify directory: %v", err)
+	}
 	if err := os.MkdirAll(iconifyPath, 0755); err != nil {
 		return fmt.Errorf("could not create iconify directory: %v", err)
 	}
 
+	numberWordGroupsRegex := regexp.MustCompile(`(?P<number>\d*)*(?P<word>\D*)`)
+
 	// walk the details and generate the iconify.go file
-	if err := filepath.WalkDir(detailsDir, func(path string, d os.DirEntry, err error) error {
+	if err := filepath.WalkDir(tmpIconSetsDir, func(path string, d os.DirEntry, err error) error {
 		if err != nil {
 			return err
 		}
@@ -74,17 +87,67 @@ func GenerateIconify(ctx context.Context, handlebarsPath string) error {
 			return fmt.Errorf("could not unmarshal JSON: %v", err)
 		}
 
-		content := GenerateIcon(details)
-		snaked := strcase.ToSnake(details.Prefix)
-		packageName := lower(snaked)
-		packageDir := filepath.Join(iconifyPath, packageName)
-		if err := os.MkdirAll(packageDir, 0755); err != nil {
+		// some icons have a prefix that is not a valid Go identifier.  Specifically, the
+		// use of numbers, dashes, and underscores.  We need to convert these to valid
+		// Go identifiers.
+
+		namedIcons := []namedIcon{}
+		for iconName, icon := range details.Icons {
+			matches := numberWordGroupsRegex.FindAllStringSubmatch(iconName, -1)
+			revisedName := iconName
+
+			if len(matches) > 0 {
+				parts := []string{}
+
+				for _, match := range matches {
+					numbersStr := match[numberWordGroupsRegex.SubexpIndex("number")]
+					if numbersStr != "" {
+						number, err := strconv.Atoi(numbersStr)
+						if err != nil {
+							return fmt.Errorf("could not convert %s to number: %v", numbersStr, err)
+						}
+						numbersStr = num2words.Convert(number)
+					}
+
+					word := match[numberWordGroupsRegex.SubexpIndex("word")]
+					parts = append(parts, numbersStr, word)
+				}
+
+				revisedName = pascal(strings.Join(parts, " "))
+			}
+			namedIcons = append(namedIcons, namedIcon{
+				Name: revisedName,
+				Icon: icon,
+			})
+		}
+
+		slices.SortFunc(namedIcons, func(a, b namedIcon) bool {
+			return a.Name < b.Name
+		})
+
+		packageName := lower(snake(details.Prefix))
+		if goKeywords.Has(packageName) {
+			packageName = fmt.Sprintf("%s_icons", packageName)
+		}
+
+		iconPkg := iconPackage{
+			Name:   packageName,
+			Icons:  namedIcons,
+			Width:  unknownToDimension(details.Width),
+			Height: unknownToDimension(details.Height),
+		}
+		content := GenerateIcon(iconPkg)
+
+		packagePath := filepath.Join(iconifyPath, packageName)
+		if err := os.MkdirAll(packagePath, 0755); err != nil {
 			return fmt.Errorf("could not create iconify directory: %v", err)
 		}
-		fullPath := filepath.Join(packageDir, fmt.Sprintf("%s.go", snaked))
+		fullPath := filepath.Join(packagePath, fmt.Sprintf("%s.go", packageName))
 		if err := os.WriteFile(fullPath, []byte(content), 0644); err != nil {
 			return fmt.Errorf("could not write file %s: %v", fullPath, err)
 		}
+
+		log.Printf("wrote %s", fullPath)
 
 		return nil
 	}); err != nil {
@@ -94,8 +157,15 @@ func GenerateIconify(ctx context.Context, handlebarsPath string) error {
 	return nil
 }
 
-func updateIconifyCache(ctx context.Context, subpath string, v interface{}) error {
-	fullURL := fmt.Sprintf("https://raw.githubusercontent.com/iconify/icon-sets/master/%s.json", subpath)
+var goKeywords = sets.New(
+	"break", "case", "chan", "const", "continue", "default", "defer",
+	"else", "fallthrough", "for", "func", "go", "goto", "if", "import",
+	"interface", "map", "package", "range", "return", "select", "struct",
+	"switch", "type", "var",
+)
+
+func updateIconifyCache(ctx context.Context, gentmpDir, iconifyJSONPath string, v interface{}) error {
+	fullURL := fmt.Sprintf("https://raw.githubusercontent.com/iconify/icon-sets/master/%s", iconifyJSONPath)
 
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, fullURL, nil)
 	if err != nil {
@@ -104,8 +174,13 @@ func updateIconifyCache(ctx context.Context, subpath string, v interface{}) erro
 
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
-		return fmt.Errorf("could not get iconify %s: %v", subpath, err)
+		return fmt.Errorf("could not get iconify %s: %v", fullURL, err)
 	}
+	defer res.Body.Close()
+	if res.StatusCode != http.StatusOK {
+		return fmt.Errorf("could not get iconify %s: %v", fullURL, res.Status)
+	}
+
 	buf := bytebufferpool.Get()
 	defer bytebufferpool.Put(buf)
 
@@ -115,32 +190,23 @@ func updateIconifyCache(ctx context.Context, subpath string, v interface{}) erro
 	}
 
 	b := buf.Bytes()
+
 	if err := json.Unmarshal(b, v); err != nil {
 		return fmt.Errorf("could not unmarshal JSON: %v", err)
 	}
 
-	if err := writeJSON(subpath, v); err != nil {
-		return fmt.Errorf("could not write JSON: %v", err)
+	jsonPath := filepath.Join(gentmpDir, iconifyJSONPath)
+	subDirPath := filepath.Dir(jsonPath)
+	if err := os.MkdirAll(subDirPath, 0755); err != nil {
+		return fmt.Errorf("could not create directory %s: %v", subDirPath, err)
 	}
 
-	return nil
-}
-
-var rx *regexp.Regexp
-
-func writeJSON(subpath string, v interface{}) error {
 	bytes, err := json.MarshalIndent(v, "", "  ")
 	if err != nil {
 		return fmt.Errorf("could not marshal JSON: %v", err)
 	}
-
-	name := fmt.Sprintf(
-		"iconify/%s.json",
-		strcase.ToSnake(subpath),
-	)
-
-	if err := os.WriteFile(name, bytes, 0644); err != nil {
-		return fmt.Errorf("could not write file %s: %v", name, err)
+	if err := os.WriteFile(jsonPath, bytes, 0644); err != nil {
+		return fmt.Errorf("could not write file %s: %v", jsonPath, err)
 	}
 
 	return nil
@@ -203,4 +269,14 @@ func unknownToDimension(x interface{}) int {
 	default:
 		return 0
 	}
+}
+
+type iconPackage struct {
+	Name          string
+	Icons         []namedIcon
+	Width, Height int
+}
+type namedIcon struct {
+	Name string
+	Icon icon
 }

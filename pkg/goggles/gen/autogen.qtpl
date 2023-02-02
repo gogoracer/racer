@@ -39,7 +39,7 @@ elementName := "Element" + tagPascal
 %}
 /* cSpell:disable */
 
-package  handlebars
+package  goggles
 
 import (
     "github.com/gogoracer/racer/pkg/engine"
@@ -70,8 +70,8 @@ func (e *{%s elementName %}) BindCustom(k string, v string,  dontEscape ...bool)
 	return e
 }
 
-func (e *{%s elementName %}) setAttribute(k string, v string, dontEscape ...bool) *{%s elementName %} {
-	e.baseElement.setAttribute(k, v, dontEscape...)
+func (e *{%s elementName %}) appendAttribute(k string, v string, dontEscape ...bool) *{%s elementName %} {
+	e.baseElement.appendAttribute(k, v, dontEscape...)
 	return e
 }
 
@@ -89,7 +89,7 @@ func (e *{%s elementName %}) GenerateVDOM() interface{} {
 //   * {%s v %}
 {%- endfor -%}
 func (element *{%s elementName %}) {%s attrPascal %}(v string, dontEscape ...bool) *{%s elementName %} {
-    element.setAttribute("{%s a.Name %}", v, dontEscape...)
+    element.appendAttribute("{%s a.Name %}", v, dontEscape...)
     return element
 }
 {%- endfor -%}
@@ -113,20 +113,16 @@ func (e *{%s elementName %}) {%s evt %}(fn engine.EventHandler) (*{%s elementNam
 
 {%- endfunc -%}
 
-{%- func GenerateIcon(details iconCollectionDetailsInfo) -%}
-{%- code
-w := unknownToDimension(details.Width)
-h := unknownToDimension(details.Width)
--%}
+{%- func GenerateIcon(pkg iconPackage) -%}
 /* cSpell:disable */
-package {%s lower(camel(details.Prefix)) %}
+package {%s pkg.Name %}
 
-import "github.com/gogoracer/racer/pkg/handlebars"
+import "github.com/gogoracer/racer/pkg/goggles"
 
-{%- for name, icon := range details.Icons -%}
-func {%s pascal(name) %}() *handlebars.ElementSVG {
-    return handlebars.SVG(`{%s= icon.SvgBody %}`).
-        Custom("viewBox","0,0,{%d w %},{%d h %}").
+{%- for _, namedIcon := range pkg.Icons -%}
+func {%s namedIcon.Name %}() *goggles.ElementSVG {
+    return goggles.SVG(`{%s= namedIcon.Icon.SvgBody %}`).
+        Custom("viewBox","0,0,{%d pkg.Width %},{%d pkg.Height %}").
         Custom("width","1em").
         Custom("height","1em")
 }

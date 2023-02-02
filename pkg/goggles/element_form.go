@@ -1,6 +1,6 @@
 /* cSpell:disable */
 
-package handlebars
+package goggles
 
 import (
 	"github.com/gogoracer/racer/pkg/engine"
@@ -31,13 +31,32 @@ func (e *ElementForm) BindCustom(k string, v string, dontEscape ...bool) *Elemen
 	return e
 }
 
-func (e *ElementForm) setAttribute(k string, v string, dontEscape ...bool) *ElementForm {
-	e.baseElement.setAttribute(k, v, dontEscape...)
+func (e *ElementForm) appendAttribute(k string, v string, dontEscape ...bool) *ElementForm {
+	e.baseElement.appendAttribute(k, v, dontEscape...)
 	return e
 }
 
 func (e *ElementForm) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
+}
+
+// Action is the "action" attribute.
+// URL to use for form submission
+// Valid values are constrained to the following:
+//   - valid_non_empty_url_potentially_surrounded_by_spaces
+func (element *ElementForm) Action(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("action", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementForm) Contenteditable(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("contenteditable", v, dontEscape...)
+	return element
 }
 
 // Inputmode is the "inputmode" attribute.
@@ -60,32 +79,25 @@ func (e *ElementForm) GenerateVDOM() interface{} {
 //   - search
 //   - search
 func (element *ElementForm) Inputmode(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("inputmode", v, dontEscape...)
+	element.appendAttribute("inputmode", v, dontEscape...)
 	return element
 }
 
-// Itemprop is the "itemprop" attribute.
-// Property names of a microdata item
+// Lang is the "lang" attribute.
+// Language of the element
 // Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-//   - defined_property_names
-func (element *ElementForm) Itemprop(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("itemprop", v, dontEscape...)
+func (element *ElementForm) Lang(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("lang", v, dontEscape...)
 	return element
 }
 
-// Method is the "method" attribute.
-// Variant to use for form submission
+// AcceptCharset is the "accept-charset" attribute.
+// Character encodings to use for form submission
 // Valid values are constrained to the following:
-//   - get
-//   - get
-//   - post
-//   - post
-//   - dialog
-//   - dialog
-func (element *ElementForm) Method(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("method", v, dontEscape...)
+//   - ascii_case_insensitive
+//   - utf_8
+func (element *ElementForm) AcceptCharset(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("accept-charset", v, dontEscape...)
 	return element
 }
 
@@ -94,92 +106,7 @@ func (element *ElementForm) Method(v string, dontEscape ...bool) *ElementForm {
 // Valid values are constrained to the following:
 //   - set_of_space_separated_tokens
 func (element *ElementForm) Class(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("class", v, dontEscape...)
-	return element
-}
-
-// Itemscope is the "itemscope" attribute.
-// Introduces a microdata item
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementForm) Itemscope(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("itemscope", v, dontEscape...)
-	return element
-}
-
-// Lang is the "lang" attribute.
-// Language of the element
-// Valid values are constrained to the following:
-func (element *ElementForm) Lang(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("lang", v, dontEscape...)
-	return element
-}
-
-// Spellcheck is the "spellcheck" attribute.
-// Whether the element is to have its spelling and grammar checked
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementForm) Spellcheck(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("spellcheck", v, dontEscape...)
-	return element
-}
-
-// Autocapitalize is the "autocapitalize" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
-// Valid values are constrained to the following:
-//   - on
-//   - on
-//   - off
-//   - off
-//   - none
-//   - none
-//   - sentences
-//   - sentences
-//   - words
-//   - words
-//   - characters
-//   - characters
-func (element *ElementForm) Autocapitalize(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("autocapitalize", v, dontEscape...)
-	return element
-}
-
-// Draggable is the "draggable" attribute.
-// Whether the element is draggable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementForm) Draggable(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("draggable", v, dontEscape...)
-	return element
-}
-
-// Slot is the "slot" attribute.
-// The element&#39;s desired slot
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementForm) Slot(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("slot", v, dontEscape...)
-	return element
-}
-
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
-// Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementForm) Translate(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("translate", v, dontEscape...)
-	return element
-}
-
-// Autofocus is the "autofocus" attribute.
-// Automatically focus the element when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementForm) Autofocus(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("autofocus", v, dontEscape...)
+	element.appendAttribute("class", v, dontEscape...)
 	return element
 }
 
@@ -201,7 +128,145 @@ func (element *ElementForm) Autofocus(v string, dontEscape ...bool) *ElementForm
 //   - send
 //   - send
 func (element *ElementForm) Enterkeyhint(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("enterkeyhint", v, dontEscape...)
+	element.appendAttribute("enterkeyhint", v, dontEscape...)
+	return element
+}
+
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
+// Valid values are constrained to the following:
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementForm) Hidden(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("hidden", v, dontEscape...)
+	return element
+}
+
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementForm) Itemid(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("itemid", v, dontEscape...)
+	return element
+}
+
+// Novalidate is the "novalidate" attribute.
+// Bypass form control validation for form submission
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementForm) Novalidate(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("novalidate", v, dontEscape...)
+	return element
+}
+
+// Popover is the "popover" attribute.
+// Makes the element a popover element
+// Valid values are constrained to the following:
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementForm) Popover(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("popover", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementForm) Style(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("style", v, dontEscape...)
+	return element
+}
+
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
+// Valid values are constrained to the following:
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementForm) Autocapitalize(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("autocapitalize", v, dontEscape...)
+	return element
+}
+
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementForm) Draggable(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementForm) Id(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementForm) Itemprop(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("itemprop", v, dontEscape...)
+	return element
+}
+
+// Target is the "target" attribute.
+// Navigable for form submission
+// Valid values are constrained to the following:
+//   - valid_navigable_target_name_or_keyword
+func (element *ElementForm) Target(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("target", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementForm) Title(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
+// Valid values are constrained to the following:
+//   - yes
+//   - no
+func (element *ElementForm) Translate(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("translate", v, dontEscape...)
+	return element
+}
+
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementForm) Accesskey(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("accesskey", v, dontEscape...)
 	return element
 }
 
@@ -211,7 +276,16 @@ func (element *ElementForm) Enterkeyhint(v string, dontEscape ...bool) *ElementF
 //   - valid_custom_element_name
 //   - customized_built_in_element
 func (element *ElementForm) Is(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("is", v, dontEscape...)
+	element.appendAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementForm) Inert(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("inert", v, dontEscape...)
 	return element
 }
 
@@ -223,7 +297,113 @@ func (element *ElementForm) Is(v string, dontEscape ...bool) *ElementForm {
 //   - rtl
 //   - rtl
 func (element *ElementForm) Dir(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("dir", v, dontEscape...)
+	element.appendAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementForm) Itemtype(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("itemtype", v, dontEscape...)
+	return element
+}
+
+// Method is the "method" attribute.
+// Variant to use for form submission
+// Valid values are constrained to the following:
+//   - get
+//   - get
+//   - post
+//   - post
+//   - dialog
+//   - dialog
+func (element *ElementForm) Method(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("method", v, dontEscape...)
+	return element
+}
+
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementForm) Nonce(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("nonce", v, dontEscape...)
+	return element
+}
+
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
+// Valid values are constrained to the following:
+//   - valid_integer
+func (element *ElementForm) Tabindex(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("tabindex", v, dontEscape...)
+	return element
+}
+
+// Autocomplete is the "autocomplete" attribute.
+// Hint for form autofill feature
+// Valid values are constrained to the following:
+//   - autofill_field
+func (element *ElementForm) Autocomplete(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("autocomplete", v, dontEscape...)
+	return element
+}
+
+// Itemref is the "itemref" attribute.
+// Referenced elements
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementForm) Itemref(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("itemref", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementForm) Slot(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("slot", v, dontEscape...)
+	return element
+}
+
+// Spellcheck is the "spellcheck" attribute.
+// Whether the element is to have its spelling and grammar checked
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementForm) Spellcheck(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("spellcheck", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementForm) Autofocus(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementForm) Itemscope(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("itemscope", v, dontEscape...)
+	return element
+}
+
+// Name is the "name" attribute.
+// Name of shadow tree slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementForm) Name(v string, dontEscape ...bool) *ElementForm {
+	element.appendAttribute("name", v, dontEscape...)
 	return element
 }
 
@@ -237,187 +417,7 @@ func (element *ElementForm) Dir(v string, dontEscape ...bool) *ElementForm {
 //   - text/plain
 //   - text/plain
 func (element *ElementForm) Enctype(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("enctype", v, dontEscape...)
-	return element
-}
-
-// Id is the "id" attribute.
-// The element&#39;s ID
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementForm) Id(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("id", v, dontEscape...)
-	return element
-}
-
-// Inert is the "inert" attribute.
-// Whether the element is inert.
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementForm) Inert(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("inert", v, dontEscape...)
-	return element
-}
-
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
-// Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementForm) Itemid(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("itemid", v, dontEscape...)
-	return element
-}
-
-// Novalidate is the "novalidate" attribute.
-// Bypass form control validation for form submission
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementForm) Novalidate(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("novalidate", v, dontEscape...)
-	return element
-}
-
-// Autocomplete is the "autocomplete" attribute.
-// Hint for form autofill feature
-// Valid values are constrained to the following:
-//   - autofill_field
-func (element *ElementForm) Autocomplete(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("autocomplete", v, dontEscape...)
-	return element
-}
-
-// Popover is the "popover" attribute.
-// Makes the element a popover element
-// Valid values are constrained to the following:
-//   - auto
-//   - auto
-//   - manual
-//   - manual
-func (element *ElementForm) Popover(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("popover", v, dontEscape...)
-	return element
-}
-
-// Action is the "action" attribute.
-// URL to use for form submission
-// Valid values are constrained to the following:
-//   - valid_non_empty_url_potentially_surrounded_by_spaces
-func (element *ElementForm) Action(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("action", v, dontEscape...)
-	return element
-}
-
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementForm) Contenteditable(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("contenteditable", v, dontEscape...)
-	return element
-}
-
-// Itemref is the "itemref" attribute.
-// Referenced elements
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementForm) Itemref(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("itemref", v, dontEscape...)
-	return element
-}
-
-// Name is the "name" attribute.
-// Name of shadow tree slot
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementForm) Name(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("name", v, dontEscape...)
-	return element
-}
-
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementForm) Nonce(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("nonce", v, dontEscape...)
-	return element
-}
-
-// Style is the "style" attribute.
-// Presentational and formatting instructions
-// Valid values are constrained to the following:
-func (element *ElementForm) Style(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("style", v, dontEscape...)
-	return element
-}
-
-// AcceptCharset is the "accept-charset" attribute.
-// Character encodings to use for form submission
-// Valid values are constrained to the following:
-//   - ascii_case_insensitive
-//   - utf_8
-func (element *ElementForm) AcceptCharset(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("accept-charset", v, dontEscape...)
-	return element
-}
-
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementForm) Accesskey(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("accesskey", v, dontEscape...)
-	return element
-}
-
-// Hidden is the "hidden" attribute.
-// Whether the element is relevant
-// Valid values are constrained to the following:
-//   - until_found
-//   - until_found
-//   - hidden
-//   - hidden
-func (element *ElementForm) Hidden(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("hidden", v, dontEscape...)
-	return element
-}
-
-// Itemtype is the "itemtype" attribute.
-// Item types of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-func (element *ElementForm) Itemtype(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Tabindex is the "tabindex" attribute.
-// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
-// Valid values are constrained to the following:
-//   - valid_integer
-func (element *ElementForm) Tabindex(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("tabindex", v, dontEscape...)
-	return element
-}
-
-// Target is the "target" attribute.
-// Navigable for form submission
-// Valid values are constrained to the following:
-//   - valid_navigable_target_name_or_keyword
-func (element *ElementForm) Target(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("target", v, dontEscape...)
-	return element
-}
-
-// Title is the "title" attribute.
-// CSS style sheet set name
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementForm) Title(v string, dontEscape ...bool) *ElementForm {
-	element.setAttribute("title", v, dontEscape...)
+	element.appendAttribute("enctype", v, dontEscape...)
 	return element
 }
 

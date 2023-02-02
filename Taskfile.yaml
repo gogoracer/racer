@@ -10,6 +10,18 @@ interval: 100ms
 
 
 tasks:
+  goggles_gen:
+    sources:
+      - "/**/*.qtpl"
+    cmds:
+      - qtc -dir ./pkg/goggles/gen
+      - go run ./cmd/gen/main.go
+      - gofmt -w ./pkg/goggles
+
+  gen:
+    deps:
+      - goggles_gen
+
   build:
     sources:
       - "**/*.go"

@@ -1,6 +1,6 @@
 /* cSpell:disable */
 
-package handlebars
+package goggles
 
 import (
 	"github.com/gogoracer/racer/pkg/engine"
@@ -31,8 +31,8 @@ func (e *ElementMeta) BindCustom(k string, v string, dontEscape ...bool) *Elemen
 	return e
 }
 
-func (e *ElementMeta) setAttribute(k string, v string, dontEscape ...bool) *ElementMeta {
-	e.baseElement.setAttribute(k, v, dontEscape...)
+func (e *ElementMeta) appendAttribute(k string, v string, dontEscape ...bool) *ElementMeta {
+	e.baseElement.appendAttribute(k, v, dontEscape...)
 	return e
 }
 
@@ -40,12 +40,60 @@ func (e *ElementMeta) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
 }
 
-// Charset is the "charset" attribute.
-// Character encoding declaration
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
 // Valid values are constrained to the following:
-//   - utf_8
-func (element *ElementMeta) Charset(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("charset", v, dontEscape...)
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementMeta) Itemprop(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("itemprop", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementMeta) Slot(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("slot", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementMeta) Id(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementMeta) Style(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("style", v, dontEscape...)
+	return element
+}
+
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementMeta) Accesskey(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementMeta) Contenteditable(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("contenteditable", v, dontEscape...)
 	return element
 }
 
@@ -57,192 +105,7 @@ func (element *ElementMeta) Charset(v string, dontEscape ...bool) *ElementMeta {
 //   - hidden
 //   - hidden
 func (element *ElementMeta) Hidden(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("hidden", v, dontEscape...)
-	return element
-}
-
-// Itemtype is the "itemtype" attribute.
-// Item types of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-func (element *ElementMeta) Itemtype(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Lang is the "lang" attribute.
-// Language of the element
-// Valid values are constrained to the following:
-func (element *ElementMeta) Lang(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("lang", v, dontEscape...)
-	return element
-}
-
-// Popover is the "popover" attribute.
-// Makes the element a popover element
-// Valid values are constrained to the following:
-//   - auto
-//   - auto
-//   - manual
-//   - manual
-func (element *ElementMeta) Popover(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("popover", v, dontEscape...)
-	return element
-}
-
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementMeta) Accesskey(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("accesskey", v, dontEscape...)
-	return element
-}
-
-// Autocapitalize is the "autocapitalize" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
-// Valid values are constrained to the following:
-//   - on
-//   - on
-//   - off
-//   - off
-//   - none
-//   - none
-//   - sentences
-//   - sentences
-//   - words
-//   - words
-//   - characters
-//   - characters
-func (element *ElementMeta) Autocapitalize(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("autocapitalize", v, dontEscape...)
-	return element
-}
-
-// Autofocus is the "autofocus" attribute.
-// Automatically focus the element when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementMeta) Autofocus(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("autofocus", v, dontEscape...)
-	return element
-}
-
-// Title is the "title" attribute.
-// CSS style sheet set name
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementMeta) Title(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("title", v, dontEscape...)
-	return element
-}
-
-// Enterkeyhint is the "enterkeyhint" attribute.
-// Hint for selecting an enter key action
-// Valid values are constrained to the following:
-//   - enter
-//   - enter
-//   - done
-//   - done
-//   - go
-//   - go
-//   - next
-//   - next
-//   - previous
-//   - previous
-//   - search
-//   - search
-//   - send
-//   - send
-func (element *ElementMeta) Enterkeyhint(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("enterkeyhint", v, dontEscape...)
-	return element
-}
-
-// Id is the "id" attribute.
-// The element&#39;s ID
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementMeta) Id(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("id", v, dontEscape...)
-	return element
-}
-
-// Style is the "style" attribute.
-// Presentational and formatting instructions
-// Valid values are constrained to the following:
-func (element *ElementMeta) Style(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("style", v, dontEscape...)
-	return element
-}
-
-// Itemref is the "itemref" attribute.
-// Referenced elements
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementMeta) Itemref(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("itemref", v, dontEscape...)
-	return element
-}
-
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementMeta) Contenteditable(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("contenteditable", v, dontEscape...)
-	return element
-}
-
-// Dir is the "dir" attribute.
-// The text directionality of the element
-// Valid values are constrained to the following:
-//   - ltr
-//   - ltr
-//   - rtl
-//   - rtl
-func (element *ElementMeta) Dir(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("dir", v, dontEscape...)
-	return element
-}
-
-// Is is the "is" attribute.
-// Creates a customized built-in element
-// Valid values are constrained to the following:
-//   - valid_custom_element_name
-//   - customized_built_in_element
-func (element *ElementMeta) Is(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("is", v, dontEscape...)
-	return element
-}
-
-// Tabindex is the "tabindex" attribute.
-// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
-// Valid values are constrained to the following:
-//   - valid_integer
-func (element *ElementMeta) Tabindex(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("tabindex", v, dontEscape...)
-	return element
-}
-
-// Content is the "content" attribute.
-// Value of the element
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementMeta) Content(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("content", v, dontEscape...)
-	return element
-}
-
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
-// Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementMeta) Itemid(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("itemid", v, dontEscape...)
+	element.appendAttribute("hidden", v, dontEscape...)
 	return element
 }
 
@@ -251,27 +114,7 @@ func (element *ElementMeta) Itemid(v string, dontEscape ...bool) *ElementMeta {
 // Valid values are constrained to the following:
 //   - boolean_attribute
 func (element *ElementMeta) Itemscope(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("itemscope", v, dontEscape...)
-	return element
-}
-
-// Itemprop is the "itemprop" attribute.
-// Property names of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-//   - defined_property_names
-func (element *ElementMeta) Itemprop(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("itemprop", v, dontEscape...)
-	return element
-}
-
-// Media is the "media" attribute.
-// Applicable media
-// Valid values are constrained to the following:
-//   - valid_media_query_list
-func (element *ElementMeta) Media(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("media", v, dontEscape...)
+	element.appendAttribute("itemscope", v, dontEscape...)
 	return element
 }
 
@@ -281,7 +124,7 @@ func (element *ElementMeta) Media(v string, dontEscape ...bool) *ElementMeta {
 //   - true
 //   - false
 func (element *ElementMeta) Spellcheck(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("spellcheck", v, dontEscape...)
+	element.appendAttribute("spellcheck", v, dontEscape...)
 	return element
 }
 
@@ -290,25 +133,7 @@ func (element *ElementMeta) Spellcheck(v string, dontEscape ...bool) *ElementMet
 // Valid values are constrained to the following:
 //   - set_of_space_separated_tokens
 func (element *ElementMeta) Class(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("class", v, dontEscape...)
-	return element
-}
-
-// HttpEquiv is the "http-equiv" attribute.
-// Pragma directive
-// Valid values are constrained to the following:
-//   - content_type
-//   - content_type
-//   - default_style
-//   - default_style
-//   - refresh
-//   - refresh
-//   - x_ua_compatible
-//   - x_ua_compatible
-//   - content_security_policy
-//   - content_security_policy
-func (element *ElementMeta) HttpEquiv(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("http-equiv", v, dontEscape...)
+	element.appendAttribute("class", v, dontEscape...)
 	return element
 }
 
@@ -332,35 +157,43 @@ func (element *ElementMeta) HttpEquiv(v string, dontEscape ...bool) *ElementMeta
 //   - search
 //   - search
 func (element *ElementMeta) Inputmode(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("inputmode", v, dontEscape...)
+	element.appendAttribute("inputmode", v, dontEscape...)
 	return element
 }
 
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Itemref is the "itemref" attribute.
+// Referenced elements
 // Valid values are constrained to the following:
-//   - text
-func (element *ElementMeta) Nonce(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("nonce", v, dontEscape...)
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementMeta) Itemref(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("itemref", v, dontEscape...)
 	return element
 }
 
-// Slot is the "slot" attribute.
-// The element&#39;s desired slot
+// Media is the "media" attribute.
+// Applicable media
 // Valid values are constrained to the following:
-//   - text
-func (element *ElementMeta) Slot(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("slot", v, dontEscape...)
+//   - valid_media_query_list
+func (element *ElementMeta) Media(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("media", v, dontEscape...)
 	return element
 }
 
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
 // Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementMeta) Translate(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("translate", v, dontEscape...)
+//   - boolean_attribute
+func (element *ElementMeta) Autofocus(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Charset is the "charset" attribute.
+// Character encoding declaration
+// Valid values are constrained to the following:
+//   - utf_8
+func (element *ElementMeta) Charset(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("charset", v, dontEscape...)
 	return element
 }
 
@@ -370,16 +203,7 @@ func (element *ElementMeta) Translate(v string, dontEscape ...bool) *ElementMeta
 //   - true
 //   - false
 func (element *ElementMeta) Draggable(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("draggable", v, dontEscape...)
-	return element
-}
-
-// Inert is the "inert" attribute.
-// Whether the element is inert.
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementMeta) Inert(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("inert", v, dontEscape...)
+	element.appendAttribute("draggable", v, dontEscape...)
 	return element
 }
 
@@ -388,7 +212,183 @@ func (element *ElementMeta) Inert(v string, dontEscape ...bool) *ElementMeta {
 // Valid values are constrained to the following:
 //   - text
 func (element *ElementMeta) Name(v string, dontEscape ...bool) *ElementMeta {
-	element.setAttribute("name", v, dontEscape...)
+	element.appendAttribute("name", v, dontEscape...)
+	return element
+}
+
+// Popover is the "popover" attribute.
+// Makes the element a popover element
+// Valid values are constrained to the following:
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementMeta) Popover(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("popover", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementMeta) Title(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
+// Valid values are constrained to the following:
+//   - yes
+//   - no
+func (element *ElementMeta) Translate(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("translate", v, dontEscape...)
+	return element
+}
+
+// HttpEquiv is the "http-equiv" attribute.
+// Pragma directive
+// Valid values are constrained to the following:
+//   - content_type
+//   - content_type
+//   - default_style
+//   - default_style
+//   - refresh
+//   - refresh
+//   - x_ua_compatible
+//   - x_ua_compatible
+//   - content_security_policy
+//   - content_security_policy
+func (element *ElementMeta) HttpEquiv(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("http-equiv", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementMeta) Is(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementMeta) Itemtype(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("itemtype", v, dontEscape...)
+	return element
+}
+
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementMeta) Nonce(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("nonce", v, dontEscape...)
+	return element
+}
+
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
+// Valid values are constrained to the following:
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementMeta) Autocapitalize(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("autocapitalize", v, dontEscape...)
+	return element
+}
+
+// Enterkeyhint is the "enterkeyhint" attribute.
+// Hint for selecting an enter key action
+// Valid values are constrained to the following:
+//   - enter
+//   - enter
+//   - done
+//   - done
+//   - go
+//   - go
+//   - next
+//   - next
+//   - previous
+//   - previous
+//   - search
+//   - search
+//   - send
+//   - send
+func (element *ElementMeta) Enterkeyhint(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("enterkeyhint", v, dontEscape...)
+	return element
+}
+
+// Lang is the "lang" attribute.
+// Language of the element
+// Valid values are constrained to the following:
+func (element *ElementMeta) Lang(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("lang", v, dontEscape...)
+	return element
+}
+
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
+// Valid values are constrained to the following:
+//   - valid_integer
+func (element *ElementMeta) Tabindex(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("tabindex", v, dontEscape...)
+	return element
+}
+
+// Content is the "content" attribute.
+// Value of the element
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementMeta) Content(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("content", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementMeta) Dir(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementMeta) Inert(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementMeta) Itemid(v string, dontEscape ...bool) *ElementMeta {
+	element.appendAttribute("itemid", v, dontEscape...)
 	return element
 }
 

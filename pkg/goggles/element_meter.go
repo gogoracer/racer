@@ -1,6 +1,6 @@
 /* cSpell:disable */
 
-package handlebars
+package goggles
 
 import (
 	"github.com/gogoracer/racer/pkg/engine"
@@ -31,8 +31,8 @@ func (e *ElementMeter) BindCustom(k string, v string, dontEscape ...bool) *Eleme
 	return e
 }
 
-func (e *ElementMeter) setAttribute(k string, v string, dontEscape ...bool) *ElementMeter {
-	e.baseElement.setAttribute(k, v, dontEscape...)
+func (e *ElementMeter) appendAttribute(k string, v string, dontEscape ...bool) *ElementMeter {
+	e.baseElement.appendAttribute(k, v, dontEscape...)
 	return e
 }
 
@@ -40,56 +40,50 @@ func (e *ElementMeter) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
 }
 
-// Hidden is the "hidden" attribute.
-// Whether the element is relevant
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
 // Valid values are constrained to the following:
-//   - until_found
-//   - until_found
-//   - hidden
-//   - hidden
-func (element *ElementMeter) Hidden(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("hidden", v, dontEscape...)
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementMeter) Autocapitalize(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("autocapitalize", v, dontEscape...)
 	return element
 }
 
-// Is is the "is" attribute.
-// Creates a customized built-in element
+// Id is the "id" attribute.
+// The element&#39;s ID
 // Valid values are constrained to the following:
-//   - valid_custom_element_name
-//   - customized_built_in_element
-func (element *ElementMeter) Is(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("is", v, dontEscape...)
+//   - text
+func (element *ElementMeter) Id(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("id", v, dontEscape...)
 	return element
 }
 
-// Itemscope is the "itemscope" attribute.
-// Introduces a microdata item
+// Optimum is the "optimum" attribute.
+// Optimum value in gauge
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementMeter) Itemscope(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("itemscope", v, dontEscape...)
+//   - valid_floating_point_number
+func (element *ElementMeter) Optimum(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("optimum", v, dontEscape...)
 	return element
 }
 
-// Enterkeyhint is the "enterkeyhint" attribute.
-// Hint for selecting an enter key action
+// Class is the "class" attribute.
+// Classes to which the element belongs
 // Valid values are constrained to the following:
-//   - enter
-//   - enter
-//   - done
-//   - done
-//   - go
-//   - go
-//   - next
-//   - next
-//   - previous
-//   - previous
-//   - search
-//   - search
-//   - send
-//   - send
-func (element *ElementMeter) Enterkeyhint(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("enterkeyhint", v, dontEscape...)
+//   - set_of_space_separated_tokens
+func (element *ElementMeter) Class(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("class", v, dontEscape...)
 	return element
 }
 
@@ -113,34 +107,7 @@ func (element *ElementMeter) Enterkeyhint(v string, dontEscape ...bool) *Element
 //   - search
 //   - search
 func (element *ElementMeter) Inputmode(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("inputmode", v, dontEscape...)
-	return element
-}
-
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
-// Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementMeter) Itemid(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("itemid", v, dontEscape...)
-	return element
-}
-
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementMeter) Nonce(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("nonce", v, dontEscape...)
-	return element
-}
-
-// Optimum is the "optimum" attribute.
-// Optimum value in gauge
-// Valid values are constrained to the following:
-//   - valid_floating_point_number
-func (element *ElementMeter) Optimum(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("optimum", v, dontEscape...)
+	element.appendAttribute("inputmode", v, dontEscape...)
 	return element
 }
 
@@ -149,120 +116,62 @@ func (element *ElementMeter) Optimum(v string, dontEscape ...bool) *ElementMeter
 // Valid values are constrained to the following:
 //   - text
 func (element *ElementMeter) Slot(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("slot", v, dontEscape...)
+	element.appendAttribute("slot", v, dontEscape...)
 	return element
 }
 
-// High is the "high" attribute.
-// Low limit of high range
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
 // Valid values are constrained to the following:
-//   - valid_floating_point_number
-func (element *ElementMeter) High(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("high", v, dontEscape...)
+//   - yes
+//   - no
+func (element *ElementMeter) Translate(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("translate", v, dontEscape...)
 	return element
 }
 
-// Inert is the "inert" attribute.
-// Whether the element is inert.
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
 // Valid values are constrained to the following:
 //   - boolean_attribute
-func (element *ElementMeter) Inert(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("inert", v, dontEscape...)
+func (element *ElementMeter) Itemscope(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("itemscope", v, dontEscape...)
 	return element
 }
 
-// Id is the "id" attribute.
-// The element&#39;s ID
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
 // Valid values are constrained to the following:
 //   - text
-func (element *ElementMeter) Id(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("id", v, dontEscape...)
+func (element *ElementMeter) Nonce(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("nonce", v, dontEscape...)
 	return element
 }
 
-// Dir is the "dir" attribute.
-// The text directionality of the element
+// Style is the "style" attribute.
+// Presentational and formatting instructions
 // Valid values are constrained to the following:
-//   - ltr
-//   - ltr
-//   - rtl
-//   - rtl
-func (element *ElementMeter) Dir(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("dir", v, dontEscape...)
+func (element *ElementMeter) Style(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("style", v, dontEscape...)
 	return element
 }
 
-// Itemref is the "itemref" attribute.
-// Referenced elements
+// Title is the "title" attribute.
+// CSS style sheet set name
 // Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementMeter) Itemref(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("itemref", v, dontEscape...)
+//   - text
+func (element *ElementMeter) Title(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("title", v, dontEscape...)
 	return element
 }
 
-// Lang is the "lang" attribute.
-// Language of the element
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
 // Valid values are constrained to the following:
-func (element *ElementMeter) Lang(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("lang", v, dontEscape...)
-	return element
-}
-
-// Value is the "value" attribute.
-// Current value of the element
-// Valid values are constrained to the following:
-//   - valid_floating_point_number
-func (element *ElementMeter) Value(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("value", v, dontEscape...)
-	return element
-}
-
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementMeter) Contenteditable(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("contenteditable", v, dontEscape...)
-	return element
-}
-
-// Itemprop is the "itemprop" attribute.
-// Property names of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-//   - defined_property_names
-func (element *ElementMeter) Itemprop(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("itemprop", v, dontEscape...)
-	return element
-}
-
-// Low is the "low" attribute.
-// High limit of low range
-// Valid values are constrained to the following:
-//   - valid_floating_point_number
-func (element *ElementMeter) Low(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("low", v, dontEscape...)
-	return element
-}
-
-// Max is the "max" attribute.
-// Upper bound of range
-// Valid values are constrained to the following:
-//   - valid_floating_point_number
-func (element *ElementMeter) Max(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("max", v, dontEscape...)
-	return element
-}
-
-// Min is the "min" attribute.
-// Lower bound of range
-// Valid values are constrained to the following:
-//   - valid_floating_point_number
-func (element *ElementMeter) Min(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("min", v, dontEscape...)
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementMeter) Accesskey(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("accesskey", v, dontEscape...)
 	return element
 }
 
@@ -272,16 +181,24 @@ func (element *ElementMeter) Min(v string, dontEscape ...bool) *ElementMeter {
 //   - true
 //   - false
 func (element *ElementMeter) Draggable(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("draggable", v, dontEscape...)
+	element.appendAttribute("draggable", v, dontEscape...)
 	return element
 }
 
-// Tabindex is the "tabindex" attribute.
-// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
+// Lang is the "lang" attribute.
+// Language of the element
 // Valid values are constrained to the following:
-//   - valid_integer
-func (element *ElementMeter) Tabindex(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("tabindex", v, dontEscape...)
+func (element *ElementMeter) Lang(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("lang", v, dontEscape...)
+	return element
+}
+
+// Low is the "low" attribute.
+// High limit of low range
+// Valid values are constrained to the following:
+//   - valid_floating_point_number
+func (element *ElementMeter) Low(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("low", v, dontEscape...)
 	return element
 }
 
@@ -293,7 +210,7 @@ func (element *ElementMeter) Tabindex(v string, dontEscape ...bool) *ElementMete
 //   - manual
 //   - manual
 func (element *ElementMeter) Popover(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("popover", v, dontEscape...)
+	element.appendAttribute("popover", v, dontEscape...)
 	return element
 }
 
@@ -302,16 +219,156 @@ func (element *ElementMeter) Popover(v string, dontEscape ...bool) *ElementMeter
 // Valid values are constrained to the following:
 //   - boolean_attribute
 func (element *ElementMeter) Autofocus(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("autofocus", v, dontEscape...)
+	element.appendAttribute("autofocus", v, dontEscape...)
 	return element
 }
 
-// Class is the "class" attribute.
-// Classes to which the element belongs
+// High is the "high" attribute.
+// Low limit of high range
 // Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementMeter) Class(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("class", v, dontEscape...)
+//   - valid_floating_point_number
+func (element *ElementMeter) High(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("high", v, dontEscape...)
+	return element
+}
+
+// Max is the "max" attribute.
+// Upper bound of range
+// Valid values are constrained to the following:
+//   - valid_floating_point_number
+func (element *ElementMeter) Max(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("max", v, dontEscape...)
+	return element
+}
+
+// Min is the "min" attribute.
+// Lower bound of range
+// Valid values are constrained to the following:
+//   - valid_floating_point_number
+func (element *ElementMeter) Min(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("min", v, dontEscape...)
+	return element
+}
+
+// Value is the "value" attribute.
+// Current value of the element
+// Valid values are constrained to the following:
+//   - valid_floating_point_number
+func (element *ElementMeter) Value(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("value", v, dontEscape...)
+	return element
+}
+
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
+// Valid values are constrained to the following:
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementMeter) Hidden(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("hidden", v, dontEscape...)
+	return element
+}
+
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementMeter) Itemid(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("itemid", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementMeter) Contenteditable(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("contenteditable", v, dontEscape...)
+	return element
+}
+
+// Enterkeyhint is the "enterkeyhint" attribute.
+// Hint for selecting an enter key action
+// Valid values are constrained to the following:
+//   - enter
+//   - enter
+//   - done
+//   - done
+//   - go
+//   - go
+//   - next
+//   - next
+//   - previous
+//   - previous
+//   - search
+//   - search
+//   - send
+//   - send
+func (element *ElementMeter) Enterkeyhint(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("enterkeyhint", v, dontEscape...)
+	return element
+}
+
+// Itemref is the "itemref" attribute.
+// Referenced elements
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementMeter) Itemref(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("itemref", v, dontEscape...)
+	return element
+}
+
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
+// Valid values are constrained to the following:
+//   - valid_integer
+func (element *ElementMeter) Tabindex(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("tabindex", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementMeter) Dir(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementMeter) Inert(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementMeter) Is(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementMeter) Itemprop(v string, dontEscape ...bool) *ElementMeter {
+	element.appendAttribute("itemprop", v, dontEscape...)
 	return element
 }
 
@@ -321,27 +378,7 @@ func (element *ElementMeter) Class(v string, dontEscape ...bool) *ElementMeter {
 //   - unordered_set_of_unique_space_separated_tokens
 //   - valid_absolute_ur_ls
 func (element *ElementMeter) Itemtype(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Autocapitalize is the "autocapitalize" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
-// Valid values are constrained to the following:
-//   - on
-//   - on
-//   - off
-//   - off
-//   - none
-//   - none
-//   - sentences
-//   - sentences
-//   - words
-//   - words
-//   - characters
-//   - characters
-func (element *ElementMeter) Autocapitalize(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("autocapitalize", v, dontEscape...)
+	element.appendAttribute("itemtype", v, dontEscape...)
 	return element
 }
 
@@ -351,44 +388,7 @@ func (element *ElementMeter) Autocapitalize(v string, dontEscape ...bool) *Eleme
 //   - true
 //   - false
 func (element *ElementMeter) Spellcheck(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("spellcheck", v, dontEscape...)
-	return element
-}
-
-// Style is the "style" attribute.
-// Presentational and formatting instructions
-// Valid values are constrained to the following:
-func (element *ElementMeter) Style(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("style", v, dontEscape...)
-	return element
-}
-
-// Title is the "title" attribute.
-// CSS style sheet set name
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementMeter) Title(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("title", v, dontEscape...)
-	return element
-}
-
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
-// Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementMeter) Translate(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("translate", v, dontEscape...)
-	return element
-}
-
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementMeter) Accesskey(v string, dontEscape ...bool) *ElementMeter {
-	element.setAttribute("accesskey", v, dontEscape...)
+	element.appendAttribute("spellcheck", v, dontEscape...)
 	return element
 }
 

@@ -1,6 +1,6 @@
 /* cSpell:disable */
 
-package handlebars
+package goggles
 
 import (
 	"github.com/gogoracer/racer/pkg/engine"
@@ -31,8 +31,8 @@ func (e *ElementImg) BindCustom(k string, v string, dontEscape ...bool) *Element
 	return e
 }
 
-func (e *ElementImg) setAttribute(k string, v string, dontEscape ...bool) *ElementImg {
-	e.baseElement.setAttribute(k, v, dontEscape...)
+func (e *ElementImg) appendAttribute(k string, v string, dontEscape ...bool) *ElementImg {
+	e.baseElement.appendAttribute(k, v, dontEscape...)
 	return e
 }
 
@@ -40,64 +40,63 @@ func (e *ElementImg) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
 }
 
-// Ismap is the "ismap" attribute.
-// Whether the image is a server-side image map
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementImg) Ismap(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("ismap", v, dontEscape...)
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementImg) Autocapitalize(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("autocapitalize", v, dontEscape...)
 	return element
 }
 
-// Style is the "style" attribute.
-// Presentational and formatting instructions
+// Class is the "class" attribute.
+// Classes to which the element belongs
 // Valid values are constrained to the following:
-func (element *ElementImg) Style(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("style", v, dontEscape...)
+//   - set_of_space_separated_tokens
+func (element *ElementImg) Class(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("class", v, dontEscape...)
 	return element
 }
 
-// Decoding is the "decoding" attribute.
-// Decoding hint to use when processing this image for presentation
+// Enterkeyhint is the "enterkeyhint" attribute.
+// Hint for selecting an enter key action
 // Valid values are constrained to the following:
-//   - sync
-//   - sync
-//   - async
-//   - async
-//   - auto
-//   - auto
-func (element *ElementImg) Decoding(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("decoding", v, dontEscape...)
+//   - enter
+//   - enter
+//   - done
+//   - done
+//   - go
+//   - go
+//   - next
+//   - next
+//   - previous
+//   - previous
+//   - search
+//   - search
+//   - send
+//   - send
+func (element *ElementImg) Enterkeyhint(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("enterkeyhint", v, dontEscape...)
 	return element
 }
 
-// Inert is the "inert" attribute.
-// Whether the element is inert.
+// Height is the "height" attribute.
+// Vertical dimension
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementImg) Inert(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("inert", v, dontEscape...)
-	return element
-}
-
-// Tabindex is the "tabindex" attribute.
-// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
-// Valid values are constrained to the following:
-//   - valid_integer
-func (element *ElementImg) Tabindex(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("tabindex", v, dontEscape...)
-	return element
-}
-
-// Hidden is the "hidden" attribute.
-// Whether the element is relevant
-// Valid values are constrained to the following:
-//   - until_found
-//   - until_found
-//   - hidden
-//   - hidden
-func (element *ElementImg) Hidden(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("hidden", v, dontEscape...)
+//   - valid_non_negative_integer
+func (element *ElementImg) Height(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("height", v, dontEscape...)
 	return element
 }
 
@@ -121,76 +120,7 @@ func (element *ElementImg) Hidden(v string, dontEscape ...bool) *ElementImg {
 //   - search
 //   - search
 func (element *ElementImg) Inputmode(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("inputmode", v, dontEscape...)
-	return element
-}
-
-// Class is the "class" attribute.
-// Classes to which the element belongs
-// Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementImg) Class(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("class", v, dontEscape...)
-	return element
-}
-
-// Dir is the "dir" attribute.
-// The text directionality of the element
-// Valid values are constrained to the following:
-//   - ltr
-//   - ltr
-//   - rtl
-//   - rtl
-func (element *ElementImg) Dir(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("dir", v, dontEscape...)
-	return element
-}
-
-// Itemref is the "itemref" attribute.
-// Referenced elements
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementImg) Itemref(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("itemref", v, dontEscape...)
-	return element
-}
-
-// Itemtype is the "itemtype" attribute.
-// Item types of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-func (element *ElementImg) Itemtype(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Alt is the "alt" attribute.
-// Replacement text for use when images are not available
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementImg) Alt(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("alt", v, dontEscape...)
-	return element
-}
-
-// Autocapitalize is the "autocapitalize" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
-// Valid values are constrained to the following:
-//   - on
-//   - on
-//   - off
-//   - off
-//   - none
-//   - none
-//   - sentences
-//   - sentences
-//   - words
-//   - words
-//   - characters
-//   - characters
-func (element *ElementImg) Autocapitalize(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("autocapitalize", v, dontEscape...)
+	element.appendAttribute("inputmode", v, dontEscape...)
 	return element
 }
 
@@ -199,83 +129,7 @@ func (element *ElementImg) Autocapitalize(v string, dontEscape ...bool) *Element
 // Valid values are constrained to the following:
 //   - boolean_attribute
 func (element *ElementImg) Itemscope(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("itemscope", v, dontEscape...)
-	return element
-}
-
-// Referrerpolicy is the "referrerpolicy" attribute.
-// Referrer policy for fetches initiated by the element
-// Valid values are constrained to the following:
-//   - referrer_policy
-func (element *ElementImg) Referrerpolicy(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("referrerpolicy", v, dontEscape...)
-	return element
-}
-
-// Spellcheck is the "spellcheck" attribute.
-// Whether the element is to have its spelling and grammar checked
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementImg) Spellcheck(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("spellcheck", v, dontEscape...)
-	return element
-}
-
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
-// Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementImg) Translate(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("translate", v, dontEscape...)
-	return element
-}
-
-// Width is the "width" attribute.
-// Horizontal dimension
-// Valid values are constrained to the following:
-//   - valid_non_negative_integer
-func (element *ElementImg) Width(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("width", v, dontEscape...)
-	return element
-}
-
-// Height is the "height" attribute.
-// Vertical dimension
-// Valid values are constrained to the following:
-//   - valid_non_negative_integer
-func (element *ElementImg) Height(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("height", v, dontEscape...)
-	return element
-}
-
-// Itemprop is the "itemprop" attribute.
-// Property names of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-//   - defined_property_names
-func (element *ElementImg) Itemprop(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("itemprop", v, dontEscape...)
-	return element
-}
-
-// Slot is the "slot" attribute.
-// The element&#39;s desired slot
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementImg) Slot(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("slot", v, dontEscape...)
-	return element
-}
-
-// Id is the "id" attribute.
-// The element&#39;s ID
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementImg) Id(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("id", v, dontEscape...)
+	element.appendAttribute("itemscope", v, dontEscape...)
 	return element
 }
 
@@ -287,7 +141,16 @@ func (element *ElementImg) Id(v string, dontEscape ...bool) *ElementImg {
 //   - eager
 //   - eager
 func (element *ElementImg) Loading(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("loading", v, dontEscape...)
+	element.appendAttribute("loading", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementImg) Slot(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("slot", v, dontEscape...)
 	return element
 }
 
@@ -296,7 +159,16 @@ func (element *ElementImg) Loading(v string, dontEscape ...bool) *ElementImg {
 // Valid values are constrained to the following:
 //   - image_candidate_strings
 func (element *ElementImg) Srcset(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("srcset", v, dontEscape...)
+	element.appendAttribute("srcset", v, dontEscape...)
+	return element
+}
+
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
+// Valid values are constrained to the following:
+//   - valid_integer
+func (element *ElementImg) Tabindex(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("tabindex", v, dontEscape...)
 	return element
 }
 
@@ -306,38 +178,93 @@ func (element *ElementImg) Srcset(v string, dontEscape ...bool) *ElementImg {
 //   - true
 //   - false
 func (element *ElementImg) Draggable(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("draggable", v, dontEscape...)
+	element.appendAttribute("draggable", v, dontEscape...)
 	return element
 }
 
-// Enterkeyhint is the "enterkeyhint" attribute.
-// Hint for selecting an enter key action
+// Is is the "is" attribute.
+// Creates a customized built-in element
 // Valid values are constrained to the following:
-//   - enter
-//   - enter
-//   - done
-//   - done
-//   - go
-//   - go
-//   - next
-//   - next
-//   - previous
-//   - previous
-//   - search
-//   - search
-//   - send
-//   - send
-func (element *ElementImg) Enterkeyhint(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("enterkeyhint", v, dontEscape...)
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementImg) Is(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("is", v, dontEscape...)
 	return element
 }
 
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Itemref is the "itemref" attribute.
+// Referenced elements
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementImg) Itemref(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("itemref", v, dontEscape...)
+	return element
+}
+
+// Src is the "src" attribute.
+// Address of the resource
+// Valid values are constrained to the following:
+//   - valid_non_empty_url_potentially_surrounded_by_spaces
+func (element *ElementImg) Src(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("src", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
 // Valid values are constrained to the following:
 //   - text
-func (element *ElementImg) Nonce(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("nonce", v, dontEscape...)
+func (element *ElementImg) Title(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Usemap is the "usemap" attribute.
+// Name of image map to use
+// Valid values are constrained to the following:
+//   - valid_hash_name_reference
+func (element *ElementImg) Usemap(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("usemap", v, dontEscape...)
+	return element
+}
+
+// Decoding is the "decoding" attribute.
+// Decoding hint to use when processing this image for presentation
+// Valid values are constrained to the following:
+//   - sync
+//   - sync
+//   - async
+//   - async
+//   - auto
+//   - auto
+func (element *ElementImg) Decoding(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("decoding", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementImg) Inert(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementImg) Itemid(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("itemid", v, dontEscape...)
+	return element
+}
+
+// Lang is the "lang" attribute.
+// Language of the element
+// Valid values are constrained to the following:
+func (element *ElementImg) Lang(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("lang", v, dontEscape...)
 	return element
 }
 
@@ -349,7 +276,7 @@ func (element *ElementImg) Nonce(v string, dontEscape ...bool) *ElementImg {
 //   - manual
 //   - manual
 func (element *ElementImg) Popover(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("popover", v, dontEscape...)
+	element.appendAttribute("popover", v, dontEscape...)
 	return element
 }
 
@@ -358,25 +285,17 @@ func (element *ElementImg) Popover(v string, dontEscape ...bool) *ElementImg {
 // Valid values are constrained to the following:
 //   - valid_source_size_list
 func (element *ElementImg) Sizes(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("sizes", v, dontEscape...)
+	element.appendAttribute("sizes", v, dontEscape...)
 	return element
 }
 
-// Src is the "src" attribute.
-// Address of the resource
+// Spellcheck is the "spellcheck" attribute.
+// Whether the element is to have its spelling and grammar checked
 // Valid values are constrained to the following:
-//   - valid_non_empty_url_potentially_surrounded_by_spaces
-func (element *ElementImg) Src(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("src", v, dontEscape...)
-	return element
-}
-
-// Title is the "title" attribute.
-// CSS style sheet set name
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementImg) Title(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("title", v, dontEscape...)
+//   - true
+//   - false
+func (element *ElementImg) Spellcheck(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("spellcheck", v, dontEscape...)
 	return element
 }
 
@@ -386,16 +305,43 @@ func (element *ElementImg) Title(v string, dontEscape ...bool) *ElementImg {
 //   - true
 //   - false
 func (element *ElementImg) Contenteditable(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("contenteditable", v, dontEscape...)
+	element.appendAttribute("contenteditable", v, dontEscape...)
 	return element
 }
 
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
 // Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementImg) Itemid(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("itemid", v, dontEscape...)
+//   - yes
+//   - no
+func (element *ElementImg) Translate(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("translate", v, dontEscape...)
+	return element
+}
+
+// Alt is the "alt" attribute.
+// Replacement text for use when images are not available
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementImg) Alt(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("alt", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementImg) Id(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementImg) Style(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("style", v, dontEscape...)
 	return element
 }
 
@@ -407,34 +353,7 @@ func (element *ElementImg) Itemid(v string, dontEscape ...bool) *ElementImg {
 //   - use_credentials
 //   - use_credentials
 func (element *ElementImg) Crossorigin(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("crossorigin", v, dontEscape...)
-	return element
-}
-
-// Is is the "is" attribute.
-// Creates a customized built-in element
-// Valid values are constrained to the following:
-//   - valid_custom_element_name
-//   - customized_built_in_element
-func (element *ElementImg) Is(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("is", v, dontEscape...)
-	return element
-}
-
-// Lang is the "lang" attribute.
-// Language of the element
-// Valid values are constrained to the following:
-func (element *ElementImg) Lang(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("lang", v, dontEscape...)
-	return element
-}
-
-// Usemap is the "usemap" attribute.
-// Name of image map to use
-// Valid values are constrained to the following:
-//   - valid_hash_name_reference
-func (element *ElementImg) Usemap(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("usemap", v, dontEscape...)
+	element.appendAttribute("crossorigin", v, dontEscape...)
 	return element
 }
 
@@ -444,7 +363,7 @@ func (element *ElementImg) Usemap(v string, dontEscape ...bool) *ElementImg {
 //   - ordered_set_of_unique_space_separated_tokens
 //   - identical_to
 func (element *ElementImg) Accesskey(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("accesskey", v, dontEscape...)
+	element.appendAttribute("accesskey", v, dontEscape...)
 	return element
 }
 
@@ -453,7 +372,88 @@ func (element *ElementImg) Accesskey(v string, dontEscape ...bool) *ElementImg {
 // Valid values are constrained to the following:
 //   - boolean_attribute
 func (element *ElementImg) Autofocus(v string, dontEscape ...bool) *ElementImg {
-	element.setAttribute("autofocus", v, dontEscape...)
+	element.appendAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementImg) Dir(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
+// Valid values are constrained to the following:
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementImg) Hidden(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("hidden", v, dontEscape...)
+	return element
+}
+
+// Ismap is the "ismap" attribute.
+// Whether the image is a server-side image map
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementImg) Ismap(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("ismap", v, dontEscape...)
+	return element
+}
+
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementImg) Itemprop(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("itemprop", v, dontEscape...)
+	return element
+}
+
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementImg) Nonce(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("nonce", v, dontEscape...)
+	return element
+}
+
+// Referrerpolicy is the "referrerpolicy" attribute.
+// Referrer policy for fetches initiated by the element
+// Valid values are constrained to the following:
+//   - referrer_policy
+func (element *ElementImg) Referrerpolicy(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("referrerpolicy", v, dontEscape...)
+	return element
+}
+
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementImg) Itemtype(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("itemtype", v, dontEscape...)
+	return element
+}
+
+// Width is the "width" attribute.
+// Horizontal dimension
+// Valid values are constrained to the following:
+//   - valid_non_negative_integer
+func (element *ElementImg) Width(v string, dontEscape ...bool) *ElementImg {
+	element.appendAttribute("width", v, dontEscape...)
 	return element
 }
 

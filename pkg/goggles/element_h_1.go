@@ -1,6 +1,6 @@
 /* cSpell:disable */
 
-package handlebars
+package goggles
 
 import "github.com/gogoracer/racer/pkg/engine"
 

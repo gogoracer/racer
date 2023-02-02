@@ -1,4 +1,4 @@
-package handlebars
+package goggles
 
 import "github.com/gogoracer/racer/pkg/engine"
 
@@ -32,7 +32,7 @@ func (e *baseElement) add(children ...any) *baseElement {
 }
 
 func (e *baseElement) custom(k, v string, dontEscape ...bool) *baseElement {
-	e.setAttribute(k, v, dontEscape...)
+	e.appendAttribute(k, v, dontEscape...)
 	return e
 }
 
@@ -42,11 +42,16 @@ func (e *baseElement) bindCustom(k, v string, dontEscape ...bool) *baseElement {
 	return e
 }
 
-func (e *baseElement) setAttribute(k string, v string, dontEscape ...bool) *baseElement {
+func (e *baseElement) appendAttribute(k string, v string, dontEscape ...bool) *baseElement {
 	if k == "" || v == "" {
 		return e
 	}
-	attr := engine.NewAttribute(k, v)
+	attr, exists := e.attrs[k]
+	if !exists {
+		attr.SetValue(attr.GetValue() + " " + v)
+	} else {
+		attr = engine.NewAttribute(k, v)
+	}
 	attr.SetNoEscapeString(len(dontEscape) > 0 && dontEscape[0])
 	e.attrs[k] = attr
 	return e

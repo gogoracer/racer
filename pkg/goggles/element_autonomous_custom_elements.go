@@ -1,6 +1,6 @@
 /* cSpell:disable */
 
-package handlebars
+package goggles
 
 import (
 	"github.com/gogoracer/racer/pkg/engine"
@@ -31,13 +31,195 @@ func (e *ElementAutonomousCustomElements) BindCustom(k string, v string, dontEsc
 	return e
 }
 
-func (e *ElementAutonomousCustomElements) setAttribute(k string, v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	e.baseElement.setAttribute(k, v, dontEscape...)
+func (e *ElementAutonomousCustomElements) appendAttribute(k string, v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	e.baseElement.appendAttribute(k, v, dontEscape...)
 	return e
 }
 
 func (e *ElementAutonomousCustomElements) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
+}
+
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementAutonomousCustomElements) Itemid(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("itemid", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementAutonomousCustomElements) Style(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("style", v, dontEscape...)
+	return element
+}
+
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
+// Valid values are constrained to the following:
+//   - valid_integer
+func (element *ElementAutonomousCustomElements) Tabindex(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("tabindex", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementAutonomousCustomElements) Dir(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
+// Valid values are constrained to the following:
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementAutonomousCustomElements) Hidden(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("hidden", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementAutonomousCustomElements) Id(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementAutonomousCustomElements) Inert(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementAutonomousCustomElements) Title(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementAutonomousCustomElements) Draggable(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Lang is the "lang" attribute.
+// Language of the element
+// Valid values are constrained to the following:
+func (element *ElementAutonomousCustomElements) Lang(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("lang", v, dontEscape...)
+	return element
+}
+
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
+// Valid values are constrained to the following:
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementAutonomousCustomElements) Autocapitalize(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("autocapitalize", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementAutonomousCustomElements) Autofocus(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementAutonomousCustomElements) Contenteditable(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("contenteditable", v, dontEscape...)
+	return element
+}
+
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementAutonomousCustomElements) Accesskey(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementAutonomousCustomElements) Class(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementAutonomousCustomElements) Is(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Spellcheck is the "spellcheck" attribute.
+// Whether the element is to have its spelling and grammar checked
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementAutonomousCustomElements) Spellcheck(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("spellcheck", v, dontEscape...)
+	return element
+}
+
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementAutonomousCustomElements) Itemscope(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("itemscope", v, dontEscape...)
+	return element
 }
 
 // Inputmode is the "inputmode" attribute.
@@ -60,45 +242,7 @@ func (e *ElementAutonomousCustomElements) GenerateVDOM() interface{} {
 //   - search
 //   - search
 func (element *ElementAutonomousCustomElements) Inputmode(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("inputmode", v, dontEscape...)
-	return element
-}
-
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementAutonomousCustomElements) Accesskey(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("accesskey", v, dontEscape...)
-	return element
-}
-
-// Title is the "title" attribute.
-// CSS style sheet set name
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementAutonomousCustomElements) Title(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("title", v, dontEscape...)
-	return element
-}
-
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
-// Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementAutonomousCustomElements) Translate(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("translate", v, dontEscape...)
-	return element
-}
-
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
-// Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementAutonomousCustomElements) Itemid(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("itemid", v, dontEscape...)
+	element.appendAttribute("inputmode", v, dontEscape...)
 	return element
 }
 
@@ -107,24 +251,29 @@ func (element *ElementAutonomousCustomElements) Itemid(v string, dontEscape ...b
 // Valid values are constrained to the following:
 //   - unordered_set_of_unique_space_separated_tokens
 func (element *ElementAutonomousCustomElements) Itemref(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("itemref", v, dontEscape...)
+	element.appendAttribute("itemref", v, dontEscape...)
 	return element
 }
 
-// Itemscope is the "itemscope" attribute.
-// Introduces a microdata item
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementAutonomousCustomElements) Itemscope(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("itemscope", v, dontEscape...)
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementAutonomousCustomElements) Itemtype(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("itemtype", v, dontEscape...)
 	return element
 }
 
-// Style is the "style" attribute.
-// Presentational and formatting instructions
+// Popover is the "popover" attribute.
+// Makes the element a popover element
 // Valid values are constrained to the following:
-func (element *ElementAutonomousCustomElements) Style(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("style", v, dontEscape...)
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementAutonomousCustomElements) Popover(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("popover", v, dontEscape...)
 	return element
 }
 
@@ -133,27 +282,7 @@ func (element *ElementAutonomousCustomElements) Style(v string, dontEscape ...bo
 // Valid values are constrained to the following:
 //   - text
 func (element *ElementAutonomousCustomElements) Nonce(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("nonce", v, dontEscape...)
-	return element
-}
-
-// Spellcheck is the "spellcheck" attribute.
-// Whether the element is to have its spelling and grammar checked
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementAutonomousCustomElements) Spellcheck(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("spellcheck", v, dontEscape...)
-	return element
-}
-
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementAutonomousCustomElements) Contenteditable(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("contenteditable", v, dontEscape...)
+	element.appendAttribute("nonce", v, dontEscape...)
 	return element
 }
 
@@ -175,17 +304,7 @@ func (element *ElementAutonomousCustomElements) Contenteditable(v string, dontEs
 //   - send
 //   - send
 func (element *ElementAutonomousCustomElements) Enterkeyhint(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("enterkeyhint", v, dontEscape...)
-	return element
-}
-
-// Is is the "is" attribute.
-// Creates a customized built-in element
-// Valid values are constrained to the following:
-//   - valid_custom_element_name
-//   - customized_built_in_element
-func (element *ElementAutonomousCustomElements) Is(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("is", v, dontEscape...)
+	element.appendAttribute("enterkeyhint", v, dontEscape...)
 	return element
 }
 
@@ -196,67 +315,7 @@ func (element *ElementAutonomousCustomElements) Is(v string, dontEscape ...bool)
 //   - valid_absolute_ur_ls
 //   - defined_property_names
 func (element *ElementAutonomousCustomElements) Itemprop(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("itemprop", v, dontEscape...)
-	return element
-}
-
-// Autocapitalize is the "autocapitalize" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
-// Valid values are constrained to the following:
-//   - on
-//   - on
-//   - off
-//   - off
-//   - none
-//   - none
-//   - sentences
-//   - sentences
-//   - words
-//   - words
-//   - characters
-//   - characters
-func (element *ElementAutonomousCustomElements) Autocapitalize(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("autocapitalize", v, dontEscape...)
-	return element
-}
-
-// Autofocus is the "autofocus" attribute.
-// Automatically focus the element when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementAutonomousCustomElements) Autofocus(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("autofocus", v, dontEscape...)
-	return element
-}
-
-// Draggable is the "draggable" attribute.
-// Whether the element is draggable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementAutonomousCustomElements) Draggable(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("draggable", v, dontEscape...)
-	return element
-}
-
-// Id is the "id" attribute.
-// The element&#39;s ID
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementAutonomousCustomElements) Id(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("id", v, dontEscape...)
-	return element
-}
-
-// Popover is the "popover" attribute.
-// Makes the element a popover element
-// Valid values are constrained to the following:
-//   - auto
-//   - auto
-//   - manual
-//   - manual
-func (element *ElementAutonomousCustomElements) Popover(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("popover", v, dontEscape...)
+	element.appendAttribute("itemprop", v, dontEscape...)
 	return element
 }
 
@@ -265,76 +324,17 @@ func (element *ElementAutonomousCustomElements) Popover(v string, dontEscape ...
 // Valid values are constrained to the following:
 //   - text
 func (element *ElementAutonomousCustomElements) Slot(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("slot", v, dontEscape...)
+	element.appendAttribute("slot", v, dontEscape...)
 	return element
 }
 
-// Class is the "class" attribute.
-// Classes to which the element belongs
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
 // Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementAutonomousCustomElements) Class(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("class", v, dontEscape...)
-	return element
-}
-
-// Itemtype is the "itemtype" attribute.
-// Item types of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-func (element *ElementAutonomousCustomElements) Itemtype(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Lang is the "lang" attribute.
-// Language of the element
-// Valid values are constrained to the following:
-func (element *ElementAutonomousCustomElements) Lang(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("lang", v, dontEscape...)
-	return element
-}
-
-// Tabindex is the "tabindex" attribute.
-// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
-// Valid values are constrained to the following:
-//   - valid_integer
-func (element *ElementAutonomousCustomElements) Tabindex(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("tabindex", v, dontEscape...)
-	return element
-}
-
-// Dir is the "dir" attribute.
-// The text directionality of the element
-// Valid values are constrained to the following:
-//   - ltr
-//   - ltr
-//   - rtl
-//   - rtl
-func (element *ElementAutonomousCustomElements) Dir(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("dir", v, dontEscape...)
-	return element
-}
-
-// Hidden is the "hidden" attribute.
-// Whether the element is relevant
-// Valid values are constrained to the following:
-//   - until_found
-//   - until_found
-//   - hidden
-//   - hidden
-func (element *ElementAutonomousCustomElements) Hidden(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("hidden", v, dontEscape...)
-	return element
-}
-
-// Inert is the "inert" attribute.
-// Whether the element is inert.
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementAutonomousCustomElements) Inert(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
-	element.setAttribute("inert", v, dontEscape...)
+//   - yes
+//   - no
+func (element *ElementAutonomousCustomElements) Translate(v string, dontEscape ...bool) *ElementAutonomousCustomElements {
+	element.appendAttribute("translate", v, dontEscape...)
 	return element
 }
 

@@ -12,12 +12,12 @@
       "program": "${workspaceFolder}/cmd/helloworld/main.go"
     },
     {
-      "name": "Generate handlerbars",
+      "name": "Gen",
       "type": "go",
       "request": "launch",
       "mode": "auto",
-      "program": "${workspaceFolder}/pkg/handlebars/gen/main/main.go",
-      "cwd": "${workspaceFolder}/pkg/handlebars/gen"
+      "program": "${workspaceFolder}/cmd/gen/main.go",
+      "cwd": "${workspaceFolder}"
     }
   ]
 }
