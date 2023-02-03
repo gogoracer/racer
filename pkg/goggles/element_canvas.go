@@ -60,13 +60,133 @@ func (element *ElementCanvas) Autocapitalize(v string, dontEscape ...bool) *Elem
 	return element
 }
 
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementCanvas) Dir(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementCanvas) Slot(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("slot", v, dontEscape...)
+	return element
+}
+
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
+// Valid values are constrained to the following:
+//   - valid_integer
+func (element *ElementCanvas) Tabindex(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("tabindex", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementCanvas) Class(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
 // Valid values are constrained to the following:
 //   - true
 //   - false
-func (element *ElementCanvas) Contenteditable(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("contenteditable", v, dontEscape...)
+func (element *ElementCanvas) Draggable(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementCanvas) Itemscope(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("itemscope", v, dontEscape...)
+	return element
+}
+
+// Width is the "width" attribute.
+// Horizontal dimension
+// Valid values are constrained to the following:
+//   - valid_non_negative_integer
+func (element *ElementCanvas) Width(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("width", v, dontEscape...)
+	return element
+}
+
+// Height is the "height" attribute.
+// Vertical dimension
+// Valid values are constrained to the following:
+//   - valid_non_negative_integer
+func (element *ElementCanvas) Height(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("height", v, dontEscape...)
+	return element
+}
+
+// Itemref is the "itemref" attribute.
+// Referenced elements
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementCanvas) Itemref(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("itemref", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementCanvas) Style(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("style", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementCanvas) Autofocus(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementCanvas) Is(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementCanvas) Title(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementCanvas) Nonce(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("nonce", v, dontEscape...)
 	return element
 }
 
@@ -101,36 +221,12 @@ func (element *ElementCanvas) Inert(v string, dontEscape ...bool) *ElementCanvas
 	return element
 }
 
-// Itemprop is the "itemprop" attribute.
-// Property names of a microdata item
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
 // Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-//   - defined_property_names
-func (element *ElementCanvas) Itemprop(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("itemprop", v, dontEscape...)
-	return element
-}
-
-// Dir is the "dir" attribute.
-// The text directionality of the element
-// Valid values are constrained to the following:
-//   - ltr
-//   - ltr
-//   - rtl
-//   - rtl
-func (element *ElementCanvas) Dir(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("dir", v, dontEscape...)
-	return element
-}
-
-// Draggable is the "draggable" attribute.
-// Whether the element is draggable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementCanvas) Draggable(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("draggable", v, dontEscape...)
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementCanvas) Itemid(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("itemid", v, dontEscape...)
 	return element
 }
 
@@ -141,51 +237,6 @@ func (element *ElementCanvas) Draggable(v string, dontEscape ...bool) *ElementCa
 //   - valid_absolute_ur_ls
 func (element *ElementCanvas) Itemtype(v string, dontEscape ...bool) *ElementCanvas {
 	element.appendAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Style is the "style" attribute.
-// Presentational and formatting instructions
-// Valid values are constrained to the following:
-func (element *ElementCanvas) Style(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("style", v, dontEscape...)
-	return element
-}
-
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementCanvas) Accesskey(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("accesskey", v, dontEscape...)
-	return element
-}
-
-// Height is the "height" attribute.
-// Vertical dimension
-// Valid values are constrained to the following:
-//   - valid_non_negative_integer
-func (element *ElementCanvas) Height(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("height", v, dontEscape...)
-	return element
-}
-
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementCanvas) Nonce(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("nonce", v, dontEscape...)
-	return element
-}
-
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
-// Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementCanvas) Itemid(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("itemid", v, dontEscape...)
 	return element
 }
 
@@ -209,95 +260,23 @@ func (element *ElementCanvas) Popover(v string, dontEscape ...bool) *ElementCanv
 	return element
 }
 
-// Width is the "width" attribute.
-// Horizontal dimension
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
 // Valid values are constrained to the following:
-//   - valid_non_negative_integer
-func (element *ElementCanvas) Width(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("width", v, dontEscape...)
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementCanvas) Accesskey(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("accesskey", v, dontEscape...)
 	return element
 }
 
-// Title is the "title" attribute.
-// CSS style sheet set name
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
 // Valid values are constrained to the following:
-//   - text
-func (element *ElementCanvas) Title(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("title", v, dontEscape...)
-	return element
-}
-
-// Autofocus is the "autofocus" attribute.
-// Automatically focus the element when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementCanvas) Autofocus(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("autofocus", v, dontEscape...)
-	return element
-}
-
-// Class is the "class" attribute.
-// Classes to which the element belongs
-// Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementCanvas) Class(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("class", v, dontEscape...)
-	return element
-}
-
-// Is is the "is" attribute.
-// Creates a customized built-in element
-// Valid values are constrained to the following:
-//   - valid_custom_element_name
-//   - customized_built_in_element
-func (element *ElementCanvas) Is(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("is", v, dontEscape...)
-	return element
-}
-
-// Itemscope is the "itemscope" attribute.
-// Introduces a microdata item
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementCanvas) Itemscope(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("itemscope", v, dontEscape...)
-	return element
-}
-
-// Slot is the "slot" attribute.
-// The element&#39;s desired slot
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementCanvas) Slot(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("slot", v, dontEscape...)
-	return element
-}
-
-// Tabindex is the "tabindex" attribute.
-// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
-// Valid values are constrained to the following:
-//   - valid_integer
-func (element *ElementCanvas) Tabindex(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("tabindex", v, dontEscape...)
-	return element
-}
-
-// Itemref is the "itemref" attribute.
-// Referenced elements
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementCanvas) Itemref(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("itemref", v, dontEscape...)
-	return element
-}
-
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
-// Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementCanvas) Translate(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("translate", v, dontEscape...)
+//   - true
+//   - false
+func (element *ElementCanvas) Contenteditable(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("contenteditable", v, dontEscape...)
 	return element
 }
 
@@ -310,6 +289,15 @@ func (element *ElementCanvas) Translate(v string, dontEscape ...bool) *ElementCa
 //   - hidden
 func (element *ElementCanvas) Hidden(v string, dontEscape ...bool) *ElementCanvas {
 	element.appendAttribute("hidden", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementCanvas) Id(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("id", v, dontEscape...)
 	return element
 }
 
@@ -337,12 +325,14 @@ func (element *ElementCanvas) Inputmode(v string, dontEscape ...bool) *ElementCa
 	return element
 }
 
-// Id is the "id" attribute.
-// The element&#39;s ID
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
 // Valid values are constrained to the following:
-//   - text
-func (element *ElementCanvas) Id(v string, dontEscape ...bool) *ElementCanvas {
-	element.appendAttribute("id", v, dontEscape...)
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementCanvas) Itemprop(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("itemprop", v, dontEscape...)
 	return element
 }
 
@@ -353,6 +343,16 @@ func (element *ElementCanvas) Id(v string, dontEscape ...bool) *ElementCanvas {
 //   - false
 func (element *ElementCanvas) Spellcheck(v string, dontEscape ...bool) *ElementCanvas {
 	element.appendAttribute("spellcheck", v, dontEscape...)
+	return element
+}
+
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
+// Valid values are constrained to the following:
+//   - yes
+//   - no
+func (element *ElementCanvas) Translate(v string, dontEscape ...bool) *ElementCanvas {
+	element.appendAttribute("translate", v, dontEscape...)
 	return element
 }
 

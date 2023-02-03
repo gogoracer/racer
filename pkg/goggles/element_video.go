@@ -52,6 +52,52 @@ func (element *ElementVideo) Dir(v string, dontEscape ...bool) *ElementVideo {
 	return element
 }
 
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementVideo) Draggable(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementVideo) Inert(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Itemref is the "itemref" attribute.
+// Referenced elements
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementVideo) Itemref(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("itemref", v, dontEscape...)
+	return element
+}
+
+// Poster is the "poster" attribute.
+// Poster frame to show prior to video playback
+// Valid values are constrained to the following:
+//   - valid_non_empty_url_potentially_surrounded_by_spaces
+func (element *ElementVideo) Poster(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("poster", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementVideo) Class(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("class", v, dontEscape...)
+	return element
+}
+
 // Enterkeyhint is the "enterkeyhint" attribute.
 // Hint for selecting an enter key action
 // Valid values are constrained to the following:
@@ -74,96 +120,33 @@ func (element *ElementVideo) Enterkeyhint(v string, dontEscape ...bool) *Element
 	return element
 }
 
-// Spellcheck is the "spellcheck" attribute.
-// Whether the element is to have its spelling and grammar checked
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
 // Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementVideo) Spellcheck(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("spellcheck", v, dontEscape...)
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementVideo) Hidden(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("hidden", v, dontEscape...)
 	return element
 }
 
-// Title is the "title" attribute.
-// CSS style sheet set name
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
 // Valid values are constrained to the following:
 //   - text
-func (element *ElementVideo) Title(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("title", v, dontEscape...)
+func (element *ElementVideo) Nonce(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("nonce", v, dontEscape...)
 	return element
 }
 
-// Id is the "id" attribute.
-// The element&#39;s ID
+// Src is the "src" attribute.
+// Address of the resource
 // Valid values are constrained to the following:
-//   - text
-func (element *ElementVideo) Id(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("id", v, dontEscape...)
-	return element
-}
-
-// Inert is the "inert" attribute.
-// Whether the element is inert.
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementVideo) Inert(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("inert", v, dontEscape...)
-	return element
-}
-
-// Muted is the "muted" attribute.
-// Whether to mute the media resource by default
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementVideo) Muted(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("muted", v, dontEscape...)
-	return element
-}
-
-// Playsinline is the "playsinline" attribute.
-// Encourage the user agent to display video content within the element&#39;s playback area
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementVideo) Playsinline(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("playsinline", v, dontEscape...)
-	return element
-}
-
-// Slot is the "slot" attribute.
-// The element&#39;s desired slot
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementVideo) Slot(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("slot", v, dontEscape...)
-	return element
-}
-
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementVideo) Accesskey(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("accesskey", v, dontEscape...)
-	return element
-}
-
-// Is is the "is" attribute.
-// Creates a customized built-in element
-// Valid values are constrained to the following:
-//   - valid_custom_element_name
-//   - customized_built_in_element
-func (element *ElementVideo) Is(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("is", v, dontEscape...)
-	return element
-}
-
-// Itemref is the "itemref" attribute.
-// Referenced elements
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementVideo) Itemref(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("itemref", v, dontEscape...)
+//   - valid_non_empty_url_potentially_surrounded_by_spaces
+func (element *ElementVideo) Src(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("src", v, dontEscape...)
 	return element
 }
 
@@ -187,57 +170,33 @@ func (element *ElementVideo) Autocapitalize(v string, dontEscape ...bool) *Eleme
 	return element
 }
 
-// Class is the "class" attribute.
-// Classes to which the element belongs
-// Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementVideo) Class(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("class", v, dontEscape...)
-	return element
-}
-
-// Loop is the "loop" attribute.
-// Whether to loop the media resource
+// Autoplay is the "autoplay" attribute.
+// Hint that the media resource can be started automatically when the page is loaded
 // Valid values are constrained to the following:
 //   - boolean_attribute
-func (element *ElementVideo) Loop(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("loop", v, dontEscape...)
+func (element *ElementVideo) Autoplay(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("autoplay", v, dontEscape...)
 	return element
 }
 
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Crossorigin is the "crossorigin" attribute.
+// How the element handles crossorigin requests
 // Valid values are constrained to the following:
-//   - text
-func (element *ElementVideo) Nonce(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("nonce", v, dontEscape...)
+//   - anonymous
+//   - anonymous
+//   - use_credentials
+//   - use_credentials
+func (element *ElementVideo) Crossorigin(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("crossorigin", v, dontEscape...)
 	return element
 }
 
-// Controls is the "controls" attribute.
-// Show user agent controls
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementVideo) Controls(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("controls", v, dontEscape...)
-	return element
-}
-
-// Height is the "height" attribute.
-// Vertical dimension
-// Valid values are constrained to the following:
-//   - valid_non_negative_integer
-func (element *ElementVideo) Height(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("height", v, dontEscape...)
-	return element
-}
-
-// Src is the "src" attribute.
-// Address of the resource
-// Valid values are constrained to the following:
-//   - valid_non_empty_url_potentially_surrounded_by_spaces
-func (element *ElementVideo) Src(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("src", v, dontEscape...)
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementVideo) Itemid(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("itemid", v, dontEscape...)
 	return element
 }
 
@@ -248,27 +207,6 @@ func (element *ElementVideo) Src(v string, dontEscape ...bool) *ElementVideo {
 //   - no
 func (element *ElementVideo) Translate(v string, dontEscape ...bool) *ElementVideo {
 	element.appendAttribute("translate", v, dontEscape...)
-	return element
-}
-
-// Popover is the "popover" attribute.
-// Makes the element a popover element
-// Valid values are constrained to the following:
-//   - auto
-//   - auto
-//   - manual
-//   - manual
-func (element *ElementVideo) Popover(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("popover", v, dontEscape...)
-	return element
-}
-
-// Poster is the "poster" attribute.
-// Poster frame to show prior to video playback
-// Valid values are constrained to the following:
-//   - valid_non_empty_url_potentially_surrounded_by_spaces
-func (element *ElementVideo) Poster(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("poster", v, dontEscape...)
 	return element
 }
 
@@ -288,6 +226,26 @@ func (element *ElementVideo) Autofocus(v string, dontEscape ...bool) *ElementVid
 //   - false
 func (element *ElementVideo) Contenteditable(v string, dontEscape ...bool) *ElementVideo {
 	element.appendAttribute("contenteditable", v, dontEscape...)
+	return element
+}
+
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementVideo) Itemprop(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("itemprop", v, dontEscape...)
+	return element
+}
+
+// Muted is the "muted" attribute.
+// Whether to mute the media resource by default
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementVideo) Muted(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("muted", v, dontEscape...)
 	return element
 }
 
@@ -315,24 +273,6 @@ func (element *ElementVideo) Inputmode(v string, dontEscape ...bool) *ElementVid
 	return element
 }
 
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
-// Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementVideo) Itemid(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("itemid", v, dontEscape...)
-	return element
-}
-
-// Itemscope is the "itemscope" attribute.
-// Introduces a microdata item
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementVideo) Itemscope(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("itemscope", v, dontEscape...)
-	return element
-}
-
 // Itemtype is the "itemtype" attribute.
 // Item types of a microdata item
 // Valid values are constrained to the following:
@@ -343,11 +283,43 @@ func (element *ElementVideo) Itemtype(v string, dontEscape ...bool) *ElementVide
 	return element
 }
 
-// Lang is the "lang" attribute.
-// Language of the element
+// Loop is the "loop" attribute.
+// Whether to loop the media resource
 // Valid values are constrained to the following:
-func (element *ElementVideo) Lang(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("lang", v, dontEscape...)
+//   - boolean_attribute
+func (element *ElementVideo) Loop(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("loop", v, dontEscape...)
+	return element
+}
+
+// Spellcheck is the "spellcheck" attribute.
+// Whether the element is to have its spelling and grammar checked
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementVideo) Spellcheck(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("spellcheck", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementVideo) Id(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Popover is the "popover" attribute.
+// Makes the element a popover element
+// Valid values are constrained to the following:
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementVideo) Popover(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("popover", v, dontEscape...)
 	return element
 }
 
@@ -373,6 +345,79 @@ func (element *ElementVideo) Preload(v string, dontEscape ...bool) *ElementVideo
 	return element
 }
 
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementVideo) Accesskey(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Controls is the "controls" attribute.
+// Show user agent controls
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementVideo) Controls(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("controls", v, dontEscape...)
+	return element
+}
+
+// Height is the "height" attribute.
+// Vertical dimension
+// Valid values are constrained to the following:
+//   - valid_non_negative_integer
+func (element *ElementVideo) Height(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("height", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementVideo) Is(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementVideo) Itemscope(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("itemscope", v, dontEscape...)
+	return element
+}
+
+// Lang is the "lang" attribute.
+// Language of the element
+// Valid values are constrained to the following:
+func (element *ElementVideo) Lang(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("lang", v, dontEscape...)
+	return element
+}
+
+// Playsinline is the "playsinline" attribute.
+// Encourage the user agent to display video content within the element&#39;s playback area
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementVideo) Playsinline(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("playsinline", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementVideo) Slot(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("slot", v, dontEscape...)
+	return element
+}
+
 // Tabindex is the "tabindex" attribute.
 // Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
 // Valid values are constrained to the following:
@@ -382,66 +427,21 @@ func (element *ElementVideo) Tabindex(v string, dontEscape ...bool) *ElementVide
 	return element
 }
 
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementVideo) Title(v string, dontEscape ...bool) *ElementVideo {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
 // Width is the "width" attribute.
 // Horizontal dimension
 // Valid values are constrained to the following:
 //   - valid_non_negative_integer
 func (element *ElementVideo) Width(v string, dontEscape ...bool) *ElementVideo {
 	element.appendAttribute("width", v, dontEscape...)
-	return element
-}
-
-// Autoplay is the "autoplay" attribute.
-// Hint that the media resource can be started automatically when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementVideo) Autoplay(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("autoplay", v, dontEscape...)
-	return element
-}
-
-// Crossorigin is the "crossorigin" attribute.
-// How the element handles crossorigin requests
-// Valid values are constrained to the following:
-//   - anonymous
-//   - anonymous
-//   - use_credentials
-//   - use_credentials
-func (element *ElementVideo) Crossorigin(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("crossorigin", v, dontEscape...)
-	return element
-}
-
-// Draggable is the "draggable" attribute.
-// Whether the element is draggable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementVideo) Draggable(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("draggable", v, dontEscape...)
-	return element
-}
-
-// Hidden is the "hidden" attribute.
-// Whether the element is relevant
-// Valid values are constrained to the following:
-//   - until_found
-//   - until_found
-//   - hidden
-//   - hidden
-func (element *ElementVideo) Hidden(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("hidden", v, dontEscape...)
-	return element
-}
-
-// Itemprop is the "itemprop" attribute.
-// Property names of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-//   - defined_property_names
-func (element *ElementVideo) Itemprop(v string, dontEscape ...bool) *ElementVideo {
-	element.appendAttribute("itemprop", v, dontEscape...)
 	return element
 }
 

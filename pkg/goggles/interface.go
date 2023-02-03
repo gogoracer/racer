@@ -47,7 +47,7 @@ func (e *baseElement) appendAttribute(k string, v string, dontEscape ...bool) *b
 		return e
 	}
 	attr, exists := e.attrs[k]
-	if !exists {
+	if exists {
 		attr.SetValue(attr.GetValue() + " " + v)
 	} else {
 		attr = engine.NewAttribute(k, v)

@@ -40,75 +40,70 @@ func (e *ElementLink) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
 }
 
-// Inputmode is the "inputmode" attribute.
-// Hint for selecting an input modality
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
 // Valid values are constrained to the following:
-//   - none
-//   - none
-//   - text
-//   - text
-//   - tel
-//   - tel
-//   - email
-//   - email
-//   - url
-//   - url
-//   - numeric
-//   - numeric
-//   - decimal
-//   - decimal
-//   - search
-//   - search
-func (element *ElementLink) Inputmode(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("inputmode", v, dontEscape...)
+//   - true
+//   - false
+func (element *ElementLink) Contenteditable(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("contenteditable", v, dontEscape...)
 	return element
 }
 
-// Lang is the "lang" attribute.
-// Language of the element
+// Imagesrcset is the "imagesrcset" attribute.
+// Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for rel=&quot;preload&quot;)
 // Valid values are constrained to the following:
-func (element *ElementLink) Lang(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("lang", v, dontEscape...)
+//   - image_candidate_strings
+func (element *ElementLink) Imagesrcset(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("imagesrcset", v, dontEscape...)
 	return element
 }
 
-// Popover is the "popover" attribute.
-// Makes the element a popover element
+// Is is the "is" attribute.
+// Creates a customized built-in element
 // Valid values are constrained to the following:
-//   - auto
-//   - auto
-//   - manual
-//   - manual
-func (element *ElementLink) Popover(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("popover", v, dontEscape...)
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementLink) Is(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("is", v, dontEscape...)
 	return element
 }
 
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
 // Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementLink) Translate(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("translate", v, dontEscape...)
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementLink) Itemtype(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("itemtype", v, dontEscape...)
 	return element
 }
 
-// Autofocus is the "autofocus" attribute.
-// Automatically focus the element when the page is loaded
+// Rel is the "rel" attribute.
+// Relationship between the document containing the hyperlink and the destination resource
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementLink) Autofocus(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("autofocus", v, dontEscape...)
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementLink) Rel(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("rel", v, dontEscape...)
 	return element
 }
 
-// Disabled is the "disabled" attribute.
-// Whether the link is disabled
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementLink) Disabled(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("disabled", v, dontEscape...)
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementLink) Accesskey(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Color is the "color" attribute.
+// Color to use when customizing a site&#39;s icon (for rel=&quot;mask-icon&quot;)
+// Valid values are constrained to the following:
+//   - &lt;color&gt;
+func (element *ElementLink) Color(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("color", v, dontEscape...)
 	return element
 }
 
@@ -124,22 +119,113 @@ func (element *ElementLink) Hidden(v string, dontEscape ...bool) *ElementLink {
 	return element
 }
 
-// Id is the "id" attribute.
-// The element&#39;s ID
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
 // Valid values are constrained to the following:
-//   - text
-func (element *ElementLink) Id(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("id", v, dontEscape...)
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementLink) Itemid(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("itemid", v, dontEscape...)
 	return element
 }
 
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
+// Popover is the "popover" attribute.
+// Makes the element a popover element
 // Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementLink) Accesskey(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("accesskey", v, dontEscape...)
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementLink) Popover(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("popover", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementLink) Slot(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("slot", v, dontEscape...)
+	return element
+}
+
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
+// Valid values are constrained to the following:
+//   - valid_integer
+func (element *ElementLink) Tabindex(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("tabindex", v, dontEscape...)
+	return element
+}
+
+// As is the "as" attribute.
+// Potential destination for a preload request (for rel=&quot;preload&quot; and rel=&quot;modulepreload&quot;)
+// Valid values are constrained to the following:
+//   - potential_destination
+//   - rel
+//   - rel
+//   - preload
+//   - preload
+//   - script_like_destination
+//   - rel
+//   - rel
+//   - modulepreload
+//   - modulepreload
+func (element *ElementLink) As(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("as", v, dontEscape...)
+	return element
+}
+
+// Imagesizes is the "imagesizes" attribute.
+// Image sizes for different page layouts (for rel=&quot;preload&quot;)
+// Valid values are constrained to the following:
+//   - valid_source_size_list
+func (element *ElementLink) Imagesizes(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("imagesizes", v, dontEscape...)
+	return element
+}
+
+// Lang is the "lang" attribute.
+// Language of the element
+// Valid values are constrained to the following:
+func (element *ElementLink) Lang(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("lang", v, dontEscape...)
+	return element
+}
+
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementLink) Nonce(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("nonce", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementLink) Title(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Blocking is the "blocking" attribute.
+// Whether the element is potentially render-blocking
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementLink) Blocking(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("blocking", v, dontEscape...)
+	return element
+}
+
+// Disabled is the "disabled" attribute.
+// Whether the link is disabled
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementLink) Disabled(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("disabled", v, dontEscape...)
 	return element
 }
 
@@ -150,6 +236,120 @@ func (element *ElementLink) Accesskey(v string, dontEscape ...bool) *ElementLink
 //   - false
 func (element *ElementLink) Draggable(v string, dontEscape ...bool) *ElementLink {
 	element.appendAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Hreflang is the "hreflang" attribute.
+// Language of the linked resource
+// Valid values are constrained to the following:
+func (element *ElementLink) Hreflang(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("hreflang", v, dontEscape...)
+	return element
+}
+
+// Media is the "media" attribute.
+// Applicable media
+// Valid values are constrained to the following:
+//   - valid_media_query_list
+func (element *ElementLink) Media(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("media", v, dontEscape...)
+	return element
+}
+
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
+// Valid values are constrained to the following:
+//   - yes
+//   - no
+func (element *ElementLink) Translate(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("translate", v, dontEscape...)
+	return element
+}
+
+// Href is the "href" attribute.
+// Document base URL
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementLink) Href(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("href", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementLink) Id(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementLink) Itemprop(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("itemprop", v, dontEscape...)
+	return element
+}
+
+// Referrerpolicy is the "referrerpolicy" attribute.
+// Referrer policy for fetches initiated by the element
+// Valid values are constrained to the following:
+//   - referrer_policy
+func (element *ElementLink) Referrerpolicy(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("referrerpolicy", v, dontEscape...)
+	return element
+}
+
+// Sizes is the "sizes" attribute.
+// Image sizes for different page layouts
+// Valid values are constrained to the following:
+//   - valid_source_size_list
+func (element *ElementLink) Sizes(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("sizes", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementLink) Class(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementLink) Dir(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Integrity is the "integrity" attribute.
+// Integrity metadata used in Subresource Integrity checks [SRI]
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementLink) Integrity(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("integrity", v, dontEscape...)
+	return element
+}
+
+// Spellcheck is the "spellcheck" attribute.
+// Whether the element is to have its spelling and grammar checked
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementLink) Spellcheck(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("spellcheck", v, dontEscape...)
 	return element
 }
 
@@ -175,101 +375,6 @@ func (element *ElementLink) Enterkeyhint(v string, dontEscape ...bool) *ElementL
 	return element
 }
 
-// Sizes is the "sizes" attribute.
-// Image sizes for different page layouts
-// Valid values are constrained to the following:
-//   - valid_source_size_list
-func (element *ElementLink) Sizes(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("sizes", v, dontEscape...)
-	return element
-}
-
-// Slot is the "slot" attribute.
-// The element&#39;s desired slot
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementLink) Slot(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("slot", v, dontEscape...)
-	return element
-}
-
-// Style is the "style" attribute.
-// Presentational and formatting instructions
-// Valid values are constrained to the following:
-func (element *ElementLink) Style(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("style", v, dontEscape...)
-	return element
-}
-
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementLink) Nonce(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("nonce", v, dontEscape...)
-	return element
-}
-
-// Type is the "type" attribute.
-// Type of script
-// Valid values are constrained to the following:
-//   - module
-//   - valid_mime_type_string
-//   - java_script_mime_type_essence_match
-func (element *ElementLink) Type(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("type", v, dontEscape...)
-	return element
-}
-
-// Class is the "class" attribute.
-// Classes to which the element belongs
-// Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementLink) Class(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("class", v, dontEscape...)
-	return element
-}
-
-// Dir is the "dir" attribute.
-// The text directionality of the element
-// Valid values are constrained to the following:
-//   - ltr
-//   - ltr
-//   - rtl
-//   - rtl
-func (element *ElementLink) Dir(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("dir", v, dontEscape...)
-	return element
-}
-
-// Href is the "href" attribute.
-// Document base URL
-// Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementLink) Href(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("href", v, dontEscape...)
-	return element
-}
-
-// Integrity is the "integrity" attribute.
-// Integrity metadata used in Subresource Integrity checks [SRI]
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementLink) Integrity(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("integrity", v, dontEscape...)
-	return element
-}
-
-// Is is the "is" attribute.
-// Creates a customized built-in element
-// Valid values are constrained to the following:
-//   - valid_custom_element_name
-//   - customized_built_in_element
-func (element *ElementLink) Is(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("is", v, dontEscape...)
-	return element
-}
-
 // Itemref is the "itemref" attribute.
 // Referenced elements
 // Valid values are constrained to the following:
@@ -279,117 +384,12 @@ func (element *ElementLink) Itemref(v string, dontEscape ...bool) *ElementLink {
 	return element
 }
 
-// Imagesrcset is the "imagesrcset" attribute.
-// Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for rel=&quot;preload&quot;)
-// Valid values are constrained to the following:
-//   - image_candidate_strings
-func (element *ElementLink) Imagesrcset(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("imagesrcset", v, dontEscape...)
-	return element
-}
-
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
-// Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementLink) Itemid(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("itemid", v, dontEscape...)
-	return element
-}
-
-// Rel is the "rel" attribute.
-// Relationship between the document containing the hyperlink and the destination resource
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementLink) Rel(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("rel", v, dontEscape...)
-	return element
-}
-
-// Media is the "media" attribute.
-// Applicable media
-// Valid values are constrained to the following:
-//   - valid_media_query_list
-func (element *ElementLink) Media(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("media", v, dontEscape...)
-	return element
-}
-
-// Spellcheck is the "spellcheck" attribute.
-// Whether the element is to have its spelling and grammar checked
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementLink) Spellcheck(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("spellcheck", v, dontEscape...)
-	return element
-}
-
-// As is the "as" attribute.
-// Potential destination for a preload request (for rel=&quot;preload&quot; and rel=&quot;modulepreload&quot;)
-// Valid values are constrained to the following:
-//   - potential_destination
-//   - rel
-//   - rel
-//   - preload
-//   - preload
-//   - script_like_destination
-//   - rel
-//   - rel
-//   - modulepreload
-//   - modulepreload
-func (element *ElementLink) As(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("as", v, dontEscape...)
-	return element
-}
-
-// Blocking is the "blocking" attribute.
-// Whether the element is potentially render-blocking
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementLink) Blocking(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("blocking", v, dontEscape...)
-	return element
-}
-
-// Crossorigin is the "crossorigin" attribute.
-// How the element handles crossorigin requests
-// Valid values are constrained to the following:
-//   - anonymous
-//   - anonymous
-//   - use_credentials
-//   - use_credentials
-func (element *ElementLink) Crossorigin(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("crossorigin", v, dontEscape...)
-	return element
-}
-
-// Imagesizes is the "imagesizes" attribute.
-// Image sizes for different page layouts (for rel=&quot;preload&quot;)
-// Valid values are constrained to the following:
-//   - valid_source_size_list
-func (element *ElementLink) Imagesizes(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("imagesizes", v, dontEscape...)
-	return element
-}
-
-// Inert is the "inert" attribute.
-// Whether the element is inert.
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
 // Valid values are constrained to the following:
 //   - boolean_attribute
-func (element *ElementLink) Inert(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("inert", v, dontEscape...)
-	return element
-}
-
-// Itemprop is the "itemprop" attribute.
-// Property names of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-//   - defined_property_names
-func (element *ElementLink) Itemprop(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("itemprop", v, dontEscape...)
+func (element *ElementLink) Itemscope(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("itemscope", v, dontEscape...)
 	return element
 }
 
@@ -413,76 +413,76 @@ func (element *ElementLink) Autocapitalize(v string, dontEscape ...bool) *Elemen
 	return element
 }
 
-// Color is the "color" attribute.
-// Color to use when customizing a site&#39;s icon (for rel=&quot;mask-icon&quot;)
-// Valid values are constrained to the following:
-//   - &lt;color&gt;
-func (element *ElementLink) Color(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("color", v, dontEscape...)
-	return element
-}
-
-// Itemscope is the "itemscope" attribute.
-// Introduces a microdata item
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
 // Valid values are constrained to the following:
 //   - boolean_attribute
-func (element *ElementLink) Itemscope(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("itemscope", v, dontEscape...)
+func (element *ElementLink) Autofocus(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("autofocus", v, dontEscape...)
 	return element
 }
 
-// Referrerpolicy is the "referrerpolicy" attribute.
-// Referrer policy for fetches initiated by the element
+// Crossorigin is the "crossorigin" attribute.
+// How the element handles crossorigin requests
 // Valid values are constrained to the following:
-//   - referrer_policy
-func (element *ElementLink) Referrerpolicy(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("referrerpolicy", v, dontEscape...)
+//   - anonymous
+//   - anonymous
+//   - use_credentials
+//   - use_credentials
+func (element *ElementLink) Crossorigin(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("crossorigin", v, dontEscape...)
 	return element
 }
 
-// Title is the "title" attribute.
-// CSS style sheet set name
+// Inert is the "inert" attribute.
+// Whether the element is inert.
 // Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementLink) Inert(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Inputmode is the "inputmode" attribute.
+// Hint for selecting an input modality
+// Valid values are constrained to the following:
+//   - none
+//   - none
 //   - text
-func (element *ElementLink) Title(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("title", v, dontEscape...)
+//   - text
+//   - tel
+//   - tel
+//   - email
+//   - email
+//   - url
+//   - url
+//   - numeric
+//   - numeric
+//   - decimal
+//   - decimal
+//   - search
+//   - search
+func (element *ElementLink) Inputmode(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("inputmode", v, dontEscape...)
 	return element
 }
 
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
+// Style is the "style" attribute.
+// Presentational and formatting instructions
 // Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementLink) Contenteditable(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("contenteditable", v, dontEscape...)
+func (element *ElementLink) Style(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("style", v, dontEscape...)
 	return element
 }
 
-// Hreflang is the "hreflang" attribute.
-// Language of the linked resource
+// Type is the "type" attribute.
+// Type of script
 // Valid values are constrained to the following:
-func (element *ElementLink) Hreflang(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("hreflang", v, dontEscape...)
-	return element
-}
-
-// Itemtype is the "itemtype" attribute.
-// Item types of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-func (element *ElementLink) Itemtype(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Tabindex is the "tabindex" attribute.
-// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
-// Valid values are constrained to the following:
-//   - valid_integer
-func (element *ElementLink) Tabindex(v string, dontEscape ...bool) *ElementLink {
-	element.appendAttribute("tabindex", v, dontEscape...)
+//   - module
+//   - valid_mime_type_string
+//   - java_script_mime_type_essence_match
+func (element *ElementLink) Type(v string, dontEscape ...bool) *ElementLink {
+	element.appendAttribute("type", v, dontEscape...)
 	return element
 }
 

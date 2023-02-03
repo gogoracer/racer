@@ -40,25 +40,12 @@ func (e *ElementIframe) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
 }
 
-// Hidden is the "hidden" attribute.
-// Whether the element is relevant
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
 // Valid values are constrained to the following:
-//   - until_found
-//   - until_found
-//   - hidden
-//   - hidden
-func (element *ElementIframe) Hidden(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("hidden", v, dontEscape...)
-	return element
-}
-
-// Is is the "is" attribute.
-// Creates a customized built-in element
-// Valid values are constrained to the following:
-//   - valid_custom_element_name
-//   - customized_built_in_element
-func (element *ElementIframe) Is(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("is", v, dontEscape...)
+//   - text
+func (element *ElementIframe) Nonce(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("nonce", v, dontEscape...)
 	return element
 }
 
@@ -71,42 +58,12 @@ func (element *ElementIframe) Src(v string, dontEscape ...bool) *ElementIframe {
 	return element
 }
 
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
+// Width is the "width" attribute.
+// Horizontal dimension
 // Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementIframe) Translate(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("translate", v, dontEscape...)
-	return element
-}
-
-// Allow is the "allow" attribute.
-// Permissions policy to be applied to the iframe&#39;s contents
-// Valid values are constrained to the following:
-//   - serialized_permissions_policy
-func (element *ElementIframe) Allow(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("allow", v, dontEscape...)
-	return element
-}
-
-// Autocapitalize is the "autocapitalize" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
-// Valid values are constrained to the following:
-//   - on
-//   - on
-//   - off
-//   - off
-//   - none
-//   - none
-//   - sentences
-//   - sentences
-//   - words
-//   - words
-//   - characters
-//   - characters
-func (element *ElementIframe) Autocapitalize(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("autocapitalize", v, dontEscape...)
+//   - valid_non_negative_integer
+func (element *ElementIframe) Width(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("width", v, dontEscape...)
 	return element
 }
 
@@ -119,54 +76,15 @@ func (element *ElementIframe) Height(v string, dontEscape ...bool) *ElementIfram
 	return element
 }
 
-// Itemscope is the "itemscope" attribute.
-// Introduces a microdata item
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementIframe) Itemscope(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("itemscope", v, dontEscape...)
-	return element
-}
-
-// Style is the "style" attribute.
-// Presentational and formatting instructions
-// Valid values are constrained to the following:
-func (element *ElementIframe) Style(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("style", v, dontEscape...)
-	return element
-}
-
-// Dir is the "dir" attribute.
-// The text directionality of the element
-// Valid values are constrained to the following:
-//   - ltr
-//   - ltr
-//   - rtl
-//   - rtl
-func (element *ElementIframe) Dir(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("dir", v, dontEscape...)
-	return element
-}
-
-// Enterkeyhint is the "enterkeyhint" attribute.
-// Hint for selecting an enter key action
-// Valid values are constrained to the following:
-//   - enter
-//   - enter
-//   - done
-//   - done
-//   - go
-//   - go
-//   - next
-//   - next
-//   - previous
-//   - previous
-//   - search
-//   - search
-//   - send
-//   - send
-func (element *ElementIframe) Enterkeyhint(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("enterkeyhint", v, dontEscape...)
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementIframe) Hidden(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("hidden", v, dontEscape...)
 	return element
 }
 
@@ -179,33 +97,12 @@ func (element *ElementIframe) Itemref(v string, dontEscape ...bool) *ElementIfra
 	return element
 }
 
-// Srcdoc is the "srcdoc" attribute.
-// A document to render in the iframe
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
 // Valid values are constrained to the following:
-//   - an_iframe_srcdoc_document
-//   - iframe
-//   - srcdoc
-func (element *ElementIframe) Srcdoc(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("srcdoc", v, dontEscape...)
-	return element
-}
-
-// Title is the "title" attribute.
-// CSS style sheet set name
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementIframe) Title(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("title", v, dontEscape...)
-	return element
-}
-
-// Draggable is the "draggable" attribute.
-// Whether the element is draggable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementIframe) Draggable(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("draggable", v, dontEscape...)
+//   - boolean_attribute
+func (element *ElementIframe) Itemscope(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("itemscope", v, dontEscape...)
 	return element
 }
 
@@ -215,183 +112,6 @@ func (element *ElementIframe) Draggable(v string, dontEscape ...bool) *ElementIf
 //   - text
 func (element *ElementIframe) Name(v string, dontEscape ...bool) *ElementIframe {
 	element.appendAttribute("name", v, dontEscape...)
-	return element
-}
-
-// Spellcheck is the "spellcheck" attribute.
-// Whether the element is to have its spelling and grammar checked
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementIframe) Spellcheck(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("spellcheck", v, dontEscape...)
-	return element
-}
-
-// Referrerpolicy is the "referrerpolicy" attribute.
-// Referrer policy for fetches initiated by the element
-// Valid values are constrained to the following:
-//   - referrer_policy
-func (element *ElementIframe) Referrerpolicy(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("referrerpolicy", v, dontEscape...)
-	return element
-}
-
-// Width is the "width" attribute.
-// Horizontal dimension
-// Valid values are constrained to the following:
-//   - valid_non_negative_integer
-func (element *ElementIframe) Width(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("width", v, dontEscape...)
-	return element
-}
-
-// Autofocus is the "autofocus" attribute.
-// Automatically focus the element when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementIframe) Autofocus(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("autofocus", v, dontEscape...)
-	return element
-}
-
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementIframe) Contenteditable(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("contenteditable", v, dontEscape...)
-	return element
-}
-
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
-// Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementIframe) Itemid(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("itemid", v, dontEscape...)
-	return element
-}
-
-// Class is the "class" attribute.
-// Classes to which the element belongs
-// Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementIframe) Class(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("class", v, dontEscape...)
-	return element
-}
-
-// Loading is the "loading" attribute.
-// Used when determining loading deferral
-// Valid values are constrained to the following:
-//   - lazy
-//   - lazy
-//   - eager
-//   - eager
-func (element *ElementIframe) Loading(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("loading", v, dontEscape...)
-	return element
-}
-
-// Slot is the "slot" attribute.
-// The element&#39;s desired slot
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementIframe) Slot(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("slot", v, dontEscape...)
-	return element
-}
-
-// Tabindex is the "tabindex" attribute.
-// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
-// Valid values are constrained to the following:
-//   - valid_integer
-func (element *ElementIframe) Tabindex(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("tabindex", v, dontEscape...)
-	return element
-}
-
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementIframe) Accesskey(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("accesskey", v, dontEscape...)
-	return element
-}
-
-// Allowfullscreen is the "allowfullscreen" attribute.
-// Whether to allow the iframe&#39;s contents to use requestFullscreen()
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementIframe) Allowfullscreen(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("allowfullscreen", v, dontEscape...)
-	return element
-}
-
-// Inputmode is the "inputmode" attribute.
-// Hint for selecting an input modality
-// Valid values are constrained to the following:
-//   - none
-//   - none
-//   - text
-//   - text
-//   - tel
-//   - tel
-//   - email
-//   - email
-//   - url
-//   - url
-//   - numeric
-//   - numeric
-//   - decimal
-//   - decimal
-//   - search
-//   - search
-func (element *ElementIframe) Inputmode(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("inputmode", v, dontEscape...)
-	return element
-}
-
-// Itemtype is the "itemtype" attribute.
-// Item types of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-func (element *ElementIframe) Itemtype(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Lang is the "lang" attribute.
-// Language of the element
-// Valid values are constrained to the following:
-func (element *ElementIframe) Lang(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("lang", v, dontEscape...)
-	return element
-}
-
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementIframe) Nonce(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("nonce", v, dontEscape...)
-	return element
-}
-
-// Popover is the "popover" attribute.
-// Makes the element a popover element
-// Valid values are constrained to the following:
-//   - auto
-//   - auto
-//   - manual
-//   - manual
-func (element *ElementIframe) Popover(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("popover", v, dontEscape...)
 	return element
 }
 
@@ -431,12 +151,265 @@ func (element *ElementIframe) Sandbox(v string, dontEscape ...bool) *ElementIfra
 	return element
 }
 
+// Srcdoc is the "srcdoc" attribute.
+// A document to render in the iframe
+// Valid values are constrained to the following:
+//   - an_iframe_srcdoc_document
+//   - iframe
+//   - srcdoc
+func (element *ElementIframe) Srcdoc(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("srcdoc", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementIframe) Style(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("style", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementIframe) Class(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Inputmode is the "inputmode" attribute.
+// Hint for selecting an input modality
+// Valid values are constrained to the following:
+//   - none
+//   - none
+//   - text
+//   - text
+//   - tel
+//   - tel
+//   - email
+//   - email
+//   - url
+//   - url
+//   - numeric
+//   - numeric
+//   - decimal
+//   - decimal
+//   - search
+//   - search
+func (element *ElementIframe) Inputmode(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("inputmode", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementIframe) Title(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Enterkeyhint is the "enterkeyhint" attribute.
+// Hint for selecting an enter key action
+// Valid values are constrained to the following:
+//   - enter
+//   - enter
+//   - done
+//   - done
+//   - go
+//   - go
+//   - next
+//   - next
+//   - previous
+//   - previous
+//   - search
+//   - search
+//   - send
+//   - send
+func (element *ElementIframe) Enterkeyhint(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("enterkeyhint", v, dontEscape...)
+	return element
+}
+
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementIframe) Itemid(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("itemid", v, dontEscape...)
+	return element
+}
+
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementIframe) Itemtype(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("itemtype", v, dontEscape...)
+	return element
+}
+
+// Loading is the "loading" attribute.
+// Used when determining loading deferral
+// Valid values are constrained to the following:
+//   - lazy
+//   - lazy
+//   - eager
+//   - eager
+func (element *ElementIframe) Loading(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("loading", v, dontEscape...)
+	return element
+}
+
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementIframe) Accesskey(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
+// Valid values are constrained to the following:
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementIframe) Autocapitalize(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("autocapitalize", v, dontEscape...)
+	return element
+}
+
 // Id is the "id" attribute.
 // The element&#39;s ID
 // Valid values are constrained to the following:
 //   - text
 func (element *ElementIframe) Id(v string, dontEscape ...bool) *ElementIframe {
 	element.appendAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementIframe) Is(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementIframe) Itemprop(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("itemprop", v, dontEscape...)
+	return element
+}
+
+// Popover is the "popover" attribute.
+// Makes the element a popover element
+// Valid values are constrained to the following:
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementIframe) Popover(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("popover", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementIframe) Slot(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("slot", v, dontEscape...)
+	return element
+}
+
+// Allow is the "allow" attribute.
+// Permissions policy to be applied to the iframe&#39;s contents
+// Valid values are constrained to the following:
+//   - serialized_permissions_policy
+func (element *ElementIframe) Allow(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("allow", v, dontEscape...)
+	return element
+}
+
+// Allowfullscreen is the "allowfullscreen" attribute.
+// Whether to allow the iframe&#39;s contents to use requestFullscreen()
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementIframe) Allowfullscreen(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("allowfullscreen", v, dontEscape...)
+	return element
+}
+
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementIframe) Draggable(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Lang is the "lang" attribute.
+// Language of the element
+// Valid values are constrained to the following:
+func (element *ElementIframe) Lang(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("lang", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementIframe) Autofocus(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementIframe) Dir(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("dir", v, dontEscape...)
+	return element
+}
+
+// Spellcheck is the "spellcheck" attribute.
+// Whether the element is to have its spelling and grammar checked
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementIframe) Spellcheck(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("spellcheck", v, dontEscape...)
 	return element
 }
 
@@ -449,14 +422,41 @@ func (element *ElementIframe) Inert(v string, dontEscape ...bool) *ElementIframe
 	return element
 }
 
-// Itemprop is the "itemprop" attribute.
-// Property names of a microdata item
+// Referrerpolicy is the "referrerpolicy" attribute.
+// Referrer policy for fetches initiated by the element
 // Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-//   - defined_property_names
-func (element *ElementIframe) Itemprop(v string, dontEscape ...bool) *ElementIframe {
-	element.appendAttribute("itemprop", v, dontEscape...)
+//   - referrer_policy
+func (element *ElementIframe) Referrerpolicy(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("referrerpolicy", v, dontEscape...)
+	return element
+}
+
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
+// Valid values are constrained to the following:
+//   - yes
+//   - no
+func (element *ElementIframe) Translate(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("translate", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementIframe) Contenteditable(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("contenteditable", v, dontEscape...)
+	return element
+}
+
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
+// Valid values are constrained to the following:
+//   - valid_integer
+func (element *ElementIframe) Tabindex(v string, dontEscape ...bool) *ElementIframe {
+	element.appendAttribute("tabindex", v, dontEscape...)
 	return element
 }
 

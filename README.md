@@ -2,7 +2,7 @@
 # Go go racer!!!
 gotta go fast
 
-![](docs/dendron/notes/assets/2023-01-27-21-54-23.png)
+![](docs/dendron/notes/assets/2023-02-02-17-08-47.png)
 
 ## What
 Type safe web frontends built in Go.  Its like frontend rails but faster.

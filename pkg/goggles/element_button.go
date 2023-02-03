@@ -40,68 +40,6 @@ func (e *ElementButton) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
 }
 
-// Disabled is the "disabled" attribute.
-// Whether the link is disabled
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementButton) Disabled(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("disabled", v, dontEscape...)
-	return element
-}
-
-// Formenctype is the "formenctype" attribute.
-// Entry list encoding type to use for form submission
-// Valid values are constrained to the following:
-//   - application/x_www_form_urlencoded
-//   - application/x_www_form_urlencoded
-//   - multipart/form_data
-//   - multipart/form_data
-//   - text/plain
-//   - text/plain
-func (element *ElementButton) Formenctype(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("formenctype", v, dontEscape...)
-	return element
-}
-
-// Itemtype is the "itemtype" attribute.
-// Item types of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-func (element *ElementButton) Itemtype(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Title is the "title" attribute.
-// CSS style sheet set name
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementButton) Title(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("title", v, dontEscape...)
-	return element
-}
-
-// Autocapitalize is the "autocapitalize" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
-// Valid values are constrained to the following:
-//   - on
-//   - on
-//   - off
-//   - off
-//   - none
-//   - none
-//   - sentences
-//   - sentences
-//   - words
-//   - words
-//   - characters
-//   - characters
-func (element *ElementButton) Autocapitalize(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("autocapitalize", v, dontEscape...)
-	return element
-}
-
 // Inert is the "inert" attribute.
 // Whether the element is inert.
 // Valid values are constrained to the following:
@@ -111,57 +49,21 @@ func (element *ElementButton) Inert(v string, dontEscape ...bool) *ElementButton
 	return element
 }
 
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
 // Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementButton) Itemid(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("itemid", v, dontEscape...)
+//   - boolean_attribute
+func (element *ElementButton) Itemscope(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("itemscope", v, dontEscape...)
 	return element
 }
 
-// Itemref is the "itemref" attribute.
-// Referenced elements
+// Name is the "name" attribute.
+// Name of shadow tree slot
 // Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementButton) Itemref(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("itemref", v, dontEscape...)
-	return element
-}
-
-// Lang is the "lang" attribute.
-// Language of the element
-// Valid values are constrained to the following:
-func (element *ElementButton) Lang(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("lang", v, dontEscape...)
-	return element
-}
-
-// Popovershowtarget is the "popovershowtarget" attribute.
-// Shows the specified popover element when clicked
-// Valid values are constrained to the following:
-func (element *ElementButton) Popovershowtarget(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("popovershowtarget", v, dontEscape...)
-	return element
-}
-
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
-// Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementButton) Translate(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("translate", v, dontEscape...)
-	return element
-}
-
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementButton) Contenteditable(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("contenteditable", v, dontEscape...)
+//   - text
+func (element *ElementButton) Name(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("name", v, dontEscape...)
 	return element
 }
 
@@ -174,110 +76,6 @@ func (element *ElementButton) Nonce(v string, dontEscape ...bool) *ElementButton
 	return element
 }
 
-// Style is the "style" attribute.
-// Presentational and formatting instructions
-// Valid values are constrained to the following:
-func (element *ElementButton) Style(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("style", v, dontEscape...)
-	return element
-}
-
-// Tabindex is the "tabindex" attribute.
-// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
-// Valid values are constrained to the following:
-//   - valid_integer
-func (element *ElementButton) Tabindex(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("tabindex", v, dontEscape...)
-	return element
-}
-
-// Value is the "value" attribute.
-// Current value of the element
-// Valid values are constrained to the following:
-//   - valid_floating_point_number
-func (element *ElementButton) Value(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("value", v, dontEscape...)
-	return element
-}
-
-// Formmethod is the "formmethod" attribute.
-// Variant to use for form submission
-// Valid values are constrained to the following:
-//   - get
-//   - post
-//   - dialog
-func (element *ElementButton) Formmethod(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("formmethod", v, dontEscape...)
-	return element
-}
-
-// Formtarget is the "formtarget" attribute.
-// Navigable for form submission
-// Valid values are constrained to the following:
-//   - valid_navigable_target_name_or_keyword
-func (element *ElementButton) Formtarget(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("formtarget", v, dontEscape...)
-	return element
-}
-
-// Itemprop is the "itemprop" attribute.
-// Property names of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-//   - defined_property_names
-func (element *ElementButton) Itemprop(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("itemprop", v, dontEscape...)
-	return element
-}
-
-// Slot is the "slot" attribute.
-// The element&#39;s desired slot
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementButton) Slot(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("slot", v, dontEscape...)
-	return element
-}
-
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementButton) Accesskey(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("accesskey", v, dontEscape...)
-	return element
-}
-
-// Autofocus is the "autofocus" attribute.
-// Automatically focus the element when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementButton) Autofocus(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("autofocus", v, dontEscape...)
-	return element
-}
-
-// Formaction is the "formaction" attribute.
-// URL to use for form submission
-// Valid values are constrained to the following:
-//   - valid_non_empty_url_potentially_surrounded_by_spaces
-func (element *ElementButton) Formaction(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("formaction", v, dontEscape...)
-	return element
-}
-
-// Is is the "is" attribute.
-// Creates a customized built-in element
-// Valid values are constrained to the following:
-//   - valid_custom_element_name
-//   - customized_built_in_element
-func (element *ElementButton) Is(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("is", v, dontEscape...)
-	return element
-}
-
 // Popover is the "popover" attribute.
 // Makes the element a popover element
 // Valid values are constrained to the following:
@@ -287,6 +85,24 @@ func (element *ElementButton) Is(v string, dontEscape ...bool) *ElementButton {
 //   - manual
 func (element *ElementButton) Popover(v string, dontEscape ...bool) *ElementButton {
 	element.appendAttribute("popover", v, dontEscape...)
+	return element
+}
+
+// Spellcheck is the "spellcheck" attribute.
+// Whether the element is to have its spelling and grammar checked
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementButton) Spellcheck(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("spellcheck", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementButton) Style(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("style", v, dontEscape...)
 	return element
 }
 
@@ -312,24 +128,39 @@ func (element *ElementButton) Enterkeyhint(v string, dontEscape ...bool) *Elemen
 	return element
 }
 
-// Hidden is the "hidden" attribute.
-// Whether the element is relevant
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
 // Valid values are constrained to the following:
-//   - until_found
-//   - until_found
-//   - hidden
-//   - hidden
-func (element *ElementButton) Hidden(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("hidden", v, dontEscape...)
+//   - valid_integer
+func (element *ElementButton) Tabindex(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("tabindex", v, dontEscape...)
 	return element
 }
 
-// Class is the "class" attribute.
-// Classes to which the element belongs
+// Formnovalidate is the "formnovalidate" attribute.
+// Bypass form control validation for form submission
 // Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementButton) Class(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("class", v, dontEscape...)
+//   - boolean_attribute
+func (element *ElementButton) Formnovalidate(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("formnovalidate", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementButton) Is(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Popoverhidetarget is the "popoverhidetarget" attribute.
+// Hides the specified popover element when clicked
+// Valid values are constrained to the following:
+func (element *ElementButton) Popoverhidetarget(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("popoverhidetarget", v, dontEscape...)
 	return element
 }
 
@@ -342,12 +173,74 @@ func (element *ElementButton) Form(v string, dontEscape ...bool) *ElementButton 
 	return element
 }
 
-// Id is the "id" attribute.
-// The element&#39;s ID
+// Formenctype is the "formenctype" attribute.
+// Entry list encoding type to use for form submission
 // Valid values are constrained to the following:
-//   - text
-func (element *ElementButton) Id(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("id", v, dontEscape...)
+//   - application/x_www_form_urlencoded
+//   - application/x_www_form_urlencoded
+//   - multipart/form_data
+//   - multipart/form_data
+//   - text/plain
+//   - text/plain
+func (element *ElementButton) Formenctype(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("formenctype", v, dontEscape...)
+	return element
+}
+
+// Formtarget is the "formtarget" attribute.
+// Navigable for form submission
+// Valid values are constrained to the following:
+//   - valid_navigable_target_name_or_keyword
+func (element *ElementButton) Formtarget(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("formtarget", v, dontEscape...)
+	return element
+}
+
+// Popovershowtarget is the "popovershowtarget" attribute.
+// Shows the specified popover element when clicked
+// Valid values are constrained to the following:
+func (element *ElementButton) Popovershowtarget(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("popovershowtarget", v, dontEscape...)
+	return element
+}
+
+// Disabled is the "disabled" attribute.
+// Whether the link is disabled
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementButton) Disabled(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("disabled", v, dontEscape...)
+	return element
+}
+
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementButton) Draggable(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Formaction is the "formaction" attribute.
+// URL to use for form submission
+// Valid values are constrained to the following:
+//   - valid_non_empty_url_potentially_surrounded_by_spaces
+func (element *ElementButton) Formaction(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("formaction", v, dontEscape...)
+	return element
+}
+
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
+// Valid values are constrained to the following:
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementButton) Hidden(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("hidden", v, dontEscape...)
 	return element
 }
 
@@ -375,32 +268,51 @@ func (element *ElementButton) Inputmode(v string, dontEscape ...bool) *ElementBu
 	return element
 }
 
-// Popovertoggletarget is the "popovertoggletarget" attribute.
-// Toggles the specified popover element when clicked
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
 // Valid values are constrained to the following:
-func (element *ElementButton) Popovertoggletarget(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("popovertoggletarget", v, dontEscape...)
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementButton) Itemprop(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("itemprop", v, dontEscape...)
 	return element
 }
 
-// Spellcheck is the "spellcheck" attribute.
-// Whether the element is to have its spelling and grammar checked
+// Value is the "value" attribute.
+// Current value of the element
+// Valid values are constrained to the following:
+//   - valid_floating_point_number
+func (element *ElementButton) Value(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("value", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
 // Valid values are constrained to the following:
 //   - true
 //   - false
-func (element *ElementButton) Spellcheck(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("spellcheck", v, dontEscape...)
+func (element *ElementButton) Contenteditable(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("contenteditable", v, dontEscape...)
 	return element
 }
 
-// Type is the "type" attribute.
-// Type of script
+// Lang is the "lang" attribute.
+// Language of the element
 // Valid values are constrained to the following:
-//   - module
-//   - valid_mime_type_string
-//   - java_script_mime_type_essence_match
-func (element *ElementButton) Type(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("type", v, dontEscape...)
+func (element *ElementButton) Lang(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("lang", v, dontEscape...)
+	return element
+}
+
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
+// Valid values are constrained to the following:
+//   - yes
+//   - no
+func (element *ElementButton) Translate(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("translate", v, dontEscape...)
 	return element
 }
 
@@ -416,48 +328,136 @@ func (element *ElementButton) Dir(v string, dontEscape ...bool) *ElementButton {
 	return element
 }
 
-// Draggable is the "draggable" attribute.
-// Whether the element is draggable
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
 // Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementButton) Draggable(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("draggable", v, dontEscape...)
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementButton) Autocapitalize(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("autocapitalize", v, dontEscape...)
 	return element
 }
 
-// Formnovalidate is the "formnovalidate" attribute.
-// Bypass form control validation for form submission
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementButton) Formnovalidate(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("formnovalidate", v, dontEscape...)
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementButton) Itemid(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("itemid", v, dontEscape...)
 	return element
 }
 
-// Itemscope is the "itemscope" attribute.
-// Introduces a microdata item
+// Popovertoggletarget is the "popovertoggletarget" attribute.
+// Toggles the specified popover element when clicked
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementButton) Itemscope(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("itemscope", v, dontEscape...)
+func (element *ElementButton) Popovertoggletarget(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("popovertoggletarget", v, dontEscape...)
 	return element
 }
 
-// Name is the "name" attribute.
-// Name of shadow tree slot
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementButton) Accesskey(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
 // Valid values are constrained to the following:
 //   - text
-func (element *ElementButton) Name(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("name", v, dontEscape...)
+func (element *ElementButton) Id(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("id", v, dontEscape...)
 	return element
 }
 
-// Popoverhidetarget is the "popoverhidetarget" attribute.
-// Hides the specified popover element when clicked
+// Title is the "title" attribute.
+// CSS style sheet set name
 // Valid values are constrained to the following:
-func (element *ElementButton) Popoverhidetarget(v string, dontEscape ...bool) *ElementButton {
-	element.appendAttribute("popoverhidetarget", v, dontEscape...)
+//   - text
+func (element *ElementButton) Title(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Type is the "type" attribute.
+// Type of script
+// Valid values are constrained to the following:
+//   - module
+//   - valid_mime_type_string
+//   - java_script_mime_type_essence_match
+func (element *ElementButton) Type(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("type", v, dontEscape...)
+	return element
+}
+
+// Formmethod is the "formmethod" attribute.
+// Variant to use for form submission
+// Valid values are constrained to the following:
+//   - get
+//   - post
+//   - dialog
+func (element *ElementButton) Formmethod(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("formmethod", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementButton) Class(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Itemref is the "itemref" attribute.
+// Referenced elements
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementButton) Itemref(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("itemref", v, dontEscape...)
+	return element
+}
+
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementButton) Itemtype(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("itemtype", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementButton) Slot(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("slot", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementButton) Autofocus(v string, dontEscape ...bool) *ElementButton {
+	element.appendAttribute("autofocus", v, dontEscape...)
 	return element
 }
 

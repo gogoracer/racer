@@ -20,9 +20,8 @@ import (
 	"golang.org/x/sync/errgroup"
 )
 
-func GenerateIconify(ctx context.Context, gogglesPath string) error {
-
-	tmpParentDir := "gentmp/iconify"
+func GenerateIconify(ctx context.Context, gentmpDir, gogglesPath string) error {
+	tmpParentDir := filepath.Join(gentmpDir, "iconify")
 	tmpIconSetsDir := filepath.Join(tmpParentDir, "json")
 	if _, err := os.Stat(filepath.Join(tmpParentDir, "collections.json")); os.IsNotExist(err) {
 		if err := os.MkdirAll(tmpParentDir, 0755); err != nil {

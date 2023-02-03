@@ -15,7 +15,7 @@ Project started as [hlive](https://github.com/SamHennessy/hlive).  While its gre
 ## Logo
 Used Midjourney with the prompt
 > a gopher that's draw in a style similar to pikachu on a cafe racer motorcycle with yellow lightning coming from its tire
-![](assets/2023-01-27-21-54-23.png)
+![](2023-02-02-17-08-47.png)
 it needs work, but its a good start
 
 ## Site 

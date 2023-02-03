@@ -17,7 +17,6 @@ func main() {
 	if err := run(ctx); err != nil {
 		log.Fatal(err)
 	}
-
 }
 
 func run(ctx context.Context) error {
@@ -26,16 +25,17 @@ func run(ctx context.Context) error {
 		return errors.New("must be run from the racer directory")
 	}
 
+	genTmpDir := filepath.Join(racerDir, "gentmp")
 	gogglesPath := filepath.Join(racerDir, "pkg", "goggles")
 
 	eg := errgroup.Group{}
 
-	// eg.Go(func() error {
-	// 	return gen.GenerateElements(ctx, gogglesPath)
-	// })
+	eg.Go(func() error {
+		return gen.GenerateElements(ctx, gogglesPath)
+	})
 
 	eg.Go(func() error {
-		return gen.GenerateIconify(ctx, gogglesPath)
+		return gen.GenerateIconify(ctx, genTmpDir, gogglesPath)
 	})
 
 	if err := eg.Wait(); err != nil {

@@ -40,12 +40,33 @@ func (e *ElementHtml) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
 }
 
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
+// Popover is the "popover" attribute.
+// Makes the element a popover element
 // Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementHtml) Itemid(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("itemid", v, dontEscape...)
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementHtml) Popover(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("popover", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementHtml) Slot(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("slot", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementHtml) Inert(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("inert", v, dontEscape...)
 	return element
 }
 
@@ -57,12 +78,23 @@ func (element *ElementHtml) Lang(v string, dontEscape ...bool) *ElementHtml {
 	return element
 }
 
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Autocapitalize is the "autocapitalize" attribute.
+// Recommended autocapitalization behavior (for supported input methods)
 // Valid values are constrained to the following:
-//   - text
-func (element *ElementHtml) Nonce(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("nonce", v, dontEscape...)
+//   - on
+//   - on
+//   - off
+//   - off
+//   - none
+//   - none
+//   - sentences
+//   - sentences
+//   - words
+//   - words
+//   - characters
+//   - characters
+func (element *ElementHtml) Autocapitalize(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("autocapitalize", v, dontEscape...)
 	return element
 }
 
@@ -74,15 +106,51 @@ func (element *ElementHtml) Style(v string, dontEscape ...bool) *ElementHtml {
 	return element
 }
 
-// Hidden is the "hidden" attribute.
-// Whether the element is relevant
+// Spellcheck is the "spellcheck" attribute.
+// Whether the element is to have its spelling and grammar checked
 // Valid values are constrained to the following:
-//   - until_found
-//   - until_found
-//   - hidden
-//   - hidden
-func (element *ElementHtml) Hidden(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("hidden", v, dontEscape...)
+//   - true
+//   - false
+func (element *ElementHtml) Spellcheck(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("spellcheck", v, dontEscape...)
+	return element
+}
+
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementHtml) Itemscope(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("itemscope", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementHtml) Class(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
+// Valid values are constrained to the following:
+//   - yes
+//   - no
+func (element *ElementHtml) Translate(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("translate", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementHtml) Contenteditable(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("contenteditable", v, dontEscape...)
 	return element
 }
 
@@ -98,13 +166,34 @@ func (element *ElementHtml) Dir(v string, dontEscape ...bool) *ElementHtml {
 	return element
 }
 
-// Draggable is the "draggable" attribute.
-// Whether the element is draggable
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
 // Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementHtml) Draggable(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("draggable", v, dontEscape...)
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementHtml) Hidden(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("hidden", v, dontEscape...)
+	return element
+}
+
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementHtml) Accesskey(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementHtml) Autofocus(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("autofocus", v, dontEscape...)
 	return element
 }
 
@@ -130,98 +219,12 @@ func (element *ElementHtml) Enterkeyhint(v string, dontEscape ...bool) *ElementH
 	return element
 }
 
-// Itemscope is the "itemscope" attribute.
-// Introduces a microdata item
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementHtml) Itemscope(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("itemscope", v, dontEscape...)
-	return element
-}
-
-// Itemtype is the "itemtype" attribute.
-// Item types of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-func (element *ElementHtml) Itemtype(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementHtml) Accesskey(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("accesskey", v, dontEscape...)
-	return element
-}
-
-// Inert is the "inert" attribute.
-// Whether the element is inert.
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementHtml) Inert(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("inert", v, dontEscape...)
-	return element
-}
-
-// Is is the "is" attribute.
-// Creates a customized built-in element
-// Valid values are constrained to the following:
-//   - valid_custom_element_name
-//   - customized_built_in_element
-func (element *ElementHtml) Is(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("is", v, dontEscape...)
-	return element
-}
-
-// Title is the "title" attribute.
-// CSS style sheet set name
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementHtml) Title(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("title", v, dontEscape...)
-	return element
-}
-
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
-// Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementHtml) Translate(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("translate", v, dontEscape...)
-	return element
-}
-
 // Id is the "id" attribute.
 // The element&#39;s ID
 // Valid values are constrained to the following:
 //   - text
 func (element *ElementHtml) Id(v string, dontEscape ...bool) *ElementHtml {
 	element.appendAttribute("id", v, dontEscape...)
-	return element
-}
-
-// Class is the "class" attribute.
-// Classes to which the element belongs
-// Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementHtml) Class(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("class", v, dontEscape...)
-	return element
-}
-
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementHtml) Contenteditable(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("contenteditable", v, dontEscape...)
 	return element
 }
 
@@ -249,15 +252,6 @@ func (element *ElementHtml) Inputmode(v string, dontEscape ...bool) *ElementHtml
 	return element
 }
 
-// Autofocus is the "autofocus" attribute.
-// Automatically focus the element when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementHtml) Autofocus(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("autofocus", v, dontEscape...)
-	return element
-}
-
 // Itemprop is the "itemprop" attribute.
 // Property names of a microdata item
 // Valid values are constrained to the following:
@@ -266,6 +260,44 @@ func (element *ElementHtml) Autofocus(v string, dontEscape ...bool) *ElementHtml
 //   - defined_property_names
 func (element *ElementHtml) Itemprop(v string, dontEscape ...bool) *ElementHtml {
 	element.appendAttribute("itemprop", v, dontEscape...)
+	return element
+}
+
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementHtml) Draggable(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementHtml) Title(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementHtml) Nonce(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("nonce", v, dontEscape...)
+	return element
+}
+
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementHtml) Itemtype(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("itemtype", v, dontEscape...)
 	return element
 }
 
@@ -278,23 +310,22 @@ func (element *ElementHtml) Tabindex(v string, dontEscape ...bool) *ElementHtml 
 	return element
 }
 
-// Autocapitalize is the "autocapitalize" attribute.
-// Recommended autocapitalization behavior (for supported input methods)
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
 // Valid values are constrained to the following:
-//   - on
-//   - on
-//   - off
-//   - off
-//   - none
-//   - none
-//   - sentences
-//   - sentences
-//   - words
-//   - words
-//   - characters
-//   - characters
-func (element *ElementHtml) Autocapitalize(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("autocapitalize", v, dontEscape...)
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementHtml) Itemid(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("itemid", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementHtml) Is(v string, dontEscape ...bool) *ElementHtml {
+	element.appendAttribute("is", v, dontEscape...)
 	return element
 }
 
@@ -304,37 +335,6 @@ func (element *ElementHtml) Autocapitalize(v string, dontEscape ...bool) *Elemen
 //   - unordered_set_of_unique_space_separated_tokens
 func (element *ElementHtml) Itemref(v string, dontEscape ...bool) *ElementHtml {
 	element.appendAttribute("itemref", v, dontEscape...)
-	return element
-}
-
-// Slot is the "slot" attribute.
-// The element&#39;s desired slot
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementHtml) Slot(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("slot", v, dontEscape...)
-	return element
-}
-
-// Spellcheck is the "spellcheck" attribute.
-// Whether the element is to have its spelling and grammar checked
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementHtml) Spellcheck(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("spellcheck", v, dontEscape...)
-	return element
-}
-
-// Popover is the "popover" attribute.
-// Makes the element a popover element
-// Valid values are constrained to the following:
-//   - auto
-//   - auto
-//   - manual
-//   - manual
-func (element *ElementHtml) Popover(v string, dontEscape ...bool) *ElementHtml {
-	element.appendAttribute("popover", v, dontEscape...)
 	return element
 }
 

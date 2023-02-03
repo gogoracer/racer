@@ -40,37 +40,6 @@ func (e *ElementProgress) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
 }
 
-// Id is the "id" attribute.
-// The element&#39;s ID
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementProgress) Id(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("id", v, dontEscape...)
-	return element
-}
-
-// Itemtype is the "itemtype" attribute.
-// Item types of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-func (element *ElementProgress) Itemtype(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("itemtype", v, dontEscape...)
-	return element
-}
-
-// Popover is the "popover" attribute.
-// Makes the element a popover element
-// Valid values are constrained to the following:
-//   - auto
-//   - auto
-//   - manual
-//   - manual
-func (element *ElementProgress) Popover(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("popover", v, dontEscape...)
-	return element
-}
-
 // Accesskey is the "accesskey" attribute.
 // Keyboard shortcut to activate or focus element
 // Valid values are constrained to the following:
@@ -81,22 +50,102 @@ func (element *ElementProgress) Accesskey(v string, dontEscape ...bool) *Element
 	return element
 }
 
-// Is is the "is" attribute.
-// Creates a customized built-in element
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
 // Valid values are constrained to the following:
-//   - valid_custom_element_name
-//   - customized_built_in_element
-func (element *ElementProgress) Is(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("is", v, dontEscape...)
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementProgress) Hidden(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("hidden", v, dontEscape...)
 	return element
 }
 
-// Slot is the "slot" attribute.
-// The element&#39;s desired slot
+// Itemid is the "itemid" attribute.
+// Global identifier for a microdata item
+// Valid values are constrained to the following:
+//   - valid_url_potentially_surrounded_by_spaces
+func (element *ElementProgress) Itemid(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("itemid", v, dontEscape...)
+	return element
+}
+
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementProgress) Itemprop(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("itemprop", v, dontEscape...)
+	return element
+}
+
+// Max is the "max" attribute.
+// Upper bound of range
+// Valid values are constrained to the following:
+//   - valid_floating_point_number
+func (element *ElementProgress) Max(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("max", v, dontEscape...)
+	return element
+}
+
+// Id is the "id" attribute.
+// The element&#39;s ID
 // Valid values are constrained to the following:
 //   - text
-func (element *ElementProgress) Slot(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("slot", v, dontEscape...)
+func (element *ElementProgress) Id(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementProgress) Inert(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Title is the "title" attribute.
+// CSS style sheet set name
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementProgress) Title(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
+// Valid values are constrained to the following:
+//   - yes
+//   - no
+func (element *ElementProgress) Translate(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("translate", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementProgress) Autofocus(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Dir is the "dir" attribute.
+// The text directionality of the element
+// Valid values are constrained to the following:
+//   - ltr
+//   - ltr
+//   - rtl
+//   - rtl
+func (element *ElementProgress) Dir(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("dir", v, dontEscape...)
 	return element
 }
 
@@ -121,6 +170,41 @@ func (element *ElementProgress) Slot(v string, dontEscape ...bool) *ElementProgr
 //   - search
 func (element *ElementProgress) Inputmode(v string, dontEscape ...bool) *ElementProgress {
 	element.appendAttribute("inputmode", v, dontEscape...)
+	return element
+}
+
+// Is is the "is" attribute.
+// Creates a customized built-in element
+// Valid values are constrained to the following:
+//   - valid_custom_element_name
+//   - customized_built_in_element
+func (element *ElementProgress) Is(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Itemref is the "itemref" attribute.
+// Referenced elements
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementProgress) Itemref(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("itemref", v, dontEscape...)
+	return element
+}
+
+// Lang is the "lang" attribute.
+// Language of the element
+// Valid values are constrained to the following:
+func (element *ElementProgress) Lang(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("lang", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementProgress) Style(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("style", v, dontEscape...)
 	return element
 }
 
@@ -155,100 +239,33 @@ func (element *ElementProgress) Enterkeyhint(v string, dontEscape ...bool) *Elem
 	return element
 }
 
-// Inert is the "inert" attribute.
-// Whether the element is inert.
+// Class is the "class" attribute.
+// Classes to which the element belongs
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementProgress) Inert(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("inert", v, dontEscape...)
+//   - set_of_space_separated_tokens
+func (element *ElementProgress) Class(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("class", v, dontEscape...)
 	return element
 }
 
-// Itemref is the "itemref" attribute.
-// Referenced elements
+// Popover is the "popover" attribute.
+// Makes the element a popover element
 // Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementProgress) Itemref(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("itemref", v, dontEscape...)
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementProgress) Popover(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("popover", v, dontEscape...)
 	return element
 }
 
-// Itemscope is the "itemscope" attribute.
-// Introduces a microdata item
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
 // Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementProgress) Itemscope(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("itemscope", v, dontEscape...)
-	return element
-}
-
-// Itemid is the "itemid" attribute.
-// Global identifier for a microdata item
-// Valid values are constrained to the following:
-//   - valid_url_potentially_surrounded_by_spaces
-func (element *ElementProgress) Itemid(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("itemid", v, dontEscape...)
-	return element
-}
-
-// Itemprop is the "itemprop" attribute.
-// Property names of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-//   - defined_property_names
-func (element *ElementProgress) Itemprop(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("itemprop", v, dontEscape...)
-	return element
-}
-
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
-// Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementProgress) Translate(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("translate", v, dontEscape...)
-	return element
-}
-
-// Value is the "value" attribute.
-// Current value of the element
-// Valid values are constrained to the following:
-//   - valid_floating_point_number
-func (element *ElementProgress) Value(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("value", v, dontEscape...)
-	return element
-}
-
-// Autofocus is the "autofocus" attribute.
-// Automatically focus the element when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementProgress) Autofocus(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("autofocus", v, dontEscape...)
-	return element
-}
-
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementProgress) Contenteditable(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("contenteditable", v, dontEscape...)
-	return element
-}
-
-// Hidden is the "hidden" attribute.
-// Whether the element is relevant
-// Valid values are constrained to the following:
-//   - until_found
-//   - until_found
-//   - hidden
-//   - hidden
-func (element *ElementProgress) Hidden(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("hidden", v, dontEscape...)
+//   - text
+func (element *ElementProgress) Slot(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("slot", v, dontEscape...)
 	return element
 }
 
@@ -262,58 +279,12 @@ func (element *ElementProgress) Spellcheck(v string, dontEscape ...bool) *Elemen
 	return element
 }
 
-// Style is the "style" attribute.
-// Presentational and formatting instructions
-// Valid values are constrained to the following:
-func (element *ElementProgress) Style(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("style", v, dontEscape...)
-	return element
-}
-
-// Title is the "title" attribute.
-// CSS style sheet set name
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementProgress) Title(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("title", v, dontEscape...)
-	return element
-}
-
-// Dir is the "dir" attribute.
-// The text directionality of the element
-// Valid values are constrained to the following:
-//   - ltr
-//   - ltr
-//   - rtl
-//   - rtl
-func (element *ElementProgress) Dir(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("dir", v, dontEscape...)
-	return element
-}
-
-// Max is the "max" attribute.
-// Upper bound of range
+// Value is the "value" attribute.
+// Current value of the element
 // Valid values are constrained to the following:
 //   - valid_floating_point_number
-func (element *ElementProgress) Max(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("max", v, dontEscape...)
-	return element
-}
-
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementProgress) Nonce(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("nonce", v, dontEscape...)
-	return element
-}
-
-// Lang is the "lang" attribute.
-// Language of the element
-// Valid values are constrained to the following:
-func (element *ElementProgress) Lang(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("lang", v, dontEscape...)
+func (element *ElementProgress) Value(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("value", v, dontEscape...)
 	return element
 }
 
@@ -337,12 +308,31 @@ func (element *ElementProgress) Autocapitalize(v string, dontEscape ...bool) *El
 	return element
 }
 
-// Class is the "class" attribute.
-// Classes to which the element belongs
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
 // Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementProgress) Class(v string, dontEscape ...bool) *ElementProgress {
-	element.appendAttribute("class", v, dontEscape...)
+//   - text
+func (element *ElementProgress) Nonce(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("nonce", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementProgress) Contenteditable(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("contenteditable", v, dontEscape...)
+	return element
+}
+
+// Itemscope is the "itemscope" attribute.
+// Introduces a microdata item
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementProgress) Itemscope(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("itemscope", v, dontEscape...)
 	return element
 }
 
@@ -353,6 +343,16 @@ func (element *ElementProgress) Class(v string, dontEscape ...bool) *ElementProg
 //   - false
 func (element *ElementProgress) Draggable(v string, dontEscape ...bool) *ElementProgress {
 	element.appendAttribute("draggable", v, dontEscape...)
+	return element
+}
+
+// Itemtype is the "itemtype" attribute.
+// Item types of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+func (element *ElementProgress) Itemtype(v string, dontEscape ...bool) *ElementProgress {
+	element.appendAttribute("itemtype", v, dontEscape...)
 	return element
 }
 

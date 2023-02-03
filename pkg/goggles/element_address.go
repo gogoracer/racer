@@ -40,20 +40,33 @@ func (e *ElementAddress) GenerateVDOM() interface{} {
 	return e.baseElement.generateVDOM()
 }
 
-// Style is the "style" attribute.
-// Presentational and formatting instructions
+// Draggable is the "draggable" attribute.
+// Whether the element is draggable
 // Valid values are constrained to the following:
-func (element *ElementAddress) Style(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("style", v, dontEscape...)
+//   - true
+//   - false
+func (element *ElementAddress) Draggable(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("draggable", v, dontEscape...)
 	return element
 }
 
-// Class is the "class" attribute.
-// Classes to which the element belongs
+// Id is the "id" attribute.
+// The element&#39;s ID
 // Valid values are constrained to the following:
-//   - set_of_space_separated_tokens
-func (element *ElementAddress) Class(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("class", v, dontEscape...)
+//   - text
+func (element *ElementAddress) Id(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("id", v, dontEscape...)
+	return element
+}
+
+// Itemprop is the "itemprop" attribute.
+// Property names of a microdata item
+// Valid values are constrained to the following:
+//   - unordered_set_of_unique_space_separated_tokens
+//   - valid_absolute_ur_ls
+//   - defined_property_names
+func (element *ElementAddress) Itemprop(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("itemprop", v, dontEscape...)
 	return element
 }
 
@@ -76,24 +89,73 @@ func (element *ElementAddress) Itemtype(v string, dontEscape ...bool) *ElementAd
 	return element
 }
 
-// Popover is the "popover" attribute.
-// Makes the element a popover element
+// Nonce is the "nonce" attribute.
+// Cryptographic nonce used in Content Security Policy checks [CSP]
 // Valid values are constrained to the following:
-//   - auto
-//   - auto
-//   - manual
-//   - manual
-func (element *ElementAddress) Popover(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("popover", v, dontEscape...)
+//   - text
+func (element *ElementAddress) Nonce(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("nonce", v, dontEscape...)
 	return element
 }
 
-// Slot is the "slot" attribute.
-// The element&#39;s desired slot
+// Tabindex is the "tabindex" attribute.
+// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
 // Valid values are constrained to the following:
+//   - valid_integer
+func (element *ElementAddress) Tabindex(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("tabindex", v, dontEscape...)
+	return element
+}
+
+// Accesskey is the "accesskey" attribute.
+// Keyboard shortcut to activate or focus element
+// Valid values are constrained to the following:
+//   - ordered_set_of_unique_space_separated_tokens
+//   - identical_to
+func (element *ElementAddress) Accesskey(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("accesskey", v, dontEscape...)
+	return element
+}
+
+// Autofocus is the "autofocus" attribute.
+// Automatically focus the element when the page is loaded
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementAddress) Autofocus(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("autofocus", v, dontEscape...)
+	return element
+}
+
+// Inert is the "inert" attribute.
+// Whether the element is inert.
+// Valid values are constrained to the following:
+//   - boolean_attribute
+func (element *ElementAddress) Inert(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("inert", v, dontEscape...)
+	return element
+}
+
+// Inputmode is the "inputmode" attribute.
+// Hint for selecting an input modality
+// Valid values are constrained to the following:
+//   - none
+//   - none
 //   - text
-func (element *ElementAddress) Slot(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("slot", v, dontEscape...)
+//   - text
+//   - tel
+//   - tel
+//   - email
+//   - email
+//   - url
+//   - url
+//   - numeric
+//   - numeric
+//   - decimal
+//   - decimal
+//   - search
+//   - search
+func (element *ElementAddress) Inputmode(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("inputmode", v, dontEscape...)
 	return element
 }
 
@@ -119,18 +181,6 @@ func (element *ElementAddress) Enterkeyhint(v string, dontEscape ...bool) *Eleme
 	return element
 }
 
-// Hidden is the "hidden" attribute.
-// Whether the element is relevant
-// Valid values are constrained to the following:
-//   - until_found
-//   - until_found
-//   - hidden
-//   - hidden
-func (element *ElementAddress) Hidden(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("hidden", v, dontEscape...)
-	return element
-}
-
 // Itemid is the "itemid" attribute.
 // Global identifier for a microdata item
 // Valid values are constrained to the following:
@@ -140,40 +190,32 @@ func (element *ElementAddress) Itemid(v string, dontEscape ...bool) *ElementAddr
 	return element
 }
 
-// Itemprop is the "itemprop" attribute.
-// Property names of a microdata item
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-//   - valid_absolute_ur_ls
-//   - defined_property_names
-func (element *ElementAddress) Itemprop(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("itemprop", v, dontEscape...)
-	return element
-}
-
-// Autofocus is the "autofocus" attribute.
-// Automatically focus the element when the page is loaded
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementAddress) Autofocus(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("autofocus", v, dontEscape...)
-	return element
-}
-
-// Itemref is the "itemref" attribute.
-// Referenced elements
-// Valid values are constrained to the following:
-//   - unordered_set_of_unique_space_separated_tokens
-func (element *ElementAddress) Itemref(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("itemref", v, dontEscape...)
-	return element
-}
-
 // Lang is the "lang" attribute.
 // Language of the element
 // Valid values are constrained to the following:
 func (element *ElementAddress) Lang(v string, dontEscape ...bool) *ElementAddress {
 	element.appendAttribute("lang", v, dontEscape...)
+	return element
+}
+
+// Popover is the "popover" attribute.
+// Makes the element a popover element
+// Valid values are constrained to the following:
+//   - auto
+//   - auto
+//   - manual
+//   - manual
+func (element *ElementAddress) Popover(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("popover", v, dontEscape...)
+	return element
+}
+
+// Slot is the "slot" attribute.
+// The element&#39;s desired slot
+// Valid values are constrained to the following:
+//   - text
+func (element *ElementAddress) Slot(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("slot", v, dontEscape...)
 	return element
 }
 
@@ -207,81 +249,6 @@ func (element *ElementAddress) Autocapitalize(v string, dontEscape ...bool) *Ele
 	return element
 }
 
-// Contenteditable is the "contenteditable" attribute.
-// Whether the element is editable
-// Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementAddress) Contenteditable(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("contenteditable", v, dontEscape...)
-	return element
-}
-
-// Accesskey is the "accesskey" attribute.
-// Keyboard shortcut to activate or focus element
-// Valid values are constrained to the following:
-//   - ordered_set_of_unique_space_separated_tokens
-//   - identical_to
-func (element *ElementAddress) Accesskey(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("accesskey", v, dontEscape...)
-	return element
-}
-
-// Inert is the "inert" attribute.
-// Whether the element is inert.
-// Valid values are constrained to the following:
-//   - boolean_attribute
-func (element *ElementAddress) Inert(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("inert", v, dontEscape...)
-	return element
-}
-
-// Tabindex is the "tabindex" attribute.
-// Whether the element is focusable and sequentially focusable, and       the relative order of the element for the purposes of sequential focus navigation
-// Valid values are constrained to the following:
-//   - valid_integer
-func (element *ElementAddress) Tabindex(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("tabindex", v, dontEscape...)
-	return element
-}
-
-// Id is the "id" attribute.
-// The element&#39;s ID
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementAddress) Id(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("id", v, dontEscape...)
-	return element
-}
-
-// Nonce is the "nonce" attribute.
-// Cryptographic nonce used in Content Security Policy checks [CSP]
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementAddress) Nonce(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("nonce", v, dontEscape...)
-	return element
-}
-
-// Translate is the "translate" attribute.
-// Whether the element is to be translated when the page is localized
-// Valid values are constrained to the following:
-//   - yes
-//   - no
-func (element *ElementAddress) Translate(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("translate", v, dontEscape...)
-	return element
-}
-
-// Title is the "title" attribute.
-// CSS style sheet set name
-// Valid values are constrained to the following:
-//   - text
-func (element *ElementAddress) Title(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("title", v, dontEscape...)
-	return element
-}
-
 // Dir is the "dir" attribute.
 // The text directionality of the element
 // Valid values are constrained to the following:
@@ -294,37 +261,60 @@ func (element *ElementAddress) Dir(v string, dontEscape ...bool) *ElementAddress
 	return element
 }
 
-// Draggable is the "draggable" attribute.
-// Whether the element is draggable
+// Itemref is the "itemref" attribute.
+// Referenced elements
 // Valid values are constrained to the following:
-//   - true
-//   - false
-func (element *ElementAddress) Draggable(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("draggable", v, dontEscape...)
+//   - unordered_set_of_unique_space_separated_tokens
+func (element *ElementAddress) Itemref(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("itemref", v, dontEscape...)
 	return element
 }
 
-// Inputmode is the "inputmode" attribute.
-// Hint for selecting an input modality
+// Title is the "title" attribute.
+// CSS style sheet set name
 // Valid values are constrained to the following:
-//   - none
-//   - none
 //   - text
-//   - text
-//   - tel
-//   - tel
-//   - email
-//   - email
-//   - url
-//   - url
-//   - numeric
-//   - numeric
-//   - decimal
-//   - decimal
-//   - search
-//   - search
-func (element *ElementAddress) Inputmode(v string, dontEscape ...bool) *ElementAddress {
-	element.appendAttribute("inputmode", v, dontEscape...)
+func (element *ElementAddress) Title(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("title", v, dontEscape...)
+	return element
+}
+
+// Hidden is the "hidden" attribute.
+// Whether the element is relevant
+// Valid values are constrained to the following:
+//   - until_found
+//   - until_found
+//   - hidden
+//   - hidden
+func (element *ElementAddress) Hidden(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("hidden", v, dontEscape...)
+	return element
+}
+
+// Style is the "style" attribute.
+// Presentational and formatting instructions
+// Valid values are constrained to the following:
+func (element *ElementAddress) Style(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("style", v, dontEscape...)
+	return element
+}
+
+// Class is the "class" attribute.
+// Classes to which the element belongs
+// Valid values are constrained to the following:
+//   - set_of_space_separated_tokens
+func (element *ElementAddress) Class(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("class", v, dontEscape...)
+	return element
+}
+
+// Contenteditable is the "contenteditable" attribute.
+// Whether the element is editable
+// Valid values are constrained to the following:
+//   - true
+//   - false
+func (element *ElementAddress) Contenteditable(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("contenteditable", v, dontEscape...)
 	return element
 }
 
@@ -335,6 +325,16 @@ func (element *ElementAddress) Inputmode(v string, dontEscape ...bool) *ElementA
 //   - customized_built_in_element
 func (element *ElementAddress) Is(v string, dontEscape ...bool) *ElementAddress {
 	element.appendAttribute("is", v, dontEscape...)
+	return element
+}
+
+// Translate is the "translate" attribute.
+// Whether the element is to be translated when the page is localized
+// Valid values are constrained to the following:
+//   - yes
+//   - no
+func (element *ElementAddress) Translate(v string, dontEscape ...bool) *ElementAddress {
+	element.appendAttribute("translate", v, dontEscape...)
 	return element
 }
 
