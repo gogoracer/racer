@@ -1,6 +1,9 @@
 package academicons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	academiaInnerSVG                    = `<g id="academiconsAcademia0"><path id="academiconsAcademia1" fill="currentColor" stroke-width=".265" d="M244.377 427.349c0 6.85-.044 13.703-.044 20.597c60.027.09 120.053 0 180.077.046c0-6.853-.043-13.703-.043-20.554c-12.067-2.432-26.964-5.835-31.605-18.962c-46.101-114.703-92.869-229.187-138.352-344.11c-33.24-.575-66.479-.354-99.719-.132c6.188 13.88 11.36 28.2 17.77 41.99c-38.942 101.178-78.502 202.178-118.02 303.136c-4.464 12.862-19.096 15.737-30.808 18.167c0 6.763-.043 13.57-.043 20.378c38.278.177 76.556.044 114.835.088c-.044-6.939-.044-13.835-.087-20.73c-12.023-1.856-25.814-1.635-35.583-9.946c-7.69-7.425-4.287-19.007-1.105-27.715c7.647-19.757 14.897-39.693 23.25-59.186c46.37.266 92.69-.043 139.059.132c6.366 15.824 12.73 31.692 19.096 47.56c4.244 10.696 8.09 22.676 4.64 34.168c-8.93 14.81-28.289 13.927-43.318 15.074zM138.735 293.64c17.77-47.208 36.599-94.061 54.014-141.401c18.787 47.163 37.704 94.282 56.534 141.401a11615.148 11615.148 0 0 1-110.548 0z"/></g>`
@@ -1968,4 +1971,313 @@ func ZoteroSquare(children ...any) *engine.HTMLElement {
 		zoteroSquareInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "academia":
+		return Academia(), nil
+	case "academia-square":
+		return AcademiaSquare(), nil
+	case "acclaim":
+		return Acclaim(), nil
+	case "acclaim-square":
+		return AcclaimSquare(), nil
+	case "acm":
+		return Acm(), nil
+	case "acm-square":
+		return AcmSquare(), nil
+	case "acmdl":
+		return Acmdl(), nil
+	case "acmdl-square":
+		return AcmdlSquare(), nil
+	case "ads":
+		return Ads(), nil
+	case "ads-square":
+		return AdsSquare(), nil
+	case "africarxiv":
+		return Africarxiv(), nil
+	case "africarxiv-square":
+		return AfricarxivSquare(), nil
+	case "archive":
+		return Archive(), nil
+	case "archive-square":
+		return ArchiveSquare(), nil
+	case "arxiv":
+		return Arxiv(), nil
+	case "arxiv-square":
+		return ArxivSquare(), nil
+	case "biorxiv":
+		return Biorxiv(), nil
+	case "biorxiv-square":
+		return BiorxivSquare(), nil
+	case "ceur":
+		return Ceur(), nil
+	case "ceur-square":
+		return CeurSquare(), nil
+	case "ciencia-vitae":
+		return CienciaVitae(), nil
+	case "ciencia-vitae-square":
+		return CienciaVitaeSquare(), nil
+	case "clarivate":
+		return Clarivate(), nil
+	case "clarivate-square":
+		return ClarivateSquare(), nil
+	case "closed-access":
+		return ClosedAccess(), nil
+	case "closed-access-square":
+		return ClosedAccessSquare(), nil
+	case "conversation":
+		return Conversation(), nil
+	case "conversation-square":
+		return ConversationSquare(), nil
+	case "coursera":
+		return Coursera(), nil
+	case "coursera-square":
+		return CourseraSquare(), nil
+	case "crossref":
+		return Crossref(), nil
+	case "crossref-square":
+		return CrossrefSquare(), nil
+	case "cv":
+		return Cv(), nil
+	case "cv-square":
+		return CvSquare(), nil
+	case "datacite":
+		return Datacite(), nil
+	case "datacite-square":
+		return DataciteSquare(), nil
+	case "dataverse":
+		return Dataverse(), nil
+	case "dataverse-square":
+		return DataverseSquare(), nil
+	case "dblp":
+		return Dblp(), nil
+	case "dblp-square":
+		return DblpSquare(), nil
+	case "depsy":
+		return Depsy(), nil
+	case "depsy-square":
+		return DepsySquare(), nil
+	case "doi":
+		return Doi(), nil
+	case "doi-square":
+		return DoiSquare(), nil
+	case "dryad":
+		return Dryad(), nil
+	case "dryad-square":
+		return DryadSquare(), nil
+	case "elsevier":
+		return Elsevier(), nil
+	case "elsevier-square":
+		return ElsevierSquare(), nil
+	case "figshare":
+		return Figshare(), nil
+	case "figshare-square":
+		return FigshareSquare(), nil
+	case "google-scholar":
+		return GoogleScholar(), nil
+	case "google-scholar-square":
+		return GoogleScholarSquare(), nil
+	case "hal":
+		return Hal(), nil
+	case "hal-square":
+		return HalSquare(), nil
+	case "hypothesis":
+		return Hypothesis(), nil
+	case "hypothesis-square":
+		return HypothesisSquare(), nil
+	case "ideas-repec":
+		return IdeasRepec(), nil
+	case "ideas-repec-square":
+		return IdeasRepecSquare(), nil
+	case "ieee":
+		return Ieee(), nil
+	case "ieee-square":
+		return IeeeSquare(), nil
+	case "impactstory":
+		return Impactstory(), nil
+	case "impactstory-square":
+		return ImpactstorySquare(), nil
+	case "inaturalist":
+		return Inaturalist(), nil
+	case "inaturalist-square":
+		return InaturalistSquare(), nil
+	case "inpn":
+		return Inpn(), nil
+	case "inpn-square":
+		return InpnSquare(), nil
+	case "inspire":
+		return Inspire(), nil
+	case "inspire-square":
+		return InspireSquare(), nil
+	case "isidore":
+		return Isidore(), nil
+	case "isidore-square":
+		return IsidoreSquare(), nil
+	case "jstor":
+		return Jstor(), nil
+	case "jstor-square":
+		return JstorSquare(), nil
+	case "lattes":
+		return Lattes(), nil
+	case "lattes-square":
+		return LattesSquare(), nil
+	case "mathoverflow":
+		return Mathoverflow(), nil
+	case "mathoverflow-square":
+		return MathoverflowSquare(), nil
+	case "mendeley":
+		return Mendeley(), nil
+	case "mendeley-square":
+		return MendeleySquare(), nil
+	case "moodle":
+		return Moodle(), nil
+	case "moodle-square":
+		return MoodleSquare(), nil
+	case "mtmt":
+		return Mtmt(), nil
+	case "mtmt-square":
+		return MtmtSquare(), nil
+	case "nakala":
+		return Nakala(), nil
+	case "nakala-square":
+		return NakalaSquare(), nil
+	case "obp":
+		return Obp(), nil
+	case "obp-square":
+		return ObpSquare(), nil
+	case "open-access":
+		return OpenAccess(), nil
+	case "open-access-square":
+		return OpenAccessSquare(), nil
+	case "open-data":
+		return OpenData(), nil
+	case "open-data-square":
+		return OpenDataSquare(), nil
+	case "open-materials":
+		return OpenMaterials(), nil
+	case "open-materials-square":
+		return OpenMaterialsSquare(), nil
+	case "openedition":
+		return Openedition(), nil
+	case "openedition-square":
+		return OpeneditionSquare(), nil
+	case "orcid":
+		return Orcid(), nil
+	case "orcid-square":
+		return OrcidSquare(), nil
+	case "osf":
+		return Osf(), nil
+	case "osf-square":
+		return OsfSquare(), nil
+	case "overleaf":
+		return Overleaf(), nil
+	case "overleaf-square":
+		return OverleafSquare(), nil
+	case "philpapers":
+		return Philpapers(), nil
+	case "philpapers-square":
+		return PhilpapersSquare(), nil
+	case "piazza":
+		return Piazza(), nil
+	case "piazza-square":
+		return PiazzaSquare(), nil
+	case "preregistered":
+		return Preregistered(), nil
+	case "preregistered-de":
+		return PreregisteredDe(), nil
+	case "preregistered-de-plus":
+		return PreregisteredDePlus(), nil
+	case "preregistered-de-plus-square":
+		return PreregisteredDePlusSquare(), nil
+	case "preregistered-de-square":
+		return PreregisteredDeSquare(), nil
+	case "preregistered-de-tc":
+		return PreregisteredDeTc(), nil
+	case "preregistered-de-tc-plus":
+		return PreregisteredDeTcPlus(), nil
+	case "preregistered-de-tc-plus-square":
+		return PreregisteredDeTcPlusSquare(), nil
+	case "preregistered-de-tc-square":
+		return PreregisteredDeTcSquare(), nil
+	case "preregistered-square":
+		return PreregisteredSquare(), nil
+	case "preregistered-tc":
+		return PreregisteredTc(), nil
+	case "preregistered-tc-plus":
+		return PreregisteredTcPlus(), nil
+	case "preregistered-tc-plus-square":
+		return PreregisteredTcPlusSquare(), nil
+	case "preregistered-tc-square":
+		return PreregisteredTcSquare(), nil
+	case "protocols":
+		return Protocols(), nil
+	case "protocols-square":
+		return ProtocolsSquare(), nil
+	case "psyarxiv":
+		return Psyarxiv(), nil
+	case "psyarxiv-square":
+		return PsyarxivSquare(), nil
+	case "publons":
+		return Publons(), nil
+	case "publons-square":
+		return PublonsSquare(), nil
+	case "pubmed":
+		return Pubmed(), nil
+	case "pubmed-square":
+		return PubmedSquare(), nil
+	case "pubpeer":
+		return Pubpeer(), nil
+	case "pubpeer-square":
+		return PubpeerSquare(), nil
+	case "researcherid":
+		return Researcherid(), nil
+	case "researcherid-square":
+		return ResearcheridSquare(), nil
+	case "researchgate":
+		return Researchgate(), nil
+	case "researchgate-square":
+		return ResearchgateSquare(), nil
+	case "ror":
+		return Ror(), nil
+	case "ror-square":
+		return RorSquare(), nil
+	case "sci-hub":
+		return SciHub(), nil
+	case "sci-hub-square":
+		return SciHubSquare(), nil
+	case "scirate":
+		return Scirate(), nil
+	case "scirate-square":
+		return ScirateSquare(), nil
+	case "scopus":
+		return Scopus(), nil
+	case "scopus-square":
+		return ScopusSquare(), nil
+	case "semantic-scholar":
+		return SemanticScholar(), nil
+	case "semantic-scholar-square":
+		return SemanticScholarSquare(), nil
+	case "springer":
+		return Springer(), nil
+	case "springer-square":
+		return SpringerSquare(), nil
+	case "ssrn":
+		return Ssrn(), nil
+	case "ssrn-square":
+		return SsrnSquare(), nil
+	case "stackoverflow":
+		return Stackoverflow(), nil
+	case "stackoverflow-square":
+		return StackoverflowSquare(), nil
+	case "zenodo":
+		return Zenodo(), nil
+	case "zotero":
+		return Zotero(), nil
+	case "zotero-square":
+		return ZoteroSquare(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in academicons icon set", name)
+	}
 }

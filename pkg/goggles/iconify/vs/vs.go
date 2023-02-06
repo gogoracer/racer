@@ -1,6 +1,9 @@
 package vs
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	aSquareInnerSVG          = `<path fill="currentColor" d="M336 0h1120q139 0 237.5 98.5T1792 336v1120q0 139-98.5 237.5T1456 1792H336q-139 0-237.5-98.5T0 1456V336Q0 197 98.5 98.5T336 0zm331 1188h458l85 251q11 36 24 45t44 9h157q53 0 35-69l-333-964q-17-64-57.5-112.5T982 299H810q-57 0-97.5 48.5T655 460l-333 964q-18 69 35 69h157q31 0 44-9t24-45zm391-225H734l130-385q8-26 32-26t32 26z"/>`
@@ -2072,4 +2075,329 @@ func ZeroSquare(children ...any) *engine.HTMLElement {
 		zeroSquareInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "a-square":
+		return ASquare(), nil
+	case "b-square":
+		return BSquare(), nil
+	case "baby":
+		return Baby(), nil
+	case "bc-card":
+		return BcCard(), nil
+	case "butterfly":
+		return Butterfly(), nil
+	case "c-square":
+		return CSquare(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "calendar-alt":
+		return CalendarAlt(), nil
+	case "calendar-alt-2":
+		return CalendarAltTwo(), nil
+	case "camel":
+		return Camel(), nil
+	case "cat-face":
+		return CatFace(), nil
+	case "cc-card":
+		return CcCard(), nil
+	case "chair":
+		return Chair(), nil
+	case "chair-alt":
+		return ChairAlt(), nil
+	case "chicken":
+		return Chicken(), nil
+	case "clip-note":
+		return ClipNote(), nil
+	case "clip-note-o":
+		return ClipNoteO(), nil
+	case "clipboard":
+		return Clipboard(), nil
+	case "clock":
+		return Clock(), nil
+	case "clock-alt":
+		return ClockAlt(), nil
+	case "comment":
+		return Comment(), nil
+	case "comment-bubble":
+		return CommentBubble(), nil
+	case "comments":
+		return Comments(), nil
+	case "cow":
+		return Cow(), nil
+	case "crown":
+		return Crown(), nil
+	case "cutlery":
+		return Cutlery(), nil
+	case "d-square":
+		return DSquare(), nil
+	case "door-closed":
+		return DoorClosed(), nil
+	case "door-open":
+		return DoorOpen(), nil
+	case "drumstick":
+		return Drumstick(), nil
+	case "e-square":
+		return ESquare(), nil
+	case "edit-page":
+		return EditPage(), nil
+	case "8-square":
+		return EightSquare(), nil
+	case "f-square":
+		return FSquare(), nil
+	case "face-allergy":
+		return FaceAllergy(), nil
+	case "face-dislike":
+		return FaceDislike(), nil
+	case "face-like":
+		return FaceLike(), nil
+	case "file-download":
+		return FileDownload(), nil
+	case "file-download-o":
+		return FileDownloadO(), nil
+	case "file-move-o":
+		return FileMoveO(), nil
+	case "fish":
+		return Fish(), nil
+	case "5-square":
+		return FiveSquare(), nil
+	case "floors":
+		return Floors(), nil
+	case "flower":
+		return Flower(), nil
+	case "4-square":
+		return FourSquare(), nil
+	case "g-square":
+		return GSquare(), nil
+	case "gantt":
+		return Gantt(), nil
+	case "gantt-o":
+		return GanttO(), nil
+	case "globe":
+		return Globe(), nil
+	case "grapes":
+		return Grapes(), nil
+	case "h-square":
+		return HSquare(), nil
+	case "highchair":
+		return Highchair(), nil
+	case "hourglass":
+		return Hourglass(), nil
+	case "i-square":
+		return ISquare(), nil
+	case "id-badge-alt":
+		return IdBadgeAlt(), nil
+	case "id-card":
+		return IdCard(), nil
+	case "id-card-alt":
+		return IdCardAlt(), nil
+	case "j-square":
+		return JSquare(), nil
+	case "k-square":
+		return KSquare(), nil
+	case "kakao":
+		return Kakao(), nil
+	case "kakao-square":
+		return KakaoSquare(), nil
+	case "kakaotalk":
+		return Kakaotalk(), nil
+	case "kakaotalk-square":
+		return KakaotalkSquare(), nil
+	case "kanji-chu":
+		return KanjiChu(), nil
+	case "kanji-utage":
+		return KanjiUtage(), nil
+	case "kanji-yubi":
+		return KanjiYubi(), nil
+	case "keyboard":
+		return Keyboard(), nil
+	case "l-square":
+		return LSquare(), nil
+	case "language":
+		return Language(), nil
+	case "line":
+		return Line(), nil
+	case "line-square":
+		return LineSquare(), nil
+	case "m-square":
+		return MSquare(), nil
+	case "magnet-note":
+		return MagnetNote(), nil
+	case "male-female":
+		return MaleFemale(), nil
+	case "mic":
+		return Mic(), nil
+	case "mobile":
+		return Mobile(), nil
+	case "moon":
+		return Moon(), nil
+	case "multi-arrow":
+		return MultiArrow(), nil
+	case "n-square":
+		return NSquare(), nil
+	case "naver":
+		return Naver(), nil
+	case "naver-square":
+		return NaverSquare(), nil
+	case "neko":
+		return Neko(), nil
+	case "neko-sleep":
+		return NekoSleep(), nil
+	case "9-square":
+		return NineSquare(), nil
+	case "ninja":
+		return Ninja(), nil
+	case "no-comment-bubble":
+		return NoCommentBubble(), nil
+	case "no-smoking-alt":
+		return NoSmokingAlt(), nil
+	case "o-square":
+		return OSquare(), nil
+	case "1-square":
+		return OneSquare(), nil
+	case "p":
+		return P(), nil
+	case "p-square":
+		return PSquare(), nil
+	case "panther":
+		return Panther(), nil
+	case "party":
+		return Party(), nil
+	case "people-group":
+		return PeopleGroup(), nil
+	case "person":
+		return Person(), nil
+	case "pig":
+		return Pig(), nil
+	case "pregnant":
+		return Pregnant(), nil
+	case "profile":
+		return Profile(), nil
+	case "q-square":
+		return QSquare(), nil
+	case "question-square":
+		return QuestionSquare(), nil
+	case "r-square":
+		return RSquare(), nil
+	case "rose":
+		return Rose(), nil
+	case "s-square":
+		return SSquare(), nil
+	case "senior":
+		return Senior(), nil
+	case "7-square":
+		return SevenSquare(), nil
+	case "sex-female":
+		return SexFemale(), nil
+	case "sex-male":
+		return SexMale(), nil
+	case "sheep":
+		return Sheep(), nil
+	case "shield-check":
+		return ShieldCheck(), nil
+	case "shield-times":
+		return ShieldTimes(), nil
+	case "shop":
+		return Shop(), nil
+	case "6-square":
+		return SixSquare(), nil
+	case "sleep":
+		return Sleep(), nil
+	case "sleep-square":
+		return SleepSquare(), nil
+	case "smoking":
+		return Smoking(), nil
+	case "smoking-alt":
+		return SmokingAlt(), nil
+	case "sms":
+		return Sms(), nil
+	case "sofa":
+		return Sofa(), nil
+	case "speech":
+		return Speech(), nil
+	case "spinner":
+		return Spinner(), nil
+	case "sticky-note":
+		return StickyNote(), nil
+	case "stroller":
+		return Stroller(), nil
+	case "sun":
+		return Sun(), nil
+	case "sunrise":
+		return Sunrise(), nil
+	case "sunrise-o":
+		return SunriseO(), nil
+	case "t-square":
+		return TSquare(), nil
+	case "table":
+		return Table(), nil
+	case "table-alt":
+		return TableAlt(), nil
+	case "table-o":
+		return TableO(), nil
+	case "table-question":
+		return TableQuestion(), nil
+	case "tables":
+		return Tables(), nil
+	case "tablesolution":
+		return Tablesolution(), nil
+	case "3-square":
+		return ThreeSquare(), nil
+	case "timeslot":
+		return Timeslot(), nil
+	case "timeslot-question":
+		return TimeslotQuestion(), nil
+	case "timeslots":
+		return Timeslots(), nil
+	case "2-square":
+		return TwoSquare(), nil
+	case "u-square":
+		return USquare(), nil
+	case "user-boss":
+		return UserBoss(), nil
+	case "user-group":
+		return UserGroup(), nil
+	case "user-suit":
+		return UserSuit(), nil
+	case "user-suit-female":
+		return UserSuitFemale(), nil
+	case "user-waiter":
+		return UserWaiter(), nil
+	case "user-waiter-female":
+		return UserWaiterFemale(), nil
+	case "v-square":
+		return VSquare(), nil
+	case "volume-on":
+		return VolumeOn(), nil
+	case "volume-times":
+		return VolumeTimes(), nil
+	case "w-square":
+		return WSquare(), nil
+	case "walk":
+		return Walk(), nil
+	case "wedding-cake":
+		return WeddingCake(), nil
+	case "whiteboard":
+		return Whiteboard(), nil
+	case "window":
+		return Window(), nil
+	case "wine":
+		return Wine(), nil
+	case "wine-o":
+		return WineO(), nil
+	case "x-square":
+		return XSquare(), nil
+	case "y-square":
+		return YSquare(), nil
+	case "yahoo-japan":
+		return YahooJapan(), nil
+	case "z-square":
+		return ZSquare(), nil
+	case "0-square":
+		return ZeroSquare(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in vs icon set", name)
+	}
 }

@@ -1,6 +1,9 @@
 package skill_icons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	abletonDarkInnerSVG        = `<g fill="none"><rect width="256" height="256" fill="#242938" rx="60"/><path fill="#fff" d="M36 177.4c0 .9-.8 1.5-1.5 1.5H23.6c-.9 0-1.6-.6-1.6-1.5V78.6c0-.6.8-1.4 1.6-1.4h10.8c.8 0 1.5.8 1.5 1.4l.1 98.8Zm28.3 0c0 .9-.8 1.5-1.5 1.5H52c-.9 0-1.6-.6-1.6-1.5V78.6c0-.6.8-1.4 1.6-1.4h10.8c.8 0 1.5.8 1.5 1.4v98.8Zm28.3 0c0 .9-.8 1.5-1.5 1.5H80.3c-.9 0-1.6-.6-1.6-1.5V78.6c0-.6.8-1.4 1.6-1.4h10.8c.8 0 1.5.8 1.5 1.4v98.8Zm28.5 0c0 .9-.8 1.5-1.5 1.5h-10.8c-.9 0-1.6-.6-1.6-1.5V78.6c0-.6.8-1.4 1.6-1.4h10.8c.8 0 1.5.8 1.5 1.4v98.8ZM232.5 77c.9 0 1.5.8 1.5 1.6v11.1c0 .9-.6 1.7-1.5 1.7h-96.1c-.6 0-1.4-.8-1.4-1.7V78.6c0-.8.8-1.6 1.4-1.6h96.1Zm0 29.3c.9 0 1.5.8 1.5 1.6V119c0 .9-.6 1.7-1.5 1.7h-96.1c-.6 0-1.4-.8-1.4-1.7v-11.1c0-.8.8-1.6 1.4-1.6h96.1Zm0 29.1c.9 0 1.5.8 1.5 1.6v11.1c0 .9-.6 1.7-1.5 1.7h-96.1c-.6 0-1.4-.8-1.4-1.7V137c0-.8.8-1.6 1.4-1.6h96.1Zm0 29.1c.9 0 1.5.8 1.5 1.6v11.1c0 .9-.6 1.7-1.5 1.7h-96.1c-.6 0-1.4-.8-1.4-1.7v-11.1c0-.8.8-1.6 1.4-1.6h96.1Z"/></g>`
@@ -3827,4 +3830,599 @@ func ZigLight(children ...any) *engine.HTMLElement {
 		zigLightInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "ableton-dark":
+		return AbletonDark(), nil
+	case "ableton-light":
+		return AbletonLight(), nil
+	case "activitypub-dark":
+		return ActivitypubDark(), nil
+	case "activitypub-light":
+		return ActivitypubLight(), nil
+	case "actix-dark":
+		return ActixDark(), nil
+	case "actix-light":
+		return ActixLight(), nil
+	case "aftereffects":
+		return Aftereffects(), nil
+	case "aiscript-dark":
+		return AiscriptDark(), nil
+	case "aiscript-light":
+		return AiscriptLight(), nil
+	case "alpinejs-dark":
+		return AlpinejsDark(), nil
+	case "alpinejs-light":
+		return AlpinejsLight(), nil
+	case "androidstudio-dark":
+		return AndroidstudioDark(), nil
+	case "androidstudio-light":
+		return AndroidstudioLight(), nil
+	case "angular-dark":
+		return AngularDark(), nil
+	case "angular-light":
+		return AngularLight(), nil
+	case "ansible":
+		return Ansible(), nil
+	case "apollo":
+		return Apollo(), nil
+	case "appwrite":
+		return Appwrite(), nil
+	case "arduino":
+		return Arduino(), nil
+	case "astro":
+		return Astro(), nil
+	case "atom":
+		return Atom(), nil
+	case "audition":
+		return Audition(), nil
+	case "autocad-dark":
+		return AutocadDark(), nil
+	case "autocad-light":
+		return AutocadLight(), nil
+	case "aws-dark":
+		return AwsDark(), nil
+	case "aws-light":
+		return AwsLight(), nil
+	case "azul":
+		return Azul(), nil
+	case "azure-dark":
+		return AzureDark(), nil
+	case "azure-light":
+		return AzureLight(), nil
+	case "bash-dark":
+		return BashDark(), nil
+	case "bash-light":
+		return BashLight(), nil
+	case "bevy-dark":
+		return BevyDark(), nil
+	case "bevy-light":
+		return BevyLight(), nil
+	case "blender-dark":
+		return BlenderDark(), nil
+	case "blender-light":
+		return BlenderLight(), nil
+	case "bootstrap":
+		return Bootstrap(), nil
+	case "bsd-dark":
+		return BsdDark(), nil
+	case "bsd-light":
+		return BsdLight(), nil
+	case "c":
+		return C(), nil
+	case "cassandra-dark":
+		return CassandraDark(), nil
+	case "cassandra-light":
+		return CassandraLight(), nil
+	case "clojure-dark":
+		return ClojureDark(), nil
+	case "clojure-light":
+		return ClojureLight(), nil
+	case "cloudflare-dark":
+		return CloudflareDark(), nil
+	case "cloudflare-light":
+		return CloudflareLight(), nil
+	case "cmake-dark":
+		return CmakeDark(), nil
+	case "cmake-light":
+		return CmakeLight(), nil
+	case "codepen-dark":
+		return CodepenDark(), nil
+	case "codepen-light":
+		return CodepenLight(), nil
+	case "coffeescript-dark":
+		return CoffeescriptDark(), nil
+	case "coffeescript-light":
+		return CoffeescriptLight(), nil
+	case "cpp":
+		return Cpp(), nil
+	case "crystal-dark":
+		return CrystalDark(), nil
+	case "crystal-light":
+		return CrystalLight(), nil
+	case "cs":
+		return Cs(), nil
+	case "css":
+		return Css(), nil
+	case "d3-dark":
+		return DThreeDark(), nil
+	case "d3-light":
+		return DThreeLight(), nil
+	case "dart-dark":
+		return DartDark(), nil
+	case "dart-light":
+		return DartLight(), nil
+	case "deno-dark":
+		return DenoDark(), nil
+	case "deno-light":
+		return DenoLight(), nil
+	case "discord":
+		return Discord(), nil
+	case "discordbots":
+		return Discordbots(), nil
+	case "django":
+		return Django(), nil
+	case "docker":
+		return Docker(), nil
+	case "dotnet":
+		return Dotnet(), nil
+	case "dynamodb-dark":
+		return DynamodbDark(), nil
+	case "dynamodb-light":
+		return DynamodbLight(), nil
+	case "eclipse-dark":
+		return EclipseDark(), nil
+	case "eclipse-light":
+		return EclipseLight(), nil
+	case "electron":
+		return Electron(), nil
+	case "elixir-dark":
+		return ElixirDark(), nil
+	case "elixir-light":
+		return ElixirLight(), nil
+	case "emacs":
+		return Emacs(), nil
+	case "ember":
+		return Ember(), nil
+	case "emotion-dark":
+		return EmotionDark(), nil
+	case "emotion-light":
+		return EmotionLight(), nil
+	case "expressjs-dark":
+		return ExpressjsDark(), nil
+	case "expressjs-light":
+		return ExpressjsLight(), nil
+	case "fastapi":
+		return Fastapi(), nil
+	case "fediverse-dark":
+		return FediverseDark(), nil
+	case "fediverse-light":
+		return FediverseLight(), nil
+	case "figma-dark":
+		return FigmaDark(), nil
+	case "figma-light":
+		return FigmaLight(), nil
+	case "flask-dark":
+		return FlaskDark(), nil
+	case "flask-light":
+		return FlaskLight(), nil
+	case "flutter-dark":
+		return FlutterDark(), nil
+	case "flutter-light":
+		return FlutterLight(), nil
+	case "forth":
+		return Forth(), nil
+	case "fortran":
+		return Fortran(), nil
+	case "gamemakerstudio":
+		return Gamemakerstudio(), nil
+	case "gatsby":
+		return Gatsby(), nil
+	case "gcp-dark":
+		return GcpDark(), nil
+	case "gcp-light":
+		return GcpLight(), nil
+	case "gherkin-dark":
+		return GherkinDark(), nil
+	case "gherkin-light":
+		return GherkinLight(), nil
+	case "git":
+		return Git(), nil
+	case "github-dark":
+		return GithubDark(), nil
+	case "github-light":
+		return GithubLight(), nil
+	case "githubactions-dark":
+		return GithubactionsDark(), nil
+	case "githubactions-light":
+		return GithubactionsLight(), nil
+	case "gitlab-dark":
+		return GitlabDark(), nil
+	case "gitlab-light":
+		return GitlabLight(), nil
+	case "godot-dark":
+		return GodotDark(), nil
+	case "godot-light":
+		return GodotLight(), nil
+	case "golang":
+		return Golang(), nil
+	case "gradle-dark":
+		return GradleDark(), nil
+	case "gradle-light":
+		return GradleLight(), nil
+	case "grafana-dark":
+		return GrafanaDark(), nil
+	case "grafana-light":
+		return GrafanaLight(), nil
+	case "graphql-dark":
+		return GraphqlDark(), nil
+	case "graphql-light":
+		return GraphqlLight(), nil
+	case "gtk-dark":
+		return GtkDark(), nil
+	case "gtk-light":
+		return GtkLight(), nil
+	case "haskell-dark":
+		return HaskellDark(), nil
+	case "haskell-light":
+		return HaskellLight(), nil
+	case "haxe-dark":
+		return HaxeDark(), nil
+	case "haxe-light":
+		return HaxeLight(), nil
+	case "haxeflixel-dark":
+		return HaxeflixelDark(), nil
+	case "haxeflixel-light":
+		return HaxeflixelLight(), nil
+	case "heroku":
+		return Heroku(), nil
+	case "hibernate-dark":
+		return HibernateDark(), nil
+	case "hibernate-light":
+		return HibernateLight(), nil
+	case "html":
+		return Html(), nil
+	case "idea-dark":
+		return IdeaDark(), nil
+	case "idea-light":
+		return IdeaLight(), nil
+	case "illustrator":
+		return Illustrator(), nil
+	case "instagram":
+		return Instagram(), nil
+	case "java-dark":
+		return JavaDark(), nil
+	case "java-light":
+		return JavaLight(), nil
+	case "javascript":
+		return Javascript(), nil
+	case "jenkins-dark":
+		return JenkinsDark(), nil
+	case "jenkins-light":
+		return JenkinsLight(), nil
+	case "jest":
+		return Jest(), nil
+	case "jquery":
+		return Jquery(), nil
+	case "julia-dark":
+		return JuliaDark(), nil
+	case "julia-light":
+		return JuliaLight(), nil
+	case "kotlin-dark":
+		return KotlinDark(), nil
+	case "kotlin-light":
+		return KotlinLight(), nil
+	case "ktor-dark":
+		return KtorDark(), nil
+	case "ktor-light":
+		return KtorLight(), nil
+	case "kubernetes":
+		return Kubernetes(), nil
+	case "laravel-dark":
+		return LaravelDark(), nil
+	case "laravel-light":
+		return LaravelLight(), nil
+	case "latex-dark":
+		return LatexDark(), nil
+	case "latex-light":
+		return LatexLight(), nil
+	case "linkedin":
+		return Linkedin(), nil
+	case "linux-dark":
+		return LinuxDark(), nil
+	case "linux-light":
+		return LinuxLight(), nil
+	case "lit-dark":
+		return LitDark(), nil
+	case "lit-light":
+		return LitLight(), nil
+	case "lua-dark":
+		return LuaDark(), nil
+	case "lua-light":
+		return LuaLight(), nil
+	case "markdown-dark":
+		return MarkdownDark(), nil
+	case "markdown-light":
+		return MarkdownLight(), nil
+	case "mastodon-dark":
+		return MastodonDark(), nil
+	case "mastodon-light":
+		return MastodonLight(), nil
+	case "materialui-dark":
+		return MaterialuiDark(), nil
+	case "materialui-light":
+		return MaterialuiLight(), nil
+	case "matlab-dark":
+		return MatlabDark(), nil
+	case "matlab-light":
+		return MatlabLight(), nil
+	case "maven-dark":
+		return MavenDark(), nil
+	case "maven-light":
+		return MavenLight(), nil
+	case "misskey-dark":
+		return MisskeyDark(), nil
+	case "misskey-light":
+		return MisskeyLight(), nil
+	case "mongodb":
+		return Mongodb(), nil
+	case "mysql-dark":
+		return MysqlDark(), nil
+	case "mysql-light":
+		return MysqlLight(), nil
+	case "neovim-dark":
+		return NeovimDark(), nil
+	case "neovim-light":
+		return NeovimLight(), nil
+	case "nestjs-dark":
+		return NestjsDark(), nil
+	case "nestjs-light":
+		return NestjsLight(), nil
+	case "netlify-dark":
+		return NetlifyDark(), nil
+	case "netlify-light":
+		return NetlifyLight(), nil
+	case "nextjs-dark":
+		return NextjsDark(), nil
+	case "nextjs-light":
+		return NextjsLight(), nil
+	case "nginx":
+		return Nginx(), nil
+	case "nim-dark":
+		return NimDark(), nil
+	case "nim-light":
+		return NimLight(), nil
+	case "nodejs-dark":
+		return NodejsDark(), nil
+	case "nodejs-light":
+		return NodejsLight(), nil
+	case "nuxtjs-dark":
+		return NuxtjsDark(), nil
+	case "nuxtjs-light":
+		return NuxtjsLight(), nil
+	case "ocaml":
+		return Ocaml(), nil
+	case "octave-dark":
+		return OctaveDark(), nil
+	case "octave-light":
+		return OctaveLight(), nil
+	case "openshift":
+		return Openshift(), nil
+	case "openstack-dark":
+		return OpenstackDark(), nil
+	case "openstack-light":
+		return OpenstackLight(), nil
+	case "perl":
+		return Perl(), nil
+	case "photoshop":
+		return Photoshop(), nil
+	case "php-dark":
+		return PhpDark(), nil
+	case "php-light":
+		return PhpLight(), nil
+	case "plan9-dark":
+		return PlanNineDark(), nil
+	case "plan9-light":
+		return PlanNineLight(), nil
+	case "postgresql-dark":
+		return PostgresqlDark(), nil
+	case "postgresql-light":
+		return PostgresqlLight(), nil
+	case "powershell-dark":
+		return PowershellDark(), nil
+	case "powershell-light":
+		return PowershellLight(), nil
+	case "premiere":
+		return Premiere(), nil
+	case "prisma":
+		return Prisma(), nil
+	case "processing-dark":
+		return ProcessingDark(), nil
+	case "processing-light":
+		return ProcessingLight(), nil
+	case "prometheus":
+		return Prometheus(), nil
+	case "pug-dark":
+		return PugDark(), nil
+	case "pug-light":
+		return PugLight(), nil
+	case "python-dark":
+		return PythonDark(), nil
+	case "python-light":
+		return PythonLight(), nil
+	case "pytorch-dark":
+		return PytorchDark(), nil
+	case "pytorch-light":
+		return PytorchLight(), nil
+	case "qt-dark":
+		return QtDark(), nil
+	case "qt-light":
+		return QtLight(), nil
+	case "r-dark":
+		return RDark(), nil
+	case "r-light":
+		return RLight(), nil
+	case "rails":
+		return Rails(), nil
+	case "raspberrypi-dark":
+		return RaspberrypiDark(), nil
+	case "raspberrypi-light":
+		return RaspberrypiLight(), nil
+	case "react-dark":
+		return ReactDark(), nil
+	case "react-light":
+		return ReactLight(), nil
+	case "reactivex-dark":
+		return ReactivexDark(), nil
+	case "reactivex-light":
+		return ReactivexLight(), nil
+	case "redis-dark":
+		return RedisDark(), nil
+	case "redis-light":
+		return RedisLight(), nil
+	case "redux":
+		return Redux(), nil
+	case "regex-dark":
+		return RegexDark(), nil
+	case "regex-light":
+		return RegexLight(), nil
+	case "remix-dark":
+		return RemixDark(), nil
+	case "remix-light":
+		return RemixLight(), nil
+	case "rocket":
+		return Rocket(), nil
+	case "rollupjs-dark":
+		return RollupjsDark(), nil
+	case "rollupjs-light":
+		return RollupjsLight(), nil
+	case "ros-dark":
+		return RosDark(), nil
+	case "ros-light":
+		return RosLight(), nil
+	case "ruby":
+		return Ruby(), nil
+	case "rust":
+		return Rust(), nil
+	case "sass":
+		return Sass(), nil
+	case "scala-dark":
+		return ScalaDark(), nil
+	case "scala-light":
+		return ScalaLight(), nil
+	case "selenium":
+		return Selenium(), nil
+	case "sketchup-dark":
+		return SketchupDark(), nil
+	case "sketchup-light":
+		return SketchupLight(), nil
+	case "solidity":
+		return Solidity(), nil
+	case "spring-dark":
+		return SpringDark(), nil
+	case "spring-light":
+		return SpringLight(), nil
+	case "sqlite":
+		return Sqlite(), nil
+	case "stackoverflow-dark":
+		return StackoverflowDark(), nil
+	case "stackoverflow-light":
+		return StackoverflowLight(), nil
+	case "styledcomponents":
+		return Styledcomponents(), nil
+	case "supabase-dark":
+		return SupabaseDark(), nil
+	case "supabase-light":
+		return SupabaseLight(), nil
+	case "svelte":
+		return Svelte(), nil
+	case "svg-dark":
+		return SvgDark(), nil
+	case "svg-light":
+		return SvgLight(), nil
+	case "swift":
+		return Swift(), nil
+	case "symfony-dark":
+		return SymfonyDark(), nil
+	case "symfony-light":
+		return SymfonyLight(), nil
+	case "tailwindcss-dark":
+		return TailwindcssDark(), nil
+	case "tailwindcss-light":
+		return TailwindcssLight(), nil
+	case "tauri-dark":
+		return TauriDark(), nil
+	case "tauri-light":
+		return TauriLight(), nil
+	case "tensorflow-dark":
+		return TensorflowDark(), nil
+	case "tensorflow-light":
+		return TensorflowLight(), nil
+	case "twitter":
+		return Twitter(), nil
+	case "typescript":
+		return Typescript(), nil
+	case "unity-dark":
+		return UnityDark(), nil
+	case "unity-light":
+		return UnityLight(), nil
+	case "unrealengine":
+		return Unrealengine(), nil
+	case "v-dark":
+		return VDark(), nil
+	case "v-light":
+		return VLight(), nil
+	case "vala":
+		return Vala(), nil
+	case "vercel-dark":
+		return VercelDark(), nil
+	case "vercel-light":
+		return VercelLight(), nil
+	case "vim-dark":
+		return VimDark(), nil
+	case "vim-light":
+		return VimLight(), nil
+	case "visualstudio-dark":
+		return VisualstudioDark(), nil
+	case "visualstudio-light":
+		return VisualstudioLight(), nil
+	case "vite-dark":
+		return ViteDark(), nil
+	case "vite-light":
+		return ViteLight(), nil
+	case "vscode-dark":
+		return VscodeDark(), nil
+	case "vscode-light":
+		return VscodeLight(), nil
+	case "vuejs-dark":
+		return VuejsDark(), nil
+	case "vuejs-light":
+		return VuejsLight(), nil
+	case "webassembly":
+		return Webassembly(), nil
+	case "webpack-dark":
+		return WebpackDark(), nil
+	case "webpack-light":
+		return WebpackLight(), nil
+	case "windicss-dark":
+		return WindicssDark(), nil
+	case "windicss-light":
+		return WindicssLight(), nil
+	case "wordpress":
+		return Wordpress(), nil
+	case "workers-dark":
+		return WorkersDark(), nil
+	case "workers-light":
+		return WorkersLight(), nil
+	case "xd":
+		return Xd(), nil
+	case "zig-dark":
+		return ZigDark(), nil
+	case "zig-light":
+		return ZigLight(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in skill_icons icon set", name)
+	}
 }

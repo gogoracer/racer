@@ -1,6 +1,9 @@
 package fad
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	adrInnerSVG               = `<path fill="currentColor" fill-rule="evenodd" d="M25 184c-.47 2.68-.227 4.354 1 6s4.563 2.464 8 2c3.437-.464 5.078-.958 6-4c.922-3.042 39.818-102.423 39.818-102.423c1.205-3.08 3.034-3.022 4.08.115l16.331 48.974c1.049 3.144 4.353 6.781 7.386 8.127c0 0 108.132 48.015 111.214 48.404c3.083.389 5.414.105 7.19-1.197c1.68-1.23 3.532-3.733 4.124-6c.591-2.267-1.12-5.898-3.343-7.28c-2.223-1.38-109.625-46.556-109.625-46.556c-2.026-.853-4.148-3.274-4.736-5.389c0 0-12.137-43.757-14.135-49.484c-1.998-5.727-6.562-10.983-14.989-10.983c-8.426 0-13.23 2.387-15.315 7.692c-2.086 5.305-42.53 109.32-43 112z"/>`
@@ -2020,4 +2023,321 @@ func Zoomout(children ...any) *engine.HTMLElement {
 		zoomoutInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "adr":
+		return Adr(), nil
+	case "adsr":
+		return Adsr(), nil
+	case "ahdsr":
+		return Ahdsr(), nil
+	case "ar":
+		return Ar(), nil
+	case "armrecording":
+		return Armrecording(), nil
+	case "arpchord":
+		return Arpchord(), nil
+	case "arpdown":
+		return Arpdown(), nil
+	case "arpdownandup":
+		return Arpdownandup(), nil
+	case "arpdownup":
+		return Arpdownup(), nil
+	case "arpplayorder":
+		return Arpplayorder(), nil
+	case "arprandom":
+		return Arprandom(), nil
+	case "arpup":
+		return Arpup(), nil
+	case "arpupandown":
+		return Arpupandown(), nil
+	case "arpupdown":
+		return Arpupdown(), nil
+	case "arrows-horz":
+		return ArrowsHorz(), nil
+	case "arrows-vert":
+		return ArrowsVert(), nil
+	case "automation-4p":
+		return AutomationFourP(), nil
+	case "automation-3p":
+		return AutomationThreeP(), nil
+	case "automation-2p":
+		return AutomationTwoP(), nil
+	case "backward":
+		return Backward(), nil
+	case "bluetooth":
+		return Bluetooth(), nil
+	case "caret-down":
+		return CaretDown(), nil
+	case "caret-left":
+		return CaretLeft(), nil
+	case "caret-right":
+		return CaretRight(), nil
+	case "caret-up":
+		return CaretUp(), nil
+	case "close":
+		return Close(), nil
+	case "copy":
+		return Copy(), nil
+	case "cpu":
+		return Cpu(), nil
+	case "cutter":
+		return Cutter(), nil
+	case "digital-colon":
+		return DigitalColon(), nil
+	case "digital-dot":
+		return DigitalDot(), nil
+	case "digital8":
+		return DigitalEight(), nil
+	case "digital5":
+		return DigitalFive(), nil
+	case "digital4":
+		return DigitalFour(), nil
+	case "digital9":
+		return DigitalNine(), nil
+	case "digital1":
+		return DigitalOne(), nil
+	case "digital7":
+		return DigitalSeven(), nil
+	case "digital6":
+		return DigitalSix(), nil
+	case "digital3":
+		return DigitalThree(), nil
+	case "digital2":
+		return DigitalTwo(), nil
+	case "digital0":
+		return DigitalZero(), nil
+	case "diskio":
+		return Diskio(), nil
+	case "drumpad":
+		return Drumpad(), nil
+	case "duplicate":
+		return Duplicate(), nil
+	case "eraser":
+		return Eraser(), nil
+	case "ffwd":
+		return Ffwd(), nil
+	case "filter-bandpass":
+		return FilterBandpass(), nil
+	case "filter-bell":
+		return FilterBell(), nil
+	case "filter-bypass":
+		return FilterBypass(), nil
+	case "filter-highpass":
+		return FilterHighpass(), nil
+	case "filter-lowpass":
+		return FilterLowpass(), nil
+	case "filter-notch":
+		return FilterNotch(), nil
+	case "filter-rez-highpass":
+		return FilterRezHighpass(), nil
+	case "filter-rez-lowpass":
+		return FilterRezLowpass(), nil
+	case "filter-shelving-hi":
+		return FilterShelvingHi(), nil
+	case "filter-shelving-lo":
+		return FilterShelvingLo(), nil
+	case "foldback":
+		return Foldback(), nil
+	case "forward":
+		return Forward(), nil
+	case "h-expand":
+		return HExpand(), nil
+	case "hardclip":
+		return Hardclip(), nil
+	case "hardclipcurve":
+		return Hardclipcurve(), nil
+	case "headphones":
+		return Headphones(), nil
+	case "keyboard":
+		return Keyboard(), nil
+	case "lock":
+		return Lock(), nil
+	case "logo-aax":
+		return LogoAax(), nil
+	case "logo-abletonlink":
+		return LogoAbletonlink(), nil
+	case "logo-au":
+		return LogoAu(), nil
+	case "logo-audacity":
+		return LogoAudacity(), nil
+	case "logo-audiobus":
+		return LogoAudiobus(), nil
+	case "logo-cubase":
+		return LogoCubase(), nil
+	case "logo-fl":
+		return LogoFl(), nil
+	case "logo-juce":
+		return LogoJuce(), nil
+	case "logo-ladspa":
+		return LogoLadspa(), nil
+	case "logo-live":
+		return LogoLive(), nil
+	case "logo-lv2":
+		return LogoLvTwo(), nil
+	case "logo-protools":
+		return LogoProtools(), nil
+	case "logo-rackext":
+		return LogoRackext(), nil
+	case "logo-reaper":
+		return LogoReaper(), nil
+	case "logo-reason":
+		return LogoReason(), nil
+	case "logo-rewire":
+		return LogoRewire(), nil
+	case "logo-studioone":
+		return LogoStudioone(), nil
+	case "logo-tracktion":
+		return LogoTracktion(), nil
+	case "logo-vst":
+		return LogoVst(), nil
+	case "logo-waveform":
+		return LogoWaveform(), nil
+	case "loop":
+		return Loop(), nil
+	case "metronome":
+		return Metronome(), nil
+	case "microphone":
+		return Microphone(), nil
+	case "midiplug":
+		return Midiplug(), nil
+	case "modrandom":
+		return Modrandom(), nil
+	case "modsawdown":
+		return Modsawdown(), nil
+	case "modsawup":
+		return Modsawup(), nil
+	case "modsh":
+		return Modsh(), nil
+	case "modsine":
+		return Modsine(), nil
+	case "modsquare":
+		return Modsquare(), nil
+	case "modtri":
+		return Modtri(), nil
+	case "modularplug":
+		return Modularplug(), nil
+	case "mono":
+		return Mono(), nil
+	case "mute":
+		return Mute(), nil
+	case "next":
+		return Next(), nil
+	case "open":
+		return Open(), nil
+	case "paste":
+		return Paste(), nil
+	case "pause":
+		return Pause(), nil
+	case "pen":
+		return Pen(), nil
+	case "phase":
+		return Phase(), nil
+	case "play":
+		return Play(), nil
+	case "pointer":
+		return Pointer(), nil
+	case "powerswitch":
+		return Powerswitch(), nil
+	case "preset-a":
+		return PresetA(), nil
+	case "preset-ab":
+		return PresetAb(), nil
+	case "preset-b":
+		return PresetB(), nil
+	case "preset-ba":
+		return PresetBa(), nil
+	case "prev":
+		return Prev(), nil
+	case "punch-in":
+		return PunchIn(), nil
+	case "punch-out":
+		return PunchOut(), nil
+	case "ram":
+		return Ram(), nil
+	case "random-1dice":
+		return RandomOneDice(), nil
+	case "random-2dice":
+		return RandomTwoDice(), nil
+	case "record":
+		return Record(), nil
+	case "redo":
+		return Redo(), nil
+	case "repeat":
+		return Repeat(), nil
+	case "repeat-one":
+		return RepeatOne(), nil
+	case "rew":
+		return Rew(), nil
+	case "roundswitch-off":
+		return RoundswitchOff(), nil
+	case "roundswitch-on":
+		return RoundswitchOn(), nil
+	case "save":
+		return Save(), nil
+	case "saveas":
+		return Saveas(), nil
+	case "scissors":
+		return Scissors(), nil
+	case "shuffle":
+		return Shuffle(), nil
+	case "slider-round-1":
+		return SliderRoundOne(), nil
+	case "slider-round-3":
+		return SliderRoundThree(), nil
+	case "slider-round-2":
+		return SliderRoundTwo(), nil
+	case "sliderhandle-1":
+		return SliderhandleOne(), nil
+	case "sliderhandle-2":
+		return SliderhandleTwo(), nil
+	case "softclip":
+		return Softclip(), nil
+	case "softclipcurve":
+		return Softclipcurve(), nil
+	case "solo":
+		return Solo(), nil
+	case "speaker":
+		return Speaker(), nil
+	case "squareswitch-off":
+		return SquareswitchOff(), nil
+	case "squareswitch-on":
+		return SquareswitchOn(), nil
+	case "stereo":
+		return Stereo(), nil
+	case "stop":
+		return Stop(), nil
+	case "thunderbolt":
+		return Thunderbolt(), nil
+	case "timeselect":
+		return Timeselect(), nil
+	case "undo":
+		return Undo(), nil
+	case "unlock":
+		return Unlock(), nil
+	case "usb":
+		return Usb(), nil
+	case "v-expand":
+		return VExpand(), nil
+	case "vroundswitch-off":
+		return VroundswitchOff(), nil
+	case "vroundswitch-on":
+		return VroundswitchOn(), nil
+	case "vsquareswitch-off":
+		return VsquareswitchOff(), nil
+	case "vsquareswitch-on":
+		return VsquareswitchOn(), nil
+	case "waveform":
+		return Waveform(), nil
+	case "xlrplug":
+		return Xlrplug(), nil
+	case "zoomin":
+		return Zoomin(), nil
+	case "zoomout":
+		return Zoomout(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in fad icon set", name)
+	}
 }

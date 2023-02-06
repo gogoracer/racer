@@ -1,6 +1,9 @@
 package quill
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	activityInnerSVG         = `<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 16h6l4-11l6 22l4-11h6"/>`
@@ -1825,4 +1828,291 @@ func WarningAlt(children ...any) *engine.HTMLElement {
 		warningAltInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "activity":
+		return Activity(), nil
+	case "add":
+		return Add(), nil
+	case "alarm":
+		return Alarm(), nil
+	case "alt":
+		return Alt(), nil
+	case "arrow-down":
+		return ArrowDown(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrow-up":
+		return ArrowUp(), nil
+	case "at":
+		return At(), nil
+	case "attachment":
+		return Attachment(), nil
+	case "breather":
+		return Breather(), nil
+	case "broadcast":
+		return Broadcast(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "calendar-add":
+		return CalendarAdd(), nil
+	case "calendar-more":
+		return CalendarMore(), nil
+	case "calendar-someday":
+		return CalendarSomeday(), nil
+	case "catchup":
+		return Catchup(), nil
+	case "chat":
+		return Chat(), nil
+	case "checkmark":
+		return Checkmark(), nil
+	case "checkmark-double":
+		return CheckmarkDouble(), nil
+	case "checkmark-todo":
+		return CheckmarkTodo(), nil
+	case "chevron-down":
+		return ChevronDown(), nil
+	case "chevron-left":
+		return ChevronLeft(), nil
+	case "chevron-right":
+		return ChevronRight(), nil
+	case "chevron-up":
+		return ChevronUp(), nil
+	case "clock":
+		return Clock(), nil
+	case "cloudia":
+		return Cloudia(), nil
+	case "cog":
+		return Cog(), nil
+	case "cog-alt":
+		return CogAlt(), nil
+	case "collapse":
+		return Collapse(), nil
+	case "command":
+		return Command(), nil
+	case "compose":
+		return Compose(), nil
+	case "creditcard":
+		return Creditcard(), nil
+	case "desktop":
+		return Desktop(), nil
+	case "discard":
+		return Discard(), nil
+	case "download":
+		return Download(), nil
+	case "earth":
+		return Earth(), nil
+	case "escape":
+		return Escape(), nil
+	case "expand":
+		return Expand(), nil
+	case "eye":
+		return Eye(), nil
+	case "eye-closed":
+		return EyeClosed(), nil
+	case "filter":
+		return Filter(), nil
+	case "focus":
+		return Focus(), nil
+	case "folder":
+		return Folder(), nil
+	case "folder-add":
+		return FolderAdd(), nil
+	case "folder-archive":
+		return FolderArchive(), nil
+	case "folder-download":
+		return FolderDownload(), nil
+	case "folder-drafts":
+		return FolderDrafts(), nil
+	case "folder-list":
+		return FolderList(), nil
+	case "folder-open":
+		return FolderOpen(), nil
+	case "folder-put":
+		return FolderPut(), nil
+	case "folder-spam":
+		return FolderSpam(), nil
+	case "folder-todo":
+		return FolderTodo(), nil
+	case "folder-trash":
+		return FolderTrash(), nil
+	case "forcebatch":
+		return Forcebatch(), nil
+	case "formatting":
+		return Formatting(), nil
+	case "forward":
+		return Forward(), nil
+	case "fullscreen":
+		return Fullscreen(), nil
+	case "gift":
+		return Gift(), nil
+	case "hamburger":
+		return Hamburger(), nil
+	case "hamburger-sidebar":
+		return HamburgerSidebar(), nil
+	case "inbox":
+		return Inbox(), nil
+	case "inbox-add":
+		return InboxAdd(), nil
+	case "inbox-double":
+		return InboxDouble(), nil
+	case "inbox-list":
+		return InboxList(), nil
+	case "inbox-newsletter":
+		return InboxNewsletter(), nil
+	case "info":
+		return Info(), nil
+	case "inline-down":
+		return InlineDown(), nil
+	case "inline-left":
+		return InlineLeft(), nil
+	case "inline-right":
+		return InlineRight(), nil
+	case "inline-up":
+		return InlineUp(), nil
+	case "jump":
+		return Jump(), nil
+	case "jump-alt":
+		return JumpAlt(), nil
+	case "label":
+		return Label(), nil
+	case "label-mini":
+		return LabelMini(), nil
+	case "link":
+		return Link(), nil
+	case "link-out":
+		return LinkOut(), nil
+	case "list":
+		return List(), nil
+	case "loading-spin":
+		return LoadingSpin(), nil
+	case "lock":
+		return Lock(), nil
+	case "lock-window":
+		return LockWindow(), nil
+	case "mail":
+		return Mail(), nil
+	case "mail-list":
+		return MailList(), nil
+	case "mail-open":
+		return MailOpen(), nil
+	case "mail-plus":
+		return MailPlus(), nil
+	case "mail-subbed":
+		return MailSubbed(), nil
+	case "mail-unsub":
+		return MailUnsub(), nil
+	case "markdown":
+		return Markdown(), nil
+	case "meatballs-h":
+		return MeatballsH(), nil
+	case "meatballs-v":
+		return MeatballsV(), nil
+	case "moon":
+		return Moon(), nil
+	case "mute":
+		return Mute(), nil
+	case "notifications":
+		return Notifications(), nil
+	case "nuclear":
+		return Nuclear(), nil
+	case "off":
+		return Off(), nil
+	case "outbox":
+		return Outbox(), nil
+	case "paper":
+		return Paper(), nil
+	case "pause":
+		return Pause(), nil
+	case "phone":
+		return Phone(), nil
+	case "pin":
+		return Pin(), nil
+	case "play":
+		return Play(), nil
+	case "print-alt":
+		return PrintAlt(), nil
+	case "printer":
+		return Printer(), nil
+	case "queue":
+		return Queue(), nil
+	case "remind":
+		return Remind(), nil
+	case "reply":
+		return Reply(), nil
+	case "replyall":
+		return Replyall(), nil
+	case "search":
+		return Search(), nil
+	case "search-alt":
+		return SearchAlt(), nil
+	case "send":
+		return Send(), nil
+	case "send-cancelled":
+		return SendCancelled(), nil
+	case "send-later":
+		return SendLater(), nil
+	case "send-stop":
+		return SendStop(), nil
+	case "share":
+		return Share(), nil
+	case "sign":
+		return Sign(), nil
+	case "signature":
+		return Signature(), nil
+	case "skip":
+		return Skip(), nil
+	case "snooze-month":
+		return SnoozeMonth(), nil
+	case "snooze-tomorrow":
+		return SnoozeTomorrow(), nil
+	case "snooze-week":
+		return SnoozeWeek(), nil
+	case "snooze-weekend":
+		return SnoozeWeekend(), nil
+	case "sort":
+		return Sort(), nil
+	case "sort-alt":
+		return SortAlt(), nil
+	case "sound":
+		return Sound(), nil
+	case "stack":
+		return Stack(), nil
+	case "stack-alt":
+		return StackAlt(), nil
+	case "star":
+		return Star(), nil
+	case "stopwatch":
+		return Stopwatch(), nil
+	case "sun":
+		return Sun(), nil
+	case "text-center":
+		return TextCenter(), nil
+	case "text-justify":
+		return TextJustify(), nil
+	case "text-left":
+		return TextLeft(), nil
+	case "text-right":
+		return TextRight(), nil
+	case "todo":
+		return Todo(), nil
+	case "userhappy":
+		return Userhappy(), nil
+	case "userneutral":
+		return Userneutral(), nil
+	case "usersad":
+		return Usersad(), nil
+	case "vip":
+		return Vip(), nil
+	case "warning":
+		return Warning(), nil
+	case "warning-alt":
+		return WarningAlt(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in quill icon set", name)
+	}
 }

@@ -1,6 +1,9 @@
 package svg_spinners
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	barsFadeInnerSVG                    = `<rect width="6" height="14" x="1" y="4" fill="currentColor"><animate id="svgSpinnersBarsFade0" fill="freeze" attributeName="opacity" begin="0;svgSpinnersBarsFade1.end-0.25s" dur="0.75s" values="1;.2"/></rect><rect width="6" height="14" x="9" y="4" fill="currentColor" opacity=".4"><animate fill="freeze" attributeName="opacity" begin="svgSpinnersBarsFade0.begin+0.15s" dur="0.75s" values="1;.2"/></rect><rect width="6" height="14" x="17" y="4" fill="currentColor" opacity=".3"><animate id="svgSpinnersBarsFade1" fill="freeze" attributeName="opacity" begin="svgSpinnersBarsFade0.begin+0.3s" dur="0.75s" values="1;.2"/></rect>`
@@ -603,4 +606,103 @@ func WindToy(children ...any) *engine.HTMLElement {
 		windToyInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "bars-fade":
+		return BarsFade(), nil
+	case "bars-rotate-fade":
+		return BarsRotateFade(), nil
+	case "bars-scale":
+		return BarsScale(), nil
+	case "bars-scale-fade":
+		return BarsScaleFade(), nil
+	case "bars-scale-middle":
+		return BarsScaleMiddle(), nil
+	case "blocks-scale":
+		return BlocksScale(), nil
+	case "blocks-shuffle-3":
+		return BlocksShuffleThree(), nil
+	case "blocks-shuffle-2":
+		return BlocksShuffleTwo(), nil
+	case "blocks-wave":
+		return BlocksWave(), nil
+	case "bouncing-ball":
+		return BouncingBall(), nil
+	case "clock":
+		return Clock(), nil
+	case "dot-revolve":
+		return DotRevolve(), nil
+	case "eclipse":
+		return Eclipse(), nil
+	case "eclipse-half":
+		return EclipseHalf(), nil
+	case "8-dots-rotate":
+		return EightDotsRotate(), nil
+	case "gooey-balls-1":
+		return GooeyBallsOne(), nil
+	case "gooey-balls-2":
+		return GooeyBallsTwo(), nil
+	case "90-ring":
+		return NinetyRing(), nil
+	case "90-ring-with-bg":
+		return NinetyRingWithBg(), nil
+	case "180-ring":
+		return OneHundredEightyRing(), nil
+	case "180-ring-with-bg":
+		return OneHundredEightyRingWithBg(), nil
+	case "pulse":
+		return Pulse(), nil
+	case "pulse-multiple":
+		return PulseMultiple(), nil
+	case "pulse-ring":
+		return PulseRing(), nil
+	case "pulse-rings-multiple":
+		return PulseRingsMultiple(), nil
+	case "pulse-rings-3":
+		return PulseRingsThree(), nil
+	case "pulse-rings-2":
+		return PulseRingsTwo(), nil
+	case "pulse-3":
+		return PulseThree(), nil
+	case "pulse-2":
+		return PulseTwo(), nil
+	case "ring-resize":
+		return RingResize(), nil
+	case "6-dots-rotate":
+		return SixDotsRotate(), nil
+	case "6-dots-scale":
+		return SixDotsScale(), nil
+	case "6-dots-scale-middle":
+		return SixDotsScaleMiddle(), nil
+	case "tadpole":
+		return Tadpole(), nil
+	case "3-dots-bounce":
+		return ThreeDotsBounce(), nil
+	case "3-dots-fade":
+		return ThreeDotsFade(), nil
+	case "3-dots-move":
+		return ThreeDotsMove(), nil
+	case "3-dots-rotate":
+		return ThreeDotsRotate(), nil
+	case "3-dots-scale":
+		return ThreeDotsScale(), nil
+	case "3-dots-scale-middle":
+		return ThreeDotsScaleMiddle(), nil
+	case "12-dots-scale-rotate":
+		return TwelveDotsScaleRotate(), nil
+	case "270-ring":
+		return TwoHundredSeventyRing(), nil
+	case "270-ring-with-bg":
+		return TwoHundredSeventyRingWithBg(), nil
+	case "wifi":
+		return Wifi(), nil
+	case "wifi-fade":
+		return WifiFade(), nil
+	case "wind-toy":
+		return WindToy(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in svg_spinners icon set", name)
+	}
 }

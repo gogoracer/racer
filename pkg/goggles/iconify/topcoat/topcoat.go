@@ -1,6 +1,9 @@
 package topcoat
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	alertInnerSVG                   = `<path fill="currentColor" d="M18.295 3.895L1.203 34.555C-.219 37.146.385 39.5 4.228 39.5H36.77c3.854 0 4.447-2.354 3.025-4.945L22.35 3.914c-.354-.691-.868-1.424-1.957-1.414c-1.16.021-1.735.703-2.098 1.395zM18.5 13.5h4v14h-4v-14zm0 17h4v4h-4v-4z"/>`
@@ -1162,4 +1165,189 @@ func Wordpress(children ...any) *engine.HTMLElement {
 		wordpressInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "alert":
+		return Alert(), nil
+	case "arrow-down":
+		return ArrowDown(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrow-up":
+		return ArrowUp(), nil
+	case "attachment":
+		return Attachment(), nil
+	case "audio":
+		return Audio(), nil
+	case "audiooff":
+		return Audiooff(), nil
+	case "back":
+		return Back(), nil
+	case "back-light":
+		return BackLight(), nil
+	case "behance":
+		return Behance(), nil
+	case "bookmark":
+		return Bookmark(), nil
+	case "brush":
+		return Brush(), nil
+	case "build":
+		return Build(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "call":
+		return Call(), nil
+	case "camera":
+		return Camera(), nil
+	case "cancel":
+		return Cancel(), nil
+	case "cart":
+		return Cart(), nil
+	case "chat":
+		return Chat(), nil
+	case "checkmark":
+		return Checkmark(), nil
+	case "circle":
+		return Circle(), nil
+	case "circle-outline":
+		return CircleOutline(), nil
+	case "cloud":
+		return Cloud(), nil
+	case "collapse":
+		return Collapse(), nil
+	case "comment":
+		return Comment(), nil
+	case "computer":
+		return Computer(), nil
+	case "delete":
+		return Delete(), nil
+	case "download":
+		return Download(), nil
+	case "dribble":
+		return Dribble(), nil
+	case "email":
+		return Email(), nil
+	case "error":
+		return Error(), nil
+	case "expand":
+		return Expand(), nil
+	case "facebook":
+		return Facebook(), nil
+	case "favorite":
+		return Favorite(), nil
+	case "feedback":
+		return Feedback(), nil
+	case "flickr":
+		return Flickr(), nil
+	case "folder":
+		return Folder(), nil
+	case "github":
+		return Github(), nil
+	case "github-text":
+		return GithubText(), nil
+	case "googleplus":
+		return Googleplus(), nil
+	case "group":
+		return Group(), nil
+	case "home":
+		return Home(), nil
+	case "image":
+		return Image(), nil
+	case "image-outline":
+		return ImageOutline(), nil
+	case "instagram":
+		return Instagram(), nil
+	case "like":
+		return Like(), nil
+	case "linkedin":
+		return Linkedin(), nil
+	case "listview":
+		return Listview(), nil
+	case "location":
+		return Location(), nil
+	case "lock":
+		return Lock(), nil
+	case "minus":
+		return Minus(), nil
+	case "next":
+		return Next(), nil
+	case "next-light":
+		return NextLight(), nil
+	case "page":
+		return Page(), nil
+	case "path":
+		return Path(), nil
+	case "pencil":
+		return Pencil(), nil
+	case "phone":
+		return Phone(), nil
+	case "picasa":
+		return Picasa(), nil
+	case "pinterest":
+		return Pinterest(), nil
+	case "plugin":
+		return Plugin(), nil
+	case "plus":
+		return Plus(), nil
+	case "preview":
+		return Preview(), nil
+	case "print":
+		return Print(), nil
+	case "question":
+		return Question(), nil
+	case "rectangle":
+		return Rectangle(), nil
+	case "rectangle-outline":
+		return RectangleOutline(), nil
+	case "refresh":
+		return Refresh(), nil
+	case "retweet":
+		return Retweet(), nil
+	case "roundedrectangle":
+		return Roundedrectangle(), nil
+	case "roundedrectangle-outline":
+		return RoundedrectangleOutline(), nil
+	case "rss":
+		return Rss(), nil
+	case "save":
+		return Save(), nil
+	case "search":
+		return Search(), nil
+	case "settings":
+		return Settings(), nil
+	case "share":
+		return Share(), nil
+	case "tablet":
+		return Tablet(), nil
+	case "text":
+		return Text(), nil
+	case "tileview":
+		return Tileview(), nil
+	case "tumblr":
+		return Tumblr(), nil
+	case "twitter":
+		return Twitter(), nil
+	case "unlock":
+		return Unlock(), nil
+	case "user":
+		return User(), nil
+	case "videocamera":
+		return Videocamera(), nil
+	case "view":
+		return View(), nil
+	case "vimeo":
+		return Vimeo(), nil
+	case "w3c":
+		return WThreeC(), nil
+	case "wifi":
+		return Wifi(), nil
+	case "wordpress":
+		return Wordpress(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in topcoat icon set", name)
+	}
 }

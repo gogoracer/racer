@@ -1,6 +1,9 @@
 package il
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	addUserInnerSVG         = `<path fill="currentColor" d="M535 518q27 13 42 34t21 44t8 43t0 31t-8 16q-14 12-34 21t-44 16t-49 11l-49 8q-56 7-118 8q-63-1-119-8q-24-3-49-8t-48-11t-44-16t-35-21q-6-5-7.5-15.5T1 639t8-43t21-44t42-34l62-28q29-13 52-28t35-35t13-48v-6q-17-14-25-33l-23-54q-18-20-27-37q-8-14-8-26t17-12q-6-38-3-68q2-25 12-46t36-21q5-19 17-34q11-13 31-24t53-10q30 0 49 13t33 30t23 33t20 23q4 2 7 5t0 8q-4 14-8 41t1 50q18 1 17 12t-10 26q-10 17-28 37q-7 18-11 31t-9 24t-10 17t-15 15v6q0 29 13 48t36 35t51 28t62 28zM663 78q11 0 11 11v23q0 12-11 12h-58v58q0 5-3 8t-9 4h-23q-5 0-8-4t-4-8v-58h-57q-12 0-12-12V89q0-11 12-11h57V20q0-5 4-9t8-3h23q12 0 12 12v58h58z"/>`
@@ -1097,4 +1100,179 @@ func Youtube(children ...any) *engine.HTMLElement {
 		youtubeInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "add-user":
+		return AddUser(), nil
+	case "arrow-down":
+		return ArrowDown(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrow-up":
+		return ArrowUp(), nil
+	case "attachment":
+		return Attachment(), nil
+	case "basket":
+		return Basket(), nil
+	case "behance":
+		return Behance(), nil
+	case "bell":
+		return Bell(), nil
+	case "book":
+		return Book(), nil
+	case "box":
+		return Box(), nil
+	case "brightness":
+		return Brightness(), nil
+	case "bucket":
+		return Bucket(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "camera":
+		return Camera(), nil
+	case "card":
+		return Card(), nil
+	case "cart":
+		return Cart(), nil
+	case "clock":
+		return Clock(), nil
+	case "cloud":
+		return Cloud(), nil
+	case "cog":
+		return Cog(), nil
+	case "comment":
+		return Comment(), nil
+	case "compass":
+		return Compass(), nil
+	case "contrast":
+		return Contrast(), nil
+	case "controls":
+		return Controls(), nil
+	case "conversation":
+		return Conversation(), nil
+	case "cup":
+		return Cup(), nil
+	case "dashboard":
+		return Dashboard(), nil
+	case "dialog":
+		return Dialog(), nil
+	case "dribbble":
+		return Dribbble(), nil
+	case "drop":
+		return Drop(), nil
+	case "dropbox":
+		return Dropbox(), nil
+	case "ellipsis":
+		return Ellipsis(), nil
+	case "email":
+		return Email(), nil
+	case "envelope":
+		return Envelope(), nil
+	case "eye":
+		return Eye(), nil
+	case "facebook":
+		return Facebook(), nil
+	case "file":
+		return File(), nil
+	case "flag":
+		return Flag(), nil
+	case "folder":
+		return Folder(), nil
+	case "github":
+		return Github(), nil
+	case "google-plus":
+		return GooglePlus(), nil
+	case "grid":
+		return Grid(), nil
+	case "heart":
+		return Heart(), nil
+	case "house":
+		return House(), nil
+	case "image":
+		return Image(), nil
+	case "inbox":
+		return Inbox(), nil
+	case "instagram":
+		return Instagram(), nil
+	case "layers":
+		return Layers(), nil
+	case "linkedin":
+		return Linkedin(), nil
+	case "location":
+		return Location(), nil
+	case "lock":
+		return Lock(), nil
+	case "market":
+		return Market(), nil
+	case "menu":
+		return Menu(), nil
+	case "mic":
+		return Mic(), nil
+	case "mobile":
+		return Mobile(), nil
+	case "money":
+		return Money(), nil
+	case "moon":
+		return Moon(), nil
+	case "music":
+		return Music(), nil
+	case "notification":
+		return Notification(), nil
+	case "paypal":
+		return Paypal(), nil
+	case "pencil":
+		return Pencil(), nil
+	case "pie":
+		return Pie(), nil
+	case "pin":
+		return Pin(), nil
+	case "refresh":
+		return Refresh(), nil
+	case "ribbon":
+		return Ribbon(), nil
+	case "search":
+		return Search(), nil
+	case "select":
+		return Select(), nil
+	case "small-arrow-down":
+		return SmallArrowDown(), nil
+	case "small-arrow-left":
+		return SmallArrowLeft(), nil
+	case "small-arrow-right":
+		return SmallArrowRight(), nil
+	case "small-arrow-up":
+		return SmallArrowUp(), nil
+	case "tablet":
+		return Tablet(), nil
+	case "tag":
+		return Tag(), nil
+	case "thumbs":
+		return Thumbs(), nil
+	case "triangle-down":
+		return TriangleDown(), nil
+	case "triangle-up":
+		return TriangleUp(), nil
+	case "twitter":
+		return Twitter(), nil
+	case "unlock":
+		return Unlock(), nil
+	case "url":
+		return Url(), nil
+	case "user":
+		return User(), nil
+	case "users":
+		return Users(), nil
+	case "videocamera":
+		return Videocamera(), nil
+	case "world":
+		return World(), nil
+	case "youtube":
+		return Youtube(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in il icon set", name)
+	}
 }

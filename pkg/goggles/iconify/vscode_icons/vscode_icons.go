@@ -1,6 +1,9 @@
 package vscode_icons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	defaultFileInnerSVG                      = `<path fill="#c5c5c5" d="M20.414 2H5v28h22V8.586ZM7 28V4h12v6h6v18Z"/>`
@@ -15579,4 +15582,2407 @@ func FolderTypeYarnOpened(children ...any) *engine.HTMLElement {
 		folderTypeYarnOpenedInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "default-file":
+		return DefaultFile(), nil
+	case "default-folder":
+		return DefaultFolder(), nil
+	case "default-folder-opened":
+		return DefaultFolderOpened(), nil
+	case "default-root-folder":
+		return DefaultRootFolder(), nil
+	case "default-root-folder-opened":
+		return DefaultRootFolderOpened(), nil
+	case "file-type-access":
+		return FileTypeAccess(), nil
+	case "file-type-access2":
+		return FileTypeAccessTwo(), nil
+	case "file-type-actionscript":
+		return FileTypeActionscript(), nil
+	case "file-type-actionscript2":
+		return FileTypeActionscriptTwo(), nil
+	case "file-type-ada":
+		return FileTypeAda(), nil
+	case "file-type-advpl":
+		return FileTypeAdvpl(), nil
+	case "file-type-affinitydesigner":
+		return FileTypeAffinitydesigner(), nil
+	case "file-type-affinityphoto":
+		return FileTypeAffinityphoto(), nil
+	case "file-type-affinitypublisher":
+		return FileTypeAffinitypublisher(), nil
+	case "file-type-ai":
+		return FileTypeAi(), nil
+	case "file-type-ai2":
+		return FileTypeAiTwo(), nil
+	case "file-type-al":
+		return FileTypeAl(), nil
+	case "file-type-al-dal":
+		return FileTypeAlDal(), nil
+	case "file-type-allcontributors":
+		return FileTypeAllcontributors(), nil
+	case "file-type-angular":
+		return FileTypeAngular(), nil
+	case "file-type-ansible":
+		return FileTypeAnsible(), nil
+	case "file-type-antlr":
+		return FileTypeAntlr(), nil
+	case "file-type-anyscript":
+		return FileTypeAnyscript(), nil
+	case "file-type-apache":
+		return FileTypeApache(), nil
+	case "file-type-apex":
+		return FileTypeApex(), nil
+	case "file-type-api-extractor":
+		return FileTypeApiExtractor(), nil
+	case "file-type-apib":
+		return FileTypeApib(), nil
+	case "file-type-apib2":
+		return FileTypeApibTwo(), nil
+	case "file-type-apl":
+		return FileTypeApl(), nil
+	case "file-type-applescript":
+		return FileTypeApplescript(), nil
+	case "file-type-appscript":
+		return FileTypeAppscript(), nil
+	case "file-type-appsemble":
+		return FileTypeAppsemble(), nil
+	case "file-type-appveyor":
+		return FileTypeAppveyor(), nil
+	case "file-type-arduino":
+		return FileTypeArduino(), nil
+	case "file-type-asciidoc":
+		return FileTypeAsciidoc(), nil
+	case "file-type-asp":
+		return FileTypeAsp(), nil
+	case "file-type-aspx":
+		return FileTypeAspx(), nil
+	case "file-type-assembly":
+		return FileTypeAssembly(), nil
+	case "file-type-astro":
+		return FileTypeAstro(), nil
+	case "file-type-astroconfig":
+		return FileTypeAstroconfig(), nil
+	case "file-type-ats":
+		return FileTypeAts(), nil
+	case "file-type-audio":
+		return FileTypeAudio(), nil
+	case "file-type-aurelia":
+		return FileTypeAurelia(), nil
+	case "file-type-autohotkey":
+		return FileTypeAutohotkey(), nil
+	case "file-type-autoit":
+		return FileTypeAutoit(), nil
+	case "file-type-avif":
+		return FileTypeAvif(), nil
+	case "file-type-avro":
+		return FileTypeAvro(), nil
+	case "file-type-awk":
+		return FileTypeAwk(), nil
+	case "file-type-aws":
+		return FileTypeAws(), nil
+	case "file-type-azure":
+		return FileTypeAzure(), nil
+	case "file-type-azurepipelines":
+		return FileTypeAzurepipelines(), nil
+	case "file-type-babel":
+		return FileTypeBabel(), nil
+	case "file-type-babel2":
+		return FileTypeBabelTwo(), nil
+	case "file-type-ballerina":
+		return FileTypeBallerina(), nil
+	case "file-type-bat":
+		return FileTypeBat(), nil
+	case "file-type-bats":
+		return FileTypeBats(), nil
+	case "file-type-bazaar":
+		return FileTypeBazaar(), nil
+	case "file-type-bazel":
+		return FileTypeBazel(), nil
+	case "file-type-bazel-ignore":
+		return FileTypeBazelIgnore(), nil
+	case "file-type-bazel-version":
+		return FileTypeBazelVersion(), nil
+	case "file-type-befunge":
+		return FileTypeBefunge(), nil
+	case "file-type-bicep":
+		return FileTypeBicep(), nil
+	case "file-type-biml":
+		return FileTypeBiml(), nil
+	case "file-type-binary":
+		return FileTypeBinary(), nil
+	case "file-type-bitbucketpipeline":
+		return FileTypeBitbucketpipeline(), nil
+	case "file-type-bithound":
+		return FileTypeBithound(), nil
+	case "file-type-blade":
+		return FileTypeBlade(), nil
+	case "file-type-blitzbasic":
+		return FileTypeBlitzbasic(), nil
+	case "file-type-bolt":
+		return FileTypeBolt(), nil
+	case "file-type-bosque":
+		return FileTypeBosque(), nil
+	case "file-type-bower":
+		return FileTypeBower(), nil
+	case "file-type-bower2":
+		return FileTypeBowerTwo(), nil
+	case "file-type-browserslist":
+		return FileTypeBrowserslist(), nil
+	case "file-type-buckbuild":
+		return FileTypeBuckbuild(), nil
+	case "file-type-bun":
+		return FileTypeBun(), nil
+	case "file-type-bundler":
+		return FileTypeBundler(), nil
+	case "file-type-bunfig":
+		return FileTypeBunfig(), nil
+	case "file-type-c":
+		return FileTypeC(), nil
+	case "file-type-c-al":
+		return FileTypeCAl(), nil
+	case "file-type-c3":
+		return FileTypeCThree(), nil
+	case "file-type-c2":
+		return FileTypeCTwo(), nil
+	case "file-type-cabal":
+		return FileTypeCabal(), nil
+	case "file-type-caddy":
+		return FileTypeCaddy(), nil
+	case "file-type-cake":
+		return FileTypeCake(), nil
+	case "file-type-cakephp":
+		return FileTypeCakephp(), nil
+	case "file-type-capacitor":
+		return FileTypeCapacitor(), nil
+	case "file-type-cargo":
+		return FileTypeCargo(), nil
+	case "file-type-casc":
+		return FileTypeCasc(), nil
+	case "file-type-cddl":
+		return FileTypeCddl(), nil
+	case "file-type-cert":
+		return FileTypeCert(), nil
+	case "file-type-ceylon":
+		return FileTypeCeylon(), nil
+	case "file-type-cf":
+		return FileTypeCf(), nil
+	case "file-type-cf2":
+		return FileTypeCfTwo(), nil
+	case "file-type-cfc":
+		return FileTypeCfc(), nil
+	case "file-type-cfc2":
+		return FileTypeCfcTwo(), nil
+	case "file-type-cfm":
+		return FileTypeCfm(), nil
+	case "file-type-cfm2":
+		return FileTypeCfmTwo(), nil
+	case "file-type-cheader":
+		return FileTypeCheader(), nil
+	case "file-type-chef":
+		return FileTypeChef(), nil
+	case "file-type-chef-cookbook":
+		return FileTypeChefCookbook(), nil
+	case "file-type-circleci":
+		return FileTypeCircleci(), nil
+	case "file-type-class":
+		return FileTypeClass(), nil
+	case "file-type-clojure":
+		return FileTypeClojure(), nil
+	case "file-type-clojurescript":
+		return FileTypeClojurescript(), nil
+	case "file-type-cloudfoundry":
+		return FileTypeCloudfoundry(), nil
+	case "file-type-cmake":
+		return FileTypeCmake(), nil
+	case "file-type-cobol":
+		return FileTypeCobol(), nil
+	case "file-type-codacy":
+		return FileTypeCodacy(), nil
+	case "file-type-codeclimate":
+		return FileTypeCodeclimate(), nil
+	case "file-type-codecov":
+		return FileTypeCodecov(), nil
+	case "file-type-codekit":
+		return FileTypeCodekit(), nil
+	case "file-type-codeowners":
+		return FileTypeCodeowners(), nil
+	case "file-type-codeql":
+		return FileTypeCodeql(), nil
+	case "file-type-coffeelint":
+		return FileTypeCoffeelint(), nil
+	case "file-type-coffeescript":
+		return FileTypeCoffeescript(), nil
+	case "file-type-commitizen":
+		return FileTypeCommitizen(), nil
+	case "file-type-commitlint":
+		return FileTypeCommitlint(), nil
+	case "file-type-compass":
+		return FileTypeCompass(), nil
+	case "file-type-composer":
+		return FileTypeComposer(), nil
+	case "file-type-conan":
+		return FileTypeConan(), nil
+	case "file-type-conda":
+		return FileTypeConda(), nil
+	case "file-type-config":
+		return FileTypeConfig(), nil
+	case "file-type-confluence":
+		return FileTypeConfluence(), nil
+	case "file-type-coveralls":
+		return FileTypeCoveralls(), nil
+	case "file-type-cpp":
+		return FileTypeCpp(), nil
+	case "file-type-cpp3":
+		return FileTypeCppThree(), nil
+	case "file-type-cpp2":
+		return FileTypeCppTwo(), nil
+	case "file-type-cppheader":
+		return FileTypeCppheader(), nil
+	case "file-type-crowdin":
+		return FileTypeCrowdin(), nil
+	case "file-type-crystal":
+		return FileTypeCrystal(), nil
+	case "file-type-csharp":
+		return FileTypeCsharp(), nil
+	case "file-type-csharp2":
+		return FileTypeCsharpTwo(), nil
+	case "file-type-cspell":
+		return FileTypeCspell(), nil
+	case "file-type-csproj":
+		return FileTypeCsproj(), nil
+	case "file-type-css":
+		return FileTypeCss(), nil
+	case "file-type-csscomb":
+		return FileTypeCsscomb(), nil
+	case "file-type-csslint":
+		return FileTypeCsslint(), nil
+	case "file-type-cssmap":
+		return FileTypeCssmap(), nil
+	case "file-type-cucumber":
+		return FileTypeCucumber(), nil
+	case "file-type-cuda":
+		return FileTypeCuda(), nil
+	case "file-type-cvs":
+		return FileTypeCvs(), nil
+	case "file-type-cypress":
+		return FileTypeCypress(), nil
+	case "file-type-cypress-spec":
+		return FileTypeCypressSpec(), nil
+	case "file-type-cython":
+		return FileTypeCython(), nil
+	case "file-type-dal":
+		return FileTypeDal(), nil
+	case "file-type-darcs":
+		return FileTypeDarcs(), nil
+	case "file-type-dartlang":
+		return FileTypeDartlang(), nil
+	case "file-type-dartlang-generated":
+		return FileTypeDartlangGenerated(), nil
+	case "file-type-dartlang-ignore":
+		return FileTypeDartlangIgnore(), nil
+	case "file-type-datadog":
+		return FileTypeDatadog(), nil
+	case "file-type-db":
+		return FileTypeDb(), nil
+	case "file-type-delphi":
+		return FileTypeDelphi(), nil
+	case "file-type-deno":
+		return FileTypeDeno(), nil
+	case "file-type-dependabot":
+		return FileTypeDependabot(), nil
+	case "file-type-dependencies":
+		return FileTypeDependencies(), nil
+	case "file-type-devcontainer":
+		return FileTypeDevcontainer(), nil
+	case "file-type-dhall":
+		return FileTypeDhall(), nil
+	case "file-type-diff":
+		return FileTypeDiff(), nil
+	case "file-type-django":
+		return FileTypeDjango(), nil
+	case "file-type-dlang":
+		return FileTypeDlang(), nil
+	case "file-type-docker":
+		return FileTypeDocker(), nil
+	case "file-type-docker2":
+		return FileTypeDockerTwo(), nil
+	case "file-type-dockertest":
+		return FileTypeDockertest(), nil
+	case "file-type-dockertest2":
+		return FileTypeDockertestTwo(), nil
+	case "file-type-docpad":
+		return FileTypeDocpad(), nil
+	case "file-type-docz":
+		return FileTypeDocz(), nil
+	case "file-type-dojo":
+		return FileTypeDojo(), nil
+	case "file-type-doppler":
+		return FileTypeDoppler(), nil
+	case "file-type-dotjs":
+		return FileTypeDotjs(), nil
+	case "file-type-doxygen":
+		return FileTypeDoxygen(), nil
+	case "file-type-drawio":
+		return FileTypeDrawio(), nil
+	case "file-type-drone":
+		return FileTypeDrone(), nil
+	case "file-type-drools":
+		return FileTypeDrools(), nil
+	case "file-type-dustjs":
+		return FileTypeDustjs(), nil
+	case "file-type-dvc":
+		return FileTypeDvc(), nil
+	case "file-type-dylan":
+		return FileTypeDylan(), nil
+	case "file-type-earthly":
+		return FileTypeEarthly(), nil
+	case "file-type-eas-metadata":
+		return FileTypeEasMetadata(), nil
+	case "file-type-edge":
+		return FileTypeEdge(), nil
+	case "file-type-edge2":
+		return FileTypeEdgeTwo(), nil
+	case "file-type-editorconfig":
+		return FileTypeEditorconfig(), nil
+	case "file-type-eex":
+		return FileTypeEex(), nil
+	case "file-type-ejs":
+		return FileTypeEjs(), nil
+	case "file-type-elastic":
+		return FileTypeElastic(), nil
+	case "file-type-elasticbeanstalk":
+		return FileTypeElasticbeanstalk(), nil
+	case "file-type-eleventy":
+		return FileTypeEleventy(), nil
+	case "file-type-eleventy2":
+		return FileTypeEleventyTwo(), nil
+	case "file-type-elixir":
+		return FileTypeElixir(), nil
+	case "file-type-elm":
+		return FileTypeElm(), nil
+	case "file-type-elm2":
+		return FileTypeElmTwo(), nil
+	case "file-type-emacs":
+		return FileTypeEmacs(), nil
+	case "file-type-ember":
+		return FileTypeEmber(), nil
+	case "file-type-ensime":
+		return FileTypeEnsime(), nil
+	case "file-type-eps":
+		return FileTypeEps(), nil
+	case "file-type-erb":
+		return FileTypeErb(), nil
+	case "file-type-erlang":
+		return FileTypeErlang(), nil
+	case "file-type-erlang2":
+		return FileTypeErlangTwo(), nil
+	case "file-type-esbuild":
+		return FileTypeEsbuild(), nil
+	case "file-type-eslint":
+		return FileTypeEslint(), nil
+	case "file-type-eslint2":
+		return FileTypeEslintTwo(), nil
+	case "file-type-esphome":
+		return FileTypeEsphome(), nil
+	case "file-type-excel":
+		return FileTypeExcel(), nil
+	case "file-type-excel2":
+		return FileTypeExcelTwo(), nil
+	case "file-type-expo":
+		return FileTypeExpo(), nil
+	case "file-type-falcon":
+		return FileTypeFalcon(), nil
+	case "file-type-fantasticon":
+		return FileTypeFantasticon(), nil
+	case "file-type-fauna":
+		return FileTypeFauna(), nil
+	case "file-type-favicon":
+		return FileTypeFavicon(), nil
+	case "file-type-fbx":
+		return FileTypeFbx(), nil
+	case "file-type-firebase":
+		return FileTypeFirebase(), nil
+	case "file-type-firebasehosting":
+		return FileTypeFirebasehosting(), nil
+	case "file-type-firestore":
+		return FileTypeFirestore(), nil
+	case "file-type-fitbit":
+		return FileTypeFitbit(), nil
+	case "file-type-fla":
+		return FileTypeFla(), nil
+	case "file-type-flareact":
+		return FileTypeFlareact(), nil
+	case "file-type-flash":
+		return FileTypeFlash(), nil
+	case "file-type-floobits":
+		return FileTypeFloobits(), nil
+	case "file-type-flow":
+		return FileTypeFlow(), nil
+	case "file-type-flutter":
+		return FileTypeFlutter(), nil
+	case "file-type-flutter-package":
+		return FileTypeFlutterPackage(), nil
+	case "file-type-font":
+		return FileTypeFont(), nil
+	case "file-type-formkit":
+		return FileTypeFormkit(), nil
+	case "file-type-fortran":
+		return FileTypeFortran(), nil
+	case "file-type-fossa":
+		return FileTypeFossa(), nil
+	case "file-type-fossil":
+		return FileTypeFossil(), nil
+	case "file-type-freemarker":
+		return FileTypeFreemarker(), nil
+	case "file-type-fsharp":
+		return FileTypeFsharp(), nil
+	case "file-type-fsharp2":
+		return FileTypeFsharpTwo(), nil
+	case "file-type-fsproj":
+		return FileTypeFsproj(), nil
+	case "file-type-fthtml":
+		return FileTypeFthtml(), nil
+	case "file-type-funding":
+		return FileTypeFunding(), nil
+	case "file-type-fusebox":
+		return FileTypeFusebox(), nil
+	case "file-type-galen":
+		return FileTypeGalen(), nil
+	case "file-type-galen2":
+		return FileTypeGalenTwo(), nil
+	case "file-type-gamemaker":
+		return FileTypeGamemaker(), nil
+	case "file-type-gamemaker81":
+		return FileTypeGamemakerEightyOne(), nil
+	case "file-type-gamemaker2":
+		return FileTypeGamemakerTwo(), nil
+	case "file-type-gatsby":
+		return FileTypeGatsby(), nil
+	case "file-type-gcloud":
+		return FileTypeGcloud(), nil
+	case "file-type-gcode":
+		return FileTypeGcode(), nil
+	case "file-type-gdscript":
+		return FileTypeGdscript(), nil
+	case "file-type-genstat":
+		return FileTypeGenstat(), nil
+	case "file-type-git":
+		return FileTypeGit(), nil
+	case "file-type-git2":
+		return FileTypeGitTwo(), nil
+	case "file-type-gitlab":
+		return FileTypeGitlab(), nil
+	case "file-type-gitpod":
+		return FileTypeGitpod(), nil
+	case "file-type-glide":
+		return FileTypeGlide(), nil
+	case "file-type-glitter":
+		return FileTypeGlitter(), nil
+	case "file-type-glsl":
+		return FileTypeGlsl(), nil
+	case "file-type-glyphs":
+		return FileTypeGlyphs(), nil
+	case "file-type-gnu":
+		return FileTypeGnu(), nil
+	case "file-type-gnuplot":
+		return FileTypeGnuplot(), nil
+	case "file-type-go":
+		return FileTypeGo(), nil
+	case "file-type-go-aqua":
+		return FileTypeGoAqua(), nil
+	case "file-type-go-black":
+		return FileTypeGoBlack(), nil
+	case "file-type-go-fuchsia":
+		return FileTypeGoFuchsia(), nil
+	case "file-type-go-gopher":
+		return FileTypeGoGopher(), nil
+	case "file-type-go-lightblue":
+		return FileTypeGoLightblue(), nil
+	case "file-type-go-package":
+		return FileTypeGoPackage(), nil
+	case "file-type-go-white":
+		return FileTypeGoWhite(), nil
+	case "file-type-go-work":
+		return FileTypeGoWork(), nil
+	case "file-type-go-yellow":
+		return FileTypeGoYellow(), nil
+	case "file-type-goctl":
+		return FileTypeGoctl(), nil
+	case "file-type-godot":
+		return FileTypeGodot(), nil
+	case "file-type-gradle":
+		return FileTypeGradle(), nil
+	case "file-type-gradle2":
+		return FileTypeGradleTwo(), nil
+	case "file-type-graphql":
+		return FileTypeGraphql(), nil
+	case "file-type-graphql-config":
+		return FileTypeGraphqlConfig(), nil
+	case "file-type-graphviz":
+		return FileTypeGraphviz(), nil
+	case "file-type-greenkeeper":
+		return FileTypeGreenkeeper(), nil
+	case "file-type-gridsome":
+		return FileTypeGridsome(), nil
+	case "file-type-groovy":
+		return FileTypeGroovy(), nil
+	case "file-type-groovy2":
+		return FileTypeGroovyTwo(), nil
+	case "file-type-grunt":
+		return FileTypeGrunt(), nil
+	case "file-type-gulp":
+		return FileTypeGulp(), nil
+	case "file-type-haml":
+		return FileTypeHaml(), nil
+	case "file-type-handlebars":
+		return FileTypeHandlebars(), nil
+	case "file-type-handlebars2":
+		return FileTypeHandlebarsTwo(), nil
+	case "file-type-harbour":
+		return FileTypeHarbour(), nil
+	case "file-type-hardhat":
+		return FileTypeHardhat(), nil
+	case "file-type-hashicorp":
+		return FileTypeHashicorp(), nil
+	case "file-type-haskell":
+		return FileTypeHaskell(), nil
+	case "file-type-haskell2":
+		return FileTypeHaskellTwo(), nil
+	case "file-type-haxe":
+		return FileTypeHaxe(), nil
+	case "file-type-haxecheckstyle":
+		return FileTypeHaxecheckstyle(), nil
+	case "file-type-haxedevelop":
+		return FileTypeHaxedevelop(), nil
+	case "file-type-helix":
+		return FileTypeHelix(), nil
+	case "file-type-helm":
+		return FileTypeHelm(), nil
+	case "file-type-hjson":
+		return FileTypeHjson(), nil
+	case "file-type-hlsl":
+		return FileTypeHlsl(), nil
+	case "file-type-homeassistant":
+		return FileTypeHomeassistant(), nil
+	case "file-type-horusec":
+		return FileTypeHorusec(), nil
+	case "file-type-host":
+		return FileTypeHost(), nil
+	case "file-type-html":
+		return FileTypeHtml(), nil
+	case "file-type-htmlhint":
+		return FileTypeHtmlhint(), nil
+	case "file-type-http":
+		return FileTypeHttp(), nil
+	case "file-type-hunspell":
+		return FileTypeHunspell(), nil
+	case "file-type-husky":
+		return FileTypeHusky(), nil
+	case "file-type-hy":
+		return FileTypeHy(), nil
+	case "file-type-hygen":
+		return FileTypeHygen(), nil
+	case "file-type-hypr":
+		return FileTypeHypr(), nil
+	case "file-type-icl":
+		return FileTypeIcl(), nil
+	case "file-type-idris":
+		return FileTypeIdris(), nil
+	case "file-type-idrisbin":
+		return FileTypeIdrisbin(), nil
+	case "file-type-idrispkg":
+		return FileTypeIdrispkg(), nil
+	case "file-type-image":
+		return FileTypeImage(), nil
+	case "file-type-imba":
+		return FileTypeImba(), nil
+	case "file-type-inc":
+		return FileTypeInc(), nil
+	case "file-type-infopath":
+		return FileTypeInfopath(), nil
+	case "file-type-informix":
+		return FileTypeInformix(), nil
+	case "file-type-ini":
+		return FileTypeIni(), nil
+	case "file-type-ink":
+		return FileTypeInk(), nil
+	case "file-type-innosetup":
+		return FileTypeInnosetup(), nil
+	case "file-type-io":
+		return FileTypeIo(), nil
+	case "file-type-iodine":
+		return FileTypeIodine(), nil
+	case "file-type-ionic":
+		return FileTypeIonic(), nil
+	case "file-type-jake":
+		return FileTypeJake(), nil
+	case "file-type-janet":
+		return FileTypeJanet(), nil
+	case "file-type-jar":
+		return FileTypeJar(), nil
+	case "file-type-jasmine":
+		return FileTypeJasmine(), nil
+	case "file-type-java":
+		return FileTypeJava(), nil
+	case "file-type-jbuilder":
+		return FileTypeJbuilder(), nil
+	case "file-type-jekyll":
+		return FileTypeJekyll(), nil
+	case "file-type-jenkins":
+		return FileTypeJenkins(), nil
+	case "file-type-jest":
+		return FileTypeJest(), nil
+	case "file-type-jest-snapshot":
+		return FileTypeJestSnapshot(), nil
+	case "file-type-jinja":
+		return FileTypeJinja(), nil
+	case "file-type-jpm":
+		return FileTypeJpm(), nil
+	case "file-type-js":
+		return FileTypeJs(), nil
+	case "file-type-js-official":
+		return FileTypeJsOfficial(), nil
+	case "file-type-jsbeautify":
+		return FileTypeJsbeautify(), nil
+	case "file-type-jsconfig":
+		return FileTypeJsconfig(), nil
+	case "file-type-jscpd":
+		return FileTypeJscpd(), nil
+	case "file-type-jshint":
+		return FileTypeJshint(), nil
+	case "file-type-jsmap":
+		return FileTypeJsmap(), nil
+	case "file-type-json":
+		return FileTypeJson(), nil
+	case "file-type-json5":
+		return FileTypeJsonFive(), nil
+	case "file-type-json-official":
+		return FileTypeJsonOfficial(), nil
+	case "file-type-json2":
+		return FileTypeJsonTwo(), nil
+	case "file-type-jsonld":
+		return FileTypeJsonld(), nil
+	case "file-type-jsonnet":
+		return FileTypeJsonnet(), nil
+	case "file-type-jsp":
+		return FileTypeJsp(), nil
+	case "file-type-jss":
+		return FileTypeJss(), nil
+	case "file-type-julia":
+		return FileTypeJulia(), nil
+	case "file-type-julia2":
+		return FileTypeJuliaTwo(), nil
+	case "file-type-jupyter":
+		return FileTypeJupyter(), nil
+	case "file-type-k":
+		return FileTypeK(), nil
+	case "file-type-karma":
+		return FileTypeKarma(), nil
+	case "file-type-key":
+		return FileTypeKey(), nil
+	case "file-type-kitchenci":
+		return FileTypeKitchenci(), nil
+	case "file-type-kite":
+		return FileTypeKite(), nil
+	case "file-type-kivy":
+		return FileTypeKivy(), nil
+	case "file-type-kos":
+		return FileTypeKos(), nil
+	case "file-type-kotlin":
+		return FileTypeKotlin(), nil
+	case "file-type-kusto":
+		return FileTypeKusto(), nil
+	case "file-type-latino":
+		return FileTypeLatino(), nil
+	case "file-type-layout":
+		return FileTypeLayout(), nil
+	case "file-type-lerna":
+		return FileTypeLerna(), nil
+	case "file-type-less":
+		return FileTypeLess(), nil
+	case "file-type-lex":
+		return FileTypeLex(), nil
+	case "file-type-license":
+		return FileTypeLicense(), nil
+	case "file-type-licensebat":
+		return FileTypeLicensebat(), nil
+	case "file-type-light-actionscript2":
+		return FileTypeLightActionscriptTwo(), nil
+	case "file-type-light-ada":
+		return FileTypeLightAda(), nil
+	case "file-type-light-apl":
+		return FileTypeLightApl(), nil
+	case "file-type-light-babel":
+		return FileTypeLightBabel(), nil
+	case "file-type-light-babel2":
+		return FileTypeLightBabelTwo(), nil
+	case "file-type-light-cabal":
+		return FileTypeLightCabal(), nil
+	case "file-type-light-circleci":
+		return FileTypeLightCircleci(), nil
+	case "file-type-light-cloudfoundry":
+		return FileTypeLightCloudfoundry(), nil
+	case "file-type-light-codacy":
+		return FileTypeLightCodacy(), nil
+	case "file-type-light-codeclimate":
+		return FileTypeLightCodeclimate(), nil
+	case "file-type-light-codeowners":
+		return FileTypeLightCodeowners(), nil
+	case "file-type-light-config":
+		return FileTypeLightConfig(), nil
+	case "file-type-light-crystal":
+		return FileTypeLightCrystal(), nil
+	case "file-type-light-cypress":
+		return FileTypeLightCypress(), nil
+	case "file-type-light-cypress-spec":
+		return FileTypeLightCypressSpec(), nil
+	case "file-type-light-db":
+		return FileTypeLightDb(), nil
+	case "file-type-light-deno":
+		return FileTypeLightDeno(), nil
+	case "file-type-light-dhall":
+		return FileTypeLightDhall(), nil
+	case "file-type-light-docpad":
+		return FileTypeLightDocpad(), nil
+	case "file-type-light-drone":
+		return FileTypeLightDrone(), nil
+	case "file-type-light-eas-metadata":
+		return FileTypeLightEasMetadata(), nil
+	case "file-type-light-eleventy":
+		return FileTypeLightEleventy(), nil
+	case "file-type-light-eleventy2":
+		return FileTypeLightEleventyTwo(), nil
+	case "file-type-light-esphome":
+		return FileTypeLightEsphome(), nil
+	case "file-type-light-expo":
+		return FileTypeLightExpo(), nil
+	case "file-type-light-firebasehosting":
+		return FileTypeLightFirebasehosting(), nil
+	case "file-type-light-fla":
+		return FileTypeLightFla(), nil
+	case "file-type-light-font":
+		return FileTypeLightFont(), nil
+	case "file-type-light-gamemaker2":
+		return FileTypeLightGamemakerTwo(), nil
+	case "file-type-light-gradle":
+		return FileTypeLightGradle(), nil
+	case "file-type-light-hashicorp":
+		return FileTypeLightHashicorp(), nil
+	case "file-type-light-hjson":
+		return FileTypeLightHjson(), nil
+	case "file-type-light-ini":
+		return FileTypeLightIni(), nil
+	case "file-type-light-io":
+		return FileTypeLightIo(), nil
+	case "file-type-light-js":
+		return FileTypeLightJs(), nil
+	case "file-type-light-jsconfig":
+		return FileTypeLightJsconfig(), nil
+	case "file-type-light-jsmap":
+		return FileTypeLightJsmap(), nil
+	case "file-type-light-json":
+		return FileTypeLightJson(), nil
+	case "file-type-light-json5":
+		return FileTypeLightJsonFive(), nil
+	case "file-type-light-jsonld":
+		return FileTypeLightJsonld(), nil
+	case "file-type-light-kite":
+		return FileTypeLightKite(), nil
+	case "file-type-light-lerna":
+		return FileTypeLightLerna(), nil
+	case "file-type-light-mailing":
+		return FileTypeLightMailing(), nil
+	case "file-type-light-mdx":
+		return FileTypeLightMdx(), nil
+	case "file-type-light-mlang":
+		return FileTypeLightMlang(), nil
+	case "file-type-light-mustache":
+		return FileTypeLightMustache(), nil
+	case "file-type-light-next":
+		return FileTypeLightNext(), nil
+	case "file-type-light-nim":
+		return FileTypeLightNim(), nil
+	case "file-type-light-nx":
+		return FileTypeLightNx(), nil
+	case "file-type-light-objidconfig":
+		return FileTypeLightObjidconfig(), nil
+	case "file-type-light-openhab":
+		return FileTypeLightOpenhab(), nil
+	case "file-type-light-pcl":
+		return FileTypeLightPcl(), nil
+	case "file-type-light-pnpm":
+		return FileTypeLightPnpm(), nil
+	case "file-type-light-prettier":
+		return FileTypeLightPrettier(), nil
+	case "file-type-light-prisma":
+		return FileTypeLightPrisma(), nil
+	case "file-type-light-purescript":
+		return FileTypeLightPurescript(), nil
+	case "file-type-light-quasar":
+		return FileTypeLightQuasar(), nil
+	case "file-type-light-razzle":
+		return FileTypeLightRazzle(), nil
+	case "file-type-light-rehype":
+		return FileTypeLightRehype(), nil
+	case "file-type-light-remark":
+		return FileTypeLightRemark(), nil
+	case "file-type-light-replit":
+		return FileTypeLightReplit(), nil
+	case "file-type-light-retext":
+		return FileTypeLightRetext(), nil
+	case "file-type-light-rome":
+		return FileTypeLightRome(), nil
+	case "file-type-light-rubocop":
+		return FileTypeLightRubocop(), nil
+	case "file-type-light-rust":
+		return FileTypeLightRust(), nil
+	case "file-type-light-rust-toolchain":
+		return FileTypeLightRustToolchain(), nil
+	case "file-type-light-shaderlab":
+		return FileTypeLightShaderlab(), nil
+	case "file-type-light-solidity":
+		return FileTypeLightSolidity(), nil
+	case "file-type-light-stylelint":
+		return FileTypeLightStylelint(), nil
+	case "file-type-light-stylus":
+		return FileTypeLightStylus(), nil
+	case "file-type-light-symfony":
+		return FileTypeLightSymfony(), nil
+	case "file-type-light-systemd":
+		return FileTypeLightSystemd(), nil
+	case "file-type-light-systemverilog":
+		return FileTypeLightSystemverilog(), nil
+	case "file-type-light-testcafe":
+		return FileTypeLightTestcafe(), nil
+	case "file-type-light-testjs":
+		return FileTypeLightTestjs(), nil
+	case "file-type-light-tex":
+		return FileTypeLightTex(), nil
+	case "file-type-light-todo":
+		return FileTypeLightTodo(), nil
+	case "file-type-light-toit":
+		return FileTypeLightToit(), nil
+	case "file-type-light-toml":
+		return FileTypeLightToml(), nil
+	case "file-type-light-tree":
+		return FileTypeLightTree(), nil
+	case "file-type-light-turbo":
+		return FileTypeLightTurbo(), nil
+	case "file-type-light-unibeautify":
+		return FileTypeLightUnibeautify(), nil
+	case "file-type-light-vash":
+		return FileTypeLightVash(), nil
+	case "file-type-light-vsix":
+		return FileTypeLightVsix(), nil
+	case "file-type-light-vsixmanifest":
+		return FileTypeLightVsixmanifest(), nil
+	case "file-type-light-xfl":
+		return FileTypeLightXfl(), nil
+	case "file-type-light-yaml":
+		return FileTypeLightYaml(), nil
+	case "file-type-light-zeit":
+		return FileTypeLightZeit(), nil
+	case "file-type-lighthouse":
+		return FileTypeLighthouse(), nil
+	case "file-type-lilypond":
+		return FileTypeLilypond(), nil
+	case "file-type-lime":
+		return FileTypeLime(), nil
+	case "file-type-lintstagedrc":
+		return FileTypeLintstagedrc(), nil
+	case "file-type-liquid":
+		return FileTypeLiquid(), nil
+	case "file-type-lisp":
+		return FileTypeLisp(), nil
+	case "file-type-livescript":
+		return FileTypeLivescript(), nil
+	case "file-type-lnk":
+		return FileTypeLnk(), nil
+	case "file-type-locale":
+		return FileTypeLocale(), nil
+	case "file-type-log":
+		return FileTypeLog(), nil
+	case "file-type-lolcode":
+		return FileTypeLolcode(), nil
+	case "file-type-lsl":
+		return FileTypeLsl(), nil
+	case "file-type-lua":
+		return FileTypeLua(), nil
+	case "file-type-luau":
+		return FileTypeLuau(), nil
+	case "file-type-lync":
+		return FileTypeLync(), nil
+	case "file-type-mailing":
+		return FileTypeMailing(), nil
+	case "file-type-manifest":
+		return FileTypeManifest(), nil
+	case "file-type-manifest-bak":
+		return FileTypeManifestBak(), nil
+	case "file-type-manifest-skip":
+		return FileTypeManifestSkip(), nil
+	case "file-type-map":
+		return FileTypeMap(), nil
+	case "file-type-mariadb":
+		return FileTypeMariadb(), nil
+	case "file-type-markdown":
+		return FileTypeMarkdown(), nil
+	case "file-type-markdownlint":
+		return FileTypeMarkdownlint(), nil
+	case "file-type-markdownlint-ignore":
+		return FileTypeMarkdownlintIgnore(), nil
+	case "file-type-marko":
+		return FileTypeMarko(), nil
+	case "file-type-markojs":
+		return FileTypeMarkojs(), nil
+	case "file-type-master-co":
+		return FileTypeMasterCo(), nil
+	case "file-type-matlab":
+		return FileTypeMatlab(), nil
+	case "file-type-maven":
+		return FileTypeMaven(), nil
+	case "file-type-maxscript":
+		return FileTypeMaxscript(), nil
+	case "file-type-maya":
+		return FileTypeMaya(), nil
+	case "file-type-mdx":
+		return FileTypeMdx(), nil
+	case "file-type-mediawiki":
+		return FileTypeMediawiki(), nil
+	case "file-type-mercurial":
+		return FileTypeMercurial(), nil
+	case "file-type-meson":
+		return FileTypeMeson(), nil
+	case "file-type-meteor":
+		return FileTypeMeteor(), nil
+	case "file-type-mjml":
+		return FileTypeMjml(), nil
+	case "file-type-mlang":
+		return FileTypeMlang(), nil
+	case "file-type-mocha":
+		return FileTypeMocha(), nil
+	case "file-type-modernizr":
+		return FileTypeModernizr(), nil
+	case "file-type-mojolicious":
+		return FileTypeMojolicious(), nil
+	case "file-type-moleculer":
+		return FileTypeMoleculer(), nil
+	case "file-type-mondoo":
+		return FileTypeMondoo(), nil
+	case "file-type-mongo":
+		return FileTypeMongo(), nil
+	case "file-type-monotone":
+		return FileTypeMonotone(), nil
+	case "file-type-motif":
+		return FileTypeMotif(), nil
+	case "file-type-mson":
+		return FileTypeMson(), nil
+	case "file-type-mustache":
+		return FileTypeMustache(), nil
+	case "file-type-mysql":
+		return FileTypeMysql(), nil
+	case "file-type-ndst":
+		return FileTypeNdst(), nil
+	case "file-type-nearly":
+		return FileTypeNearly(), nil
+	case "file-type-nest-adapter-js":
+		return FileTypeNestAdapterJs(), nil
+	case "file-type-nest-adapter-ts":
+		return FileTypeNestAdapterTs(), nil
+	case "file-type-nest-controller-js":
+		return FileTypeNestControllerJs(), nil
+	case "file-type-nest-controller-ts":
+		return FileTypeNestControllerTs(), nil
+	case "file-type-nest-decorator-js":
+		return FileTypeNestDecoratorJs(), nil
+	case "file-type-nest-decorator-ts":
+		return FileTypeNestDecoratorTs(), nil
+	case "file-type-nest-filter-js":
+		return FileTypeNestFilterJs(), nil
+	case "file-type-nest-filter-ts":
+		return FileTypeNestFilterTs(), nil
+	case "file-type-nest-gateway-js":
+		return FileTypeNestGatewayJs(), nil
+	case "file-type-nest-gateway-ts":
+		return FileTypeNestGatewayTs(), nil
+	case "file-type-nest-guard-js":
+		return FileTypeNestGuardJs(), nil
+	case "file-type-nest-guard-ts":
+		return FileTypeNestGuardTs(), nil
+	case "file-type-nest-interceptor-js":
+		return FileTypeNestInterceptorJs(), nil
+	case "file-type-nest-interceptor-ts":
+		return FileTypeNestInterceptorTs(), nil
+	case "file-type-nest-middleware-js":
+		return FileTypeNestMiddlewareJs(), nil
+	case "file-type-nest-middleware-ts":
+		return FileTypeNestMiddlewareTs(), nil
+	case "file-type-nest-module-js":
+		return FileTypeNestModuleJs(), nil
+	case "file-type-nest-module-ts":
+		return FileTypeNestModuleTs(), nil
+	case "file-type-nest-pipe-js":
+		return FileTypeNestPipeJs(), nil
+	case "file-type-nest-pipe-ts":
+		return FileTypeNestPipeTs(), nil
+	case "file-type-nest-service-js":
+		return FileTypeNestServiceJs(), nil
+	case "file-type-nest-service-ts":
+		return FileTypeNestServiceTs(), nil
+	case "file-type-nestjs":
+		return FileTypeNestjs(), nil
+	case "file-type-netlify":
+		return FileTypeNetlify(), nil
+	case "file-type-next":
+		return FileTypeNext(), nil
+	case "file-type-ng-component-css":
+		return FileTypeNgComponentCss(), nil
+	case "file-type-ng-component-dart":
+		return FileTypeNgComponentDart(), nil
+	case "file-type-ng-component-html":
+		return FileTypeNgComponentHtml(), nil
+	case "file-type-ng-component-js":
+		return FileTypeNgComponentJs(), nil
+	case "file-type-ng-component-js2":
+		return FileTypeNgComponentJsTwo(), nil
+	case "file-type-ng-component-less":
+		return FileTypeNgComponentLess(), nil
+	case "file-type-ng-component-sass":
+		return FileTypeNgComponentSass(), nil
+	case "file-type-ng-component-scss":
+		return FileTypeNgComponentScss(), nil
+	case "file-type-ng-component-ts":
+		return FileTypeNgComponentTs(), nil
+	case "file-type-ng-component-ts2":
+		return FileTypeNgComponentTsTwo(), nil
+	case "file-type-ng-controller-js":
+		return FileTypeNgControllerJs(), nil
+	case "file-type-ng-controller-ts":
+		return FileTypeNgControllerTs(), nil
+	case "file-type-ng-directive-dart":
+		return FileTypeNgDirectiveDart(), nil
+	case "file-type-ng-directive-js":
+		return FileTypeNgDirectiveJs(), nil
+	case "file-type-ng-directive-js2":
+		return FileTypeNgDirectiveJsTwo(), nil
+	case "file-type-ng-directive-ts":
+		return FileTypeNgDirectiveTs(), nil
+	case "file-type-ng-directive-ts2":
+		return FileTypeNgDirectiveTsTwo(), nil
+	case "file-type-ng-guard-dart":
+		return FileTypeNgGuardDart(), nil
+	case "file-type-ng-guard-js":
+		return FileTypeNgGuardJs(), nil
+	case "file-type-ng-guard-ts":
+		return FileTypeNgGuardTs(), nil
+	case "file-type-ng-interceptor-dart":
+		return FileTypeNgInterceptorDart(), nil
+	case "file-type-ng-interceptor-js":
+		return FileTypeNgInterceptorJs(), nil
+	case "file-type-ng-interceptor-ts":
+		return FileTypeNgInterceptorTs(), nil
+	case "file-type-ng-module-dart":
+		return FileTypeNgModuleDart(), nil
+	case "file-type-ng-module-js":
+		return FileTypeNgModuleJs(), nil
+	case "file-type-ng-module-js2":
+		return FileTypeNgModuleJsTwo(), nil
+	case "file-type-ng-module-ts":
+		return FileTypeNgModuleTs(), nil
+	case "file-type-ng-module-ts2":
+		return FileTypeNgModuleTsTwo(), nil
+	case "file-type-ng-pipe-dart":
+		return FileTypeNgPipeDart(), nil
+	case "file-type-ng-pipe-js":
+		return FileTypeNgPipeJs(), nil
+	case "file-type-ng-pipe-js2":
+		return FileTypeNgPipeJsTwo(), nil
+	case "file-type-ng-pipe-ts":
+		return FileTypeNgPipeTs(), nil
+	case "file-type-ng-pipe-ts2":
+		return FileTypeNgPipeTsTwo(), nil
+	case "file-type-ng-routing-dart":
+		return FileTypeNgRoutingDart(), nil
+	case "file-type-ng-routing-js":
+		return FileTypeNgRoutingJs(), nil
+	case "file-type-ng-routing-js2":
+		return FileTypeNgRoutingJsTwo(), nil
+	case "file-type-ng-routing-ts":
+		return FileTypeNgRoutingTs(), nil
+	case "file-type-ng-routing-ts2":
+		return FileTypeNgRoutingTsTwo(), nil
+	case "file-type-ng-service-dart":
+		return FileTypeNgServiceDart(), nil
+	case "file-type-ng-service-js":
+		return FileTypeNgServiceJs(), nil
+	case "file-type-ng-service-js2":
+		return FileTypeNgServiceJsTwo(), nil
+	case "file-type-ng-service-ts":
+		return FileTypeNgServiceTs(), nil
+	case "file-type-ng-service-ts2":
+		return FileTypeNgServiceTsTwo(), nil
+	case "file-type-ng-smart-component-dart":
+		return FileTypeNgSmartComponentDart(), nil
+	case "file-type-ng-smart-component-js":
+		return FileTypeNgSmartComponentJs(), nil
+	case "file-type-ng-smart-component-js2":
+		return FileTypeNgSmartComponentJsTwo(), nil
+	case "file-type-ng-smart-component-ts":
+		return FileTypeNgSmartComponentTs(), nil
+	case "file-type-ng-smart-component-ts2":
+		return FileTypeNgSmartComponentTsTwo(), nil
+	case "file-type-ng-tailwind":
+		return FileTypeNgTailwind(), nil
+	case "file-type-nginx":
+		return FileTypeNginx(), nil
+	case "file-type-nim":
+		return FileTypeNim(), nil
+	case "file-type-nimble":
+		return FileTypeNimble(), nil
+	case "file-type-ninja":
+		return FileTypeNinja(), nil
+	case "file-type-nix":
+		return FileTypeNix(), nil
+	case "file-type-njsproj":
+		return FileTypeNjsproj(), nil
+	case "file-type-noc":
+		return FileTypeNoc(), nil
+	case "file-type-node":
+		return FileTypeNode(), nil
+	case "file-type-node2":
+		return FileTypeNodeTwo(), nil
+	case "file-type-nodemon":
+		return FileTypeNodemon(), nil
+	case "file-type-npm":
+		return FileTypeNpm(), nil
+	case "file-type-nsi":
+		return FileTypeNsi(), nil
+	case "file-type-nsri":
+		return FileTypeNsri(), nil
+	case "file-type-nsri-integrity":
+		return FileTypeNsriIntegrity(), nil
+	case "file-type-nuget":
+		return FileTypeNuget(), nil
+	case "file-type-numpy":
+		return FileTypeNumpy(), nil
+	case "file-type-nunjucks":
+		return FileTypeNunjucks(), nil
+	case "file-type-nuxt":
+		return FileTypeNuxt(), nil
+	case "file-type-nx":
+		return FileTypeNx(), nil
+	case "file-type-nyc":
+		return FileTypeNyc(), nil
+	case "file-type-objectivec":
+		return FileTypeObjectivec(), nil
+	case "file-type-objectivecpp":
+		return FileTypeObjectivecpp(), nil
+	case "file-type-objidconfig":
+		return FileTypeObjidconfig(), nil
+	case "file-type-ocaml":
+		return FileTypeOcaml(), nil
+	case "file-type-ogone":
+		return FileTypeOgone(), nil
+	case "file-type-onenote":
+		return FileTypeOnenote(), nil
+	case "file-type-opencl":
+		return FileTypeOpencl(), nil
+	case "file-type-openhab":
+		return FileTypeOpenhab(), nil
+	case "file-type-openscad":
+		return FileTypeOpenscad(), nil
+	case "file-type-org":
+		return FileTypeOrg(), nil
+	case "file-type-outlook":
+		return FileTypeOutlook(), nil
+	case "file-type-ovpn":
+		return FileTypeOvpn(), nil
+	case "file-type-package":
+		return FileTypePackage(), nil
+	case "file-type-paket":
+		return FileTypePaket(), nil
+	case "file-type-patch":
+		return FileTypePatch(), nil
+	case "file-type-pcl":
+		return FileTypePcl(), nil
+	case "file-type-pddl":
+		return FileTypePddl(), nil
+	case "file-type-pddl-happenings":
+		return FileTypePddlHappenings(), nil
+	case "file-type-pddl-plan":
+		return FileTypePddlPlan(), nil
+	case "file-type-pdf2":
+		return FileTypePdfTwo(), nil
+	case "file-type-peeky":
+		return FileTypePeeky(), nil
+	case "file-type-perl":
+		return FileTypePerl(), nil
+	case "file-type-perl6":
+		return FileTypePerlSix(), nil
+	case "file-type-perl2":
+		return FileTypePerlTwo(), nil
+	case "file-type-pgsql":
+		return FileTypePgsql(), nil
+	case "file-type-photoshop":
+		return FileTypePhotoshop(), nil
+	case "file-type-photoshop2":
+		return FileTypePhotoshopTwo(), nil
+	case "file-type-php":
+		return FileTypePhp(), nil
+	case "file-type-php3":
+		return FileTypePhpThree(), nil
+	case "file-type-php2":
+		return FileTypePhpTwo(), nil
+	case "file-type-phpcsfixer":
+		return FileTypePhpcsfixer(), nil
+	case "file-type-phpstan":
+		return FileTypePhpstan(), nil
+	case "file-type-phpunit":
+		return FileTypePhpunit(), nil
+	case "file-type-phraseapp":
+		return FileTypePhraseapp(), nil
+	case "file-type-pine":
+		return FileTypePine(), nil
+	case "file-type-pip":
+		return FileTypePip(), nil
+	case "file-type-pipeline":
+		return FileTypePipeline(), nil
+	case "file-type-plantuml":
+		return FileTypePlantuml(), nil
+	case "file-type-platformio":
+		return FileTypePlatformio(), nil
+	case "file-type-playwright":
+		return FileTypePlaywright(), nil
+	case "file-type-plsql":
+		return FileTypePlsql(), nil
+	case "file-type-plsql-package":
+		return FileTypePlsqlPackage(), nil
+	case "file-type-plsql-package-body":
+		return FileTypePlsqlPackageBody(), nil
+	case "file-type-plsql-package-header":
+		return FileTypePlsqlPackageHeader(), nil
+	case "file-type-plsql-package-spec":
+		return FileTypePlsqlPackageSpec(), nil
+	case "file-type-pm2":
+		return FileTypePmTwo(), nil
+	case "file-type-pnpm":
+		return FileTypePnpm(), nil
+	case "file-type-poedit":
+		return FileTypePoedit(), nil
+	case "file-type-poetry":
+		return FileTypePoetry(), nil
+	case "file-type-polymer":
+		return FileTypePolymer(), nil
+	case "file-type-pony":
+		return FileTypePony(), nil
+	case "file-type-postcss":
+		return FileTypePostcss(), nil
+	case "file-type-postcssconfig":
+		return FileTypePostcssconfig(), nil
+	case "file-type-powerpoint":
+		return FileTypePowerpoint(), nil
+	case "file-type-powerpoint2":
+		return FileTypePowerpointTwo(), nil
+	case "file-type-powershell":
+		return FileTypePowershell(), nil
+	case "file-type-powershell-format":
+		return FileTypePowershellFormat(), nil
+	case "file-type-powershell-psd":
+		return FileTypePowershellPsd(), nil
+	case "file-type-powershell-psd2":
+		return FileTypePowershellPsdTwo(), nil
+	case "file-type-powershell-psm":
+		return FileTypePowershellPsm(), nil
+	case "file-type-powershell-psm2":
+		return FileTypePowershellPsmTwo(), nil
+	case "file-type-powershell2":
+		return FileTypePowershellTwo(), nil
+	case "file-type-powershell-types":
+		return FileTypePowershellTypes(), nil
+	case "file-type-preact":
+		return FileTypePreact(), nil
+	case "file-type-precommit":
+		return FileTypePrecommit(), nil
+	case "file-type-prettier":
+		return FileTypePrettier(), nil
+	case "file-type-prisma":
+		return FileTypePrisma(), nil
+	case "file-type-processinglang":
+		return FileTypeProcessinglang(), nil
+	case "file-type-procfile":
+		return FileTypeProcfile(), nil
+	case "file-type-progress":
+		return FileTypeProgress(), nil
+	case "file-type-prolog":
+		return FileTypeProlog(), nil
+	case "file-type-prometheus":
+		return FileTypePrometheus(), nil
+	case "file-type-protobuf":
+		return FileTypeProtobuf(), nil
+	case "file-type-protractor":
+		return FileTypeProtractor(), nil
+	case "file-type-publisher":
+		return FileTypePublisher(), nil
+	case "file-type-pug":
+		return FileTypePug(), nil
+	case "file-type-pulumi":
+		return FileTypePulumi(), nil
+	case "file-type-puppet":
+		return FileTypePuppet(), nil
+	case "file-type-purescript":
+		return FileTypePurescript(), nil
+	case "file-type-pyret":
+		return FileTypePyret(), nil
+	case "file-type-python":
+		return FileTypePython(), nil
+	case "file-type-pythowo":
+		return FileTypePythowo(), nil
+	case "file-type-pytyped":
+		return FileTypePytyped(), nil
+	case "file-type-pyup":
+		return FileTypePyup(), nil
+	case "file-type-q":
+		return FileTypeQ(), nil
+	case "file-type-qbs":
+		return FileTypeQbs(), nil
+	case "file-type-qlikview":
+		return FileTypeQlikview(), nil
+	case "file-type-qml":
+		return FileTypeQml(), nil
+	case "file-type-qmldir":
+		return FileTypeQmldir(), nil
+	case "file-type-qsharp":
+		return FileTypeQsharp(), nil
+	case "file-type-quasar":
+		return FileTypeQuasar(), nil
+	case "file-type-r":
+		return FileTypeR(), nil
+	case "file-type-racket":
+		return FileTypeRacket(), nil
+	case "file-type-rails":
+		return FileTypeRails(), nil
+	case "file-type-rake":
+		return FileTypeRake(), nil
+	case "file-type-raml":
+		return FileTypeRaml(), nil
+	case "file-type-razor":
+		return FileTypeRazor(), nil
+	case "file-type-razzle":
+		return FileTypeRazzle(), nil
+	case "file-type-reactjs":
+		return FileTypeReactjs(), nil
+	case "file-type-reacttemplate":
+		return FileTypeReacttemplate(), nil
+	case "file-type-reactts":
+		return FileTypeReactts(), nil
+	case "file-type-reason":
+		return FileTypeReason(), nil
+	case "file-type-red":
+		return FileTypeRed(), nil
+	case "file-type-registry":
+		return FileTypeRegistry(), nil
+	case "file-type-rego":
+		return FileTypeRego(), nil
+	case "file-type-rehype":
+		return FileTypeRehype(), nil
+	case "file-type-remark":
+		return FileTypeRemark(), nil
+	case "file-type-renovate":
+		return FileTypeRenovate(), nil
+	case "file-type-replit":
+		return FileTypeReplit(), nil
+	case "file-type-rescript":
+		return FileTypeRescript(), nil
+	case "file-type-rest":
+		return FileTypeRest(), nil
+	case "file-type-retext":
+		return FileTypeRetext(), nil
+	case "file-type-rexx":
+		return FileTypeRexx(), nil
+	case "file-type-riot":
+		return FileTypeRiot(), nil
+	case "file-type-rmd":
+		return FileTypeRmd(), nil
+	case "file-type-robotframework":
+		return FileTypeRobotframework(), nil
+	case "file-type-robots":
+		return FileTypeRobots(), nil
+	case "file-type-rollup":
+		return FileTypeRollup(), nil
+	case "file-type-rome":
+		return FileTypeRome(), nil
+	case "file-type-ron":
+		return FileTypeRon(), nil
+	case "file-type-rproj":
+		return FileTypeRproj(), nil
+	case "file-type-rspec":
+		return FileTypeRspec(), nil
+	case "file-type-rubocop":
+		return FileTypeRubocop(), nil
+	case "file-type-ruby":
+		return FileTypeRuby(), nil
+	case "file-type-rust":
+		return FileTypeRust(), nil
+	case "file-type-rust-toolchain":
+		return FileTypeRustToolchain(), nil
+	case "file-type-sails":
+		return FileTypeSails(), nil
+	case "file-type-saltstack":
+		return FileTypeSaltstack(), nil
+	case "file-type-san":
+		return FileTypeSan(), nil
+	case "file-type-sapphire-framework-cli":
+		return FileTypeSapphireFrameworkCli(), nil
+	case "file-type-sas":
+		return FileTypeSas(), nil
+	case "file-type-sass":
+		return FileTypeSass(), nil
+	case "file-type-sbt":
+		return FileTypeSbt(), nil
+	case "file-type-scala":
+		return FileTypeScala(), nil
+	case "file-type-scilab":
+		return FileTypeScilab(), nil
+	case "file-type-script":
+		return FileTypeScript(), nil
+	case "file-type-scss":
+		return FileTypeScss(), nil
+	case "file-type-scss2":
+		return FileTypeScssTwo(), nil
+	case "file-type-sdlang":
+		return FileTypeSdlang(), nil
+	case "file-type-sentry":
+		return FileTypeSentry(), nil
+	case "file-type-sequelize":
+		return FileTypeSequelize(), nil
+	case "file-type-serverless":
+		return FileTypeServerless(), nil
+	case "file-type-shaderlab":
+		return FileTypeShaderlab(), nil
+	case "file-type-shell":
+		return FileTypeShell(), nil
+	case "file-type-shuttle":
+		return FileTypeShuttle(), nil
+	case "file-type-silverstripe":
+		return FileTypeSilverstripe(), nil
+	case "file-type-siyuan":
+		return FileTypeSiyuan(), nil
+	case "file-type-sketch":
+		return FileTypeSketch(), nil
+	case "file-type-skipper":
+		return FileTypeSkipper(), nil
+	case "file-type-slang":
+		return FileTypeSlang(), nil
+	case "file-type-slashup":
+		return FileTypeSlashup(), nil
+	case "file-type-slice":
+		return FileTypeSlice(), nil
+	case "file-type-slim":
+		return FileTypeSlim(), nil
+	case "file-type-sln":
+		return FileTypeSln(), nil
+	case "file-type-sln2":
+		return FileTypeSlnTwo(), nil
+	case "file-type-smarty":
+		return FileTypeSmarty(), nil
+	case "file-type-snapcraft":
+		return FileTypeSnapcraft(), nil
+	case "file-type-snort":
+		return FileTypeSnort(), nil
+	case "file-type-snyk":
+		return FileTypeSnyk(), nil
+	case "file-type-solidarity":
+		return FileTypeSolidarity(), nil
+	case "file-type-solidity":
+		return FileTypeSolidity(), nil
+	case "file-type-source":
+		return FileTypeSource(), nil
+	case "file-type-spacengine":
+		return FileTypeSpacengine(), nil
+	case "file-type-sparql":
+		return FileTypeSparql(), nil
+	case "file-type-sqf":
+		return FileTypeSqf(), nil
+	case "file-type-sql":
+		return FileTypeSql(), nil
+	case "file-type-sqlite":
+		return FileTypeSqlite(), nil
+	case "file-type-squirrel":
+		return FileTypeSquirrel(), nil
+	case "file-type-sss":
+		return FileTypeSss(), nil
+	case "file-type-stan":
+		return FileTypeStan(), nil
+	case "file-type-stata":
+		return FileTypeStata(), nil
+	case "file-type-stencil":
+		return FileTypeStencil(), nil
+	case "file-type-storyboard":
+		return FileTypeStoryboard(), nil
+	case "file-type-storybook":
+		return FileTypeStorybook(), nil
+	case "file-type-stryker":
+		return FileTypeStryker(), nil
+	case "file-type-stylable":
+		return FileTypeStylable(), nil
+	case "file-type-style":
+		return FileTypeStyle(), nil
+	case "file-type-styled":
+		return FileTypeStyled(), nil
+	case "file-type-stylelint":
+		return FileTypeStylelint(), nil
+	case "file-type-stylish-haskell":
+		return FileTypeStylishHaskell(), nil
+	case "file-type-stylus":
+		return FileTypeStylus(), nil
+	case "file-type-subversion":
+		return FileTypeSubversion(), nil
+	case "file-type-svelte":
+		return FileTypeSvelte(), nil
+	case "file-type-svg":
+		return FileTypeSvg(), nil
+	case "file-type-swagger":
+		return FileTypeSwagger(), nil
+	case "file-type-swift":
+		return FileTypeSwift(), nil
+	case "file-type-swig":
+		return FileTypeSwig(), nil
+	case "file-type-symfony":
+		return FileTypeSymfony(), nil
+	case "file-type-systemd":
+		return FileTypeSystemd(), nil
+	case "file-type-systemverilog":
+		return FileTypeSystemverilog(), nil
+	case "file-type-t4tt":
+		return FileTypeTFourTt(), nil
+	case "file-type-tailwind":
+		return FileTypeTailwind(), nil
+	case "file-type-tauri":
+		return FileTypeTauri(), nil
+	case "file-type-tcl":
+		return FileTypeTcl(), nil
+	case "file-type-teal":
+		return FileTypeTeal(), nil
+	case "file-type-tera":
+		return FileTypeTera(), nil
+	case "file-type-terraform":
+		return FileTypeTerraform(), nil
+	case "file-type-test":
+		return FileTypeTest(), nil
+	case "file-type-testcafe":
+		return FileTypeTestcafe(), nil
+	case "file-type-testjs":
+		return FileTypeTestjs(), nil
+	case "file-type-testts":
+		return FileTypeTestts(), nil
+	case "file-type-tex":
+		return FileTypeTex(), nil
+	case "file-type-text":
+		return FileTypeText(), nil
+	case "file-type-textile":
+		return FileTypeTextile(), nil
+	case "file-type-tfs":
+		return FileTypeTfs(), nil
+	case "file-type-tiltfile":
+		return FileTypeTiltfile(), nil
+	case "file-type-todo":
+		return FileTypeTodo(), nil
+	case "file-type-toit":
+		return FileTypeToit(), nil
+	case "file-type-toml":
+		return FileTypeToml(), nil
+	case "file-type-tox":
+		return FileTypeTox(), nil
+	case "file-type-travis":
+		return FileTypeTravis(), nil
+	case "file-type-tree":
+		return FileTypeTree(), nil
+	case "file-type-tres":
+		return FileTypeTres(), nil
+	case "file-type-truffle":
+		return FileTypeTruffle(), nil
+	case "file-type-trunk":
+		return FileTypeTrunk(), nil
+	case "file-type-tscn":
+		return FileTypeTscn(), nil
+	case "file-type-tsconfig":
+		return FileTypeTsconfig(), nil
+	case "file-type-tsconfig-official":
+		return FileTypeTsconfigOfficial(), nil
+	case "file-type-tslint":
+		return FileTypeTslint(), nil
+	case "file-type-tt":
+		return FileTypeTt(), nil
+	case "file-type-ttcn":
+		return FileTypeTtcn(), nil
+	case "file-type-tuc":
+		return FileTypeTuc(), nil
+	case "file-type-turbo":
+		return FileTypeTurbo(), nil
+	case "file-type-twig":
+		return FileTypeTwig(), nil
+	case "file-type-typedoc":
+		return FileTypeTypedoc(), nil
+	case "file-type-typescript":
+		return FileTypeTypescript(), nil
+	case "file-type-typescript-official":
+		return FileTypeTypescriptOfficial(), nil
+	case "file-type-typescriptdef":
+		return FileTypeTypescriptdef(), nil
+	case "file-type-typescriptdef-official":
+		return FileTypeTypescriptdefOfficial(), nil
+	case "file-type-typo3":
+		return FileTypeTypoThree(), nil
+	case "file-type-unibeautify":
+		return FileTypeUnibeautify(), nil
+	case "file-type-unison":
+		return FileTypeUnison(), nil
+	case "file-type-unlicense":
+		return FileTypeUnlicense(), nil
+	case "file-type-vagrant":
+		return FileTypeVagrant(), nil
+	case "file-type-vala":
+		return FileTypeVala(), nil
+	case "file-type-vanilla-extract":
+		return FileTypeVanillaExtract(), nil
+	case "file-type-vapi":
+		return FileTypeVapi(), nil
+	case "file-type-vapor":
+		return FileTypeVapor(), nil
+	case "file-type-vash":
+		return FileTypeVash(), nil
+	case "file-type-vb":
+		return FileTypeVb(), nil
+	case "file-type-vba":
+		return FileTypeVba(), nil
+	case "file-type-vbhtml":
+		return FileTypeVbhtml(), nil
+	case "file-type-vbproj":
+		return FileTypeVbproj(), nil
+	case "file-type-vcxproj":
+		return FileTypeVcxproj(), nil
+	case "file-type-velocity":
+		return FileTypeVelocity(), nil
+	case "file-type-verilog":
+		return FileTypeVerilog(), nil
+	case "file-type-vhdl":
+		return FileTypeVhdl(), nil
+	case "file-type-video":
+		return FileTypeVideo(), nil
+	case "file-type-view":
+		return FileTypeView(), nil
+	case "file-type-vim":
+		return FileTypeVim(), nil
+	case "file-type-vite":
+		return FileTypeVite(), nil
+	case "file-type-vitest":
+		return FileTypeVitest(), nil
+	case "file-type-vlang":
+		return FileTypeVlang(), nil
+	case "file-type-volt":
+		return FileTypeVolt(), nil
+	case "file-type-vscode":
+		return FileTypeVscode(), nil
+	case "file-type-vscode-insiders":
+		return FileTypeVscodeInsiders(), nil
+	case "file-type-vscode3":
+		return FileTypeVscodeThree(), nil
+	case "file-type-vscode2":
+		return FileTypeVscodeTwo(), nil
+	case "file-type-vsix":
+		return FileTypeVsix(), nil
+	case "file-type-vsixmanifest":
+		return FileTypeVsixmanifest(), nil
+	case "file-type-vue":
+		return FileTypeVue(), nil
+	case "file-type-vueconfig":
+		return FileTypeVueconfig(), nil
+	case "file-type-wallaby":
+		return FileTypeWallaby(), nil
+	case "file-type-wally":
+		return FileTypeWally(), nil
+	case "file-type-wasm":
+		return FileTypeWasm(), nil
+	case "file-type-watchmanconfig":
+		return FileTypeWatchmanconfig(), nil
+	case "file-type-webp":
+		return FileTypeWebp(), nil
+	case "file-type-webpack":
+		return FileTypeWebpack(), nil
+	case "file-type-wenyan":
+		return FileTypeWenyan(), nil
+	case "file-type-wercker":
+		return FileTypeWercker(), nil
+	case "file-type-wgsl":
+		return FileTypeWgsl(), nil
+	case "file-type-wikitext":
+		return FileTypeWikitext(), nil
+	case "file-type-windi":
+		return FileTypeWindi(), nil
+	case "file-type-wolfram":
+		return FileTypeWolfram(), nil
+	case "file-type-word":
+		return FileTypeWord(), nil
+	case "file-type-word2":
+		return FileTypeWordTwo(), nil
+	case "file-type-wpml":
+		return FileTypeWpml(), nil
+	case "file-type-wurst":
+		return FileTypeWurst(), nil
+	case "file-type-wxml":
+		return FileTypeWxml(), nil
+	case "file-type-wxss":
+		return FileTypeWxss(), nil
+	case "file-type-xcode":
+		return FileTypeXcode(), nil
+	case "file-type-xfl":
+		return FileTypeXfl(), nil
+	case "file-type-xib":
+		return FileTypeXib(), nil
+	case "file-type-xliff":
+		return FileTypeXliff(), nil
+	case "file-type-xmake":
+		return FileTypeXmake(), nil
+	case "file-type-xml":
+		return FileTypeXml(), nil
+	case "file-type-xquery":
+		return FileTypeXquery(), nil
+	case "file-type-xsl":
+		return FileTypeXsl(), nil
+	case "file-type-yacc":
+		return FileTypeYacc(), nil
+	case "file-type-yaml":
+		return FileTypeYaml(), nil
+	case "file-type-yamllint":
+		return FileTypeYamllint(), nil
+	case "file-type-yandex":
+		return FileTypeYandex(), nil
+	case "file-type-yang":
+		return FileTypeYang(), nil
+	case "file-type-yarn":
+		return FileTypeYarn(), nil
+	case "file-type-yeoman":
+		return FileTypeYeoman(), nil
+	case "file-type-zeit":
+		return FileTypeZeit(), nil
+	case "file-type-zig":
+		return FileTypeZig(), nil
+	case "file-type-zip":
+		return FileTypeZip(), nil
+	case "file-type-zip2":
+		return FileTypeZipTwo(), nil
+	case "folder-type-android":
+		return FolderTypeAndroid(), nil
+	case "folder-type-android-opened":
+		return FolderTypeAndroidOpened(), nil
+	case "folder-type-api":
+		return FolderTypeApi(), nil
+	case "folder-type-api-opened":
+		return FolderTypeApiOpened(), nil
+	case "folder-type-app":
+		return FolderTypeApp(), nil
+	case "folder-type-app-opened":
+		return FolderTypeAppOpened(), nil
+	case "folder-type-arangodb":
+		return FolderTypeArangodb(), nil
+	case "folder-type-arangodb-opened":
+		return FolderTypeArangodbOpened(), nil
+	case "folder-type-asset":
+		return FolderTypeAsset(), nil
+	case "folder-type-asset-opened":
+		return FolderTypeAssetOpened(), nil
+	case "folder-type-audio":
+		return FolderTypeAudio(), nil
+	case "folder-type-audio-opened":
+		return FolderTypeAudioOpened(), nil
+	case "folder-type-aurelia":
+		return FolderTypeAurelia(), nil
+	case "folder-type-aurelia-opened":
+		return FolderTypeAureliaOpened(), nil
+	case "folder-type-aws":
+		return FolderTypeAws(), nil
+	case "folder-type-aws-opened":
+		return FolderTypeAwsOpened(), nil
+	case "folder-type-azure":
+		return FolderTypeAzure(), nil
+	case "folder-type-azure-opened":
+		return FolderTypeAzureOpened(), nil
+	case "folder-type-azurepipelines":
+		return FolderTypeAzurepipelines(), nil
+	case "folder-type-azurepipelines-opened":
+		return FolderTypeAzurepipelinesOpened(), nil
+	case "folder-type-binary":
+		return FolderTypeBinary(), nil
+	case "folder-type-binary-opened":
+		return FolderTypeBinaryOpened(), nil
+	case "folder-type-bloc":
+		return FolderTypeBloc(), nil
+	case "folder-type-bloc-opened":
+		return FolderTypeBlocOpened(), nil
+	case "folder-type-blueprint":
+		return FolderTypeBlueprint(), nil
+	case "folder-type-blueprint-opened":
+		return FolderTypeBlueprintOpened(), nil
+	case "folder-type-bot":
+		return FolderTypeBot(), nil
+	case "folder-type-bot-opened":
+		return FolderTypeBotOpened(), nil
+	case "folder-type-bower":
+		return FolderTypeBower(), nil
+	case "folder-type-bower-opened":
+		return FolderTypeBowerOpened(), nil
+	case "folder-type-buildkite":
+		return FolderTypeBuildkite(), nil
+	case "folder-type-buildkite-opened":
+		return FolderTypeBuildkiteOpened(), nil
+	case "folder-type-cake":
+		return FolderTypeCake(), nil
+	case "folder-type-cake-opened":
+		return FolderTypeCakeOpened(), nil
+	case "folder-type-certificate":
+		return FolderTypeCertificate(), nil
+	case "folder-type-certificate-opened":
+		return FolderTypeCertificateOpened(), nil
+	case "folder-type-chef":
+		return FolderTypeChef(), nil
+	case "folder-type-chef-opened":
+		return FolderTypeChefOpened(), nil
+	case "folder-type-circleci":
+		return FolderTypeCircleci(), nil
+	case "folder-type-circleci-opened":
+		return FolderTypeCircleciOpened(), nil
+	case "folder-type-cli":
+		return FolderTypeCli(), nil
+	case "folder-type-cli-opened":
+		return FolderTypeCliOpened(), nil
+	case "folder-type-client":
+		return FolderTypeClient(), nil
+	case "folder-type-client-opened":
+		return FolderTypeClientOpened(), nil
+	case "folder-type-cmake":
+		return FolderTypeCmake(), nil
+	case "folder-type-cmake-opened":
+		return FolderTypeCmakeOpened(), nil
+	case "folder-type-common":
+		return FolderTypeCommon(), nil
+	case "folder-type-common-opened":
+		return FolderTypeCommonOpened(), nil
+	case "folder-type-component":
+		return FolderTypeComponent(), nil
+	case "folder-type-component-opened":
+		return FolderTypeComponentOpened(), nil
+	case "folder-type-composer":
+		return FolderTypeComposer(), nil
+	case "folder-type-composer-opened":
+		return FolderTypeComposerOpened(), nil
+	case "folder-type-config":
+		return FolderTypeConfig(), nil
+	case "folder-type-config-opened":
+		return FolderTypeConfigOpened(), nil
+	case "folder-type-controller":
+		return FolderTypeController(), nil
+	case "folder-type-controller-opened":
+		return FolderTypeControllerOpened(), nil
+	case "folder-type-coverage":
+		return FolderTypeCoverage(), nil
+	case "folder-type-coverage-opened":
+		return FolderTypeCoverageOpened(), nil
+	case "folder-type-css":
+		return FolderTypeCss(), nil
+	case "folder-type-css-opened":
+		return FolderTypeCssOpened(), nil
+	case "folder-type-cubit":
+		return FolderTypeCubit(), nil
+	case "folder-type-cubit-opened":
+		return FolderTypeCubitOpened(), nil
+	case "folder-type-cypress":
+		return FolderTypeCypress(), nil
+	case "folder-type-cypress-opened":
+		return FolderTypeCypressOpened(), nil
+	case "folder-type-dapr":
+		return FolderTypeDapr(), nil
+	case "folder-type-dapr-opened":
+		return FolderTypeDaprOpened(), nil
+	case "folder-type-datadog":
+		return FolderTypeDatadog(), nil
+	case "folder-type-datadog-opened":
+		return FolderTypeDatadogOpened(), nil
+	case "folder-type-db":
+		return FolderTypeDb(), nil
+	case "folder-type-db-opened":
+		return FolderTypeDbOpened(), nil
+	case "folder-type-debian":
+		return FolderTypeDebian(), nil
+	case "folder-type-debian-opened":
+		return FolderTypeDebianOpened(), nil
+	case "folder-type-dependabot":
+		return FolderTypeDependabot(), nil
+	case "folder-type-dependabot-opened":
+		return FolderTypeDependabotOpened(), nil
+	case "folder-type-devcontainer":
+		return FolderTypeDevcontainer(), nil
+	case "folder-type-devcontainer-opened":
+		return FolderTypeDevcontainerOpened(), nil
+	case "folder-type-dist":
+		return FolderTypeDist(), nil
+	case "folder-type-dist-opened":
+		return FolderTypeDistOpened(), nil
+	case "folder-type-docker":
+		return FolderTypeDocker(), nil
+	case "folder-type-docker-opened":
+		return FolderTypeDockerOpened(), nil
+	case "folder-type-docs":
+		return FolderTypeDocs(), nil
+	case "folder-type-docs-opened":
+		return FolderTypeDocsOpened(), nil
+	case "folder-type-e2e":
+		return FolderTypeETwoE(), nil
+	case "folder-type-e2e-opened":
+		return FolderTypeETwoEOpened(), nil
+	case "folder-type-elasticbeanstalk":
+		return FolderTypeElasticbeanstalk(), nil
+	case "folder-type-elasticbeanstalk-opened":
+		return FolderTypeElasticbeanstalkOpened(), nil
+	case "folder-type-electron":
+		return FolderTypeElectron(), nil
+	case "folder-type-electron-opened":
+		return FolderTypeElectronOpened(), nil
+	case "folder-type-expo":
+		return FolderTypeExpo(), nil
+	case "folder-type-expo-opened":
+		return FolderTypeExpoOpened(), nil
+	case "folder-type-favicon":
+		return FolderTypeFavicon(), nil
+	case "folder-type-favicon-opened":
+		return FolderTypeFaviconOpened(), nil
+	case "folder-type-flow":
+		return FolderTypeFlow(), nil
+	case "folder-type-flow-opened":
+		return FolderTypeFlowOpened(), nil
+	case "folder-type-fonts":
+		return FolderTypeFonts(), nil
+	case "folder-type-fonts-opened":
+		return FolderTypeFontsOpened(), nil
+	case "folder-type-gcp":
+		return FolderTypeGcp(), nil
+	case "folder-type-gcp-opened":
+		return FolderTypeGcpOpened(), nil
+	case "folder-type-git":
+		return FolderTypeGit(), nil
+	case "folder-type-git-opened":
+		return FolderTypeGitOpened(), nil
+	case "folder-type-github":
+		return FolderTypeGithub(), nil
+	case "folder-type-github-opened":
+		return FolderTypeGithubOpened(), nil
+	case "folder-type-gitlab":
+		return FolderTypeGitlab(), nil
+	case "folder-type-gitlab-opened":
+		return FolderTypeGitlabOpened(), nil
+	case "folder-type-gradle":
+		return FolderTypeGradle(), nil
+	case "folder-type-gradle-opened":
+		return FolderTypeGradleOpened(), nil
+	case "folder-type-graphql":
+		return FolderTypeGraphql(), nil
+	case "folder-type-graphql-opened":
+		return FolderTypeGraphqlOpened(), nil
+	case "folder-type-grunt":
+		return FolderTypeGrunt(), nil
+	case "folder-type-grunt-opened":
+		return FolderTypeGruntOpened(), nil
+	case "folder-type-gulp":
+		return FolderTypeGulp(), nil
+	case "folder-type-gulp-opened":
+		return FolderTypeGulpOpened(), nil
+	case "folder-type-haxelib":
+		return FolderTypeHaxelib(), nil
+	case "folder-type-haxelib-opened":
+		return FolderTypeHaxelibOpened(), nil
+	case "folder-type-helper":
+		return FolderTypeHelper(), nil
+	case "folder-type-helper-opened":
+		return FolderTypeHelperOpened(), nil
+	case "folder-type-hook":
+		return FolderTypeHook(), nil
+	case "folder-type-hook-opened":
+		return FolderTypeHookOpened(), nil
+	case "folder-type-husky":
+		return FolderTypeHusky(), nil
+	case "folder-type-husky-opened":
+		return FolderTypeHuskyOpened(), nil
+	case "folder-type-idea":
+		return FolderTypeIdea(), nil
+	case "folder-type-idea-opened":
+		return FolderTypeIdeaOpened(), nil
+	case "folder-type-images":
+		return FolderTypeImages(), nil
+	case "folder-type-images-opened":
+		return FolderTypeImagesOpened(), nil
+	case "folder-type-include":
+		return FolderTypeInclude(), nil
+	case "folder-type-include-opened":
+		return FolderTypeIncludeOpened(), nil
+	case "folder-type-interfaces":
+		return FolderTypeInterfaces(), nil
+	case "folder-type-interfaces-opened":
+		return FolderTypeInterfacesOpened(), nil
+	case "folder-type-ios":
+		return FolderTypeIos(), nil
+	case "folder-type-ios-opened":
+		return FolderTypeIosOpened(), nil
+	case "folder-type-js":
+		return FolderTypeJs(), nil
+	case "folder-type-js-opened":
+		return FolderTypeJsOpened(), nil
+	case "folder-type-json":
+		return FolderTypeJson(), nil
+	case "folder-type-json-official":
+		return FolderTypeJsonOfficial(), nil
+	case "folder-type-json-official-opened":
+		return FolderTypeJsonOfficialOpened(), nil
+	case "folder-type-json-opened":
+		return FolderTypeJsonOpened(), nil
+	case "folder-type-kubernetes":
+		return FolderTypeKubernetes(), nil
+	case "folder-type-kubernetes-opened":
+		return FolderTypeKubernetesOpened(), nil
+	case "folder-type-less":
+		return FolderTypeLess(), nil
+	case "folder-type-less-opened":
+		return FolderTypeLessOpened(), nil
+	case "folder-type-library":
+		return FolderTypeLibrary(), nil
+	case "folder-type-library-opened":
+		return FolderTypeLibraryOpened(), nil
+	case "folder-type-light-cypress":
+		return FolderTypeLightCypress(), nil
+	case "folder-type-light-cypress-opened":
+		return FolderTypeLightCypressOpened(), nil
+	case "folder-type-light-electron":
+		return FolderTypeLightElectron(), nil
+	case "folder-type-light-electron-opened":
+		return FolderTypeLightElectronOpened(), nil
+	case "folder-type-light-expo":
+		return FolderTypeLightExpo(), nil
+	case "folder-type-light-expo-opened":
+		return FolderTypeLightExpoOpened(), nil
+	case "folder-type-light-fonts":
+		return FolderTypeLightFonts(), nil
+	case "folder-type-light-fonts-opened":
+		return FolderTypeLightFontsOpened(), nil
+	case "folder-type-light-gradle":
+		return FolderTypeLightGradle(), nil
+	case "folder-type-light-gradle-opened":
+		return FolderTypeLightGradleOpened(), nil
+	case "folder-type-light-meteor":
+		return FolderTypeLightMeteor(), nil
+	case "folder-type-light-meteor-opened":
+		return FolderTypeLightMeteorOpened(), nil
+	case "folder-type-light-mysql":
+		return FolderTypeLightMysql(), nil
+	case "folder-type-light-mysql-opened":
+		return FolderTypeLightMysqlOpened(), nil
+	case "folder-type-light-node":
+		return FolderTypeLightNode(), nil
+	case "folder-type-light-node-opened":
+		return FolderTypeLightNodeOpened(), nil
+	case "folder-type-light-redux":
+		return FolderTypeLightRedux(), nil
+	case "folder-type-light-redux-opened":
+		return FolderTypeLightReduxOpened(), nil
+	case "folder-type-light-sass":
+		return FolderTypeLightSass(), nil
+	case "folder-type-light-sass-opened":
+		return FolderTypeLightSassOpened(), nil
+	case "folder-type-linux":
+		return FolderTypeLinux(), nil
+	case "folder-type-linux-opened":
+		return FolderTypeLinuxOpened(), nil
+	case "folder-type-locale":
+		return FolderTypeLocale(), nil
+	case "folder-type-locale-opened":
+		return FolderTypeLocaleOpened(), nil
+	case "folder-type-log":
+		return FolderTypeLog(), nil
+	case "folder-type-log-opened":
+		return FolderTypeLogOpened(), nil
+	case "folder-type-macos":
+		return FolderTypeMacos(), nil
+	case "folder-type-macos-opened":
+		return FolderTypeMacosOpened(), nil
+	case "folder-type-mariadb":
+		return FolderTypeMariadb(), nil
+	case "folder-type-mariadb-opened":
+		return FolderTypeMariadbOpened(), nil
+	case "folder-type-maven":
+		return FolderTypeMaven(), nil
+	case "folder-type-maven-opened":
+		return FolderTypeMavenOpened(), nil
+	case "folder-type-memcached":
+		return FolderTypeMemcached(), nil
+	case "folder-type-memcached-opened":
+		return FolderTypeMemcachedOpened(), nil
+	case "folder-type-meteor":
+		return FolderTypeMeteor(), nil
+	case "folder-type-meteor-opened":
+		return FolderTypeMeteorOpened(), nil
+	case "folder-type-middleware":
+		return FolderTypeMiddleware(), nil
+	case "folder-type-middleware-opened":
+		return FolderTypeMiddlewareOpened(), nil
+	case "folder-type-minikube":
+		return FolderTypeMinikube(), nil
+	case "folder-type-minikube-opened":
+		return FolderTypeMinikubeOpened(), nil
+	case "folder-type-mjml":
+		return FolderTypeMjml(), nil
+	case "folder-type-mjml-opened":
+		return FolderTypeMjmlOpened(), nil
+	case "folder-type-mock":
+		return FolderTypeMock(), nil
+	case "folder-type-mock-opened":
+		return FolderTypeMockOpened(), nil
+	case "folder-type-model":
+		return FolderTypeModel(), nil
+	case "folder-type-model-opened":
+		return FolderTypeModelOpened(), nil
+	case "folder-type-module":
+		return FolderTypeModule(), nil
+	case "folder-type-module-opened":
+		return FolderTypeModuleOpened(), nil
+	case "folder-type-mongodb":
+		return FolderTypeMongodb(), nil
+	case "folder-type-mongodb-opened":
+		return FolderTypeMongodbOpened(), nil
+	case "folder-type-mysql":
+		return FolderTypeMysql(), nil
+	case "folder-type-mysql-opened":
+		return FolderTypeMysqlOpened(), nil
+	case "folder-type-next":
+		return FolderTypeNext(), nil
+	case "folder-type-next-opened":
+		return FolderTypeNextOpened(), nil
+	case "folder-type-nginx":
+		return FolderTypeNginx(), nil
+	case "folder-type-nginx-opened":
+		return FolderTypeNginxOpened(), nil
+	case "folder-type-nix":
+		return FolderTypeNix(), nil
+	case "folder-type-nix-opened":
+		return FolderTypeNixOpened(), nil
+	case "folder-type-node":
+		return FolderTypeNode(), nil
+	case "folder-type-node-opened":
+		return FolderTypeNodeOpened(), nil
+	case "folder-type-notification":
+		return FolderTypeNotification(), nil
+	case "folder-type-notification-opened":
+		return FolderTypeNotificationOpened(), nil
+	case "folder-type-nuget":
+		return FolderTypeNuget(), nil
+	case "folder-type-nuget-opened":
+		return FolderTypeNugetOpened(), nil
+	case "folder-type-nuxt":
+		return FolderTypeNuxt(), nil
+	case "folder-type-nuxt-opened":
+		return FolderTypeNuxtOpened(), nil
+	case "folder-type-package":
+		return FolderTypePackage(), nil
+	case "folder-type-package-opened":
+		return FolderTypePackageOpened(), nil
+	case "folder-type-paket":
+		return FolderTypePaket(), nil
+	case "folder-type-paket-opened":
+		return FolderTypePaketOpened(), nil
+	case "folder-type-php":
+		return FolderTypePhp(), nil
+	case "folder-type-php-opened":
+		return FolderTypePhpOpened(), nil
+	case "folder-type-platformio":
+		return FolderTypePlatformio(), nil
+	case "folder-type-platformio-opened":
+		return FolderTypePlatformioOpened(), nil
+	case "folder-type-plugin":
+		return FolderTypePlugin(), nil
+	case "folder-type-plugin-opened":
+		return FolderTypePluginOpened(), nil
+	case "folder-type-prisma":
+		return FolderTypePrisma(), nil
+	case "folder-type-prisma-opened":
+		return FolderTypePrismaOpened(), nil
+	case "folder-type-private":
+		return FolderTypePrivate(), nil
+	case "folder-type-private-opened":
+		return FolderTypePrivateOpened(), nil
+	case "folder-type-public":
+		return FolderTypePublic(), nil
+	case "folder-type-public-opened":
+		return FolderTypePublicOpened(), nil
+	case "folder-type-python":
+		return FolderTypePython(), nil
+	case "folder-type-python-opened":
+		return FolderTypePythonOpened(), nil
+	case "folder-type-ravendb":
+		return FolderTypeRavendb(), nil
+	case "folder-type-ravendb-opened":
+		return FolderTypeRavendbOpened(), nil
+	case "folder-type-redis":
+		return FolderTypeRedis(), nil
+	case "folder-type-redis-opened":
+		return FolderTypeRedisOpened(), nil
+	case "folder-type-redux":
+		return FolderTypeRedux(), nil
+	case "folder-type-redux-opened":
+		return FolderTypeReduxOpened(), nil
+	case "folder-type-route":
+		return FolderTypeRoute(), nil
+	case "folder-type-route-opened":
+		return FolderTypeRouteOpened(), nil
+	case "folder-type-sass":
+		return FolderTypeSass(), nil
+	case "folder-type-sass-opened":
+		return FolderTypeSassOpened(), nil
+	case "folder-type-script":
+		return FolderTypeScript(), nil
+	case "folder-type-script-opened":
+		return FolderTypeScriptOpened(), nil
+	case "folder-type-server":
+		return FolderTypeServer(), nil
+	case "folder-type-server-opened":
+		return FolderTypeServerOpened(), nil
+	case "folder-type-services":
+		return FolderTypeServices(), nil
+	case "folder-type-services-opened":
+		return FolderTypeServicesOpened(), nil
+	case "folder-type-shared":
+		return FolderTypeShared(), nil
+	case "folder-type-shared-opened":
+		return FolderTypeSharedOpened(), nil
+	case "folder-type-src":
+		return FolderTypeSrc(), nil
+	case "folder-type-src-opened":
+		return FolderTypeSrcOpened(), nil
+	case "folder-type-sso":
+		return FolderTypeSso(), nil
+	case "folder-type-sso-opened":
+		return FolderTypeSsoOpened(), nil
+	case "folder-type-story":
+		return FolderTypeStory(), nil
+	case "folder-type-story-opened":
+		return FolderTypeStoryOpened(), nil
+	case "folder-type-style":
+		return FolderTypeStyle(), nil
+	case "folder-type-style-opened":
+		return FolderTypeStyleOpened(), nil
+	case "folder-type-tauri":
+		return FolderTypeTauri(), nil
+	case "folder-type-tauri-opened":
+		return FolderTypeTauriOpened(), nil
+	case "folder-type-temp":
+		return FolderTypeTemp(), nil
+	case "folder-type-temp-opened":
+		return FolderTypeTempOpened(), nil
+	case "folder-type-template":
+		return FolderTypeTemplate(), nil
+	case "folder-type-template-opened":
+		return FolderTypeTemplateOpened(), nil
+	case "folder-type-test":
+		return FolderTypeTest(), nil
+	case "folder-type-test-opened":
+		return FolderTypeTestOpened(), nil
+	case "folder-type-theme":
+		return FolderTypeTheme(), nil
+	case "folder-type-theme-opened":
+		return FolderTypeThemeOpened(), nil
+	case "folder-type-tools":
+		return FolderTypeTools(), nil
+	case "folder-type-tools-opened":
+		return FolderTypeToolsOpened(), nil
+	case "folder-type-travis":
+		return FolderTypeTravis(), nil
+	case "folder-type-travis-opened":
+		return FolderTypeTravisOpened(), nil
+	case "folder-type-trunk":
+		return FolderTypeTrunk(), nil
+	case "folder-type-trunk-opened":
+		return FolderTypeTrunkOpened(), nil
+	case "folder-type-typescript":
+		return FolderTypeTypescript(), nil
+	case "folder-type-typescript-opened":
+		return FolderTypeTypescriptOpened(), nil
+	case "folder-type-typings":
+		return FolderTypeTypings(), nil
+	case "folder-type-typings-opened":
+		return FolderTypeTypingsOpened(), nil
+	case "folder-type-typings2":
+		return FolderTypeTypingsTwo(), nil
+	case "folder-type-typings2-opened":
+		return FolderTypeTypingsTwoOpened(), nil
+	case "folder-type-vagrant":
+		return FolderTypeVagrant(), nil
+	case "folder-type-vagrant-opened":
+		return FolderTypeVagrantOpened(), nil
+	case "folder-type-video":
+		return FolderTypeVideo(), nil
+	case "folder-type-video-opened":
+		return FolderTypeVideoOpened(), nil
+	case "folder-type-view":
+		return FolderTypeView(), nil
+	case "folder-type-view-opened":
+		return FolderTypeViewOpened(), nil
+	case "folder-type-vs":
+		return FolderTypeVs(), nil
+	case "folder-type-vs-opened":
+		return FolderTypeVsOpened(), nil
+	case "folder-type-vs2":
+		return FolderTypeVsTwo(), nil
+	case "folder-type-vs2-opened":
+		return FolderTypeVsTwoOpened(), nil
+	case "folder-type-vscode":
+		return FolderTypeVscode(), nil
+	case "folder-type-vscode-opened":
+		return FolderTypeVscodeOpened(), nil
+	case "folder-type-vscode-test":
+		return FolderTypeVscodeTest(), nil
+	case "folder-type-vscode-test-opened":
+		return FolderTypeVscodeTestOpened(), nil
+	case "folder-type-vscode-test3":
+		return FolderTypeVscodeTestThree(), nil
+	case "folder-type-vscode-test3-opened":
+		return FolderTypeVscodeTestThreeOpened(), nil
+	case "folder-type-vscode-test2":
+		return FolderTypeVscodeTestTwo(), nil
+	case "folder-type-vscode-test2-opened":
+		return FolderTypeVscodeTestTwoOpened(), nil
+	case "folder-type-vscode3":
+		return FolderTypeVscodeThree(), nil
+	case "folder-type-vscode3-opened":
+		return FolderTypeVscodeThreeOpened(), nil
+	case "folder-type-vscode2":
+		return FolderTypeVscodeTwo(), nil
+	case "folder-type-vscode2-opened":
+		return FolderTypeVscodeTwoOpened(), nil
+	case "folder-type-webpack":
+		return FolderTypeWebpack(), nil
+	case "folder-type-webpack-opened":
+		return FolderTypeWebpackOpened(), nil
+	case "folder-type-windows":
+		return FolderTypeWindows(), nil
+	case "folder-type-windows-opened":
+		return FolderTypeWindowsOpened(), nil
+	case "folder-type-www":
+		return FolderTypeWww(), nil
+	case "folder-type-www-opened":
+		return FolderTypeWwwOpened(), nil
+	case "folder-type-yarn":
+		return FolderTypeYarn(), nil
+	case "folder-type-yarn-opened":
+		return FolderTypeYarnOpened(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in vscode_icons icon set", name)
+	}
 }

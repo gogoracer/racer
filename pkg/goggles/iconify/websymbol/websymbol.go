@@ -1,6 +1,9 @@
 package websymbol
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	archiveInnerSVG           = `<path fill="currentColor" d="M1217 44v131q0 18-12.5 30.5T1174 218H43q-17 0-30-12.5T0 175V44q0-17 13-30T43 1h1131q18 0 30.5 13t12.5 30zm-43 305v609q0 17-13 30t-31 13H87q-18 0-31-13t-13-30V349q0-18 13-31t31-13h1043q18 0 31 13t13 31zM870 501q0-27-19.5-46T804 436H413q-27 0-46 19t-19 46t19 46t46 19h391q27 0 46.5-19t19.5-46z"/>`
@@ -1110,4 +1113,181 @@ func Youtube(children ...any) *engine.HTMLElement {
 		youtubeInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "archive":
+		return Archive(), nil
+	case "arrows-cw":
+		return ArrowsCw(), nil
+	case "attach":
+		return Attach(), nil
+	case "attention":
+		return Attention(), nil
+	case "block":
+		return Block(), nil
+	case "cancel":
+		return Cancel(), nil
+	case "cancel-circle":
+		return CancelCircle(), nil
+	case "chat":
+		return Chat(), nil
+	case "clock":
+		return Clock(), nil
+	case "cloud":
+		return Cloud(), nil
+	case "code":
+		return Code(), nil
+	case "cog":
+		return Cog(), nil
+	case "comment":
+		return Comment(), nil
+	case "comment-alt":
+		return CommentAlt(), nil
+	case "cw-circle":
+		return CwCircle(), nil
+	case "doc":
+		return Doc(), nil
+	case "docs-landscape":
+		return DocsLandscape(), nil
+	case "down-circle":
+		return DownCircle(), nil
+	case "down-dir":
+		return DownDir(), nil
+	case "down-micro":
+		return DownMicro(), nil
+	case "facebook-rect":
+		return FacebookRect(), nil
+	case "folder":
+		return Folder(), nil
+	case "font":
+		return Font(), nil
+	case "forward":
+		return Forward(), nil
+	case "googleplus-rect":
+		return GoogleplusRect(), nil
+	case "heart":
+		return Heart(), nil
+	case "heart-empty":
+		return HeartEmpty(), nil
+	case "indent-left":
+		return IndentLeft(), nil
+	case "indent-right":
+		return IndentRight(), nil
+	case "left-circle":
+		return LeftCircle(), nil
+	case "left-open":
+		return LeftOpen(), nil
+	case "link":
+		return Link(), nil
+	case "linkedin-rect":
+		return LinkedinRect(), nil
+	case "list":
+		return List(), nil
+	case "list-numbered":
+		return ListNumbered(), nil
+	case "location":
+		return Location(), nil
+	case "lock":
+		return Lock(), nil
+	case "lock-open":
+		return LockOpen(), nil
+	case "logout":
+		return Logout(), nil
+	case "mail":
+		return Mail(), nil
+	case "minus-circle":
+		return MinusCircle(), nil
+	case "odnoklassniki-rect":
+		return OdnoklassnikiRect(), nil
+	case "ok":
+		return Ok(), nil
+	case "ok-circle":
+		return OkCircle(), nil
+	case "picture":
+		return Picture(), nil
+	case "plus-circle":
+		return PlusCircle(), nil
+	case "popup":
+		return Popup(), nil
+	case "progress-5":
+		return ProgressFive(), nil
+	case "progress-4":
+		return ProgressFour(), nil
+	case "progress-1":
+		return ProgressOne(), nil
+	case "progress-7":
+		return ProgressSeven(), nil
+	case "progress-6":
+		return ProgressSix(), nil
+	case "progress-3":
+		return ProgressThree(), nil
+	case "progress-2":
+		return ProgressTwo(), nil
+	case "progress-0":
+		return ProgressZero(), nil
+	case "reply":
+		return Reply(), nil
+	case "reply-all":
+		return ReplyAll(), nil
+	case "resize-full":
+		return ResizeFull(), nil
+	case "resize-full-circle":
+		return ResizeFullCircle(), nil
+	case "retweet":
+		return Retweet(), nil
+	case "right-circle":
+		return RightCircle(), nil
+	case "right-dir":
+		return RightDir(), nil
+	case "right-open":
+		return RightOpen(), nil
+	case "rss":
+		return Rss(), nil
+	case "rss-alt":
+		return RssAlt(), nil
+	case "search":
+		return Search(), nil
+	case "signal":
+		return Signal(), nil
+	case "skype":
+		return Skype(), nil
+	case "star":
+		return Star(), nil
+	case "tag":
+		return Tag(), nil
+	case "target":
+		return Target(), nil
+	case "terminal":
+		return Terminal(), nil
+	case "th":
+		return Th(), nil
+	case "th-large":
+		return ThLarge(), nil
+	case "th-list":
+		return ThList(), nil
+	case "tumblr-rect":
+		return TumblrRect(), nil
+	case "twitter-bird":
+		return TwitterBird(), nil
+	case "up-circle":
+		return UpCircle(), nil
+	case "up-micro":
+		return UpMicro(), nil
+	case "updown-circle":
+		return UpdownCircle(), nil
+	case "user":
+		return User(), nil
+	case "video":
+		return Video(), nil
+	case "vimeo-rect":
+		return VimeoRect(), nil
+	case "vkontakte-rect":
+		return VkontakteRect(), nil
+	case "youtube":
+		return Youtube(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in websymbol icon set", name)
+	}
 }

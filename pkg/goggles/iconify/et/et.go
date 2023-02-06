@@ -1,6 +1,9 @@
 package et
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	adjustmentsInnerSVG     = `<g fill="currentColor"><path d="M31 0H2c-.822 0-2 1.178-2 2v28c0 .822 1.178 2 2 2h29c.822 0 2-1.178 2-2V2c0-.822-1.178-2-2-2zm1 30c-.006.284-.716.994-1 1H2c-.284-.006-.994-.716-1-1V2c.006-.284.716-.994 1-1h29c.284.006.994.716 1 1v28z"/><path d="M16.5 5.5c-1.103 0-2 .897-2 2s.897 2 2 2s2-.897 2-2s-.897-2-2-2zm0 3c-.551 0-1-.449-1-1s.449-1 1-1s1 .449 1 1s-.449 1-1 1zm8 13c-1.103 0-2 .897-2 2s.897 2 2 2s2-.897 2-2s-.897-2-2-2zm0 3c-.551 0-1-.449-1-1s.449-1 1-1s1 .449 1 1s-.449 1-1 1zm-16-8c-1.103 0-2 .897-2 2s.897 2 2 2s2-.897 2-2s-.897-2-2-2zm0 3c-.551 0-1-.449-1-1s.449-1 1-1s1 .449 1 1s-.449 1-1 1zm0-4.5a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-1 0v9a.5.5 0 0 0 .5.5zm0 7a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 1 0v-3a.5.5 0 0 0-.5-.5zm8-11a.5.5 0 0 0-.5.5v14a.5.5 0 0 0 1 0v-14a.5.5 0 0 0-.5-.5zm8 9a.5.5 0 0 0 .5-.5v-14a.5.5 0 0 0-1 0v14a.5.5 0 0 0 .5.5z"/></g>`
@@ -1305,4 +1308,211 @@ func Wine(children ...any) *engine.HTMLElement {
 		wineInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "adjustments":
+		return Adjustments(), nil
+	case "alarmclock":
+		return Alarmclock(), nil
+	case "anchor":
+		return Anchor(), nil
+	case "aperture":
+		return Aperture(), nil
+	case "attachments":
+		return Attachments(), nil
+	case "bargraph":
+		return Bargraph(), nil
+	case "basket":
+		return Basket(), nil
+	case "beaker":
+		return Beaker(), nil
+	case "bike":
+		return Bike(), nil
+	case "book-open":
+		return BookOpen(), nil
+	case "briefcase":
+		return Briefcase(), nil
+	case "browser":
+		return Browser(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "camera":
+		return Camera(), nil
+	case "caution":
+		return Caution(), nil
+	case "chat":
+		return Chat(), nil
+	case "circle-compass":
+		return CircleCompass(), nil
+	case "clipboard":
+		return Clipboard(), nil
+	case "clock":
+		return Clock(), nil
+	case "cloud":
+		return Cloud(), nil
+	case "compass":
+		return Compass(), nil
+	case "desktop":
+		return Desktop(), nil
+	case "dial":
+		return Dial(), nil
+	case "document":
+		return Document(), nil
+	case "documents":
+		return Documents(), nil
+	case "download":
+		return Download(), nil
+	case "dribbble":
+		return Dribbble(), nil
+	case "edit":
+		return Edit(), nil
+	case "envelope":
+		return Envelope(), nil
+	case "expand":
+		return Expand(), nil
+	case "facebook":
+		return Facebook(), nil
+	case "flag":
+		return Flag(), nil
+	case "focus":
+		return Focus(), nil
+	case "gears":
+		return Gears(), nil
+	case "genius":
+		return Genius(), nil
+	case "gift":
+		return Gift(), nil
+	case "global":
+		return Global(), nil
+	case "globe":
+		return Globe(), nil
+	case "googleplus":
+		return Googleplus(), nil
+	case "grid":
+		return Grid(), nil
+	case "happy":
+		return Happy(), nil
+	case "hazardous":
+		return Hazardous(), nil
+	case "heart":
+		return Heart(), nil
+	case "hotairballoon":
+		return Hotairballoon(), nil
+	case "hourglass":
+		return Hourglass(), nil
+	case "key":
+		return Key(), nil
+	case "laptop":
+		return Laptop(), nil
+	case "layers":
+		return Layers(), nil
+	case "lifesaver":
+		return Lifesaver(), nil
+	case "lightbulb":
+		return Lightbulb(), nil
+	case "linegraph":
+		return Linegraph(), nil
+	case "linkedin":
+		return Linkedin(), nil
+	case "lock":
+		return Lock(), nil
+	case "magnifying-glass":
+		return MagnifyingGlass(), nil
+	case "map":
+		return Map(), nil
+	case "map-pin":
+		return MapPin(), nil
+	case "megaphone":
+		return Megaphone(), nil
+	case "mic":
+		return Mic(), nil
+	case "mobile":
+		return Mobile(), nil
+	case "newspaper":
+		return Newspaper(), nil
+	case "notebook":
+		return Notebook(), nil
+	case "paintbrush":
+		return Paintbrush(), nil
+	case "paperclip":
+		return Paperclip(), nil
+	case "pencil":
+		return Pencil(), nil
+	case "phone":
+		return Phone(), nil
+	case "picture":
+		return Picture(), nil
+	case "pictures":
+		return Pictures(), nil
+	case "piechart":
+		return Piechart(), nil
+	case "presentation":
+		return Presentation(), nil
+	case "pricetags":
+		return Pricetags(), nil
+	case "printer":
+		return Printer(), nil
+	case "profile-female":
+		return ProfileFemale(), nil
+	case "profile-male":
+		return ProfileMale(), nil
+	case "puzzle":
+		return Puzzle(), nil
+	case "quote":
+		return Quote(), nil
+	case "recycle":
+		return Recycle(), nil
+	case "refresh":
+		return Refresh(), nil
+	case "ribbon":
+		return Ribbon(), nil
+	case "rss":
+		return Rss(), nil
+	case "sad":
+		return Sad(), nil
+	case "scissors":
+		return Scissors(), nil
+	case "scope":
+		return Scope(), nil
+	case "search":
+		return Search(), nil
+	case "shield":
+		return Shield(), nil
+	case "speedometer":
+		return Speedometer(), nil
+	case "strategy":
+		return Strategy(), nil
+	case "streetsign":
+		return Streetsign(), nil
+	case "tablet":
+		return Tablet(), nil
+	case "telescope":
+		return Telescope(), nil
+	case "toolbox":
+		return Toolbox(), nil
+	case "tools":
+		return Tools(), nil
+	case "tools-2":
+		return ToolsTwo(), nil
+	case "traget":
+		return Traget(), nil
+	case "trophy":
+		return Trophy(), nil
+	case "tumblr":
+		return Tumblr(), nil
+	case "twitter":
+		return Twitter(), nil
+	case "upload":
+		return Upload(), nil
+	case "video":
+		return Video(), nil
+	case "wallet":
+		return Wallet(), nil
+	case "wine":
+		return Wine(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in et icon set", name)
+	}
 }

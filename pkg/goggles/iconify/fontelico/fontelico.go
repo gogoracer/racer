@@ -1,6 +1,9 @@
 package fontelico
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	chromeInnerSVG        = `<path fill="currentColor" d="M498.183.005c-147.445.678-291.229 66.62-387.347 186.018l153.958 236.639c38.92-110.963 150.567-181.877 267.325-170.051l414.127 22.061c-42.323-84.026-108.752-157.098-196.299-207.641C670.526 21.176 583.738-.389 498.184.005zM81.65 226.208C30.042 304.874 0 398.942 0 500.033c0 249.758 183.248 456.794 422.595 493.996l127.929-251.638c-115.557 21.774-232.78-39.492-280.918-146.521L81.65 226.208zm884.812 93.837l-281.918 14.999c76.637 89.189 82.213 221.338 13.593 316.541l-226.172 347.6c93.931 5.361 190.433-15.638 277.98-66.183c216.297-124.878 303.971-387.076 216.516-612.956zm-466.498 11.374c-93.11 0-168.613 75.503-168.613 168.613s75.503 168.613 168.613 168.613s168.613-75.503 168.613-168.613s-75.503-168.613-168.613-168.613z"/>`
@@ -447,4 +450,79 @@ func SpinTwo(children ...any) *engine.HTMLElement {
 		spinTwoInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "chrome":
+		return Chrome(), nil
+	case "crown":
+		return Crown(), nil
+	case "crown-minus":
+		return CrownMinus(), nil
+	case "crown-plus":
+		return CrownPlus(), nil
+	case "emo-angry":
+		return EmoAngry(), nil
+	case "emo-beer":
+		return EmoBeer(), nil
+	case "emo-coffee":
+		return EmoCoffee(), nil
+	case "emo-cry":
+		return EmoCry(), nil
+	case "emo-devil":
+		return EmoDevil(), nil
+	case "emo-displeased":
+		return EmoDispleased(), nil
+	case "emo-grin":
+		return EmoGrin(), nil
+	case "emo-happy":
+		return EmoHappy(), nil
+	case "emo-laugh":
+		return EmoLaugh(), nil
+	case "emo-saint":
+		return EmoSaint(), nil
+	case "emo-shoot":
+		return EmoShoot(), nil
+	case "emo-sleep":
+		return EmoSleep(), nil
+	case "emo-squint":
+		return EmoSquint(), nil
+	case "emo-sunglasses":
+		return EmoSunglasses(), nil
+	case "emo-surprised":
+		return EmoSurprised(), nil
+	case "emo-thumbsup":
+		return EmoThumbsup(), nil
+	case "emo-tongue":
+		return EmoTongue(), nil
+	case "emo-unhappy":
+		return EmoUnhappy(), nil
+	case "emo-wink":
+		return EmoWink(), nil
+	case "emo-wink2":
+		return EmoWinkTwo(), nil
+	case "firefox":
+		return Firefox(), nil
+	case "ie":
+		return Ie(), nil
+	case "marquee":
+		return Marquee(), nil
+	case "opera":
+		return Opera(), nil
+	case "spin5":
+		return SpinFive(), nil
+	case "spin4":
+		return SpinFour(), nil
+	case "spin1":
+		return SpinOne(), nil
+	case "spin6":
+		return SpinSix(), nil
+	case "spin3":
+		return SpinThree(), nil
+	case "spin2":
+		return SpinTwo(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in fontelico icon set", name)
+	}
 }

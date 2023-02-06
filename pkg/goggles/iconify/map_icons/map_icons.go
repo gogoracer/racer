@@ -1,6 +1,9 @@
 package map_icons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	abseilingInnerSVG                = `<path fill="currentColor" d="M35.009 25.542c-.327-1.293-1.973-2.314-3.21-1.716L27 26v-8.584l8.433-13.243c.612-.967.376-2.249-.609-2.869c-.973-.609-2.24-.326-2.787.62L24.97 13.179l-4.261.011c-.273 0-.544.044-.818.152l-7.366 2.869l-3.795-5.715c-.624-.956-1.914-1.239-2.887-.62s-1.257 1.912-.633 2.879l4.736 7.127c.536.826 1.662 1.195 2.613.804L18 18.589V28l-7.397 16.387c-.558 1.251.054 2.625 1.356 3.354c1.302.729 2.801.304 3.342-.945l5.951-13.582a6.035 6.035 0 0 0 1.673.219a4.44 4.44 0 0 0 1.531-.272l6.681-3.108l1.464 5.857a2.45 2.45 0 0 0 2.97 1.771a2.42 2.42 0 0 0 1.77-2.945l-2.332-9.194zM29 22.088v1.553C39 18.623 42.878 1.435 42.878 0h-1.399C40.954 3.585 37 17.926 29 22.088zm-7.092-9.658c2.046 0 3.708-1.64 3.708-3.672c0-2.031-1.662-3.684-3.708-3.684c-2.046 0-3.708 1.652-3.708 3.684s1.662 3.672 3.708 3.672zM25 50h2V33.432L25 35z"/>`
@@ -2176,4 +2179,345 @@ func ZoomOutAlt(children ...any) *engine.HTMLElement {
 		zoomOutAltInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "abseiling":
+		return Abseiling(), nil
+	case "accounting":
+		return Accounting(), nil
+	case "airport":
+		return Airport(), nil
+	case "amusement-park":
+		return AmusementPark(), nil
+	case "aquarium":
+		return Aquarium(), nil
+	case "archery":
+		return Archery(), nil
+	case "art-gallery":
+		return ArtGallery(), nil
+	case "assistive-listening-system":
+		return AssistiveListeningSystem(), nil
+	case "atm":
+		return Atm(), nil
+	case "audio-description":
+		return AudioDescription(), nil
+	case "bakery":
+		return Bakery(), nil
+	case "bank":
+		return Bank(), nil
+	case "bar":
+		return Bar(), nil
+	case "baseball":
+		return Baseball(), nil
+	case "beauty-salon":
+		return BeautySalon(), nil
+	case "bicycle-store":
+		return BicycleStore(), nil
+	case "boat-ramp":
+		return BoatRamp(), nil
+	case "boat-tour":
+		return BoatTour(), nil
+	case "boating":
+		return Boating(), nil
+	case "book-store":
+		return BookStore(), nil
+	case "bowling-alley":
+		return BowlingAlley(), nil
+	case "braille":
+		return Braille(), nil
+	case "bus-station":
+		return BusStation(), nil
+	case "cafe":
+		return Cafe(), nil
+	case "campground":
+		return Campground(), nil
+	case "canoe":
+		return Canoe(), nil
+	case "car-dealer":
+		return CarDealer(), nil
+	case "car-rental":
+		return CarRental(), nil
+	case "car-repair":
+		return CarRepair(), nil
+	case "car-wash":
+		return CarWash(), nil
+	case "casino":
+		return Casino(), nil
+	case "cemetery":
+		return Cemetery(), nil
+	case "chairlift":
+		return Chairlift(), nil
+	case "church":
+		return Church(), nil
+	case "circle":
+		return Circle(), nil
+	case "city-hall":
+		return CityHall(), nil
+	case "climbing":
+		return Climbing(), nil
+	case "closed-captioning":
+		return ClosedCaptioning(), nil
+	case "clothing-store":
+		return ClothingStore(), nil
+	case "compass":
+		return Compass(), nil
+	case "convenience-store":
+		return ConvenienceStore(), nil
+	case "courthouse":
+		return Courthouse(), nil
+	case "cross-country-skiing":
+		return CrossCountrySkiing(), nil
+	case "crosshairs":
+		return Crosshairs(), nil
+	case "dentist":
+		return Dentist(), nil
+	case "department-store":
+		return DepartmentStore(), nil
+	case "diving":
+		return Diving(), nil
+	case "doctor":
+		return Doctor(), nil
+	case "electrician":
+		return Electrician(), nil
+	case "electronics-store":
+		return ElectronicsStore(), nil
+	case "embassy":
+		return Embassy(), nil
+	case "expand":
+		return Expand(), nil
+	case "female":
+		return Female(), nil
+	case "finance":
+		return Finance(), nil
+	case "fire-station":
+		return FireStation(), nil
+	case "fish-cleaning":
+		return FishCleaning(), nil
+	case "fishing-pier":
+		return FishingPier(), nil
+	case "florist":
+		return Florist(), nil
+	case "food":
+		return Food(), nil
+	case "fullscreen":
+		return Fullscreen(), nil
+	case "funeral-home":
+		return FuneralHome(), nil
+	case "furniture-store":
+		return FurnitureStore(), nil
+	case "gas-station":
+		return GasStation(), nil
+	case "general-contractor":
+		return GeneralContractor(), nil
+	case "grocery-or-supermarket":
+		return GroceryOrSupermarket(), nil
+	case "gym":
+		return Gym(), nil
+	case "hair-care":
+		return HairCare(), nil
+	case "hang-gliding":
+		return HangGliding(), nil
+	case "hardware-store":
+		return HardwareStore(), nil
+	case "health":
+		return Health(), nil
+	case "hindu-temple":
+		return HinduTemple(), nil
+	case "hospital":
+		return Hospital(), nil
+	case "ice-fishing":
+		return IceFishing(), nil
+	case "ice-skating":
+		return IceSkating(), nil
+	case "inline-skating":
+		return InlineSkating(), nil
+	case "insurance-agency":
+		return InsuranceAgency(), nil
+	case "jet-skiing":
+		return JetSkiing(), nil
+	case "jewelry-store":
+		return JewelryStore(), nil
+	case "kayaking":
+		return Kayaking(), nil
+	case "laundry":
+		return Laundry(), nil
+	case "lawyer":
+		return Lawyer(), nil
+	case "library":
+		return Library(), nil
+	case "liquor-store":
+		return LiquorStore(), nil
+	case "local-government":
+		return LocalGovernment(), nil
+	case "location-arrow":
+		return LocationArrow(), nil
+	case "locksmith":
+		return Locksmith(), nil
+	case "lodging":
+		return Lodging(), nil
+	case "low-vision-access":
+		return LowVisionAccess(), nil
+	case "male":
+		return Male(), nil
+	case "map-pin":
+		return MapPin(), nil
+	case "marina":
+		return Marina(), nil
+	case "mosque":
+		return Mosque(), nil
+	case "movie-rental":
+		return MovieRental(), nil
+	case "movie-theater":
+		return MovieTheater(), nil
+	case "moving-company":
+		return MovingCompany(), nil
+	case "museum":
+		return Museum(), nil
+	case "natural-feature":
+		return NaturalFeature(), nil
+	case "night-club":
+		return NightClub(), nil
+	case "open-captioning":
+		return OpenCaptioning(), nil
+	case "painter":
+		return Painter(), nil
+	case "park":
+		return Park(), nil
+	case "parking":
+		return Parking(), nil
+	case "pet-store":
+		return PetStore(), nil
+	case "pharmacy":
+		return Pharmacy(), nil
+	case "physiotherapist":
+		return Physiotherapist(), nil
+	case "place-of-worship":
+		return PlaceOfWorship(), nil
+	case "playground":
+		return Playground(), nil
+	case "plumber":
+		return Plumber(), nil
+	case "point-of-interest":
+		return PointOfInterest(), nil
+	case "police":
+		return Police(), nil
+	case "political":
+		return Political(), nil
+	case "post-box":
+		return PostBox(), nil
+	case "post-office":
+		return PostOffice(), nil
+	case "postal-code":
+		return PostalCode(), nil
+	case "postal-code-prefix":
+		return PostalCodePrefix(), nil
+	case "rafting":
+		return Rafting(), nil
+	case "real-estate-agency":
+		return RealEstateAgency(), nil
+	case "restaurant":
+		return Restaurant(), nil
+	case "roofing-contractor":
+		return RoofingContractor(), nil
+	case "route":
+		return Route(), nil
+	case "route-pin":
+		return RoutePin(), nil
+	case "rv-park":
+		return RvPark(), nil
+	case "sailing":
+		return Sailing(), nil
+	case "school":
+		return School(), nil
+	case "scuba-diving":
+		return ScubaDiving(), nil
+	case "search":
+		return Search(), nil
+	case "sheild":
+		return Sheild(), nil
+	case "shopping-mall":
+		return ShoppingMall(), nil
+	case "sign-language":
+		return SignLanguage(), nil
+	case "skateboarding":
+		return Skateboarding(), nil
+	case "ski-jumping":
+		return SkiJumping(), nil
+	case "skiing":
+		return Skiing(), nil
+	case "sledding":
+		return Sledding(), nil
+	case "snow":
+		return Snow(), nil
+	case "snow-shoeing":
+		return SnowShoeing(), nil
+	case "snowboarding":
+		return Snowboarding(), nil
+	case "snowmobile":
+		return Snowmobile(), nil
+	case "spa":
+		return Spa(), nil
+	case "square":
+		return Square(), nil
+	case "square-pin":
+		return SquarePin(), nil
+	case "square-rounded":
+		return SquareRounded(), nil
+	case "stadium":
+		return Stadium(), nil
+	case "storage":
+		return Storage(), nil
+	case "store":
+		return Store(), nil
+	case "subway-station":
+		return SubwayStation(), nil
+	case "surfing":
+		return Surfing(), nil
+	case "swimming":
+		return Swimming(), nil
+	case "synagogue":
+		return Synagogue(), nil
+	case "taxi-stand":
+		return TaxiStand(), nil
+	case "tennis":
+		return Tennis(), nil
+	case "toilet":
+		return Toilet(), nil
+	case "train-station":
+		return TrainStation(), nil
+	case "transit-station":
+		return TransitStation(), nil
+	case "travel-agency":
+		return TravelAgency(), nil
+	case "unisex":
+		return Unisex(), nil
+	case "university":
+		return University(), nil
+	case "veterinary-care":
+		return VeterinaryCare(), nil
+	case "volume-control-telephone":
+		return VolumeControlTelephone(), nil
+	case "waterskiing":
+		return Waterskiing(), nil
+	case "whale-watching":
+		return WhaleWatching(), nil
+	case "wheelchair":
+		return Wheelchair(), nil
+	case "wind-surfing":
+		return WindSurfing(), nil
+	case "zoo":
+		return Zoo(), nil
+	case "zoom-in":
+		return ZoomIn(), nil
+	case "zoom-in-alt":
+		return ZoomInAlt(), nil
+	case "zoom-out":
+		return ZoomOut(), nil
+	case "zoom-out-alt":
+		return ZoomOutAlt(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in map_icons icon set", name)
+	}
 }

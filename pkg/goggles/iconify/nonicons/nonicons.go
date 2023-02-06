@@ -1,6 +1,9 @@
 package nonicons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	angularSixteenInnerSVG         = `<path fill="currentColor" d="M7.467.133a1.75 1.75 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48V7c0 1.566-.32 3.182-1.303 4.682c-.983 1.499-2.585 2.813-5.032 3.855a1.7 1.7 0 0 1-1.33 0c-2.447-1.042-4.049-2.356-5.032-3.855C1.32 10.182 1 8.566 1 7V3.48a1.75 1.75 0 0 1 1.217-1.667l5.25-1.68Zm.61 1.429a.25.25 0 0 0-.153 0l-5.25 1.68a.25.25 0 0 0-.174.238V7c0 1.358.275 2.666 1.057 3.86c.784 1.194 2.121 2.34 4.366 3.297a.2.2 0 0 0 .154 0c2.245-.956 3.582-2.103 4.366-3.298C13.225 9.666 13.5 8.36 13.5 7V3.48a.25.25 0 0 0-.174-.238l-5.25-1.68ZM8 3.25a.75.75 0 0 1 .696.471l2.5 6.25a.75.75 0 0 1-1.392.557l-.312-.778H6.508l-.312.778a.75.75 0 0 1-1.392-.557l2.5-6.25A.75.75 0 0 1 8 3.25Zm-.892 5h1.784L8 6.02l-.892 2.23Z"/>`
@@ -811,4 +814,135 @@ func YarnSixteen(children ...any) *engine.HTMLElement {
 		yarnSixteenInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "angular-16":
+		return AngularSixteen(), nil
+	case "babel-16":
+		return BabelSixteen(), nil
+	case "c-plusplus-16":
+		return CPlusplusSixteen(), nil
+	case "c-sharp-16":
+		return CSharpSixteen(), nil
+	case "c-16":
+		return CSixteen(), nil
+	case "capacitor-16":
+		return CapacitorSixteen(), nil
+	case "class-16":
+		return ClassSixteen(), nil
+	case "constant-16":
+		return ConstantSixteen(), nil
+	case "css-16":
+		return CssSixteen(), nil
+	case "dart-16":
+		return DartSixteen(), nil
+	case "docker-16":
+		return DockerSixteen(), nil
+	case "elixir-16":
+		return ElixirSixteen(), nil
+	case "elm-16":
+		return ElmSixteen(), nil
+	case "eslint-16":
+		return EslintSixteen(), nil
+	case "field-16":
+		return FieldSixteen(), nil
+	case "go-16":
+		return GoSixteen(), nil
+	case "graphql-16":
+		return GraphqlSixteen(), nil
+	case "html-16":
+		return HtmlSixteen(), nil
+	case "interface-16":
+		return InterfaceSixteen(), nil
+	case "ionic-16":
+		return IonicSixteen(), nil
+	case "java-16":
+		return JavaSixteen(), nil
+	case "javascript-16":
+		return JavascriptSixteen(), nil
+	case "json-16":
+		return JsonSixteen(), nil
+	case "keyword-16":
+		return KeywordSixteen(), nil
+	case "kotlin-16":
+		return KotlinSixteen(), nil
+	case "kubernetes-16":
+		return KubernetesSixteen(), nil
+	case "lua-16":
+		return LuaSixteen(), nil
+	case "next-16":
+		return NextSixteen(), nil
+	case "nginx-16":
+		return NginxSixteen(), nil
+	case "node-16":
+		return NodeSixteen(), nil
+	case "npm-16":
+		return NpmSixteen(), nil
+	case "perl-16":
+		return PerlSixteen(), nil
+	case "php-16":
+		return PhpSixteen(), nil
+	case "prettier-16":
+		return PrettierSixteen(), nil
+	case "prisma-16":
+		return PrismaSixteen(), nil
+	case "python-16":
+		return PythonSixteen(), nil
+	case "r-16":
+		return RSixteen(), nil
+	case "react-16":
+		return ReactSixteen(), nil
+	case "rust-16":
+		return RustSixteen(), nil
+	case "scala-16":
+		return ScalaSixteen(), nil
+	case "snippet-16":
+		return SnippetSixteen(), nil
+	case "struct-16":
+		return StructSixteen(), nil
+	case "svelte-16":
+		return SvelteSixteen(), nil
+	case "swift-16":
+		return SwiftSixteen(), nil
+	case "terraform-16":
+		return TerraformSixteen(), nil
+	case "tmux-16":
+		return TmuxSixteen(), nil
+	case "toml-16":
+		return TomlSixteen(), nil
+	case "type-16":
+		return TypeSixteen(), nil
+	case "typescript-16":
+		return TypescriptSixteen(), nil
+	case "variable-16":
+		return VariableSixteen(), nil
+	case "vim-command-mode-16":
+		return VimCommandModeSixteen(), nil
+	case "vim-insert-mode-16":
+		return VimInsertModeSixteen(), nil
+	case "vim-normal-mode-16":
+		return VimNormalModeSixteen(), nil
+	case "vim-replace-mode-16":
+		return VimReplaceModeSixteen(), nil
+	case "vim-select-mode-16":
+		return VimSelectModeSixteen(), nil
+	case "vim-16":
+		return VimSixteen(), nil
+	case "vim-terminal-mode-16":
+		return VimTerminalModeSixteen(), nil
+	case "vim-visual-mode-16":
+		return VimVisualModeSixteen(), nil
+	case "vscode-16":
+		return VscodeSixteen(), nil
+	case "vue-16":
+		return VueSixteen(), nil
+	case "yaml-16":
+		return YamlSixteen(), nil
+	case "yarn-16":
+		return YarnSixteen(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in nonicons icon set", name)
+	}
 }

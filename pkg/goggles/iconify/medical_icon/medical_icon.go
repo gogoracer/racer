@@ -1,6 +1,9 @@
 package medical_icon
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	accessibilityInnerSVG             = `<path fill="currentColor" d="M56.204.779S7.363.764 7.378.779C2.884.779.276 3.102.276 7.849v48.937c0 4.441 2.49 6.842 6.981 6.842h49.144c4.49 0 6.653-2.285 6.653-6.842V7.849c0-4.631-2.219-7.07-6.85-7.07zM28.999 58.152c-4.494 0-8.719-1.75-11.896-4.927a16.715 16.715 0 0 1-4.928-11.896a16.862 16.862 0 0 1 8.57-14.663l1.454 2.578a13.899 13.899 0 0 0-7.064 12.085a13.78 13.78 0 0 0 4.06 9.803a13.773 13.773 0 0 0 9.804 4.061a13.815 13.815 0 0 0 13.482-10.619l2.878.69a16.764 16.764 0 0 1-16.361 12.888zm22.804-6.201l-1.23.492l-.625-1.05l-8.092-15.009h-17.83l-.144-1.439l-2.592-23.953l.034-.033a4.716 4.716 0 0 1 3.854-6.33a4.706 4.706 0 1 1 1.119 9.346a4.698 4.698 0 0 1-1.712-.115l1.297 11.254l13.484.005v2.961l-13.162.111l.48 5.232h16.947l.419.665l7.885 14.682l3.087-1.264l1.099 2.733l-4.317 1.713z"/>`
@@ -1877,4 +1880,299 @@ func WomensHealth(children ...any) *engine.HTMLElement {
 		womensHealthInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "accessibility":
+		return Accessibility(), nil
+	case "administration":
+		return Administration(), nil
+	case "alternative-complementary":
+		return AlternativeComplementary(), nil
+	case "ambulance":
+		return Ambulance(), nil
+	case "anesthesia":
+		return Anesthesia(), nil
+	case "billing":
+		return Billing(), nil
+	case "cardiology":
+		return Cardiology(), nil
+	case "care-staff-area":
+		return CareStaffArea(), nil
+	case "cath-lab":
+		return CathLab(), nil
+	case "chapel":
+		return Chapel(), nil
+	case "coffee-shop":
+		return CoffeeShop(), nil
+	case "dental":
+		return Dental(), nil
+	case "dermatology":
+		return Dermatology(), nil
+	case "diabetes-education":
+		return DiabetesEducation(), nil
+	case "drinking-fountain":
+		return DrinkingFountain(), nil
+	case "ear-nose-throat":
+		return EarNoseThroat(), nil
+	case "elevators":
+		return Elevators(), nil
+	case "emergency":
+		return Emergency(), nil
+	case "family-practice":
+		return FamilyPractice(), nil
+	case "fire-extinguisher":
+		return FireExtinguisher(), nil
+	case "first-aid":
+		return FirstAid(), nil
+	case "genetics":
+		return Genetics(), nil
+	case "gift-shop":
+		return GiftShop(), nil
+	case "health-education":
+		return HealthEducation(), nil
+	case "health-services":
+		return HealthServices(), nil
+	case "hearing-assistance":
+		return HearingAssistance(), nil
+	case "hospital":
+		return Hospital(), nil
+	case "i-accessibility":
+		return IAccessibility(), nil
+	case "i-administration":
+		return IAdministration(), nil
+	case "i-alternative-complementary":
+		return IAlternativeComplementary(), nil
+	case "i-ambulance":
+		return IAmbulance(), nil
+	case "i-anesthesia":
+		return IAnesthesia(), nil
+	case "i-billing":
+		return IBilling(), nil
+	case "i-cardiology":
+		return ICardiology(), nil
+	case "i-care-staff-area":
+		return ICareStaffArea(), nil
+	case "i-cath-lab":
+		return ICathLab(), nil
+	case "i-chapel":
+		return IChapel(), nil
+	case "i-coffee-shop":
+		return ICoffeeShop(), nil
+	case "i-dental":
+		return IDental(), nil
+	case "i-dermatology":
+		return IDermatology(), nil
+	case "i-diabetes-education":
+		return IDiabetesEducation(), nil
+	case "i-drinking-fountain":
+		return IDrinkingFountain(), nil
+	case "i-ear-nose-throat":
+		return IEarNoseThroat(), nil
+	case "i-elevators":
+		return IElevators(), nil
+	case "i-emergency":
+		return IEmergency(), nil
+	case "i-family-practice":
+		return IFamilyPractice(), nil
+	case "i-fire-extinguisher":
+		return IFireExtinguisher(), nil
+	case "i-first-aid":
+		return IFirstAid(), nil
+	case "i-genetics":
+		return IGenetics(), nil
+	case "i-gift-shop":
+		return IGiftShop(), nil
+	case "i-health-education":
+		return IHealthEducation(), nil
+	case "i-health-services":
+		return IHealthServices(), nil
+	case "i-hearing-assistance":
+		return IHearingAssistance(), nil
+	case "i-hospital":
+		return IHospital(), nil
+	case "i-imaging-alternative-ct":
+		return IImagingAlternativeCt(), nil
+	case "i-imaging-alternative-mri":
+		return IImagingAlternativeMri(), nil
+	case "i-imaging-alternative-mri-two":
+		return IImagingAlternativeMriTwo(), nil
+	case "i-imaging-alternative-pet":
+		return IImagingAlternativePet(), nil
+	case "i-imaging-root-category":
+		return IImagingRootCategory(), nil
+	case "i-immunizations":
+		return IImmunizations(), nil
+	case "i-infectious-diseases":
+		return IInfectiousDiseases(), nil
+	case "i-information-us":
+		return IInformationUs(), nil
+	case "i-inpatient":
+		return IInpatient(), nil
+	case "i-intensive-care":
+		return IIntensiveCare(), nil
+	case "i-internal-medicine":
+		return IInternalMedicine(), nil
+	case "i-interpreter-services":
+		return IInterpreterServices(), nil
+	case "i-kidney":
+		return IKidney(), nil
+	case "i-labor-delivery":
+		return ILaborDelivery(), nil
+	case "i-laboratory":
+		return ILaboratory(), nil
+	case "i-mammography":
+		return IMammography(), nil
+	case "i-medical-library":
+		return IMedicalLibrary(), nil
+	case "i-medical-records":
+		return IMedicalRecords(), nil
+	case "i-mental-health":
+		return IMentalHealth(), nil
+	case "i-mri-pet":
+		return IMriPet(), nil
+	case "i-neurology":
+		return INeurology(), nil
+	case "i-no-smoking":
+		return INoSmoking(), nil
+	case "i-nursery":
+		return INursery(), nil
+	case "i-nutrition":
+		return INutrition(), nil
+	case "i-oncology":
+		return IOncology(), nil
+	case "i-ophthalmology":
+		return IOphthalmology(), nil
+	case "i-outpatient":
+		return IOutpatient(), nil
+	case "i-pathology":
+		return IPathology(), nil
+	case "i-pediatrics":
+		return IPediatrics(), nil
+	case "i-pharmacy":
+		return IPharmacy(), nil
+	case "i-physical-therapy":
+		return IPhysicalTherapy(), nil
+	case "i-radiology":
+		return IRadiology(), nil
+	case "i-registration":
+		return IRegistration(), nil
+	case "i-respiratory":
+		return IRespiratory(), nil
+	case "i-restaurant":
+		return IRestaurant(), nil
+	case "i-restrooms":
+		return IRestrooms(), nil
+	case "i-smoking":
+		return ISmoking(), nil
+	case "i-social-services":
+		return ISocialServices(), nil
+	case "i-stairs":
+		return IStairs(), nil
+	case "i-surgery":
+		return ISurgery(), nil
+	case "i-text-telephone":
+		return ITextTelephone(), nil
+	case "i-ultrasound":
+		return IUltrasound(), nil
+	case "i-volume-control":
+		return IVolumeControl(), nil
+	case "i-waiting-area":
+		return IWaitingArea(), nil
+	case "i-womens-health":
+		return IWomensHealth(), nil
+	case "imaging-alternative-ct":
+		return ImagingAlternativeCt(), nil
+	case "imaging-alternative-mri":
+		return ImagingAlternativeMri(), nil
+	case "imaging-alternative-mri-two":
+		return ImagingAlternativeMriTwo(), nil
+	case "imaging-alternative-pet":
+		return ImagingAlternativePet(), nil
+	case "imaging-root-category":
+		return ImagingRootCategory(), nil
+	case "immunizations":
+		return Immunizations(), nil
+	case "infectious-diseases":
+		return InfectiousDiseases(), nil
+	case "information-us":
+		return InformationUs(), nil
+	case "inpatient":
+		return Inpatient(), nil
+	case "intensive-care":
+		return IntensiveCare(), nil
+	case "internal-medicine":
+		return InternalMedicine(), nil
+	case "interpreter-services":
+		return InterpreterServices(), nil
+	case "kidney":
+		return Kidney(), nil
+	case "labor-delivery":
+		return LaborDelivery(), nil
+	case "laboratory":
+		return Laboratory(), nil
+	case "mammography":
+		return Mammography(), nil
+	case "medical-library":
+		return MedicalLibrary(), nil
+	case "medical-records":
+		return MedicalRecords(), nil
+	case "mental-health":
+		return MentalHealth(), nil
+	case "mri-pet":
+		return MriPet(), nil
+	case "neurology":
+		return Neurology(), nil
+	case "no-smoking":
+		return NoSmoking(), nil
+	case "nursery":
+		return Nursery(), nil
+	case "nutrition":
+		return Nutrition(), nil
+	case "oncology":
+		return Oncology(), nil
+	case "ophthalmology":
+		return Ophthalmology(), nil
+	case "outpatient":
+		return Outpatient(), nil
+	case "pathology":
+		return Pathology(), nil
+	case "pediatrics":
+		return Pediatrics(), nil
+	case "pharmacy":
+		return Pharmacy(), nil
+	case "physical-therapy":
+		return PhysicalTherapy(), nil
+	case "radiology":
+		return Radiology(), nil
+	case "registration":
+		return Registration(), nil
+	case "respiratory":
+		return Respiratory(), nil
+	case "restaurant":
+		return Restaurant(), nil
+	case "restrooms":
+		return Restrooms(), nil
+	case "smoking":
+		return Smoking(), nil
+	case "social-services":
+		return SocialServices(), nil
+	case "stairs":
+		return Stairs(), nil
+	case "surgery":
+		return Surgery(), nil
+	case "text-telephone":
+		return TextTelephone(), nil
+	case "ultrasound":
+		return Ultrasound(), nil
+	case "volume-control":
+		return VolumeControl(), nil
+	case "waiting-area":
+		return WaitingArea(), nil
+	case "womens-health":
+		return WomensHealth(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in medical_icon icon set", name)
+	}
 }

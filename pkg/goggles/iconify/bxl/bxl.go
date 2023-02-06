@@ -1,6 +1,9 @@
 package bxl
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	adobeInnerSVG             = `<path fill="currentColor" d="M21 19.966V4.034h-6.654zM3 4.034v15.932L9.658 4.034zM9.092 16.76h3.104l1.268 3.205h2.778L12.003 9.904z"/>`
@@ -2020,4 +2023,321 @@ func Zoom(children ...any) *engine.HTMLElement {
 		zoomInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "adobe":
+		return Adobe(), nil
+	case "airbnb":
+		return Airbnb(), nil
+	case "algolia":
+		return Algolia(), nil
+	case "amazon":
+		return Amazon(), nil
+	case "android":
+		return Android(), nil
+	case "angular":
+		return Angular(), nil
+	case "apple":
+		return Apple(), nil
+	case "audible":
+		return Audible(), nil
+	case "aws":
+		return Aws(), nil
+	case "baidu":
+		return Baidu(), nil
+	case "behance":
+		return Behance(), nil
+	case "bing":
+		return Bing(), nil
+	case "bitcoin":
+		return Bitcoin(), nil
+	case "blender":
+		return Blender(), nil
+	case "blogger":
+		return Blogger(), nil
+	case "bootstrap":
+		return Bootstrap(), nil
+	case "c-plus-plus":
+		return CPlusPlus(), nil
+	case "chrome":
+		return Chrome(), nil
+	case "codepen":
+		return Codepen(), nil
+	case "creative-commons":
+		return CreativeCommons(), nil
+	case "css3":
+		return CssThree(), nil
+	case "dailymotion":
+		return Dailymotion(), nil
+	case "deezer":
+		return Deezer(), nil
+	case "dev-to":
+		return DevTo(), nil
+	case "deviantart":
+		return Deviantart(), nil
+	case "digg":
+		return Digg(), nil
+	case "digitalocean":
+		return Digitalocean(), nil
+	case "discord":
+		return Discord(), nil
+	case "discord-alt":
+		return DiscordAlt(), nil
+	case "discourse":
+		return Discourse(), nil
+	case "django":
+		return Django(), nil
+	case "docker":
+		return Docker(), nil
+	case "dribbble":
+		return Dribbble(), nil
+	case "dropbox":
+		return Dropbox(), nil
+	case "drupal":
+		return Drupal(), nil
+	case "ebay":
+		return Ebay(), nil
+	case "edge":
+		return Edge(), nil
+	case "etsy":
+		return Etsy(), nil
+	case "facebook":
+		return Facebook(), nil
+	case "facebook-circle":
+		return FacebookCircle(), nil
+	case "facebook-square":
+		return FacebookSquare(), nil
+	case "figma":
+		return Figma(), nil
+	case "firebase":
+		return Firebase(), nil
+	case "firefox":
+		return Firefox(), nil
+	case "500px":
+		return FiveHundredPx(), nil
+	case "flask":
+		return Flask(), nil
+	case "flickr":
+		return Flickr(), nil
+	case "flickr-square":
+		return FlickrSquare(), nil
+	case "flutter":
+		return Flutter(), nil
+	case "foursquare":
+		return Foursquare(), nil
+	case "git":
+		return Git(), nil
+	case "github":
+		return Github(), nil
+	case "gitlab":
+		return Gitlab(), nil
+	case "gmail":
+		return Gmail(), nil
+	case "go-lang":
+		return GoLang(), nil
+	case "google":
+		return Google(), nil
+	case "google-cloud":
+		return GoogleCloud(), nil
+	case "google-plus":
+		return GooglePlus(), nil
+	case "google-plus-circle":
+		return GooglePlusCircle(), nil
+	case "graphql":
+		return Graphql(), nil
+	case "heroku":
+		return Heroku(), nil
+	case "html5":
+		return HtmlFive(), nil
+	case "imdb":
+		return Imdb(), nil
+	case "instagram":
+		return Instagram(), nil
+	case "instagram-alt":
+		return InstagramAlt(), nil
+	case "internet-explorer":
+		return InternetExplorer(), nil
+	case "invision":
+		return Invision(), nil
+	case "java":
+		return Java(), nil
+	case "javascript":
+		return Javascript(), nil
+	case "joomla":
+		return Joomla(), nil
+	case "jquery":
+		return Jquery(), nil
+	case "jsfiddle":
+		return Jsfiddle(), nil
+	case "kickstarter":
+		return Kickstarter(), nil
+	case "kubernetes":
+		return Kubernetes(), nil
+	case "less":
+		return Less(), nil
+	case "linkedin":
+		return Linkedin(), nil
+	case "linkedin-square":
+		return LinkedinSquare(), nil
+	case "magento":
+		return Magento(), nil
+	case "mailchimp":
+		return Mailchimp(), nil
+	case "markdown":
+		return Markdown(), nil
+	case "mastercard":
+		return Mastercard(), nil
+	case "mastodon":
+		return Mastodon(), nil
+	case "medium":
+		return Medium(), nil
+	case "medium-old":
+		return MediumOld(), nil
+	case "medium-square":
+		return MediumSquare(), nil
+	case "messenger":
+		return Messenger(), nil
+	case "meta":
+		return Meta(), nil
+	case "microsoft":
+		return Microsoft(), nil
+	case "microsoft-teams":
+		return MicrosoftTeams(), nil
+	case "mongodb":
+		return Mongodb(), nil
+	case "netlify":
+		return Netlify(), nil
+	case "99designs":
+		return NinetyNineDesigns(), nil
+	case "nodejs":
+		return Nodejs(), nil
+	case "ok-ru":
+		return OkRu(), nil
+	case "opera":
+		return Opera(), nil
+	case "patreon":
+		return Patreon(), nil
+	case "paypal":
+		return Paypal(), nil
+	case "periscope":
+		return Periscope(), nil
+	case "php":
+		return Php(), nil
+	case "pinterest":
+		return Pinterest(), nil
+	case "pinterest-alt":
+		return PinterestAlt(), nil
+	case "play-store":
+		return PlayStore(), nil
+	case "pocket":
+		return Pocket(), nil
+	case "postgresql":
+		return Postgresql(), nil
+	case "product-hunt":
+		return ProductHunt(), nil
+	case "python":
+		return Python(), nil
+	case "quora":
+		return Quora(), nil
+	case "react":
+		return React(), nil
+	case "redbubble":
+		return Redbubble(), nil
+	case "reddit":
+		return Reddit(), nil
+	case "redux":
+		return Redux(), nil
+	case "sass":
+		return Sass(), nil
+	case "shopify":
+		return Shopify(), nil
+	case "sketch":
+		return Sketch(), nil
+	case "skype":
+		return Skype(), nil
+	case "slack":
+		return Slack(), nil
+	case "slack-old":
+		return SlackOld(), nil
+	case "snapchat":
+		return Snapchat(), nil
+	case "soundcloud":
+		return Soundcloud(), nil
+	case "spotify":
+		return Spotify(), nil
+	case "spring-boot":
+		return SpringBoot(), nil
+	case "squarespace":
+		return Squarespace(), nil
+	case "stack-overflow":
+		return StackOverflow(), nil
+	case "steam":
+		return Steam(), nil
+	case "stripe":
+		return Stripe(), nil
+	case "tailwind-css":
+		return TailwindCss(), nil
+	case "telegram":
+		return Telegram(), nil
+	case "tiktok":
+		return Tiktok(), nil
+	case "trello":
+		return Trello(), nil
+	case "trip-advisor":
+		return TripAdvisor(), nil
+	case "tumblr":
+		return Tumblr(), nil
+	case "tux":
+		return Tux(), nil
+	case "twitch":
+		return Twitch(), nil
+	case "twitter":
+		return Twitter(), nil
+	case "typescript":
+		return Typescript(), nil
+	case "unity":
+		return Unity(), nil
+	case "unsplash":
+		return Unsplash(), nil
+	case "upwork":
+		return Upwork(), nil
+	case "venmo":
+		return Venmo(), nil
+	case "vimeo":
+		return Vimeo(), nil
+	case "visa":
+		return Visa(), nil
+	case "visual-studio":
+		return VisualStudio(), nil
+	case "vk":
+		return Vk(), nil
+	case "vuejs":
+		return Vuejs(), nil
+	case "whatsapp":
+		return Whatsapp(), nil
+	case "whatsapp-square":
+		return WhatsappSquare(), nil
+	case "wikipedia":
+		return Wikipedia(), nil
+	case "windows":
+		return Windows(), nil
+	case "wix":
+		return Wix(), nil
+	case "wordpress":
+		return Wordpress(), nil
+	case "xing":
+		return Xing(), nil
+	case "yahoo":
+		return Yahoo(), nil
+	case "yelp":
+		return Yelp(), nil
+	case "youtube":
+		return Youtube(), nil
+	case "zoom":
+		return Zoom(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in bxl icon set", name)
+	}
 }

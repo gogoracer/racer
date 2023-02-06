@@ -1,6 +1,9 @@
 package uiw
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	adobeInnerSVG           = `<path fill="currentColor" fill-rule="evenodd" d="M20 1v18.001L12.607 1H20ZM7.399 1L0 19.001V1h7.399Zm2.604 6.265L14.713 19h-3.086l-1.41-3.419H6.77l3.233-8.316Z"/>`
@@ -2787,4 +2790,439 @@ func ZoomOut(children ...any) *engine.HTMLElement {
 		zoomOutInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "adobe":
+		return Adobe(), nil
+	case "alipay":
+		return Alipay(), nil
+	case "aliwangwang":
+		return Aliwangwang(), nil
+	case "android":
+		return Android(), nil
+	case "android-o":
+		return AndroidO(), nil
+	case "apple":
+		return Apple(), nil
+	case "appstore":
+		return Appstore(), nil
+	case "appstore-o":
+		return AppstoreO(), nil
+	case "area-chart":
+		return AreaChart(), nil
+	case "arrow-down":
+		return ArrowDown(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrow-up":
+		return ArrowUp(), nil
+	case "arrows-alt":
+		return ArrowsAlt(), nil
+	case "asterisk":
+		return Asterisk(), nil
+	case "backward":
+		return Backward(), nil
+	case "baidu":
+		return Baidu(), nil
+	case "bar-chart":
+		return BarChart(), nil
+	case "barcode":
+		return Barcode(), nil
+	case "bell":
+		return Bell(), nil
+	case "camera-o":
+		return CameraO(), nil
+	case "caret-down":
+		return CaretDown(), nil
+	case "caret-left":
+		return CaretLeft(), nil
+	case "caret-right":
+		return CaretRight(), nil
+	case "caret-up":
+		return CaretUp(), nil
+	case "check":
+		return Check(), nil
+	case "check-square":
+		return CheckSquare(), nil
+	case "check-square-o":
+		return CheckSquareO(), nil
+	case "chrome":
+		return Chrome(), nil
+	case "circle-check":
+		return CircleCheck(), nil
+	case "circle-check-o":
+		return CircleCheckO(), nil
+	case "circle-close":
+		return CircleClose(), nil
+	case "circle-close-o":
+		return CircleCloseO(), nil
+	case "circle-o":
+		return CircleO(), nil
+	case "close":
+		return Close(), nil
+	case "close-square":
+		return CloseSquare(), nil
+	case "close-square-o":
+		return CloseSquareO(), nil
+	case "cloud-download":
+		return CloudDownload(), nil
+	case "cloud-download-o":
+		return CloudDownloadO(), nil
+	case "cloud-upload":
+		return CloudUpload(), nil
+	case "cloud-upload-o":
+		return CloudUploadO(), nil
+	case "coffee":
+		return Coffee(), nil
+	case "component":
+		return Component(), nil
+	case "copy":
+		return Copy(), nil
+	case "copyright":
+		return Copyright(), nil
+	case "css3":
+		return CssThree(), nil
+	case "cut":
+		return Cut(), nil
+	case "d-arrow-left":
+		return DArrowLeft(), nil
+	case "d-arrow-right":
+		return DArrowRight(), nil
+	case "d-caret":
+		return DCaret(), nil
+	case "dashboard":
+		return Dashboard(), nil
+	case "date":
+		return Date(), nil
+	case "delete":
+		return Delete(), nil
+	case "dingding":
+		return Dingding(), nil
+	case "dislike-o":
+		return DislikeO(), nil
+	case "document":
+		return Document(), nil
+	case "dot-chart":
+		return DotChart(), nil
+	case "down":
+		return Down(), nil
+	case "down-circle":
+		return DownCircle(), nil
+	case "down-circle-o":
+		return DownCircleO(), nil
+	case "down-square":
+		return DownSquare(), nil
+	case "down-square-o":
+		return DownSquareO(), nil
+	case "download":
+		return Download(), nil
+	case "edit":
+		return Edit(), nil
+	case "enter":
+		return Enter(), nil
+	case "environment":
+		return Environment(), nil
+	case "environment-o":
+		return EnvironmentO(), nil
+	case "eye":
+		return Eye(), nil
+	case "eye-o":
+		return EyeO(), nil
+	case "facebook":
+		return Facebook(), nil
+	case "file-add":
+		return FileAdd(), nil
+	case "file-excel":
+		return FileExcel(), nil
+	case "file-jpg":
+		return FileJpg(), nil
+	case "file-pdf":
+		return FilePdf(), nil
+	case "file-text":
+		return FileText(), nil
+	case "file-unknown":
+		return FileUnknown(), nil
+	case "filter":
+		return Filter(), nil
+	case "firefox":
+		return Firefox(), nil
+	case "folder":
+		return Folder(), nil
+	case "folder-add":
+		return FolderAdd(), nil
+	case "folder-open":
+		return FolderOpen(), nil
+	case "forward":
+		return Forward(), nil
+	case "foursquare":
+		return Foursquare(), nil
+	case "frown":
+		return Frown(), nil
+	case "frown-o":
+		return FrownO(), nil
+	case "github":
+		return Github(), nil
+	case "github-o":
+		return GithubO(), nil
+	case "global":
+		return Global(), nil
+	case "heart-off":
+		return HeartOff(), nil
+	case "heart-on":
+		return HeartOn(), nil
+	case "home":
+		return Home(), nil
+	case "html5":
+		return HtmlFive(), nil
+	case "ie":
+		return Ie(), nil
+	case "inbox":
+		return Inbox(), nil
+	case "information":
+		return Information(), nil
+	case "information-o":
+		return InformationO(), nil
+	case "laptop":
+		return Laptop(), nil
+	case "left":
+		return Left(), nil
+	case "left-circle":
+		return LeftCircle(), nil
+	case "left-circle-o":
+		return LeftCircleO(), nil
+	case "left-square":
+		return LeftSquare(), nil
+	case "left-square-o":
+		return LeftSquareO(), nil
+	case "like-o":
+		return LikeO(), nil
+	case "link":
+		return Link(), nil
+	case "linkedin":
+		return Linkedin(), nil
+	case "linux":
+		return Linux(), nil
+	case "loading":
+		return Loading(), nil
+	case "lock":
+		return Lock(), nil
+	case "login":
+		return Login(), nil
+	case "logout":
+		return Logout(), nil
+	case "mail":
+		return Mail(), nil
+	case "mail-o":
+		return MailO(), nil
+	case "man":
+		return Man(), nil
+	case "map":
+		return Map(), nil
+	case "meh":
+		return Meh(), nil
+	case "meh-o":
+		return MehO(), nil
+	case "menu":
+		return Menu(), nil
+	case "menu-fold":
+		return MenuFold(), nil
+	case "menu-unfold":
+		return MenuUnfold(), nil
+	case "message":
+		return Message(), nil
+	case "minus":
+		return Minus(), nil
+	case "minus-circle":
+		return MinusCircle(), nil
+	case "minus-circle-o":
+		return MinusCircleO(), nil
+	case "minus-square":
+		return MinusSquare(), nil
+	case "minus-square-o":
+		return MinusSquareO(), nil
+	case "mobile":
+		return Mobile(), nil
+	case "more":
+		return More(), nil
+	case "notification":
+		return Notification(), nil
+	case "opera":
+		return Opera(), nil
+	case "paper-clip":
+		return PaperClip(), nil
+	case "pause":
+		return Pause(), nil
+	case "pause-circle":
+		return PauseCircle(), nil
+	case "pause-circle-o":
+		return PauseCircleO(), nil
+	case "pay":
+		return Pay(), nil
+	case "pay-circle-o":
+		return PayCircleO(), nil
+	case "picasa":
+		return Picasa(), nil
+	case "picture":
+		return Picture(), nil
+	case "pie-chart":
+		return PieChart(), nil
+	case "pinterest":
+		return Pinterest(), nil
+	case "play-circle":
+		return PlayCircle(), nil
+	case "play-circle-o":
+		return PlayCircleO(), nil
+	case "plus":
+		return Plus(), nil
+	case "plus-circle":
+		return PlusCircle(), nil
+	case "plus-circle-o":
+		return PlusCircleO(), nil
+	case "plus-square":
+		return PlusSquare(), nil
+	case "plus-square-o":
+		return PlusSquareO(), nil
+	case "poweroff":
+		return Poweroff(), nil
+	case "printer":
+		return Printer(), nil
+	case "qq":
+		return Qq(), nil
+	case "qrcode":
+		return Qrcode(), nil
+	case "question-circle":
+		return QuestionCircle(), nil
+	case "question-circle-o":
+		return QuestionCircleO(), nil
+	case "reddit":
+		return Reddit(), nil
+	case "reload":
+		return Reload(), nil
+	case "right":
+		return Right(), nil
+	case "right-circle":
+		return RightCircle(), nil
+	case "right-circle-o":
+		return RightCircleO(), nil
+	case "right-square":
+		return RightSquare(), nil
+	case "right-square-o":
+		return RightSquareO(), nil
+	case "rollback":
+		return Rollback(), nil
+	case "safari":
+		return Safari(), nil
+	case "safety":
+		return Safety(), nil
+	case "save":
+		return Save(), nil
+	case "search":
+		return Search(), nil
+	case "setting":
+		return Setting(), nil
+	case "setting-o":
+		return SettingO(), nil
+	case "share":
+		return Share(), nil
+	case "shopping-cart":
+		return ShoppingCart(), nil
+	case "shrink":
+		return Shrink(), nil
+	case "smile":
+		return Smile(), nil
+	case "smile-o":
+		return SmileO(), nil
+	case "square-o":
+		return SquareO(), nil
+	case "star-off":
+		return StarOff(), nil
+	case "star-on":
+		return StarOn(), nil
+	case "stop":
+		return Stop(), nil
+	case "stop-o":
+		return StopO(), nil
+	case "swap":
+		return Swap(), nil
+	case "swap-left":
+		return SwapLeft(), nil
+	case "swap-right":
+		return SwapRight(), nil
+	case "table":
+		return Table(), nil
+	case "tag":
+		return Tag(), nil
+	case "tag-o":
+		return TagO(), nil
+	case "tags":
+		return Tags(), nil
+	case "tags-o":
+		return TagsO(), nil
+	case "taobao":
+		return Taobao(), nil
+	case "time":
+		return Time(), nil
+	case "time-o":
+		return TimeO(), nil
+	case "twitter":
+		return Twitter(), nil
+	case "uiw":
+		return Uiw(), nil
+	case "unlock":
+		return Unlock(), nil
+	case "up":
+		return Up(), nil
+	case "up-circle":
+		return UpCircle(), nil
+	case "up-circle-o":
+		return UpCircleO(), nil
+	case "up-square":
+		return UpSquare(), nil
+	case "up-square-o":
+		return UpSquareO(), nil
+	case "upload":
+		return Upload(), nil
+	case "user":
+		return User(), nil
+	case "user-add":
+		return UserAdd(), nil
+	case "user-delete":
+		return UserDelete(), nil
+	case "usergroup-add":
+		return UsergroupAdd(), nil
+	case "usergroup-delete":
+		return UsergroupDelete(), nil
+	case "verification":
+		return Verification(), nil
+	case "verticle-left":
+		return VerticleLeft(), nil
+	case "verticle-right":
+		return VerticleRight(), nil
+	case "video-camera":
+		return VideoCamera(), nil
+	case "warning":
+		return Warning(), nil
+	case "warning-o":
+		return WarningO(), nil
+	case "weibo":
+		return Weibo(), nil
+	case "weixin":
+		return Weixin(), nil
+	case "wifi":
+		return Wifi(), nil
+	case "windows":
+		return Windows(), nil
+	case "woman":
+		return Woman(), nil
+	case "zoom-in":
+		return ZoomIn(), nil
+	case "zoom-out":
+		return ZoomOut(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in uiw icon set", name)
+	}
 }

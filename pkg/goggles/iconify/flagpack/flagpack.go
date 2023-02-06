@@ -1,6 +1,9 @@
 package flagpack
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	adInnerSVG    = `<mask id="flagpackAd0" width="32" height="24" x="0" y="0" maskUnits="userSpaceOnUse"><path fill="#fff" d="M0 0h32v24H0z"/></mask><g fill="none" mask="url(#flagpackAd0)"><path fill="#FFD018" fill-rule="evenodd" d="M8 0h16v24H8V0z" clip-rule="evenodd"/><path fill="#2E42A5" fill-rule="evenodd" d="M0 0h8v24H0V0z" clip-rule="evenodd"/><path fill="#E31D1C" fill-rule="evenodd" d="M24 0h8v24h-8V0z" clip-rule="evenodd"/><path fill="#BF9937" fill-rule="evenodd" d="M16.3 19.424c.22-.063.41-.447.41-.447s.145.113.373.228c.23.115.467-.228.467-.228s.325 0 .468-.383c.142-.384-.285-.548-.285-.548s.5-.524 1.342-.524c.843 0 1.498 0 2.048-.234c.55-.233 1.084-.634 1.284-1.468c.2-.833-.433-1.358-.433-1.358s.14.044.433-.195c.293-.24-.179-1.01-.433-1.01c-.253 0-.283.143-.283.143s-.157-.136-.372-.599c-.215-.462.215-.868.215-.868s.235.135.44-.088c.206-.222-.106-.563-.106-.563s.988-.336.845-1.6c-.143-1.264-1.446-1.192-1.446-1.192s.04-.21-.144-.33c-.183-.12-.32.12-.32.12c-.143-.334.279-.79.617-1.155a4.68 4.68 0 0 0 .27-.307c.293-.377.11-.843-.959-1.352c-1.069-.509-1.652.175-1.737.417c-.086.243.245.393.245.393c-.27.237-.793.328-1.15.164c-.356-.164-.198-.663-.124-.799l.031-.054c.1-.169.312-.523.094-.867c-.245-.387-.668-.387-1.007-.167c-.29.188-.7.287-.813.312c-.113-.025-.524-.124-.814-.312c-.338-.22-.762-.22-1.006.167c-.218.344-.008.698.093.867l.031.054c.074.136.232.635-.124.799c-.357.164-.88.073-1.15-.164c0 0 .331-.15.246-.393c-.086-.242-.67-.926-1.738-.417c-1.068.509-1.252.975-.96 1.352c.07.09.166.194.271.307c.338.365.76.821.617 1.154c0 0-.136-.24-.32-.12s-.144.33-.144.33s-1.303-.071-1.446 1.193c-.143 1.264.845 1.6.845 1.6s-.311.341-.106.563c.205.223.44.088.44.088s.43.406.215.868c-.215.463-.371.599-.371.599s-.03-.143-.284-.143s-.726.77-.433 1.01s.433.195.433.195s-.633.525-.433 1.358c.2.834.734 1.235 1.284 1.468c.55.234 1.206.234 2.048.234c.843 0 1.342.524 1.342.524s-.427.164-.284.548c.142.383.467.383.467.383s.238.343.467.228c.229-.115.373-.228.373-.228s.19.384.411.447v.008c.01 0 .02 0 .03-.002l.03.002v-.008z" clip-rule="evenodd"/><path fill="#805440" d="m12.11 15.998l.105-.254c1.208.517 2.582.777 4.124.777c1.541 0 2.879-.26 4.013-.776l.11.252c-1.17.533-2.546.8-4.123.8c-1.576 0-2.986-.267-4.229-.8z"/><path fill="#BF9937" fill-rule="evenodd" d="M12.478 7.233h7.541v7.03s-.002.62-.658.891c-.656.272-1.427.175-1.427.175s-.738-.16-1.128 0a3.42 3.42 0 0 1-.51.168v.018l-.047-.008a.81.81 0 0 1-.048.008v-.018a3.42 3.42 0 0 1-.51-.168c-.39-.16-1.128 0-1.128 0s-.771.097-1.427-.175a1.022 1.022 0 0 1-.658-.892v-7.03z" clip-rule="evenodd"/><mask id="flagpackAd1" width="9" height="9" x="12" y="7" maskUnits="userSpaceOnUse"><path fill="#fff" fill-rule="evenodd" d="M12.478 7.233h7.541v7.03s-.002.62-.658.891c-.656.272-1.427.175-1.427.175s-.738-.16-1.128 0a3.42 3.42 0 0 1-.51.168v.018l-.047-.008a.81.81 0 0 1-.048.008v-.018a3.42 3.42 0 0 1-.51-.168c-.39-.16-1.128 0-1.128 0s-.771.097-1.427-.175a1.022 1.022 0 0 1-.658-.892v-7.03z" clip-rule="evenodd"/></mask><g mask="url(#flagpackAd1)"><path fill="#D00F3A" d="M12.373 7.144h3.656v3.9h-3.656z"/><path fill="#FEDF00" fill-rule="evenodd" d="M16.435 7.144h3.792v3.9h-3.792v-3.9zm0 4.334h3.657v4.044h-3.657v-4.044z" clip-rule="evenodd"/><path fill="#FEDF00" d="M12.373 11.478h3.656v4.044h-3.656z"/><path fill="#D00F3A" fill-rule="evenodd" d="M19.144 13.299s.17-.173.17-.58s.143-.676-.17-.676h-1.038c-.3 0-.146.18-.447 0c-.3-.181-.543-.123-.543 0s.304.069.304.32c0 .25.114.032.114.484c0 .452.064.376.095.376c.03 0 .03-.082.03-.2c0-.12-.015-.598.069-.451c.083.147.124.078.166.245c.04.167.152.33.076.406c-.076.075-.23.14-.115.14s.282-.192.198-.516c-.083-.324.104-.03.104-.03s.442.098.47-.037c.029-.134.07.13.19.13c.119 0-.116.27-.215.313c-.1.042 0 .075 0 .075s.092.076.153 0c.061-.075.28-.323.28-.451s.14-.051.14.062c0 .113-.13.52-.08.455l.049-.066zm0 1.588s.17-.172.17-.579s.143-.676-.17-.676h-1.038c-.3 0-.146.18-.447 0c-.3-.181-.543-.123-.543 0s.304.069.304.32c0 .25.114.032.114.484c0 .451.064.376.095.376c.03 0 .03-.082.03-.2c0-.12-.015-.598.069-.451c.083.147.124.078.166.245c.04.167.152.33.076.406c-.076.075-.23.14-.115.14s.282-.192.198-.516c-.083-.324.104-.03.104-.03s.442.098.47-.037c.029-.134.07.13.19.13c.119 0-.116.27-.215.313c-.1.042 0 .075 0 .075s.092.076.153 0c.061-.075.28-.323.28-.451s.14-.051.14.062c0 .113-.13.52-.08.455l.049-.066z" clip-rule="evenodd"/><path fill="#fff" fill-rule="evenodd" d="M14.21 10.298c0 .165-.084.29-.275.484l-.026.025l-.05.052c-.029.028-.05.05-.069.071c-.163.185-.449.026-.522-.153a4.658 4.658 0 0 0-.163-.294l-.005-.008l-.055-.095l-.05-.086a5.797 5.797 0 0 1-.065-.114c-.007-.013-.045.002-.111.086c-.025.033.026.143.192.32l-.094.104c-.23-.224-.341-.37-.341-.47c0-.168.135-.258.387-.258c.158 0 .242.111.37.392l.031.072c.063.138.103.214.152.275c.057.073.092.07.152-.006c.059-.074.113-.19.195-.397l.022-.056c.018-.044.026-.063.02-.067c-.004-.004-.017.003-.041.017l-.03.016l-.064.033l-.574-1.379l1.086-1.319v2.747l-.07-.063a.805.805 0 0 0-.002.07zm.077-.004l-.005.005v-.01l.005.005zm.006-.004v.01l-.005-.006l.005-.004zm0-2.747l1.086 1.319l-.574 1.38l-.063-.034c-.044-.023-.067-.038-.073-.033c-.006.005.01.04.043.123c.082.208.136.323.195.397c.06.076.095.08.152.006c.049-.061.09-.137.152-.276l.032-.071c.127-.28.211-.392.37-.392c.25 0 .386.09.386.258c0 .1-.111.246-.341.47l-.094-.104c.165-.177.217-.287.192-.32c-.066-.085-.104-.099-.11-.086l-.066.114l-.05.086l-.055.095l-.005.008a5.045 5.045 0 0 0-.163.293c-.073.18-.359.339-.523.154a1.836 1.836 0 0 0-.118-.123l-.026-.025c-.191-.193-.275-.32-.275-.484a.805.805 0 0 0-.003-.071l-.07.063V7.543zm0 0l-.005-.006l.005-.006v.012zm-.005-.006l-.006.006v-.012l.005.006zm-.068 2.647l.002-.004v.002l-.002.002z" clip-rule="evenodd"/><path fill="#FEDF00" fill-rule="evenodd" d="M14.278 10.05V7.823l.942 1.065l-.484 1.162c-.178-.062-.24.07-.148.303c.054.14.098.24.14.318c-.16-.162-.227-.264-.227-.373a.419.419 0 0 0-.03-.19c-.01-.018-.095-.036-.149-.048l-.043-.01zm-.44 0l-.483-1.162l.919-1.057v2.227l-.041.009c-.048.01-.119.023-.129.042c-.021.04-.03.1-.03.189c0 .109-.066.21-.227.373c.043-.078.086-.178.14-.318c.092-.234.03-.365-.148-.303z" clip-rule="evenodd"/><path fill="#D00F3A" fill-rule="evenodd" d="M13.185 11.478h-.406v4.044h.406v-4.044zm.813 0h-.406v4.044h.406v-4.044zm.406 0h.406v4.044h-.406v-4.044zm1.219 0h-.406v4.044h.406v-4.044zm1.76-4.334h-.406v4.045h.406V7.144zm.813 0h-.406v4.045h.406V7.144zm.406 0h.406v4.045h-.406V7.144zm1.219 0h-.406v4.045h.406V7.144z" clip-rule="evenodd"/></g></g>`
@@ -3320,4 +3323,521 @@ func Zw(children ...any) *engine.HTMLElement {
 		zwInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "ad":
+		return Ad(), nil
+	case "ae":
+		return Ae(), nil
+	case "af":
+		return Af(), nil
+	case "ag":
+		return Ag(), nil
+	case "ai":
+		return Ai(), nil
+	case "al":
+		return Al(), nil
+	case "am":
+		return Am(), nil
+	case "ao":
+		return Ao(), nil
+	case "aq":
+		return Aq(), nil
+	case "ar":
+		return Ar(), nil
+	case "as":
+		return As(), nil
+	case "at":
+		return At(), nil
+	case "au":
+		return Au(), nil
+	case "aw":
+		return Aw(), nil
+	case "ax":
+		return Ax(), nil
+	case "az":
+		return Az(), nil
+	case "ba":
+		return Ba(), nil
+	case "bb":
+		return Bb(), nil
+	case "bd":
+		return Bd(), nil
+	case "be":
+		return Be(), nil
+	case "bf":
+		return Bf(), nil
+	case "bg":
+		return Bg(), nil
+	case "bh":
+		return Bh(), nil
+	case "bi":
+		return Bi(), nil
+	case "bj":
+		return Bj(), nil
+	case "bl":
+		return Bl(), nil
+	case "bm":
+		return Bm(), nil
+	case "bn":
+		return Bn(), nil
+	case "bo":
+		return Bo(), nil
+	case "bq-bo":
+		return BqBo(), nil
+	case "bq-sa":
+		return BqSa(), nil
+	case "bq-se":
+		return BqSe(), nil
+	case "br":
+		return Br(), nil
+	case "bs":
+		return Bs(), nil
+	case "bt":
+		return Bt(), nil
+	case "bv":
+		return Bv(), nil
+	case "bw":
+		return Bw(), nil
+	case "by":
+		return By(), nil
+	case "bz":
+		return Bz(), nil
+	case "ca":
+		return Ca(), nil
+	case "cc":
+		return Cc(), nil
+	case "cd":
+		return Cd(), nil
+	case "cf":
+		return Cf(), nil
+	case "cg":
+		return Cg(), nil
+	case "ch":
+		return Ch(), nil
+	case "ci":
+		return Ci(), nil
+	case "ck":
+		return Ck(), nil
+	case "cl":
+		return Cl(), nil
+	case "cm":
+		return Cm(), nil
+	case "cn":
+		return Cn(), nil
+	case "co":
+		return Co(), nil
+	case "cr":
+		return Cr(), nil
+	case "cu":
+		return Cu(), nil
+	case "cv":
+		return Cv(), nil
+	case "cw":
+		return Cw(), nil
+	case "cx":
+		return Cx(), nil
+	case "cy":
+		return Cy(), nil
+	case "cz":
+		return Cz(), nil
+	case "de":
+		return De(), nil
+	case "dj":
+		return Dj(), nil
+	case "dk":
+		return Dk(), nil
+	case "dm":
+		return Dm(), nil
+	case "do":
+		return Do(), nil
+	case "dz":
+		return Dz(), nil
+	case "ec":
+		return Ec(), nil
+	case "ee":
+		return Ee(), nil
+	case "eg":
+		return Eg(), nil
+	case "eh":
+		return Eh(), nil
+	case "er":
+		return Er(), nil
+	case "es":
+		return Es(), nil
+	case "et":
+		return Et(), nil
+	case "fi":
+		return Fi(), nil
+	case "fj":
+		return Fj(), nil
+	case "fk":
+		return Fk(), nil
+	case "fm":
+		return Fm(), nil
+	case "fo":
+		return Fo(), nil
+	case "fr":
+		return Fr(), nil
+	case "ga":
+		return Ga(), nil
+	case "gb-eng":
+		return GbEng(), nil
+	case "gb-nir":
+		return GbNir(), nil
+	case "gb-sct":
+		return GbSct(), nil
+	case "gb-ukm":
+		return GbUkm(), nil
+	case "gb-wls":
+		return GbWls(), nil
+	case "gd":
+		return Gd(), nil
+	case "ge":
+		return Ge(), nil
+	case "gf":
+		return Gf(), nil
+	case "gg":
+		return Gg(), nil
+	case "gh":
+		return Gh(), nil
+	case "gi":
+		return Gi(), nil
+	case "gl":
+		return Gl(), nil
+	case "gm":
+		return Gm(), nil
+	case "gn":
+		return Gn(), nil
+	case "gp":
+		return Gp(), nil
+	case "gq":
+		return Gq(), nil
+	case "gr":
+		return Gr(), nil
+	case "gs":
+		return Gs(), nil
+	case "gt":
+		return Gt(), nil
+	case "gu":
+		return Gu(), nil
+	case "gw":
+		return Gw(), nil
+	case "gy":
+		return Gy(), nil
+	case "hk":
+		return Hk(), nil
+	case "hm":
+		return Hm(), nil
+	case "hn":
+		return Hn(), nil
+	case "hr":
+		return Hr(), nil
+	case "ht":
+		return Ht(), nil
+	case "hu":
+		return Hu(), nil
+	case "id":
+		return Id(), nil
+	case "ie":
+		return Ie(), nil
+	case "il":
+		return Il(), nil
+	case "im":
+		return Im(), nil
+	case "in":
+		return In(), nil
+	case "io":
+		return Io(), nil
+	case "iq":
+		return Iq(), nil
+	case "ir":
+		return Ir(), nil
+	case "is":
+		return Is(), nil
+	case "it":
+		return It(), nil
+	case "je":
+		return Je(), nil
+	case "jm":
+		return Jm(), nil
+	case "jo":
+		return Jo(), nil
+	case "jp":
+		return Jp(), nil
+	case "ke":
+		return Ke(), nil
+	case "kg":
+		return Kg(), nil
+	case "kh":
+		return Kh(), nil
+	case "ki":
+		return Ki(), nil
+	case "km":
+		return Km(), nil
+	case "kn":
+		return Kn(), nil
+	case "kp":
+		return Kp(), nil
+	case "kr":
+		return Kr(), nil
+	case "kw":
+		return Kw(), nil
+	case "ky":
+		return Ky(), nil
+	case "kz":
+		return Kz(), nil
+	case "la":
+		return La(), nil
+	case "lb":
+		return Lb(), nil
+	case "lc":
+		return Lc(), nil
+	case "li":
+		return Li(), nil
+	case "lk":
+		return Lk(), nil
+	case "lr":
+		return Lr(), nil
+	case "ls":
+		return Ls(), nil
+	case "lt":
+		return Lt(), nil
+	case "lu":
+		return Lu(), nil
+	case "lv":
+		return Lv(), nil
+	case "ly":
+		return Ly(), nil
+	case "ma":
+		return Ma(), nil
+	case "mc":
+		return Mc(), nil
+	case "md":
+		return Md(), nil
+	case "me":
+		return Me(), nil
+	case "mf":
+		return Mf(), nil
+	case "mg":
+		return Mg(), nil
+	case "mh":
+		return Mh(), nil
+	case "mk":
+		return Mk(), nil
+	case "ml":
+		return Ml(), nil
+	case "mm":
+		return Mm(), nil
+	case "mn":
+		return Mn(), nil
+	case "mo":
+		return Mo(), nil
+	case "mp":
+		return Mp(), nil
+	case "mq":
+		return Mq(), nil
+	case "mr":
+		return Mr(), nil
+	case "ms":
+		return Ms(), nil
+	case "mt":
+		return Mt(), nil
+	case "mu":
+		return Mu(), nil
+	case "mv":
+		return Mv(), nil
+	case "mw":
+		return Mw(), nil
+	case "mx":
+		return Mx(), nil
+	case "my":
+		return My(), nil
+	case "mz":
+		return Mz(), nil
+	case "na":
+		return Na(), nil
+	case "nc":
+		return Nc(), nil
+	case "ne":
+		return Ne(), nil
+	case "nf":
+		return Nf(), nil
+	case "ng":
+		return Ng(), nil
+	case "ni":
+		return Ni(), nil
+	case "nl":
+		return Nl(), nil
+	case "no":
+		return No(), nil
+	case "np":
+		return Np(), nil
+	case "nr":
+		return Nr(), nil
+	case "nu":
+		return Nu(), nil
+	case "nz":
+		return Nz(), nil
+	case "om":
+		return Om(), nil
+	case "pa":
+		return Pa(), nil
+	case "pe":
+		return Pe(), nil
+	case "pf":
+		return Pf(), nil
+	case "pg":
+		return Pg(), nil
+	case "ph":
+		return Ph(), nil
+	case "pk":
+		return Pk(), nil
+	case "pl":
+		return Pl(), nil
+	case "pm":
+		return Pm(), nil
+	case "pn":
+		return Pn(), nil
+	case "pr":
+		return Pr(), nil
+	case "ps":
+		return Ps(), nil
+	case "pt":
+		return Pt(), nil
+	case "pw":
+		return Pw(), nil
+	case "py":
+		return Py(), nil
+	case "qa":
+		return Qa(), nil
+	case "re":
+		return Re(), nil
+	case "ro":
+		return Ro(), nil
+	case "rs":
+		return Rs(), nil
+	case "ru":
+		return Ru(), nil
+	case "rw":
+		return Rw(), nil
+	case "sa":
+		return Sa(), nil
+	case "sb":
+		return Sb(), nil
+	case "sc":
+		return Sc(), nil
+	case "sd":
+		return Sd(), nil
+	case "se":
+		return Se(), nil
+	case "sg":
+		return Sg(), nil
+	case "sh":
+		return Sh(), nil
+	case "si":
+		return Si(), nil
+	case "sj":
+		return Sj(), nil
+	case "sk":
+		return Sk(), nil
+	case "sl":
+		return Sl(), nil
+	case "sm":
+		return Sm(), nil
+	case "sn":
+		return Sn(), nil
+	case "so":
+		return So(), nil
+	case "sr":
+		return Sr(), nil
+	case "ss":
+		return Ss(), nil
+	case "st":
+		return St(), nil
+	case "sv":
+		return Sv(), nil
+	case "sx":
+		return Sx(), nil
+	case "sy":
+		return Sy(), nil
+	case "sz":
+		return Sz(), nil
+	case "tc":
+		return Tc(), nil
+	case "td":
+		return Td(), nil
+	case "tf":
+		return Tf(), nil
+	case "tg":
+		return Tg(), nil
+	case "th":
+		return Th(), nil
+	case "tj":
+		return Tj(), nil
+	case "tk":
+		return Tk(), nil
+	case "tl":
+		return Tl(), nil
+	case "tm":
+		return Tm(), nil
+	case "tn":
+		return Tn(), nil
+	case "to":
+		return To(), nil
+	case "tr":
+		return Tr(), nil
+	case "tt":
+		return Tt(), nil
+	case "tv":
+		return Tv(), nil
+	case "tw":
+		return Tw(), nil
+	case "tz":
+		return Tz(), nil
+	case "ua":
+		return Ua(), nil
+	case "ug":
+		return Ug(), nil
+	case "um":
+		return Um(), nil
+	case "us":
+		return Us(), nil
+	case "uy":
+		return Uy(), nil
+	case "uz":
+		return Uz(), nil
+	case "va":
+		return Va(), nil
+	case "vc":
+		return Vc(), nil
+	case "ve":
+		return Ve(), nil
+	case "vg":
+		return Vg(), nil
+	case "vi":
+		return Vi(), nil
+	case "vn":
+		return Vn(), nil
+	case "vu":
+		return Vu(), nil
+	case "wf":
+		return Wf(), nil
+	case "ws":
+		return Ws(), nil
+	case "ye":
+		return Ye(), nil
+	case "yt":
+		return Yt(), nil
+	case "za":
+		return Za(), nil
+	case "zm":
+		return Zm(), nil
+	case "zw":
+		return Zw(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in flagpack icon set", name)
+	}
 }

@@ -1,6 +1,9 @@
 package eva
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	activityFillInnerSVG                  = `<g id="evaActivityFill0"><g id="evaActivityFill1"><path id="evaActivityFill2" fill="currentColor" d="M14.33 20h-.21a2 2 0 0 1-1.76-1.58L9.68 6l-2.76 6.4A1 1 0 0 1 6 13H3a1 1 0 0 1 0-2h2.34l2.51-5.79a2 2 0 0 1 3.79.38L14.32 18l2.76-6.38A1 1 0 0 1 18 11h3a1 1 0 0 1 0 2h-2.34l-2.51 5.79A2 2 0 0 1 14.33 20Z"/></g></g>`
@@ -6375,4 +6378,991 @@ func WifiOutline(children ...any) *engine.HTMLElement {
 		wifiOutlineInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "activity-fill":
+		return ActivityFill(), nil
+	case "activity-outline":
+		return ActivityOutline(), nil
+	case "alert-circle-fill":
+		return AlertCircleFill(), nil
+	case "alert-circle-outline":
+		return AlertCircleOutline(), nil
+	case "alert-triangle-fill":
+		return AlertTriangleFill(), nil
+	case "alert-triangle-outline":
+		return AlertTriangleOutline(), nil
+	case "archive-fill":
+		return ArchiveFill(), nil
+	case "archive-outline":
+		return ArchiveOutline(), nil
+	case "arrow-back-fill":
+		return ArrowBackFill(), nil
+	case "arrow-back-outline":
+		return ArrowBackOutline(), nil
+	case "arrow-circle-down-fill":
+		return ArrowCircleDownFill(), nil
+	case "arrow-circle-down-outline":
+		return ArrowCircleDownOutline(), nil
+	case "arrow-circle-left-fill":
+		return ArrowCircleLeftFill(), nil
+	case "arrow-circle-left-outline":
+		return ArrowCircleLeftOutline(), nil
+	case "arrow-circle-right-fill":
+		return ArrowCircleRightFill(), nil
+	case "arrow-circle-right-outline":
+		return ArrowCircleRightOutline(), nil
+	case "arrow-circle-up-fill":
+		return ArrowCircleUpFill(), nil
+	case "arrow-circle-up-outline":
+		return ArrowCircleUpOutline(), nil
+	case "arrow-down-fill":
+		return ArrowDownFill(), nil
+	case "arrow-down-outline":
+		return ArrowDownOutline(), nil
+	case "arrow-downward-fill":
+		return ArrowDownwardFill(), nil
+	case "arrow-downward-outline":
+		return ArrowDownwardOutline(), nil
+	case "arrow-forward-fill":
+		return ArrowForwardFill(), nil
+	case "arrow-forward-outline":
+		return ArrowForwardOutline(), nil
+	case "arrow-ios-back-fill":
+		return ArrowIosBackFill(), nil
+	case "arrow-ios-back-outline":
+		return ArrowIosBackOutline(), nil
+	case "arrow-ios-downward-fill":
+		return ArrowIosDownwardFill(), nil
+	case "arrow-ios-downward-outline":
+		return ArrowIosDownwardOutline(), nil
+	case "arrow-ios-forward-fill":
+		return ArrowIosForwardFill(), nil
+	case "arrow-ios-forward-outline":
+		return ArrowIosForwardOutline(), nil
+	case "arrow-ios-upward-fill":
+		return ArrowIosUpwardFill(), nil
+	case "arrow-ios-upward-outline":
+		return ArrowIosUpwardOutline(), nil
+	case "arrow-left-fill":
+		return ArrowLeftFill(), nil
+	case "arrow-left-outline":
+		return ArrowLeftOutline(), nil
+	case "arrow-right-fill":
+		return ArrowRightFill(), nil
+	case "arrow-right-outline":
+		return ArrowRightOutline(), nil
+	case "arrow-up-fill":
+		return ArrowUpFill(), nil
+	case "arrow-up-outline":
+		return ArrowUpOutline(), nil
+	case "arrow-upward-fill":
+		return ArrowUpwardFill(), nil
+	case "arrow-upward-outline":
+		return ArrowUpwardOutline(), nil
+	case "arrowhead-down-fill":
+		return ArrowheadDownFill(), nil
+	case "arrowhead-down-outline":
+		return ArrowheadDownOutline(), nil
+	case "arrowhead-left-fill":
+		return ArrowheadLeftFill(), nil
+	case "arrowhead-left-outline":
+		return ArrowheadLeftOutline(), nil
+	case "arrowhead-right-fill":
+		return ArrowheadRightFill(), nil
+	case "arrowhead-right-outline":
+		return ArrowheadRightOutline(), nil
+	case "arrowhead-up-fill":
+		return ArrowheadUpFill(), nil
+	case "arrowhead-up-outline":
+		return ArrowheadUpOutline(), nil
+	case "at-fill":
+		return AtFill(), nil
+	case "at-outline":
+		return AtOutline(), nil
+	case "attach-fill":
+		return AttachFill(), nil
+	case "attach-outline":
+		return AttachOutline(), nil
+	case "attach-2-fill":
+		return AttachTwoFill(), nil
+	case "attach-2-outline":
+		return AttachTwoOutline(), nil
+	case "award-fill":
+		return AwardFill(), nil
+	case "award-outline":
+		return AwardOutline(), nil
+	case "backspace-fill":
+		return BackspaceFill(), nil
+	case "backspace-outline":
+		return BackspaceOutline(), nil
+	case "bar-chart-fill":
+		return BarChartFill(), nil
+	case "bar-chart-outline":
+		return BarChartOutline(), nil
+	case "bar-chart-2-fill":
+		return BarChartTwoFill(), nil
+	case "bar-chart-2-outline":
+		return BarChartTwoOutline(), nil
+	case "battery-fill":
+		return BatteryFill(), nil
+	case "battery-outline":
+		return BatteryOutline(), nil
+	case "behance-fill":
+		return BehanceFill(), nil
+	case "behance-outline":
+		return BehanceOutline(), nil
+	case "bell-fill":
+		return BellFill(), nil
+	case "bell-off-fill":
+		return BellOffFill(), nil
+	case "bell-off-outline":
+		return BellOffOutline(), nil
+	case "bell-outline":
+		return BellOutline(), nil
+	case "bluetooth-fill":
+		return BluetoothFill(), nil
+	case "bluetooth-outline":
+		return BluetoothOutline(), nil
+	case "book-fill":
+		return BookFill(), nil
+	case "book-open-fill":
+		return BookOpenFill(), nil
+	case "book-open-outline":
+		return BookOpenOutline(), nil
+	case "book-outline":
+		return BookOutline(), nil
+	case "bookmark-fill":
+		return BookmarkFill(), nil
+	case "bookmark-outline":
+		return BookmarkOutline(), nil
+	case "briefcase-fill":
+		return BriefcaseFill(), nil
+	case "briefcase-outline":
+		return BriefcaseOutline(), nil
+	case "browser-fill":
+		return BrowserFill(), nil
+	case "browser-outline":
+		return BrowserOutline(), nil
+	case "brush-fill":
+		return BrushFill(), nil
+	case "brush-outline":
+		return BrushOutline(), nil
+	case "bulb-fill":
+		return BulbFill(), nil
+	case "bulb-outline":
+		return BulbOutline(), nil
+	case "calendar-fill":
+		return CalendarFill(), nil
+	case "calendar-outline":
+		return CalendarOutline(), nil
+	case "camera-fill":
+		return CameraFill(), nil
+	case "camera-outline":
+		return CameraOutline(), nil
+	case "car-fill":
+		return CarFill(), nil
+	case "car-outline":
+		return CarOutline(), nil
+	case "cast-fill":
+		return CastFill(), nil
+	case "cast-outline":
+		return CastOutline(), nil
+	case "charging-fill":
+		return ChargingFill(), nil
+	case "charging-outline":
+		return ChargingOutline(), nil
+	case "checkmark-circle-fill":
+		return CheckmarkCircleFill(), nil
+	case "checkmark-circle-outline":
+		return CheckmarkCircleOutline(), nil
+	case "checkmark-circle-2-fill":
+		return CheckmarkCircleTwoFill(), nil
+	case "checkmark-circle-2-outline":
+		return CheckmarkCircleTwoOutline(), nil
+	case "checkmark-fill":
+		return CheckmarkFill(), nil
+	case "checkmark-outline":
+		return CheckmarkOutline(), nil
+	case "checkmark-square-fill":
+		return CheckmarkSquareFill(), nil
+	case "checkmark-square-outline":
+		return CheckmarkSquareOutline(), nil
+	case "checkmark-square-2-fill":
+		return CheckmarkSquareTwoFill(), nil
+	case "checkmark-square-2-outline":
+		return CheckmarkSquareTwoOutline(), nil
+	case "chevron-down-fill":
+		return ChevronDownFill(), nil
+	case "chevron-down-outline":
+		return ChevronDownOutline(), nil
+	case "chevron-left-fill":
+		return ChevronLeftFill(), nil
+	case "chevron-left-outline":
+		return ChevronLeftOutline(), nil
+	case "chevron-right-fill":
+		return ChevronRightFill(), nil
+	case "chevron-right-outline":
+		return ChevronRightOutline(), nil
+	case "chevron-up-fill":
+		return ChevronUpFill(), nil
+	case "chevron-up-outline":
+		return ChevronUpOutline(), nil
+	case "clipboard-fill":
+		return ClipboardFill(), nil
+	case "clipboard-outline":
+		return ClipboardOutline(), nil
+	case "clock-fill":
+		return ClockFill(), nil
+	case "clock-outline":
+		return ClockOutline(), nil
+	case "close-circle-fill":
+		return CloseCircleFill(), nil
+	case "close-circle-outline":
+		return CloseCircleOutline(), nil
+	case "close-fill":
+		return CloseFill(), nil
+	case "close-outline":
+		return CloseOutline(), nil
+	case "close-square-fill":
+		return CloseSquareFill(), nil
+	case "close-square-outline":
+		return CloseSquareOutline(), nil
+	case "cloud-download-fill":
+		return CloudDownloadFill(), nil
+	case "cloud-download-outline":
+		return CloudDownloadOutline(), nil
+	case "cloud-upload-fill":
+		return CloudUploadFill(), nil
+	case "cloud-upload-outline":
+		return CloudUploadOutline(), nil
+	case "code-download-fill":
+		return CodeDownloadFill(), nil
+	case "code-download-outline":
+		return CodeDownloadOutline(), nil
+	case "code-fill":
+		return CodeFill(), nil
+	case "code-outline":
+		return CodeOutline(), nil
+	case "collapse-fill":
+		return CollapseFill(), nil
+	case "collapse-outline":
+		return CollapseOutline(), nil
+	case "color-palette-fill":
+		return ColorPaletteFill(), nil
+	case "color-palette-outline":
+		return ColorPaletteOutline(), nil
+	case "color-picker-fill":
+		return ColorPickerFill(), nil
+	case "color-picker-outline":
+		return ColorPickerOutline(), nil
+	case "compass-fill":
+		return CompassFill(), nil
+	case "compass-outline":
+		return CompassOutline(), nil
+	case "copy-fill":
+		return CopyFill(), nil
+	case "copy-outline":
+		return CopyOutline(), nil
+	case "corner-down-left-fill":
+		return CornerDownLeftFill(), nil
+	case "corner-down-left-outline":
+		return CornerDownLeftOutline(), nil
+	case "corner-down-right-fill":
+		return CornerDownRightFill(), nil
+	case "corner-down-right-outline":
+		return CornerDownRightOutline(), nil
+	case "corner-left-down-fill":
+		return CornerLeftDownFill(), nil
+	case "corner-left-down-outline":
+		return CornerLeftDownOutline(), nil
+	case "corner-left-up-fill":
+		return CornerLeftUpFill(), nil
+	case "corner-left-up-outline":
+		return CornerLeftUpOutline(), nil
+	case "corner-right-down-fill":
+		return CornerRightDownFill(), nil
+	case "corner-right-down-outline":
+		return CornerRightDownOutline(), nil
+	case "corner-right-up-fill":
+		return CornerRightUpFill(), nil
+	case "corner-right-up-outline":
+		return CornerRightUpOutline(), nil
+	case "corner-up-left-fill":
+		return CornerUpLeftFill(), nil
+	case "corner-up-left-outline":
+		return CornerUpLeftOutline(), nil
+	case "corner-up-right-fill":
+		return CornerUpRightFill(), nil
+	case "corner-up-right-outline":
+		return CornerUpRightOutline(), nil
+	case "credit-card-fill":
+		return CreditCardFill(), nil
+	case "credit-card-outline":
+		return CreditCardOutline(), nil
+	case "crop-fill":
+		return CropFill(), nil
+	case "crop-outline":
+		return CropOutline(), nil
+	case "cube-fill":
+		return CubeFill(), nil
+	case "cube-outline":
+		return CubeOutline(), nil
+	case "diagonal-arrow-left-down-fill":
+		return DiagonalArrowLeftDownFill(), nil
+	case "diagonal-arrow-left-down-outline":
+		return DiagonalArrowLeftDownOutline(), nil
+	case "diagonal-arrow-left-up-fill":
+		return DiagonalArrowLeftUpFill(), nil
+	case "diagonal-arrow-left-up-outline":
+		return DiagonalArrowLeftUpOutline(), nil
+	case "diagonal-arrow-right-down-fill":
+		return DiagonalArrowRightDownFill(), nil
+	case "diagonal-arrow-right-down-outline":
+		return DiagonalArrowRightDownOutline(), nil
+	case "diagonal-arrow-right-up-fill":
+		return DiagonalArrowRightUpFill(), nil
+	case "diagonal-arrow-right-up-outline":
+		return DiagonalArrowRightUpOutline(), nil
+	case "done-all-fill":
+		return DoneAllFill(), nil
+	case "done-all-outline":
+		return DoneAllOutline(), nil
+	case "download-fill":
+		return DownloadFill(), nil
+	case "download-outline":
+		return DownloadOutline(), nil
+	case "droplet-fill":
+		return DropletFill(), nil
+	case "droplet-off-fill":
+		return DropletOffFill(), nil
+	case "droplet-off-outline":
+		return DropletOffOutline(), nil
+	case "droplet-outline":
+		return DropletOutline(), nil
+	case "edit-fill":
+		return EditFill(), nil
+	case "edit-outline":
+		return EditOutline(), nil
+	case "edit-2-fill":
+		return EditTwoFill(), nil
+	case "edit-2-outline":
+		return EditTwoOutline(), nil
+	case "email-fill":
+		return EmailFill(), nil
+	case "email-outline":
+		return EmailOutline(), nil
+	case "expand-fill":
+		return ExpandFill(), nil
+	case "expand-outline":
+		return ExpandOutline(), nil
+	case "external-link-fill":
+		return ExternalLinkFill(), nil
+	case "external-link-outline":
+		return ExternalLinkOutline(), nil
+	case "eye-fill":
+		return EyeFill(), nil
+	case "eye-off-fill":
+		return EyeOffFill(), nil
+	case "eye-off-outline":
+		return EyeOffOutline(), nil
+	case "eye-off-2-fill":
+		return EyeOffTwoFill(), nil
+	case "eye-off-2-outline":
+		return EyeOffTwoOutline(), nil
+	case "eye-outline":
+		return EyeOutline(), nil
+	case "facebook-fill":
+		return FacebookFill(), nil
+	case "facebook-outline":
+		return FacebookOutline(), nil
+	case "file-add-fill":
+		return FileAddFill(), nil
+	case "file-add-outline":
+		return FileAddOutline(), nil
+	case "file-fill":
+		return FileFill(), nil
+	case "file-outline":
+		return FileOutline(), nil
+	case "file-remove-fill":
+		return FileRemoveFill(), nil
+	case "file-remove-outline":
+		return FileRemoveOutline(), nil
+	case "file-text-fill":
+		return FileTextFill(), nil
+	case "file-text-outline":
+		return FileTextOutline(), nil
+	case "film-fill":
+		return FilmFill(), nil
+	case "film-outline":
+		return FilmOutline(), nil
+	case "flag-fill":
+		return FlagFill(), nil
+	case "flag-outline":
+		return FlagOutline(), nil
+	case "flash-fill":
+		return FlashFill(), nil
+	case "flash-off-fill":
+		return FlashOffFill(), nil
+	case "flash-off-outline":
+		return FlashOffOutline(), nil
+	case "flash-outline":
+		return FlashOutline(), nil
+	case "flip-fill":
+		return FlipFill(), nil
+	case "flip-outline":
+		return FlipOutline(), nil
+	case "flip-2-fill":
+		return FlipTwoFill(), nil
+	case "flip-2-outline":
+		return FlipTwoOutline(), nil
+	case "folder-add-fill":
+		return FolderAddFill(), nil
+	case "folder-add-outline":
+		return FolderAddOutline(), nil
+	case "folder-fill":
+		return FolderFill(), nil
+	case "folder-outline":
+		return FolderOutline(), nil
+	case "folder-remove-fill":
+		return FolderRemoveFill(), nil
+	case "folder-remove-outline":
+		return FolderRemoveOutline(), nil
+	case "funnel-fill":
+		return FunnelFill(), nil
+	case "funnel-outline":
+		return FunnelOutline(), nil
+	case "gift-fill":
+		return GiftFill(), nil
+	case "gift-outline":
+		return GiftOutline(), nil
+	case "github-fill":
+		return GithubFill(), nil
+	case "github-outline":
+		return GithubOutline(), nil
+	case "globe-fill":
+		return GlobeFill(), nil
+	case "globe-outline":
+		return GlobeOutline(), nil
+	case "globe-3-fill":
+		return GlobeThreeFill(), nil
+	case "globe-2-fill":
+		return GlobeTwoFill(), nil
+	case "globe-2-outline":
+		return GlobeTwoOutline(), nil
+	case "google-fill":
+		return GoogleFill(), nil
+	case "google-outline":
+		return GoogleOutline(), nil
+	case "grid-fill":
+		return GridFill(), nil
+	case "grid-outline":
+		return GridOutline(), nil
+	case "hard-drive-fill":
+		return HardDriveFill(), nil
+	case "hard-drive-outline":
+		return HardDriveOutline(), nil
+	case "hash-fill":
+		return HashFill(), nil
+	case "hash-outline":
+		return HashOutline(), nil
+	case "headphones-fill":
+		return HeadphonesFill(), nil
+	case "headphones-outline":
+		return HeadphonesOutline(), nil
+	case "heart-fill":
+		return HeartFill(), nil
+	case "heart-outline":
+		return HeartOutline(), nil
+	case "home-fill":
+		return HomeFill(), nil
+	case "home-outline":
+		return HomeOutline(), nil
+	case "image-fill":
+		return ImageFill(), nil
+	case "image-outline":
+		return ImageOutline(), nil
+	case "image-2-fill":
+		return ImageTwoFill(), nil
+	case "inbox-fill":
+		return InboxFill(), nil
+	case "inbox-outline":
+		return InboxOutline(), nil
+	case "info-fill":
+		return InfoFill(), nil
+	case "info-outline":
+		return InfoOutline(), nil
+	case "keypad-fill":
+		return KeypadFill(), nil
+	case "keypad-outline":
+		return KeypadOutline(), nil
+	case "layers-fill":
+		return LayersFill(), nil
+	case "layers-outline":
+		return LayersOutline(), nil
+	case "layout-fill":
+		return LayoutFill(), nil
+	case "layout-outline":
+		return LayoutOutline(), nil
+	case "link-fill":
+		return LinkFill(), nil
+	case "link-outline":
+		return LinkOutline(), nil
+	case "link-2-fill":
+		return LinkTwoFill(), nil
+	case "link-2-outline":
+		return LinkTwoOutline(), nil
+	case "linkedin-fill":
+		return LinkedinFill(), nil
+	case "linkedin-outline":
+		return LinkedinOutline(), nil
+	case "list-fill":
+		return ListFill(), nil
+	case "list-outline":
+		return ListOutline(), nil
+	case "loader-outline":
+		return LoaderOutline(), nil
+	case "lock-fill":
+		return LockFill(), nil
+	case "lock-outline":
+		return LockOutline(), nil
+	case "log-in-fill":
+		return LogInFill(), nil
+	case "log-in-outline":
+		return LogInOutline(), nil
+	case "log-out-fill":
+		return LogOutFill(), nil
+	case "log-out-outline":
+		return LogOutOutline(), nil
+	case "map-fill":
+		return MapFill(), nil
+	case "map-outline":
+		return MapOutline(), nil
+	case "maximize-fill":
+		return MaximizeFill(), nil
+	case "maximize-outline":
+		return MaximizeOutline(), nil
+	case "menu-arrow-fill":
+		return MenuArrowFill(), nil
+	case "menu-arrow-outline":
+		return MenuArrowOutline(), nil
+	case "menu-fill":
+		return MenuFill(), nil
+	case "menu-outline":
+		return MenuOutline(), nil
+	case "menu-2-fill":
+		return MenuTwoFill(), nil
+	case "menu-2-outline":
+		return MenuTwoOutline(), nil
+	case "message-circle-fill":
+		return MessageCircleFill(), nil
+	case "message-circle-outline":
+		return MessageCircleOutline(), nil
+	case "message-square-fill":
+		return MessageSquareFill(), nil
+	case "message-square-outline":
+		return MessageSquareOutline(), nil
+	case "mic-fill":
+		return MicFill(), nil
+	case "mic-off-fill":
+		return MicOffFill(), nil
+	case "mic-off-outline":
+		return MicOffOutline(), nil
+	case "mic-outline":
+		return MicOutline(), nil
+	case "minimize-fill":
+		return MinimizeFill(), nil
+	case "minimize-outline":
+		return MinimizeOutline(), nil
+	case "minus-circle-fill":
+		return MinusCircleFill(), nil
+	case "minus-circle-outline":
+		return MinusCircleOutline(), nil
+	case "minus-fill":
+		return MinusFill(), nil
+	case "minus-outline":
+		return MinusOutline(), nil
+	case "minus-square-fill":
+		return MinusSquareFill(), nil
+	case "minus-square-outline":
+		return MinusSquareOutline(), nil
+	case "monitor-fill":
+		return MonitorFill(), nil
+	case "monitor-outline":
+		return MonitorOutline(), nil
+	case "moon-fill":
+		return MoonFill(), nil
+	case "moon-outline":
+		return MoonOutline(), nil
+	case "more-horizontal-fill":
+		return MoreHorizontalFill(), nil
+	case "more-horizontal-outline":
+		return MoreHorizontalOutline(), nil
+	case "more-vertical-fill":
+		return MoreVerticalFill(), nil
+	case "more-vertical-outline":
+		return MoreVerticalOutline(), nil
+	case "move-fill":
+		return MoveFill(), nil
+	case "move-outline":
+		return MoveOutline(), nil
+	case "music-fill":
+		return MusicFill(), nil
+	case "music-outline":
+		return MusicOutline(), nil
+	case "navigation-fill":
+		return NavigationFill(), nil
+	case "navigation-outline":
+		return NavigationOutline(), nil
+	case "navigation-2-fill":
+		return NavigationTwoFill(), nil
+	case "navigation-2-outline":
+		return NavigationTwoOutline(), nil
+	case "npm-fill":
+		return NpmFill(), nil
+	case "npm-outline":
+		return NpmOutline(), nil
+	case "options-fill":
+		return OptionsFill(), nil
+	case "options-outline":
+		return OptionsOutline(), nil
+	case "options-2-fill":
+		return OptionsTwoFill(), nil
+	case "options-2-outline":
+		return OptionsTwoOutline(), nil
+	case "pantone-fill":
+		return PantoneFill(), nil
+	case "pantone-outline":
+		return PantoneOutline(), nil
+	case "paper-plane-fill":
+		return PaperPlaneFill(), nil
+	case "paper-plane-outline":
+		return PaperPlaneOutline(), nil
+	case "pause-circle-fill":
+		return PauseCircleFill(), nil
+	case "pause-circle-outline":
+		return PauseCircleOutline(), nil
+	case "people-fill":
+		return PeopleFill(), nil
+	case "people-outline":
+		return PeopleOutline(), nil
+	case "percent-fill":
+		return PercentFill(), nil
+	case "percent-outline":
+		return PercentOutline(), nil
+	case "person-add-fill":
+		return PersonAddFill(), nil
+	case "person-add-outline":
+		return PersonAddOutline(), nil
+	case "person-delete-fill":
+		return PersonDeleteFill(), nil
+	case "person-delete-outline":
+		return PersonDeleteOutline(), nil
+	case "person-done-fill":
+		return PersonDoneFill(), nil
+	case "person-done-outline":
+		return PersonDoneOutline(), nil
+	case "person-fill":
+		return PersonFill(), nil
+	case "person-outline":
+		return PersonOutline(), nil
+	case "person-remove-fill":
+		return PersonRemoveFill(), nil
+	case "person-remove-outline":
+		return PersonRemoveOutline(), nil
+	case "phone-call-fill":
+		return PhoneCallFill(), nil
+	case "phone-call-outline":
+		return PhoneCallOutline(), nil
+	case "phone-fill":
+		return PhoneFill(), nil
+	case "phone-missed-fill":
+		return PhoneMissedFill(), nil
+	case "phone-missed-outline":
+		return PhoneMissedOutline(), nil
+	case "phone-off-fill":
+		return PhoneOffFill(), nil
+	case "phone-off-outline":
+		return PhoneOffOutline(), nil
+	case "phone-outline":
+		return PhoneOutline(), nil
+	case "pie-chart-fill":
+		return PieChartFill(), nil
+	case "pie-chart-outline":
+		return PieChartOutline(), nil
+	case "pie-chart-2-fill":
+		return PieChartTwoFill(), nil
+	case "pin-fill":
+		return PinFill(), nil
+	case "pin-outline":
+		return PinOutline(), nil
+	case "play-circle-fill":
+		return PlayCircleFill(), nil
+	case "play-circle-outline":
+		return PlayCircleOutline(), nil
+	case "plus-circle-fill":
+		return PlusCircleFill(), nil
+	case "plus-circle-outline":
+		return PlusCircleOutline(), nil
+	case "plus-fill":
+		return PlusFill(), nil
+	case "plus-outline":
+		return PlusOutline(), nil
+	case "plus-square-fill":
+		return PlusSquareFill(), nil
+	case "plus-square-outline":
+		return PlusSquareOutline(), nil
+	case "power-fill":
+		return PowerFill(), nil
+	case "power-outline":
+		return PowerOutline(), nil
+	case "pricetags-fill":
+		return PricetagsFill(), nil
+	case "pricetags-outline":
+		return PricetagsOutline(), nil
+	case "printer-fill":
+		return PrinterFill(), nil
+	case "printer-outline":
+		return PrinterOutline(), nil
+	case "question-mark-circle-fill":
+		return QuestionMarkCircleFill(), nil
+	case "question-mark-circle-outline":
+		return QuestionMarkCircleOutline(), nil
+	case "question-mark-fill":
+		return QuestionMarkFill(), nil
+	case "question-mark-outline":
+		return QuestionMarkOutline(), nil
+	case "radio-button-off-fill":
+		return RadioButtonOffFill(), nil
+	case "radio-button-off-outline":
+		return RadioButtonOffOutline(), nil
+	case "radio-button-on-fill":
+		return RadioButtonOnFill(), nil
+	case "radio-button-on-outline":
+		return RadioButtonOnOutline(), nil
+	case "radio-fill":
+		return RadioFill(), nil
+	case "radio-outline":
+		return RadioOutline(), nil
+	case "recording-fill":
+		return RecordingFill(), nil
+	case "recording-outline":
+		return RecordingOutline(), nil
+	case "refresh-fill":
+		return RefreshFill(), nil
+	case "refresh-outline":
+		return RefreshOutline(), nil
+	case "repeat-fill":
+		return RepeatFill(), nil
+	case "repeat-outline":
+		return RepeatOutline(), nil
+	case "rewind-left-fill":
+		return RewindLeftFill(), nil
+	case "rewind-left-outline":
+		return RewindLeftOutline(), nil
+	case "rewind-right-fill":
+		return RewindRightFill(), nil
+	case "rewind-right-outline":
+		return RewindRightOutline(), nil
+	case "save-fill":
+		return SaveFill(), nil
+	case "save-outline":
+		return SaveOutline(), nil
+	case "scissors-fill":
+		return ScissorsFill(), nil
+	case "scissors-outline":
+		return ScissorsOutline(), nil
+	case "search-fill":
+		return SearchFill(), nil
+	case "search-outline":
+		return SearchOutline(), nil
+	case "settings-fill":
+		return SettingsFill(), nil
+	case "settings-outline":
+		return SettingsOutline(), nil
+	case "settings-2-fill":
+		return SettingsTwoFill(), nil
+	case "settings-2-outline":
+		return SettingsTwoOutline(), nil
+	case "shake-fill":
+		return ShakeFill(), nil
+	case "shake-outline":
+		return ShakeOutline(), nil
+	case "share-fill":
+		return ShareFill(), nil
+	case "share-outline":
+		return ShareOutline(), nil
+	case "shield-fill":
+		return ShieldFill(), nil
+	case "shield-off-fill":
+		return ShieldOffFill(), nil
+	case "shield-off-outline":
+		return ShieldOffOutline(), nil
+	case "shield-outline":
+		return ShieldOutline(), nil
+	case "shopping-bag-fill":
+		return ShoppingBagFill(), nil
+	case "shopping-bag-outline":
+		return ShoppingBagOutline(), nil
+	case "shopping-cart-fill":
+		return ShoppingCartFill(), nil
+	case "shopping-cart-outline":
+		return ShoppingCartOutline(), nil
+	case "shuffle-fill":
+		return ShuffleFill(), nil
+	case "shuffle-outline":
+		return ShuffleOutline(), nil
+	case "shuffle-2-fill":
+		return ShuffleTwoFill(), nil
+	case "shuffle-2-outline":
+		return ShuffleTwoOutline(), nil
+	case "skip-back-fill":
+		return SkipBackFill(), nil
+	case "skip-back-outline":
+		return SkipBackOutline(), nil
+	case "skip-forward-fill":
+		return SkipForwardFill(), nil
+	case "skip-forward-outline":
+		return SkipForwardOutline(), nil
+	case "slash-fill":
+		return SlashFill(), nil
+	case "slash-outline":
+		return SlashOutline(), nil
+	case "smartphone-fill":
+		return SmartphoneFill(), nil
+	case "smartphone-outline":
+		return SmartphoneOutline(), nil
+	case "smiling-face-fill":
+		return SmilingFaceFill(), nil
+	case "smiling-face-outline":
+		return SmilingFaceOutline(), nil
+	case "speaker-fill":
+		return SpeakerFill(), nil
+	case "speaker-outline":
+		return SpeakerOutline(), nil
+	case "square-fill":
+		return SquareFill(), nil
+	case "square-outline":
+		return SquareOutline(), nil
+	case "star-fill":
+		return StarFill(), nil
+	case "star-outline":
+		return StarOutline(), nil
+	case "stop-circle-fill":
+		return StopCircleFill(), nil
+	case "stop-circle-outline":
+		return StopCircleOutline(), nil
+	case "sun-fill":
+		return SunFill(), nil
+	case "sun-outline":
+		return SunOutline(), nil
+	case "swap-fill":
+		return SwapFill(), nil
+	case "swap-outline":
+		return SwapOutline(), nil
+	case "sync-fill":
+		return SyncFill(), nil
+	case "sync-outline":
+		return SyncOutline(), nil
+	case "text-fill":
+		return TextFill(), nil
+	case "text-outline":
+		return TextOutline(), nil
+	case "thermometer-fill":
+		return ThermometerFill(), nil
+	case "thermometer-minus-fill":
+		return ThermometerMinusFill(), nil
+	case "thermometer-minus-outline":
+		return ThermometerMinusOutline(), nil
+	case "thermometer-outline":
+		return ThermometerOutline(), nil
+	case "thermometer-plus-fill":
+		return ThermometerPlusFill(), nil
+	case "thermometer-plus-outline":
+		return ThermometerPlusOutline(), nil
+	case "toggle-left-fill":
+		return ToggleLeftFill(), nil
+	case "toggle-left-outline":
+		return ToggleLeftOutline(), nil
+	case "toggle-right-fill":
+		return ToggleRightFill(), nil
+	case "toggle-right-outline":
+		return ToggleRightOutline(), nil
+	case "trash-fill":
+		return TrashFill(), nil
+	case "trash-outline":
+		return TrashOutline(), nil
+	case "trash-2-fill":
+		return TrashTwoFill(), nil
+	case "trash-2-outline":
+		return TrashTwoOutline(), nil
+	case "trending-down-fill":
+		return TrendingDownFill(), nil
+	case "trending-down-outline":
+		return TrendingDownOutline(), nil
+	case "trending-up-fill":
+		return TrendingUpFill(), nil
+	case "trending-up-outline":
+		return TrendingUpOutline(), nil
+	case "tv-fill":
+		return TvFill(), nil
+	case "tv-outline":
+		return TvOutline(), nil
+	case "twitter-fill":
+		return TwitterFill(), nil
+	case "twitter-outline":
+		return TwitterOutline(), nil
+	case "umbrella-fill":
+		return UmbrellaFill(), nil
+	case "umbrella-outline":
+		return UmbrellaOutline(), nil
+	case "undo-fill":
+		return UndoFill(), nil
+	case "undo-outline":
+		return UndoOutline(), nil
+	case "unlock-fill":
+		return UnlockFill(), nil
+	case "unlock-outline":
+		return UnlockOutline(), nil
+	case "upload-fill":
+		return UploadFill(), nil
+	case "upload-outline":
+		return UploadOutline(), nil
+	case "video-fill":
+		return VideoFill(), nil
+	case "video-off-fill":
+		return VideoOffFill(), nil
+	case "video-off-outline":
+		return VideoOffOutline(), nil
+	case "video-outline":
+		return VideoOutline(), nil
+	case "volume-down-fill":
+		return VolumeDownFill(), nil
+	case "volume-down-outline":
+		return VolumeDownOutline(), nil
+	case "volume-mute-fill":
+		return VolumeMuteFill(), nil
+	case "volume-mute-outline":
+		return VolumeMuteOutline(), nil
+	case "volume-off-fill":
+		return VolumeOffFill(), nil
+	case "volume-off-outline":
+		return VolumeOffOutline(), nil
+	case "volume-up-fill":
+		return VolumeUpFill(), nil
+	case "volume-up-outline":
+		return VolumeUpOutline(), nil
+	case "wifi-fill":
+		return WifiFill(), nil
+	case "wifi-off-fill":
+		return WifiOffFill(), nil
+	case "wifi-off-outline":
+		return WifiOffOutline(), nil
+	case "wifi-outline":
+		return WifiOutline(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in eva icon set", name)
+	}
 }

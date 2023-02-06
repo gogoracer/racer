@@ -1,6 +1,9 @@
 package ri
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	aBInnerSVG                        = `<path fill="currentColor" d="M5 15v2c0 1.054.95 2 2 2h3v2H7a4 4 0 0 1-4-4v-2h2zm13-5l4.4 11h-2.155l-1.201-3h-4.09l-1.199 3h-2.154L16 10h2zm-1 2.885L15.753 16h2.492L17 12.885zM3 3h6a3 3 0 0 1 2.235 5A3 3 0 0 1 9 13H3V3zm6 6H5v2h4a1 1 0 0 0 0-2zm8-6a4 4 0 0 1 4 4v2h-2V7a2 2 0 0 0-2-2h-3V3h3zM9 5H5v2h4a1 1 0 1 0 0-2z"/>`
@@ -29528,4 +29531,4553 @@ func ZzzLine(children ...any) *engine.HTMLElement {
 		zzzLineInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "a-b":
+		return AB(), nil
+	case "account-box-fill":
+		return AccountBoxFill(), nil
+	case "account-box-line":
+		return AccountBoxLine(), nil
+	case "account-circle-fill":
+		return AccountCircleFill(), nil
+	case "account-circle-line":
+		return AccountCircleLine(), nil
+	case "account-pin-box-fill":
+		return AccountPinBoxFill(), nil
+	case "account-pin-box-line":
+		return AccountPinBoxLine(), nil
+	case "account-pin-circle-fill":
+		return AccountPinCircleFill(), nil
+	case "account-pin-circle-line":
+		return AccountPinCircleLine(), nil
+	case "add-box-fill":
+		return AddBoxFill(), nil
+	case "add-box-line":
+		return AddBoxLine(), nil
+	case "add-circle-fill":
+		return AddCircleFill(), nil
+	case "add-circle-line":
+		return AddCircleLine(), nil
+	case "add-fill":
+		return AddFill(), nil
+	case "add-line":
+		return AddLine(), nil
+	case "admin-fill":
+		return AdminFill(), nil
+	case "admin-line":
+		return AdminLine(), nil
+	case "advertisement-fill":
+		return AdvertisementFill(), nil
+	case "advertisement-line":
+		return AdvertisementLine(), nil
+	case "airplay-fill":
+		return AirplayFill(), nil
+	case "airplay-line":
+		return AirplayLine(), nil
+	case "alarm-fill":
+		return AlarmFill(), nil
+	case "alarm-line":
+		return AlarmLine(), nil
+	case "alarm-warning-fill":
+		return AlarmWarningFill(), nil
+	case "alarm-warning-line":
+		return AlarmWarningLine(), nil
+	case "album-fill":
+		return AlbumFill(), nil
+	case "album-line":
+		return AlbumLine(), nil
+	case "alert-fill":
+		return AlertFill(), nil
+	case "alert-line":
+		return AlertLine(), nil
+	case "aliens-fill":
+		return AliensFill(), nil
+	case "aliens-line":
+		return AliensLine(), nil
+	case "align-bottom":
+		return AlignBottom(), nil
+	case "align-center":
+		return AlignCenter(), nil
+	case "align-justify":
+		return AlignJustify(), nil
+	case "align-left":
+		return AlignLeft(), nil
+	case "align-right":
+		return AlignRight(), nil
+	case "align-top":
+		return AlignTop(), nil
+	case "align-vertically":
+		return AlignVertically(), nil
+	case "alipay-fill":
+		return AlipayFill(), nil
+	case "alipay-line":
+		return AlipayLine(), nil
+	case "amazon-fill":
+		return AmazonFill(), nil
+	case "amazon-line":
+		return AmazonLine(), nil
+	case "anchor-fill":
+		return AnchorFill(), nil
+	case "anchor-line":
+		return AnchorLine(), nil
+	case "ancient-gate-fill":
+		return AncientGateFill(), nil
+	case "ancient-gate-line":
+		return AncientGateLine(), nil
+	case "ancient-pavilion-fill":
+		return AncientPavilionFill(), nil
+	case "ancient-pavilion-line":
+		return AncientPavilionLine(), nil
+	case "android-fill":
+		return AndroidFill(), nil
+	case "android-line":
+		return AndroidLine(), nil
+	case "angularjs-fill":
+		return AngularjsFill(), nil
+	case "angularjs-line":
+		return AngularjsLine(), nil
+	case "anticlockwise-fill":
+		return AnticlockwiseFill(), nil
+	case "anticlockwise-line":
+		return AnticlockwiseLine(), nil
+	case "anticlockwise-2-fill":
+		return AnticlockwiseTwoFill(), nil
+	case "anticlockwise-2-line":
+		return AnticlockwiseTwoLine(), nil
+	case "app-store-fill":
+		return AppStoreFill(), nil
+	case "app-store-line":
+		return AppStoreLine(), nil
+	case "apple-fill":
+		return AppleFill(), nil
+	case "apple-line":
+		return AppleLine(), nil
+	case "apps-fill":
+		return AppsFill(), nil
+	case "apps-line":
+		return AppsLine(), nil
+	case "apps-2-fill":
+		return AppsTwoFill(), nil
+	case "apps-2-line":
+		return AppsTwoLine(), nil
+	case "archive-drawer-fill":
+		return ArchiveDrawerFill(), nil
+	case "archive-drawer-line":
+		return ArchiveDrawerLine(), nil
+	case "archive-fill":
+		return ArchiveFill(), nil
+	case "archive-line":
+		return ArchiveLine(), nil
+	case "arrow-down-circle-fill":
+		return ArrowDownCircleFill(), nil
+	case "arrow-down-circle-line":
+		return ArrowDownCircleLine(), nil
+	case "arrow-down-fill":
+		return ArrowDownFill(), nil
+	case "arrow-down-line":
+		return ArrowDownLine(), nil
+	case "arrow-down-s-fill":
+		return ArrowDownSFill(), nil
+	case "arrow-down-s-line":
+		return ArrowDownSLine(), nil
+	case "arrow-drop-down-fill":
+		return ArrowDropDownFill(), nil
+	case "arrow-drop-down-line":
+		return ArrowDropDownLine(), nil
+	case "arrow-drop-left-fill":
+		return ArrowDropLeftFill(), nil
+	case "arrow-drop-left-line":
+		return ArrowDropLeftLine(), nil
+	case "arrow-drop-right-fill":
+		return ArrowDropRightFill(), nil
+	case "arrow-drop-right-line":
+		return ArrowDropRightLine(), nil
+	case "arrow-drop-up-fill":
+		return ArrowDropUpFill(), nil
+	case "arrow-drop-up-line":
+		return ArrowDropUpLine(), nil
+	case "arrow-go-back-fill":
+		return ArrowGoBackFill(), nil
+	case "arrow-go-back-line":
+		return ArrowGoBackLine(), nil
+	case "arrow-go-forward-fill":
+		return ArrowGoForwardFill(), nil
+	case "arrow-go-forward-line":
+		return ArrowGoForwardLine(), nil
+	case "arrow-left-circle-fill":
+		return ArrowLeftCircleFill(), nil
+	case "arrow-left-circle-line":
+		return ArrowLeftCircleLine(), nil
+	case "arrow-left-down-fill":
+		return ArrowLeftDownFill(), nil
+	case "arrow-left-down-line":
+		return ArrowLeftDownLine(), nil
+	case "arrow-left-fill":
+		return ArrowLeftFill(), nil
+	case "arrow-left-line":
+		return ArrowLeftLine(), nil
+	case "arrow-left-right-fill":
+		return ArrowLeftRightFill(), nil
+	case "arrow-left-right-line":
+		return ArrowLeftRightLine(), nil
+	case "arrow-left-s-fill":
+		return ArrowLeftSFill(), nil
+	case "arrow-left-s-line":
+		return ArrowLeftSLine(), nil
+	case "arrow-left-up-fill":
+		return ArrowLeftUpFill(), nil
+	case "arrow-left-up-line":
+		return ArrowLeftUpLine(), nil
+	case "arrow-right-circle-fill":
+		return ArrowRightCircleFill(), nil
+	case "arrow-right-circle-line":
+		return ArrowRightCircleLine(), nil
+	case "arrow-right-down-fill":
+		return ArrowRightDownFill(), nil
+	case "arrow-right-down-line":
+		return ArrowRightDownLine(), nil
+	case "arrow-right-fill":
+		return ArrowRightFill(), nil
+	case "arrow-right-line":
+		return ArrowRightLine(), nil
+	case "arrow-right-s-fill":
+		return ArrowRightSFill(), nil
+	case "arrow-right-s-line":
+		return ArrowRightSLine(), nil
+	case "arrow-right-up-fill":
+		return ArrowRightUpFill(), nil
+	case "arrow-right-up-line":
+		return ArrowRightUpLine(), nil
+	case "arrow-up-circle-fill":
+		return ArrowUpCircleFill(), nil
+	case "arrow-up-circle-line":
+		return ArrowUpCircleLine(), nil
+	case "arrow-up-down-fill":
+		return ArrowUpDownFill(), nil
+	case "arrow-up-down-line":
+		return ArrowUpDownLine(), nil
+	case "arrow-up-fill":
+		return ArrowUpFill(), nil
+	case "arrow-up-line":
+		return ArrowUpLine(), nil
+	case "arrow-up-s-fill":
+		return ArrowUpSFill(), nil
+	case "arrow-up-s-line":
+		return ArrowUpSLine(), nil
+	case "artboard-fill":
+		return ArtboardFill(), nil
+	case "artboard-line":
+		return ArtboardLine(), nil
+	case "artboard-2-fill":
+		return ArtboardTwoFill(), nil
+	case "artboard-2-line":
+		return ArtboardTwoLine(), nil
+	case "article-fill":
+		return ArticleFill(), nil
+	case "article-line":
+		return ArticleLine(), nil
+	case "aspect-ratio-fill":
+		return AspectRatioFill(), nil
+	case "aspect-ratio-line":
+		return AspectRatioLine(), nil
+	case "asterisk":
+		return Asterisk(), nil
+	case "at-fill":
+		return AtFill(), nil
+	case "at-line":
+		return AtLine(), nil
+	case "attachment-fill":
+		return AttachmentFill(), nil
+	case "attachment-line":
+		return AttachmentLine(), nil
+	case "attachment-2":
+		return AttachmentTwo(), nil
+	case "auction-fill":
+		return AuctionFill(), nil
+	case "auction-line":
+		return AuctionLine(), nil
+	case "award-fill":
+		return AwardFill(), nil
+	case "award-line":
+		return AwardLine(), nil
+	case "baidu-fill":
+		return BaiduFill(), nil
+	case "baidu-line":
+		return BaiduLine(), nil
+	case "ball-pen-fill":
+		return BallPenFill(), nil
+	case "ball-pen-line":
+		return BallPenLine(), nil
+	case "bank-card-fill":
+		return BankCardFill(), nil
+	case "bank-card-line":
+		return BankCardLine(), nil
+	case "bank-card-2-fill":
+		return BankCardTwoFill(), nil
+	case "bank-card-2-line":
+		return BankCardTwoLine(), nil
+	case "bank-fill":
+		return BankFill(), nil
+	case "bank-line":
+		return BankLine(), nil
+	case "bar-chart-box-fill":
+		return BarChartBoxFill(), nil
+	case "bar-chart-box-line":
+		return BarChartBoxLine(), nil
+	case "bar-chart-fill":
+		return BarChartFill(), nil
+	case "bar-chart-grouped-fill":
+		return BarChartGroupedFill(), nil
+	case "bar-chart-grouped-line":
+		return BarChartGroupedLine(), nil
+	case "bar-chart-horizontal-fill":
+		return BarChartHorizontalFill(), nil
+	case "bar-chart-horizontal-line":
+		return BarChartHorizontalLine(), nil
+	case "bar-chart-line":
+		return BarChartLine(), nil
+	case "bar-chart-2-fill":
+		return BarChartTwoFill(), nil
+	case "bar-chart-2-line":
+		return BarChartTwoLine(), nil
+	case "barcode-box-fill":
+		return BarcodeBoxFill(), nil
+	case "barcode-box-line":
+		return BarcodeBoxLine(), nil
+	case "barcode-fill":
+		return BarcodeFill(), nil
+	case "barcode-line":
+		return BarcodeLine(), nil
+	case "barricade-fill":
+		return BarricadeFill(), nil
+	case "barricade-line":
+		return BarricadeLine(), nil
+	case "base-station-fill":
+		return BaseStationFill(), nil
+	case "base-station-line":
+		return BaseStationLine(), nil
+	case "basketball-fill":
+		return BasketballFill(), nil
+	case "basketball-line":
+		return BasketballLine(), nil
+	case "battery-charge-fill":
+		return BatteryChargeFill(), nil
+	case "battery-charge-line":
+		return BatteryChargeLine(), nil
+	case "battery-fill":
+		return BatteryFill(), nil
+	case "battery-line":
+		return BatteryLine(), nil
+	case "battery-low-fill":
+		return BatteryLowFill(), nil
+	case "battery-low-line":
+		return BatteryLowLine(), nil
+	case "battery-saver-fill":
+		return BatterySaverFill(), nil
+	case "battery-saver-line":
+		return BatterySaverLine(), nil
+	case "battery-share-fill":
+		return BatteryShareFill(), nil
+	case "battery-share-line":
+		return BatteryShareLine(), nil
+	case "battery-2-charge-fill":
+		return BatteryTwoChargeFill(), nil
+	case "battery-2-charge-line":
+		return BatteryTwoChargeLine(), nil
+	case "battery-2-fill":
+		return BatteryTwoFill(), nil
+	case "battery-2-line":
+		return BatteryTwoLine(), nil
+	case "bear-smile-fill":
+		return BearSmileFill(), nil
+	case "bear-smile-line":
+		return BearSmileLine(), nil
+	case "behance-fill":
+		return BehanceFill(), nil
+	case "behance-line":
+		return BehanceLine(), nil
+	case "bell-fill":
+		return BellFill(), nil
+	case "bell-line":
+		return BellLine(), nil
+	case "bike-fill":
+		return BikeFill(), nil
+	case "bike-line":
+		return BikeLine(), nil
+	case "bilibili-fill":
+		return BilibiliFill(), nil
+	case "bilibili-line":
+		return BilibiliLine(), nil
+	case "bill-fill":
+		return BillFill(), nil
+	case "bill-line":
+		return BillLine(), nil
+	case "billiards-fill":
+		return BilliardsFill(), nil
+	case "billiards-line":
+		return BilliardsLine(), nil
+	case "bit-coin-fill":
+		return BitCoinFill(), nil
+	case "bit-coin-line":
+		return BitCoinLine(), nil
+	case "blaze-fill":
+		return BlazeFill(), nil
+	case "blaze-line":
+		return BlazeLine(), nil
+	case "bluetooth-connect-fill":
+		return BluetoothConnectFill(), nil
+	case "bluetooth-connect-line":
+		return BluetoothConnectLine(), nil
+	case "bluetooth-fill":
+		return BluetoothFill(), nil
+	case "bluetooth-line":
+		return BluetoothLine(), nil
+	case "blur-off-fill":
+		return BlurOffFill(), nil
+	case "blur-off-line":
+		return BlurOffLine(), nil
+	case "body-scan-fill":
+		return BodyScanFill(), nil
+	case "body-scan-line":
+		return BodyScanLine(), nil
+	case "bold":
+		return Bold(), nil
+	case "book-fill":
+		return BookFill(), nil
+	case "book-line":
+		return BookLine(), nil
+	case "book-mark-fill":
+		return BookMarkFill(), nil
+	case "book-mark-line":
+		return BookMarkLine(), nil
+	case "book-open-fill":
+		return BookOpenFill(), nil
+	case "book-open-line":
+		return BookOpenLine(), nil
+	case "book-read-fill":
+		return BookReadFill(), nil
+	case "book-read-line":
+		return BookReadLine(), nil
+	case "book-3-fill":
+		return BookThreeFill(), nil
+	case "book-3-line":
+		return BookThreeLine(), nil
+	case "book-2-fill":
+		return BookTwoFill(), nil
+	case "book-2-line":
+		return BookTwoLine(), nil
+	case "booklet-fill":
+		return BookletFill(), nil
+	case "booklet-line":
+		return BookletLine(), nil
+	case "bookmark-fill":
+		return BookmarkFill(), nil
+	case "bookmark-line":
+		return BookmarkLine(), nil
+	case "bookmark-3-fill":
+		return BookmarkThreeFill(), nil
+	case "bookmark-3-line":
+		return BookmarkThreeLine(), nil
+	case "bookmark-2-fill":
+		return BookmarkTwoFill(), nil
+	case "bookmark-2-line":
+		return BookmarkTwoLine(), nil
+	case "boxing-fill":
+		return BoxingFill(), nil
+	case "boxing-line":
+		return BoxingLine(), nil
+	case "braces-fill":
+		return BracesFill(), nil
+	case "braces-line":
+		return BracesLine(), nil
+	case "brackets-fill":
+		return BracketsFill(), nil
+	case "brackets-line":
+		return BracketsLine(), nil
+	case "briefcase-fill":
+		return BriefcaseFill(), nil
+	case "briefcase-5-fill":
+		return BriefcaseFiveFill(), nil
+	case "briefcase-5-line":
+		return BriefcaseFiveLine(), nil
+	case "briefcase-4-fill":
+		return BriefcaseFourFill(), nil
+	case "briefcase-4-line":
+		return BriefcaseFourLine(), nil
+	case "briefcase-line":
+		return BriefcaseLine(), nil
+	case "briefcase-3-fill":
+		return BriefcaseThreeFill(), nil
+	case "briefcase-3-line":
+		return BriefcaseThreeLine(), nil
+	case "briefcase-2-fill":
+		return BriefcaseTwoFill(), nil
+	case "briefcase-2-line":
+		return BriefcaseTwoLine(), nil
+	case "bring-forward":
+		return BringForward(), nil
+	case "bring-to-front":
+		return BringToFront(), nil
+	case "broadcast-fill":
+		return BroadcastFill(), nil
+	case "broadcast-line":
+		return BroadcastLine(), nil
+	case "brush-fill":
+		return BrushFill(), nil
+	case "brush-4-fill":
+		return BrushFourFill(), nil
+	case "brush-4-line":
+		return BrushFourLine(), nil
+	case "brush-line":
+		return BrushLine(), nil
+	case "brush-3-fill":
+		return BrushThreeFill(), nil
+	case "brush-3-line":
+		return BrushThreeLine(), nil
+	case "brush-2-fill":
+		return BrushTwoFill(), nil
+	case "brush-2-line":
+		return BrushTwoLine(), nil
+	case "bubble-chart-fill":
+		return BubbleChartFill(), nil
+	case "bubble-chart-line":
+		return BubbleChartLine(), nil
+	case "bug-fill":
+		return BugFill(), nil
+	case "bug-line":
+		return BugLine(), nil
+	case "bug-2-fill":
+		return BugTwoFill(), nil
+	case "bug-2-line":
+		return BugTwoLine(), nil
+	case "building-fill":
+		return BuildingFill(), nil
+	case "building-4-fill":
+		return BuildingFourFill(), nil
+	case "building-4-line":
+		return BuildingFourLine(), nil
+	case "building-line":
+		return BuildingLine(), nil
+	case "building-3-fill":
+		return BuildingThreeFill(), nil
+	case "building-3-line":
+		return BuildingThreeLine(), nil
+	case "building-2-fill":
+		return BuildingTwoFill(), nil
+	case "building-2-line":
+		return BuildingTwoLine(), nil
+	case "bus-fill":
+		return BusFill(), nil
+	case "bus-line":
+		return BusLine(), nil
+	case "bus-2-fill":
+		return BusTwoFill(), nil
+	case "bus-2-line":
+		return BusTwoLine(), nil
+	case "bus-wifi-fill":
+		return BusWifiFill(), nil
+	case "bus-wifi-line":
+		return BusWifiLine(), nil
+	case "cactus-fill":
+		return CactusFill(), nil
+	case "cactus-line":
+		return CactusLine(), nil
+	case "cake-fill":
+		return CakeFill(), nil
+	case "cake-line":
+		return CakeLine(), nil
+	case "cake-3-fill":
+		return CakeThreeFill(), nil
+	case "cake-3-line":
+		return CakeThreeLine(), nil
+	case "cake-2-fill":
+		return CakeTwoFill(), nil
+	case "cake-2-line":
+		return CakeTwoLine(), nil
+	case "calculator-fill":
+		return CalculatorFill(), nil
+	case "calculator-line":
+		return CalculatorLine(), nil
+	case "calendar-check-fill":
+		return CalendarCheckFill(), nil
+	case "calendar-check-line":
+		return CalendarCheckLine(), nil
+	case "calendar-event-fill":
+		return CalendarEventFill(), nil
+	case "calendar-event-line":
+		return CalendarEventLine(), nil
+	case "calendar-fill":
+		return CalendarFill(), nil
+	case "calendar-line":
+		return CalendarLine(), nil
+	case "calendar-todo-fill":
+		return CalendarTodoFill(), nil
+	case "calendar-todo-line":
+		return CalendarTodoLine(), nil
+	case "calendar-2-fill":
+		return CalendarTwoFill(), nil
+	case "calendar-2-line":
+		return CalendarTwoLine(), nil
+	case "camera-fill":
+		return CameraFill(), nil
+	case "camera-lens-fill":
+		return CameraLensFill(), nil
+	case "camera-lens-line":
+		return CameraLensLine(), nil
+	case "camera-line":
+		return CameraLine(), nil
+	case "camera-off-fill":
+		return CameraOffFill(), nil
+	case "camera-off-line":
+		return CameraOffLine(), nil
+	case "camera-switch-fill":
+		return CameraSwitchFill(), nil
+	case "camera-switch-line":
+		return CameraSwitchLine(), nil
+	case "camera-3-fill":
+		return CameraThreeFill(), nil
+	case "camera-3-line":
+		return CameraThreeLine(), nil
+	case "camera-2-fill":
+		return CameraTwoFill(), nil
+	case "camera-2-line":
+		return CameraTwoLine(), nil
+	case "capsule-fill":
+		return CapsuleFill(), nil
+	case "capsule-line":
+		return CapsuleLine(), nil
+	case "car-fill":
+		return CarFill(), nil
+	case "car-line":
+		return CarLine(), nil
+	case "car-washing-fill":
+		return CarWashingFill(), nil
+	case "car-washing-line":
+		return CarWashingLine(), nil
+	case "caravan-fill":
+		return CaravanFill(), nil
+	case "caravan-line":
+		return CaravanLine(), nil
+	case "cast-fill":
+		return CastFill(), nil
+	case "cast-line":
+		return CastLine(), nil
+	case "cellphone-fill":
+		return CellphoneFill(), nil
+	case "cellphone-line":
+		return CellphoneLine(), nil
+	case "celsius-fill":
+		return CelsiusFill(), nil
+	case "celsius-line":
+		return CelsiusLine(), nil
+	case "centos-fill":
+		return CentosFill(), nil
+	case "centos-line":
+		return CentosLine(), nil
+	case "character-recognition-fill":
+		return CharacterRecognitionFill(), nil
+	case "character-recognition-line":
+		return CharacterRecognitionLine(), nil
+	case "charging-pile-fill":
+		return ChargingPileFill(), nil
+	case "charging-pile-line":
+		return ChargingPileLine(), nil
+	case "charging-pile-2-fill":
+		return ChargingPileTwoFill(), nil
+	case "charging-pile-2-line":
+		return ChargingPileTwoLine(), nil
+	case "chat-check-fill":
+		return ChatCheckFill(), nil
+	case "chat-check-line":
+		return ChatCheckLine(), nil
+	case "chat-delete-fill":
+		return ChatDeleteFill(), nil
+	case "chat-delete-line":
+		return ChatDeleteLine(), nil
+	case "chat-download-fill":
+		return ChatDownloadFill(), nil
+	case "chat-download-line":
+		return ChatDownloadLine(), nil
+	case "chat-follow-up-fill":
+		return ChatFollowUpFill(), nil
+	case "chat-follow-up-line":
+		return ChatFollowUpLine(), nil
+	case "chat-forward-fill":
+		return ChatForwardFill(), nil
+	case "chat-forward-line":
+		return ChatForwardLine(), nil
+	case "chat-4-fill":
+		return ChatFourFill(), nil
+	case "chat-4-line":
+		return ChatFourLine(), nil
+	case "chat-heart-fill":
+		return ChatHeartFill(), nil
+	case "chat-heart-line":
+		return ChatHeartLine(), nil
+	case "chat-history-fill":
+		return ChatHistoryFill(), nil
+	case "chat-history-line":
+		return ChatHistoryLine(), nil
+	case "chat-new-fill":
+		return ChatNewFill(), nil
+	case "chat-new-line":
+		return ChatNewLine(), nil
+	case "chat-off-fill":
+		return ChatOffFill(), nil
+	case "chat-off-line":
+		return ChatOffLine(), nil
+	case "chat-1-fill":
+		return ChatOneFill(), nil
+	case "chat-1-line":
+		return ChatOneLine(), nil
+	case "chat-poll-fill":
+		return ChatPollFill(), nil
+	case "chat-poll-line":
+		return ChatPollLine(), nil
+	case "chat-private-fill":
+		return ChatPrivateFill(), nil
+	case "chat-private-line":
+		return ChatPrivateLine(), nil
+	case "chat-quote-fill":
+		return ChatQuoteFill(), nil
+	case "chat-quote-line":
+		return ChatQuoteLine(), nil
+	case "chat-settings-fill":
+		return ChatSettingsFill(), nil
+	case "chat-settings-line":
+		return ChatSettingsLine(), nil
+	case "chat-smile-fill":
+		return ChatSmileFill(), nil
+	case "chat-smile-line":
+		return ChatSmileLine(), nil
+	case "chat-smile-3-fill":
+		return ChatSmileThreeFill(), nil
+	case "chat-smile-3-line":
+		return ChatSmileThreeLine(), nil
+	case "chat-smile-2-fill":
+		return ChatSmileTwoFill(), nil
+	case "chat-smile-2-line":
+		return ChatSmileTwoLine(), nil
+	case "chat-3-fill":
+		return ChatThreeFill(), nil
+	case "chat-3-line":
+		return ChatThreeLine(), nil
+	case "chat-2-fill":
+		return ChatTwoFill(), nil
+	case "chat-2-line":
+		return ChatTwoLine(), nil
+	case "chat-upload-fill":
+		return ChatUploadFill(), nil
+	case "chat-upload-line":
+		return ChatUploadLine(), nil
+	case "chat-voice-fill":
+		return ChatVoiceFill(), nil
+	case "chat-voice-line":
+		return ChatVoiceLine(), nil
+	case "check-double-fill":
+		return CheckDoubleFill(), nil
+	case "check-double-line":
+		return CheckDoubleLine(), nil
+	case "check-fill":
+		return CheckFill(), nil
+	case "check-line":
+		return CheckLine(), nil
+	case "checkbox-blank-circle-fill":
+		return CheckboxBlankCircleFill(), nil
+	case "checkbox-blank-circle-line":
+		return CheckboxBlankCircleLine(), nil
+	case "checkbox-blank-fill":
+		return CheckboxBlankFill(), nil
+	case "checkbox-blank-line":
+		return CheckboxBlankLine(), nil
+	case "checkbox-circle-fill":
+		return CheckboxCircleFill(), nil
+	case "checkbox-circle-line":
+		return CheckboxCircleLine(), nil
+	case "checkbox-fill":
+		return CheckboxFill(), nil
+	case "checkbox-indeterminate-fill":
+		return CheckboxIndeterminateFill(), nil
+	case "checkbox-indeterminate-line":
+		return CheckboxIndeterminateLine(), nil
+	case "checkbox-line":
+		return CheckboxLine(), nil
+	case "checkbox-multiple-blank-fill":
+		return CheckboxMultipleBlankFill(), nil
+	case "checkbox-multiple-blank-line":
+		return CheckboxMultipleBlankLine(), nil
+	case "checkbox-multiple-fill":
+		return CheckboxMultipleFill(), nil
+	case "checkbox-multiple-line":
+		return CheckboxMultipleLine(), nil
+	case "china-railway-fill":
+		return ChinaRailwayFill(), nil
+	case "china-railway-line":
+		return ChinaRailwayLine(), nil
+	case "chrome-fill":
+		return ChromeFill(), nil
+	case "chrome-line":
+		return ChromeLine(), nil
+	case "clapperboard-fill":
+		return ClapperboardFill(), nil
+	case "clapperboard-line":
+		return ClapperboardLine(), nil
+	case "clipboard-fill":
+		return ClipboardFill(), nil
+	case "clipboard-line":
+		return ClipboardLine(), nil
+	case "clockwise-fill":
+		return ClockwiseFill(), nil
+	case "clockwise-line":
+		return ClockwiseLine(), nil
+	case "clockwise-2-fill":
+		return ClockwiseTwoFill(), nil
+	case "clockwise-2-line":
+		return ClockwiseTwoLine(), nil
+	case "close-circle-fill":
+		return CloseCircleFill(), nil
+	case "close-circle-line":
+		return CloseCircleLine(), nil
+	case "close-fill":
+		return CloseFill(), nil
+	case "close-line":
+		return CloseLine(), nil
+	case "closed-captioning-fill":
+		return ClosedCaptioningFill(), nil
+	case "closed-captioning-line":
+		return ClosedCaptioningLine(), nil
+	case "cloud-fill":
+		return CloudFill(), nil
+	case "cloud-line":
+		return CloudLine(), nil
+	case "cloud-off-fill":
+		return CloudOffFill(), nil
+	case "cloud-off-line":
+		return CloudOffLine(), nil
+	case "cloud-windy-fill":
+		return CloudWindyFill(), nil
+	case "cloud-windy-line":
+		return CloudWindyLine(), nil
+	case "cloudy-fill":
+		return CloudyFill(), nil
+	case "cloudy-line":
+		return CloudyLine(), nil
+	case "cloudy-2-fill":
+		return CloudyTwoFill(), nil
+	case "cloudy-2-line":
+		return CloudyTwoLine(), nil
+	case "code-box-fill":
+		return CodeBoxFill(), nil
+	case "code-box-line":
+		return CodeBoxLine(), nil
+	case "code-fill":
+		return CodeFill(), nil
+	case "code-line":
+		return CodeLine(), nil
+	case "code-s-fill":
+		return CodeSFill(), nil
+	case "code-s-line":
+		return CodeSLine(), nil
+	case "code-s-slash-fill":
+		return CodeSSlashFill(), nil
+	case "code-s-slash-line":
+		return CodeSSlashLine(), nil
+	case "code-view":
+		return CodeView(), nil
+	case "codepen-fill":
+		return CodepenFill(), nil
+	case "codepen-line":
+		return CodepenLine(), nil
+	case "coin-fill":
+		return CoinFill(), nil
+	case "coin-line":
+		return CoinLine(), nil
+	case "coins-fill":
+		return CoinsFill(), nil
+	case "coins-line":
+		return CoinsLine(), nil
+	case "collage-fill":
+		return CollageFill(), nil
+	case "collage-line":
+		return CollageLine(), nil
+	case "command-fill":
+		return CommandFill(), nil
+	case "command-line":
+		return CommandLine(), nil
+	case "community-fill":
+		return CommunityFill(), nil
+	case "community-line":
+		return CommunityLine(), nil
+	case "compass-discover-fill":
+		return CompassDiscoverFill(), nil
+	case "compass-discover-line":
+		return CompassDiscoverLine(), nil
+	case "compass-fill":
+		return CompassFill(), nil
+	case "compass-4-fill":
+		return CompassFourFill(), nil
+	case "compass-4-line":
+		return CompassFourLine(), nil
+	case "compass-line":
+		return CompassLine(), nil
+	case "compass-3-fill":
+		return CompassThreeFill(), nil
+	case "compass-3-line":
+		return CompassThreeLine(), nil
+	case "compass-2-fill":
+		return CompassTwoFill(), nil
+	case "compass-2-line":
+		return CompassTwoLine(), nil
+	case "compasses-fill":
+		return CompassesFill(), nil
+	case "compasses-line":
+		return CompassesLine(), nil
+	case "compasses-2-fill":
+		return CompassesTwoFill(), nil
+	case "compasses-2-line":
+		return CompassesTwoLine(), nil
+	case "computer-fill":
+		return ComputerFill(), nil
+	case "computer-line":
+		return ComputerLine(), nil
+	case "contacts-book-fill":
+		return ContactsBookFill(), nil
+	case "contacts-book-line":
+		return ContactsBookLine(), nil
+	case "contacts-book-2-fill":
+		return ContactsBookTwoFill(), nil
+	case "contacts-book-2-line":
+		return ContactsBookTwoLine(), nil
+	case "contacts-book-upload-fill":
+		return ContactsBookUploadFill(), nil
+	case "contacts-book-upload-line":
+		return ContactsBookUploadLine(), nil
+	case "contacts-fill":
+		return ContactsFill(), nil
+	case "contacts-line":
+		return ContactsLine(), nil
+	case "contrast-drop-fill":
+		return ContrastDropFill(), nil
+	case "contrast-drop-line":
+		return ContrastDropLine(), nil
+	case "contrast-drop-2-fill":
+		return ContrastDropTwoFill(), nil
+	case "contrast-drop-2-line":
+		return ContrastDropTwoLine(), nil
+	case "contrast-fill":
+		return ContrastFill(), nil
+	case "contrast-line":
+		return ContrastLine(), nil
+	case "contrast-2-fill":
+		return ContrastTwoFill(), nil
+	case "contrast-2-line":
+		return ContrastTwoLine(), nil
+	case "copper-coin-fill":
+		return CopperCoinFill(), nil
+	case "copper-coin-line":
+		return CopperCoinLine(), nil
+	case "copper-diamond-fill":
+		return CopperDiamondFill(), nil
+	case "copper-diamond-line":
+		return CopperDiamondLine(), nil
+	case "copyleft-fill":
+		return CopyleftFill(), nil
+	case "copyleft-line":
+		return CopyleftLine(), nil
+	case "copyright-fill":
+		return CopyrightFill(), nil
+	case "copyright-line":
+		return CopyrightLine(), nil
+	case "coreos-fill":
+		return CoreosFill(), nil
+	case "coreos-line":
+		return CoreosLine(), nil
+	case "coupon-fill":
+		return CouponFill(), nil
+	case "coupon-5-fill":
+		return CouponFiveFill(), nil
+	case "coupon-5-line":
+		return CouponFiveLine(), nil
+	case "coupon-4-fill":
+		return CouponFourFill(), nil
+	case "coupon-4-line":
+		return CouponFourLine(), nil
+	case "coupon-line":
+		return CouponLine(), nil
+	case "coupon-3-fill":
+		return CouponThreeFill(), nil
+	case "coupon-3-line":
+		return CouponThreeLine(), nil
+	case "coupon-2-fill":
+		return CouponTwoFill(), nil
+	case "coupon-2-line":
+		return CouponTwoLine(), nil
+	case "cpu-fill":
+		return CpuFill(), nil
+	case "cpu-line":
+		return CpuLine(), nil
+	case "creative-commons-by-fill":
+		return CreativeCommonsByFill(), nil
+	case "creative-commons-by-line":
+		return CreativeCommonsByLine(), nil
+	case "creative-commons-fill":
+		return CreativeCommonsFill(), nil
+	case "creative-commons-line":
+		return CreativeCommonsLine(), nil
+	case "creative-commons-nc-fill":
+		return CreativeCommonsNcFill(), nil
+	case "creative-commons-nc-line":
+		return CreativeCommonsNcLine(), nil
+	case "creative-commons-nd-fill":
+		return CreativeCommonsNdFill(), nil
+	case "creative-commons-nd-line":
+		return CreativeCommonsNdLine(), nil
+	case "creative-commons-sa-fill":
+		return CreativeCommonsSaFill(), nil
+	case "creative-commons-sa-line":
+		return CreativeCommonsSaLine(), nil
+	case "creative-commons-zero-fill":
+		return CreativeCommonsZeroFill(), nil
+	case "creative-commons-zero-line":
+		return CreativeCommonsZeroLine(), nil
+	case "criminal-fill":
+		return CriminalFill(), nil
+	case "criminal-line":
+		return CriminalLine(), nil
+	case "crop-fill":
+		return CropFill(), nil
+	case "crop-line":
+		return CropLine(), nil
+	case "crop-2-fill":
+		return CropTwoFill(), nil
+	case "crop-2-line":
+		return CropTwoLine(), nil
+	case "css3-fill":
+		return CssThreeFill(), nil
+	case "css3-line":
+		return CssThreeLine(), nil
+	case "cup-fill":
+		return CupFill(), nil
+	case "cup-line":
+		return CupLine(), nil
+	case "currency-fill":
+		return CurrencyFill(), nil
+	case "currency-line":
+		return CurrencyLine(), nil
+	case "cursor-fill":
+		return CursorFill(), nil
+	case "cursor-line":
+		return CursorLine(), nil
+	case "customer-service-fill":
+		return CustomerServiceFill(), nil
+	case "customer-service-line":
+		return CustomerServiceLine(), nil
+	case "customer-service-2-fill":
+		return CustomerServiceTwoFill(), nil
+	case "customer-service-2-line":
+		return CustomerServiceTwoLine(), nil
+	case "dashboard-fill":
+		return DashboardFill(), nil
+	case "dashboard-line":
+		return DashboardLine(), nil
+	case "dashboard-3-fill":
+		return DashboardThreeFill(), nil
+	case "dashboard-3-line":
+		return DashboardThreeLine(), nil
+	case "dashboard-2-fill":
+		return DashboardTwoFill(), nil
+	case "dashboard-2-line":
+		return DashboardTwoLine(), nil
+	case "database-fill":
+		return DatabaseFill(), nil
+	case "database-line":
+		return DatabaseLine(), nil
+	case "database-2-fill":
+		return DatabaseTwoFill(), nil
+	case "database-2-line":
+		return DatabaseTwoLine(), nil
+	case "delete-back-fill":
+		return DeleteBackFill(), nil
+	case "delete-back-line":
+		return DeleteBackLine(), nil
+	case "delete-back-2-fill":
+		return DeleteBackTwoFill(), nil
+	case "delete-back-2-line":
+		return DeleteBackTwoLine(), nil
+	case "delete-bin-fill":
+		return DeleteBinFill(), nil
+	case "delete-bin-5-fill":
+		return DeleteBinFiveFill(), nil
+	case "delete-bin-5-line":
+		return DeleteBinFiveLine(), nil
+	case "delete-bin-4-fill":
+		return DeleteBinFourFill(), nil
+	case "delete-bin-4-line":
+		return DeleteBinFourLine(), nil
+	case "delete-bin-line":
+		return DeleteBinLine(), nil
+	case "delete-bin-7-fill":
+		return DeleteBinSevenFill(), nil
+	case "delete-bin-7-line":
+		return DeleteBinSevenLine(), nil
+	case "delete-bin-6-fill":
+		return DeleteBinSixFill(), nil
+	case "delete-bin-6-line":
+		return DeleteBinSixLine(), nil
+	case "delete-bin-3-fill":
+		return DeleteBinThreeFill(), nil
+	case "delete-bin-3-line":
+		return DeleteBinThreeLine(), nil
+	case "delete-bin-2-fill":
+		return DeleteBinTwoFill(), nil
+	case "delete-bin-2-line":
+		return DeleteBinTwoLine(), nil
+	case "delete-column":
+		return DeleteColumn(), nil
+	case "delete-row":
+		return DeleteRow(), nil
+	case "device-fill":
+		return DeviceFill(), nil
+	case "device-line":
+		return DeviceLine(), nil
+	case "device-recover-fill":
+		return DeviceRecoverFill(), nil
+	case "device-recover-line":
+		return DeviceRecoverLine(), nil
+	case "dingding-fill":
+		return DingdingFill(), nil
+	case "dingding-line":
+		return DingdingLine(), nil
+	case "direction-fill":
+		return DirectionFill(), nil
+	case "direction-line":
+		return DirectionLine(), nil
+	case "disc-fill":
+		return DiscFill(), nil
+	case "disc-line":
+		return DiscLine(), nil
+	case "discord-fill":
+		return DiscordFill(), nil
+	case "discord-line":
+		return DiscordLine(), nil
+	case "discuss-fill":
+		return DiscussFill(), nil
+	case "discuss-line":
+		return DiscussLine(), nil
+	case "dislike-fill":
+		return DislikeFill(), nil
+	case "dislike-line":
+		return DislikeLine(), nil
+	case "disqus-fill":
+		return DisqusFill(), nil
+	case "disqus-line":
+		return DisqusLine(), nil
+	case "divide-fill":
+		return DivideFill(), nil
+	case "divide-line":
+		return DivideLine(), nil
+	case "donut-chart-fill":
+		return DonutChartFill(), nil
+	case "donut-chart-line":
+		return DonutChartLine(), nil
+	case "door-closed-fill":
+		return DoorClosedFill(), nil
+	case "door-closed-line":
+		return DoorClosedLine(), nil
+	case "door-fill":
+		return DoorFill(), nil
+	case "door-line":
+		return DoorLine(), nil
+	case "door-lock-box-fill":
+		return DoorLockBoxFill(), nil
+	case "door-lock-box-line":
+		return DoorLockBoxLine(), nil
+	case "door-lock-fill":
+		return DoorLockFill(), nil
+	case "door-lock-line":
+		return DoorLockLine(), nil
+	case "door-open-fill":
+		return DoorOpenFill(), nil
+	case "door-open-line":
+		return DoorOpenLine(), nil
+	case "dossier-fill":
+		return DossierFill(), nil
+	case "dossier-line":
+		return DossierLine(), nil
+	case "douban-fill":
+		return DoubanFill(), nil
+	case "douban-line":
+		return DoubanLine(), nil
+	case "double-quotes-l":
+		return DoubleQuotesL(), nil
+	case "double-quotes-r":
+		return DoubleQuotesR(), nil
+	case "download-cloud-fill":
+		return DownloadCloudFill(), nil
+	case "download-cloud-line":
+		return DownloadCloudLine(), nil
+	case "download-cloud-2-fill":
+		return DownloadCloudTwoFill(), nil
+	case "download-cloud-2-line":
+		return DownloadCloudTwoLine(), nil
+	case "download-fill":
+		return DownloadFill(), nil
+	case "download-line":
+		return DownloadLine(), nil
+	case "download-2-fill":
+		return DownloadTwoFill(), nil
+	case "download-2-line":
+		return DownloadTwoLine(), nil
+	case "draft-fill":
+		return DraftFill(), nil
+	case "draft-line":
+		return DraftLine(), nil
+	case "drag-drop-fill":
+		return DragDropFill(), nil
+	case "drag-drop-line":
+		return DragDropLine(), nil
+	case "drag-move-fill":
+		return DragMoveFill(), nil
+	case "drag-move-line":
+		return DragMoveLine(), nil
+	case "drag-move-2-fill":
+		return DragMoveTwoFill(), nil
+	case "drag-move-2-line":
+		return DragMoveTwoLine(), nil
+	case "dribbble-fill":
+		return DribbbleFill(), nil
+	case "dribbble-line":
+		return DribbbleLine(), nil
+	case "drive-fill":
+		return DriveFill(), nil
+	case "drive-line":
+		return DriveLine(), nil
+	case "drizzle-fill":
+		return DrizzleFill(), nil
+	case "drizzle-line":
+		return DrizzleLine(), nil
+	case "drop-fill":
+		return DropFill(), nil
+	case "drop-line":
+		return DropLine(), nil
+	case "dropbox-fill":
+		return DropboxFill(), nil
+	case "dropbox-line":
+		return DropboxLine(), nil
+	case "dual-sim-1-fill":
+		return DualSimOneFill(), nil
+	case "dual-sim-1-line":
+		return DualSimOneLine(), nil
+	case "dual-sim-2-fill":
+		return DualSimTwoFill(), nil
+	case "dual-sim-2-line":
+		return DualSimTwoLine(), nil
+	case "dv-fill":
+		return DvFill(), nil
+	case "dv-line":
+		return DvLine(), nil
+	case "dvd-fill":
+		return DvdFill(), nil
+	case "dvd-line":
+		return DvdLine(), nil
+	case "e-bike-fill":
+		return EBikeFill(), nil
+	case "e-bike-line":
+		return EBikeLine(), nil
+	case "e-bike-2-fill":
+		return EBikeTwoFill(), nil
+	case "e-bike-2-line":
+		return EBikeTwoLine(), nil
+	case "earth-fill":
+		return EarthFill(), nil
+	case "earth-line":
+		return EarthLine(), nil
+	case "earthquake-fill":
+		return EarthquakeFill(), nil
+	case "earthquake-line":
+		return EarthquakeLine(), nil
+	case "edge-fill":
+		return EdgeFill(), nil
+	case "edge-line":
+		return EdgeLine(), nil
+	case "edit-box-fill":
+		return EditBoxFill(), nil
+	case "edit-box-line":
+		return EditBoxLine(), nil
+	case "edit-circle-fill":
+		return EditCircleFill(), nil
+	case "edit-circle-line":
+		return EditCircleLine(), nil
+	case "edit-fill":
+		return EditFill(), nil
+	case "edit-line":
+		return EditLine(), nil
+	case "edit-2-fill":
+		return EditTwoFill(), nil
+	case "edit-2-line":
+		return EditTwoLine(), nil
+	case "eject-fill":
+		return EjectFill(), nil
+	case "eject-line":
+		return EjectLine(), nil
+	case "emotion-fill":
+		return EmotionFill(), nil
+	case "emotion-happy-fill":
+		return EmotionHappyFill(), nil
+	case "emotion-happy-line":
+		return EmotionHappyLine(), nil
+	case "emotion-laugh-fill":
+		return EmotionLaughFill(), nil
+	case "emotion-laugh-line":
+		return EmotionLaughLine(), nil
+	case "emotion-line":
+		return EmotionLine(), nil
+	case "emotion-normal-fill":
+		return EmotionNormalFill(), nil
+	case "emotion-normal-line":
+		return EmotionNormalLine(), nil
+	case "emotion-sad-fill":
+		return EmotionSadFill(), nil
+	case "emotion-sad-line":
+		return EmotionSadLine(), nil
+	case "emotion-2-fill":
+		return EmotionTwoFill(), nil
+	case "emotion-2-line":
+		return EmotionTwoLine(), nil
+	case "emotion-unhappy-fill":
+		return EmotionUnhappyFill(), nil
+	case "emotion-unhappy-line":
+		return EmotionUnhappyLine(), nil
+	case "empathize-fill":
+		return EmpathizeFill(), nil
+	case "empathize-line":
+		return EmpathizeLine(), nil
+	case "emphasis":
+		return Emphasis(), nil
+	case "emphasis-cn":
+		return EmphasisCn(), nil
+	case "english-input":
+		return EnglishInput(), nil
+	case "equalizer-fill":
+		return EqualizerFill(), nil
+	case "equalizer-line":
+		return EqualizerLine(), nil
+	case "eraser-fill":
+		return EraserFill(), nil
+	case "eraser-line":
+		return EraserLine(), nil
+	case "error-warning-fill":
+		return ErrorWarningFill(), nil
+	case "error-warning-line":
+		return ErrorWarningLine(), nil
+	case "evernote-fill":
+		return EvernoteFill(), nil
+	case "evernote-line":
+		return EvernoteLine(), nil
+	case "exchange-box-fill":
+		return ExchangeBoxFill(), nil
+	case "exchange-box-line":
+		return ExchangeBoxLine(), nil
+	case "exchange-cny-fill":
+		return ExchangeCnyFill(), nil
+	case "exchange-cny-line":
+		return ExchangeCnyLine(), nil
+	case "exchange-dollar-fill":
+		return ExchangeDollarFill(), nil
+	case "exchange-dollar-line":
+		return ExchangeDollarLine(), nil
+	case "exchange-fill":
+		return ExchangeFill(), nil
+	case "exchange-funds-fill":
+		return ExchangeFundsFill(), nil
+	case "exchange-funds-line":
+		return ExchangeFundsLine(), nil
+	case "exchange-line":
+		return ExchangeLine(), nil
+	case "external-link-fill":
+		return ExternalLinkFill(), nil
+	case "external-link-line":
+		return ExternalLinkLine(), nil
+	case "eye-close-fill":
+		return EyeCloseFill(), nil
+	case "eye-close-line":
+		return EyeCloseLine(), nil
+	case "eye-fill":
+		return EyeFill(), nil
+	case "eye-line":
+		return EyeLine(), nil
+	case "eye-off-fill":
+		return EyeOffFill(), nil
+	case "eye-off-line":
+		return EyeOffLine(), nil
+	case "eye-2-fill":
+		return EyeTwoFill(), nil
+	case "eye-2-line":
+		return EyeTwoLine(), nil
+	case "facebook-box-fill":
+		return FacebookBoxFill(), nil
+	case "facebook-box-line":
+		return FacebookBoxLine(), nil
+	case "facebook-circle-fill":
+		return FacebookCircleFill(), nil
+	case "facebook-circle-line":
+		return FacebookCircleLine(), nil
+	case "facebook-fill":
+		return FacebookFill(), nil
+	case "facebook-line":
+		return FacebookLine(), nil
+	case "fahrenheit-fill":
+		return FahrenheitFill(), nil
+	case "fahrenheit-line":
+		return FahrenheitLine(), nil
+	case "feedback-fill":
+		return FeedbackFill(), nil
+	case "feedback-line":
+		return FeedbackLine(), nil
+	case "file-add-fill":
+		return FileAddFill(), nil
+	case "file-add-line":
+		return FileAddLine(), nil
+	case "file-chart-fill":
+		return FileChartFill(), nil
+	case "file-chart-line":
+		return FileChartLine(), nil
+	case "file-chart-2-fill":
+		return FileChartTwoFill(), nil
+	case "file-chart-2-line":
+		return FileChartTwoLine(), nil
+	case "file-cloud-fill":
+		return FileCloudFill(), nil
+	case "file-cloud-line":
+		return FileCloudLine(), nil
+	case "file-code-fill":
+		return FileCodeFill(), nil
+	case "file-code-line":
+		return FileCodeLine(), nil
+	case "file-copy-fill":
+		return FileCopyFill(), nil
+	case "file-copy-line":
+		return FileCopyLine(), nil
+	case "file-copy-2-fill":
+		return FileCopyTwoFill(), nil
+	case "file-copy-2-line":
+		return FileCopyTwoLine(), nil
+	case "file-damage-fill":
+		return FileDamageFill(), nil
+	case "file-damage-line":
+		return FileDamageLine(), nil
+	case "file-download-fill":
+		return FileDownloadFill(), nil
+	case "file-download-line":
+		return FileDownloadLine(), nil
+	case "file-edit-fill":
+		return FileEditFill(), nil
+	case "file-edit-line":
+		return FileEditLine(), nil
+	case "file-excel-fill":
+		return FileExcelFill(), nil
+	case "file-excel-line":
+		return FileExcelLine(), nil
+	case "file-excel-2-fill":
+		return FileExcelTwoFill(), nil
+	case "file-excel-2-line":
+		return FileExcelTwoLine(), nil
+	case "file-fill":
+		return FileFill(), nil
+	case "file-forbid-fill":
+		return FileForbidFill(), nil
+	case "file-forbid-line":
+		return FileForbidLine(), nil
+	case "file-4-fill":
+		return FileFourFill(), nil
+	case "file-4-line":
+		return FileFourLine(), nil
+	case "file-gif-fill":
+		return FileGifFill(), nil
+	case "file-gif-line":
+		return FileGifLine(), nil
+	case "file-history-fill":
+		return FileHistoryFill(), nil
+	case "file-history-line":
+		return FileHistoryLine(), nil
+	case "file-hwp-fill":
+		return FileHwpFill(), nil
+	case "file-hwp-line":
+		return FileHwpLine(), nil
+	case "file-info-fill":
+		return FileInfoFill(), nil
+	case "file-info-line":
+		return FileInfoLine(), nil
+	case "file-line":
+		return FileLine(), nil
+	case "file-list-fill":
+		return FileListFill(), nil
+	case "file-list-line":
+		return FileListLine(), nil
+	case "file-list-3-fill":
+		return FileListThreeFill(), nil
+	case "file-list-3-line":
+		return FileListThreeLine(), nil
+	case "file-list-2-fill":
+		return FileListTwoFill(), nil
+	case "file-list-2-line":
+		return FileListTwoLine(), nil
+	case "file-lock-fill":
+		return FileLockFill(), nil
+	case "file-lock-line":
+		return FileLockLine(), nil
+	case "file-mark-fill":
+		return FileMarkFill(), nil
+	case "file-mark-line":
+		return FileMarkLine(), nil
+	case "file-music-fill":
+		return FileMusicFill(), nil
+	case "file-music-line":
+		return FileMusicLine(), nil
+	case "file-paper-fill":
+		return FilePaperFill(), nil
+	case "file-paper-line":
+		return FilePaperLine(), nil
+	case "file-paper-2-fill":
+		return FilePaperTwoFill(), nil
+	case "file-paper-2-line":
+		return FilePaperTwoLine(), nil
+	case "file-pdf-fill":
+		return FilePdfFill(), nil
+	case "file-pdf-line":
+		return FilePdfLine(), nil
+	case "file-ppt-fill":
+		return FilePptFill(), nil
+	case "file-ppt-line":
+		return FilePptLine(), nil
+	case "file-ppt-2-fill":
+		return FilePptTwoFill(), nil
+	case "file-ppt-2-line":
+		return FilePptTwoLine(), nil
+	case "file-reduce-fill":
+		return FileReduceFill(), nil
+	case "file-reduce-line":
+		return FileReduceLine(), nil
+	case "file-search-fill":
+		return FileSearchFill(), nil
+	case "file-search-line":
+		return FileSearchLine(), nil
+	case "file-settings-fill":
+		return FileSettingsFill(), nil
+	case "file-settings-line":
+		return FileSettingsLine(), nil
+	case "file-shield-fill":
+		return FileShieldFill(), nil
+	case "file-shield-line":
+		return FileShieldLine(), nil
+	case "file-shield-2-fill":
+		return FileShieldTwoFill(), nil
+	case "file-shield-2-line":
+		return FileShieldTwoLine(), nil
+	case "file-shred-fill":
+		return FileShredFill(), nil
+	case "file-shred-line":
+		return FileShredLine(), nil
+	case "file-text-fill":
+		return FileTextFill(), nil
+	case "file-text-line":
+		return FileTextLine(), nil
+	case "file-3-fill":
+		return FileThreeFill(), nil
+	case "file-3-line":
+		return FileThreeLine(), nil
+	case "file-transfer-fill":
+		return FileTransferFill(), nil
+	case "file-transfer-line":
+		return FileTransferLine(), nil
+	case "file-2-fill":
+		return FileTwoFill(), nil
+	case "file-2-line":
+		return FileTwoLine(), nil
+	case "file-unknow-fill":
+		return FileUnknowFill(), nil
+	case "file-unknow-line":
+		return FileUnknowLine(), nil
+	case "file-upload-fill":
+		return FileUploadFill(), nil
+	case "file-upload-line":
+		return FileUploadLine(), nil
+	case "file-user-fill":
+		return FileUserFill(), nil
+	case "file-user-line":
+		return FileUserLine(), nil
+	case "file-warning-fill":
+		return FileWarningFill(), nil
+	case "file-warning-line":
+		return FileWarningLine(), nil
+	case "file-word-fill":
+		return FileWordFill(), nil
+	case "file-word-line":
+		return FileWordLine(), nil
+	case "file-word-2-fill":
+		return FileWordTwoFill(), nil
+	case "file-word-2-line":
+		return FileWordTwoLine(), nil
+	case "file-zip-fill":
+		return FileZipFill(), nil
+	case "file-zip-line":
+		return FileZipLine(), nil
+	case "film-fill":
+		return FilmFill(), nil
+	case "film-line":
+		return FilmLine(), nil
+	case "filter-fill":
+		return FilterFill(), nil
+	case "filter-line":
+		return FilterLine(), nil
+	case "filter-off-fill":
+		return FilterOffFill(), nil
+	case "filter-off-line":
+		return FilterOffLine(), nil
+	case "filter-3-fill":
+		return FilterThreeFill(), nil
+	case "filter-3-line":
+		return FilterThreeLine(), nil
+	case "filter-2-fill":
+		return FilterTwoFill(), nil
+	case "filter-2-line":
+		return FilterTwoLine(), nil
+	case "find-replace-fill":
+		return FindReplaceFill(), nil
+	case "find-replace-line":
+		return FindReplaceLine(), nil
+	case "finder-fill":
+		return FinderFill(), nil
+	case "finder-line":
+		return FinderLine(), nil
+	case "fingerprint-fill":
+		return FingerprintFill(), nil
+	case "fingerprint-line":
+		return FingerprintLine(), nil
+	case "fingerprint-2-fill":
+		return FingerprintTwoFill(), nil
+	case "fingerprint-2-line":
+		return FingerprintTwoLine(), nil
+	case "fire-fill":
+		return FireFill(), nil
+	case "fire-line":
+		return FireLine(), nil
+	case "firefox-fill":
+		return FirefoxFill(), nil
+	case "firefox-line":
+		return FirefoxLine(), nil
+	case "first-aid-kit-fill":
+		return FirstAidKitFill(), nil
+	case "first-aid-kit-line":
+		return FirstAidKitLine(), nil
+	case "flag-fill":
+		return FlagFill(), nil
+	case "flag-line":
+		return FlagLine(), nil
+	case "flag-2-fill":
+		return FlagTwoFill(), nil
+	case "flag-2-line":
+		return FlagTwoLine(), nil
+	case "flashlight-fill":
+		return FlashlightFill(), nil
+	case "flashlight-line":
+		return FlashlightLine(), nil
+	case "flask-fill":
+		return FlaskFill(), nil
+	case "flask-line":
+		return FlaskLine(), nil
+	case "flight-land-fill":
+		return FlightLandFill(), nil
+	case "flight-land-line":
+		return FlightLandLine(), nil
+	case "flight-takeoff-fill":
+		return FlightTakeoffFill(), nil
+	case "flight-takeoff-line":
+		return FlightTakeoffLine(), nil
+	case "flood-fill":
+		return FloodFill(), nil
+	case "flood-line":
+		return FloodLine(), nil
+	case "flow-chart":
+		return FlowChart(), nil
+	case "flutter-fill":
+		return FlutterFill(), nil
+	case "flutter-line":
+		return FlutterLine(), nil
+	case "focus-fill":
+		return FocusFill(), nil
+	case "focus-line":
+		return FocusLine(), nil
+	case "focus-3-fill":
+		return FocusThreeFill(), nil
+	case "focus-3-line":
+		return FocusThreeLine(), nil
+	case "focus-2-fill":
+		return FocusTwoFill(), nil
+	case "focus-2-line":
+		return FocusTwoLine(), nil
+	case "foggy-fill":
+		return FoggyFill(), nil
+	case "foggy-line":
+		return FoggyLine(), nil
+	case "folder-add-fill":
+		return FolderAddFill(), nil
+	case "folder-add-line":
+		return FolderAddLine(), nil
+	case "folder-chart-fill":
+		return FolderChartFill(), nil
+	case "folder-chart-line":
+		return FolderChartLine(), nil
+	case "folder-chart-2-fill":
+		return FolderChartTwoFill(), nil
+	case "folder-chart-2-line":
+		return FolderChartTwoLine(), nil
+	case "folder-download-fill":
+		return FolderDownloadFill(), nil
+	case "folder-download-line":
+		return FolderDownloadLine(), nil
+	case "folder-fill":
+		return FolderFill(), nil
+	case "folder-5-fill":
+		return FolderFiveFill(), nil
+	case "folder-5-line":
+		return FolderFiveLine(), nil
+	case "folder-forbid-fill":
+		return FolderForbidFill(), nil
+	case "folder-forbid-line":
+		return FolderForbidLine(), nil
+	case "folder-4-fill":
+		return FolderFourFill(), nil
+	case "folder-4-line":
+		return FolderFourLine(), nil
+	case "folder-history-fill":
+		return FolderHistoryFill(), nil
+	case "folder-history-line":
+		return FolderHistoryLine(), nil
+	case "folder-info-fill":
+		return FolderInfoFill(), nil
+	case "folder-info-line":
+		return FolderInfoLine(), nil
+	case "folder-keyhole-fill":
+		return FolderKeyholeFill(), nil
+	case "folder-keyhole-line":
+		return FolderKeyholeLine(), nil
+	case "folder-line":
+		return FolderLine(), nil
+	case "folder-lock-fill":
+		return FolderLockFill(), nil
+	case "folder-lock-line":
+		return FolderLockLine(), nil
+	case "folder-music-fill":
+		return FolderMusicFill(), nil
+	case "folder-music-line":
+		return FolderMusicLine(), nil
+	case "folder-open-fill":
+		return FolderOpenFill(), nil
+	case "folder-open-line":
+		return FolderOpenLine(), nil
+	case "folder-received-fill":
+		return FolderReceivedFill(), nil
+	case "folder-received-line":
+		return FolderReceivedLine(), nil
+	case "folder-reduce-fill":
+		return FolderReduceFill(), nil
+	case "folder-reduce-line":
+		return FolderReduceLine(), nil
+	case "folder-settings-fill":
+		return FolderSettingsFill(), nil
+	case "folder-settings-line":
+		return FolderSettingsLine(), nil
+	case "folder-shared-fill":
+		return FolderSharedFill(), nil
+	case "folder-shared-line":
+		return FolderSharedLine(), nil
+	case "folder-shield-fill":
+		return FolderShieldFill(), nil
+	case "folder-shield-line":
+		return FolderShieldLine(), nil
+	case "folder-shield-2-fill":
+		return FolderShieldTwoFill(), nil
+	case "folder-shield-2-line":
+		return FolderShieldTwoLine(), nil
+	case "folder-3-fill":
+		return FolderThreeFill(), nil
+	case "folder-3-line":
+		return FolderThreeLine(), nil
+	case "folder-transfer-fill":
+		return FolderTransferFill(), nil
+	case "folder-transfer-line":
+		return FolderTransferLine(), nil
+	case "folder-2-fill":
+		return FolderTwoFill(), nil
+	case "folder-2-line":
+		return FolderTwoLine(), nil
+	case "folder-unknow-fill":
+		return FolderUnknowFill(), nil
+	case "folder-unknow-line":
+		return FolderUnknowLine(), nil
+	case "folder-upload-fill":
+		return FolderUploadFill(), nil
+	case "folder-upload-line":
+		return FolderUploadLine(), nil
+	case "folder-user-fill":
+		return FolderUserFill(), nil
+	case "folder-user-line":
+		return FolderUserLine(), nil
+	case "folder-warning-fill":
+		return FolderWarningFill(), nil
+	case "folder-warning-line":
+		return FolderWarningLine(), nil
+	case "folder-zip-fill":
+		return FolderZipFill(), nil
+	case "folder-zip-line":
+		return FolderZipLine(), nil
+	case "folders-fill":
+		return FoldersFill(), nil
+	case "folders-line":
+		return FoldersLine(), nil
+	case "font-color":
+		return FontColor(), nil
+	case "font-size":
+		return FontSize(), nil
+	case "font-size-2":
+		return FontSizeTwo(), nil
+	case "football-fill":
+		return FootballFill(), nil
+	case "football-line":
+		return FootballLine(), nil
+	case "footprint-fill":
+		return FootprintFill(), nil
+	case "footprint-line":
+		return FootprintLine(), nil
+	case "forbid-fill":
+		return ForbidFill(), nil
+	case "forbid-line":
+		return ForbidLine(), nil
+	case "forbid-2-fill":
+		return ForbidTwoFill(), nil
+	case "forbid-2-line":
+		return ForbidTwoLine(), nil
+	case "format-clear":
+		return FormatClear(), nil
+	case "4k-fill":
+		return FourKFill(), nil
+	case "4k-line":
+		return FourKLine(), nil
+	case "fridge-fill":
+		return FridgeFill(), nil
+	case "fridge-line":
+		return FridgeLine(), nil
+	case "fullscreen-exit-fill":
+		return FullscreenExitFill(), nil
+	case "fullscreen-exit-line":
+		return FullscreenExitLine(), nil
+	case "fullscreen-fill":
+		return FullscreenFill(), nil
+	case "fullscreen-line":
+		return FullscreenLine(), nil
+	case "function-fill":
+		return FunctionFill(), nil
+	case "function-line":
+		return FunctionLine(), nil
+	case "functions":
+		return Functions(), nil
+	case "funds-box-fill":
+		return FundsBoxFill(), nil
+	case "funds-box-line":
+		return FundsBoxLine(), nil
+	case "funds-fill":
+		return FundsFill(), nil
+	case "funds-line":
+		return FundsLine(), nil
+	case "gallery-fill":
+		return GalleryFill(), nil
+	case "gallery-line":
+		return GalleryLine(), nil
+	case "gallery-upload-fill":
+		return GalleryUploadFill(), nil
+	case "gallery-upload-line":
+		return GalleryUploadLine(), nil
+	case "game-fill":
+		return GameFill(), nil
+	case "game-line":
+		return GameLine(), nil
+	case "gamepad-fill":
+		return GamepadFill(), nil
+	case "gamepad-line":
+		return GamepadLine(), nil
+	case "gas-station-fill":
+		return GasStationFill(), nil
+	case "gas-station-line":
+		return GasStationLine(), nil
+	case "gatsby-fill":
+		return GatsbyFill(), nil
+	case "gatsby-line":
+		return GatsbyLine(), nil
+	case "genderless-fill":
+		return GenderlessFill(), nil
+	case "genderless-line":
+		return GenderlessLine(), nil
+	case "ghost-fill":
+		return GhostFill(), nil
+	case "ghost-line":
+		return GhostLine(), nil
+	case "ghost-smile-fill":
+		return GhostSmileFill(), nil
+	case "ghost-smile-line":
+		return GhostSmileLine(), nil
+	case "ghost-2-fill":
+		return GhostTwoFill(), nil
+	case "ghost-2-line":
+		return GhostTwoLine(), nil
+	case "gift-fill":
+		return GiftFill(), nil
+	case "gift-line":
+		return GiftLine(), nil
+	case "gift-2-fill":
+		return GiftTwoFill(), nil
+	case "gift-2-line":
+		return GiftTwoLine(), nil
+	case "git-branch-fill":
+		return GitBranchFill(), nil
+	case "git-branch-line":
+		return GitBranchLine(), nil
+	case "git-commit-fill":
+		return GitCommitFill(), nil
+	case "git-commit-line":
+		return GitCommitLine(), nil
+	case "git-merge-fill":
+		return GitMergeFill(), nil
+	case "git-merge-line":
+		return GitMergeLine(), nil
+	case "git-pull-request-fill":
+		return GitPullRequestFill(), nil
+	case "git-pull-request-line":
+		return GitPullRequestLine(), nil
+	case "git-repository-commits-fill":
+		return GitRepositoryCommitsFill(), nil
+	case "git-repository-commits-line":
+		return GitRepositoryCommitsLine(), nil
+	case "git-repository-fill":
+		return GitRepositoryFill(), nil
+	case "git-repository-line":
+		return GitRepositoryLine(), nil
+	case "git-repository-private-fill":
+		return GitRepositoryPrivateFill(), nil
+	case "git-repository-private-line":
+		return GitRepositoryPrivateLine(), nil
+	case "github-fill":
+		return GithubFill(), nil
+	case "github-line":
+		return GithubLine(), nil
+	case "gitlab-fill":
+		return GitlabFill(), nil
+	case "gitlab-line":
+		return GitlabLine(), nil
+	case "global-fill":
+		return GlobalFill(), nil
+	case "global-line":
+		return GlobalLine(), nil
+	case "globe-fill":
+		return GlobeFill(), nil
+	case "globe-line":
+		return GlobeLine(), nil
+	case "goblet-fill":
+		return GobletFill(), nil
+	case "goblet-line":
+		return GobletLine(), nil
+	case "google-fill":
+		return GoogleFill(), nil
+	case "google-line":
+		return GoogleLine(), nil
+	case "google-play-fill":
+		return GooglePlayFill(), nil
+	case "google-play-line":
+		return GooglePlayLine(), nil
+	case "government-fill":
+		return GovernmentFill(), nil
+	case "government-line":
+		return GovernmentLine(), nil
+	case "gps-fill":
+		return GpsFill(), nil
+	case "gps-line":
+		return GpsLine(), nil
+	case "gradienter-fill":
+		return GradienterFill(), nil
+	case "gradienter-line":
+		return GradienterLine(), nil
+	case "grid-fill":
+		return GridFill(), nil
+	case "grid-line":
+		return GridLine(), nil
+	case "group-fill":
+		return GroupFill(), nil
+	case "group-line":
+		return GroupLine(), nil
+	case "group-2-fill":
+		return GroupTwoFill(), nil
+	case "group-2-line":
+		return GroupTwoLine(), nil
+	case "guide-fill":
+		return GuideFill(), nil
+	case "guide-line":
+		return GuideLine(), nil
+	case "h-5":
+		return HFive(), nil
+	case "h-4":
+		return HFour(), nil
+	case "h-1":
+		return HOne(), nil
+	case "h-6":
+		return HSix(), nil
+	case "h-3":
+		return HThree(), nil
+	case "h-2":
+		return HTwo(), nil
+	case "hail-fill":
+		return HailFill(), nil
+	case "hail-line":
+		return HailLine(), nil
+	case "hammer-fill":
+		return HammerFill(), nil
+	case "hammer-line":
+		return HammerLine(), nil
+	case "hand-coin-fill":
+		return HandCoinFill(), nil
+	case "hand-coin-line":
+		return HandCoinLine(), nil
+	case "hand-heart-fill":
+		return HandHeartFill(), nil
+	case "hand-heart-line":
+		return HandHeartLine(), nil
+	case "hand-sanitizer-fill":
+		return HandSanitizerFill(), nil
+	case "hand-sanitizer-line":
+		return HandSanitizerLine(), nil
+	case "handbag-fill":
+		return HandbagFill(), nil
+	case "handbag-line":
+		return HandbagLine(), nil
+	case "hard-drive-fill":
+		return HardDriveFill(), nil
+	case "hard-drive-line":
+		return HardDriveLine(), nil
+	case "hard-drive-2-fill":
+		return HardDriveTwoFill(), nil
+	case "hard-drive-2-line":
+		return HardDriveTwoLine(), nil
+	case "hashtag":
+		return Hashtag(), nil
+	case "haze-fill":
+		return HazeFill(), nil
+	case "haze-line":
+		return HazeLine(), nil
+	case "haze-2-fill":
+		return HazeTwoFill(), nil
+	case "haze-2-line":
+		return HazeTwoLine(), nil
+	case "hd-fill":
+		return HdFill(), nil
+	case "hd-line":
+		return HdLine(), nil
+	case "heading":
+		return Heading(), nil
+	case "headphone-fill":
+		return HeadphoneFill(), nil
+	case "headphone-line":
+		return HeadphoneLine(), nil
+	case "health-book-fill":
+		return HealthBookFill(), nil
+	case "health-book-line":
+		return HealthBookLine(), nil
+	case "heart-add-fill":
+		return HeartAddFill(), nil
+	case "heart-add-line":
+		return HeartAddLine(), nil
+	case "heart-fill":
+		return HeartFill(), nil
+	case "heart-line":
+		return HeartLine(), nil
+	case "heart-pulse-fill":
+		return HeartPulseFill(), nil
+	case "heart-pulse-line":
+		return HeartPulseLine(), nil
+	case "heart-3-fill":
+		return HeartThreeFill(), nil
+	case "heart-3-line":
+		return HeartThreeLine(), nil
+	case "heart-2-fill":
+		return HeartTwoFill(), nil
+	case "heart-2-line":
+		return HeartTwoLine(), nil
+	case "hearts-fill":
+		return HeartsFill(), nil
+	case "hearts-line":
+		return HeartsLine(), nil
+	case "heavy-showers-fill":
+		return HeavyShowersFill(), nil
+	case "heavy-showers-line":
+		return HeavyShowersLine(), nil
+	case "history-fill":
+		return HistoryFill(), nil
+	case "history-line":
+		return HistoryLine(), nil
+	case "home-8-fill":
+		return HomeEightFill(), nil
+	case "home-8-line":
+		return HomeEightLine(), nil
+	case "home-fill":
+		return HomeFill(), nil
+	case "home-5-fill":
+		return HomeFiveFill(), nil
+	case "home-5-line":
+		return HomeFiveLine(), nil
+	case "home-4-fill":
+		return HomeFourFill(), nil
+	case "home-4-line":
+		return HomeFourLine(), nil
+	case "home-gear-fill":
+		return HomeGearFill(), nil
+	case "home-gear-line":
+		return HomeGearLine(), nil
+	case "home-heart-fill":
+		return HomeHeartFill(), nil
+	case "home-heart-line":
+		return HomeHeartLine(), nil
+	case "home-line":
+		return HomeLine(), nil
+	case "home-7-fill":
+		return HomeSevenFill(), nil
+	case "home-7-line":
+		return HomeSevenLine(), nil
+	case "home-6-fill":
+		return HomeSixFill(), nil
+	case "home-6-line":
+		return HomeSixLine(), nil
+	case "home-smile-fill":
+		return HomeSmileFill(), nil
+	case "home-smile-line":
+		return HomeSmileLine(), nil
+	case "home-smile-2-fill":
+		return HomeSmileTwoFill(), nil
+	case "home-smile-2-line":
+		return HomeSmileTwoLine(), nil
+	case "home-3-fill":
+		return HomeThreeFill(), nil
+	case "home-3-line":
+		return HomeThreeLine(), nil
+	case "home-2-fill":
+		return HomeTwoFill(), nil
+	case "home-2-line":
+		return HomeTwoLine(), nil
+	case "home-wifi-fill":
+		return HomeWifiFill(), nil
+	case "home-wifi-line":
+		return HomeWifiLine(), nil
+	case "honor-of-kings-fill":
+		return HonorOfKingsFill(), nil
+	case "honor-of-kings-line":
+		return HonorOfKingsLine(), nil
+	case "honour-fill":
+		return HonourFill(), nil
+	case "honour-line":
+		return HonourLine(), nil
+	case "hospital-fill":
+		return HospitalFill(), nil
+	case "hospital-line":
+		return HospitalLine(), nil
+	case "hotel-bed-fill":
+		return HotelBedFill(), nil
+	case "hotel-bed-line":
+		return HotelBedLine(), nil
+	case "hotel-fill":
+		return HotelFill(), nil
+	case "hotel-line":
+		return HotelLine(), nil
+	case "hotspot-fill":
+		return HotspotFill(), nil
+	case "hotspot-line":
+		return HotspotLine(), nil
+	case "hq-fill":
+		return HqFill(), nil
+	case "hq-line":
+		return HqLine(), nil
+	case "html5-fill":
+		return HtmlFiveFill(), nil
+	case "html5-line":
+		return HtmlFiveLine(), nil
+	case "ie-fill":
+		return IeFill(), nil
+	case "ie-line":
+		return IeLine(), nil
+	case "image-add-fill":
+		return ImageAddFill(), nil
+	case "image-add-line":
+		return ImageAddLine(), nil
+	case "image-edit-fill":
+		return ImageEditFill(), nil
+	case "image-edit-line":
+		return ImageEditLine(), nil
+	case "image-fill":
+		return ImageFill(), nil
+	case "image-line":
+		return ImageLine(), nil
+	case "image-2-fill":
+		return ImageTwoFill(), nil
+	case "image-2-line":
+		return ImageTwoLine(), nil
+	case "inbox-archive-fill":
+		return InboxArchiveFill(), nil
+	case "inbox-archive-line":
+		return InboxArchiveLine(), nil
+	case "inbox-fill":
+		return InboxFill(), nil
+	case "inbox-line":
+		return InboxLine(), nil
+	case "inbox-unarchive-fill":
+		return InboxUnarchiveFill(), nil
+	case "inbox-unarchive-line":
+		return InboxUnarchiveLine(), nil
+	case "increase-decrease-fill":
+		return IncreaseDecreaseFill(), nil
+	case "increase-decrease-line":
+		return IncreaseDecreaseLine(), nil
+	case "indent-decrease":
+		return IndentDecrease(), nil
+	case "indent-increase":
+		return IndentIncrease(), nil
+	case "indeterminate-circle-fill":
+		return IndeterminateCircleFill(), nil
+	case "indeterminate-circle-line":
+		return IndeterminateCircleLine(), nil
+	case "information-fill":
+		return InformationFill(), nil
+	case "information-line":
+		return InformationLine(), nil
+	case "infrared-thermometer-fill":
+		return InfraredThermometerFill(), nil
+	case "infrared-thermometer-line":
+		return InfraredThermometerLine(), nil
+	case "ink-bottle-fill":
+		return InkBottleFill(), nil
+	case "ink-bottle-line":
+		return InkBottleLine(), nil
+	case "input-cursor-move":
+		return InputCursorMove(), nil
+	case "input-method-fill":
+		return InputMethodFill(), nil
+	case "input-method-line":
+		return InputMethodLine(), nil
+	case "insert-column-left":
+		return InsertColumnLeft(), nil
+	case "insert-column-right":
+		return InsertColumnRight(), nil
+	case "insert-row-bottom":
+		return InsertRowBottom(), nil
+	case "insert-row-top":
+		return InsertRowTop(), nil
+	case "instagram-fill":
+		return InstagramFill(), nil
+	case "instagram-line":
+		return InstagramLine(), nil
+	case "install-fill":
+		return InstallFill(), nil
+	case "install-line":
+		return InstallLine(), nil
+	case "invision-fill":
+		return InvisionFill(), nil
+	case "invision-line":
+		return InvisionLine(), nil
+	case "italic":
+		return Italic(), nil
+	case "kakao-talk-fill":
+		return KakaoTalkFill(), nil
+	case "kakao-talk-line":
+		return KakaoTalkLine(), nil
+	case "key-fill":
+		return KeyFill(), nil
+	case "key-line":
+		return KeyLine(), nil
+	case "key-2-fill":
+		return KeyTwoFill(), nil
+	case "key-2-line":
+		return KeyTwoLine(), nil
+	case "keyboard-box-fill":
+		return KeyboardBoxFill(), nil
+	case "keyboard-box-line":
+		return KeyboardBoxLine(), nil
+	case "keyboard-fill":
+		return KeyboardFill(), nil
+	case "keyboard-line":
+		return KeyboardLine(), nil
+	case "keynote-fill":
+		return KeynoteFill(), nil
+	case "keynote-line":
+		return KeynoteLine(), nil
+	case "knife-blood-fill":
+		return KnifeBloodFill(), nil
+	case "knife-blood-line":
+		return KnifeBloodLine(), nil
+	case "knife-fill":
+		return KnifeFill(), nil
+	case "knife-line":
+		return KnifeLine(), nil
+	case "landscape-fill":
+		return LandscapeFill(), nil
+	case "landscape-line":
+		return LandscapeLine(), nil
+	case "layout-bottom-fill":
+		return LayoutBottomFill(), nil
+	case "layout-bottom-line":
+		return LayoutBottomLine(), nil
+	case "layout-bottom-2-fill":
+		return LayoutBottomTwoFill(), nil
+	case "layout-bottom-2-line":
+		return LayoutBottomTwoLine(), nil
+	case "layout-column-fill":
+		return LayoutColumnFill(), nil
+	case "layout-column-line":
+		return LayoutColumnLine(), nil
+	case "layout-fill":
+		return LayoutFill(), nil
+	case "layout-5-fill":
+		return LayoutFiveFill(), nil
+	case "layout-5-line":
+		return LayoutFiveLine(), nil
+	case "layout-4-fill":
+		return LayoutFourFill(), nil
+	case "layout-4-line":
+		return LayoutFourLine(), nil
+	case "layout-grid-fill":
+		return LayoutGridFill(), nil
+	case "layout-grid-line":
+		return LayoutGridLine(), nil
+	case "layout-left-fill":
+		return LayoutLeftFill(), nil
+	case "layout-left-line":
+		return LayoutLeftLine(), nil
+	case "layout-left-2-fill":
+		return LayoutLeftTwoFill(), nil
+	case "layout-left-2-line":
+		return LayoutLeftTwoLine(), nil
+	case "layout-line":
+		return LayoutLine(), nil
+	case "layout-masonry-fill":
+		return LayoutMasonryFill(), nil
+	case "layout-masonry-line":
+		return LayoutMasonryLine(), nil
+	case "layout-right-fill":
+		return LayoutRightFill(), nil
+	case "layout-right-line":
+		return LayoutRightLine(), nil
+	case "layout-right-2-fill":
+		return LayoutRightTwoFill(), nil
+	case "layout-right-2-line":
+		return LayoutRightTwoLine(), nil
+	case "layout-row-fill":
+		return LayoutRowFill(), nil
+	case "layout-row-line":
+		return LayoutRowLine(), nil
+	case "layout-6-fill":
+		return LayoutSixFill(), nil
+	case "layout-6-line":
+		return LayoutSixLine(), nil
+	case "layout-3-fill":
+		return LayoutThreeFill(), nil
+	case "layout-3-line":
+		return LayoutThreeLine(), nil
+	case "layout-top-fill":
+		return LayoutTopFill(), nil
+	case "layout-top-line":
+		return LayoutTopLine(), nil
+	case "layout-top-2-fill":
+		return LayoutTopTwoFill(), nil
+	case "layout-top-2-line":
+		return LayoutTopTwoLine(), nil
+	case "layout-2-fill":
+		return LayoutTwoFill(), nil
+	case "layout-2-line":
+		return LayoutTwoLine(), nil
+	case "leaf-fill":
+		return LeafFill(), nil
+	case "leaf-line":
+		return LeafLine(), nil
+	case "lifebuoy-fill":
+		return LifebuoyFill(), nil
+	case "lifebuoy-line":
+		return LifebuoyLine(), nil
+	case "lightbulb-fill":
+		return LightbulbFill(), nil
+	case "lightbulb-flash-fill":
+		return LightbulbFlashFill(), nil
+	case "lightbulb-flash-line":
+		return LightbulbFlashLine(), nil
+	case "lightbulb-line":
+		return LightbulbLine(), nil
+	case "line-chart-fill":
+		return LineChartFill(), nil
+	case "line-chart-line":
+		return LineChartLine(), nil
+	case "line-fill":
+		return LineFill(), nil
+	case "line-height":
+		return LineHeight(), nil
+	case "line-line":
+		return LineLine(), nil
+	case "link":
+		return Link(), nil
+	case "link-m":
+		return LinkM(), nil
+	case "link-unlink":
+		return LinkUnlink(), nil
+	case "link-unlink-m":
+		return LinkUnlinkM(), nil
+	case "linkedin-box-fill":
+		return LinkedinBoxFill(), nil
+	case "linkedin-box-line":
+		return LinkedinBoxLine(), nil
+	case "linkedin-fill":
+		return LinkedinFill(), nil
+	case "linkedin-line":
+		return LinkedinLine(), nil
+	case "links-fill":
+		return LinksFill(), nil
+	case "links-line":
+		return LinksLine(), nil
+	case "list-check":
+		return ListCheck(), nil
+	case "list-check-2":
+		return ListCheckTwo(), nil
+	case "list-ordered":
+		return ListOrdered(), nil
+	case "list-settings-fill":
+		return ListSettingsFill(), nil
+	case "list-settings-line":
+		return ListSettingsLine(), nil
+	case "list-unordered":
+		return ListUnordered(), nil
+	case "live-fill":
+		return LiveFill(), nil
+	case "live-line":
+		return LiveLine(), nil
+	case "loader-fill":
+		return LoaderFill(), nil
+	case "loader-5-fill":
+		return LoaderFiveFill(), nil
+	case "loader-5-line":
+		return LoaderFiveLine(), nil
+	case "loader-4-fill":
+		return LoaderFourFill(), nil
+	case "loader-4-line":
+		return LoaderFourLine(), nil
+	case "loader-line":
+		return LoaderLine(), nil
+	case "loader-3-fill":
+		return LoaderThreeFill(), nil
+	case "loader-3-line":
+		return LoaderThreeLine(), nil
+	case "loader-2-fill":
+		return LoaderTwoFill(), nil
+	case "loader-2-line":
+		return LoaderTwoLine(), nil
+	case "lock-fill":
+		return LockFill(), nil
+	case "lock-line":
+		return LockLine(), nil
+	case "lock-password-fill":
+		return LockPasswordFill(), nil
+	case "lock-password-line":
+		return LockPasswordLine(), nil
+	case "lock-2-fill":
+		return LockTwoFill(), nil
+	case "lock-2-line":
+		return LockTwoLine(), nil
+	case "lock-unlock-fill":
+		return LockUnlockFill(), nil
+	case "lock-unlock-line":
+		return LockUnlockLine(), nil
+	case "login-box-fill":
+		return LoginBoxFill(), nil
+	case "login-box-line":
+		return LoginBoxLine(), nil
+	case "login-circle-fill":
+		return LoginCircleFill(), nil
+	case "login-circle-line":
+		return LoginCircleLine(), nil
+	case "logout-box-fill":
+		return LogoutBoxFill(), nil
+	case "logout-box-line":
+		return LogoutBoxLine(), nil
+	case "logout-box-r-fill":
+		return LogoutBoxRFill(), nil
+	case "logout-box-r-line":
+		return LogoutBoxRLine(), nil
+	case "logout-circle-fill":
+		return LogoutCircleFill(), nil
+	case "logout-circle-line":
+		return LogoutCircleLine(), nil
+	case "logout-circle-r-fill":
+		return LogoutCircleRFill(), nil
+	case "logout-circle-r-line":
+		return LogoutCircleRLine(), nil
+	case "luggage-cart-fill":
+		return LuggageCartFill(), nil
+	case "luggage-cart-line":
+		return LuggageCartLine(), nil
+	case "luggage-deposit-fill":
+		return LuggageDepositFill(), nil
+	case "luggage-deposit-line":
+		return LuggageDepositLine(), nil
+	case "lungs-fill":
+		return LungsFill(), nil
+	case "lungs-line":
+		return LungsLine(), nil
+	case "mac-fill":
+		return MacFill(), nil
+	case "mac-line":
+		return MacLine(), nil
+	case "macbook-fill":
+		return MacbookFill(), nil
+	case "macbook-line":
+		return MacbookLine(), nil
+	case "magic-fill":
+		return MagicFill(), nil
+	case "magic-line":
+		return MagicLine(), nil
+	case "mail-add-fill":
+		return MailAddFill(), nil
+	case "mail-add-line":
+		return MailAddLine(), nil
+	case "mail-check-fill":
+		return MailCheckFill(), nil
+	case "mail-check-line":
+		return MailCheckLine(), nil
+	case "mail-close-fill":
+		return MailCloseFill(), nil
+	case "mail-close-line":
+		return MailCloseLine(), nil
+	case "mail-download-fill":
+		return MailDownloadFill(), nil
+	case "mail-download-line":
+		return MailDownloadLine(), nil
+	case "mail-fill":
+		return MailFill(), nil
+	case "mail-forbid-fill":
+		return MailForbidFill(), nil
+	case "mail-forbid-line":
+		return MailForbidLine(), nil
+	case "mail-line":
+		return MailLine(), nil
+	case "mail-lock-fill":
+		return MailLockFill(), nil
+	case "mail-lock-line":
+		return MailLockLine(), nil
+	case "mail-open-fill":
+		return MailOpenFill(), nil
+	case "mail-open-line":
+		return MailOpenLine(), nil
+	case "mail-send-fill":
+		return MailSendFill(), nil
+	case "mail-send-line":
+		return MailSendLine(), nil
+	case "mail-settings-fill":
+		return MailSettingsFill(), nil
+	case "mail-settings-line":
+		return MailSettingsLine(), nil
+	case "mail-star-fill":
+		return MailStarFill(), nil
+	case "mail-star-line":
+		return MailStarLine(), nil
+	case "mail-unread-fill":
+		return MailUnreadFill(), nil
+	case "mail-unread-line":
+		return MailUnreadLine(), nil
+	case "mail-volume-fill":
+		return MailVolumeFill(), nil
+	case "mail-volume-line":
+		return MailVolumeLine(), nil
+	case "map-fill":
+		return MapFill(), nil
+	case "map-line":
+		return MapLine(), nil
+	case "map-pin-add-fill":
+		return MapPinAddFill(), nil
+	case "map-pin-add-line":
+		return MapPinAddLine(), nil
+	case "map-pin-fill":
+		return MapPinFill(), nil
+	case "map-pin-5-fill":
+		return MapPinFiveFill(), nil
+	case "map-pin-5-line":
+		return MapPinFiveLine(), nil
+	case "map-pin-4-fill":
+		return MapPinFourFill(), nil
+	case "map-pin-4-line":
+		return MapPinFourLine(), nil
+	case "map-pin-line":
+		return MapPinLine(), nil
+	case "map-pin-range-fill":
+		return MapPinRangeFill(), nil
+	case "map-pin-range-line":
+		return MapPinRangeLine(), nil
+	case "map-pin-3-fill":
+		return MapPinThreeFill(), nil
+	case "map-pin-3-line":
+		return MapPinThreeLine(), nil
+	case "map-pin-time-fill":
+		return MapPinTimeFill(), nil
+	case "map-pin-time-line":
+		return MapPinTimeLine(), nil
+	case "map-pin-2-fill":
+		return MapPinTwoFill(), nil
+	case "map-pin-2-line":
+		return MapPinTwoLine(), nil
+	case "map-pin-user-fill":
+		return MapPinUserFill(), nil
+	case "map-pin-user-line":
+		return MapPinUserLine(), nil
+	case "map-2-fill":
+		return MapTwoFill(), nil
+	case "map-2-line":
+		return MapTwoLine(), nil
+	case "mark-pen-fill":
+		return MarkPenFill(), nil
+	case "mark-pen-line":
+		return MarkPenLine(), nil
+	case "markdown-fill":
+		return MarkdownFill(), nil
+	case "markdown-line":
+		return MarkdownLine(), nil
+	case "markup-fill":
+		return MarkupFill(), nil
+	case "markup-line":
+		return MarkupLine(), nil
+	case "mastercard-fill":
+		return MastercardFill(), nil
+	case "mastercard-line":
+		return MastercardLine(), nil
+	case "mastodon-fill":
+		return MastodonFill(), nil
+	case "mastodon-line":
+		return MastodonLine(), nil
+	case "medal-fill":
+		return MedalFill(), nil
+	case "medal-line":
+		return MedalLine(), nil
+	case "medal-2-fill":
+		return MedalTwoFill(), nil
+	case "medal-2-line":
+		return MedalTwoLine(), nil
+	case "medicine-bottle-fill":
+		return MedicineBottleFill(), nil
+	case "medicine-bottle-line":
+		return MedicineBottleLine(), nil
+	case "medium-fill":
+		return MediumFill(), nil
+	case "medium-line":
+		return MediumLine(), nil
+	case "men-fill":
+		return MenFill(), nil
+	case "men-line":
+		return MenLine(), nil
+	case "mental-health-fill":
+		return MentalHealthFill(), nil
+	case "mental-health-line":
+		return MentalHealthLine(), nil
+	case "menu-add-fill":
+		return MenuAddFill(), nil
+	case "menu-add-line":
+		return MenuAddLine(), nil
+	case "menu-fill":
+		return MenuFill(), nil
+	case "menu-5-fill":
+		return MenuFiveFill(), nil
+	case "menu-5-line":
+		return MenuFiveLine(), nil
+	case "menu-fold-fill":
+		return MenuFoldFill(), nil
+	case "menu-fold-line":
+		return MenuFoldLine(), nil
+	case "menu-4-fill":
+		return MenuFourFill(), nil
+	case "menu-4-line":
+		return MenuFourLine(), nil
+	case "menu-line":
+		return MenuLine(), nil
+	case "menu-3-fill":
+		return MenuThreeFill(), nil
+	case "menu-3-line":
+		return MenuThreeLine(), nil
+	case "menu-2-fill":
+		return MenuTwoFill(), nil
+	case "menu-2-line":
+		return MenuTwoLine(), nil
+	case "menu-unfold-fill":
+		return MenuUnfoldFill(), nil
+	case "menu-unfold-line":
+		return MenuUnfoldLine(), nil
+	case "merge-cells-horizontal":
+		return MergeCellsHorizontal(), nil
+	case "merge-cells-vertical":
+		return MergeCellsVertical(), nil
+	case "message-fill":
+		return MessageFill(), nil
+	case "message-line":
+		return MessageLine(), nil
+	case "message-3-fill":
+		return MessageThreeFill(), nil
+	case "message-3-line":
+		return MessageThreeLine(), nil
+	case "message-2-fill":
+		return MessageTwoFill(), nil
+	case "message-2-line":
+		return MessageTwoLine(), nil
+	case "messenger-fill":
+		return MessengerFill(), nil
+	case "messenger-line":
+		return MessengerLine(), nil
+	case "meteor-fill":
+		return MeteorFill(), nil
+	case "meteor-line":
+		return MeteorLine(), nil
+	case "mic-fill":
+		return MicFill(), nil
+	case "mic-line":
+		return MicLine(), nil
+	case "mic-off-fill":
+		return MicOffFill(), nil
+	case "mic-off-line":
+		return MicOffLine(), nil
+	case "mic-2-fill":
+		return MicTwoFill(), nil
+	case "mic-2-line":
+		return MicTwoLine(), nil
+	case "mickey-fill":
+		return MickeyFill(), nil
+	case "mickey-line":
+		return MickeyLine(), nil
+	case "microscope-fill":
+		return MicroscopeFill(), nil
+	case "microscope-line":
+		return MicroscopeLine(), nil
+	case "microsoft-fill":
+		return MicrosoftFill(), nil
+	case "microsoft-line":
+		return MicrosoftLine(), nil
+	case "mind-map":
+		return MindMap(), nil
+	case "mini-program-fill":
+		return MiniProgramFill(), nil
+	case "mini-program-line":
+		return MiniProgramLine(), nil
+	case "mist-fill":
+		return MistFill(), nil
+	case "mist-line":
+		return MistLine(), nil
+	case "money-cny-box-fill":
+		return MoneyCnyBoxFill(), nil
+	case "money-cny-box-line":
+		return MoneyCnyBoxLine(), nil
+	case "money-cny-circle-fill":
+		return MoneyCnyCircleFill(), nil
+	case "money-cny-circle-line":
+		return MoneyCnyCircleLine(), nil
+	case "money-dollar-box-fill":
+		return MoneyDollarBoxFill(), nil
+	case "money-dollar-box-line":
+		return MoneyDollarBoxLine(), nil
+	case "money-dollar-circle-fill":
+		return MoneyDollarCircleFill(), nil
+	case "money-dollar-circle-line":
+		return MoneyDollarCircleLine(), nil
+	case "money-euro-box-fill":
+		return MoneyEuroBoxFill(), nil
+	case "money-euro-box-line":
+		return MoneyEuroBoxLine(), nil
+	case "money-euro-circle-fill":
+		return MoneyEuroCircleFill(), nil
+	case "money-euro-circle-line":
+		return MoneyEuroCircleLine(), nil
+	case "money-pound-box-fill":
+		return MoneyPoundBoxFill(), nil
+	case "money-pound-box-line":
+		return MoneyPoundBoxLine(), nil
+	case "money-pound-circle-fill":
+		return MoneyPoundCircleFill(), nil
+	case "money-pound-circle-line":
+		return MoneyPoundCircleLine(), nil
+	case "moon-clear-fill":
+		return MoonClearFill(), nil
+	case "moon-clear-line":
+		return MoonClearLine(), nil
+	case "moon-cloudy-fill":
+		return MoonCloudyFill(), nil
+	case "moon-cloudy-line":
+		return MoonCloudyLine(), nil
+	case "moon-fill":
+		return MoonFill(), nil
+	case "moon-foggy-fill":
+		return MoonFoggyFill(), nil
+	case "moon-foggy-line":
+		return MoonFoggyLine(), nil
+	case "moon-line":
+		return MoonLine(), nil
+	case "more-fill":
+		return MoreFill(), nil
+	case "more-line":
+		return MoreLine(), nil
+	case "more-2-fill":
+		return MoreTwoFill(), nil
+	case "more-2-line":
+		return MoreTwoLine(), nil
+	case "motorbike-fill":
+		return MotorbikeFill(), nil
+	case "motorbike-line":
+		return MotorbikeLine(), nil
+	case "mouse-fill":
+		return MouseFill(), nil
+	case "mouse-line":
+		return MouseLine(), nil
+	case "movie-fill":
+		return MovieFill(), nil
+	case "movie-line":
+		return MovieLine(), nil
+	case "movie-2-fill":
+		return MovieTwoFill(), nil
+	case "movie-2-line":
+		return MovieTwoLine(), nil
+	case "music-fill":
+		return MusicFill(), nil
+	case "music-line":
+		return MusicLine(), nil
+	case "music-2-fill":
+		return MusicTwoFill(), nil
+	case "music-2-line":
+		return MusicTwoLine(), nil
+	case "mv-fill":
+		return MvFill(), nil
+	case "mv-line":
+		return MvLine(), nil
+	case "navigation-fill":
+		return NavigationFill(), nil
+	case "navigation-line":
+		return NavigationLine(), nil
+	case "netease-cloud-music-fill":
+		return NeteaseCloudMusicFill(), nil
+	case "netease-cloud-music-line":
+		return NeteaseCloudMusicLine(), nil
+	case "netflix-fill":
+		return NetflixFill(), nil
+	case "netflix-line":
+		return NetflixLine(), nil
+	case "newspaper-fill":
+		return NewspaperFill(), nil
+	case "newspaper-line":
+		return NewspaperLine(), nil
+	case "node-tree":
+		return NodeTree(), nil
+	case "notification-badge-fill":
+		return NotificationBadgeFill(), nil
+	case "notification-badge-line":
+		return NotificationBadgeLine(), nil
+	case "notification-fill":
+		return NotificationFill(), nil
+	case "notification-4-fill":
+		return NotificationFourFill(), nil
+	case "notification-4-line":
+		return NotificationFourLine(), nil
+	case "notification-line":
+		return NotificationLine(), nil
+	case "notification-off-fill":
+		return NotificationOffFill(), nil
+	case "notification-off-line":
+		return NotificationOffLine(), nil
+	case "notification-3-fill":
+		return NotificationThreeFill(), nil
+	case "notification-3-line":
+		return NotificationThreeLine(), nil
+	case "notification-2-fill":
+		return NotificationTwoFill(), nil
+	case "notification-2-line":
+		return NotificationTwoLine(), nil
+	case "npmjs-fill":
+		return NpmjsFill(), nil
+	case "npmjs-line":
+		return NpmjsLine(), nil
+	case "number-8":
+		return NumberEight(), nil
+	case "number-5":
+		return NumberFive(), nil
+	case "number-4":
+		return NumberFour(), nil
+	case "number-9":
+		return NumberNine(), nil
+	case "number-1":
+		return NumberOne(), nil
+	case "number-7":
+		return NumberSeven(), nil
+	case "number-6":
+		return NumberSix(), nil
+	case "number-3":
+		return NumberThree(), nil
+	case "number-2":
+		return NumberTwo(), nil
+	case "number-0":
+		return NumberZero(), nil
+	case "numbers-fill":
+		return NumbersFill(), nil
+	case "numbers-line":
+		return NumbersLine(), nil
+	case "nurse-fill":
+		return NurseFill(), nil
+	case "nurse-line":
+		return NurseLine(), nil
+	case "oil-fill":
+		return OilFill(), nil
+	case "oil-line":
+		return OilLine(), nil
+	case "omega":
+		return Omega(), nil
+	case "open-arm-fill":
+		return OpenArmFill(), nil
+	case "open-arm-line":
+		return OpenArmLine(), nil
+	case "open-source-fill":
+		return OpenSourceFill(), nil
+	case "open-source-line":
+		return OpenSourceLine(), nil
+	case "opera-fill":
+		return OperaFill(), nil
+	case "opera-line":
+		return OperaLine(), nil
+	case "order-play-fill":
+		return OrderPlayFill(), nil
+	case "order-play-line":
+		return OrderPlayLine(), nil
+	case "organization-chart":
+		return OrganizationChart(), nil
+	case "outlet-fill":
+		return OutletFill(), nil
+	case "outlet-line":
+		return OutletLine(), nil
+	case "outlet-2-fill":
+		return OutletTwoFill(), nil
+	case "outlet-2-line":
+		return OutletTwoLine(), nil
+	case "page-separator":
+		return PageSeparator(), nil
+	case "pages-fill":
+		return PagesFill(), nil
+	case "pages-line":
+		return PagesLine(), nil
+	case "paint-brush-fill":
+		return PaintBrushFill(), nil
+	case "paint-brush-line":
+		return PaintBrushLine(), nil
+	case "paint-fill":
+		return PaintFill(), nil
+	case "paint-line":
+		return PaintLine(), nil
+	case "palette-fill":
+		return PaletteFill(), nil
+	case "palette-line":
+		return PaletteLine(), nil
+	case "pantone-fill":
+		return PantoneFill(), nil
+	case "pantone-line":
+		return PantoneLine(), nil
+	case "paragraph":
+		return Paragraph(), nil
+	case "parent-fill":
+		return ParentFill(), nil
+	case "parent-line":
+		return ParentLine(), nil
+	case "parentheses-fill":
+		return ParenthesesFill(), nil
+	case "parentheses-line":
+		return ParenthesesLine(), nil
+	case "parking-box-fill":
+		return ParkingBoxFill(), nil
+	case "parking-box-line":
+		return ParkingBoxLine(), nil
+	case "parking-fill":
+		return ParkingFill(), nil
+	case "parking-line":
+		return ParkingLine(), nil
+	case "passport-fill":
+		return PassportFill(), nil
+	case "passport-line":
+		return PassportLine(), nil
+	case "patreon-fill":
+		return PatreonFill(), nil
+	case "patreon-line":
+		return PatreonLine(), nil
+	case "pause-circle-fill":
+		return PauseCircleFill(), nil
+	case "pause-circle-line":
+		return PauseCircleLine(), nil
+	case "pause-fill":
+		return PauseFill(), nil
+	case "pause-line":
+		return PauseLine(), nil
+	case "pause-mini-fill":
+		return PauseMiniFill(), nil
+	case "pause-mini-line":
+		return PauseMiniLine(), nil
+	case "paypal-fill":
+		return PaypalFill(), nil
+	case "paypal-line":
+		return PaypalLine(), nil
+	case "pen-nib-fill":
+		return PenNibFill(), nil
+	case "pen-nib-line":
+		return PenNibLine(), nil
+	case "pencil-fill":
+		return PencilFill(), nil
+	case "pencil-line":
+		return PencilLine(), nil
+	case "pencil-ruler-fill":
+		return PencilRulerFill(), nil
+	case "pencil-ruler-line":
+		return PencilRulerLine(), nil
+	case "pencil-ruler-2-fill":
+		return PencilRulerTwoFill(), nil
+	case "pencil-ruler-2-line":
+		return PencilRulerTwoLine(), nil
+	case "percent-fill":
+		return PercentFill(), nil
+	case "percent-line":
+		return PercentLine(), nil
+	case "phone-camera-fill":
+		return PhoneCameraFill(), nil
+	case "phone-camera-line":
+		return PhoneCameraLine(), nil
+	case "phone-fill":
+		return PhoneFill(), nil
+	case "phone-find-fill":
+		return PhoneFindFill(), nil
+	case "phone-find-line":
+		return PhoneFindLine(), nil
+	case "phone-line":
+		return PhoneLine(), nil
+	case "phone-lock-fill":
+		return PhoneLockFill(), nil
+	case "phone-lock-line":
+		return PhoneLockLine(), nil
+	case "picture-in-picture-exit-fill":
+		return PictureInPictureExitFill(), nil
+	case "picture-in-picture-exit-line":
+		return PictureInPictureExitLine(), nil
+	case "picture-in-picture-fill":
+		return PictureInPictureFill(), nil
+	case "picture-in-picture-line":
+		return PictureInPictureLine(), nil
+	case "picture-in-picture-2-fill":
+		return PictureInPictureTwoFill(), nil
+	case "picture-in-picture-2-line":
+		return PictureInPictureTwoLine(), nil
+	case "pie-chart-box-fill":
+		return PieChartBoxFill(), nil
+	case "pie-chart-box-line":
+		return PieChartBoxLine(), nil
+	case "pie-chart-fill":
+		return PieChartFill(), nil
+	case "pie-chart-line":
+		return PieChartLine(), nil
+	case "pie-chart-2-fill":
+		return PieChartTwoFill(), nil
+	case "pie-chart-2-line":
+		return PieChartTwoLine(), nil
+	case "pin-distance-fill":
+		return PinDistanceFill(), nil
+	case "pin-distance-line":
+		return PinDistanceLine(), nil
+	case "ping-pong-fill":
+		return PingPongFill(), nil
+	case "ping-pong-line":
+		return PingPongLine(), nil
+	case "pinterest-fill":
+		return PinterestFill(), nil
+	case "pinterest-line":
+		return PinterestLine(), nil
+	case "pinyin-input":
+		return PinyinInput(), nil
+	case "pixelfed-fill":
+		return PixelfedFill(), nil
+	case "pixelfed-line":
+		return PixelfedLine(), nil
+	case "plane-fill":
+		return PlaneFill(), nil
+	case "plane-line":
+		return PlaneLine(), nil
+	case "plant-fill":
+		return PlantFill(), nil
+	case "plant-line":
+		return PlantLine(), nil
+	case "play-circle-fill":
+		return PlayCircleFill(), nil
+	case "play-circle-line":
+		return PlayCircleLine(), nil
+	case "play-fill":
+		return PlayFill(), nil
+	case "play-line":
+		return PlayLine(), nil
+	case "play-list-add-fill":
+		return PlayListAddFill(), nil
+	case "play-list-add-line":
+		return PlayListAddLine(), nil
+	case "play-list-fill":
+		return PlayListFill(), nil
+	case "play-list-line":
+		return PlayListLine(), nil
+	case "play-list-2-fill":
+		return PlayListTwoFill(), nil
+	case "play-list-2-line":
+		return PlayListTwoLine(), nil
+	case "play-mini-fill":
+		return PlayMiniFill(), nil
+	case "play-mini-line":
+		return PlayMiniLine(), nil
+	case "playstation-fill":
+		return PlaystationFill(), nil
+	case "playstation-line":
+		return PlaystationLine(), nil
+	case "plug-fill":
+		return PlugFill(), nil
+	case "plug-line":
+		return PlugLine(), nil
+	case "plug-2-fill":
+		return PlugTwoFill(), nil
+	case "plug-2-line":
+		return PlugTwoLine(), nil
+	case "polaroid-fill":
+		return PolaroidFill(), nil
+	case "polaroid-line":
+		return PolaroidLine(), nil
+	case "polaroid-2-fill":
+		return PolaroidTwoFill(), nil
+	case "polaroid-2-line":
+		return PolaroidTwoLine(), nil
+	case "police-car-fill":
+		return PoliceCarFill(), nil
+	case "police-car-line":
+		return PoliceCarLine(), nil
+	case "price-tag-fill":
+		return PriceTagFill(), nil
+	case "price-tag-line":
+		return PriceTagLine(), nil
+	case "price-tag-3-fill":
+		return PriceTagThreeFill(), nil
+	case "price-tag-3-line":
+		return PriceTagThreeLine(), nil
+	case "price-tag-2-fill":
+		return PriceTagTwoFill(), nil
+	case "price-tag-2-line":
+		return PriceTagTwoLine(), nil
+	case "printer-cloud-fill":
+		return PrinterCloudFill(), nil
+	case "printer-cloud-line":
+		return PrinterCloudLine(), nil
+	case "printer-fill":
+		return PrinterFill(), nil
+	case "printer-line":
+		return PrinterLine(), nil
+	case "product-hunt-fill":
+		return ProductHuntFill(), nil
+	case "product-hunt-line":
+		return ProductHuntLine(), nil
+	case "profile-fill":
+		return ProfileFill(), nil
+	case "profile-line":
+		return ProfileLine(), nil
+	case "projector-fill":
+		return ProjectorFill(), nil
+	case "projector-line":
+		return ProjectorLine(), nil
+	case "projector-2-fill":
+		return ProjectorTwoFill(), nil
+	case "projector-2-line":
+		return ProjectorTwoLine(), nil
+	case "psychotherapy-fill":
+		return PsychotherapyFill(), nil
+	case "psychotherapy-line":
+		return PsychotherapyLine(), nil
+	case "pulse-fill":
+		return PulseFill(), nil
+	case "pulse-line":
+		return PulseLine(), nil
+	case "pushpin-fill":
+		return PushpinFill(), nil
+	case "pushpin-line":
+		return PushpinLine(), nil
+	case "pushpin-2-fill":
+		return PushpinTwoFill(), nil
+	case "pushpin-2-line":
+		return PushpinTwoLine(), nil
+	case "qq-fill":
+		return QqFill(), nil
+	case "qq-line":
+		return QqLine(), nil
+	case "qr-code-fill":
+		return QrCodeFill(), nil
+	case "qr-code-line":
+		return QrCodeLine(), nil
+	case "qr-scan-fill":
+		return QrScanFill(), nil
+	case "qr-scan-line":
+		return QrScanLine(), nil
+	case "qr-scan-2-fill":
+		return QrScanTwoFill(), nil
+	case "qr-scan-2-line":
+		return QrScanTwoLine(), nil
+	case "question-answer-fill":
+		return QuestionAnswerFill(), nil
+	case "question-answer-line":
+		return QuestionAnswerLine(), nil
+	case "question-fill":
+		return QuestionFill(), nil
+	case "question-line":
+		return QuestionLine(), nil
+	case "question-mark":
+		return QuestionMark(), nil
+	case "questionnaire-fill":
+		return QuestionnaireFill(), nil
+	case "questionnaire-line":
+		return QuestionnaireLine(), nil
+	case "quill-pen-fill":
+		return QuillPenFill(), nil
+	case "quill-pen-line":
+		return QuillPenLine(), nil
+	case "radar-fill":
+		return RadarFill(), nil
+	case "radar-line":
+		return RadarLine(), nil
+	case "radio-button-fill":
+		return RadioButtonFill(), nil
+	case "radio-button-line":
+		return RadioButtonLine(), nil
+	case "radio-fill":
+		return RadioFill(), nil
+	case "radio-line":
+		return RadioLine(), nil
+	case "radio-2-fill":
+		return RadioTwoFill(), nil
+	case "radio-2-line":
+		return RadioTwoLine(), nil
+	case "rainbow-fill":
+		return RainbowFill(), nil
+	case "rainbow-line":
+		return RainbowLine(), nil
+	case "rainy-fill":
+		return RainyFill(), nil
+	case "rainy-line":
+		return RainyLine(), nil
+	case "reactjs-fill":
+		return ReactjsFill(), nil
+	case "reactjs-line":
+		return ReactjsLine(), nil
+	case "record-circle-fill":
+		return RecordCircleFill(), nil
+	case "record-circle-line":
+		return RecordCircleLine(), nil
+	case "record-mail-fill":
+		return RecordMailFill(), nil
+	case "record-mail-line":
+		return RecordMailLine(), nil
+	case "recycle-fill":
+		return RecycleFill(), nil
+	case "recycle-line":
+		return RecycleLine(), nil
+	case "red-packet-fill":
+		return RedPacketFill(), nil
+	case "red-packet-line":
+		return RedPacketLine(), nil
+	case "reddit-fill":
+		return RedditFill(), nil
+	case "reddit-line":
+		return RedditLine(), nil
+	case "refresh-fill":
+		return RefreshFill(), nil
+	case "refresh-line":
+		return RefreshLine(), nil
+	case "refund-fill":
+		return RefundFill(), nil
+	case "refund-line":
+		return RefundLine(), nil
+	case "refund-2-fill":
+		return RefundTwoFill(), nil
+	case "refund-2-line":
+		return RefundTwoLine(), nil
+	case "registered-fill":
+		return RegisteredFill(), nil
+	case "registered-line":
+		return RegisteredLine(), nil
+	case "remixicon-fill":
+		return RemixiconFill(), nil
+	case "remixicon-line":
+		return RemixiconLine(), nil
+	case "remote-control-fill":
+		return RemoteControlFill(), nil
+	case "remote-control-line":
+		return RemoteControlLine(), nil
+	case "remote-control-2-fill":
+		return RemoteControlTwoFill(), nil
+	case "remote-control-2-line":
+		return RemoteControlTwoLine(), nil
+	case "repeat-fill":
+		return RepeatFill(), nil
+	case "repeat-line":
+		return RepeatLine(), nil
+	case "repeat-one-fill":
+		return RepeatOneFill(), nil
+	case "repeat-one-line":
+		return RepeatOneLine(), nil
+	case "repeat-2-fill":
+		return RepeatTwoFill(), nil
+	case "repeat-2-line":
+		return RepeatTwoLine(), nil
+	case "reply-all-fill":
+		return ReplyAllFill(), nil
+	case "reply-all-line":
+		return ReplyAllLine(), nil
+	case "reply-fill":
+		return ReplyFill(), nil
+	case "reply-line":
+		return ReplyLine(), nil
+	case "reserved-fill":
+		return ReservedFill(), nil
+	case "reserved-line":
+		return ReservedLine(), nil
+	case "rest-time-fill":
+		return RestTimeFill(), nil
+	case "rest-time-line":
+		return RestTimeLine(), nil
+	case "restart-fill":
+		return RestartFill(), nil
+	case "restart-line":
+		return RestartLine(), nil
+	case "restaurant-fill":
+		return RestaurantFill(), nil
+	case "restaurant-line":
+		return RestaurantLine(), nil
+	case "restaurant-2-fill":
+		return RestaurantTwoFill(), nil
+	case "restaurant-2-line":
+		return RestaurantTwoLine(), nil
+	case "rewind-fill":
+		return RewindFill(), nil
+	case "rewind-line":
+		return RewindLine(), nil
+	case "rewind-mini-fill":
+		return RewindMiniFill(), nil
+	case "rewind-mini-line":
+		return RewindMiniLine(), nil
+	case "rhythm-fill":
+		return RhythmFill(), nil
+	case "rhythm-line":
+		return RhythmLine(), nil
+	case "riding-fill":
+		return RidingFill(), nil
+	case "riding-line":
+		return RidingLine(), nil
+	case "road-map-fill":
+		return RoadMapFill(), nil
+	case "road-map-line":
+		return RoadMapLine(), nil
+	case "roadster-fill":
+		return RoadsterFill(), nil
+	case "roadster-line":
+		return RoadsterLine(), nil
+	case "robot-fill":
+		return RobotFill(), nil
+	case "robot-line":
+		return RobotLine(), nil
+	case "rocket-fill":
+		return RocketFill(), nil
+	case "rocket-line":
+		return RocketLine(), nil
+	case "rocket-2-fill":
+		return RocketTwoFill(), nil
+	case "rocket-2-line":
+		return RocketTwoLine(), nil
+	case "rotate-lock-fill":
+		return RotateLockFill(), nil
+	case "rotate-lock-line":
+		return RotateLockLine(), nil
+	case "rounded-corner":
+		return RoundedCorner(), nil
+	case "route-fill":
+		return RouteFill(), nil
+	case "route-line":
+		return RouteLine(), nil
+	case "router-fill":
+		return RouterFill(), nil
+	case "router-line":
+		return RouterLine(), nil
+	case "rss-fill":
+		return RssFill(), nil
+	case "rss-line":
+		return RssLine(), nil
+	case "ruler-fill":
+		return RulerFill(), nil
+	case "ruler-line":
+		return RulerLine(), nil
+	case "ruler-2-fill":
+		return RulerTwoFill(), nil
+	case "ruler-2-line":
+		return RulerTwoLine(), nil
+	case "run-fill":
+		return RunFill(), nil
+	case "run-line":
+		return RunLine(), nil
+	case "safari-fill":
+		return SafariFill(), nil
+	case "safari-line":
+		return SafariLine(), nil
+	case "safe-fill":
+		return SafeFill(), nil
+	case "safe-line":
+		return SafeLine(), nil
+	case "safe-2-fill":
+		return SafeTwoFill(), nil
+	case "safe-2-line":
+		return SafeTwoLine(), nil
+	case "sailboat-fill":
+		return SailboatFill(), nil
+	case "sailboat-line":
+		return SailboatLine(), nil
+	case "save-fill":
+		return SaveFill(), nil
+	case "save-line":
+		return SaveLine(), nil
+	case "save-3-fill":
+		return SaveThreeFill(), nil
+	case "save-3-line":
+		return SaveThreeLine(), nil
+	case "save-2-fill":
+		return SaveTwoFill(), nil
+	case "save-2-line":
+		return SaveTwoLine(), nil
+	case "scales-fill":
+		return ScalesFill(), nil
+	case "scales-line":
+		return ScalesLine(), nil
+	case "scales-3-fill":
+		return ScalesThreeFill(), nil
+	case "scales-3-line":
+		return ScalesThreeLine(), nil
+	case "scales-2-fill":
+		return ScalesTwoFill(), nil
+	case "scales-2-line":
+		return ScalesTwoLine(), nil
+	case "scan-fill":
+		return ScanFill(), nil
+	case "scan-line":
+		return ScanLine(), nil
+	case "scan-2-fill":
+		return ScanTwoFill(), nil
+	case "scan-2-line":
+		return ScanTwoLine(), nil
+	case "scissors-cut-fill":
+		return ScissorsCutFill(), nil
+	case "scissors-cut-line":
+		return ScissorsCutLine(), nil
+	case "scissors-fill":
+		return ScissorsFill(), nil
+	case "scissors-line":
+		return ScissorsLine(), nil
+	case "scissors-2-fill":
+		return ScissorsTwoFill(), nil
+	case "scissors-2-line":
+		return ScissorsTwoLine(), nil
+	case "screenshot-fill":
+		return ScreenshotFill(), nil
+	case "screenshot-line":
+		return ScreenshotLine(), nil
+	case "screenshot-2-fill":
+		return ScreenshotTwoFill(), nil
+	case "screenshot-2-line":
+		return ScreenshotTwoLine(), nil
+	case "sd-card-fill":
+		return SdCardFill(), nil
+	case "sd-card-line":
+		return SdCardLine(), nil
+	case "sd-card-mini-fill":
+		return SdCardMiniFill(), nil
+	case "sd-card-mini-line":
+		return SdCardMiniLine(), nil
+	case "search-eye-fill":
+		return SearchEyeFill(), nil
+	case "search-eye-line":
+		return SearchEyeLine(), nil
+	case "search-fill":
+		return SearchFill(), nil
+	case "search-line":
+		return SearchLine(), nil
+	case "search-2-fill":
+		return SearchTwoFill(), nil
+	case "search-2-line":
+		return SearchTwoLine(), nil
+	case "secure-payment-fill":
+		return SecurePaymentFill(), nil
+	case "secure-payment-line":
+		return SecurePaymentLine(), nil
+	case "seedling-fill":
+		return SeedlingFill(), nil
+	case "seedling-line":
+		return SeedlingLine(), nil
+	case "send-backward":
+		return SendBackward(), nil
+	case "send-plane-fill":
+		return SendPlaneFill(), nil
+	case "send-plane-line":
+		return SendPlaneLine(), nil
+	case "send-plane-2-fill":
+		return SendPlaneTwoFill(), nil
+	case "send-plane-2-line":
+		return SendPlaneTwoLine(), nil
+	case "send-to-back":
+		return SendToBack(), nil
+	case "sensor-fill":
+		return SensorFill(), nil
+	case "sensor-line":
+		return SensorLine(), nil
+	case "separator":
+		return Separator(), nil
+	case "server-fill":
+		return ServerFill(), nil
+	case "server-line":
+		return ServerLine(), nil
+	case "service-fill":
+		return ServiceFill(), nil
+	case "service-line":
+		return ServiceLine(), nil
+	case "settings-fill":
+		return SettingsFill(), nil
+	case "settings-5-fill":
+		return SettingsFiveFill(), nil
+	case "settings-5-line":
+		return SettingsFiveLine(), nil
+	case "settings-4-fill":
+		return SettingsFourFill(), nil
+	case "settings-4-line":
+		return SettingsFourLine(), nil
+	case "settings-line":
+		return SettingsLine(), nil
+	case "settings-6-fill":
+		return SettingsSixFill(), nil
+	case "settings-6-line":
+		return SettingsSixLine(), nil
+	case "settings-3-fill":
+		return SettingsThreeFill(), nil
+	case "settings-3-line":
+		return SettingsThreeLine(), nil
+	case "settings-2-fill":
+		return SettingsTwoFill(), nil
+	case "settings-2-line":
+		return SettingsTwoLine(), nil
+	case "shape-fill":
+		return ShapeFill(), nil
+	case "shape-line":
+		return ShapeLine(), nil
+	case "shape-2-fill":
+		return ShapeTwoFill(), nil
+	case "shape-2-line":
+		return ShapeTwoLine(), nil
+	case "share-box-fill":
+		return ShareBoxFill(), nil
+	case "share-box-line":
+		return ShareBoxLine(), nil
+	case "share-circle-fill":
+		return ShareCircleFill(), nil
+	case "share-circle-line":
+		return ShareCircleLine(), nil
+	case "share-fill":
+		return ShareFill(), nil
+	case "share-forward-box-fill":
+		return ShareForwardBoxFill(), nil
+	case "share-forward-box-line":
+		return ShareForwardBoxLine(), nil
+	case "share-forward-fill":
+		return ShareForwardFill(), nil
+	case "share-forward-line":
+		return ShareForwardLine(), nil
+	case "share-forward-2-fill":
+		return ShareForwardTwoFill(), nil
+	case "share-forward-2-line":
+		return ShareForwardTwoLine(), nil
+	case "share-line":
+		return ShareLine(), nil
+	case "shield-check-fill":
+		return ShieldCheckFill(), nil
+	case "shield-check-line":
+		return ShieldCheckLine(), nil
+	case "shield-cross-fill":
+		return ShieldCrossFill(), nil
+	case "shield-cross-line":
+		return ShieldCrossLine(), nil
+	case "shield-fill":
+		return ShieldFill(), nil
+	case "shield-flash-fill":
+		return ShieldFlashFill(), nil
+	case "shield-flash-line":
+		return ShieldFlashLine(), nil
+	case "shield-keyhole-fill":
+		return ShieldKeyholeFill(), nil
+	case "shield-keyhole-line":
+		return ShieldKeyholeLine(), nil
+	case "shield-line":
+		return ShieldLine(), nil
+	case "shield-star-fill":
+		return ShieldStarFill(), nil
+	case "shield-star-line":
+		return ShieldStarLine(), nil
+	case "shield-user-fill":
+		return ShieldUserFill(), nil
+	case "shield-user-line":
+		return ShieldUserLine(), nil
+	case "ship-fill":
+		return ShipFill(), nil
+	case "ship-line":
+		return ShipLine(), nil
+	case "ship-2-fill":
+		return ShipTwoFill(), nil
+	case "ship-2-line":
+		return ShipTwoLine(), nil
+	case "shirt-fill":
+		return ShirtFill(), nil
+	case "shirt-line":
+		return ShirtLine(), nil
+	case "shopping-bag-fill":
+		return ShoppingBagFill(), nil
+	case "shopping-bag-line":
+		return ShoppingBagLine(), nil
+	case "shopping-bag-3-fill":
+		return ShoppingBagThreeFill(), nil
+	case "shopping-bag-3-line":
+		return ShoppingBagThreeLine(), nil
+	case "shopping-bag-2-fill":
+		return ShoppingBagTwoFill(), nil
+	case "shopping-bag-2-line":
+		return ShoppingBagTwoLine(), nil
+	case "shopping-basket-fill":
+		return ShoppingBasketFill(), nil
+	case "shopping-basket-line":
+		return ShoppingBasketLine(), nil
+	case "shopping-basket-2-fill":
+		return ShoppingBasketTwoFill(), nil
+	case "shopping-basket-2-line":
+		return ShoppingBasketTwoLine(), nil
+	case "shopping-cart-fill":
+		return ShoppingCartFill(), nil
+	case "shopping-cart-line":
+		return ShoppingCartLine(), nil
+	case "shopping-cart-2-fill":
+		return ShoppingCartTwoFill(), nil
+	case "shopping-cart-2-line":
+		return ShoppingCartTwoLine(), nil
+	case "showers-fill":
+		return ShowersFill(), nil
+	case "showers-line":
+		return ShowersLine(), nil
+	case "shuffle-fill":
+		return ShuffleFill(), nil
+	case "shuffle-line":
+		return ShuffleLine(), nil
+	case "shut-down-fill":
+		return ShutDownFill(), nil
+	case "shut-down-line":
+		return ShutDownLine(), nil
+	case "side-bar-fill":
+		return SideBarFill(), nil
+	case "side-bar-line":
+		return SideBarLine(), nil
+	case "signal-tower-fill":
+		return SignalTowerFill(), nil
+	case "signal-tower-line":
+		return SignalTowerLine(), nil
+	case "signal-wifi-error-fill":
+		return SignalWifiErrorFill(), nil
+	case "signal-wifi-error-line":
+		return SignalWifiErrorLine(), nil
+	case "signal-wifi-fill":
+		return SignalWifiFill(), nil
+	case "signal-wifi-line":
+		return SignalWifiLine(), nil
+	case "signal-wifi-off-fill":
+		return SignalWifiOffFill(), nil
+	case "signal-wifi-off-line":
+		return SignalWifiOffLine(), nil
+	case "signal-wifi-1-fill":
+		return SignalWifiOneFill(), nil
+	case "signal-wifi-1-line":
+		return SignalWifiOneLine(), nil
+	case "signal-wifi-3-fill":
+		return SignalWifiThreeFill(), nil
+	case "signal-wifi-3-line":
+		return SignalWifiThreeLine(), nil
+	case "signal-wifi-2-fill":
+		return SignalWifiTwoFill(), nil
+	case "signal-wifi-2-line":
+		return SignalWifiTwoLine(), nil
+	case "sim-card-fill":
+		return SimCardFill(), nil
+	case "sim-card-line":
+		return SimCardLine(), nil
+	case "sim-card-2-fill":
+		return SimCardTwoFill(), nil
+	case "sim-card-2-line":
+		return SimCardTwoLine(), nil
+	case "single-quotes-l":
+		return SingleQuotesL(), nil
+	case "single-quotes-r":
+		return SingleQuotesR(), nil
+	case "sip-fill":
+		return SipFill(), nil
+	case "sip-line":
+		return SipLine(), nil
+	case "skip-back-fill":
+		return SkipBackFill(), nil
+	case "skip-back-line":
+		return SkipBackLine(), nil
+	case "skip-back-mini-fill":
+		return SkipBackMiniFill(), nil
+	case "skip-back-mini-line":
+		return SkipBackMiniLine(), nil
+	case "skip-forward-fill":
+		return SkipForwardFill(), nil
+	case "skip-forward-line":
+		return SkipForwardLine(), nil
+	case "skip-forward-mini-fill":
+		return SkipForwardMiniFill(), nil
+	case "skip-forward-mini-line":
+		return SkipForwardMiniLine(), nil
+	case "skull-fill":
+		return SkullFill(), nil
+	case "skull-line":
+		return SkullLine(), nil
+	case "skull-2-fill":
+		return SkullTwoFill(), nil
+	case "skull-2-line":
+		return SkullTwoLine(), nil
+	case "skype-fill":
+		return SkypeFill(), nil
+	case "skype-line":
+		return SkypeLine(), nil
+	case "slack-fill":
+		return SlackFill(), nil
+	case "slack-line":
+		return SlackLine(), nil
+	case "slice-fill":
+		return SliceFill(), nil
+	case "slice-line":
+		return SliceLine(), nil
+	case "slideshow-fill":
+		return SlideshowFill(), nil
+	case "slideshow-4-fill":
+		return SlideshowFourFill(), nil
+	case "slideshow-4-line":
+		return SlideshowFourLine(), nil
+	case "slideshow-line":
+		return SlideshowLine(), nil
+	case "slideshow-3-fill":
+		return SlideshowThreeFill(), nil
+	case "slideshow-3-line":
+		return SlideshowThreeLine(), nil
+	case "slideshow-2-fill":
+		return SlideshowTwoFill(), nil
+	case "slideshow-2-line":
+		return SlideshowTwoLine(), nil
+	case "smartphone-fill":
+		return SmartphoneFill(), nil
+	case "smartphone-line":
+		return SmartphoneLine(), nil
+	case "snapchat-fill":
+		return SnapchatFill(), nil
+	case "snapchat-line":
+		return SnapchatLine(), nil
+	case "snowy-fill":
+		return SnowyFill(), nil
+	case "snowy-line":
+		return SnowyLine(), nil
+	case "sort-asc":
+		return SortAsc(), nil
+	case "sort-desc":
+		return SortDesc(), nil
+	case "sound-module-fill":
+		return SoundModuleFill(), nil
+	case "sound-module-line":
+		return SoundModuleLine(), nil
+	case "soundcloud-fill":
+		return SoundcloudFill(), nil
+	case "soundcloud-line":
+		return SoundcloudLine(), nil
+	case "space":
+		return Space(), nil
+	case "space-ship-fill":
+		return SpaceShipFill(), nil
+	case "space-ship-line":
+		return SpaceShipLine(), nil
+	case "spam-fill":
+		return SpamFill(), nil
+	case "spam-line":
+		return SpamLine(), nil
+	case "spam-3-fill":
+		return SpamThreeFill(), nil
+	case "spam-3-line":
+		return SpamThreeLine(), nil
+	case "spam-2-fill":
+		return SpamTwoFill(), nil
+	case "spam-2-line":
+		return SpamTwoLine(), nil
+	case "speaker-fill":
+		return SpeakerFill(), nil
+	case "speaker-line":
+		return SpeakerLine(), nil
+	case "speaker-3-fill":
+		return SpeakerThreeFill(), nil
+	case "speaker-3-line":
+		return SpeakerThreeLine(), nil
+	case "speaker-2-fill":
+		return SpeakerTwoFill(), nil
+	case "speaker-2-line":
+		return SpeakerTwoLine(), nil
+	case "spectrum-fill":
+		return SpectrumFill(), nil
+	case "spectrum-line":
+		return SpectrumLine(), nil
+	case "speed-fill":
+		return SpeedFill(), nil
+	case "speed-line":
+		return SpeedLine(), nil
+	case "speed-mini-fill":
+		return SpeedMiniFill(), nil
+	case "speed-mini-line":
+		return SpeedMiniLine(), nil
+	case "split-cells-horizontal":
+		return SplitCellsHorizontal(), nil
+	case "split-cells-vertical":
+		return SplitCellsVertical(), nil
+	case "spotify-fill":
+		return SpotifyFill(), nil
+	case "spotify-line":
+		return SpotifyLine(), nil
+	case "spy-fill":
+		return SpyFill(), nil
+	case "spy-line":
+		return SpyLine(), nil
+	case "stack-fill":
+		return StackFill(), nil
+	case "stack-line":
+		return StackLine(), nil
+	case "stack-overflow-fill":
+		return StackOverflowFill(), nil
+	case "stack-overflow-line":
+		return StackOverflowLine(), nil
+	case "stackshare-fill":
+		return StackshareFill(), nil
+	case "stackshare-line":
+		return StackshareLine(), nil
+	case "star-fill":
+		return StarFill(), nil
+	case "star-half-fill":
+		return StarHalfFill(), nil
+	case "star-half-line":
+		return StarHalfLine(), nil
+	case "star-half-s-fill":
+		return StarHalfSFill(), nil
+	case "star-half-s-line":
+		return StarHalfSLine(), nil
+	case "star-line":
+		return StarLine(), nil
+	case "star-s-fill":
+		return StarSFill(), nil
+	case "star-s-line":
+		return StarSLine(), nil
+	case "star-smile-fill":
+		return StarSmileFill(), nil
+	case "star-smile-line":
+		return StarSmileLine(), nil
+	case "steam-fill":
+		return SteamFill(), nil
+	case "steam-line":
+		return SteamLine(), nil
+	case "steering-fill":
+		return SteeringFill(), nil
+	case "steering-line":
+		return SteeringLine(), nil
+	case "steering-2-fill":
+		return SteeringTwoFill(), nil
+	case "steering-2-line":
+		return SteeringTwoLine(), nil
+	case "stethoscope-fill":
+		return StethoscopeFill(), nil
+	case "stethoscope-line":
+		return StethoscopeLine(), nil
+	case "sticky-note-fill":
+		return StickyNoteFill(), nil
+	case "sticky-note-line":
+		return StickyNoteLine(), nil
+	case "sticky-note-2-fill":
+		return StickyNoteTwoFill(), nil
+	case "sticky-note-2-line":
+		return StickyNoteTwoLine(), nil
+	case "stock-fill":
+		return StockFill(), nil
+	case "stock-line":
+		return StockLine(), nil
+	case "stop-circle-fill":
+		return StopCircleFill(), nil
+	case "stop-circle-line":
+		return StopCircleLine(), nil
+	case "stop-fill":
+		return StopFill(), nil
+	case "stop-line":
+		return StopLine(), nil
+	case "stop-mini-fill":
+		return StopMiniFill(), nil
+	case "stop-mini-line":
+		return StopMiniLine(), nil
+	case "store-fill":
+		return StoreFill(), nil
+	case "store-line":
+		return StoreLine(), nil
+	case "store-3-fill":
+		return StoreThreeFill(), nil
+	case "store-3-line":
+		return StoreThreeLine(), nil
+	case "store-2-fill":
+		return StoreTwoFill(), nil
+	case "store-2-line":
+		return StoreTwoLine(), nil
+	case "strikethrough":
+		return Strikethrough(), nil
+	case "strikethrough-2":
+		return StrikethroughTwo(), nil
+	case "subscript":
+		return Subscript(), nil
+	case "subscript-2":
+		return SubscriptTwo(), nil
+	case "subtract-fill":
+		return SubtractFill(), nil
+	case "subtract-line":
+		return SubtractLine(), nil
+	case "subway-fill":
+		return SubwayFill(), nil
+	case "subway-line":
+		return SubwayLine(), nil
+	case "subway-wifi-fill":
+		return SubwayWifiFill(), nil
+	case "subway-wifi-line":
+		return SubwayWifiLine(), nil
+	case "suitcase-fill":
+		return SuitcaseFill(), nil
+	case "suitcase-line":
+		return SuitcaseLine(), nil
+	case "suitcase-3-fill":
+		return SuitcaseThreeFill(), nil
+	case "suitcase-3-line":
+		return SuitcaseThreeLine(), nil
+	case "suitcase-2-fill":
+		return SuitcaseTwoFill(), nil
+	case "suitcase-2-line":
+		return SuitcaseTwoLine(), nil
+	case "sun-cloudy-fill":
+		return SunCloudyFill(), nil
+	case "sun-cloudy-line":
+		return SunCloudyLine(), nil
+	case "sun-fill":
+		return SunFill(), nil
+	case "sun-foggy-fill":
+		return SunFoggyFill(), nil
+	case "sun-foggy-line":
+		return SunFoggyLine(), nil
+	case "sun-line":
+		return SunLine(), nil
+	case "superscript":
+		return Superscript(), nil
+	case "superscript-2":
+		return SuperscriptTwo(), nil
+	case "surgical-mask-fill":
+		return SurgicalMaskFill(), nil
+	case "surgical-mask-line":
+		return SurgicalMaskLine(), nil
+	case "surround-sound-fill":
+		return SurroundSoundFill(), nil
+	case "surround-sound-line":
+		return SurroundSoundLine(), nil
+	case "survey-fill":
+		return SurveyFill(), nil
+	case "survey-line":
+		return SurveyLine(), nil
+	case "swap-box-fill":
+		return SwapBoxFill(), nil
+	case "swap-box-line":
+		return SwapBoxLine(), nil
+	case "swap-fill":
+		return SwapFill(), nil
+	case "swap-line":
+		return SwapLine(), nil
+	case "switch-fill":
+		return SwitchFill(), nil
+	case "switch-line":
+		return SwitchLine(), nil
+	case "sword-fill":
+		return SwordFill(), nil
+	case "sword-line":
+		return SwordLine(), nil
+	case "syringe-fill":
+		return SyringeFill(), nil
+	case "syringe-line":
+		return SyringeLine(), nil
+	case "t-box-fill":
+		return TBoxFill(), nil
+	case "t-box-line":
+		return TBoxLine(), nil
+	case "t-shirt-air-fill":
+		return TShirtAirFill(), nil
+	case "t-shirt-air-line":
+		return TShirtAirLine(), nil
+	case "t-shirt-fill":
+		return TShirtFill(), nil
+	case "t-shirt-line":
+		return TShirtLine(), nil
+	case "t-shirt-2-fill":
+		return TShirtTwoFill(), nil
+	case "t-shirt-2-line":
+		return TShirtTwoLine(), nil
+	case "table-alt-fill":
+		return TableAltFill(), nil
+	case "table-alt-line":
+		return TableAltLine(), nil
+	case "table-fill":
+		return TableFill(), nil
+	case "table-line":
+		return TableLine(), nil
+	case "table-2":
+		return TableTwo(), nil
+	case "tablet-fill":
+		return TabletFill(), nil
+	case "tablet-line":
+		return TabletLine(), nil
+	case "takeaway-fill":
+		return TakeawayFill(), nil
+	case "takeaway-line":
+		return TakeawayLine(), nil
+	case "taobao-fill":
+		return TaobaoFill(), nil
+	case "taobao-line":
+		return TaobaoLine(), nil
+	case "tape-fill":
+		return TapeFill(), nil
+	case "tape-line":
+		return TapeLine(), nil
+	case "task-fill":
+		return TaskFill(), nil
+	case "task-line":
+		return TaskLine(), nil
+	case "taxi-fill":
+		return TaxiFill(), nil
+	case "taxi-line":
+		return TaxiLine(), nil
+	case "taxi-wifi-fill":
+		return TaxiWifiFill(), nil
+	case "taxi-wifi-line":
+		return TaxiWifiLine(), nil
+	case "team-fill":
+		return TeamFill(), nil
+	case "team-line":
+		return TeamLine(), nil
+	case "telegram-fill":
+		return TelegramFill(), nil
+	case "telegram-line":
+		return TelegramLine(), nil
+	case "temp-cold-fill":
+		return TempColdFill(), nil
+	case "temp-cold-line":
+		return TempColdLine(), nil
+	case "temp-hot-fill":
+		return TempHotFill(), nil
+	case "temp-hot-line":
+		return TempHotLine(), nil
+	case "terminal-box-fill":
+		return TerminalBoxFill(), nil
+	case "terminal-box-line":
+		return TerminalBoxLine(), nil
+	case "terminal-fill":
+		return TerminalFill(), nil
+	case "terminal-line":
+		return TerminalLine(), nil
+	case "terminal-window-fill":
+		return TerminalWindowFill(), nil
+	case "terminal-window-line":
+		return TerminalWindowLine(), nil
+	case "test-tube-fill":
+		return TestTubeFill(), nil
+	case "test-tube-line":
+		return TestTubeLine(), nil
+	case "text":
+		return Text(), nil
+	case "text-direction-l":
+		return TextDirectionL(), nil
+	case "text-direction-r":
+		return TextDirectionR(), nil
+	case "text-spacing":
+		return TextSpacing(), nil
+	case "text-wrap":
+		return TextWrap(), nil
+	case "thermometer-fill":
+		return ThermometerFill(), nil
+	case "thermometer-line":
+		return ThermometerLine(), nil
+	case "thumb-down-fill":
+		return ThumbDownFill(), nil
+	case "thumb-down-line":
+		return ThumbDownLine(), nil
+	case "thumb-up-fill":
+		return ThumbUpFill(), nil
+	case "thumb-up-line":
+		return ThumbUpLine(), nil
+	case "thunderstorms-fill":
+		return ThunderstormsFill(), nil
+	case "thunderstorms-line":
+		return ThunderstormsLine(), nil
+	case "ticket-fill":
+		return TicketFill(), nil
+	case "ticket-line":
+		return TicketLine(), nil
+	case "ticket-2-fill":
+		return TicketTwoFill(), nil
+	case "ticket-2-line":
+		return TicketTwoLine(), nil
+	case "time-fill":
+		return TimeFill(), nil
+	case "time-line":
+		return TimeLine(), nil
+	case "timer-fill":
+		return TimerFill(), nil
+	case "timer-flash-fill":
+		return TimerFlashFill(), nil
+	case "timer-flash-line":
+		return TimerFlashLine(), nil
+	case "timer-line":
+		return TimerLine(), nil
+	case "timer-2-fill":
+		return TimerTwoFill(), nil
+	case "timer-2-line":
+		return TimerTwoLine(), nil
+	case "todo-fill":
+		return TodoFill(), nil
+	case "todo-line":
+		return TodoLine(), nil
+	case "toggle-fill":
+		return ToggleFill(), nil
+	case "toggle-line":
+		return ToggleLine(), nil
+	case "tools-fill":
+		return ToolsFill(), nil
+	case "tools-line":
+		return ToolsLine(), nil
+	case "tornado-fill":
+		return TornadoFill(), nil
+	case "tornado-line":
+		return TornadoLine(), nil
+	case "trademark-fill":
+		return TrademarkFill(), nil
+	case "trademark-line":
+		return TrademarkLine(), nil
+	case "traffic-light-fill":
+		return TrafficLightFill(), nil
+	case "traffic-light-line":
+		return TrafficLightLine(), nil
+	case "train-fill":
+		return TrainFill(), nil
+	case "train-line":
+		return TrainLine(), nil
+	case "train-wifi-fill":
+		return TrainWifiFill(), nil
+	case "train-wifi-line":
+		return TrainWifiLine(), nil
+	case "translate":
+		return Translate(), nil
+	case "translate-2":
+		return TranslateTwo(), nil
+	case "travesti-fill":
+		return TravestiFill(), nil
+	case "travesti-line":
+		return TravestiLine(), nil
+	case "treasure-map-fill":
+		return TreasureMapFill(), nil
+	case "treasure-map-line":
+		return TreasureMapLine(), nil
+	case "trello-fill":
+		return TrelloFill(), nil
+	case "trello-line":
+		return TrelloLine(), nil
+	case "trophy-fill":
+		return TrophyFill(), nil
+	case "trophy-line":
+		return TrophyLine(), nil
+	case "truck-fill":
+		return TruckFill(), nil
+	case "truck-line":
+		return TruckLine(), nil
+	case "tumblr-fill":
+		return TumblrFill(), nil
+	case "tumblr-line":
+		return TumblrLine(), nil
+	case "tv-fill":
+		return TvFill(), nil
+	case "tv-line":
+		return TvLine(), nil
+	case "tv-2-fill":
+		return TvTwoFill(), nil
+	case "tv-2-line":
+		return TvTwoLine(), nil
+	case "24-hours-fill":
+		return TwentyFourHoursFill(), nil
+	case "24-hours-line":
+		return TwentyFourHoursLine(), nil
+	case "twitch-fill":
+		return TwitchFill(), nil
+	case "twitch-line":
+		return TwitchLine(), nil
+	case "twitter-fill":
+		return TwitterFill(), nil
+	case "twitter-line":
+		return TwitterLine(), nil
+	case "typhoon-fill":
+		return TyphoonFill(), nil
+	case "typhoon-line":
+		return TyphoonLine(), nil
+	case "u-disk-fill":
+		return UDiskFill(), nil
+	case "u-disk-line":
+		return UDiskLine(), nil
+	case "ubuntu-fill":
+		return UbuntuFill(), nil
+	case "ubuntu-line":
+		return UbuntuLine(), nil
+	case "umbrella-fill":
+		return UmbrellaFill(), nil
+	case "umbrella-line":
+		return UmbrellaLine(), nil
+	case "underline":
+		return Underline(), nil
+	case "uninstall-fill":
+		return UninstallFill(), nil
+	case "uninstall-line":
+		return UninstallLine(), nil
+	case "unsplash-fill":
+		return UnsplashFill(), nil
+	case "unsplash-line":
+		return UnsplashLine(), nil
+	case "upload-cloud-fill":
+		return UploadCloudFill(), nil
+	case "upload-cloud-line":
+		return UploadCloudLine(), nil
+	case "upload-cloud-2-fill":
+		return UploadCloudTwoFill(), nil
+	case "upload-cloud-2-line":
+		return UploadCloudTwoLine(), nil
+	case "upload-fill":
+		return UploadFill(), nil
+	case "upload-line":
+		return UploadLine(), nil
+	case "upload-2-fill":
+		return UploadTwoFill(), nil
+	case "upload-2-line":
+		return UploadTwoLine(), nil
+	case "usb-fill":
+		return UsbFill(), nil
+	case "usb-line":
+		return UsbLine(), nil
+	case "user-add-fill":
+		return UserAddFill(), nil
+	case "user-add-line":
+		return UserAddLine(), nil
+	case "user-fill":
+		return UserFill(), nil
+	case "user-5-fill":
+		return UserFiveFill(), nil
+	case "user-5-line":
+		return UserFiveLine(), nil
+	case "user-follow-fill":
+		return UserFollowFill(), nil
+	case "user-follow-line":
+		return UserFollowLine(), nil
+	case "user-4-fill":
+		return UserFourFill(), nil
+	case "user-4-line":
+		return UserFourLine(), nil
+	case "user-heart-fill":
+		return UserHeartFill(), nil
+	case "user-heart-line":
+		return UserHeartLine(), nil
+	case "user-line":
+		return UserLine(), nil
+	case "user-location-fill":
+		return UserLocationFill(), nil
+	case "user-location-line":
+		return UserLocationLine(), nil
+	case "user-received-fill":
+		return UserReceivedFill(), nil
+	case "user-received-line":
+		return UserReceivedLine(), nil
+	case "user-received-2-fill":
+		return UserReceivedTwoFill(), nil
+	case "user-received-2-line":
+		return UserReceivedTwoLine(), nil
+	case "user-search-fill":
+		return UserSearchFill(), nil
+	case "user-search-line":
+		return UserSearchLine(), nil
+	case "user-settings-fill":
+		return UserSettingsFill(), nil
+	case "user-settings-line":
+		return UserSettingsLine(), nil
+	case "user-shared-fill":
+		return UserSharedFill(), nil
+	case "user-shared-line":
+		return UserSharedLine(), nil
+	case "user-shared-2-fill":
+		return UserSharedTwoFill(), nil
+	case "user-shared-2-line":
+		return UserSharedTwoLine(), nil
+	case "user-6-fill":
+		return UserSixFill(), nil
+	case "user-6-line":
+		return UserSixLine(), nil
+	case "user-smile-fill":
+		return UserSmileFill(), nil
+	case "user-smile-line":
+		return UserSmileLine(), nil
+	case "user-star-fill":
+		return UserStarFill(), nil
+	case "user-star-line":
+		return UserStarLine(), nil
+	case "user-3-fill":
+		return UserThreeFill(), nil
+	case "user-3-line":
+		return UserThreeLine(), nil
+	case "user-2-fill":
+		return UserTwoFill(), nil
+	case "user-2-line":
+		return UserTwoLine(), nil
+	case "user-unfollow-fill":
+		return UserUnfollowFill(), nil
+	case "user-unfollow-line":
+		return UserUnfollowLine(), nil
+	case "user-voice-fill":
+		return UserVoiceFill(), nil
+	case "user-voice-line":
+		return UserVoiceLine(), nil
+	case "video-add-fill":
+		return VideoAddFill(), nil
+	case "video-add-line":
+		return VideoAddLine(), nil
+	case "video-chat-fill":
+		return VideoChatFill(), nil
+	case "video-chat-line":
+		return VideoChatLine(), nil
+	case "video-download-fill":
+		return VideoDownloadFill(), nil
+	case "video-download-line":
+		return VideoDownloadLine(), nil
+	case "video-fill":
+		return VideoFill(), nil
+	case "video-line":
+		return VideoLine(), nil
+	case "video-upload-fill":
+		return VideoUploadFill(), nil
+	case "video-upload-line":
+		return VideoUploadLine(), nil
+	case "vidicon-fill":
+		return VidiconFill(), nil
+	case "vidicon-line":
+		return VidiconLine(), nil
+	case "vidicon-2-fill":
+		return VidiconTwoFill(), nil
+	case "vidicon-2-line":
+		return VidiconTwoLine(), nil
+	case "vimeo-fill":
+		return VimeoFill(), nil
+	case "vimeo-line":
+		return VimeoLine(), nil
+	case "vip-crown-fill":
+		return VipCrownFill(), nil
+	case "vip-crown-line":
+		return VipCrownLine(), nil
+	case "vip-crown-2-fill":
+		return VipCrownTwoFill(), nil
+	case "vip-crown-2-line":
+		return VipCrownTwoLine(), nil
+	case "vip-diamond-fill":
+		return VipDiamondFill(), nil
+	case "vip-diamond-line":
+		return VipDiamondLine(), nil
+	case "vip-fill":
+		return VipFill(), nil
+	case "vip-line":
+		return VipLine(), nil
+	case "virus-fill":
+		return VirusFill(), nil
+	case "virus-line":
+		return VirusLine(), nil
+	case "visa-fill":
+		return VisaFill(), nil
+	case "visa-line":
+		return VisaLine(), nil
+	case "voice-recognition-fill":
+		return VoiceRecognitionFill(), nil
+	case "voice-recognition-line":
+		return VoiceRecognitionLine(), nil
+	case "voiceprint-fill":
+		return VoiceprintFill(), nil
+	case "voiceprint-line":
+		return VoiceprintLine(), nil
+	case "volume-down-fill":
+		return VolumeDownFill(), nil
+	case "volume-down-line":
+		return VolumeDownLine(), nil
+	case "volume-mute-fill":
+		return VolumeMuteFill(), nil
+	case "volume-mute-line":
+		return VolumeMuteLine(), nil
+	case "volume-off-vibrate-fill":
+		return VolumeOffVibrateFill(), nil
+	case "volume-off-vibrate-line":
+		return VolumeOffVibrateLine(), nil
+	case "volume-up-fill":
+		return VolumeUpFill(), nil
+	case "volume-up-line":
+		return VolumeUpLine(), nil
+	case "volume-vibrate-fill":
+		return VolumeVibrateFill(), nil
+	case "volume-vibrate-line":
+		return VolumeVibrateLine(), nil
+	case "vuejs-fill":
+		return VuejsFill(), nil
+	case "vuejs-line":
+		return VuejsLine(), nil
+	case "walk-fill":
+		return WalkFill(), nil
+	case "walk-line":
+		return WalkLine(), nil
+	case "wallet-fill":
+		return WalletFill(), nil
+	case "wallet-line":
+		return WalletLine(), nil
+	case "wallet-3-fill":
+		return WalletThreeFill(), nil
+	case "wallet-3-line":
+		return WalletThreeLine(), nil
+	case "wallet-2-fill":
+		return WalletTwoFill(), nil
+	case "wallet-2-line":
+		return WalletTwoLine(), nil
+	case "water-flash-fill":
+		return WaterFlashFill(), nil
+	case "water-flash-line":
+		return WaterFlashLine(), nil
+	case "webcam-fill":
+		return WebcamFill(), nil
+	case "webcam-line":
+		return WebcamLine(), nil
+	case "wechat-fill":
+		return WechatFill(), nil
+	case "wechat-line":
+		return WechatLine(), nil
+	case "wechat-pay-fill":
+		return WechatPayFill(), nil
+	case "wechat-pay-line":
+		return WechatPayLine(), nil
+	case "wechat-2-fill":
+		return WechatTwoFill(), nil
+	case "wechat-2-line":
+		return WechatTwoLine(), nil
+	case "weibo-fill":
+		return WeiboFill(), nil
+	case "weibo-line":
+		return WeiboLine(), nil
+	case "whatsapp-fill":
+		return WhatsappFill(), nil
+	case "whatsapp-line":
+		return WhatsappLine(), nil
+	case "wheelchair-fill":
+		return WheelchairFill(), nil
+	case "wheelchair-line":
+		return WheelchairLine(), nil
+	case "wifi-fill":
+		return WifiFill(), nil
+	case "wifi-line":
+		return WifiLine(), nil
+	case "wifi-off-fill":
+		return WifiOffFill(), nil
+	case "wifi-off-line":
+		return WifiOffLine(), nil
+	case "window-fill":
+		return WindowFill(), nil
+	case "window-line":
+		return WindowLine(), nil
+	case "window-2-fill":
+		return WindowTwoFill(), nil
+	case "window-2-line":
+		return WindowTwoLine(), nil
+	case "windows-fill":
+		return WindowsFill(), nil
+	case "windows-line":
+		return WindowsLine(), nil
+	case "windy-fill":
+		return WindyFill(), nil
+	case "windy-line":
+		return WindyLine(), nil
+	case "wireless-charging-fill":
+		return WirelessChargingFill(), nil
+	case "wireless-charging-line":
+		return WirelessChargingLine(), nil
+	case "women-fill":
+		return WomenFill(), nil
+	case "women-line":
+		return WomenLine(), nil
+	case "wubi-input":
+		return WubiInput(), nil
+	case "xbox-fill":
+		return XboxFill(), nil
+	case "xbox-line":
+		return XboxLine(), nil
+	case "xing-fill":
+		return XingFill(), nil
+	case "xing-line":
+		return XingLine(), nil
+	case "youtube-fill":
+		return YoutubeFill(), nil
+	case "youtube-line":
+		return YoutubeLine(), nil
+	case "zcool-fill":
+		return ZcoolFill(), nil
+	case "zcool-line":
+		return ZcoolLine(), nil
+	case "zhihu-fill":
+		return ZhihuFill(), nil
+	case "zhihu-line":
+		return ZhihuLine(), nil
+	case "zoom-in-fill":
+		return ZoomInFill(), nil
+	case "zoom-in-line":
+		return ZoomInLine(), nil
+	case "zoom-out-fill":
+		return ZoomOutFill(), nil
+	case "zoom-out-line":
+		return ZoomOutLine(), nil
+	case "zzz-fill":
+		return ZzzFill(), nil
+	case "zzz-line":
+		return ZzzLine(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in ri icon set", name)
+	}
 }

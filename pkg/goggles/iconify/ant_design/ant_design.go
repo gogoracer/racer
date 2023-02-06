@@ -1,6 +1,9 @@
 package ant_design
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	accountBookFilledInnerSVG            = `<path fill="currentColor" d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zM648.3 426.8l-87.7 161.1h45.7c5.5 0 10 4.5 10 10v21.3c0 5.5-4.5 10-10 10h-63.4v29.7h63.4c5.5 0 10 4.5 10 10v21.3c0 5.5-4.5 10-10 10h-63.4V752c0 5.5-4.5 10-10 10h-41.3c-5.5 0-10-4.5-10-10v-51.8h-63.1c-5.5 0-10-4.5-10-10v-21.3c0-5.5 4.5-10 10-10h63.1v-29.7h-63.1c-5.5 0-10-4.5-10-10v-21.3c0-5.5 4.5-10 10-10h45.2l-88-161.1c-2.6-4.8-.9-10.9 4-13.6c1.5-.8 3.1-1.2 4.8-1.2h46c3.8 0 7.2 2.1 8.9 5.5l72.9 144.3l73.2-144.3a10 10 0 0 1 8.9-5.5h45c5.5 0 10 4.5 10 10c.1 1.7-.3 3.3-1.1 4.8z"/>`
@@ -10262,4 +10265,1589 @@ func ZoomOutOutlined(children ...any) *engine.HTMLElement {
 		zoomOutOutlinedInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "account-book-filled":
+		return AccountBookFilled(), nil
+	case "account-book-outlined":
+		return AccountBookOutlined(), nil
+	case "account-book-twotone":
+		return AccountBookTwotone(), nil
+	case "aim-outlined":
+		return AimOutlined(), nil
+	case "alert-filled":
+		return AlertFilled(), nil
+	case "alert-outlined":
+		return AlertOutlined(), nil
+	case "alert-twotone":
+		return AlertTwotone(), nil
+	case "alibaba-outlined":
+		return AlibabaOutlined(), nil
+	case "align-center-outlined":
+		return AlignCenterOutlined(), nil
+	case "align-left-outlined":
+		return AlignLeftOutlined(), nil
+	case "align-right-outlined":
+		return AlignRightOutlined(), nil
+	case "alipay-circle-filled":
+		return AlipayCircleFilled(), nil
+	case "alipay-circle-outlined":
+		return AlipayCircleOutlined(), nil
+	case "alipay-outlined":
+		return AlipayOutlined(), nil
+	case "alipay-square-filled":
+		return AlipaySquareFilled(), nil
+	case "aliwangwang-filled":
+		return AliwangwangFilled(), nil
+	case "aliwangwang-outlined":
+		return AliwangwangOutlined(), nil
+	case "aliyun-outlined":
+		return AliyunOutlined(), nil
+	case "amazon-circle-filled":
+		return AmazonCircleFilled(), nil
+	case "amazon-outlined":
+		return AmazonOutlined(), nil
+	case "amazon-square-filled":
+		return AmazonSquareFilled(), nil
+	case "android-filled":
+		return AndroidFilled(), nil
+	case "android-outlined":
+		return AndroidOutlined(), nil
+	case "ant-cloud-outlined":
+		return AntCloudOutlined(), nil
+	case "ant-design-outlined":
+		return AntDesignOutlined(), nil
+	case "apartment-outlined":
+		return ApartmentOutlined(), nil
+	case "api-filled":
+		return ApiFilled(), nil
+	case "api-outlined":
+		return ApiOutlined(), nil
+	case "api-twotone":
+		return ApiTwotone(), nil
+	case "apple-filled":
+		return AppleFilled(), nil
+	case "apple-outlined":
+		return AppleOutlined(), nil
+	case "appstore-add-outlined":
+		return AppstoreAddOutlined(), nil
+	case "appstore-filled":
+		return AppstoreFilled(), nil
+	case "appstore-outlined":
+		return AppstoreOutlined(), nil
+	case "appstore-twotone":
+		return AppstoreTwotone(), nil
+	case "area-chart-outlined":
+		return AreaChartOutlined(), nil
+	case "arrow-down-outlined":
+		return ArrowDownOutlined(), nil
+	case "arrow-left-outlined":
+		return ArrowLeftOutlined(), nil
+	case "arrow-right-outlined":
+		return ArrowRightOutlined(), nil
+	case "arrow-up-outlined":
+		return ArrowUpOutlined(), nil
+	case "arrows-alt-outlined":
+		return ArrowsAltOutlined(), nil
+	case "audio-filled":
+		return AudioFilled(), nil
+	case "audio-muted-outlined":
+		return AudioMutedOutlined(), nil
+	case "audio-outlined":
+		return AudioOutlined(), nil
+	case "audio-twotone":
+		return AudioTwotone(), nil
+	case "audit-outlined":
+		return AuditOutlined(), nil
+	case "backward-filled":
+		return BackwardFilled(), nil
+	case "backward-outlined":
+		return BackwardOutlined(), nil
+	case "bank-filled":
+		return BankFilled(), nil
+	case "bank-outlined":
+		return BankOutlined(), nil
+	case "bank-twotone":
+		return BankTwotone(), nil
+	case "bar-chart-outlined":
+		return BarChartOutlined(), nil
+	case "barcode-outlined":
+		return BarcodeOutlined(), nil
+	case "bars-outlined":
+		return BarsOutlined(), nil
+	case "behance-circle-filled":
+		return BehanceCircleFilled(), nil
+	case "behance-outlined":
+		return BehanceOutlined(), nil
+	case "behance-square-filled":
+		return BehanceSquareFilled(), nil
+	case "behance-square-outlined":
+		return BehanceSquareOutlined(), nil
+	case "bell-filled":
+		return BellFilled(), nil
+	case "bell-outlined":
+		return BellOutlined(), nil
+	case "bell-twotone":
+		return BellTwotone(), nil
+	case "bg-colors-outlined":
+		return BgColorsOutlined(), nil
+	case "block-outlined":
+		return BlockOutlined(), nil
+	case "bold-outlined":
+		return BoldOutlined(), nil
+	case "book-filled":
+		return BookFilled(), nil
+	case "book-outlined":
+		return BookOutlined(), nil
+	case "book-twotone":
+		return BookTwotone(), nil
+	case "border-bottom-outlined":
+		return BorderBottomOutlined(), nil
+	case "border-horizontal-outlined":
+		return BorderHorizontalOutlined(), nil
+	case "border-inner-outlined":
+		return BorderInnerOutlined(), nil
+	case "border-left-outlined":
+		return BorderLeftOutlined(), nil
+	case "border-outer-outlined":
+		return BorderOuterOutlined(), nil
+	case "border-outlined":
+		return BorderOutlined(), nil
+	case "border-right-outlined":
+		return BorderRightOutlined(), nil
+	case "border-top-outlined":
+		return BorderTopOutlined(), nil
+	case "border-verticle-outlined":
+		return BorderVerticleOutlined(), nil
+	case "borderless-table-outlined":
+		return BorderlessTableOutlined(), nil
+	case "box-plot-filled":
+		return BoxPlotFilled(), nil
+	case "box-plot-outlined":
+		return BoxPlotOutlined(), nil
+	case "box-plot-twotone":
+		return BoxPlotTwotone(), nil
+	case "branches-outlined":
+		return BranchesOutlined(), nil
+	case "bug-filled":
+		return BugFilled(), nil
+	case "bug-outlined":
+		return BugOutlined(), nil
+	case "bug-twotone":
+		return BugTwotone(), nil
+	case "build-filled":
+		return BuildFilled(), nil
+	case "build-outlined":
+		return BuildOutlined(), nil
+	case "build-twotone":
+		return BuildTwotone(), nil
+	case "bulb-filled":
+		return BulbFilled(), nil
+	case "bulb-outlined":
+		return BulbOutlined(), nil
+	case "bulb-twotone":
+		return BulbTwotone(), nil
+	case "calculator-filled":
+		return CalculatorFilled(), nil
+	case "calculator-outlined":
+		return CalculatorOutlined(), nil
+	case "calculator-twotone":
+		return CalculatorTwotone(), nil
+	case "calendar-filled":
+		return CalendarFilled(), nil
+	case "calendar-outlined":
+		return CalendarOutlined(), nil
+	case "calendar-twotone":
+		return CalendarTwotone(), nil
+	case "camera-filled":
+		return CameraFilled(), nil
+	case "camera-outlined":
+		return CameraOutlined(), nil
+	case "camera-twotone":
+		return CameraTwotone(), nil
+	case "car-filled":
+		return CarFilled(), nil
+	case "car-outlined":
+		return CarOutlined(), nil
+	case "car-twotone":
+		return CarTwotone(), nil
+	case "caret-down-filled":
+		return CaretDownFilled(), nil
+	case "caret-down-outlined":
+		return CaretDownOutlined(), nil
+	case "caret-left-filled":
+		return CaretLeftFilled(), nil
+	case "caret-left-outlined":
+		return CaretLeftOutlined(), nil
+	case "caret-right-filled":
+		return CaretRightFilled(), nil
+	case "caret-right-outlined":
+		return CaretRightOutlined(), nil
+	case "caret-up-filled":
+		return CaretUpFilled(), nil
+	case "caret-up-outlined":
+		return CaretUpOutlined(), nil
+	case "carry-out-filled":
+		return CarryOutFilled(), nil
+	case "carry-out-outlined":
+		return CarryOutOutlined(), nil
+	case "carry-out-twotone":
+		return CarryOutTwotone(), nil
+	case "check-circle-filled":
+		return CheckCircleFilled(), nil
+	case "check-circle-outlined":
+		return CheckCircleOutlined(), nil
+	case "check-circle-twotone":
+		return CheckCircleTwotone(), nil
+	case "check-outlined":
+		return CheckOutlined(), nil
+	case "check-square-filled":
+		return CheckSquareFilled(), nil
+	case "check-square-outlined":
+		return CheckSquareOutlined(), nil
+	case "check-square-twotone":
+		return CheckSquareTwotone(), nil
+	case "chrome-filled":
+		return ChromeFilled(), nil
+	case "chrome-outlined":
+		return ChromeOutlined(), nil
+	case "ci-circle-filled":
+		return CiCircleFilled(), nil
+	case "ci-circle-outlined":
+		return CiCircleOutlined(), nil
+	case "ci-circle-twotone":
+		return CiCircleTwotone(), nil
+	case "ci-outlined":
+		return CiOutlined(), nil
+	case "ci-twotone":
+		return CiTwotone(), nil
+	case "clear-outlined":
+		return ClearOutlined(), nil
+	case "clock-circle-filled":
+		return ClockCircleFilled(), nil
+	case "clock-circle-outlined":
+		return ClockCircleOutlined(), nil
+	case "clock-circle-twotone":
+		return ClockCircleTwotone(), nil
+	case "close-circle-filled":
+		return CloseCircleFilled(), nil
+	case "close-circle-outlined":
+		return CloseCircleOutlined(), nil
+	case "close-circle-twotone":
+		return CloseCircleTwotone(), nil
+	case "close-outlined":
+		return CloseOutlined(), nil
+	case "close-square-filled":
+		return CloseSquareFilled(), nil
+	case "close-square-outlined":
+		return CloseSquareOutlined(), nil
+	case "close-square-twotone":
+		return CloseSquareTwotone(), nil
+	case "cloud-download-outlined":
+		return CloudDownloadOutlined(), nil
+	case "cloud-filled":
+		return CloudFilled(), nil
+	case "cloud-outlined":
+		return CloudOutlined(), nil
+	case "cloud-server-outlined":
+		return CloudServerOutlined(), nil
+	case "cloud-sync-outlined":
+		return CloudSyncOutlined(), nil
+	case "cloud-twotone":
+		return CloudTwotone(), nil
+	case "cloud-upload-outlined":
+		return CloudUploadOutlined(), nil
+	case "cluster-outlined":
+		return ClusterOutlined(), nil
+	case "code-filled":
+		return CodeFilled(), nil
+	case "code-outlined":
+		return CodeOutlined(), nil
+	case "code-sandbox-circle-filled":
+		return CodeSandboxCircleFilled(), nil
+	case "code-sandbox-outlined":
+		return CodeSandboxOutlined(), nil
+	case "code-sandbox-square-filled":
+		return CodeSandboxSquareFilled(), nil
+	case "code-twotone":
+		return CodeTwotone(), nil
+	case "codepen-circle-filled":
+		return CodepenCircleFilled(), nil
+	case "codepen-circle-outlined":
+		return CodepenCircleOutlined(), nil
+	case "codepen-outlined":
+		return CodepenOutlined(), nil
+	case "codepen-square-filled":
+		return CodepenSquareFilled(), nil
+	case "coffee-outlined":
+		return CoffeeOutlined(), nil
+	case "column-height-outlined":
+		return ColumnHeightOutlined(), nil
+	case "column-width-outlined":
+		return ColumnWidthOutlined(), nil
+	case "comment-outlined":
+		return CommentOutlined(), nil
+	case "compass-filled":
+		return CompassFilled(), nil
+	case "compass-outlined":
+		return CompassOutlined(), nil
+	case "compass-twotone":
+		return CompassTwotone(), nil
+	case "compress-outlined":
+		return CompressOutlined(), nil
+	case "console-sql-outlined":
+		return ConsoleSqlOutlined(), nil
+	case "contacts-filled":
+		return ContactsFilled(), nil
+	case "contacts-outlined":
+		return ContactsOutlined(), nil
+	case "contacts-twotone":
+		return ContactsTwotone(), nil
+	case "container-filled":
+		return ContainerFilled(), nil
+	case "container-outlined":
+		return ContainerOutlined(), nil
+	case "container-twotone":
+		return ContainerTwotone(), nil
+	case "control-filled":
+		return ControlFilled(), nil
+	case "control-outlined":
+		return ControlOutlined(), nil
+	case "control-twotone":
+		return ControlTwotone(), nil
+	case "copy-filled":
+		return CopyFilled(), nil
+	case "copy-outlined":
+		return CopyOutlined(), nil
+	case "copy-twotone":
+		return CopyTwotone(), nil
+	case "copyright-circle-filled":
+		return CopyrightCircleFilled(), nil
+	case "copyright-circle-outlined":
+		return CopyrightCircleOutlined(), nil
+	case "copyright-circle-twotone":
+		return CopyrightCircleTwotone(), nil
+	case "copyright-outlined":
+		return CopyrightOutlined(), nil
+	case "copyright-twotone":
+		return CopyrightTwotone(), nil
+	case "credit-card-filled":
+		return CreditCardFilled(), nil
+	case "credit-card-outlined":
+		return CreditCardOutlined(), nil
+	case "credit-card-twotone":
+		return CreditCardTwotone(), nil
+	case "crown-filled":
+		return CrownFilled(), nil
+	case "crown-outlined":
+		return CrownOutlined(), nil
+	case "crown-twotone":
+		return CrownTwotone(), nil
+	case "customer-service-filled":
+		return CustomerServiceFilled(), nil
+	case "customer-service-outlined":
+		return CustomerServiceOutlined(), nil
+	case "customer-service-twotone":
+		return CustomerServiceTwotone(), nil
+	case "dash-outlined":
+		return DashOutlined(), nil
+	case "dashboard-filled":
+		return DashboardFilled(), nil
+	case "dashboard-outlined":
+		return DashboardOutlined(), nil
+	case "dashboard-twotone":
+		return DashboardTwotone(), nil
+	case "database-filled":
+		return DatabaseFilled(), nil
+	case "database-outlined":
+		return DatabaseOutlined(), nil
+	case "database-twotone":
+		return DatabaseTwotone(), nil
+	case "delete-column-outlined":
+		return DeleteColumnOutlined(), nil
+	case "delete-filled":
+		return DeleteFilled(), nil
+	case "delete-outlined":
+		return DeleteOutlined(), nil
+	case "delete-row-outlined":
+		return DeleteRowOutlined(), nil
+	case "delete-twotone":
+		return DeleteTwotone(), nil
+	case "delivered-procedure-outlined":
+		return DeliveredProcedureOutlined(), nil
+	case "deployment-unit-outlined":
+		return DeploymentUnitOutlined(), nil
+	case "desktop-outlined":
+		return DesktopOutlined(), nil
+	case "diff-filled":
+		return DiffFilled(), nil
+	case "diff-outlined":
+		return DiffOutlined(), nil
+	case "diff-twotone":
+		return DiffTwotone(), nil
+	case "dingding-outlined":
+		return DingdingOutlined(), nil
+	case "dingtalk-circle-filled":
+		return DingtalkCircleFilled(), nil
+	case "dingtalk-outlined":
+		return DingtalkOutlined(), nil
+	case "dingtalk-square-filled":
+		return DingtalkSquareFilled(), nil
+	case "disconnect-outlined":
+		return DisconnectOutlined(), nil
+	case "dislike-filled":
+		return DislikeFilled(), nil
+	case "dislike-outlined":
+		return DislikeOutlined(), nil
+	case "dislike-twotone":
+		return DislikeTwotone(), nil
+	case "dollar-circle-filled":
+		return DollarCircleFilled(), nil
+	case "dollar-circle-outlined":
+		return DollarCircleOutlined(), nil
+	case "dollar-circle-twotone":
+		return DollarCircleTwotone(), nil
+	case "dollar-outlined":
+		return DollarOutlined(), nil
+	case "dollar-twotone":
+		return DollarTwotone(), nil
+	case "dot-chart-outlined":
+		return DotChartOutlined(), nil
+	case "double-left-outlined":
+		return DoubleLeftOutlined(), nil
+	case "double-right-outlined":
+		return DoubleRightOutlined(), nil
+	case "down-circle-filled":
+		return DownCircleFilled(), nil
+	case "down-circle-outlined":
+		return DownCircleOutlined(), nil
+	case "down-circle-twotone":
+		return DownCircleTwotone(), nil
+	case "down-outlined":
+		return DownOutlined(), nil
+	case "down-square-filled":
+		return DownSquareFilled(), nil
+	case "down-square-outlined":
+		return DownSquareOutlined(), nil
+	case "down-square-twotone":
+		return DownSquareTwotone(), nil
+	case "download-outlined":
+		return DownloadOutlined(), nil
+	case "drag-outlined":
+		return DragOutlined(), nil
+	case "dribbble-circle-filled":
+		return DribbbleCircleFilled(), nil
+	case "dribbble-outlined":
+		return DribbbleOutlined(), nil
+	case "dribbble-square-filled":
+		return DribbbleSquareFilled(), nil
+	case "dribbble-square-outlined":
+		return DribbbleSquareOutlined(), nil
+	case "dropbox-circle-filled":
+		return DropboxCircleFilled(), nil
+	case "dropbox-outlined":
+		return DropboxOutlined(), nil
+	case "dropbox-square-filled":
+		return DropboxSquareFilled(), nil
+	case "edit-filled":
+		return EditFilled(), nil
+	case "edit-outlined":
+		return EditOutlined(), nil
+	case "edit-twotone":
+		return EditTwotone(), nil
+	case "ellipsis-outlined":
+		return EllipsisOutlined(), nil
+	case "enter-outlined":
+		return EnterOutlined(), nil
+	case "environment-filled":
+		return EnvironmentFilled(), nil
+	case "environment-outlined":
+		return EnvironmentOutlined(), nil
+	case "environment-twotone":
+		return EnvironmentTwotone(), nil
+	case "euro-circle-filled":
+		return EuroCircleFilled(), nil
+	case "euro-circle-outlined":
+		return EuroCircleOutlined(), nil
+	case "euro-circle-twotone":
+		return EuroCircleTwotone(), nil
+	case "euro-outlined":
+		return EuroOutlined(), nil
+	case "euro-twotone":
+		return EuroTwotone(), nil
+	case "exception-outlined":
+		return ExceptionOutlined(), nil
+	case "exclamation-circle-filled":
+		return ExclamationCircleFilled(), nil
+	case "exclamation-circle-outlined":
+		return ExclamationCircleOutlined(), nil
+	case "exclamation-circle-twotone":
+		return ExclamationCircleTwotone(), nil
+	case "exclamation-outlined":
+		return ExclamationOutlined(), nil
+	case "expand-alt-outlined":
+		return ExpandAltOutlined(), nil
+	case "expand-outlined":
+		return ExpandOutlined(), nil
+	case "experiment-filled":
+		return ExperimentFilled(), nil
+	case "experiment-outlined":
+		return ExperimentOutlined(), nil
+	case "experiment-twotone":
+		return ExperimentTwotone(), nil
+	case "export-outlined":
+		return ExportOutlined(), nil
+	case "eye-filled":
+		return EyeFilled(), nil
+	case "eye-invisible-filled":
+		return EyeInvisibleFilled(), nil
+	case "eye-invisible-outlined":
+		return EyeInvisibleOutlined(), nil
+	case "eye-invisible-twotone":
+		return EyeInvisibleTwotone(), nil
+	case "eye-outlined":
+		return EyeOutlined(), nil
+	case "eye-twotone":
+		return EyeTwotone(), nil
+	case "facebook-filled":
+		return FacebookFilled(), nil
+	case "facebook-outlined":
+		return FacebookOutlined(), nil
+	case "fall-outlined":
+		return FallOutlined(), nil
+	case "fast-backward-filled":
+		return FastBackwardFilled(), nil
+	case "fast-backward-outlined":
+		return FastBackwardOutlined(), nil
+	case "fast-forward-filled":
+		return FastForwardFilled(), nil
+	case "fast-forward-outlined":
+		return FastForwardOutlined(), nil
+	case "field-binary-outlined":
+		return FieldBinaryOutlined(), nil
+	case "field-number-outlined":
+		return FieldNumberOutlined(), nil
+	case "field-string-outlined":
+		return FieldStringOutlined(), nil
+	case "field-time-outlined":
+		return FieldTimeOutlined(), nil
+	case "file-add-filled":
+		return FileAddFilled(), nil
+	case "file-add-outlined":
+		return FileAddOutlined(), nil
+	case "file-add-twotone":
+		return FileAddTwotone(), nil
+	case "file-done-outlined":
+		return FileDoneOutlined(), nil
+	case "file-excel-filled":
+		return FileExcelFilled(), nil
+	case "file-excel-outlined":
+		return FileExcelOutlined(), nil
+	case "file-excel-twotone":
+		return FileExcelTwotone(), nil
+	case "file-exclamation-filled":
+		return FileExclamationFilled(), nil
+	case "file-exclamation-outlined":
+		return FileExclamationOutlined(), nil
+	case "file-exclamation-twotone":
+		return FileExclamationTwotone(), nil
+	case "file-filled":
+		return FileFilled(), nil
+	case "file-gif-outlined":
+		return FileGifOutlined(), nil
+	case "file-image-filled":
+		return FileImageFilled(), nil
+	case "file-image-outlined":
+		return FileImageOutlined(), nil
+	case "file-image-twotone":
+		return FileImageTwotone(), nil
+	case "file-jpg-outlined":
+		return FileJpgOutlined(), nil
+	case "file-markdown-filled":
+		return FileMarkdownFilled(), nil
+	case "file-markdown-outlined":
+		return FileMarkdownOutlined(), nil
+	case "file-markdown-twotone":
+		return FileMarkdownTwotone(), nil
+	case "file-outlined":
+		return FileOutlined(), nil
+	case "file-pdf-filled":
+		return FilePdfFilled(), nil
+	case "file-pdf-outlined":
+		return FilePdfOutlined(), nil
+	case "file-pdf-twotone":
+		return FilePdfTwotone(), nil
+	case "file-ppt-filled":
+		return FilePptFilled(), nil
+	case "file-ppt-outlined":
+		return FilePptOutlined(), nil
+	case "file-ppt-twotone":
+		return FilePptTwotone(), nil
+	case "file-protect-outlined":
+		return FileProtectOutlined(), nil
+	case "file-search-outlined":
+		return FileSearchOutlined(), nil
+	case "file-sync-outlined":
+		return FileSyncOutlined(), nil
+	case "file-text-filled":
+		return FileTextFilled(), nil
+	case "file-text-outlined":
+		return FileTextOutlined(), nil
+	case "file-text-twotone":
+		return FileTextTwotone(), nil
+	case "file-twotone":
+		return FileTwotone(), nil
+	case "file-unknown-filled":
+		return FileUnknownFilled(), nil
+	case "file-unknown-outlined":
+		return FileUnknownOutlined(), nil
+	case "file-unknown-twotone":
+		return FileUnknownTwotone(), nil
+	case "file-word-filled":
+		return FileWordFilled(), nil
+	case "file-word-outlined":
+		return FileWordOutlined(), nil
+	case "file-word-twotone":
+		return FileWordTwotone(), nil
+	case "file-zip-filled":
+		return FileZipFilled(), nil
+	case "file-zip-outlined":
+		return FileZipOutlined(), nil
+	case "file-zip-twotone":
+		return FileZipTwotone(), nil
+	case "filter-filled":
+		return FilterFilled(), nil
+	case "filter-outlined":
+		return FilterOutlined(), nil
+	case "filter-twotone":
+		return FilterTwotone(), nil
+	case "fire-filled":
+		return FireFilled(), nil
+	case "fire-outlined":
+		return FireOutlined(), nil
+	case "fire-twotone":
+		return FireTwotone(), nil
+	case "flag-filled":
+		return FlagFilled(), nil
+	case "flag-outlined":
+		return FlagOutlined(), nil
+	case "flag-twotone":
+		return FlagTwotone(), nil
+	case "folder-add-filled":
+		return FolderAddFilled(), nil
+	case "folder-add-outlined":
+		return FolderAddOutlined(), nil
+	case "folder-add-twotone":
+		return FolderAddTwotone(), nil
+	case "folder-filled":
+		return FolderFilled(), nil
+	case "folder-open-filled":
+		return FolderOpenFilled(), nil
+	case "folder-open-outlined":
+		return FolderOpenOutlined(), nil
+	case "folder-open-twotone":
+		return FolderOpenTwotone(), nil
+	case "folder-outlined":
+		return FolderOutlined(), nil
+	case "folder-twotone":
+		return FolderTwotone(), nil
+	case "folder-view-outlined":
+		return FolderViewOutlined(), nil
+	case "font-colors-outlined":
+		return FontColorsOutlined(), nil
+	case "font-size-outlined":
+		return FontSizeOutlined(), nil
+	case "fork-outlined":
+		return ForkOutlined(), nil
+	case "form-outlined":
+		return FormOutlined(), nil
+	case "format-painter-filled":
+		return FormatPainterFilled(), nil
+	case "format-painter-outlined":
+		return FormatPainterOutlined(), nil
+	case "forward-filled":
+		return ForwardFilled(), nil
+	case "forward-outlined":
+		return ForwardOutlined(), nil
+	case "frown-filled":
+		return FrownFilled(), nil
+	case "frown-outlined":
+		return FrownOutlined(), nil
+	case "frown-twotone":
+		return FrownTwotone(), nil
+	case "fullscreen-exit-outlined":
+		return FullscreenExitOutlined(), nil
+	case "fullscreen-outlined":
+		return FullscreenOutlined(), nil
+	case "function-outlined":
+		return FunctionOutlined(), nil
+	case "fund-filled":
+		return FundFilled(), nil
+	case "fund-outlined":
+		return FundOutlined(), nil
+	case "fund-projection-screen-outlined":
+		return FundProjectionScreenOutlined(), nil
+	case "fund-twotone":
+		return FundTwotone(), nil
+	case "fund-view-outlined":
+		return FundViewOutlined(), nil
+	case "funnel-plot-filled":
+		return FunnelPlotFilled(), nil
+	case "funnel-plot-outlined":
+		return FunnelPlotOutlined(), nil
+	case "funnel-plot-twotone":
+		return FunnelPlotTwotone(), nil
+	case "gateway-outlined":
+		return GatewayOutlined(), nil
+	case "gif-outlined":
+		return GifOutlined(), nil
+	case "gift-filled":
+		return GiftFilled(), nil
+	case "gift-outlined":
+		return GiftOutlined(), nil
+	case "gift-twotone":
+		return GiftTwotone(), nil
+	case "github-filled":
+		return GithubFilled(), nil
+	case "github-outlined":
+		return GithubOutlined(), nil
+	case "gitlab-filled":
+		return GitlabFilled(), nil
+	case "gitlab-outlined":
+		return GitlabOutlined(), nil
+	case "global-outlined":
+		return GlobalOutlined(), nil
+	case "gold-filled":
+		return GoldFilled(), nil
+	case "gold-outlined":
+		return GoldOutlined(), nil
+	case "gold-twotone":
+		return GoldTwotone(), nil
+	case "golden-filled":
+		return GoldenFilled(), nil
+	case "google-circle-filled":
+		return GoogleCircleFilled(), nil
+	case "google-outlined":
+		return GoogleOutlined(), nil
+	case "google-plus-circle-filled":
+		return GooglePlusCircleFilled(), nil
+	case "google-plus-outlined":
+		return GooglePlusOutlined(), nil
+	case "google-plus-square-filled":
+		return GooglePlusSquareFilled(), nil
+	case "google-square-filled":
+		return GoogleSquareFilled(), nil
+	case "group-outlined":
+		return GroupOutlined(), nil
+	case "hdd-filled":
+		return HddFilled(), nil
+	case "hdd-outlined":
+		return HddOutlined(), nil
+	case "hdd-twotone":
+		return HddTwotone(), nil
+	case "heart-filled":
+		return HeartFilled(), nil
+	case "heart-outlined":
+		return HeartOutlined(), nil
+	case "heart-twotone":
+		return HeartTwotone(), nil
+	case "heat-map-outlined":
+		return HeatMapOutlined(), nil
+	case "highlight-filled":
+		return HighlightFilled(), nil
+	case "highlight-outlined":
+		return HighlightOutlined(), nil
+	case "highlight-twotone":
+		return HighlightTwotone(), nil
+	case "history-outlined":
+		return HistoryOutlined(), nil
+	case "holder-outlined":
+		return HolderOutlined(), nil
+	case "home-filled":
+		return HomeFilled(), nil
+	case "home-outlined":
+		return HomeOutlined(), nil
+	case "home-twotone":
+		return HomeTwotone(), nil
+	case "hourglass-filled":
+		return HourglassFilled(), nil
+	case "hourglass-outlined":
+		return HourglassOutlined(), nil
+	case "hourglass-twotone":
+		return HourglassTwotone(), nil
+	case "html5-filled":
+		return HtmlFiveFilled(), nil
+	case "html5-outlined":
+		return HtmlFiveOutlined(), nil
+	case "html5-twotone":
+		return HtmlFiveTwotone(), nil
+	case "idcard-filled":
+		return IdcardFilled(), nil
+	case "idcard-outlined":
+		return IdcardOutlined(), nil
+	case "idcard-twotone":
+		return IdcardTwotone(), nil
+	case "ie-circle-filled":
+		return IeCircleFilled(), nil
+	case "ie-outlined":
+		return IeOutlined(), nil
+	case "ie-square-filled":
+		return IeSquareFilled(), nil
+	case "import-outlined":
+		return ImportOutlined(), nil
+	case "inbox-outlined":
+		return InboxOutlined(), nil
+	case "info-circle-filled":
+		return InfoCircleFilled(), nil
+	case "info-circle-outlined":
+		return InfoCircleOutlined(), nil
+	case "info-circle-twotone":
+		return InfoCircleTwotone(), nil
+	case "info-outlined":
+		return InfoOutlined(), nil
+	case "insert-row-above-outlined":
+		return InsertRowAboveOutlined(), nil
+	case "insert-row-below-outlined":
+		return InsertRowBelowOutlined(), nil
+	case "insert-row-left-outlined":
+		return InsertRowLeftOutlined(), nil
+	case "insert-row-right-outlined":
+		return InsertRowRightOutlined(), nil
+	case "instagram-filled":
+		return InstagramFilled(), nil
+	case "instagram-outlined":
+		return InstagramOutlined(), nil
+	case "insurance-filled":
+		return InsuranceFilled(), nil
+	case "insurance-outlined":
+		return InsuranceOutlined(), nil
+	case "insurance-twotone":
+		return InsuranceTwotone(), nil
+	case "interaction-filled":
+		return InteractionFilled(), nil
+	case "interaction-outlined":
+		return InteractionOutlined(), nil
+	case "interaction-twotone":
+		return InteractionTwotone(), nil
+	case "issues-close-outlined":
+		return IssuesCloseOutlined(), nil
+	case "italic-outlined":
+		return ItalicOutlined(), nil
+	case "key-outlined":
+		return KeyOutlined(), nil
+	case "laptop-outlined":
+		return LaptopOutlined(), nil
+	case "layout-filled":
+		return LayoutFilled(), nil
+	case "layout-outlined":
+		return LayoutOutlined(), nil
+	case "layout-twotone":
+		return LayoutTwotone(), nil
+	case "left-circle-filled":
+		return LeftCircleFilled(), nil
+	case "left-circle-outlined":
+		return LeftCircleOutlined(), nil
+	case "left-circle-twotone":
+		return LeftCircleTwotone(), nil
+	case "left-outlined":
+		return LeftOutlined(), nil
+	case "left-square-filled":
+		return LeftSquareFilled(), nil
+	case "left-square-outlined":
+		return LeftSquareOutlined(), nil
+	case "left-square-twotone":
+		return LeftSquareTwotone(), nil
+	case "like-filled":
+		return LikeFilled(), nil
+	case "like-outlined":
+		return LikeOutlined(), nil
+	case "like-twotone":
+		return LikeTwotone(), nil
+	case "line-chart-outlined":
+		return LineChartOutlined(), nil
+	case "line-height-outlined":
+		return LineHeightOutlined(), nil
+	case "line-outlined":
+		return LineOutlined(), nil
+	case "link-outlined":
+		return LinkOutlined(), nil
+	case "linkedin-filled":
+		return LinkedinFilled(), nil
+	case "linkedin-outlined":
+		return LinkedinOutlined(), nil
+	case "loading-outlined":
+		return LoadingOutlined(), nil
+	case "loading-3-quarters-outlined":
+		return LoadingThreeQuartersOutlined(), nil
+	case "lock-filled":
+		return LockFilled(), nil
+	case "lock-outlined":
+		return LockOutlined(), nil
+	case "lock-twotone":
+		return LockTwotone(), nil
+	case "login-outlined":
+		return LoginOutlined(), nil
+	case "logout-outlined":
+		return LogoutOutlined(), nil
+	case "mac-command-filled":
+		return MacCommandFilled(), nil
+	case "mac-command-outlined":
+		return MacCommandOutlined(), nil
+	case "mail-filled":
+		return MailFilled(), nil
+	case "mail-outlined":
+		return MailOutlined(), nil
+	case "mail-twotone":
+		return MailTwotone(), nil
+	case "man-outlined":
+		return ManOutlined(), nil
+	case "medicine-box-filled":
+		return MedicineBoxFilled(), nil
+	case "medicine-box-outlined":
+		return MedicineBoxOutlined(), nil
+	case "medicine-box-twotone":
+		return MedicineBoxTwotone(), nil
+	case "medium-circle-filled":
+		return MediumCircleFilled(), nil
+	case "medium-outlined":
+		return MediumOutlined(), nil
+	case "medium-square-filled":
+		return MediumSquareFilled(), nil
+	case "medium-workmark-outlined":
+		return MediumWorkmarkOutlined(), nil
+	case "meh-filled":
+		return MehFilled(), nil
+	case "meh-outlined":
+		return MehOutlined(), nil
+	case "meh-twotone":
+		return MehTwotone(), nil
+	case "menu-fold-outlined":
+		return MenuFoldOutlined(), nil
+	case "menu-outlined":
+		return MenuOutlined(), nil
+	case "menu-unfold-outlined":
+		return MenuUnfoldOutlined(), nil
+	case "merge-cells-outlined":
+		return MergeCellsOutlined(), nil
+	case "message-filled":
+		return MessageFilled(), nil
+	case "message-outlined":
+		return MessageOutlined(), nil
+	case "message-twotone":
+		return MessageTwotone(), nil
+	case "minus-circle-filled":
+		return MinusCircleFilled(), nil
+	case "minus-circle-outlined":
+		return MinusCircleOutlined(), nil
+	case "minus-circle-twotone":
+		return MinusCircleTwotone(), nil
+	case "minus-outlined":
+		return MinusOutlined(), nil
+	case "minus-square-filled":
+		return MinusSquareFilled(), nil
+	case "minus-square-outlined":
+		return MinusSquareOutlined(), nil
+	case "minus-square-twotone":
+		return MinusSquareTwotone(), nil
+	case "mobile-filled":
+		return MobileFilled(), nil
+	case "mobile-outlined":
+		return MobileOutlined(), nil
+	case "mobile-twotone":
+		return MobileTwotone(), nil
+	case "money-collect-filled":
+		return MoneyCollectFilled(), nil
+	case "money-collect-outlined":
+		return MoneyCollectOutlined(), nil
+	case "money-collect-twotone":
+		return MoneyCollectTwotone(), nil
+	case "monitor-outlined":
+		return MonitorOutlined(), nil
+	case "more-outlined":
+		return MoreOutlined(), nil
+	case "node-collapse-outlined":
+		return NodeCollapseOutlined(), nil
+	case "node-expand-outlined":
+		return NodeExpandOutlined(), nil
+	case "node-index-outlined":
+		return NodeIndexOutlined(), nil
+	case "notification-filled":
+		return NotificationFilled(), nil
+	case "notification-outlined":
+		return NotificationOutlined(), nil
+	case "notification-twotone":
+		return NotificationTwotone(), nil
+	case "number-outlined":
+		return NumberOutlined(), nil
+	case "one-to-one-outlined":
+		return OneToOneOutlined(), nil
+	case "ordered-list-outlined":
+		return OrderedListOutlined(), nil
+	case "paper-clip-outlined":
+		return PaperClipOutlined(), nil
+	case "partition-outlined":
+		return PartitionOutlined(), nil
+	case "pause-circle-filled":
+		return PauseCircleFilled(), nil
+	case "pause-circle-outlined":
+		return PauseCircleOutlined(), nil
+	case "pause-circle-twotone":
+		return PauseCircleTwotone(), nil
+	case "pause-outlined":
+		return PauseOutlined(), nil
+	case "pay-circle-filled":
+		return PayCircleFilled(), nil
+	case "pay-circle-outlined":
+		return PayCircleOutlined(), nil
+	case "percentage-outlined":
+		return PercentageOutlined(), nil
+	case "phone-filled":
+		return PhoneFilled(), nil
+	case "phone-outlined":
+		return PhoneOutlined(), nil
+	case "phone-twotone":
+		return PhoneTwotone(), nil
+	case "pic-center-outlined":
+		return PicCenterOutlined(), nil
+	case "pic-left-outlined":
+		return PicLeftOutlined(), nil
+	case "pic-right-outlined":
+		return PicRightOutlined(), nil
+	case "picture-filled":
+		return PictureFilled(), nil
+	case "picture-outlined":
+		return PictureOutlined(), nil
+	case "picture-twotone":
+		return PictureTwotone(), nil
+	case "pie-chart-filled":
+		return PieChartFilled(), nil
+	case "pie-chart-outlined":
+		return PieChartOutlined(), nil
+	case "pie-chart-twotone":
+		return PieChartTwotone(), nil
+	case "play-circle-filled":
+		return PlayCircleFilled(), nil
+	case "play-circle-outlined":
+		return PlayCircleOutlined(), nil
+	case "play-circle-twotone":
+		return PlayCircleTwotone(), nil
+	case "play-square-filled":
+		return PlaySquareFilled(), nil
+	case "play-square-outlined":
+		return PlaySquareOutlined(), nil
+	case "play-square-twotone":
+		return PlaySquareTwotone(), nil
+	case "plus-circle-filled":
+		return PlusCircleFilled(), nil
+	case "plus-circle-outlined":
+		return PlusCircleOutlined(), nil
+	case "plus-circle-twotone":
+		return PlusCircleTwotone(), nil
+	case "plus-outlined":
+		return PlusOutlined(), nil
+	case "plus-square-filled":
+		return PlusSquareFilled(), nil
+	case "plus-square-outlined":
+		return PlusSquareOutlined(), nil
+	case "plus-square-twotone":
+		return PlusSquareTwotone(), nil
+	case "pound-circle-filled":
+		return PoundCircleFilled(), nil
+	case "pound-circle-outlined":
+		return PoundCircleOutlined(), nil
+	case "pound-circle-twotone":
+		return PoundCircleTwotone(), nil
+	case "pound-outlined":
+		return PoundOutlined(), nil
+	case "poweroff-outlined":
+		return PoweroffOutlined(), nil
+	case "printer-filled":
+		return PrinterFilled(), nil
+	case "printer-outlined":
+		return PrinterOutlined(), nil
+	case "printer-twotone":
+		return PrinterTwotone(), nil
+	case "profile-filled":
+		return ProfileFilled(), nil
+	case "profile-outlined":
+		return ProfileOutlined(), nil
+	case "profile-twotone":
+		return ProfileTwotone(), nil
+	case "project-filled":
+		return ProjectFilled(), nil
+	case "project-outlined":
+		return ProjectOutlined(), nil
+	case "project-twotone":
+		return ProjectTwotone(), nil
+	case "property-safety-filled":
+		return PropertySafetyFilled(), nil
+	case "property-safety-outlined":
+		return PropertySafetyOutlined(), nil
+	case "property-safety-twotone":
+		return PropertySafetyTwotone(), nil
+	case "pull-request-outlined":
+		return PullRequestOutlined(), nil
+	case "pushpin-filled":
+		return PushpinFilled(), nil
+	case "pushpin-outlined":
+		return PushpinOutlined(), nil
+	case "pushpin-twotone":
+		return PushpinTwotone(), nil
+	case "qq-circle-filled":
+		return QqCircleFilled(), nil
+	case "qq-outlined":
+		return QqOutlined(), nil
+	case "qq-square-filled":
+		return QqSquareFilled(), nil
+	case "qrcode-outlined":
+		return QrcodeOutlined(), nil
+	case "question-circle-filled":
+		return QuestionCircleFilled(), nil
+	case "question-circle-outlined":
+		return QuestionCircleOutlined(), nil
+	case "question-circle-twotone":
+		return QuestionCircleTwotone(), nil
+	case "question-outlined":
+		return QuestionOutlined(), nil
+	case "radar-chart-outlined":
+		return RadarChartOutlined(), nil
+	case "radius-bottomleft-outlined":
+		return RadiusBottomleftOutlined(), nil
+	case "radius-bottomright-outlined":
+		return RadiusBottomrightOutlined(), nil
+	case "radius-setting-outlined":
+		return RadiusSettingOutlined(), nil
+	case "radius-upleft-outlined":
+		return RadiusUpleftOutlined(), nil
+	case "radius-upright-outlined":
+		return RadiusUprightOutlined(), nil
+	case "read-filled":
+		return ReadFilled(), nil
+	case "read-outlined":
+		return ReadOutlined(), nil
+	case "reconciliation-filled":
+		return ReconciliationFilled(), nil
+	case "reconciliation-outlined":
+		return ReconciliationOutlined(), nil
+	case "reconciliation-twotone":
+		return ReconciliationTwotone(), nil
+	case "red-envelope-filled":
+		return RedEnvelopeFilled(), nil
+	case "red-envelope-outlined":
+		return RedEnvelopeOutlined(), nil
+	case "red-envelope-twotone":
+		return RedEnvelopeTwotone(), nil
+	case "reddit-circle-filled":
+		return RedditCircleFilled(), nil
+	case "reddit-outlined":
+		return RedditOutlined(), nil
+	case "reddit-square-filled":
+		return RedditSquareFilled(), nil
+	case "redo-outlined":
+		return RedoOutlined(), nil
+	case "reload-outlined":
+		return ReloadOutlined(), nil
+	case "rest-filled":
+		return RestFilled(), nil
+	case "rest-outlined":
+		return RestOutlined(), nil
+	case "rest-twotone":
+		return RestTwotone(), nil
+	case "retweet-outlined":
+		return RetweetOutlined(), nil
+	case "right-circle-filled":
+		return RightCircleFilled(), nil
+	case "right-circle-outlined":
+		return RightCircleOutlined(), nil
+	case "right-circle-twotone":
+		return RightCircleTwotone(), nil
+	case "right-outlined":
+		return RightOutlined(), nil
+	case "right-square-filled":
+		return RightSquareFilled(), nil
+	case "right-square-outlined":
+		return RightSquareOutlined(), nil
+	case "right-square-twotone":
+		return RightSquareTwotone(), nil
+	case "rise-outlined":
+		return RiseOutlined(), nil
+	case "robot-filled":
+		return RobotFilled(), nil
+	case "robot-outlined":
+		return RobotOutlined(), nil
+	case "rocket-filled":
+		return RocketFilled(), nil
+	case "rocket-outlined":
+		return RocketOutlined(), nil
+	case "rocket-twotone":
+		return RocketTwotone(), nil
+	case "rollback-outlined":
+		return RollbackOutlined(), nil
+	case "rotate-left-outlined":
+		return RotateLeftOutlined(), nil
+	case "rotate-right-outlined":
+		return RotateRightOutlined(), nil
+	case "safety-certificate-filled":
+		return SafetyCertificateFilled(), nil
+	case "safety-certificate-outlined":
+		return SafetyCertificateOutlined(), nil
+	case "safety-certificate-twotone":
+		return SafetyCertificateTwotone(), nil
+	case "safety-outlined":
+		return SafetyOutlined(), nil
+	case "save-filled":
+		return SaveFilled(), nil
+	case "save-outlined":
+		return SaveOutlined(), nil
+	case "save-twotone":
+		return SaveTwotone(), nil
+	case "scan-outlined":
+		return ScanOutlined(), nil
+	case "schedule-filled":
+		return ScheduleFilled(), nil
+	case "schedule-outlined":
+		return ScheduleOutlined(), nil
+	case "schedule-twotone":
+		return ScheduleTwotone(), nil
+	case "scissor-outlined":
+		return ScissorOutlined(), nil
+	case "search-outlined":
+		return SearchOutlined(), nil
+	case "security-scan-filled":
+		return SecurityScanFilled(), nil
+	case "security-scan-outlined":
+		return SecurityScanOutlined(), nil
+	case "security-scan-twotone":
+		return SecurityScanTwotone(), nil
+	case "select-outlined":
+		return SelectOutlined(), nil
+	case "send-outlined":
+		return SendOutlined(), nil
+	case "setting-filled":
+		return SettingFilled(), nil
+	case "setting-outlined":
+		return SettingOutlined(), nil
+	case "setting-twotone":
+		return SettingTwotone(), nil
+	case "shake-outlined":
+		return ShakeOutlined(), nil
+	case "share-alt-outlined":
+		return ShareAltOutlined(), nil
+	case "shop-filled":
+		return ShopFilled(), nil
+	case "shop-outlined":
+		return ShopOutlined(), nil
+	case "shop-twotone":
+		return ShopTwotone(), nil
+	case "shopping-cart-outlined":
+		return ShoppingCartOutlined(), nil
+	case "shopping-filled":
+		return ShoppingFilled(), nil
+	case "shopping-outlined":
+		return ShoppingOutlined(), nil
+	case "shopping-twotone":
+		return ShoppingTwotone(), nil
+	case "shrink-outlined":
+		return ShrinkOutlined(), nil
+	case "signal-filled":
+		return SignalFilled(), nil
+	case "sisternode-outlined":
+		return SisternodeOutlined(), nil
+	case "sketch-circle-filled":
+		return SketchCircleFilled(), nil
+	case "sketch-outlined":
+		return SketchOutlined(), nil
+	case "sketch-square-filled":
+		return SketchSquareFilled(), nil
+	case "skin-filled":
+		return SkinFilled(), nil
+	case "skin-outlined":
+		return SkinOutlined(), nil
+	case "skin-twotone":
+		return SkinTwotone(), nil
+	case "skype-filled":
+		return SkypeFilled(), nil
+	case "skype-outlined":
+		return SkypeOutlined(), nil
+	case "slack-circle-filled":
+		return SlackCircleFilled(), nil
+	case "slack-outlined":
+		return SlackOutlined(), nil
+	case "slack-square-filled":
+		return SlackSquareFilled(), nil
+	case "slack-square-outlined":
+		return SlackSquareOutlined(), nil
+	case "sliders-filled":
+		return SlidersFilled(), nil
+	case "sliders-outlined":
+		return SlidersOutlined(), nil
+	case "sliders-twotone":
+		return SlidersTwotone(), nil
+	case "small-dash-outlined":
+		return SmallDashOutlined(), nil
+	case "smile-filled":
+		return SmileFilled(), nil
+	case "smile-outlined":
+		return SmileOutlined(), nil
+	case "smile-twotone":
+		return SmileTwotone(), nil
+	case "snippets-filled":
+		return SnippetsFilled(), nil
+	case "snippets-outlined":
+		return SnippetsOutlined(), nil
+	case "snippets-twotone":
+		return SnippetsTwotone(), nil
+	case "solution-outlined":
+		return SolutionOutlined(), nil
+	case "sort-ascending-outlined":
+		return SortAscendingOutlined(), nil
+	case "sort-descending-outlined":
+		return SortDescendingOutlined(), nil
+	case "sound-filled":
+		return SoundFilled(), nil
+	case "sound-outlined":
+		return SoundOutlined(), nil
+	case "sound-twotone":
+		return SoundTwotone(), nil
+	case "split-cells-outlined":
+		return SplitCellsOutlined(), nil
+	case "star-filled":
+		return StarFilled(), nil
+	case "star-outlined":
+		return StarOutlined(), nil
+	case "star-twotone":
+		return StarTwotone(), nil
+	case "step-backward-filled":
+		return StepBackwardFilled(), nil
+	case "step-backward-outlined":
+		return StepBackwardOutlined(), nil
+	case "step-forward-filled":
+		return StepForwardFilled(), nil
+	case "step-forward-outlined":
+		return StepForwardOutlined(), nil
+	case "stock-outlined":
+		return StockOutlined(), nil
+	case "stop-filled":
+		return StopFilled(), nil
+	case "stop-outlined":
+		return StopOutlined(), nil
+	case "stop-twotone":
+		return StopTwotone(), nil
+	case "strikethrough-outlined":
+		return StrikethroughOutlined(), nil
+	case "subnode-outlined":
+		return SubnodeOutlined(), nil
+	case "swap-left-outlined":
+		return SwapLeftOutlined(), nil
+	case "swap-outlined":
+		return SwapOutlined(), nil
+	case "swap-right-outlined":
+		return SwapRightOutlined(), nil
+	case "switcher-filled":
+		return SwitcherFilled(), nil
+	case "switcher-outlined":
+		return SwitcherOutlined(), nil
+	case "switcher-twotone":
+		return SwitcherTwotone(), nil
+	case "sync-outlined":
+		return SyncOutlined(), nil
+	case "table-outlined":
+		return TableOutlined(), nil
+	case "tablet-filled":
+		return TabletFilled(), nil
+	case "tablet-outlined":
+		return TabletOutlined(), nil
+	case "tablet-twotone":
+		return TabletTwotone(), nil
+	case "tag-filled":
+		return TagFilled(), nil
+	case "tag-outlined":
+		return TagOutlined(), nil
+	case "tag-twotone":
+		return TagTwotone(), nil
+	case "tags-filled":
+		return TagsFilled(), nil
+	case "tags-outlined":
+		return TagsOutlined(), nil
+	case "tags-twotone":
+		return TagsTwotone(), nil
+	case "taobao-circle-filled":
+		return TaobaoCircleFilled(), nil
+	case "taobao-circle-outlined":
+		return TaobaoCircleOutlined(), nil
+	case "taobao-outlined":
+		return TaobaoOutlined(), nil
+	case "taobao-square-filled":
+		return TaobaoSquareFilled(), nil
+	case "team-outlined":
+		return TeamOutlined(), nil
+	case "thunderbolt-filled":
+		return ThunderboltFilled(), nil
+	case "thunderbolt-outlined":
+		return ThunderboltOutlined(), nil
+	case "thunderbolt-twotone":
+		return ThunderboltTwotone(), nil
+	case "to-top-outlined":
+		return ToTopOutlined(), nil
+	case "tool-filled":
+		return ToolFilled(), nil
+	case "tool-outlined":
+		return ToolOutlined(), nil
+	case "tool-twotone":
+		return ToolTwotone(), nil
+	case "trademark-circle-filled":
+		return TrademarkCircleFilled(), nil
+	case "trademark-circle-outlined":
+		return TrademarkCircleOutlined(), nil
+	case "trademark-circle-twotone":
+		return TrademarkCircleTwotone(), nil
+	case "trademark-outlined":
+		return TrademarkOutlined(), nil
+	case "transaction-outlined":
+		return TransactionOutlined(), nil
+	case "translation-outlined":
+		return TranslationOutlined(), nil
+	case "trophy-filled":
+		return TrophyFilled(), nil
+	case "trophy-outlined":
+		return TrophyOutlined(), nil
+	case "trophy-twotone":
+		return TrophyTwotone(), nil
+	case "twitter-circle-filled":
+		return TwitterCircleFilled(), nil
+	case "twitter-outlined":
+		return TwitterOutlined(), nil
+	case "twitter-square-filled":
+		return TwitterSquareFilled(), nil
+	case "underline-outlined":
+		return UnderlineOutlined(), nil
+	case "undo-outlined":
+		return UndoOutlined(), nil
+	case "ungroup-outlined":
+		return UngroupOutlined(), nil
+	case "unlock-filled":
+		return UnlockFilled(), nil
+	case "unlock-outlined":
+		return UnlockOutlined(), nil
+	case "unlock-twotone":
+		return UnlockTwotone(), nil
+	case "unordered-list-outlined":
+		return UnorderedListOutlined(), nil
+	case "up-circle-filled":
+		return UpCircleFilled(), nil
+	case "up-circle-outlined":
+		return UpCircleOutlined(), nil
+	case "up-circle-twotone":
+		return UpCircleTwotone(), nil
+	case "up-outlined":
+		return UpOutlined(), nil
+	case "up-square-filled":
+		return UpSquareFilled(), nil
+	case "up-square-outlined":
+		return UpSquareOutlined(), nil
+	case "up-square-twotone":
+		return UpSquareTwotone(), nil
+	case "upload-outlined":
+		return UploadOutlined(), nil
+	case "usb-filled":
+		return UsbFilled(), nil
+	case "usb-outlined":
+		return UsbOutlined(), nil
+	case "usb-twotone":
+		return UsbTwotone(), nil
+	case "user-add-outlined":
+		return UserAddOutlined(), nil
+	case "user-delete-outlined":
+		return UserDeleteOutlined(), nil
+	case "user-outlined":
+		return UserOutlined(), nil
+	case "user-switch-outlined":
+		return UserSwitchOutlined(), nil
+	case "usergroup-add-outlined":
+		return UsergroupAddOutlined(), nil
+	case "usergroup-delete-outlined":
+		return UsergroupDeleteOutlined(), nil
+	case "verified-outlined":
+		return VerifiedOutlined(), nil
+	case "vertical-align-bottom-outlined":
+		return VerticalAlignBottomOutlined(), nil
+	case "vertical-align-middle-outlined":
+		return VerticalAlignMiddleOutlined(), nil
+	case "vertical-align-top-outlined":
+		return VerticalAlignTopOutlined(), nil
+	case "vertical-left-outlined":
+		return VerticalLeftOutlined(), nil
+	case "vertical-right-outlined":
+		return VerticalRightOutlined(), nil
+	case "video-camera-add-outlined":
+		return VideoCameraAddOutlined(), nil
+	case "video-camera-filled":
+		return VideoCameraFilled(), nil
+	case "video-camera-outlined":
+		return VideoCameraOutlined(), nil
+	case "video-camera-twotone":
+		return VideoCameraTwotone(), nil
+	case "wallet-filled":
+		return WalletFilled(), nil
+	case "wallet-outlined":
+		return WalletOutlined(), nil
+	case "wallet-twotone":
+		return WalletTwotone(), nil
+	case "warning-filled":
+		return WarningFilled(), nil
+	case "warning-outlined":
+		return WarningOutlined(), nil
+	case "warning-twotone":
+		return WarningTwotone(), nil
+	case "wechat-filled":
+		return WechatFilled(), nil
+	case "wechat-outlined":
+		return WechatOutlined(), nil
+	case "weibo-circle-filled":
+		return WeiboCircleFilled(), nil
+	case "weibo-circle-outlined":
+		return WeiboCircleOutlined(), nil
+	case "weibo-outlined":
+		return WeiboOutlined(), nil
+	case "weibo-square-filled":
+		return WeiboSquareFilled(), nil
+	case "weibo-square-outlined":
+		return WeiboSquareOutlined(), nil
+	case "whats-app-outlined":
+		return WhatsAppOutlined(), nil
+	case "wifi-outlined":
+		return WifiOutlined(), nil
+	case "windows-filled":
+		return WindowsFilled(), nil
+	case "windows-outlined":
+		return WindowsOutlined(), nil
+	case "woman-outlined":
+		return WomanOutlined(), nil
+	case "yahoo-filled":
+		return YahooFilled(), nil
+	case "yahoo-outlined":
+		return YahooOutlined(), nil
+	case "youtube-filled":
+		return YoutubeFilled(), nil
+	case "youtube-outlined":
+		return YoutubeOutlined(), nil
+	case "yuque-filled":
+		return YuqueFilled(), nil
+	case "yuque-outlined":
+		return YuqueOutlined(), nil
+	case "zhihu-circle-filled":
+		return ZhihuCircleFilled(), nil
+	case "zhihu-outlined":
+		return ZhihuOutlined(), nil
+	case "zhihu-square-filled":
+		return ZhihuSquareFilled(), nil
+	case "zoom-in-outlined":
+		return ZoomInOutlined(), nil
+	case "zoom-out-outlined":
+		return ZoomOutOutlined(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in ant_design icon set", name)
+	}
 }

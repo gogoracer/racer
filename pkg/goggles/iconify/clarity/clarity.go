@@ -1,6 +1,9 @@
 package clarity
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	accessibilityOneLineInnerSVG            = `<path fill="currentColor" d="M14.44 31.94a7.31 7.31 0 0 1-5.7-11.88l-1.42-1.42a9.3 9.3 0 0 0 13.1 13.11L19 30.33a7.29 7.29 0 0 1-4.56 1.61Z" class="clr-i-outline clr-i-outline-path-1"/><path fill="currentColor" d="M25.36 1.67a4.12 4.12 0 1 0 4.11 4.11a4.12 4.12 0 0 0-4.11-4.11Zm0 6.23a2.12 2.12 0 1 1 2.11-2.12a2.12 2.12 0 0 1-2.11 2.12Z" class="clr-i-outline clr-i-outline-path-2"/><path fill="currentColor" d="M26.56 18.18h-5a1 1 0 0 0-.24.05l3.09-3.55a2.83 2.83 0 0 0-.69-4.33l-8-4.6a1 1 0 0 0-1.12.08L9.83 9.58A1 1 0 0 0 9.66 11a1 1 0 0 0 .79.38a1 1 0 0 0 .61-.21l4.27-3.34l3.11 1.77l-5.08 5.78a9.28 9.28 0 0 0-4.53 1.83l1.43 1.43a7.3 7.3 0 0 1 10.16 10.17l1.42 1.43a9.27 9.27 0 0 0 .77-10.06h2.82l-.77 6.51a1 1 0 0 0 .88 1.11h.12a1 1 0 0 0 1-.88l.9-7.62a1 1 0 0 0-.25-.78a1 1 0 0 0-.75-.34Zm-6.37-7.56l2.52 1.46a.79.79 0 0 1 .4.59a.81.81 0 0 1-.2.69L19.75 17A9.17 9.17 0 0 0 16 15.45Z" class="clr-i-outline clr-i-outline-path-3"/><path fill="none" d="M0 0h36v36H0z"/>`
@@ -14370,4 +14373,2221 @@ func ZoomOutLine(children ...any) *engine.HTMLElement {
 		zoomOutLineInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "accessibility-1-line":
+		return AccessibilityOneLine(), nil
+	case "accessibility-1-solid":
+		return AccessibilityOneSolid(), nil
+	case "accessibility-2-line":
+		return AccessibilityTwoLine(), nil
+	case "accessibility-2-solid":
+		return AccessibilityTwoSolid(), nil
+	case "add-line":
+		return AddLine(), nil
+	case "add-text-line":
+		return AddTextLine(), nil
+	case "administrator-line":
+		return AdministratorLine(), nil
+	case "administrator-solid":
+		return AdministratorSolid(), nil
+	case "airplane-line":
+		return AirplaneLine(), nil
+	case "airplane-solid":
+		return AirplaneSolid(), nil
+	case "alarm-clock-line":
+		return AlarmClockLine(), nil
+	case "alarm-clock-outline-alerted":
+		return AlarmClockOutlineAlerted(), nil
+	case "alarm-clock-outline-badged":
+		return AlarmClockOutlineBadged(), nil
+	case "alarm-clock-solid":
+		return AlarmClockSolid(), nil
+	case "alarm-clock-solid-alerted":
+		return AlarmClockSolidAlerted(), nil
+	case "alarm-clock-solid-badged":
+		return AlarmClockSolidBadged(), nil
+	case "alarm-off-line":
+		return AlarmOffLine(), nil
+	case "alarm-off-solid":
+		return AlarmOffSolid(), nil
+	case "alert-line":
+		return AlertLine(), nil
+	case "alert-solid":
+		return AlertSolid(), nil
+	case "align-bottom-line":
+		return AlignBottomLine(), nil
+	case "align-center-line":
+		return AlignCenterLine(), nil
+	case "align-left-line":
+		return AlignLeftLine(), nil
+	case "align-left-text-line":
+		return AlignLeftTextLine(), nil
+	case "align-middle-line":
+		return AlignMiddleLine(), nil
+	case "align-right-line":
+		return AlignRightLine(), nil
+	case "align-right-text-line":
+		return AlignRightTextLine(), nil
+	case "align-top-line":
+		return AlignTopLine(), nil
+	case "analytics-line":
+		return AnalyticsLine(), nil
+	case "analytics-outline-alerted":
+		return AnalyticsOutlineAlerted(), nil
+	case "analytics-outline-badged":
+		return AnalyticsOutlineBadged(), nil
+	case "analytics-solid":
+		return AnalyticsSolid(), nil
+	case "analytics-solid-alerted":
+		return AnalyticsSolidAlerted(), nil
+	case "analytics-solid-badged":
+		return AnalyticsSolidBadged(), nil
+	case "angle-double-line":
+		return AngleDoubleLine(), nil
+	case "angle-line":
+		return AngleLine(), nil
+	case "animation-line":
+		return AnimationLine(), nil
+	case "animation-solid":
+		return AnimationSolid(), nil
+	case "application-line":
+		return ApplicationLine(), nil
+	case "application-solid":
+		return ApplicationSolid(), nil
+	case "applications-line":
+		return ApplicationsLine(), nil
+	case "applications-outline-alerted":
+		return ApplicationsOutlineAlerted(), nil
+	case "applications-outline-badged":
+		return ApplicationsOutlineBadged(), nil
+	case "applications-solid":
+		return ApplicationsSolid(), nil
+	case "applications-solid-alerted":
+		return ApplicationsSolidAlerted(), nil
+	case "applications-solid-badged":
+		return ApplicationsSolidBadged(), nil
+	case "archive-line":
+		return ArchiveLine(), nil
+	case "archive-solid":
+		return ArchiveSolid(), nil
+	case "arrow-line":
+		return ArrowLine(), nil
+	case "assign-user-line":
+		return AssignUserLine(), nil
+	case "assign-user-solid":
+		return AssignUserSolid(), nil
+	case "asterisk-line":
+		return AsteriskLine(), nil
+	case "asterisk-solid":
+		return AsteriskSolid(), nil
+	case "atom-line":
+		return AtomLine(), nil
+	case "atom-solid":
+		return AtomSolid(), nil
+	case "attachment-line":
+		return AttachmentLine(), nil
+	case "auto-line":
+		return AutoLine(), nil
+	case "auto-solid":
+		return AutoSolid(), nil
+	case "avatar-line":
+		return AvatarLine(), nil
+	case "avatar-outline-alerted":
+		return AvatarOutlineAlerted(), nil
+	case "avatar-outline-badged":
+		return AvatarOutlineBadged(), nil
+	case "avatar-solid":
+		return AvatarSolid(), nil
+	case "avatar-solid-alerted":
+		return AvatarSolidAlerted(), nil
+	case "avatar-solid-badged":
+		return AvatarSolidBadged(), nil
+	case "axis-chart-line":
+		return AxisChartLine(), nil
+	case "axis-chart-outline-alerted":
+		return AxisChartOutlineAlerted(), nil
+	case "axis-chart-outline-badged":
+		return AxisChartOutlineBadged(), nil
+	case "axis-chart-solid":
+		return AxisChartSolid(), nil
+	case "axis-chart-solid-alerted":
+		return AxisChartSolidAlerted(), nil
+	case "axis-chart-solid-badged":
+		return AxisChartSolidBadged(), nil
+	case "backup-line":
+		return BackupLine(), nil
+	case "backup-outline-alerted":
+		return BackupOutlineAlerted(), nil
+	case "backup-outline-badged":
+		return BackupOutlineBadged(), nil
+	case "backup-restore-line":
+		return BackupRestoreLine(), nil
+	case "backup-restore-outline-alerted":
+		return BackupRestoreOutlineAlerted(), nil
+	case "backup-restore-outline-badged":
+		return BackupRestoreOutlineBadged(), nil
+	case "backup-restore-solid":
+		return BackupRestoreSolid(), nil
+	case "backup-restore-solid-alerted":
+		return BackupRestoreSolidAlerted(), nil
+	case "backup-restore-solid-badged":
+		return BackupRestoreSolidBadged(), nil
+	case "backup-solid":
+		return BackupSolid(), nil
+	case "backup-solid-alerted":
+		return BackupSolidAlerted(), nil
+	case "backup-solid-badged":
+		return BackupSolidBadged(), nil
+	case "balance-line":
+		return BalanceLine(), nil
+	case "ban-line":
+		return BanLine(), nil
+	case "bank-line":
+		return BankLine(), nil
+	case "bank-outline-alerted":
+		return BankOutlineAlerted(), nil
+	case "bank-outline-badged":
+		return BankOutlineBadged(), nil
+	case "bank-solid":
+		return BankSolid(), nil
+	case "bank-solid-alerted":
+		return BankSolidAlerted(), nil
+	case "bank-solid-badged":
+		return BankSolidBadged(), nil
+	case "bar-chart-line":
+		return BarChartLine(), nil
+	case "bar-chart-outline-alerted":
+		return BarChartOutlineAlerted(), nil
+	case "bar-chart-outline-badged":
+		return BarChartOutlineBadged(), nil
+	case "bar-chart-solid":
+		return BarChartSolid(), nil
+	case "bar-chart-solid-alerted":
+		return BarChartSolidAlerted(), nil
+	case "bar-chart-solid-badged":
+		return BarChartSolidBadged(), nil
+	case "bar-code-line":
+		return BarCodeLine(), nil
+	case "bars-line":
+		return BarsLine(), nil
+	case "battery-line":
+		return BatteryLine(), nil
+	case "battery-outline-alerted":
+		return BatteryOutlineAlerted(), nil
+	case "battery-outline-badged":
+		return BatteryOutlineBadged(), nil
+	case "battery-solid":
+		return BatterySolid(), nil
+	case "battery-solid-alerted":
+		return BatterySolidAlerted(), nil
+	case "battery-solid-badged":
+		return BatterySolidBadged(), nil
+	case "bell-curve-line":
+		return BellCurveLine(), nil
+	case "bell-line":
+		return BellLine(), nil
+	case "bell-outline-badged":
+		return BellOutlineBadged(), nil
+	case "bell-solid":
+		return BellSolid(), nil
+	case "bell-solid-badged":
+		return BellSolidBadged(), nil
+	case "beta-line":
+		return BetaLine(), nil
+	case "beta-solid":
+		return BetaSolid(), nil
+	case "bicycle-line":
+		return BicycleLine(), nil
+	case "bicycle-solid":
+		return BicycleSolid(), nil
+	case "bitcoin-line":
+		return BitcoinLine(), nil
+	case "bitcoin-solid":
+		return BitcoinSolid(), nil
+	case "block-line":
+		return BlockLine(), nil
+	case "block-outline-alerted":
+		return BlockOutlineAlerted(), nil
+	case "block-outline-badged":
+		return BlockOutlineBadged(), nil
+	case "block-quote-line":
+		return BlockQuoteLine(), nil
+	case "block-solid":
+		return BlockSolid(), nil
+	case "block-solid-alerted":
+		return BlockSolidAlerted(), nil
+	case "block-solid-badged":
+		return BlockSolidBadged(), nil
+	case "blocks-group-line":
+		return BlocksGroupLine(), nil
+	case "blocks-group-outline-alerted":
+		return BlocksGroupOutlineAlerted(), nil
+	case "blocks-group-outline-badged":
+		return BlocksGroupOutlineBadged(), nil
+	case "blocks-group-solid":
+		return BlocksGroupSolid(), nil
+	case "blocks-group-solid-alerted":
+		return BlocksGroupSolidAlerted(), nil
+	case "blocks-group-solid-badged":
+		return BlocksGroupSolidBadged(), nil
+	case "bluetooth-line":
+		return BluetoothLine(), nil
+	case "bluetooth-off-line":
+		return BluetoothOffLine(), nil
+	case "bluetooth-off-solid":
+		return BluetoothOffSolid(), nil
+	case "bluetooth-solid":
+		return BluetoothSolid(), nil
+	case "boat-line":
+		return BoatLine(), nil
+	case "boat-solid":
+		return BoatSolid(), nil
+	case "bold-line":
+		return BoldLine(), nil
+	case "bolt-line":
+		return BoltLine(), nil
+	case "bolt-solid":
+		return BoltSolid(), nil
+	case "book-line":
+		return BookLine(), nil
+	case "book-solid":
+		return BookSolid(), nil
+	case "bookmark-line":
+		return BookmarkLine(), nil
+	case "bookmark-solid":
+		return BookmarkSolid(), nil
+	case "box-plot-line":
+		return BoxPlotLine(), nil
+	case "box-plot-outline-alerted":
+		return BoxPlotOutlineAlerted(), nil
+	case "box-plot-outline-badged":
+		return BoxPlotOutlineBadged(), nil
+	case "box-plot-solid":
+		return BoxPlotSolid(), nil
+	case "box-plot-solid-alerted":
+		return BoxPlotSolidAlerted(), nil
+	case "box-plot-solid-badged":
+		return BoxPlotSolidBadged(), nil
+	case "briefcase-line":
+		return BriefcaseLine(), nil
+	case "briefcase-solid":
+		return BriefcaseSolid(), nil
+	case "bubble-chart-line":
+		return BubbleChartLine(), nil
+	case "bubble-chart-outline-alerted":
+		return BubbleChartOutlineAlerted(), nil
+	case "bubble-chart-outline-badged":
+		return BubbleChartOutlineBadged(), nil
+	case "bubble-chart-solid":
+		return BubbleChartSolid(), nil
+	case "bubble-chart-solid-alerted":
+		return BubbleChartSolidAlerted(), nil
+	case "bubble-chart-solid-badged":
+		return BubbleChartSolidBadged(), nil
+	case "bubble-exclamation-line":
+		return BubbleExclamationLine(), nil
+	case "bubble-exclamation-solid":
+		return BubbleExclamationSolid(), nil
+	case "bug-line":
+		return BugLine(), nil
+	case "bug-solid":
+		return BugSolid(), nil
+	case "building-line":
+		return BuildingLine(), nil
+	case "building-outline-alerted":
+		return BuildingOutlineAlerted(), nil
+	case "building-outline-badged":
+		return BuildingOutlineBadged(), nil
+	case "building-solid":
+		return BuildingSolid(), nil
+	case "building-solid-alerted":
+		return BuildingSolidAlerted(), nil
+	case "building-solid-badged":
+		return BuildingSolidBadged(), nil
+	case "bullet-list-line":
+		return BulletListLine(), nil
+	case "bullseye-line":
+		return BullseyeLine(), nil
+	case "bullseye-solid":
+		return BullseyeSolid(), nil
+	case "bundle-line":
+		return BundleLine(), nil
+	case "bundle-solid":
+		return BundleSolid(), nil
+	case "calculator-line":
+		return CalculatorLine(), nil
+	case "calculator-solid":
+		return CalculatorSolid(), nil
+	case "calendar-line":
+		return CalendarLine(), nil
+	case "calendar-outline-alerted":
+		return CalendarOutlineAlerted(), nil
+	case "calendar-outline-badged":
+		return CalendarOutlineBadged(), nil
+	case "calendar-solid":
+		return CalendarSolid(), nil
+	case "calendar-solid-alerted":
+		return CalendarSolidAlerted(), nil
+	case "calendar-solid-badged":
+		return CalendarSolidBadged(), nil
+	case "camera-line":
+		return CameraLine(), nil
+	case "camera-solid":
+		return CameraSolid(), nil
+	case "campervan-line":
+		return CampervanLine(), nil
+	case "campervan-solid":
+		return CampervanSolid(), nil
+	case "cancel-line":
+		return CancelLine(), nil
+	case "capacitor-line":
+		return CapacitorLine(), nil
+	case "car-line":
+		return CarLine(), nil
+	case "car-solid":
+		return CarSolid(), nil
+	case "caravan-line":
+		return CaravanLine(), nil
+	case "caravan-solid":
+		return CaravanSolid(), nil
+	case "caret-line":
+		return CaretLine(), nil
+	case "cd-dvd-line":
+		return CdDvdLine(), nil
+	case "cd-dvd-solid":
+		return CdDvdSolid(), nil
+	case "center-text-line":
+		return CenterTextLine(), nil
+	case "certificate-line":
+		return CertificateLine(), nil
+	case "certificate-outline-alerted":
+		return CertificateOutlineAlerted(), nil
+	case "certificate-outline-badged":
+		return CertificateOutlineBadged(), nil
+	case "certificate-solid":
+		return CertificateSolid(), nil
+	case "certificate-solid-alerted":
+		return CertificateSolidAlerted(), nil
+	case "certificate-solid-badged":
+		return CertificateSolidBadged(), nil
+	case "chat-bubble-line":
+		return ChatBubbleLine(), nil
+	case "chat-bubble-outline-badged":
+		return ChatBubbleOutlineBadged(), nil
+	case "chat-bubble-solid":
+		return ChatBubbleSolid(), nil
+	case "chat-bubble-solid-badged":
+		return ChatBubbleSolidBadged(), nil
+	case "check-circle-line":
+		return CheckCircleLine(), nil
+	case "check-circle-solid":
+		return CheckCircleSolid(), nil
+	case "check-line":
+		return CheckLine(), nil
+	case "checkbox-list-line":
+		return CheckboxListLine(), nil
+	case "child-arrow-line":
+		return ChildArrowLine(), nil
+	case "ci-cd-line":
+		return CiCdLine(), nil
+	case "circle-arrow-line":
+		return CircleArrowLine(), nil
+	case "circle-arrow-solid":
+		return CircleArrowSolid(), nil
+	case "circle-line":
+		return CircleLine(), nil
+	case "circle-solid":
+		return CircleSolid(), nil
+	case "clipboard-line":
+		return ClipboardLine(), nil
+	case "clipboard-outline-badged":
+		return ClipboardOutlineBadged(), nil
+	case "clipboard-solid":
+		return ClipboardSolid(), nil
+	case "clipboard-solid-badged":
+		return ClipboardSolidBadged(), nil
+	case "clock-line":
+		return ClockLine(), nil
+	case "clock-outline-alerted":
+		return ClockOutlineAlerted(), nil
+	case "clock-outline-badged":
+		return ClockOutlineBadged(), nil
+	case "clock-solid":
+		return ClockSolid(), nil
+	case "clock-solid-alerted":
+		return ClockSolidAlerted(), nil
+	case "clock-solid-badged":
+		return ClockSolidBadged(), nil
+	case "clone-line":
+		return CloneLine(), nil
+	case "clone-solid":
+		return CloneSolid(), nil
+	case "close-line":
+		return CloseLine(), nil
+	case "cloud-chart-line":
+		return CloudChartLine(), nil
+	case "cloud-chart-outline-alerted":
+		return CloudChartOutlineAlerted(), nil
+	case "cloud-chart-outline-badged":
+		return CloudChartOutlineBadged(), nil
+	case "cloud-chart-solid":
+		return CloudChartSolid(), nil
+	case "cloud-chart-solid-alerted":
+		return CloudChartSolidAlerted(), nil
+	case "cloud-chart-solid-badged":
+		return CloudChartSolidBadged(), nil
+	case "cloud-line":
+		return CloudLine(), nil
+	case "cloud-network-line":
+		return CloudNetworkLine(), nil
+	case "cloud-outline-alerted":
+		return CloudOutlineAlerted(), nil
+	case "cloud-outline-badged":
+		return CloudOutlineBadged(), nil
+	case "cloud-scale-line":
+		return CloudScaleLine(), nil
+	case "cloud-solid":
+		return CloudSolid(), nil
+	case "cloud-solid-alerted":
+		return CloudSolidAlerted(), nil
+	case "cloud-solid-badged":
+		return CloudSolidBadged(), nil
+	case "cloud-traffic-line":
+		return CloudTrafficLine(), nil
+	case "cluster-line":
+		return ClusterLine(), nil
+	case "cluster-outline-alerted":
+		return ClusterOutlineAlerted(), nil
+	case "cluster-outline-badged":
+		return ClusterOutlineBadged(), nil
+	case "cluster-solid":
+		return ClusterSolid(), nil
+	case "cluster-solid-alerted":
+		return ClusterSolidAlerted(), nil
+	case "cluster-solid-badged":
+		return ClusterSolidBadged(), nil
+	case "code-line":
+		return CodeLine(), nil
+	case "code-outline-alerted":
+		return CodeOutlineAlerted(), nil
+	case "code-outline-badged":
+		return CodeOutlineBadged(), nil
+	case "cog-line":
+		return CogLine(), nil
+	case "cog-outline-alerted":
+		return CogOutlineAlerted(), nil
+	case "cog-outline-badged":
+		return CogOutlineBadged(), nil
+	case "cog-solid":
+		return CogSolid(), nil
+	case "cog-solid-alerted":
+		return CogSolidAlerted(), nil
+	case "cog-solid-badged":
+		return CogSolidBadged(), nil
+	case "coin-bag-line":
+		return CoinBagLine(), nil
+	case "coin-bag-solid":
+		return CoinBagSolid(), nil
+	case "collapse-card-line":
+		return CollapseCardLine(), nil
+	case "collapse-card-solid":
+		return CollapseCardSolid(), nil
+	case "collapse-line":
+		return CollapseLine(), nil
+	case "color-palette-line":
+		return ColorPaletteLine(), nil
+	case "color-palette-solid":
+		return ColorPaletteSolid(), nil
+	case "color-picker-line":
+		return ColorPickerLine(), nil
+	case "color-picker-solid":
+		return ColorPickerSolid(), nil
+	case "command-line":
+		return CommandLine(), nil
+	case "command-outline-alerted":
+		return CommandOutlineAlerted(), nil
+	case "command-outline-badged":
+		return CommandOutlineBadged(), nil
+	case "command-solid":
+		return CommandSolid(), nil
+	case "command-solid-alerted":
+		return CommandSolidAlerted(), nil
+	case "command-solid-badged":
+		return CommandSolidBadged(), nil
+	case "compass-line":
+		return CompassLine(), nil
+	case "compass-solid":
+		return CompassSolid(), nil
+	case "computer-line":
+		return ComputerLine(), nil
+	case "computer-outline-alerted":
+		return ComputerOutlineAlerted(), nil
+	case "computer-outline-badged":
+		return ComputerOutlineBadged(), nil
+	case "computer-solid":
+		return ComputerSolid(), nil
+	case "computer-solid-alerted":
+		return ComputerSolidAlerted(), nil
+	case "computer-solid-badged":
+		return ComputerSolidBadged(), nil
+	case "connect-line":
+		return ConnectLine(), nil
+	case "connect-solid":
+		return ConnectSolid(), nil
+	case "container-line":
+		return ContainerLine(), nil
+	case "container-solid":
+		return ContainerSolid(), nil
+	case "container-volume-line":
+		return ContainerVolumeLine(), nil
+	case "container-volume-solid":
+		return ContainerVolumeSolid(), nil
+	case "contract-line":
+		return ContractLine(), nil
+	case "contract-solid":
+		return ContractSolid(), nil
+	case "control-lun-line":
+		return ControlLunLine(), nil
+	case "control-lun-outline-alerted":
+		return ControlLunOutlineAlerted(), nil
+	case "control-lun-outline-badged":
+		return ControlLunOutlineBadged(), nil
+	case "control-lun-solid":
+		return ControlLunSolid(), nil
+	case "control-lun-solid-alerted":
+		return ControlLunSolidAlerted(), nil
+	case "control-lun-solid-badged":
+		return ControlLunSolidBadged(), nil
+	case "copy-line":
+		return CopyLine(), nil
+	case "copy-solid":
+		return CopySolid(), nil
+	case "copy-to-clipboard-line":
+		return CopyToClipboardLine(), nil
+	case "cpu-line":
+		return CpuLine(), nil
+	case "cpu-outline-alerted":
+		return CpuOutlineAlerted(), nil
+	case "cpu-outline-badged":
+		return CpuOutlineBadged(), nil
+	case "cpu-solid":
+		return CpuSolid(), nil
+	case "cpu-solid-alerted":
+		return CpuSolidAlerted(), nil
+	case "cpu-solid-badged":
+		return CpuSolidBadged(), nil
+	case "credit-card-line":
+		return CreditCardLine(), nil
+	case "credit-card-solid":
+		return CreditCardSolid(), nil
+	case "crosshairs-line":
+		return CrosshairsLine(), nil
+	case "crown-line":
+		return CrownLine(), nil
+	case "crown-solid":
+		return CrownSolid(), nil
+	case "cursor-arrow-line":
+		return CursorArrowLine(), nil
+	case "cursor-arrow-solid":
+		return CursorArrowSolid(), nil
+	case "cursor-hand-click-line":
+		return CursorHandClickLine(), nil
+	case "cursor-hand-grab-line":
+		return CursorHandGrabLine(), nil
+	case "cursor-hand-line":
+		return CursorHandLine(), nil
+	case "cursor-hand-open-line":
+		return CursorHandOpenLine(), nil
+	case "cursor-hand-solid":
+		return CursorHandSolid(), nil
+	case "cursor-move-line":
+		return CursorMoveLine(), nil
+	case "curve-chart-line":
+		return CurveChartLine(), nil
+	case "curve-chart-outline-alerted":
+		return CurveChartOutlineAlerted(), nil
+	case "curve-chart-outline-badged":
+		return CurveChartOutlineBadged(), nil
+	case "curve-chart-solid":
+		return CurveChartSolid(), nil
+	case "curve-chart-solid-alerted":
+		return CurveChartSolidAlerted(), nil
+	case "curve-chart-solid-badged":
+		return CurveChartSolidBadged(), nil
+	case "dashboard-line":
+		return DashboardLine(), nil
+	case "dashboard-outline-badged":
+		return DashboardOutlineBadged(), nil
+	case "dashboard-solid":
+		return DashboardSolid(), nil
+	case "dashboard-solid-badged":
+		return DashboardSolidBadged(), nil
+	case "data-cluster-line":
+		return DataClusterLine(), nil
+	case "data-cluster-outline-alerted":
+		return DataClusterOutlineAlerted(), nil
+	case "data-cluster-outline-badged":
+		return DataClusterOutlineBadged(), nil
+	case "data-cluster-solid":
+		return DataClusterSolid(), nil
+	case "data-cluster-solid-alerted":
+		return DataClusterSolidAlerted(), nil
+	case "data-cluster-solid-badged":
+		return DataClusterSolidBadged(), nil
+	case "date-line":
+		return DateLine(), nil
+	case "date-outline-alerted":
+		return DateOutlineAlerted(), nil
+	case "date-outline-badged":
+		return DateOutlineBadged(), nil
+	case "date-solid":
+		return DateSolid(), nil
+	case "date-solid-alerted":
+		return DateSolidAlerted(), nil
+	case "date-solid-badged":
+		return DateSolidBadged(), nil
+	case "deploy-line":
+		return DeployLine(), nil
+	case "deploy-solid":
+		return DeploySolid(), nil
+	case "design-line":
+		return DesignLine(), nil
+	case "design-solid":
+		return DesignSolid(), nil
+	case "details-line":
+		return DetailsLine(), nil
+	case "details-solid":
+		return DetailsSolid(), nil
+	case "devices-line":
+		return DevicesLine(), nil
+	case "devices-solid":
+		return DevicesSolid(), nil
+	case "digital-signature-line":
+		return DigitalSignatureLine(), nil
+	case "directory-line":
+		return DirectoryLine(), nil
+	case "directory-outline-alerted":
+		return DirectoryOutlineAlerted(), nil
+	case "directory-outline-badged":
+		return DirectoryOutlineBadged(), nil
+	case "directory-solid":
+		return DirectorySolid(), nil
+	case "directory-solid-alerted":
+		return DirectorySolidAlerted(), nil
+	case "directory-solid-badged":
+		return DirectorySolidBadged(), nil
+	case "disconnect-line":
+		return DisconnectLine(), nil
+	case "disconnect-solid":
+		return DisconnectSolid(), nil
+	case "disconnected-line":
+		return DisconnectedLine(), nil
+	case "disconnected-solid":
+		return DisconnectedSolid(), nil
+	case "display-line":
+		return DisplayLine(), nil
+	case "display-outline-alerted":
+		return DisplayOutlineAlerted(), nil
+	case "display-outline-badged":
+		return DisplayOutlineBadged(), nil
+	case "display-solid":
+		return DisplaySolid(), nil
+	case "display-solid-alerted":
+		return DisplaySolidAlerted(), nil
+	case "display-solid-badged":
+		return DisplaySolidBadged(), nil
+	case "dna-line":
+		return DnaLine(), nil
+	case "dna-solid":
+		return DnaSolid(), nil
+	case "document-line":
+		return DocumentLine(), nil
+	case "document-outline-alerted":
+		return DocumentOutlineAlerted(), nil
+	case "document-outline-badged":
+		return DocumentOutlineBadged(), nil
+	case "document-solid":
+		return DocumentSolid(), nil
+	case "document-solid-alerted":
+		return DocumentSolidAlerted(), nil
+	case "document-solid-badged":
+		return DocumentSolidBadged(), nil
+	case "dollar-bill-line":
+		return DollarBillLine(), nil
+	case "dollar-bill-solid":
+		return DollarBillSolid(), nil
+	case "dollar-line":
+		return DollarLine(), nil
+	case "dollar-solid":
+		return DollarSolid(), nil
+	case "dot-circle-line":
+		return DotCircleLine(), nil
+	case "download-cloud-line":
+		return DownloadCloudLine(), nil
+	case "download-cloud-outline-alerted":
+		return DownloadCloudOutlineAlerted(), nil
+	case "download-cloud-outline-badged":
+		return DownloadCloudOutlineBadged(), nil
+	case "download-line":
+		return DownloadLine(), nil
+	case "download-outline-alerted":
+		return DownloadOutlineAlerted(), nil
+	case "download-outline-badged":
+		return DownloadOutlineBadged(), nil
+	case "drag-handle-corner-line":
+		return DragHandleCornerLine(), nil
+	case "drag-handle-line":
+		return DragHandleLine(), nil
+	case "e-check-line":
+		return ECheckLine(), nil
+	case "e-check-solid":
+		return ECheckSolid(), nil
+	case "edit-line":
+		return EditLine(), nil
+	case "edit-solid":
+		return EditSolid(), nil
+	case "ellipsis-horizontal-line":
+		return EllipsisHorizontalLine(), nil
+	case "ellipsis-horizontal-outline-badged":
+		return EllipsisHorizontalOutlineBadged(), nil
+	case "ellipsis-vertical-line":
+		return EllipsisVerticalLine(), nil
+	case "ellipsis-vertical-outline-badged":
+		return EllipsisVerticalOutlineBadged(), nil
+	case "email-line":
+		return EmailLine(), nil
+	case "email-outline-alerted":
+		return EmailOutlineAlerted(), nil
+	case "email-outline-badged":
+		return EmailOutlineBadged(), nil
+	case "email-solid":
+		return EmailSolid(), nil
+	case "email-solid-alerted":
+		return EmailSolidAlerted(), nil
+	case "email-solid-badged":
+		return EmailSolidBadged(), nil
+	case "employee-group-line":
+		return EmployeeGroupLine(), nil
+	case "employee-group-solid":
+		return EmployeeGroupSolid(), nil
+	case "employee-line":
+		return EmployeeLine(), nil
+	case "employee-solid":
+		return EmployeeSolid(), nil
+	case "envelope-line":
+		return EnvelopeLine(), nil
+	case "envelope-outline-alerted":
+		return EnvelopeOutlineAlerted(), nil
+	case "envelope-outline-badged":
+		return EnvelopeOutlineBadged(), nil
+	case "envelope-solid":
+		return EnvelopeSolid(), nil
+	case "envelope-solid-alerted":
+		return EnvelopeSolidAlerted(), nil
+	case "envelope-solid-badged":
+		return EnvelopeSolidBadged(), nil
+	case "eraser-line":
+		return EraserLine(), nil
+	case "eraser-solid":
+		return EraserSolid(), nil
+	case "error-line":
+		return ErrorLine(), nil
+	case "error-solid":
+		return ErrorSolid(), nil
+	case "error-standard-line":
+		return ErrorStandardLine(), nil
+	case "error-standard-solid":
+		return ErrorStandardSolid(), nil
+	case "euro-line":
+		return EuroLine(), nil
+	case "euro-solid":
+		return EuroSolid(), nil
+	case "event-line":
+		return EventLine(), nil
+	case "event-outline-alerted":
+		return EventOutlineAlerted(), nil
+	case "event-outline-badged":
+		return EventOutlineBadged(), nil
+	case "event-solid":
+		return EventSolid(), nil
+	case "event-solid-alerted":
+		return EventSolidAlerted(), nil
+	case "event-solid-badged":
+		return EventSolidBadged(), nil
+	case "exclamation-circle-line":
+		return ExclamationCircleLine(), nil
+	case "exclamation-circle-solid":
+		return ExclamationCircleSolid(), nil
+	case "exclamation-triangle-line":
+		return ExclamationTriangleLine(), nil
+	case "exclamation-triangle-solid":
+		return ExclamationTriangleSolid(), nil
+	case "expand-card-line":
+		return ExpandCardLine(), nil
+	case "expand-card-solid":
+		return ExpandCardSolid(), nil
+	case "export-line":
+		return ExportLine(), nil
+	case "export-outline-alerted":
+		return ExportOutlineAlerted(), nil
+	case "export-outline-badged":
+		return ExportOutlineBadged(), nil
+	case "export-solid":
+		return ExportSolid(), nil
+	case "export-solid-alerted":
+		return ExportSolidAlerted(), nil
+	case "export-solid-badged":
+		return ExportSolidBadged(), nil
+	case "eye-hide-line":
+		return EyeHideLine(), nil
+	case "eye-hide-solid":
+		return EyeHideSolid(), nil
+	case "eye-line":
+		return EyeLine(), nil
+	case "eye-show-line":
+		return EyeShowLine(), nil
+	case "eye-show-solid":
+		return EyeShowSolid(), nil
+	case "eye-solid":
+		return EyeSolid(), nil
+	case "factory-line":
+		return FactoryLine(), nil
+	case "factory-solid":
+		return FactorySolid(), nil
+	case "fast-forward-line":
+		return FastForwardLine(), nil
+	case "fast-forward-solid":
+		return FastForwardSolid(), nil
+	case "favorite-line":
+		return FavoriteLine(), nil
+	case "favorite-solid":
+		return FavoriteSolid(), nil
+	case "ferry-line":
+		return FerryLine(), nil
+	case "ferry-solid":
+		return FerrySolid(), nil
+	case "file-group-line":
+		return FileGroupLine(), nil
+	case "file-group-solid":
+		return FileGroupSolid(), nil
+	case "file-line":
+		return FileLine(), nil
+	case "file-outline-alerted":
+		return FileOutlineAlerted(), nil
+	case "file-outline-badged":
+		return FileOutlineBadged(), nil
+	case "file-settings-line":
+		return FileSettingsLine(), nil
+	case "file-settings-outline-alerted":
+		return FileSettingsOutlineAlerted(), nil
+	case "file-settings-outline-badged":
+		return FileSettingsOutlineBadged(), nil
+	case "file-settings-solid":
+		return FileSettingsSolid(), nil
+	case "file-settings-solid-alerted":
+		return FileSettingsSolidAlerted(), nil
+	case "file-settings-solid-badged":
+		return FileSettingsSolidBadged(), nil
+	case "file-share-line":
+		return FileShareLine(), nil
+	case "file-share-solid":
+		return FileShareSolid(), nil
+	case "file-share-2-line":
+		return FileShareTwoLine(), nil
+	case "file-share-2-solid":
+		return FileShareTwoSolid(), nil
+	case "file-solid":
+		return FileSolid(), nil
+	case "file-solid-alerted":
+		return FileSolidAlerted(), nil
+	case "file-solid-badged":
+		return FileSolidBadged(), nil
+	case "file-zip-line":
+		return FileZipLine(), nil
+	case "file-zip-solid":
+		return FileZipSolid(), nil
+	case "film-strip-line":
+		return FilmStripLine(), nil
+	case "film-strip-solid":
+		return FilmStripSolid(), nil
+	case "filter-grid-circle-line":
+		return FilterGridCircleLine(), nil
+	case "filter-grid-circle-solid":
+		return FilterGridCircleSolid(), nil
+	case "filter-grid-line":
+		return FilterGridLine(), nil
+	case "filter-grid-solid":
+		return FilterGridSolid(), nil
+	case "filter-line":
+		return FilterLine(), nil
+	case "filter-off-line":
+		return FilterOffLine(), nil
+	case "filter-off-solid":
+		return FilterOffSolid(), nil
+	case "filter-solid":
+		return FilterSolid(), nil
+	case "filter-2-line":
+		return FilterTwoLine(), nil
+	case "firewall-line":
+		return FirewallLine(), nil
+	case "firewall-outline-alerted":
+		return FirewallOutlineAlerted(), nil
+	case "firewall-outline-badged":
+		return FirewallOutlineBadged(), nil
+	case "firewall-solid":
+		return FirewallSolid(), nil
+	case "firewall-solid-alerted":
+		return FirewallSolidAlerted(), nil
+	case "firewall-solid-badged":
+		return FirewallSolidBadged(), nil
+	case "first-aid-kit-line":
+		return FirstAidKitLine(), nil
+	case "first-aid-kit-solid":
+		return FirstAidKitSolid(), nil
+	case "fish-line":
+		return FishLine(), nil
+	case "flag-line":
+		return FlagLine(), nil
+	case "flag-solid":
+		return FlagSolid(), nil
+	case "flame-line":
+		return FlameLine(), nil
+	case "flame-solid":
+		return FlameSolid(), nil
+	case "flask-line":
+		return FlaskLine(), nil
+	case "flask-solid":
+		return FlaskSolid(), nil
+	case "floppy-line":
+		return FloppyLine(), nil
+	case "floppy-outline-alerted":
+		return FloppyOutlineAlerted(), nil
+	case "floppy-outline-badged":
+		return FloppyOutlineBadged(), nil
+	case "floppy-solid":
+		return FloppySolid(), nil
+	case "floppy-solid-alerted":
+		return FloppySolidAlerted(), nil
+	case "floppy-solid-badged":
+		return FloppySolidBadged(), nil
+	case "flow-chart-line":
+		return FlowChartLine(), nil
+	case "flow-chart-solid":
+		return FlowChartSolid(), nil
+	case "folder-line":
+		return FolderLine(), nil
+	case "folder-open-line":
+		return FolderOpenLine(), nil
+	case "folder-open-outline-alerted":
+		return FolderOpenOutlineAlerted(), nil
+	case "folder-open-outline-badged":
+		return FolderOpenOutlineBadged(), nil
+	case "folder-open-solid":
+		return FolderOpenSolid(), nil
+	case "folder-open-solid-alerted":
+		return FolderOpenSolidAlerted(), nil
+	case "folder-open-solid-badged":
+		return FolderOpenSolidBadged(), nil
+	case "folder-outline-alerted":
+		return FolderOutlineAlerted(), nil
+	case "folder-outline-badged":
+		return FolderOutlineBadged(), nil
+	case "folder-solid":
+		return FolderSolid(), nil
+	case "folder-solid-alerted":
+		return FolderSolidAlerted(), nil
+	case "folder-solid-badged":
+		return FolderSolidBadged(), nil
+	case "font-size-line":
+		return FontSizeLine(), nil
+	case "forking-line":
+		return ForkingLine(), nil
+	case "form-line":
+		return FormLine(), nil
+	case "fuel-line":
+		return FuelLine(), nil
+	case "gavel-line":
+		return GavelLine(), nil
+	case "gavel-solid":
+		return GavelSolid(), nil
+	case "grid-chart-line":
+		return GridChartLine(), nil
+	case "grid-chart-outline-alerted":
+		return GridChartOutlineAlerted(), nil
+	case "grid-chart-outline-badged":
+		return GridChartOutlineBadged(), nil
+	case "grid-chart-solid":
+		return GridChartSolid(), nil
+	case "grid-chart-solid-alerted":
+		return GridChartSolidAlerted(), nil
+	case "grid-chart-solid-badged":
+		return GridChartSolidBadged(), nil
+	case "grid-view-line":
+		return GridViewLine(), nil
+	case "grid-view-solid":
+		return GridViewSolid(), nil
+	case "group-line":
+		return GroupLine(), nil
+	case "group-outline-alerted":
+		return GroupOutlineAlerted(), nil
+	case "group-outline-badged":
+		return GroupOutlineBadged(), nil
+	case "group-solid":
+		return GroupSolid(), nil
+	case "group-solid-alerted":
+		return GroupSolidAlerted(), nil
+	case "group-solid-badged":
+		return GroupSolidBadged(), nil
+	case "half-star-line":
+		return HalfStarLine(), nil
+	case "half-star-solid":
+		return HalfStarSolid(), nil
+	case "happy-face-line":
+		return HappyFaceLine(), nil
+	case "happy-face-solid":
+		return HappyFaceSolid(), nil
+	case "hard-disk-line":
+		return HardDiskLine(), nil
+	case "hard-disk-outline-alerted":
+		return HardDiskOutlineAlerted(), nil
+	case "hard-disk-outline-badged":
+		return HardDiskOutlineBadged(), nil
+	case "hard-disk-solid":
+		return HardDiskSolid(), nil
+	case "hard-disk-solid-alerted":
+		return HardDiskSolidAlerted(), nil
+	case "hard-disk-solid-badged":
+		return HardDiskSolidBadged(), nil
+	case "hard-drive-disks-line":
+		return HardDriveDisksLine(), nil
+	case "hard-drive-disks-solid":
+		return HardDriveDisksSolid(), nil
+	case "hard-drive-line":
+		return HardDriveLine(), nil
+	case "hard-drive-solid":
+		return HardDriveSolid(), nil
+	case "hashtag-line":
+		return HashtagLine(), nil
+	case "hashtag-solid":
+		return HashtagSolid(), nil
+	case "headphones-line":
+		return HeadphonesLine(), nil
+	case "headphones-solid":
+		return HeadphonesSolid(), nil
+	case "heart-broken-line":
+		return HeartBrokenLine(), nil
+	case "heart-broken-solid":
+		return HeartBrokenSolid(), nil
+	case "heart-line":
+		return HeartLine(), nil
+	case "heart-solid":
+		return HeartSolid(), nil
+	case "heat-map-line":
+		return HeatMapLine(), nil
+	case "heat-map-outline-alerted":
+		return HeatMapOutlineAlerted(), nil
+	case "heat-map-outline-badged":
+		return HeatMapOutlineBadged(), nil
+	case "heat-map-solid":
+		return HeatMapSolid(), nil
+	case "heat-map-solid-alerted":
+		return HeatMapSolidAlerted(), nil
+	case "heat-map-solid-badged":
+		return HeatMapSolidBadged(), nil
+	case "helix-line":
+		return HelixLine(), nil
+	case "helix-solid":
+		return HelixSolid(), nil
+	case "help-info-line":
+		return HelpInfoLine(), nil
+	case "help-info-solid":
+		return HelpInfoSolid(), nil
+	case "help-line":
+		return HelpLine(), nil
+	case "help-outline-badged":
+		return HelpOutlineBadged(), nil
+	case "help-solid":
+		return HelpSolid(), nil
+	case "help-solid-badged":
+		return HelpSolidBadged(), nil
+	case "highlighter-line":
+		return HighlighterLine(), nil
+	case "history-line":
+		return HistoryLine(), nil
+	case "home-line":
+		return HomeLine(), nil
+	case "home-solid":
+		return HomeSolid(), nil
+	case "host-group-line":
+		return HostGroupLine(), nil
+	case "host-group-solid":
+		return HostGroupSolid(), nil
+	case "host-line":
+		return HostLine(), nil
+	case "host-outline-alerted":
+		return HostOutlineAlerted(), nil
+	case "host-outline-badged":
+		return HostOutlineBadged(), nil
+	case "host-solid":
+		return HostSolid(), nil
+	case "host-solid-alerted":
+		return HostSolidAlerted(), nil
+	case "host-solid-badged":
+		return HostSolidBadged(), nil
+	case "hourglass-line":
+		return HourglassLine(), nil
+	case "hourglass-outline-alerted":
+		return HourglassOutlineAlerted(), nil
+	case "hourglass-outline-badged":
+		return HourglassOutlineBadged(), nil
+	case "hourglass-solid":
+		return HourglassSolid(), nil
+	case "hourglass-solid-alerted":
+		return HourglassSolidAlerted(), nil
+	case "hourglass-solid-badged":
+		return HourglassSolidBadged(), nil
+	case "house-line":
+		return HouseLine(), nil
+	case "house-solid":
+		return HouseSolid(), nil
+	case "id-badge-line":
+		return IdBadgeLine(), nil
+	case "id-badge-outline-alerted":
+		return IdBadgeOutlineAlerted(), nil
+	case "id-badge-outline-badged":
+		return IdBadgeOutlineBadged(), nil
+	case "id-badge-solid":
+		return IdBadgeSolid(), nil
+	case "id-badge-solid-alerted":
+		return IdBadgeSolidAlerted(), nil
+	case "id-badge-solid-badged":
+		return IdBadgeSolidBadged(), nil
+	case "image-gallery-line":
+		return ImageGalleryLine(), nil
+	case "image-gallery-solid":
+		return ImageGallerySolid(), nil
+	case "image-line":
+		return ImageLine(), nil
+	case "image-outline-badged":
+		return ImageOutlineBadged(), nil
+	case "image-solid":
+		return ImageSolid(), nil
+	case "image-solid-badged":
+		return ImageSolidBadged(), nil
+	case "import-line":
+		return ImportLine(), nil
+	case "import-outline-alerted":
+		return ImportOutlineAlerted(), nil
+	case "import-outline-badged":
+		return ImportOutlineBadged(), nil
+	case "import-solid":
+		return ImportSolid(), nil
+	case "import-solid-alerted":
+		return ImportSolidAlerted(), nil
+	case "import-solid-badged":
+		return ImportSolidBadged(), nil
+	case "inbox-line":
+		return InboxLine(), nil
+	case "inbox-outline-badged":
+		return InboxOutlineBadged(), nil
+	case "indent-line":
+		return IndentLine(), nil
+	case "inductor-line":
+		return InductorLine(), nil
+	case "info-circle-line":
+		return InfoCircleLine(), nil
+	case "info-circle-solid":
+		return InfoCircleSolid(), nil
+	case "info-line":
+		return InfoLine(), nil
+	case "info-solid":
+		return InfoSolid(), nil
+	case "info-standard-line":
+		return InfoStandardLine(), nil
+	case "info-standard-solid":
+		return InfoStandardSolid(), nil
+	case "install-line":
+		return InstallLine(), nil
+	case "install-outline-alerted":
+		return InstallOutlineAlerted(), nil
+	case "install-outline-badged":
+		return InstallOutlineBadged(), nil
+	case "internet-of-things-line":
+		return InternetOfThingsLine(), nil
+	case "internet-of-things-solid":
+		return InternetOfThingsSolid(), nil
+	case "italic-line":
+		return ItalicLine(), nil
+	case "justify-text-line":
+		return JustifyTextLine(), nil
+	case "key-line":
+		return KeyLine(), nil
+	case "key-outline-alerted":
+		return KeyOutlineAlerted(), nil
+	case "key-outline-badged":
+		return KeyOutlineBadged(), nil
+	case "key-solid":
+		return KeySolid(), nil
+	case "key-solid-alerted":
+		return KeySolidAlerted(), nil
+	case "key-solid-badged":
+		return KeySolidBadged(), nil
+	case "keyboard-line":
+		return KeyboardLine(), nil
+	case "keyboard-solid":
+		return KeyboardSolid(), nil
+	case "landscape-line":
+		return LandscapeLine(), nil
+	case "landscape-solid":
+		return LandscapeSolid(), nil
+	case "language-line":
+		return LanguageLine(), nil
+	case "language-solid":
+		return LanguageSolid(), nil
+	case "launchpad-line":
+		return LaunchpadLine(), nil
+	case "launchpad-solid":
+		return LaunchpadSolid(), nil
+	case "layers-line":
+		return LayersLine(), nil
+	case "layers-solid":
+		return LayersSolid(), nil
+	case "library-line":
+		return LibraryLine(), nil
+	case "library-solid":
+		return LibrarySolid(), nil
+	case "license-line":
+		return LicenseLine(), nil
+	case "license-outline-alerted":
+		return LicenseOutlineAlerted(), nil
+	case "license-outline-badged":
+		return LicenseOutlineBadged(), nil
+	case "license-solid":
+		return LicenseSolid(), nil
+	case "license-solid-alerted":
+		return LicenseSolidAlerted(), nil
+	case "license-solid-badged":
+		return LicenseSolidBadged(), nil
+	case "lightbulb-line":
+		return LightbulbLine(), nil
+	case "lightbulb-outline-badged":
+		return LightbulbOutlineBadged(), nil
+	case "lightbulb-solid":
+		return LightbulbSolid(), nil
+	case "lightbulb-solid-badged":
+		return LightbulbSolidBadged(), nil
+	case "lightning-line":
+		return LightningLine(), nil
+	case "lightning-solid":
+		return LightningSolid(), nil
+	case "line-chart-line":
+		return LineChartLine(), nil
+	case "line-chart-outline-alerted":
+		return LineChartOutlineAlerted(), nil
+	case "line-chart-outline-badged":
+		return LineChartOutlineBadged(), nil
+	case "line-chart-solid":
+		return LineChartSolid(), nil
+	case "line-chart-solid-alerted":
+		return LineChartSolidAlerted(), nil
+	case "line-chart-solid-badged":
+		return LineChartSolidBadged(), nil
+	case "link-line":
+		return LinkLine(), nil
+	case "list-line":
+		return ListLine(), nil
+	case "list-outline-badged":
+		return ListOutlineBadged(), nil
+	case "list-solid":
+		return ListSolid(), nil
+	case "list-solid-badged":
+		return ListSolidBadged(), nil
+	case "lock-line":
+		return LockLine(), nil
+	case "lock-solid":
+		return LockSolid(), nil
+	case "login-line":
+		return LoginLine(), nil
+	case "login-solid":
+		return LoginSolid(), nil
+	case "logout-line":
+		return LogoutLine(), nil
+	case "logout-solid":
+		return LogoutSolid(), nil
+	case "map-line":
+		return MapLine(), nil
+	case "map-marker-line":
+		return MapMarkerLine(), nil
+	case "map-marker-outline-badged":
+		return MapMarkerOutlineBadged(), nil
+	case "map-marker-solid":
+		return MapMarkerSolid(), nil
+	case "map-marker-solid-badged":
+		return MapMarkerSolidBadged(), nil
+	case "map-outline-alerted":
+		return MapOutlineAlerted(), nil
+	case "map-outline-badged":
+		return MapOutlineBadged(), nil
+	case "map-solid":
+		return MapSolid(), nil
+	case "map-solid-alerted":
+		return MapSolidAlerted(), nil
+	case "map-solid-badged":
+		return MapSolidBadged(), nil
+	case "media-changer-line":
+		return MediaChangerLine(), nil
+	case "media-changer-outline-alerted":
+		return MediaChangerOutlineAlerted(), nil
+	case "media-changer-outline-badged":
+		return MediaChangerOutlineBadged(), nil
+	case "media-changer-solid":
+		return MediaChangerSolid(), nil
+	case "media-changer-solid-alerted":
+		return MediaChangerSolidAlerted(), nil
+	case "media-changer-solid-badged":
+		return MediaChangerSolidBadged(), nil
+	case "memory-line":
+		return MemoryLine(), nil
+	case "memory-outline-alerted":
+		return MemoryOutlineAlerted(), nil
+	case "memory-outline-badged":
+		return MemoryOutlineBadged(), nil
+	case "memory-solid":
+		return MemorySolid(), nil
+	case "memory-solid-alerted":
+		return MemorySolidAlerted(), nil
+	case "memory-solid-badged":
+		return MemorySolidBadged(), nil
+	case "menu-line":
+		return MenuLine(), nil
+	case "microphone-line":
+		return MicrophoneLine(), nil
+	case "microphone-mute-line":
+		return MicrophoneMuteLine(), nil
+	case "microphone-mute-solid":
+		return MicrophoneMuteSolid(), nil
+	case "microphone-solid":
+		return MicrophoneSolid(), nil
+	case "minus-circle-line":
+		return MinusCircleLine(), nil
+	case "minus-circle-solid":
+		return MinusCircleSolid(), nil
+	case "minus-line":
+		return MinusLine(), nil
+	case "mobile-line":
+		return MobileLine(), nil
+	case "mobile-phone-line":
+		return MobilePhoneLine(), nil
+	case "mobile-phone-solid":
+		return MobilePhoneSolid(), nil
+	case "mobile-solid":
+		return MobileSolid(), nil
+	case "moon-line":
+		return MoonLine(), nil
+	case "moon-solid":
+		return MoonSolid(), nil
+	case "mouse-line":
+		return MouseLine(), nil
+	case "mouse-solid":
+		return MouseSolid(), nil
+	case "music-note-line":
+		return MusicNoteLine(), nil
+	case "music-note-solid":
+		return MusicNoteSolid(), nil
+	case "namespace-line":
+		return NamespaceLine(), nil
+	case "namespace-outline-alerted":
+		return NamespaceOutlineAlerted(), nil
+	case "namespace-outline-badged":
+		return NamespaceOutlineBadged(), nil
+	case "network-globe-line":
+		return NetworkGlobeLine(), nil
+	case "network-globe-outline-alerted":
+		return NetworkGlobeOutlineAlerted(), nil
+	case "network-globe-outline-badged":
+		return NetworkGlobeOutlineBadged(), nil
+	case "network-globe-solid":
+		return NetworkGlobeSolid(), nil
+	case "network-globe-solid-alerted":
+		return NetworkGlobeSolidAlerted(), nil
+	case "network-globe-solid-badged":
+		return NetworkGlobeSolidBadged(), nil
+	case "network-settings-line":
+		return NetworkSettingsLine(), nil
+	case "network-settings-solid":
+		return NetworkSettingsSolid(), nil
+	case "network-switch-line":
+		return NetworkSwitchLine(), nil
+	case "network-switch-outline-alerted":
+		return NetworkSwitchOutlineAlerted(), nil
+	case "network-switch-outline-badged":
+		return NetworkSwitchOutlineBadged(), nil
+	case "network-switch-solid":
+		return NetworkSwitchSolid(), nil
+	case "network-switch-solid-alerted":
+		return NetworkSwitchSolidAlerted(), nil
+	case "network-switch-solid-badged":
+		return NetworkSwitchSolidBadged(), nil
+	case "neutral-face-line":
+		return NeutralFaceLine(), nil
+	case "neutral-face-solid":
+		return NeutralFaceSolid(), nil
+	case "new-line":
+		return NewLine(), nil
+	case "new-solid":
+		return NewSolid(), nil
+	case "no-access-line":
+		return NoAccessLine(), nil
+	case "no-access-solid":
+		return NoAccessSolid(), nil
+	case "no-wifi-line":
+		return NoWifiLine(), nil
+	case "no-wifi-solid":
+		return NoWifiSolid(), nil
+	case "node-group-line":
+		return NodeGroupLine(), nil
+	case "node-line":
+		return NodeLine(), nil
+	case "nodes-line":
+		return NodesLine(), nil
+	case "note-edit-line":
+		return NoteEditLine(), nil
+	case "note-edit-solid":
+		return NoteEditSolid(), nil
+	case "note-line":
+		return NoteLine(), nil
+	case "note-solid":
+		return NoteSolid(), nil
+	case "notification-line":
+		return NotificationLine(), nil
+	case "notification-outline-badged":
+		return NotificationOutlineBadged(), nil
+	case "notification-solid":
+		return NotificationSolid(), nil
+	case "notification-solid-badged":
+		return NotificationSolidBadged(), nil
+	case "number-list-line":
+		return NumberListLine(), nil
+	case "nvme-line":
+		return NvmeLine(), nil
+	case "objects-line":
+		return ObjectsLine(), nil
+	case "objects-solid":
+		return ObjectsSolid(), nil
+	case "on-holiday-line":
+		return OnHolidayLine(), nil
+	case "on-holiday-solid":
+		return OnHolidaySolid(), nil
+	case "organization-line":
+		return OrganizationLine(), nil
+	case "organization-solid":
+		return OrganizationSolid(), nil
+	case "outdent-line":
+		return OutdentLine(), nil
+	case "paint-roller-line":
+		return PaintRollerLine(), nil
+	case "paint-roller-solid":
+		return PaintRollerSolid(), nil
+	case "paperclip-line":
+		return PaperclipLine(), nil
+	case "paste-line":
+		return PasteLine(), nil
+	case "paste-solid":
+		return PasteSolid(), nil
+	case "pause-line":
+		return PauseLine(), nil
+	case "pause-solid":
+		return PauseSolid(), nil
+	case "pencil-line":
+		return PencilLine(), nil
+	case "pencil-solid":
+		return PencilSolid(), nil
+	case "peso-line":
+		return PesoLine(), nil
+	case "peso-solid":
+		return PesoSolid(), nil
+	case "phone-handset-line":
+		return PhoneHandsetLine(), nil
+	case "phone-handset-solid":
+		return PhoneHandsetSolid(), nil
+	case "picture-line":
+		return PictureLine(), nil
+	case "picture-outline-badged":
+		return PictureOutlineBadged(), nil
+	case "picture-solid":
+		return PictureSolid(), nil
+	case "picture-solid-badged":
+		return PictureSolidBadged(), nil
+	case "pie-chart-line":
+		return PieChartLine(), nil
+	case "pie-chart-outline-alerted":
+		return PieChartOutlineAlerted(), nil
+	case "pie-chart-outline-badged":
+		return PieChartOutlineBadged(), nil
+	case "pie-chart-solid":
+		return PieChartSolid(), nil
+	case "pie-chart-solid-alerted":
+		return PieChartSolidAlerted(), nil
+	case "pie-chart-solid-badged":
+		return PieChartSolidBadged(), nil
+	case "piggy-bank-line":
+		return PiggyBankLine(), nil
+	case "piggy-bank-solid":
+		return PiggyBankSolid(), nil
+	case "pin-line":
+		return PinLine(), nil
+	case "pin-solid":
+		return PinSolid(), nil
+	case "pinboard-line":
+		return PinboardLine(), nil
+	case "pinboard-solid":
+		return PinboardSolid(), nil
+	case "pinned-line":
+		return PinnedLine(), nil
+	case "pinned-solid":
+		return PinnedSolid(), nil
+	case "plane-line":
+		return PlaneLine(), nil
+	case "plane-solid":
+		return PlaneSolid(), nil
+	case "play-line":
+		return PlayLine(), nil
+	case "play-solid":
+		return PlaySolid(), nil
+	case "plugin-line":
+		return PluginLine(), nil
+	case "plugin-outline-alerted":
+		return PluginOutlineAlerted(), nil
+	case "plugin-outline-badged":
+		return PluginOutlineBadged(), nil
+	case "plugin-solid":
+		return PluginSolid(), nil
+	case "plugin-solid-alerted":
+		return PluginSolidAlerted(), nil
+	case "plugin-solid-badged":
+		return PluginSolidBadged(), nil
+	case "plus-circle-line":
+		return PlusCircleLine(), nil
+	case "plus-circle-solid":
+		return PlusCircleSolid(), nil
+	case "plus-line":
+		return PlusLine(), nil
+	case "pod-line":
+		return PodLine(), nil
+	case "pop-out-line":
+		return PopOutLine(), nil
+	case "portrait-line":
+		return PortraitLine(), nil
+	case "portrait-solid":
+		return PortraitSolid(), nil
+	case "pound-line":
+		return PoundLine(), nil
+	case "pound-solid":
+		return PoundSolid(), nil
+	case "power-line":
+		return PowerLine(), nil
+	case "power-outline-alerted":
+		return PowerOutlineAlerted(), nil
+	case "power-outline-badged":
+		return PowerOutlineBadged(), nil
+	case "power-solid":
+		return PowerSolid(), nil
+	case "power-solid-alerted":
+		return PowerSolidAlerted(), nil
+	case "power-solid-badged":
+		return PowerSolidBadged(), nil
+	case "printer-line":
+		return PrinterLine(), nil
+	case "printer-outline-alerted":
+		return PrinterOutlineAlerted(), nil
+	case "printer-outline-badged":
+		return PrinterOutlineBadged(), nil
+	case "printer-solid":
+		return PrinterSolid(), nil
+	case "printer-solid-alerted":
+		return PrinterSolidAlerted(), nil
+	case "printer-solid-badged":
+		return PrinterSolidBadged(), nil
+	case "process-on-vm-line":
+		return ProcessOnVmLine(), nil
+	case "qr-code-line":
+		return QrCodeLine(), nil
+	case "rack-server-line":
+		return RackServerLine(), nil
+	case "rack-server-outline-alerted":
+		return RackServerOutlineAlerted(), nil
+	case "rack-server-outline-badged":
+		return RackServerOutlineBadged(), nil
+	case "rack-server-solid":
+		return RackServerSolid(), nil
+	case "rack-server-solid-alerted":
+		return RackServerSolidAlerted(), nil
+	case "rack-server-solid-badged":
+		return RackServerSolidBadged(), nil
+	case "radar-line":
+		return RadarLine(), nil
+	case "radar-solid":
+		return RadarSolid(), nil
+	case "receiver-line":
+		return ReceiverLine(), nil
+	case "receiver-solid":
+		return ReceiverSolid(), nil
+	case "recycle-line":
+		return RecycleLine(), nil
+	case "recycle-solid":
+		return RecycleSolid(), nil
+	case "redo-line":
+		return RedoLine(), nil
+	case "refresh-line":
+		return RefreshLine(), nil
+	case "remove-line":
+		return RemoveLine(), nil
+	case "remove-solid":
+		return RemoveSolid(), nil
+	case "repeat-line":
+		return RepeatLine(), nil
+	case "replay-all-line":
+		return ReplayAllLine(), nil
+	case "replay-one-line":
+		return ReplayOneLine(), nil
+	case "resistor-line":
+		return ResistorLine(), nil
+	case "resize-down-line":
+		return ResizeDownLine(), nil
+	case "resize-line":
+		return ResizeLine(), nil
+	case "resize-up-line":
+		return ResizeUpLine(), nil
+	case "resource-pool-line":
+		return ResourcePoolLine(), nil
+	case "resource-pool-outline-alerted":
+		return ResourcePoolOutlineAlerted(), nil
+	case "resource-pool-outline-badged":
+		return ResourcePoolOutlineBadged(), nil
+	case "resource-pool-solid":
+		return ResourcePoolSolid(), nil
+	case "resource-pool-solid-alerted":
+		return ResourcePoolSolidAlerted(), nil
+	case "resource-pool-solid-badged":
+		return ResourcePoolSolidBadged(), nil
+	case "rewind-line":
+		return RewindLine(), nil
+	case "rewind-solid":
+		return RewindSolid(), nil
+	case "router-line":
+		return RouterLine(), nil
+	case "router-outline-alerted":
+		return RouterOutlineAlerted(), nil
+	case "router-outline-badged":
+		return RouterOutlineBadged(), nil
+	case "router-solid":
+		return RouterSolid(), nil
+	case "router-solid-alerted":
+		return RouterSolidAlerted(), nil
+	case "router-solid-badged":
+		return RouterSolidBadged(), nil
+	case "ruble-line":
+		return RubleLine(), nil
+	case "ruble-solid":
+		return RubleSolid(), nil
+	case "ruler-pencil-line":
+		return RulerPencilLine(), nil
+	case "ruler-pencil-solid":
+		return RulerPencilSolid(), nil
+	case "rupee-line":
+		return RupeeLine(), nil
+	case "rupee-solid":
+		return RupeeSolid(), nil
+	case "sad-face-line":
+		return SadFaceLine(), nil
+	case "sad-face-solid":
+		return SadFaceSolid(), nil
+	case "savings-line":
+		return SavingsLine(), nil
+	case "savings-solid":
+		return SavingsSolid(), nil
+	case "scatter-plot-line":
+		return ScatterPlotLine(), nil
+	case "scatter-plot-outline-alerted":
+		return ScatterPlotOutlineAlerted(), nil
+	case "scatter-plot-outline-badged":
+		return ScatterPlotOutlineBadged(), nil
+	case "scatter-plot-solid":
+		return ScatterPlotSolid(), nil
+	case "scatter-plot-solid-alerted":
+		return ScatterPlotSolidAlerted(), nil
+	case "scatter-plot-solid-badged":
+		return ScatterPlotSolidBadged(), nil
+	case "scissors-line":
+		return ScissorsLine(), nil
+	case "scissors-solid":
+		return ScissorsSolid(), nil
+	case "scroll-line":
+		return ScrollLine(), nil
+	case "scroll-outline-alerted":
+		return ScrollOutlineAlerted(), nil
+	case "scroll-outline-badged":
+		return ScrollOutlineBadged(), nil
+	case "scroll-solid":
+		return ScrollSolid(), nil
+	case "scroll-solid-alerted":
+		return ScrollSolidAlerted(), nil
+	case "scroll-solid-badged":
+		return ScrollSolidBadged(), nil
+	case "search-line":
+		return SearchLine(), nil
+	case "server-line":
+		return ServerLine(), nil
+	case "server-outline-alerted":
+		return ServerOutlineAlerted(), nil
+	case "server-outline-badged":
+		return ServerOutlineBadged(), nil
+	case "server-solid":
+		return ServerSolid(), nil
+	case "server-solid-alerted":
+		return ServerSolidAlerted(), nil
+	case "server-solid-badged":
+		return ServerSolidBadged(), nil
+	case "settings-line":
+		return SettingsLine(), nil
+	case "settings-outline-alerted":
+		return SettingsOutlineAlerted(), nil
+	case "settings-outline-badged":
+		return SettingsOutlineBadged(), nil
+	case "settings-solid":
+		return SettingsSolid(), nil
+	case "settings-solid-alerted":
+		return SettingsSolidAlerted(), nil
+	case "settings-solid-badged":
+		return SettingsSolidBadged(), nil
+	case "share-line":
+		return ShareLine(), nil
+	case "share-solid":
+		return ShareSolid(), nil
+	case "shield-check-line":
+		return ShieldCheckLine(), nil
+	case "shield-check-solid":
+		return ShieldCheckSolid(), nil
+	case "shield-line":
+		return ShieldLine(), nil
+	case "shield-outline-alerted":
+		return ShieldOutlineAlerted(), nil
+	case "shield-outline-badged":
+		return ShieldOutlineBadged(), nil
+	case "shield-solid":
+		return ShieldSolid(), nil
+	case "shield-solid-alerted":
+		return ShieldSolidAlerted(), nil
+	case "shield-solid-badged":
+		return ShieldSolidBadged(), nil
+	case "shield-x-line":
+		return ShieldXLine(), nil
+	case "shield-x-solid":
+		return ShieldXSolid(), nil
+	case "shopping-bag-line":
+		return ShoppingBagLine(), nil
+	case "shopping-bag-solid":
+		return ShoppingBagSolid(), nil
+	case "shopping-cart-line":
+		return ShoppingCartLine(), nil
+	case "shopping-cart-outline-alerted":
+		return ShoppingCartOutlineAlerted(), nil
+	case "shopping-cart-outline-badged":
+		return ShoppingCartOutlineBadged(), nil
+	case "shopping-cart-solid":
+		return ShoppingCartSolid(), nil
+	case "shopping-cart-solid-alerted":
+		return ShoppingCartSolidAlerted(), nil
+	case "shopping-cart-solid-badged":
+		return ShoppingCartSolidBadged(), nil
+	case "shrink-line":
+		return ShrinkLine(), nil
+	case "shuffle-line":
+		return ShuffleLine(), nil
+	case "sign-in-line":
+		return SignInLine(), nil
+	case "sign-in-solid":
+		return SignInSolid(), nil
+	case "sign-out-line":
+		return SignOutLine(), nil
+	case "sign-out-solid":
+		return SignOutSolid(), nil
+	case "slider-line":
+		return SliderLine(), nil
+	case "slider-solid":
+		return SliderSolid(), nil
+	case "snowflake-line":
+		return SnowflakeLine(), nil
+	case "sort-by-line":
+		return SortByLine(), nil
+	case "squid-line":
+		return SquidLine(), nil
+	case "ssd-line":
+		return SsdLine(), nil
+	case "ssd-solid":
+		return SsdSolid(), nil
+	case "star-line":
+		return StarLine(), nil
+	case "star-solid":
+		return StarSolid(), nil
+	case "step-forward-line":
+		return StepForwardLine(), nil
+	case "step-forward-solid":
+		return StepForwardSolid(), nil
+	case "step-forward-2-line":
+		return StepForwardTwoLine(), nil
+	case "stop-line":
+		return StopLine(), nil
+	case "stop-solid":
+		return StopSolid(), nil
+	case "storage-adapter-line":
+		return StorageAdapterLine(), nil
+	case "storage-line":
+		return StorageLine(), nil
+	case "storage-outline-alerted":
+		return StorageOutlineAlerted(), nil
+	case "storage-outline-badged":
+		return StorageOutlineBadged(), nil
+	case "storage-solid":
+		return StorageSolid(), nil
+	case "storage-solid-alerted":
+		return StorageSolidAlerted(), nil
+	case "storage-solid-badged":
+		return StorageSolidBadged(), nil
+	case "store-line":
+		return StoreLine(), nil
+	case "store-solid":
+		return StoreSolid(), nil
+	case "strikethrough-line":
+		return StrikethroughLine(), nil
+	case "subscript-line":
+		return SubscriptLine(), nil
+	case "success-line":
+		return SuccessLine(), nil
+	case "success-standard-line":
+		return SuccessStandardLine(), nil
+	case "success-standard-solid":
+		return SuccessStandardSolid(), nil
+	case "sun-line":
+		return SunLine(), nil
+	case "sun-solid":
+		return SunSolid(), nil
+	case "superscript-line":
+		return SuperscriptLine(), nil
+	case "switch-line":
+		return SwitchLine(), nil
+	case "sync-line":
+		return SyncLine(), nil
+	case "table-line":
+		return TableLine(), nil
+	case "tablet-line":
+		return TabletLine(), nil
+	case "tablet-solid":
+		return TabletSolid(), nil
+	case "tag-line":
+		return TagLine(), nil
+	case "tag-outline-alerted":
+		return TagOutlineAlerted(), nil
+	case "tag-outline-badged":
+		return TagOutlineBadged(), nil
+	case "tag-solid":
+		return TagSolid(), nil
+	case "tag-solid-alerted":
+		return TagSolidAlerted(), nil
+	case "tag-solid-badged":
+		return TagSolidBadged(), nil
+	case "tags-line":
+		return TagsLine(), nil
+	case "tags-outline-alerted":
+		return TagsOutlineAlerted(), nil
+	case "tags-outline-badged":
+		return TagsOutlineBadged(), nil
+	case "tags-solid":
+		return TagsSolid(), nil
+	case "tags-solid-alerted":
+		return TagsSolidAlerted(), nil
+	case "tags-solid-badged":
+		return TagsSolidBadged(), nil
+	case "talk-bubbles-line":
+		return TalkBubblesLine(), nil
+	case "talk-bubbles-outline-badged":
+		return TalkBubblesOutlineBadged(), nil
+	case "talk-bubbles-solid":
+		return TalkBubblesSolid(), nil
+	case "talk-bubbles-solid-badged":
+		return TalkBubblesSolidBadged(), nil
+	case "tape-drive-line":
+		return TapeDriveLine(), nil
+	case "tape-drive-outline-alerted":
+		return TapeDriveOutlineAlerted(), nil
+	case "tape-drive-outline-badged":
+		return TapeDriveOutlineBadged(), nil
+	case "tape-drive-solid":
+		return TapeDriveSolid(), nil
+	case "tape-drive-solid-alerted":
+		return TapeDriveSolidAlerted(), nil
+	case "tape-drive-solid-badged":
+		return TapeDriveSolidBadged(), nil
+	case "target-line":
+		return TargetLine(), nil
+	case "target-solid":
+		return TargetSolid(), nil
+	case "tasks-line":
+		return TasksLine(), nil
+	case "tasks-outline-alerted":
+		return TasksOutlineAlerted(), nil
+	case "tasks-outline-badged":
+		return TasksOutlineBadged(), nil
+	case "tasks-solid":
+		return TasksSolid(), nil
+	case "tasks-solid-alerted":
+		return TasksSolidAlerted(), nil
+	case "tasks-solid-badged":
+		return TasksSolidBadged(), nil
+	case "terminal-line":
+		return TerminalLine(), nil
+	case "terminal-outline-alerted":
+		return TerminalOutlineAlerted(), nil
+	case "terminal-outline-badged":
+		return TerminalOutlineBadged(), nil
+	case "terminal-solid":
+		return TerminalSolid(), nil
+	case "terminal-solid-alerted":
+		return TerminalSolidAlerted(), nil
+	case "terminal-solid-badged":
+		return TerminalSolidBadged(), nil
+	case "text-color-line":
+		return TextColorLine(), nil
+	case "text-line":
+		return TextLine(), nil
+	case "thermometer-line":
+		return ThermometerLine(), nil
+	case "thin-client-line":
+		return ThinClientLine(), nil
+	case "thin-client-solid":
+		return ThinClientSolid(), nil
+	case "thumbs-down-line":
+		return ThumbsDownLine(), nil
+	case "thumbs-down-solid":
+		return ThumbsDownSolid(), nil
+	case "thumbs-up-line":
+		return ThumbsUpLine(), nil
+	case "thumbs-up-solid":
+		return ThumbsUpSolid(), nil
+	case "tick-chart-line":
+		return TickChartLine(), nil
+	case "tick-chart-outline-alerted":
+		return TickChartOutlineAlerted(), nil
+	case "tick-chart-outline-badged":
+		return TickChartOutlineBadged(), nil
+	case "tick-chart-solid":
+		return TickChartSolid(), nil
+	case "tick-chart-solid-alerted":
+		return TickChartSolidAlerted(), nil
+	case "tick-chart-solid-badged":
+		return TickChartSolidBadged(), nil
+	case "timeline-line":
+		return TimelineLine(), nil
+	case "times-circle-line":
+		return TimesCircleLine(), nil
+	case "times-circle-solid":
+		return TimesCircleSolid(), nil
+	case "times-line":
+		return TimesLine(), nil
+	case "tools-line":
+		return ToolsLine(), nil
+	case "tools-solid":
+		return ToolsSolid(), nil
+	case "trailer-line":
+		return TrailerLine(), nil
+	case "trailer-solid":
+		return TrailerSolid(), nil
+	case "trash-line":
+		return TrashLine(), nil
+	case "trash-solid":
+		return TrashSolid(), nil
+	case "tree-line":
+		return TreeLine(), nil
+	case "tree-solid":
+		return TreeSolid(), nil
+	case "tree-view-line":
+		return TreeViewLine(), nil
+	case "tree-view-solid":
+		return TreeViewSolid(), nil
+	case "truck-line":
+		return TruckLine(), nil
+	case "truck-solid":
+		return TruckSolid(), nil
+	case "two-way-arrows-line":
+		return TwoWayArrowsLine(), nil
+	case "unarchive-line":
+		return UnarchiveLine(), nil
+	case "unarchive-solid":
+		return UnarchiveSolid(), nil
+	case "underline-line":
+		return UnderlineLine(), nil
+	case "undo-line":
+		return UndoLine(), nil
+	case "uninstall-line":
+		return UninstallLine(), nil
+	case "uninstall-outline-alerted":
+		return UninstallOutlineAlerted(), nil
+	case "uninstall-outline-badged":
+		return UninstallOutlineBadged(), nil
+	case "unknown-status-line":
+		return UnknownStatusLine(), nil
+	case "unlink-line":
+		return UnlinkLine(), nil
+	case "unlock-line":
+		return UnlockLine(), nil
+	case "unlock-solid":
+		return UnlockSolid(), nil
+	case "update-line":
+		return UpdateLine(), nil
+	case "upload-cloud-line":
+		return UploadCloudLine(), nil
+	case "upload-cloud-outline-alerted":
+		return UploadCloudOutlineAlerted(), nil
+	case "upload-cloud-outline-badged":
+		return UploadCloudOutlineBadged(), nil
+	case "upload-line":
+		return UploadLine(), nil
+	case "upload-outline-alerted":
+		return UploadOutlineAlerted(), nil
+	case "upload-outline-badged":
+		return UploadOutlineBadged(), nil
+	case "usb-line":
+		return UsbLine(), nil
+	case "usb-solid":
+		return UsbSolid(), nil
+	case "user-line":
+		return UserLine(), nil
+	case "user-outline-alerted":
+		return UserOutlineAlerted(), nil
+	case "user-outline-badged":
+		return UserOutlineBadged(), nil
+	case "user-solid":
+		return UserSolid(), nil
+	case "user-solid-alerted":
+		return UserSolidAlerted(), nil
+	case "user-solid-badged":
+		return UserSolidBadged(), nil
+	case "users-line":
+		return UsersLine(), nil
+	case "users-outline-alerted":
+		return UsersOutlineAlerted(), nil
+	case "users-outline-badged":
+		return UsersOutlineBadged(), nil
+	case "users-solid":
+		return UsersSolid(), nil
+	case "users-solid-alerted":
+		return UsersSolidAlerted(), nil
+	case "users-solid-badged":
+		return UsersSolidBadged(), nil
+	case "video-camera-line":
+		return VideoCameraLine(), nil
+	case "video-camera-solid":
+		return VideoCameraSolid(), nil
+	case "video-gallery-line":
+		return VideoGalleryLine(), nil
+	case "video-gallery-solid":
+		return VideoGallerySolid(), nil
+	case "view-cards-line":
+		return ViewCardsLine(), nil
+	case "view-columns-line":
+		return ViewColumnsLine(), nil
+	case "view-list-line":
+		return ViewListLine(), nil
+	case "vm-bug-inverse-line":
+		return VmBugInverseLine(), nil
+	case "vm-bug-line":
+		return VmBugLine(), nil
+	case "vm-line":
+		return VmLine(), nil
+	case "vm-outline-alerted":
+		return VmOutlineAlerted(), nil
+	case "vm-outline-badged":
+		return VmOutlineBadged(), nil
+	case "vm-solid":
+		return VmSolid(), nil
+	case "vm-solid-alerted":
+		return VmSolidAlerted(), nil
+	case "vm-solid-badged":
+		return VmSolidBadged(), nil
+	case "vmw-app-line":
+		return VmwAppLine(), nil
+	case "vmw-app-outline-alerted":
+		return VmwAppOutlineAlerted(), nil
+	case "vmw-app-outline-badged":
+		return VmwAppOutlineBadged(), nil
+	case "volume-down-line":
+		return VolumeDownLine(), nil
+	case "volume-down-solid":
+		return VolumeDownSolid(), nil
+	case "volume-line":
+		return VolumeLine(), nil
+	case "volume-mute-line":
+		return VolumeMuteLine(), nil
+	case "volume-mute-solid":
+		return VolumeMuteSolid(), nil
+	case "volume-up-line":
+		return VolumeUpLine(), nil
+	case "volume-up-solid":
+		return VolumeUpSolid(), nil
+	case "wallet-line":
+		return WalletLine(), nil
+	case "wallet-solid":
+		return WalletSolid(), nil
+	case "wand-line":
+		return WandLine(), nil
+	case "warning-line":
+		return WarningLine(), nil
+	case "warning-solid":
+		return WarningSolid(), nil
+	case "warning-standard-line":
+		return WarningStandardLine(), nil
+	case "warning-standard-solid":
+		return WarningStandardSolid(), nil
+	case "wifi-line":
+		return WifiLine(), nil
+	case "wifi-solid":
+		return WifiSolid(), nil
+	case "window-close-line":
+		return WindowCloseLine(), nil
+	case "window-max-line":
+		return WindowMaxLine(), nil
+	case "window-min-line":
+		return WindowMinLine(), nil
+	case "window-restore-line":
+		return WindowRestoreLine(), nil
+	case "won-line":
+		return WonLine(), nil
+	case "won-solid":
+		return WonSolid(), nil
+	case "world-line":
+		return WorldLine(), nil
+	case "world-outline-badged":
+		return WorldOutlineBadged(), nil
+	case "world-solid":
+		return WorldSolid(), nil
+	case "world-solid-badged":
+		return WorldSolidBadged(), nil
+	case "wrench-line":
+		return WrenchLine(), nil
+	case "wrench-solid":
+		return WrenchSolid(), nil
+	case "yen-line":
+		return YenLine(), nil
+	case "yen-solid":
+		return YenSolid(), nil
+	case "zoom-in-line":
+		return ZoomInLine(), nil
+	case "zoom-out-line":
+		return ZoomOutLine(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in clarity icon set", name)
+	}
 }

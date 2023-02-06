@@ -1,6 +1,9 @@
 package geo
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	turfAlongInnerSVG          = `<path fill="currentColor" d="M10.658 91.166a2 2 0 0 1-1.414-3.414l7.071-7.071a2 2 0 1 1 2.828 2.828l-7.071 7.071c-.39.391-.903.586-1.414.586zM53.084 48.74a2 2 0 0 1-1.414-3.414l7.071-7.071a2 2 0 1 1 2.828 2.828l-7.071 7.071c-.391.39-.902.586-1.414.586zm14.143-14.142a2 2 0 0 1-1.414-3.414l7.071-7.071a2 2 0 1 1 2.828 2.828l-7.071 7.071c-.391.39-.903.586-1.414.586zm14.141-14.142a2 2 0 0 1-1.414-3.414l7.071-7.071a2 2 0 1 1 2.828 2.828l-7.071 7.071c-.39.39-.902.586-1.414.586zM27.655 69.34l-4.27 4.269a2 2 0 1 0 2.828 2.828l4.27-4.269a9.152 9.152 0 0 1-2.828-2.828zm19.772-16.944a2 2 0 0 0-2.828 0l-4.421 4.421a9.14 9.14 0 0 1 2.828 2.828l4.421-4.421a2 2 0 0 0 0-2.828z"/><circle cx="35.331" cy="64.493" r="6.845" fill="currentColor"/>`
@@ -395,4 +398,71 @@ func UiEarthWest(children ...any) *engine.HTMLElement {
 		uiEarthWestInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "turf-along":
+		return TurfAlong(), nil
+	case "turf-bbox-polygon":
+		return TurfBboxPolygon(), nil
+	case "turf-bezier":
+		return TurfBezier(), nil
+	case "turf-buffer":
+		return TurfBuffer(), nil
+	case "turf-center":
+		return TurfCenter(), nil
+	case "turf-centroid":
+		return TurfCentroid(), nil
+	case "turf-concave":
+		return TurfConcave(), nil
+	case "turf-convex":
+		return TurfConvex(), nil
+	case "turf-destination":
+		return TurfDestination(), nil
+	case "turf-envelope":
+		return TurfEnvelope(), nil
+	case "turf-erased":
+		return TurfErased(), nil
+	case "turf-explode":
+		return TurfExplode(), nil
+	case "turf-extent":
+		return TurfExtent(), nil
+	case "turf-intersect":
+		return TurfIntersect(), nil
+	case "turf-kinks":
+		return TurfKinks(), nil
+	case "turf-line-slice":
+		return TurfLineSlice(), nil
+	case "turf-merge":
+		return TurfMerge(), nil
+	case "turf-midpoint":
+		return TurfMidpoint(), nil
+	case "turf-point-grid":
+		return TurfPointGrid(), nil
+	case "turf-point-on-line":
+		return TurfPointOnLine(), nil
+	case "turf-point-on-surface":
+		return TurfPointOnSurface(), nil
+	case "turf-simplify":
+		return TurfSimplify(), nil
+	case "turf-size":
+		return TurfSize(), nil
+	case "turf-square":
+		return TurfSquare(), nil
+	case "turf-square-grid":
+		return TurfSquareGrid(), nil
+	case "turf-tin":
+		return TurfTin(), nil
+	case "turf-triangle-grid":
+		return TurfTriangleGrid(), nil
+	case "turf-union":
+		return TurfUnion(), nil
+	case "ui-earth-east":
+		return UiEarthEast(), nil
+	case "ui-earth-west":
+		return UiEarthWest(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in geo icon set", name)
+	}
 }

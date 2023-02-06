@@ -1,6 +1,9 @@
 package maki
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	aerialwayInnerSVG                  = `<path fill="currentColor" d="M13 5H8V2.6a1 1 0 0 0 .42-.46l5.08-.64a.5.5 0 0 0 0-1l-5.22.65a1 1 0 0 0-.78-.4a1 1 0 0 0-.92.62L1.5 2a.5.5 0 0 0 0 1l5.22-.65c.077.1.172.185.28.25V5H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zm-6 6H3V7h4v4zm5 0H8V7h4v4z"/>`
@@ -5387,4 +5390,839 @@ func ZooEleven(children ...any) *engine.HTMLElement {
 		zooElevenInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "aerialway":
+		return Aerialway(), nil
+	case "aerialway-11":
+		return AerialwayEleven(), nil
+	case "airfield":
+		return Airfield(), nil
+	case "airfield-11":
+		return AirfieldEleven(), nil
+	case "airport":
+		return Airport(), nil
+	case "airport-11":
+		return AirportEleven(), nil
+	case "alcohol-shop":
+		return AlcoholShop(), nil
+	case "alcohol-shop-11":
+		return AlcoholShopEleven(), nil
+	case "american-football":
+		return AmericanFootball(), nil
+	case "american-football-11":
+		return AmericanFootballEleven(), nil
+	case "amusement-park":
+		return AmusementPark(), nil
+	case "amusement-park-11":
+		return AmusementParkEleven(), nil
+	case "animal-shelter":
+		return AnimalShelter(), nil
+	case "aquarium":
+		return Aquarium(), nil
+	case "aquarium-11":
+		return AquariumEleven(), nil
+	case "arrow":
+		return Arrow(), nil
+	case "art-gallery":
+		return ArtGallery(), nil
+	case "art-gallery-11":
+		return ArtGalleryEleven(), nil
+	case "attraction":
+		return Attraction(), nil
+	case "attraction-11":
+		return AttractionEleven(), nil
+	case "bakery":
+		return Bakery(), nil
+	case "bakery-11":
+		return BakeryEleven(), nil
+	case "bakery-15":
+		return BakeryFifteen(), nil
+	case "bank":
+		return Bank(), nil
+	case "bank-11":
+		return BankEleven(), nil
+	case "bank-jp":
+		return BankJp(), nil
+	case "bank-jp-11":
+		return BankJpEleven(), nil
+	case "bar":
+		return Bar(), nil
+	case "bar-11":
+		return BarEleven(), nil
+	case "barrier":
+		return Barrier(), nil
+	case "barrier-11":
+		return BarrierEleven(), nil
+	case "baseball":
+		return Baseball(), nil
+	case "baseball-11":
+		return BaseballEleven(), nil
+	case "basketball":
+		return Basketball(), nil
+	case "basketball-11":
+		return BasketballEleven(), nil
+	case "bbq":
+		return Bbq(), nil
+	case "bbq-11":
+		return BbqEleven(), nil
+	case "beach":
+		return Beach(), nil
+	case "beach-11":
+		return BeachEleven(), nil
+	case "beer":
+		return Beer(), nil
+	case "beer-11":
+		return BeerEleven(), nil
+	case "bicycle":
+		return Bicycle(), nil
+	case "bicycle-11":
+		return BicycleEleven(), nil
+	case "bicycle-share":
+		return BicycleShare(), nil
+	case "bicycle-share-11":
+		return BicycleShareEleven(), nil
+	case "blood-bank":
+		return BloodBank(), nil
+	case "blood-bank-11":
+		return BloodBankEleven(), nil
+	case "bowling-alley":
+		return BowlingAlley(), nil
+	case "bowling-alley-11":
+		return BowlingAlleyEleven(), nil
+	case "bridge":
+		return Bridge(), nil
+	case "bridge-11":
+		return BridgeEleven(), nil
+	case "building":
+		return Building(), nil
+	case "building-alt1":
+		return BuildingAltOne(), nil
+	case "building-alt1-11":
+		return BuildingAltOneEleven(), nil
+	case "building-11":
+		return BuildingEleven(), nil
+	case "bus":
+		return Bus(), nil
+	case "bus-11":
+		return BusEleven(), nil
+	case "cafe":
+		return Cafe(), nil
+	case "cafe-11":
+		return CafeEleven(), nil
+	case "campsite":
+		return Campsite(), nil
+	case "campsite-11":
+		return CampsiteEleven(), nil
+	case "car":
+		return Car(), nil
+	case "car-11":
+		return CarEleven(), nil
+	case "car-15":
+		return CarFifteen(), nil
+	case "car-rental":
+		return CarRental(), nil
+	case "car-rental-11":
+		return CarRentalEleven(), nil
+	case "car-rental-15":
+		return CarRentalFifteen(), nil
+	case "car-repair":
+		return CarRepair(), nil
+	case "car-repair-11":
+		return CarRepairEleven(), nil
+	case "car-repair-15":
+		return CarRepairFifteen(), nil
+	case "casino":
+		return Casino(), nil
+	case "casino-11":
+		return CasinoEleven(), nil
+	case "castle":
+		return Castle(), nil
+	case "castle-11":
+		return CastleEleven(), nil
+	case "castle-jp":
+		return CastleJp(), nil
+	case "castle-jp-11":
+		return CastleJpEleven(), nil
+	case "caution":
+		return Caution(), nil
+	case "cemetery":
+		return Cemetery(), nil
+	case "cemetery-11":
+		return CemeteryEleven(), nil
+	case "cemetery-jp":
+		return CemeteryJp(), nil
+	case "cemetery-jp-11":
+		return CemeteryJpEleven(), nil
+	case "charging-station":
+		return ChargingStation(), nil
+	case "charging-station-11":
+		return ChargingStationEleven(), nil
+	case "cinema":
+		return Cinema(), nil
+	case "cinema-11":
+		return CinemaEleven(), nil
+	case "circle":
+		return Circle(), nil
+	case "circle-11":
+		return CircleEleven(), nil
+	case "circle-stroked":
+		return CircleStroked(), nil
+	case "circle-stroked-11":
+		return CircleStrokedEleven(), nil
+	case "city":
+		return City(), nil
+	case "city-11":
+		return CityEleven(), nil
+	case "clothing-store":
+		return ClothingStore(), nil
+	case "clothing-store-11":
+		return ClothingStoreEleven(), nil
+	case "college":
+		return College(), nil
+	case "college-11":
+		return CollegeEleven(), nil
+	case "college-jp":
+		return CollegeJp(), nil
+	case "college-jp-11":
+		return CollegeJpEleven(), nil
+	case "commercial":
+		return Commercial(), nil
+	case "commercial-11":
+		return CommercialEleven(), nil
+	case "communications-tower":
+		return CommunicationsTower(), nil
+	case "communications-tower-11":
+		return CommunicationsTowerEleven(), nil
+	case "confectionery":
+		return Confectionery(), nil
+	case "confectionery-11":
+		return ConfectioneryEleven(), nil
+	case "construction":
+		return Construction(), nil
+	case "convenience":
+		return Convenience(), nil
+	case "convenience-11":
+		return ConvenienceEleven(), nil
+	case "cricket":
+		return Cricket(), nil
+	case "cricket-11":
+		return CricketEleven(), nil
+	case "cross":
+		return Cross(), nil
+	case "cross-11":
+		return CrossEleven(), nil
+	case "dam":
+		return Dam(), nil
+	case "dam-11":
+		return DamEleven(), nil
+	case "danger":
+		return Danger(), nil
+	case "danger-11":
+		return DangerEleven(), nil
+	case "defibrillator":
+		return Defibrillator(), nil
+	case "defibrillator-11":
+		return DefibrillatorEleven(), nil
+	case "dentist":
+		return Dentist(), nil
+	case "dentist-11":
+		return DentistEleven(), nil
+	case "diamond":
+		return Diamond(), nil
+	case "doctor":
+		return Doctor(), nil
+	case "doctor-11":
+		return DoctorEleven(), nil
+	case "dog-park":
+		return DogPark(), nil
+	case "dog-park-11":
+		return DogParkEleven(), nil
+	case "drinking-water":
+		return DrinkingWater(), nil
+	case "drinking-water-11":
+		return DrinkingWaterEleven(), nil
+	case "drinking-water-15":
+		return DrinkingWaterFifteen(), nil
+	case "elevator":
+		return Elevator(), nil
+	case "embassy":
+		return Embassy(), nil
+	case "embassy-11":
+		return EmbassyEleven(), nil
+	case "emergency-phone":
+		return EmergencyPhone(), nil
+	case "emergency-phone-11":
+		return EmergencyPhoneEleven(), nil
+	case "entrance":
+		return Entrance(), nil
+	case "entrance-alt1":
+		return EntranceAltOne(), nil
+	case "entrance-alt1-11":
+		return EntranceAltOneEleven(), nil
+	case "entrance-11":
+		return EntranceEleven(), nil
+	case "entrance-15":
+		return EntranceFifteen(), nil
+	case "farm":
+		return Farm(), nil
+	case "farm-11":
+		return FarmEleven(), nil
+	case "fast-food":
+		return FastFood(), nil
+	case "fast-food-11":
+		return FastFoodEleven(), nil
+	case "fence":
+		return Fence(), nil
+	case "fence-11":
+		return FenceEleven(), nil
+	case "ferry":
+		return Ferry(), nil
+	case "ferry-11":
+		return FerryEleven(), nil
+	case "ferry-jp":
+		return FerryJp(), nil
+	case "fire-station":
+		return FireStation(), nil
+	case "fire-station-11":
+		return FireStationEleven(), nil
+	case "fire-station-jp":
+		return FireStationJp(), nil
+	case "fire-station-jp-11":
+		return FireStationJpEleven(), nil
+	case "fitness-centre":
+		return FitnessCentre(), nil
+	case "fitness-centre-11":
+		return FitnessCentreEleven(), nil
+	case "florist":
+		return Florist(), nil
+	case "florist-11":
+		return FloristEleven(), nil
+	case "fuel":
+		return Fuel(), nil
+	case "fuel-11":
+		return FuelEleven(), nil
+	case "furniture":
+		return Furniture(), nil
+	case "furniture-11":
+		return FurnitureEleven(), nil
+	case "furniture-15":
+		return FurnitureFifteen(), nil
+	case "gaming":
+		return Gaming(), nil
+	case "gaming-11":
+		return GamingEleven(), nil
+	case "garden":
+		return Garden(), nil
+	case "garden-centre":
+		return GardenCentre(), nil
+	case "garden-centre-11":
+		return GardenCentreEleven(), nil
+	case "garden-11":
+		return GardenEleven(), nil
+	case "gate":
+		return Gate(), nil
+	case "gift":
+		return Gift(), nil
+	case "gift-11":
+		return GiftEleven(), nil
+	case "globe":
+		return Globe(), nil
+	case "globe-11":
+		return GlobeEleven(), nil
+	case "globe-15":
+		return GlobeFifteen(), nil
+	case "golf":
+		return Golf(), nil
+	case "golf-11":
+		return GolfEleven(), nil
+	case "grocery":
+		return Grocery(), nil
+	case "grocery-11":
+		return GroceryEleven(), nil
+	case "hairdresser":
+		return Hairdresser(), nil
+	case "hairdresser-11":
+		return HairdresserEleven(), nil
+	case "harbor":
+		return Harbor(), nil
+	case "harbor-11":
+		return HarborEleven(), nil
+	case "hardware":
+		return Hardware(), nil
+	case "hardware-11":
+		return HardwareEleven(), nil
+	case "heart":
+		return Heart(), nil
+	case "heart-11":
+		return HeartEleven(), nil
+	case "heliport":
+		return Heliport(), nil
+	case "heliport-11":
+		return HeliportEleven(), nil
+	case "highway-rest-area":
+		return HighwayRestArea(), nil
+	case "historic":
+		return Historic(), nil
+	case "home":
+		return Home(), nil
+	case "home-11":
+		return HomeEleven(), nil
+	case "horse-riding":
+		return HorseRiding(), nil
+	case "horse-riding-11":
+		return HorseRidingEleven(), nil
+	case "hospital":
+		return Hospital(), nil
+	case "hospital-11":
+		return HospitalEleven(), nil
+	case "hospital-jp":
+		return HospitalJp(), nil
+	case "hospital-jp-11":
+		return HospitalJpEleven(), nil
+	case "hot-spring":
+		return HotSpring(), nil
+	case "ice-cream":
+		return IceCream(), nil
+	case "ice-cream-11":
+		return IceCreamEleven(), nil
+	case "ice-cream-15":
+		return IceCreamFifteen(), nil
+	case "industry":
+		return Industry(), nil
+	case "industry-11":
+		return IndustryEleven(), nil
+	case "information":
+		return Information(), nil
+	case "information-11":
+		return InformationEleven(), nil
+	case "jewelry-store":
+		return JewelryStore(), nil
+	case "jewelry-store-11":
+		return JewelryStoreEleven(), nil
+	case "karaoke":
+		return Karaoke(), nil
+	case "karaoke-11":
+		return KaraokeEleven(), nil
+	case "karaoke-15":
+		return KaraokeFifteen(), nil
+	case "landmark":
+		return Landmark(), nil
+	case "landmark-11":
+		return LandmarkEleven(), nil
+	case "landmark-jp":
+		return LandmarkJp(), nil
+	case "landmark-jp-11":
+		return LandmarkJpEleven(), nil
+	case "landuse":
+		return Landuse(), nil
+	case "landuse-11":
+		return LanduseEleven(), nil
+	case "laundry":
+		return Laundry(), nil
+	case "laundry-11":
+		return LaundryEleven(), nil
+	case "library":
+		return Library(), nil
+	case "library-11":
+		return LibraryEleven(), nil
+	case "library-15":
+		return LibraryFifteen(), nil
+	case "lift-gate":
+		return LiftGate(), nil
+	case "lighthouse":
+		return Lighthouse(), nil
+	case "lighthouse-11":
+		return LighthouseEleven(), nil
+	case "lighthouse-jp":
+		return LighthouseJp(), nil
+	case "lodging":
+		return Lodging(), nil
+	case "lodging-11":
+		return LodgingEleven(), nil
+	case "logging":
+		return Logging(), nil
+	case "logging-11":
+		return LoggingEleven(), nil
+	case "marker":
+		return Marker(), nil
+	case "marker-11":
+		return MarkerEleven(), nil
+	case "marker-stroked":
+		return MarkerStroked(), nil
+	case "marker-stroked-11":
+		return MarkerStrokedEleven(), nil
+	case "mobile-phone":
+		return MobilePhone(), nil
+	case "mobile-phone-11":
+		return MobilePhoneEleven(), nil
+	case "monument":
+		return Monument(), nil
+	case "monument-11":
+		return MonumentEleven(), nil
+	case "monument-jp":
+		return MonumentJp(), nil
+	case "mountain":
+		return Mountain(), nil
+	case "mountain-11":
+		return MountainEleven(), nil
+	case "museum":
+		return Museum(), nil
+	case "museum-11":
+		return MuseumEleven(), nil
+	case "museum-15":
+		return MuseumFifteen(), nil
+	case "music":
+		return Music(), nil
+	case "music-11":
+		return MusicEleven(), nil
+	case "natural":
+		return Natural(), nil
+	case "natural-11":
+		return NaturalEleven(), nil
+	case "observation-tower":
+		return ObservationTower(), nil
+	case "optician":
+		return Optician(), nil
+	case "optician-11":
+		return OpticianEleven(), nil
+	case "paint":
+		return Paint(), nil
+	case "paint-11":
+		return PaintEleven(), nil
+	case "park":
+		return Park(), nil
+	case "park-alt1":
+		return ParkAltOne(), nil
+	case "park-alt1-11":
+		return ParkAltOneEleven(), nil
+	case "park-11":
+		return ParkEleven(), nil
+	case "parking":
+		return Parking(), nil
+	case "parking-11":
+		return ParkingEleven(), nil
+	case "parking-garage":
+		return ParkingGarage(), nil
+	case "parking-garage-11":
+		return ParkingGarageEleven(), nil
+	case "parking-paid":
+		return ParkingPaid(), nil
+	case "pharmacy":
+		return Pharmacy(), nil
+	case "pharmacy-11":
+		return PharmacyEleven(), nil
+	case "picnic-site":
+		return PicnicSite(), nil
+	case "picnic-site-11":
+		return PicnicSiteEleven(), nil
+	case "pitch":
+		return Pitch(), nil
+	case "pitch-11":
+		return PitchEleven(), nil
+	case "place-of-worship":
+		return PlaceOfWorship(), nil
+	case "place-of-worship-11":
+		return PlaceOfWorshipEleven(), nil
+	case "playground":
+		return Playground(), nil
+	case "playground-11":
+		return PlaygroundEleven(), nil
+	case "police":
+		return Police(), nil
+	case "police-11":
+		return PoliceEleven(), nil
+	case "police-jp":
+		return PoliceJp(), nil
+	case "police-jp-11":
+		return PoliceJpEleven(), nil
+	case "post":
+		return Post(), nil
+	case "post-11":
+		return PostEleven(), nil
+	case "post-jp":
+		return PostJp(), nil
+	case "post-jp-11":
+		return PostJpEleven(), nil
+	case "prison":
+		return Prison(), nil
+	case "prison-11":
+		return PrisonEleven(), nil
+	case "racetrack":
+		return Racetrack(), nil
+	case "racetrack-boat":
+		return RacetrackBoat(), nil
+	case "racetrack-cycling":
+		return RacetrackCycling(), nil
+	case "racetrack-horse":
+		return RacetrackHorse(), nil
+	case "rail":
+		return Rail(), nil
+	case "rail-11":
+		return RailEleven(), nil
+	case "rail-light":
+		return RailLight(), nil
+	case "rail-light-11":
+		return RailLightEleven(), nil
+	case "rail-metro":
+		return RailMetro(), nil
+	case "rail-metro-11":
+		return RailMetroEleven(), nil
+	case "ranger-station":
+		return RangerStation(), nil
+	case "ranger-station-11":
+		return RangerStationEleven(), nil
+	case "recycling":
+		return Recycling(), nil
+	case "recycling-11":
+		return RecyclingEleven(), nil
+	case "religious-buddhist":
+		return ReligiousBuddhist(), nil
+	case "religious-buddhist-11":
+		return ReligiousBuddhistEleven(), nil
+	case "religious-christian":
+		return ReligiousChristian(), nil
+	case "religious-christian-11":
+		return ReligiousChristianEleven(), nil
+	case "religious-jewish":
+		return ReligiousJewish(), nil
+	case "religious-jewish-11":
+		return ReligiousJewishEleven(), nil
+	case "religious-muslim":
+		return ReligiousMuslim(), nil
+	case "religious-muslim-11":
+		return ReligiousMuslimEleven(), nil
+	case "religious-shinto":
+		return ReligiousShinto(), nil
+	case "religious-shinto-11":
+		return ReligiousShintoEleven(), nil
+	case "residential-community":
+		return ResidentialCommunity(), nil
+	case "residential-community-11":
+		return ResidentialCommunityEleven(), nil
+	case "restaurant":
+		return Restaurant(), nil
+	case "restaurant-bbq":
+		return RestaurantBbq(), nil
+	case "restaurant-11":
+		return RestaurantEleven(), nil
+	case "restaurant-noodle":
+		return RestaurantNoodle(), nil
+	case "restaurant-noodle-11":
+		return RestaurantNoodleEleven(), nil
+	case "restaurant-pizza":
+		return RestaurantPizza(), nil
+	case "restaurant-pizza-11":
+		return RestaurantPizzaEleven(), nil
+	case "restaurant-seafood":
+		return RestaurantSeafood(), nil
+	case "restaurant-seafood-11":
+		return RestaurantSeafoodEleven(), nil
+	case "restaurant-sushi":
+		return RestaurantSushi(), nil
+	case "road-accident":
+		return RoadAccident(), nil
+	case "roadblock":
+		return Roadblock(), nil
+	case "roadblock-11":
+		return RoadblockEleven(), nil
+	case "rocket":
+		return Rocket(), nil
+	case "rocket-11":
+		return RocketEleven(), nil
+	case "school":
+		return School(), nil
+	case "school-11":
+		return SchoolEleven(), nil
+	case "school-jp":
+		return SchoolJp(), nil
+	case "school-jp-11":
+		return SchoolJpEleven(), nil
+	case "scooter":
+		return Scooter(), nil
+	case "scooter-11":
+		return ScooterEleven(), nil
+	case "shelter":
+		return Shelter(), nil
+	case "shelter-11":
+		return ShelterEleven(), nil
+	case "shoe":
+		return Shoe(), nil
+	case "shoe-11":
+		return ShoeEleven(), nil
+	case "shoe-15":
+		return ShoeFifteen(), nil
+	case "shop":
+		return Shop(), nil
+	case "shop-11":
+		return ShopEleven(), nil
+	case "skateboard":
+		return Skateboard(), nil
+	case "skateboard-11":
+		return SkateboardEleven(), nil
+	case "skiing":
+		return Skiing(), nil
+	case "skiing-11":
+		return SkiingEleven(), nil
+	case "slaughterhouse":
+		return Slaughterhouse(), nil
+	case "slaughterhouse-11":
+		return SlaughterhouseEleven(), nil
+	case "slipway":
+		return Slipway(), nil
+	case "slipway-11":
+		return SlipwayEleven(), nil
+	case "snowmobile":
+		return Snowmobile(), nil
+	case "snowmobile-11":
+		return SnowmobileEleven(), nil
+	case "soccer":
+		return Soccer(), nil
+	case "soccer-11":
+		return SoccerEleven(), nil
+	case "square":
+		return Square(), nil
+	case "square-11":
+		return SquareEleven(), nil
+	case "square-stroked":
+		return SquareStroked(), nil
+	case "square-stroked-11":
+		return SquareStrokedEleven(), nil
+	case "stadium":
+		return Stadium(), nil
+	case "stadium-11":
+		return StadiumEleven(), nil
+	case "star":
+		return Star(), nil
+	case "star-11":
+		return StarEleven(), nil
+	case "star-stroked":
+		return StarStroked(), nil
+	case "star-stroked-11":
+		return StarStrokedEleven(), nil
+	case "suitcase":
+		return Suitcase(), nil
+	case "suitcase-11":
+		return SuitcaseEleven(), nil
+	case "sushi-11":
+		return SushiEleven(), nil
+	case "swimming":
+		return Swimming(), nil
+	case "swimming-11":
+		return SwimmingEleven(), nil
+	case "table-tennis":
+		return TableTennis(), nil
+	case "table-tennis-11":
+		return TableTennisEleven(), nil
+	case "teahouse":
+		return Teahouse(), nil
+	case "teahouse-11":
+		return TeahouseEleven(), nil
+	case "telephone":
+		return Telephone(), nil
+	case "telephone-11":
+		return TelephoneEleven(), nil
+	case "tennis":
+		return Tennis(), nil
+	case "tennis-11":
+		return TennisEleven(), nil
+	case "theatre":
+		return Theatre(), nil
+	case "theatre-11":
+		return TheatreEleven(), nil
+	case "toilet":
+		return Toilet(), nil
+	case "toilet-11":
+		return ToiletEleven(), nil
+	case "toll":
+		return Toll(), nil
+	case "town":
+		return Town(), nil
+	case "town-11":
+		return TownEleven(), nil
+	case "town-hall":
+		return TownHall(), nil
+	case "town-hall-11":
+		return TownHallEleven(), nil
+	case "town-hall-15":
+		return TownHallFifteen(), nil
+	case "triangle":
+		return Triangle(), nil
+	case "triangle-11":
+		return TriangleEleven(), nil
+	case "triangle-stroked":
+		return TriangleStroked(), nil
+	case "triangle-stroked-11":
+		return TriangleStrokedEleven(), nil
+	case "tunnel":
+		return Tunnel(), nil
+	case "veterinary":
+		return Veterinary(), nil
+	case "veterinary-11":
+		return VeterinaryEleven(), nil
+	case "veterinary-15":
+		return VeterinaryFifteen(), nil
+	case "viewpoint":
+		return Viewpoint(), nil
+	case "viewpoint-11":
+		return ViewpointEleven(), nil
+	case "village":
+		return Village(), nil
+	case "village-11":
+		return VillageEleven(), nil
+	case "volcano":
+		return Volcano(), nil
+	case "volcano-11":
+		return VolcanoEleven(), nil
+	case "volleyball":
+		return Volleyball(), nil
+	case "volleyball-11":
+		return VolleyballEleven(), nil
+	case "warehouse":
+		return Warehouse(), nil
+	case "warehouse-11":
+		return WarehouseEleven(), nil
+	case "waste-basket":
+		return WasteBasket(), nil
+	case "waste-basket-11":
+		return WasteBasketEleven(), nil
+	case "watch":
+		return Watch(), nil
+	case "watch-11":
+		return WatchEleven(), nil
+	case "watch-15":
+		return WatchFifteen(), nil
+	case "water":
+		return Water(), nil
+	case "water-11":
+		return WaterEleven(), nil
+	case "waterfall":
+		return Waterfall(), nil
+	case "waterfall-11":
+		return WaterfallEleven(), nil
+	case "watermill":
+		return Watermill(), nil
+	case "watermill-11":
+		return WatermillEleven(), nil
+	case "wetland":
+		return Wetland(), nil
+	case "wetland-11":
+		return WetlandEleven(), nil
+	case "wheelchair":
+		return Wheelchair(), nil
+	case "wheelchair-11":
+		return WheelchairEleven(), nil
+	case "windmill":
+		return Windmill(), nil
+	case "windmill-11":
+		return WindmillEleven(), nil
+	case "zoo":
+		return Zoo(), nil
+	case "zoo-11":
+		return ZooEleven(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in maki icon set", name)
+	}
 }

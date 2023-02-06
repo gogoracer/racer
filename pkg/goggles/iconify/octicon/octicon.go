@@ -1,6 +1,9 @@
 package octicon
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	accessibilityInsetSixteenInnerSVG      = `<path fill="currentColor" d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0Zm2 4a2 2 0 1 0-2.95 1.76a1.87 1.87 0 0 0-.32.24H3.75a.75.75 0 0 0 0 1.5h2.363l-.607 5.67a.75.75 0 1 0 1.49.16l.25-2.33h1.508l.25 2.33a.75.75 0 0 0 1.492-.16L9.888 7.5h2.362a.75.75 0 0 0 0-1.5H9.27a1.98 1.98 0 0 0-.32-.24A2 2 0 0 0 10 4Z"/>`
@@ -9625,4 +9628,1491 @@ func ZapTwentyFour(children ...any) *engine.HTMLElement {
 		zapTwentyFourInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "accessibility-inset-16":
+		return AccessibilityInsetSixteen(), nil
+	case "accessibility-16":
+		return AccessibilitySixteen(), nil
+	case "alert":
+		return Alert(), nil
+	case "alert-fill-16":
+		return AlertFillSixteen(), nil
+	case "alert-fill-12":
+		return AlertFillTwelve(), nil
+	case "alert-fill-24":
+		return AlertFillTwentyFour(), nil
+	case "alert-16":
+		return AlertSixteen(), nil
+	case "alert-24":
+		return AlertTwentyFour(), nil
+	case "apps-16":
+		return AppsSixteen(), nil
+	case "archive":
+		return Archive(), nil
+	case "archive-16":
+		return ArchiveSixteen(), nil
+	case "archive-24":
+		return ArchiveTwentyFour(), nil
+	case "arrow-both":
+		return ArrowBoth(), nil
+	case "arrow-both-16":
+		return ArrowBothSixteen(), nil
+	case "arrow-both-24":
+		return ArrowBothTwentyFour(), nil
+	case "arrow-down":
+		return ArrowDown(), nil
+	case "arrow-down-left-16":
+		return ArrowDownLeftSixteen(), nil
+	case "arrow-down-left-24":
+		return ArrowDownLeftTwentyFour(), nil
+	case "arrow-down-right-16":
+		return ArrowDownRightSixteen(), nil
+	case "arrow-down-right-24":
+		return ArrowDownRightTwentyFour(), nil
+	case "arrow-down-16":
+		return ArrowDownSixteen(), nil
+	case "arrow-down-24":
+		return ArrowDownTwentyFour(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-left-16":
+		return ArrowLeftSixteen(), nil
+	case "arrow-left-24":
+		return ArrowLeftTwentyFour(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrow-right-16":
+		return ArrowRightSixteen(), nil
+	case "arrow-right-24":
+		return ArrowRightTwentyFour(), nil
+	case "arrow-small-down":
+		return ArrowSmallDown(), nil
+	case "arrow-small-left":
+		return ArrowSmallLeft(), nil
+	case "arrow-small-right":
+		return ArrowSmallRight(), nil
+	case "arrow-small-up":
+		return ArrowSmallUp(), nil
+	case "arrow-switch-16":
+		return ArrowSwitchSixteen(), nil
+	case "arrow-switch-24":
+		return ArrowSwitchTwentyFour(), nil
+	case "arrow-up":
+		return ArrowUp(), nil
+	case "arrow-up-left-16":
+		return ArrowUpLeftSixteen(), nil
+	case "arrow-up-left-24":
+		return ArrowUpLeftTwentyFour(), nil
+	case "arrow-up-right-16":
+		return ArrowUpRightSixteen(), nil
+	case "arrow-up-right-24":
+		return ArrowUpRightTwentyFour(), nil
+	case "arrow-up-16":
+		return ArrowUpSixteen(), nil
+	case "arrow-up-24":
+		return ArrowUpTwentyFour(), nil
+	case "beaker":
+		return Beaker(), nil
+	case "beaker-16":
+		return BeakerSixteen(), nil
+	case "beaker-24":
+		return BeakerTwentyFour(), nil
+	case "bell":
+		return Bell(), nil
+	case "bell-fill-16":
+		return BellFillSixteen(), nil
+	case "bell-fill-24":
+		return BellFillTwentyFour(), nil
+	case "bell-16":
+		return BellSixteen(), nil
+	case "bell-slash-16":
+		return BellSlashSixteen(), nil
+	case "bell-slash-24":
+		return BellSlashTwentyFour(), nil
+	case "bell-24":
+		return BellTwentyFour(), nil
+	case "blocked-16":
+		return BlockedSixteen(), nil
+	case "blocked-24":
+		return BlockedTwentyFour(), nil
+	case "bold":
+		return Bold(), nil
+	case "bold-16":
+		return BoldSixteen(), nil
+	case "bold-24":
+		return BoldTwentyFour(), nil
+	case "book":
+		return Book(), nil
+	case "book-16":
+		return BookSixteen(), nil
+	case "book-24":
+		return BookTwentyFour(), nil
+	case "bookmark":
+		return Bookmark(), nil
+	case "bookmark-fill-24":
+		return BookmarkFillTwentyFour(), nil
+	case "bookmark-16":
+		return BookmarkSixteen(), nil
+	case "bookmark-slash-fill-24":
+		return BookmarkSlashFillTwentyFour(), nil
+	case "bookmark-slash-16":
+		return BookmarkSlashSixteen(), nil
+	case "bookmark-slash-24":
+		return BookmarkSlashTwentyFour(), nil
+	case "bookmark-24":
+		return BookmarkTwentyFour(), nil
+	case "briefcase":
+		return Briefcase(), nil
+	case "briefcase-16":
+		return BriefcaseSixteen(), nil
+	case "briefcase-24":
+		return BriefcaseTwentyFour(), nil
+	case "broadcast":
+		return Broadcast(), nil
+	case "broadcast-16":
+		return BroadcastSixteen(), nil
+	case "broadcast-24":
+		return BroadcastTwentyFour(), nil
+	case "browser":
+		return Browser(), nil
+	case "browser-16":
+		return BrowserSixteen(), nil
+	case "browser-24":
+		return BrowserTwentyFour(), nil
+	case "bug-16":
+		return BugSixteen(), nil
+	case "bug-24":
+		return BugTwentyFour(), nil
+	case "cache-16":
+		return CacheSixteen(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "calendar-16":
+		return CalendarSixteen(), nil
+	case "calendar-24":
+		return CalendarTwentyFour(), nil
+	case "check":
+		return Check(), nil
+	case "check-circle-fill-16":
+		return CheckCircleFillSixteen(), nil
+	case "check-circle-fill-12":
+		return CheckCircleFillTwelve(), nil
+	case "check-circle-fill-24":
+		return CheckCircleFillTwentyFour(), nil
+	case "check-circle-16":
+		return CheckCircleSixteen(), nil
+	case "check-circle-24":
+		return CheckCircleTwentyFour(), nil
+	case "check-16":
+		return CheckSixteen(), nil
+	case "check-24":
+		return CheckTwentyFour(), nil
+	case "checkbox-16":
+		return CheckboxSixteen(), nil
+	case "checkbox-24":
+		return CheckboxTwentyFour(), nil
+	case "checklist":
+		return Checklist(), nil
+	case "checklist-16":
+		return ChecklistSixteen(), nil
+	case "checklist-24":
+		return ChecklistTwentyFour(), nil
+	case "chevron-down":
+		return ChevronDown(), nil
+	case "chevron-down-16":
+		return ChevronDownSixteen(), nil
+	case "chevron-down-12":
+		return ChevronDownTwelve(), nil
+	case "chevron-down-24":
+		return ChevronDownTwentyFour(), nil
+	case "chevron-left":
+		return ChevronLeft(), nil
+	case "chevron-left-16":
+		return ChevronLeftSixteen(), nil
+	case "chevron-left-24":
+		return ChevronLeftTwentyFour(), nil
+	case "chevron-right":
+		return ChevronRight(), nil
+	case "chevron-right-16":
+		return ChevronRightSixteen(), nil
+	case "chevron-right-12":
+		return ChevronRightTwelve(), nil
+	case "chevron-right-24":
+		return ChevronRightTwentyFour(), nil
+	case "chevron-up":
+		return ChevronUp(), nil
+	case "chevron-up-16":
+		return ChevronUpSixteen(), nil
+	case "chevron-up-12":
+		return ChevronUpTwelve(), nil
+	case "chevron-up-24":
+		return ChevronUpTwentyFour(), nil
+	case "circle-16":
+		return CircleSixteen(), nil
+	case "circle-slash":
+		return CircleSlash(), nil
+	case "circle-slash-16":
+		return CircleSlashSixteen(), nil
+	case "circle-slash-24":
+		return CircleSlashTwentyFour(), nil
+	case "circle-24":
+		return CircleTwentyFour(), nil
+	case "circuit-board":
+		return CircuitBoard(), nil
+	case "clippy":
+		return Clippy(), nil
+	case "clock":
+		return Clock(), nil
+	case "clock-fill-16":
+		return ClockFillSixteen(), nil
+	case "clock-fill-24":
+		return ClockFillTwentyFour(), nil
+	case "clock-16":
+		return ClockSixteen(), nil
+	case "clock-24":
+		return ClockTwentyFour(), nil
+	case "cloud-download":
+		return CloudDownload(), nil
+	case "cloud-offline-16":
+		return CloudOfflineSixteen(), nil
+	case "cloud-offline-24":
+		return CloudOfflineTwentyFour(), nil
+	case "cloud-16":
+		return CloudSixteen(), nil
+	case "cloud-24":
+		return CloudTwentyFour(), nil
+	case "cloud-upload":
+		return CloudUpload(), nil
+	case "code":
+		return Code(), nil
+	case "code-of-conduct-16":
+		return CodeOfConductSixteen(), nil
+	case "code-of-conduct-24":
+		return CodeOfConductTwentyFour(), nil
+	case "code-review-16":
+		return CodeReviewSixteen(), nil
+	case "code-review-24":
+		return CodeReviewTwentyFour(), nil
+	case "code-16":
+		return CodeSixteen(), nil
+	case "code-square-16":
+		return CodeSquareSixteen(), nil
+	case "code-square-24":
+		return CodeSquareTwentyFour(), nil
+	case "code-24":
+		return CodeTwentyFour(), nil
+	case "codescan-checkmark-16":
+		return CodescanCheckmarkSixteen(), nil
+	case "codescan-checkmark-24":
+		return CodescanCheckmarkTwentyFour(), nil
+	case "codescan-16":
+		return CodescanSixteen(), nil
+	case "codescan-24":
+		return CodescanTwentyFour(), nil
+	case "codespaces-16":
+		return CodespacesSixteen(), nil
+	case "codespaces-24":
+		return CodespacesTwentyFour(), nil
+	case "columns-16":
+		return ColumnsSixteen(), nil
+	case "columns-24":
+		return ColumnsTwentyFour(), nil
+	case "command-palette-16":
+		return CommandPaletteSixteen(), nil
+	case "command-palette-24":
+		return CommandPaletteTwentyFour(), nil
+	case "comment":
+		return Comment(), nil
+	case "comment-discussion":
+		return CommentDiscussion(), nil
+	case "comment-discussion-16":
+		return CommentDiscussionSixteen(), nil
+	case "comment-discussion-24":
+		return CommentDiscussionTwentyFour(), nil
+	case "comment-16":
+		return CommentSixteen(), nil
+	case "comment-24":
+		return CommentTwentyFour(), nil
+	case "commit-24":
+		return CommitTwentyFour(), nil
+	case "container-16":
+		return ContainerSixteen(), nil
+	case "container-24":
+		return ContainerTwentyFour(), nil
+	case "copilot-error-16":
+		return CopilotErrorSixteen(), nil
+	case "copilot-48":
+		return CopilotFortyEight(), nil
+	case "copilot-96":
+		return CopilotNinetySix(), nil
+	case "copilot-16":
+		return CopilotSixteen(), nil
+	case "copilot-24":
+		return CopilotTwentyFour(), nil
+	case "copilot-warning-16":
+		return CopilotWarningSixteen(), nil
+	case "copy-16":
+		return CopySixteen(), nil
+	case "copy-24":
+		return CopyTwentyFour(), nil
+	case "cpu-16":
+		return CpuSixteen(), nil
+	case "cpu-24":
+		return CpuTwentyFour(), nil
+	case "credit-card":
+		return CreditCard(), nil
+	case "credit-card-16":
+		return CreditCardSixteen(), nil
+	case "credit-card-24":
+		return CreditCardTwentyFour(), nil
+	case "cross-reference-16":
+		return CrossReferenceSixteen(), nil
+	case "cross-reference-24":
+		return CrossReferenceTwentyFour(), nil
+	case "dash":
+		return Dash(), nil
+	case "dash-16":
+		return DashSixteen(), nil
+	case "dash-24":
+		return DashTwentyFour(), nil
+	case "dashboard":
+		return Dashboard(), nil
+	case "database":
+		return Database(), nil
+	case "database-16":
+		return DatabaseSixteen(), nil
+	case "database-24":
+		return DatabaseTwentyFour(), nil
+	case "dependabot-16":
+		return DependabotSixteen(), nil
+	case "dependabot-24":
+		return DependabotTwentyFour(), nil
+	case "desktop-download":
+		return DesktopDownload(), nil
+	case "desktop-download-16":
+		return DesktopDownloadSixteen(), nil
+	case "desktop-download-24":
+		return DesktopDownloadTwentyFour(), nil
+	case "device-camera-16":
+		return DeviceCameraSixteen(), nil
+	case "device-camera-video":
+		return DeviceCameraVideo(), nil
+	case "device-camera-video-16":
+		return DeviceCameraVideoSixteen(), nil
+	case "device-camera-video-24":
+		return DeviceCameraVideoTwentyFour(), nil
+	case "device-desktop":
+		return DeviceDesktop(), nil
+	case "device-desktop-16":
+		return DeviceDesktopSixteen(), nil
+	case "device-desktop-24":
+		return DeviceDesktopTwentyFour(), nil
+	case "device-mobile":
+		return DeviceMobile(), nil
+	case "device-mobile-16":
+		return DeviceMobileSixteen(), nil
+	case "device-mobile-24":
+		return DeviceMobileTwentyFour(), nil
+	case "diamond-16":
+		return DiamondSixteen(), nil
+	case "diamond-24":
+		return DiamondTwentyFour(), nil
+	case "diff":
+		return Diff(), nil
+	case "diff-added":
+		return DiffAdded(), nil
+	case "diff-added-16":
+		return DiffAddedSixteen(), nil
+	case "diff-ignored":
+		return DiffIgnored(), nil
+	case "diff-ignored-16":
+		return DiffIgnoredSixteen(), nil
+	case "diff-modified":
+		return DiffModified(), nil
+	case "diff-modified-16":
+		return DiffModifiedSixteen(), nil
+	case "diff-removed":
+		return DiffRemoved(), nil
+	case "diff-removed-16":
+		return DiffRemovedSixteen(), nil
+	case "diff-renamed":
+		return DiffRenamed(), nil
+	case "diff-renamed-16":
+		return DiffRenamedSixteen(), nil
+	case "diff-16":
+		return DiffSixteen(), nil
+	case "diff-24":
+		return DiffTwentyFour(), nil
+	case "dot-fill-16":
+		return DotFillSixteen(), nil
+	case "dot-fill-24":
+		return DotFillTwentyFour(), nil
+	case "dot-16":
+		return DotSixteen(), nil
+	case "dot-24":
+		return DotTwentyFour(), nil
+	case "download-16":
+		return DownloadSixteen(), nil
+	case "download-24":
+		return DownloadTwentyFour(), nil
+	case "duplicate-16":
+		return DuplicateSixteen(), nil
+	case "duplicate-24":
+		return DuplicateTwentyFour(), nil
+	case "ellipsis":
+		return Ellipsis(), nil
+	case "ellipsis-16":
+		return EllipsisSixteen(), nil
+	case "eye":
+		return Eye(), nil
+	case "eye-closed":
+		return EyeClosed(), nil
+	case "eye-closed-16":
+		return EyeClosedSixteen(), nil
+	case "eye-closed-24":
+		return EyeClosedTwentyFour(), nil
+	case "eye-16":
+		return EyeSixteen(), nil
+	case "eye-24":
+		return EyeTwentyFour(), nil
+	case "feed-discussion-16":
+		return FeedDiscussionSixteen(), nil
+	case "feed-forked-16":
+		return FeedForkedSixteen(), nil
+	case "feed-heart-16":
+		return FeedHeartSixteen(), nil
+	case "feed-merged-16":
+		return FeedMergedSixteen(), nil
+	case "feed-person-16":
+		return FeedPersonSixteen(), nil
+	case "feed-repo-16":
+		return FeedRepoSixteen(), nil
+	case "feed-rocket-16":
+		return FeedRocketSixteen(), nil
+	case "feed-star-16":
+		return FeedStarSixteen(), nil
+	case "feed-tag-16":
+		return FeedTagSixteen(), nil
+	case "feed-trophy-16":
+		return FeedTrophySixteen(), nil
+	case "file":
+		return File(), nil
+	case "file-added-16":
+		return FileAddedSixteen(), nil
+	case "file-badge-16":
+		return FileBadgeSixteen(), nil
+	case "file-binary":
+		return FileBinary(), nil
+	case "file-binary-16":
+		return FileBinarySixteen(), nil
+	case "file-binary-24":
+		return FileBinaryTwentyFour(), nil
+	case "file-code":
+		return FileCode(), nil
+	case "file-code-16":
+		return FileCodeSixteen(), nil
+	case "file-code-24":
+		return FileCodeTwentyFour(), nil
+	case "file-diff-16":
+		return FileDiffSixteen(), nil
+	case "file-diff-24":
+		return FileDiffTwentyFour(), nil
+	case "file-directory":
+		return FileDirectory(), nil
+	case "file-directory-fill-16":
+		return FileDirectoryFillSixteen(), nil
+	case "file-directory-fill-24":
+		return FileDirectoryFillTwentyFour(), nil
+	case "file-directory-open-fill-16":
+		return FileDirectoryOpenFillSixteen(), nil
+	case "file-directory-16":
+		return FileDirectorySixteen(), nil
+	case "file-directory-24":
+		return FileDirectoryTwentyFour(), nil
+	case "file-media":
+		return FileMedia(), nil
+	case "file-media-24":
+		return FileMediaTwentyFour(), nil
+	case "file-moved-16":
+		return FileMovedSixteen(), nil
+	case "file-pdf":
+		return FilePdf(), nil
+	case "file-removed-16":
+		return FileRemovedSixteen(), nil
+	case "file-16":
+		return FileSixteen(), nil
+	case "file-submodule":
+		return FileSubmodule(), nil
+	case "file-submodule-16":
+		return FileSubmoduleSixteen(), nil
+	case "file-submodule-24":
+		return FileSubmoduleTwentyFour(), nil
+	case "file-symlink-directory":
+		return FileSymlinkDirectory(), nil
+	case "file-symlink-file":
+		return FileSymlinkFile(), nil
+	case "file-symlink-file-16":
+		return FileSymlinkFileSixteen(), nil
+	case "file-symlink-file-24":
+		return FileSymlinkFileTwentyFour(), nil
+	case "file-24":
+		return FileTwentyFour(), nil
+	case "file-zip":
+		return FileZip(), nil
+	case "file-zip-16":
+		return FileZipSixteen(), nil
+	case "file-zip-24":
+		return FileZipTwentyFour(), nil
+	case "filter-16":
+		return FilterSixteen(), nil
+	case "filter-24":
+		return FilterTwentyFour(), nil
+	case "fiscal-host-16":
+		return FiscalHostSixteen(), nil
+	case "flame":
+		return Flame(), nil
+	case "flame-16":
+		return FlameSixteen(), nil
+	case "flame-24":
+		return FlameTwentyFour(), nil
+	case "fold":
+		return Fold(), nil
+	case "fold-down":
+		return FoldDown(), nil
+	case "fold-down-16":
+		return FoldDownSixteen(), nil
+	case "fold-down-24":
+		return FoldDownTwentyFour(), nil
+	case "fold-16":
+		return FoldSixteen(), nil
+	case "fold-24":
+		return FoldTwentyFour(), nil
+	case "fold-up":
+		return FoldUp(), nil
+	case "fold-up-16":
+		return FoldUpSixteen(), nil
+	case "fold-up-24":
+		return FoldUpTwentyFour(), nil
+	case "gear":
+		return Gear(), nil
+	case "gear-16":
+		return GearSixteen(), nil
+	case "gear-24":
+		return GearTwentyFour(), nil
+	case "gift":
+		return Gift(), nil
+	case "gift-16":
+		return GiftSixteen(), nil
+	case "gift-24":
+		return GiftTwentyFour(), nil
+	case "gist":
+		return Gist(), nil
+	case "gist-secret":
+		return GistSecret(), nil
+	case "git-branch":
+		return GitBranch(), nil
+	case "git-branch-16":
+		return GitBranchSixteen(), nil
+	case "git-branch-24":
+		return GitBranchTwentyFour(), nil
+	case "git-commit":
+		return GitCommit(), nil
+	case "git-commit-16":
+		return GitCommitSixteen(), nil
+	case "git-commit-24":
+		return GitCommitTwentyFour(), nil
+	case "git-compare":
+		return GitCompare(), nil
+	case "git-compare-16":
+		return GitCompareSixteen(), nil
+	case "git-compare-24":
+		return GitCompareTwentyFour(), nil
+	case "git-merge":
+		return GitMerge(), nil
+	case "git-merge-queue-16":
+		return GitMergeQueueSixteen(), nil
+	case "git-merge-16":
+		return GitMergeSixteen(), nil
+	case "git-merge-24":
+		return GitMergeTwentyFour(), nil
+	case "git-pull-request":
+		return GitPullRequest(), nil
+	case "git-pull-request-closed-16":
+		return GitPullRequestClosedSixteen(), nil
+	case "git-pull-request-closed-24":
+		return GitPullRequestClosedTwentyFour(), nil
+	case "git-pull-request-draft-16":
+		return GitPullRequestDraftSixteen(), nil
+	case "git-pull-request-draft-24":
+		return GitPullRequestDraftTwentyFour(), nil
+	case "git-pull-request-16":
+		return GitPullRequestSixteen(), nil
+	case "git-pull-request-24":
+		return GitPullRequestTwentyFour(), nil
+	case "github-action":
+		return GithubAction(), nil
+	case "globe":
+		return Globe(), nil
+	case "globe-16":
+		return GlobeSixteen(), nil
+	case "globe-24":
+		return GlobeTwentyFour(), nil
+	case "goal-16":
+		return GoalSixteen(), nil
+	case "goal-24":
+		return GoalTwentyFour(), nil
+	case "grabber":
+		return Grabber(), nil
+	case "grabber-16":
+		return GrabberSixteen(), nil
+	case "grabber-24":
+		return GrabberTwentyFour(), nil
+	case "graph":
+		return Graph(), nil
+	case "graph-16":
+		return GraphSixteen(), nil
+	case "graph-24":
+		return GraphTwentyFour(), nil
+	case "hash-16":
+		return HashSixteen(), nil
+	case "hash-24":
+		return HashTwentyFour(), nil
+	case "heading-16":
+		return HeadingSixteen(), nil
+	case "heading-24":
+		return HeadingTwentyFour(), nil
+	case "heart":
+		return Heart(), nil
+	case "heart-fill-16":
+		return HeartFillSixteen(), nil
+	case "heart-fill-24":
+		return HeartFillTwentyFour(), nil
+	case "heart-16":
+		return HeartSixteen(), nil
+	case "heart-24":
+		return HeartTwentyFour(), nil
+	case "history":
+		return History(), nil
+	case "history-16":
+		return HistorySixteen(), nil
+	case "history-24":
+		return HistoryTwentyFour(), nil
+	case "home":
+		return Home(), nil
+	case "home-fill-24":
+		return HomeFillTwentyFour(), nil
+	case "home-16":
+		return HomeSixteen(), nil
+	case "home-24":
+		return HomeTwentyFour(), nil
+	case "horizontal-rule":
+		return HorizontalRule(), nil
+	case "horizontal-rule-16":
+		return HorizontalRuleSixteen(), nil
+	case "horizontal-rule-24":
+		return HorizontalRuleTwentyFour(), nil
+	case "hourglass-16":
+		return HourglassSixteen(), nil
+	case "hourglass-24":
+		return HourglassTwentyFour(), nil
+	case "hubot":
+		return Hubot(), nil
+	case "hubot-16":
+		return HubotSixteen(), nil
+	case "hubot-24":
+		return HubotTwentyFour(), nil
+	case "id-badge-16":
+		return IdBadgeSixteen(), nil
+	case "image-16":
+		return ImageSixteen(), nil
+	case "image-24":
+		return ImageTwentyFour(), nil
+	case "inbox":
+		return Inbox(), nil
+	case "inbox-16":
+		return InboxSixteen(), nil
+	case "inbox-24":
+		return InboxTwentyFour(), nil
+	case "infinity-16":
+		return InfinitySixteen(), nil
+	case "infinity-24":
+		return InfinityTwentyFour(), nil
+	case "info":
+		return Info(), nil
+	case "info-16":
+		return InfoSixteen(), nil
+	case "info-24":
+		return InfoTwentyFour(), nil
+	case "insights-24":
+		return InsightsTwentyFour(), nil
+	case "issue-closed":
+		return IssueClosed(), nil
+	case "issue-closed-16":
+		return IssueClosedSixteen(), nil
+	case "issue-closed-24":
+		return IssueClosedTwentyFour(), nil
+	case "issue-draft-16":
+		return IssueDraftSixteen(), nil
+	case "issue-draft-24":
+		return IssueDraftTwentyFour(), nil
+	case "issue-opened":
+		return IssueOpened(), nil
+	case "issue-opened-16":
+		return IssueOpenedSixteen(), nil
+	case "issue-opened-24":
+		return IssueOpenedTwentyFour(), nil
+	case "issue-reopened":
+		return IssueReopened(), nil
+	case "issue-reopened-16":
+		return IssueReopenedSixteen(), nil
+	case "issue-reopened-24":
+		return IssueReopenedTwentyFour(), nil
+	case "issue-tracked-by-16":
+		return IssueTrackedBySixteen(), nil
+	case "issue-tracked-by-24":
+		return IssueTrackedByTwentyFour(), nil
+	case "issue-tracked-in-16":
+		return IssueTrackedInSixteen(), nil
+	case "issue-tracked-in-24":
+		return IssueTrackedInTwentyFour(), nil
+	case "italic":
+		return Italic(), nil
+	case "italic-16":
+		return ItalicSixteen(), nil
+	case "italic-24":
+		return ItalicTwentyFour(), nil
+	case "iterations-16":
+		return IterationsSixteen(), nil
+	case "iterations-24":
+		return IterationsTwentyFour(), nil
+	case "jersey":
+		return Jersey(), nil
+	case "kebab-horizontal":
+		return KebabHorizontal(), nil
+	case "kebab-horizontal-16":
+		return KebabHorizontalSixteen(), nil
+	case "kebab-horizontal-24":
+		return KebabHorizontalTwentyFour(), nil
+	case "kebab-vertical":
+		return KebabVertical(), nil
+	case "key":
+		return Key(), nil
+	case "key-asterisk-16":
+		return KeyAsteriskSixteen(), nil
+	case "key-16":
+		return KeySixteen(), nil
+	case "key-24":
+		return KeyTwentyFour(), nil
+	case "keyboard":
+		return Keyboard(), nil
+	case "law":
+		return Law(), nil
+	case "law-16":
+		return LawSixteen(), nil
+	case "law-24":
+		return LawTwentyFour(), nil
+	case "light-bulb":
+		return LightBulb(), nil
+	case "light-bulb-16":
+		return LightBulbSixteen(), nil
+	case "light-bulb-24":
+		return LightBulbTwentyFour(), nil
+	case "link":
+		return Link(), nil
+	case "link-external":
+		return LinkExternal(), nil
+	case "link-external-16":
+		return LinkExternalSixteen(), nil
+	case "link-external-24":
+		return LinkExternalTwentyFour(), nil
+	case "link-16":
+		return LinkSixteen(), nil
+	case "link-24":
+		return LinkTwentyFour(), nil
+	case "list-ordered":
+		return ListOrdered(), nil
+	case "list-ordered-16":
+		return ListOrderedSixteen(), nil
+	case "list-ordered-24":
+		return ListOrderedTwentyFour(), nil
+	case "list-unordered":
+		return ListUnordered(), nil
+	case "list-unordered-16":
+		return ListUnorderedSixteen(), nil
+	case "list-unordered-24":
+		return ListUnorderedTwentyFour(), nil
+	case "location":
+		return Location(), nil
+	case "location-16":
+		return LocationSixteen(), nil
+	case "location-24":
+		return LocationTwentyFour(), nil
+	case "lock":
+		return Lock(), nil
+	case "lock-16":
+		return LockSixteen(), nil
+	case "lock-24":
+		return LockTwentyFour(), nil
+	case "log-16":
+		return LogSixteen(), nil
+	case "log-24":
+		return LogTwentyFour(), nil
+	case "logo-gist-16":
+		return LogoGistSixteen(), nil
+	case "logo-github-16":
+		return LogoGithubSixteen(), nil
+	case "mail":
+		return Mail(), nil
+	case "mail-read":
+		return MailRead(), nil
+	case "mail-16":
+		return MailSixteen(), nil
+	case "mail-24":
+		return MailTwentyFour(), nil
+	case "mark-github-16":
+		return MarkGithubSixteen(), nil
+	case "markdown-16":
+		return MarkdownSixteen(), nil
+	case "megaphone":
+		return Megaphone(), nil
+	case "megaphone-16":
+		return MegaphoneSixteen(), nil
+	case "megaphone-24":
+		return MegaphoneTwentyFour(), nil
+	case "mention":
+		return Mention(), nil
+	case "mention-16":
+		return MentionSixteen(), nil
+	case "mention-24":
+		return MentionTwentyFour(), nil
+	case "meter-16":
+		return MeterSixteen(), nil
+	case "milestone":
+		return Milestone(), nil
+	case "milestone-16":
+		return MilestoneSixteen(), nil
+	case "milestone-24":
+		return MilestoneTwentyFour(), nil
+	case "mirror":
+		return Mirror(), nil
+	case "mirror-16":
+		return MirrorSixteen(), nil
+	case "mirror-24":
+		return MirrorTwentyFour(), nil
+	case "moon-16":
+		return MoonSixteen(), nil
+	case "moon-24":
+		return MoonTwentyFour(), nil
+	case "mortar-board":
+		return MortarBoard(), nil
+	case "mortar-board-16":
+		return MortarBoardSixteen(), nil
+	case "mortar-board-24":
+		return MortarBoardTwentyFour(), nil
+	case "move-to-bottom-16":
+		return MoveToBottomSixteen(), nil
+	case "move-to-bottom-24":
+		return MoveToBottomTwentyFour(), nil
+	case "move-to-end-16":
+		return MoveToEndSixteen(), nil
+	case "move-to-end-24":
+		return MoveToEndTwentyFour(), nil
+	case "move-to-start-16":
+		return MoveToStartSixteen(), nil
+	case "move-to-start-24":
+		return MoveToStartTwentyFour(), nil
+	case "move-to-top-16":
+		return MoveToTopSixteen(), nil
+	case "move-to-top-24":
+		return MoveToTopTwentyFour(), nil
+	case "multi-select-16":
+		return MultiSelectSixteen(), nil
+	case "multi-select-24":
+		return MultiSelectTwentyFour(), nil
+	case "mute":
+		return Mute(), nil
+	case "mute-16":
+		return MuteSixteen(), nil
+	case "mute-24":
+		return MuteTwentyFour(), nil
+	case "no-entry-fill-12":
+		return NoEntryFillTwelve(), nil
+	case "no-entry-16":
+		return NoEntrySixteen(), nil
+	case "no-entry-24":
+		return NoEntryTwentyFour(), nil
+	case "no-newline":
+		return NoNewline(), nil
+	case "north-star-16":
+		return NorthStarSixteen(), nil
+	case "north-star-24":
+		return NorthStarTwentyFour(), nil
+	case "note":
+		return Note(), nil
+	case "note-16":
+		return NoteSixteen(), nil
+	case "note-24":
+		return NoteTwentyFour(), nil
+	case "number-16":
+		return NumberSixteen(), nil
+	case "number-24":
+		return NumberTwentyFour(), nil
+	case "octoface":
+		return Octoface(), nil
+	case "octoface-16":
+		return OctofaceSixteen(), nil
+	case "octoface-24":
+		return OctofaceTwentyFour(), nil
+	case "organization":
+		return Organization(), nil
+	case "organization-16":
+		return OrganizationSixteen(), nil
+	case "organization-24":
+		return OrganizationTwentyFour(), nil
+	case "package":
+		return Package(), nil
+	case "package-dependencies-16":
+		return PackageDependenciesSixteen(), nil
+	case "package-dependencies-24":
+		return PackageDependenciesTwentyFour(), nil
+	case "package-dependents-16":
+		return PackageDependentsSixteen(), nil
+	case "package-dependents-24":
+		return PackageDependentsTwentyFour(), nil
+	case "package-16":
+		return PackageSixteen(), nil
+	case "package-24":
+		return PackageTwentyFour(), nil
+	case "paintbrush-16":
+		return PaintbrushSixteen(), nil
+	case "paintcan":
+		return Paintcan(), nil
+	case "paper-airplane-16":
+		return PaperAirplaneSixteen(), nil
+	case "paper-airplane-24":
+		return PaperAirplaneTwentyFour(), nil
+	case "paperclip-16":
+		return PaperclipSixteen(), nil
+	case "paperclip-24":
+		return PaperclipTwentyFour(), nil
+	case "paste-16":
+		return PasteSixteen(), nil
+	case "paste-24":
+		return PasteTwentyFour(), nil
+	case "pencil":
+		return Pencil(), nil
+	case "pencil-16":
+		return PencilSixteen(), nil
+	case "pencil-24":
+		return PencilTwentyFour(), nil
+	case "people-16":
+		return PeopleSixteen(), nil
+	case "people-24":
+		return PeopleTwentyFour(), nil
+	case "person":
+		return Person(), nil
+	case "person-add-16":
+		return PersonAddSixteen(), nil
+	case "person-add-24":
+		return PersonAddTwentyFour(), nil
+	case "person-fill-16":
+		return PersonFillSixteen(), nil
+	case "person-fill-24":
+		return PersonFillTwentyFour(), nil
+	case "person-16":
+		return PersonSixteen(), nil
+	case "person-24":
+		return PersonTwentyFour(), nil
+	case "pin":
+		return Pin(), nil
+	case "pin-16":
+		return PinSixteen(), nil
+	case "pin-24":
+		return PinTwentyFour(), nil
+	case "play":
+		return Play(), nil
+	case "play-16":
+		return PlaySixteen(), nil
+	case "play-24":
+		return PlayTwentyFour(), nil
+	case "plug":
+		return Plug(), nil
+	case "plug-16":
+		return PlugSixteen(), nil
+	case "plug-24":
+		return PlugTwentyFour(), nil
+	case "plus":
+		return Plus(), nil
+	case "plus-circle-16":
+		return PlusCircleSixteen(), nil
+	case "plus-circle-24":
+		return PlusCircleTwentyFour(), nil
+	case "plus-16":
+		return PlusSixteen(), nil
+	case "plus-small":
+		return PlusSmall(), nil
+	case "plus-24":
+		return PlusTwentyFour(), nil
+	case "primitive-dot":
+		return PrimitiveDot(), nil
+	case "primitive-square":
+		return PrimitiveSquare(), nil
+	case "project":
+		return Project(), nil
+	case "project-roadmap-16":
+		return ProjectRoadmapSixteen(), nil
+	case "project-roadmap-24":
+		return ProjectRoadmapTwentyFour(), nil
+	case "project-16":
+		return ProjectSixteen(), nil
+	case "project-symlink-16":
+		return ProjectSymlinkSixteen(), nil
+	case "project-symlink-24":
+		return ProjectSymlinkTwentyFour(), nil
+	case "project-24":
+		return ProjectTwentyFour(), nil
+	case "pulse":
+		return Pulse(), nil
+	case "pulse-16":
+		return PulseSixteen(), nil
+	case "pulse-24":
+		return PulseTwentyFour(), nil
+	case "question":
+		return Question(), nil
+	case "question-16":
+		return QuestionSixteen(), nil
+	case "question-24":
+		return QuestionTwentyFour(), nil
+	case "quote":
+		return Quote(), nil
+	case "quote-16":
+		return QuoteSixteen(), nil
+	case "quote-24":
+		return QuoteTwentyFour(), nil
+	case "radio-tower":
+		return RadioTower(), nil
+	case "read-16":
+		return ReadSixteen(), nil
+	case "read-24":
+		return ReadTwentyFour(), nil
+	case "rel-file-path-16":
+		return RelFilePathSixteen(), nil
+	case "rel-file-path-24":
+		return RelFilePathTwentyFour(), nil
+	case "reply":
+		return Reply(), nil
+	case "reply-16":
+		return ReplySixteen(), nil
+	case "reply-24":
+		return ReplyTwentyFour(), nil
+	case "repo":
+		return Repo(), nil
+	case "repo-clone-16":
+		return RepoCloneSixteen(), nil
+	case "repo-deleted-16":
+		return RepoDeletedSixteen(), nil
+	case "repo-force-push":
+		return RepoForcePush(), nil
+	case "repo-forked":
+		return RepoForked(), nil
+	case "repo-forked-16":
+		return RepoForkedSixteen(), nil
+	case "repo-forked-24":
+		return RepoForkedTwentyFour(), nil
+	case "repo-locked-16":
+		return RepoLockedSixteen(), nil
+	case "repo-locked-24":
+		return RepoLockedTwentyFour(), nil
+	case "repo-pull-16":
+		return RepoPullSixteen(), nil
+	case "repo-push":
+		return RepoPush(), nil
+	case "repo-push-16":
+		return RepoPushSixteen(), nil
+	case "repo-push-24":
+		return RepoPushTwentyFour(), nil
+	case "repo-16":
+		return RepoSixteen(), nil
+	case "repo-template-16":
+		return RepoTemplateSixteen(), nil
+	case "repo-template-24":
+		return RepoTemplateTwentyFour(), nil
+	case "repo-24":
+		return RepoTwentyFour(), nil
+	case "report":
+		return Report(), nil
+	case "report-16":
+		return ReportSixteen(), nil
+	case "report-24":
+		return ReportTwentyFour(), nil
+	case "request-changes":
+		return RequestChanges(), nil
+	case "rocket":
+		return Rocket(), nil
+	case "rocket-16":
+		return RocketSixteen(), nil
+	case "rocket-24":
+		return RocketTwentyFour(), nil
+	case "rows-16":
+		return RowsSixteen(), nil
+	case "rows-24":
+		return RowsTwentyFour(), nil
+	case "rss":
+		return Rss(), nil
+	case "rss-16":
+		return RssSixteen(), nil
+	case "rss-24":
+		return RssTwentyFour(), nil
+	case "ruby":
+		return Ruby(), nil
+	case "ruby-16":
+		return RubySixteen(), nil
+	case "ruby-24":
+		return RubyTwentyFour(), nil
+	case "screen-full":
+		return ScreenFull(), nil
+	case "screen-full-16":
+		return ScreenFullSixteen(), nil
+	case "screen-full-24":
+		return ScreenFullTwentyFour(), nil
+	case "screen-normal":
+		return ScreenNormal(), nil
+	case "screen-normal-16":
+		return ScreenNormalSixteen(), nil
+	case "screen-normal-24":
+		return ScreenNormalTwentyFour(), nil
+	case "search":
+		return Search(), nil
+	case "search-16":
+		return SearchSixteen(), nil
+	case "search-24":
+		return SearchTwentyFour(), nil
+	case "server":
+		return Server(), nil
+	case "server-16":
+		return ServerSixteen(), nil
+	case "server-24":
+		return ServerTwentyFour(), nil
+	case "settings":
+		return Settings(), nil
+	case "settings-24":
+		return SettingsTwentyFour(), nil
+	case "share-android-16":
+		return ShareAndroidSixteen(), nil
+	case "share-android-24":
+		return ShareAndroidTwentyFour(), nil
+	case "share-16":
+		return ShareSixteen(), nil
+	case "share-24":
+		return ShareTwentyFour(), nil
+	case "shield":
+		return Shield(), nil
+	case "shield-check-16":
+		return ShieldCheckSixteen(), nil
+	case "shield-check-24":
+		return ShieldCheckTwentyFour(), nil
+	case "shield-lock-16":
+		return ShieldLockSixteen(), nil
+	case "shield-lock-24":
+		return ShieldLockTwentyFour(), nil
+	case "shield-16":
+		return ShieldSixteen(), nil
+	case "shield-slash-16":
+		return ShieldSlashSixteen(), nil
+	case "shield-24":
+		return ShieldTwentyFour(), nil
+	case "shield-x-16":
+		return ShieldXSixteen(), nil
+	case "shield-x-24":
+		return ShieldXTwentyFour(), nil
+	case "sidebar-collapse-16":
+		return SidebarCollapseSixteen(), nil
+	case "sidebar-collapse-24":
+		return SidebarCollapseTwentyFour(), nil
+	case "sidebar-expand-16":
+		return SidebarExpandSixteen(), nil
+	case "sidebar-expand-24":
+		return SidebarExpandTwentyFour(), nil
+	case "sign-in":
+		return SignIn(), nil
+	case "sign-in-16":
+		return SignInSixteen(), nil
+	case "sign-in-24":
+		return SignInTwentyFour(), nil
+	case "sign-out":
+		return SignOut(), nil
+	case "sign-out-16":
+		return SignOutSixteen(), nil
+	case "sign-out-24":
+		return SignOutTwentyFour(), nil
+	case "single-select-16":
+		return SingleSelectSixteen(), nil
+	case "single-select-24":
+		return SingleSelectTwentyFour(), nil
+	case "skip-fill-16":
+		return SkipFillSixteen(), nil
+	case "skip-fill-24":
+		return SkipFillTwentyFour(), nil
+	case "skip-16":
+		return SkipSixteen(), nil
+	case "skip-24":
+		return SkipTwentyFour(), nil
+	case "sliders-16":
+		return SlidersSixteen(), nil
+	case "smiley":
+		return Smiley(), nil
+	case "smiley-16":
+		return SmileySixteen(), nil
+	case "smiley-24":
+		return SmileyTwentyFour(), nil
+	case "sort-asc-16":
+		return SortAscSixteen(), nil
+	case "sort-asc-24":
+		return SortAscTwentyFour(), nil
+	case "sort-desc-16":
+		return SortDescSixteen(), nil
+	case "sort-desc-24":
+		return SortDescTwentyFour(), nil
+	case "sparkle-fill-16":
+		return SparkleFillSixteen(), nil
+	case "sponsor-tiers-16":
+		return SponsorTiersSixteen(), nil
+	case "sponsor-tiers-24":
+		return SponsorTiersTwentyFour(), nil
+	case "square-fill-16":
+		return SquareFillSixteen(), nil
+	case "square-fill-24":
+		return SquareFillTwentyFour(), nil
+	case "square-16":
+		return SquareSixteen(), nil
+	case "square-24":
+		return SquareTwentyFour(), nil
+	case "squirrel":
+		return Squirrel(), nil
+	case "squirrel-16":
+		return SquirrelSixteen(), nil
+	case "squirrel-24":
+		return SquirrelTwentyFour(), nil
+	case "stack-16":
+		return StackSixteen(), nil
+	case "stack-24":
+		return StackTwentyFour(), nil
+	case "star":
+		return Star(), nil
+	case "star-fill-16":
+		return StarFillSixteen(), nil
+	case "star-fill-24":
+		return StarFillTwentyFour(), nil
+	case "star-16":
+		return StarSixteen(), nil
+	case "star-24":
+		return StarTwentyFour(), nil
+	case "stop":
+		return Stop(), nil
+	case "stop-16":
+		return StopSixteen(), nil
+	case "stop-24":
+		return StopTwentyFour(), nil
+	case "stopwatch-16":
+		return StopwatchSixteen(), nil
+	case "stopwatch-24":
+		return StopwatchTwentyFour(), nil
+	case "strikethrough-16":
+		return StrikethroughSixteen(), nil
+	case "strikethrough-24":
+		return StrikethroughTwentyFour(), nil
+	case "sun-16":
+		return SunSixteen(), nil
+	case "sun-24":
+		return SunTwentyFour(), nil
+	case "sync":
+		return Sync(), nil
+	case "sync-16":
+		return SyncSixteen(), nil
+	case "sync-24":
+		return SyncTwentyFour(), nil
+	case "tab-external-16":
+		return TabExternalSixteen(), nil
+	case "tab-24":
+		return TabTwentyFour(), nil
+	case "table-16":
+		return TableSixteen(), nil
+	case "table-24":
+		return TableTwentyFour(), nil
+	case "tag":
+		return Tag(), nil
+	case "tag-16":
+		return TagSixteen(), nil
+	case "tag-24":
+		return TagTwentyFour(), nil
+	case "tasklist":
+		return Tasklist(), nil
+	case "tasklist-16":
+		return TasklistSixteen(), nil
+	case "tasklist-24":
+		return TasklistTwentyFour(), nil
+	case "telescope":
+		return Telescope(), nil
+	case "telescope-fill-16":
+		return TelescopeFillSixteen(), nil
+	case "telescope-fill-24":
+		return TelescopeFillTwentyFour(), nil
+	case "telescope-16":
+		return TelescopeSixteen(), nil
+	case "telescope-24":
+		return TelescopeTwentyFour(), nil
+	case "terminal":
+		return Terminal(), nil
+	case "terminal-16":
+		return TerminalSixteen(), nil
+	case "terminal-24":
+		return TerminalTwentyFour(), nil
+	case "text-size":
+		return TextSize(), nil
+	case "three-bars":
+		return ThreeBars(), nil
+	case "three-bars-16":
+		return ThreeBarsSixteen(), nil
+	case "thumbsdown":
+		return Thumbsdown(), nil
+	case "thumbsdown-16":
+		return ThumbsdownSixteen(), nil
+	case "thumbsdown-24":
+		return ThumbsdownTwentyFour(), nil
+	case "thumbsup":
+		return Thumbsup(), nil
+	case "thumbsup-16":
+		return ThumbsupSixteen(), nil
+	case "thumbsup-24":
+		return ThumbsupTwentyFour(), nil
+	case "tools":
+		return Tools(), nil
+	case "tools-16":
+		return ToolsSixteen(), nil
+	case "tools-24":
+		return ToolsTwentyFour(), nil
+	case "trash-16":
+		return TrashSixteen(), nil
+	case "trash-24":
+		return TrashTwentyFour(), nil
+	case "trashcan":
+		return Trashcan(), nil
+	case "triangle-down":
+		return TriangleDown(), nil
+	case "triangle-down-16":
+		return TriangleDownSixteen(), nil
+	case "triangle-down-24":
+		return TriangleDownTwentyFour(), nil
+	case "triangle-left":
+		return TriangleLeft(), nil
+	case "triangle-left-16":
+		return TriangleLeftSixteen(), nil
+	case "triangle-left-24":
+		return TriangleLeftTwentyFour(), nil
+	case "triangle-right":
+		return TriangleRight(), nil
+	case "triangle-right-16":
+		return TriangleRightSixteen(), nil
+	case "triangle-right-24":
+		return TriangleRightTwentyFour(), nil
+	case "triangle-up":
+		return TriangleUp(), nil
+	case "triangle-up-16":
+		return TriangleUpSixteen(), nil
+	case "triangle-up-24":
+		return TriangleUpTwentyFour(), nil
+	case "trophy-16":
+		return TrophySixteen(), nil
+	case "trophy-24":
+		return TrophyTwentyFour(), nil
+	case "typography-16":
+		return TypographySixteen(), nil
+	case "typography-24":
+		return TypographyTwentyFour(), nil
+	case "unfold":
+		return Unfold(), nil
+	case "unfold-16":
+		return UnfoldSixteen(), nil
+	case "unfold-24":
+		return UnfoldTwentyFour(), nil
+	case "unlink-16":
+		return UnlinkSixteen(), nil
+	case "unlink-24":
+		return UnlinkTwentyFour(), nil
+	case "unlock-16":
+		return UnlockSixteen(), nil
+	case "unlock-24":
+		return UnlockTwentyFour(), nil
+	case "unmute":
+		return Unmute(), nil
+	case "unmute-16":
+		return UnmuteSixteen(), nil
+	case "unmute-24":
+		return UnmuteTwentyFour(), nil
+	case "unread-16":
+		return UnreadSixteen(), nil
+	case "unread-24":
+		return UnreadTwentyFour(), nil
+	case "unverified":
+		return Unverified(), nil
+	case "unverified-16":
+		return UnverifiedSixteen(), nil
+	case "unverified-24":
+		return UnverifiedTwentyFour(), nil
+	case "upload-16":
+		return UploadSixteen(), nil
+	case "upload-24":
+		return UploadTwentyFour(), nil
+	case "verified":
+		return Verified(), nil
+	case "verified-16":
+		return VerifiedSixteen(), nil
+	case "verified-24":
+		return VerifiedTwentyFour(), nil
+	case "versions":
+		return Versions(), nil
+	case "versions-16":
+		return VersionsSixteen(), nil
+	case "versions-24":
+		return VersionsTwentyFour(), nil
+	case "video-16":
+		return VideoSixteen(), nil
+	case "video-24":
+		return VideoTwentyFour(), nil
+	case "watch":
+		return Watch(), nil
+	case "webhook-16":
+		return WebhookSixteen(), nil
+	case "workflow-16":
+		return WorkflowSixteen(), nil
+	case "workflow-24":
+		return WorkflowTwentyFour(), nil
+	case "x":
+		return X(), nil
+	case "x-circle-fill-16":
+		return XCircleFillSixteen(), nil
+	case "x-circle-fill-12":
+		return XCircleFillTwelve(), nil
+	case "x-circle-fill-24":
+		return XCircleFillTwentyFour(), nil
+	case "x-circle-16":
+		return XCircleSixteen(), nil
+	case "x-circle-24":
+		return XCircleTwentyFour(), nil
+	case "x-16":
+		return XSixteen(), nil
+	case "x-24":
+		return XTwentyFour(), nil
+	case "zap":
+		return Zap(), nil
+	case "zap-16":
+		return ZapSixteen(), nil
+	case "zap-24":
+		return ZapTwentyFour(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in octicon icon set", name)
+	}
 }

@@ -1,6 +1,9 @@
 package iwwa
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	addInnerSVG              = `<path fill="currentColor" d="m36.495 19.226l-15.732.012l.012-15.732a.763.763 0 0 0-1.525 0l-.012 15.733l-15.733.011a.763.763 0 0 0 0 1.525l15.732-.012l-.012 15.732c0 .204.082.4.223.538a.764.764 0 0 0 1.303-.538l.012-15.732l15.732-.012a.763.763 0 1 0 0-1.525z"/>`
@@ -1370,4 +1373,221 @@ func Year(children ...any) *engine.HTMLElement {
 		yearInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "add":
+		return Add(), nil
+	case "add-15m":
+		return AddFifteenM(), nil
+	case "add-1d":
+		return AddOneD(), nil
+	case "add-1m":
+		return AddOneM(), nil
+	case "add-1w":
+		return AddOneW(), nil
+	case "add-1y":
+		return AddOneY(), nil
+	case "alarm":
+		return Alarm(), nil
+	case "alarm-o":
+		return AlarmO(), nil
+	case "alert":
+		return Alert(), nil
+	case "angle-left":
+		return AngleLeft(), nil
+	case "arrow-down":
+		return ArrowDown(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrow-up":
+		return ArrowUp(), nil
+	case "assign":
+		return Assign(), nil
+	case "bad":
+		return Bad(), nil
+	case "bad-o":
+		return BadO(), nil
+	case "box":
+		return Box(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "chart":
+		return Chart(), nil
+	case "chart-style4":
+		return ChartStyleFour(), nil
+	case "chart-style1":
+		return ChartStyleOne(), nil
+	case "chart-style3":
+		return ChartStyleThree(), nil
+	case "chart-style2":
+		return ChartStyleTwo(), nil
+	case "circumflex":
+		return Circumflex(), nil
+	case "clone":
+		return Clone(), nil
+	case "close":
+		return Close(), nil
+	case "close-braket":
+		return CloseBraket(), nil
+	case "co2":
+		return CoTwo(), nil
+	case "confront":
+		return Confront(), nil
+	case "connection-o":
+		return ConnectionO(), nil
+	case "consumption-o":
+		return ConsumptionO(), nil
+	case "csv":
+		return Csv(), nil
+	case "danger":
+		return Danger(), nil
+	case "dashboard":
+		return Dashboard(), nil
+	case "delete":
+		return Delete(), nil
+	case "delta":
+		return Delta(), nil
+	case "divide":
+		return Divide(), nil
+	case "drag-drop":
+		return DragDrop(), nil
+	case "duplicate":
+		return Duplicate(), nil
+	case "edit":
+		return Edit(), nil
+	case "expand":
+		return Expand(), nil
+	case "export":
+		return Export(), nil
+	case "file-csv":
+		return FileCsv(), nil
+	case "file-pdf":
+		return FilePdf(), nil
+	case "file-png":
+		return FilePng(), nil
+	case "file-xsl":
+		return FileXsl(), nil
+	case "filter":
+		return Filter(), nil
+	case "flag":
+		return Flag(), nil
+	case "gauge":
+		return Gauge(), nil
+	case "good":
+		return Good(), nil
+	case "good-o":
+		return GoodO(), nil
+	case "help":
+		return Help(), nil
+	case "history":
+		return History(), nil
+	case "humidity":
+		return Humidity(), nil
+	case "info":
+		return Info(), nil
+	case "information":
+		return Information(), nil
+	case "innowatio-logo":
+		return InnowatioLogo(), nil
+	case "lightbulb":
+		return Lightbulb(), nil
+	case "list-favourite":
+		return ListFavourite(), nil
+	case "lock":
+		return Lock(), nil
+	case "logout":
+		return Logout(), nil
+	case "map":
+		return Map(), nil
+	case "menu":
+		return Menu(), nil
+	case "merge":
+		return Merge(), nil
+	case "middle-o":
+		return MiddleO(), nil
+	case "middling":
+		return Middling(), nil
+	case "minus":
+		return Minus(), nil
+	case "monitoring":
+		return Monitoring(), nil
+	case "month":
+		return Month(), nil
+	case "multiply":
+		return Multiply(), nil
+	case "number-asc":
+		return NumberAsc(), nil
+	case "number-desc":
+		return NumberDesc(), nil
+	case "open-braket":
+		return OpenBraket(), nil
+	case "option":
+		return Option(), nil
+	case "option-horizontal":
+		return OptionHorizontal(), nil
+	case "pause":
+		return Pause(), nil
+	case "percentage":
+		return Percentage(), nil
+	case "pinch":
+		return Pinch(), nil
+	case "png":
+		return Png(), nil
+	case "power":
+		return Power(), nil
+	case "remote-control-o":
+		return RemoteControlO(), nil
+	case "remove-15m":
+		return RemoveFifteenM(), nil
+	case "remove-1d":
+		return RemoveOneD(), nil
+	case "remove-1m":
+		return RemoveOneM(), nil
+	case "remove-1w":
+		return RemoveOneW(), nil
+	case "remove-1y":
+		return RemoveOneY(), nil
+	case "reset":
+		return Reset(), nil
+	case "search":
+		return Search(), nil
+	case "settings":
+		return Settings(), nil
+	case "sort-by":
+		return SortBy(), nil
+	case "square-root":
+		return SquareRoot(), nil
+	case "star":
+		return Star(), nil
+	case "star-o":
+		return StarO(), nil
+	case "swipe":
+		return Swipe(), nil
+	case "tag":
+		return Tag(), nil
+	case "text-asc":
+		return TextAsc(), nil
+	case "text-desc":
+		return TextDesc(), nil
+	case "thermometer":
+		return Thermometer(), nil
+	case "trash":
+		return Trash(), nil
+	case "upload":
+		return Upload(), nil
+	case "user":
+		return User(), nil
+	case "user-functions":
+		return UserFunctions(), nil
+	case "week":
+		return Week(), nil
+	case "year":
+		return Year(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in iwwa icon set", name)
+	}
 }

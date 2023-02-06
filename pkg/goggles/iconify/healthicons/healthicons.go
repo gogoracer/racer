@@ -1,6 +1,9 @@
 package healthicons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	aInnerSVG                                                   = `<path fill="currentColor" fill-rule="evenodd" d="M24 10a2 2 0 0 1 1.846 1.23l7.483 17.96l.035.084l2.482 5.957a2 2 0 0 1-3.692 1.538L30.167 32H17.833l-1.987 4.77a2 2 0 0 1-3.692-1.54l2.482-5.956a2.01 2.01 0 0 1 .035-.085l7.483-17.958A2 2 0 0 1 24 10Zm-4.5 18h9L24 17.2L19.5 28Z" clip-rule="evenodd"/>`
@@ -22599,4 +22602,3487 @@ func ZeroOutline(children ...any) *engine.HTMLElement {
 		zeroOutlineInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "a":
+		return A(), nil
+	case "a-negative":
+		return ANegative(), nil
+	case "a-outline":
+		return AOutline(), nil
+	case "accident-and-emergency":
+		return AccidentAndEmergency(), nil
+	case "accident-and-emergency-negative":
+		return AccidentAndEmergencyNegative(), nil
+	case "accident-and-emergency-outline":
+		return AccidentAndEmergencyOutline(), nil
+	case "admissions":
+		return Admissions(), nil
+	case "admissions-negative":
+		return AdmissionsNegative(), nil
+	case "admissions-outline":
+		return AdmissionsOutline(), nil
+	case "agriculture":
+		return Agriculture(), nil
+	case "agriculture-negative":
+		return AgricultureNegative(), nil
+	case "agriculture-outline":
+		return AgricultureOutline(), nil
+	case "agriculture-worker":
+		return AgricultureWorker(), nil
+	case "agriculture-worker-alt":
+		return AgricultureWorkerAlt(), nil
+	case "agriculture-worker-alt-negative":
+		return AgricultureWorkerAltNegative(), nil
+	case "agriculture-worker-alt-outline":
+		return AgricultureWorkerAltOutline(), nil
+	case "agriculture-worker-negative":
+		return AgricultureWorkerNegative(), nil
+	case "agriculture-worker-outline":
+		return AgricultureWorkerOutline(), nil
+	case "alert":
+		return Alert(), nil
+	case "alert-circle":
+		return AlertCircle(), nil
+	case "alert-circle-negative":
+		return AlertCircleNegative(), nil
+	case "alert-circle-outline":
+		return AlertCircleOutline(), nil
+	case "alert-negative":
+		return AlertNegative(), nil
+	case "alert-outline":
+		return AlertOutline(), nil
+	case "alert-triangle":
+		return AlertTriangle(), nil
+	case "alert-triangle-negative":
+		return AlertTriangleNegative(), nil
+	case "alert-triangle-outline":
+		return AlertTriangleOutline(), nil
+	case "allergies":
+		return Allergies(), nil
+	case "allergies-negative":
+		return AllergiesNegative(), nil
+	case "allergies-outline":
+		return AllergiesOutline(), nil
+	case "ambulance":
+		return Ambulance(), nil
+	case "ambulance-negative":
+		return AmbulanceNegative(), nil
+	case "ambulance-outline":
+		return AmbulanceOutline(), nil
+	case "ambulatory-clinic":
+		return AmbulatoryClinic(), nil
+	case "ambulatory-clinic-negative":
+		return AmbulatoryClinicNegative(), nil
+	case "ambulatory-clinic-outline":
+		return AmbulatoryClinicOutline(), nil
+	case "ancv":
+		return Ancv(), nil
+	case "ancv-negative":
+		return AncvNegative(), nil
+	case "ancv-outline":
+		return AncvOutline(), nil
+	case "angry":
+		return Angry(), nil
+	case "angry-negative":
+		return AngryNegative(), nil
+	case "angry-outline":
+		return AngryOutline(), nil
+	case "animal-chicken":
+		return AnimalChicken(), nil
+	case "animal-chicken-negative":
+		return AnimalChickenNegative(), nil
+	case "animal-chicken-outline":
+		return AnimalChickenOutline(), nil
+	case "animal-cow":
+		return AnimalCow(), nil
+	case "animal-cow-negative":
+		return AnimalCowNegative(), nil
+	case "animal-cow-outline":
+		return AnimalCowOutline(), nil
+	case "animal-donkey":
+		return AnimalDonkey(), nil
+	case "animal-donkey-negative":
+		return AnimalDonkeyNegative(), nil
+	case "animal-donkey-outline":
+		return AnimalDonkeyOutline(), nil
+	case "animal-spider":
+		return AnimalSpider(), nil
+	case "animal-spider-negative":
+		return AnimalSpiderNegative(), nil
+	case "animal-spider-outline":
+		return AnimalSpiderOutline(), nil
+	case "animal-tick":
+		return AnimalTick(), nil
+	case "animal-tick-negative":
+		return AnimalTickNegative(), nil
+	case "animal-tick-outline":
+		return AnimalTickOutline(), nil
+	case "arm":
+		return Arm(), nil
+	case "arm-negative":
+		return ArmNegative(), nil
+	case "arm-outline":
+		return ArmOutline(), nil
+	case "assembly-point":
+		return AssemblyPoint(), nil
+	case "assembly-point-negative":
+		return AssemblyPointNegative(), nil
+	case "assembly-point-outline":
+		return AssemblyPointOutline(), nil
+	case "asthma":
+		return Asthma(), nil
+	case "asthma-negative":
+		return AsthmaNegative(), nil
+	case "asthma-outline":
+		return AsthmaOutline(), nil
+	case "award-ribbon":
+		return AwardRibbon(), nil
+	case "award-ribbon-negative":
+		return AwardRibbonNegative(), nil
+	case "award-ribbon-outline":
+		return AwardRibbonOutline(), nil
+	case "award-trophy":
+		return AwardTrophy(), nil
+	case "award-trophy-negative":
+		return AwardTrophyNegative(), nil
+	case "award-trophy-outline":
+		return AwardTrophyOutline(), nil
+	case "b":
+		return B(), nil
+	case "b-negative":
+		return BNegative(), nil
+	case "b-outline":
+		return BOutline(), nil
+	case "baby-female-0306m":
+		return BabyFemaleThreeHundredSixM(), nil
+	case "baby-female-0306m-negative":
+		return BabyFemaleThreeHundredSixMNegative(), nil
+	case "baby-female-0306m-outline":
+		return BabyFemaleThreeHundredSixMOutline(), nil
+	case "baby-female-0203m":
+		return BabyFemaleTwoHundredThreeM(), nil
+	case "baby-female-0203m-alt":
+		return BabyFemaleTwoHundredThreeMAlt(), nil
+	case "baby-female-0203m-alt-negative":
+		return BabyFemaleTwoHundredThreeMAltNegative(), nil
+	case "baby-female-0203m-alt-outline":
+		return BabyFemaleTwoHundredThreeMAltOutline(), nil
+	case "baby-female-0203m-negative":
+		return BabyFemaleTwoHundredThreeMNegative(), nil
+	case "baby-female-0203m-outline":
+		return BabyFemaleTwoHundredThreeMOutline(), nil
+	case "baby-male-0306m":
+		return BabyMaleThreeHundredSixM(), nil
+	case "baby-male-0306m-negative":
+		return BabyMaleThreeHundredSixMNegative(), nil
+	case "baby-male-0306m-outline":
+		return BabyMaleThreeHundredSixMOutline(), nil
+	case "baby-male-0203m":
+		return BabyMaleTwoHundredThreeM(), nil
+	case "baby-male-0203m-alt":
+		return BabyMaleTwoHundredThreeMAlt(), nil
+	case "baby-male-0203m-alt-negative":
+		return BabyMaleTwoHundredThreeMAltNegative(), nil
+	case "baby-male-0203m-alt-outline":
+		return BabyMaleTwoHundredThreeMAltOutline(), nil
+	case "baby-male-0203m-negative":
+		return BabyMaleTwoHundredThreeMNegative(), nil
+	case "baby-male-0203m-outline":
+		return BabyMaleTwoHundredThreeMOutline(), nil
+	case "baby-0306m":
+		return BabyThreeHundredSixM(), nil
+	case "baby-0306m-negative":
+		return BabyThreeHundredSixMNegative(), nil
+	case "baby-0306m-outline":
+		return BabyThreeHundredSixMOutline(), nil
+	case "baby-0203-alt":
+		return BabyTwoHundredThreeAlt(), nil
+	case "baby-0203-alt-negative":
+		return BabyTwoHundredThreeAltNegative(), nil
+	case "baby-0203-alt-outline":
+		return BabyTwoHundredThreeAltOutline(), nil
+	case "baby-0203m":
+		return BabyTwoHundredThreeM(), nil
+	case "baby-0203m-negative":
+		return BabyTwoHundredThreeMNegative(), nil
+	case "baby-0203m-outline":
+		return BabyTwoHundredThreeMOutline(), nil
+	case "back-pain":
+		return BackPain(), nil
+	case "back-pain-negative":
+		return BackPainNegative(), nil
+	case "back-pain-outline":
+		return BackPainOutline(), nil
+	case "bacteria":
+		return Bacteria(), nil
+	case "bacteria-negative":
+		return BacteriaNegative(), nil
+	case "bacteria-outline":
+		return BacteriaOutline(), nil
+	case "bandage-adhesive":
+		return BandageAdhesive(), nil
+	case "bandage-adhesive-negative":
+		return BandageAdhesiveNegative(), nil
+	case "bandage-adhesive-outline":
+		return BandageAdhesiveOutline(), nil
+	case "bandaged":
+		return Bandaged(), nil
+	case "bandaged-negative":
+		return BandagedNegative(), nil
+	case "bandaged-outline":
+		return BandagedOutline(), nil
+	case "basic-motorcycle":
+		return BasicMotorcycle(), nil
+	case "basic-motorcycle-negative":
+		return BasicMotorcycleNegative(), nil
+	case "basic-motorcycle-outline":
+		return BasicMotorcycleOutline(), nil
+	case "bike":
+		return Bike(), nil
+	case "bike-negative":
+		return BikeNegative(), nil
+	case "bike-outline":
+		return BikeOutline(), nil
+	case "bills":
+		return Bills(), nil
+	case "bills-negative":
+		return BillsNegative(), nil
+	case "bills-outline":
+		return BillsOutline(), nil
+	case "biochemistry-laboratory":
+		return BiochemistryLaboratory(), nil
+	case "biochemistry-laboratory-negative":
+		return BiochemistryLaboratoryNegative(), nil
+	case "biochemistry-laboratory-outline":
+		return BiochemistryLaboratoryOutline(), nil
+	case "bladder":
+		return Bladder(), nil
+	case "bladder-negative":
+		return BladderNegative(), nil
+	case "bladder-outline":
+		return BladderOutline(), nil
+	case "blister-pills-oval-x4":
+		return BlisterPillsOvalXFour(), nil
+	case "blister-pills-oval-x4-negative":
+		return BlisterPillsOvalXFourNegative(), nil
+	case "blister-pills-oval-x4-outline":
+		return BlisterPillsOvalXFourOutline(), nil
+	case "blister-pills-oval-x14":
+		return BlisterPillsOvalXFourteen(), nil
+	case "blister-pills-oval-x14-negative":
+		return BlisterPillsOvalXFourteenNegative(), nil
+	case "blister-pills-oval-x14-outline":
+		return BlisterPillsOvalXFourteenOutline(), nil
+	case "blister-pills-oval-x1":
+		return BlisterPillsOvalXOne(), nil
+	case "blister-pills-oval-x1-negative":
+		return BlisterPillsOvalXOneNegative(), nil
+	case "blister-pills-oval-x1-outline":
+		return BlisterPillsOvalXOneOutline(), nil
+	case "blister-pills-oval-x16":
+		return BlisterPillsOvalXSixteen(), nil
+	case "blister-pills-oval-x16-negative":
+		return BlisterPillsOvalXSixteenNegative(), nil
+	case "blister-pills-oval-x16-outline":
+		return BlisterPillsOvalXSixteenOutline(), nil
+	case "blister-pills-round-x4":
+		return BlisterPillsRoundXFour(), nil
+	case "blister-pills-round-x4-negative":
+		return BlisterPillsRoundXFourNegative(), nil
+	case "blister-pills-round-x4-outline":
+		return BlisterPillsRoundXFourOutline(), nil
+	case "blister-pills-round-x14":
+		return BlisterPillsRoundXFourteen(), nil
+	case "blister-pills-round-x14-negative":
+		return BlisterPillsRoundXFourteenNegative(), nil
+	case "blister-pills-round-x14-outline":
+		return BlisterPillsRoundXFourteenOutline(), nil
+	case "blister-pills-round-x1":
+		return BlisterPillsRoundXOne(), nil
+	case "blister-pills-round-x1-negative":
+		return BlisterPillsRoundXOneNegative(), nil
+	case "blister-pills-round-x1-outline":
+		return BlisterPillsRoundXOneOutline(), nil
+	case "blister-pills-round-x16":
+		return BlisterPillsRoundXSixteen(), nil
+	case "blister-pills-round-x16-negative":
+		return BlisterPillsRoundXSixteenNegative(), nil
+	case "blister-pills-round-x16-outline":
+		return BlisterPillsRoundXSixteenOutline(), nil
+	case "blood-a-n":
+		return BloodAN(), nil
+	case "blood-a-n-negative":
+		return BloodANNegative(), nil
+	case "blood-a-n-outline":
+		return BloodANOutline(), nil
+	case "blood-a-p":
+		return BloodAP(), nil
+	case "blood-a-p-negative":
+		return BloodAPNegative(), nil
+	case "blood-a-p-outline":
+		return BloodAPOutline(), nil
+	case "blood-ab-n":
+		return BloodAbN(), nil
+	case "blood-ab-n-negative":
+		return BloodAbNNegative(), nil
+	case "blood-ab-n-outline":
+		return BloodAbNOutline(), nil
+	case "blood-ab-p":
+		return BloodAbP(), nil
+	case "blood-ab-p-negative":
+		return BloodAbPNegative(), nil
+	case "blood-ab-p-outline":
+		return BloodAbPOutline(), nil
+	case "blood-b-n":
+		return BloodBN(), nil
+	case "blood-b-n-negative":
+		return BloodBNNegative(), nil
+	case "blood-b-n-outline":
+		return BloodBNOutline(), nil
+	case "blood-b-p":
+		return BloodBP(), nil
+	case "blood-b-p-negative":
+		return BloodBPNegative(), nil
+	case "blood-b-p-outline":
+		return BloodBPOutline(), nil
+	case "blood-bag":
+		return BloodBag(), nil
+	case "blood-bag-negative":
+		return BloodBagNegative(), nil
+	case "blood-bag-outline":
+		return BloodBagOutline(), nil
+	case "blood-cells":
+		return BloodCells(), nil
+	case "blood-cells-negative":
+		return BloodCellsNegative(), nil
+	case "blood-cells-outline":
+		return BloodCellsOutline(), nil
+	case "blood-drop":
+		return BloodDrop(), nil
+	case "blood-drop-negative":
+		return BloodDropNegative(), nil
+	case "blood-drop-outline":
+		return BloodDropOutline(), nil
+	case "blood-o-n":
+		return BloodON(), nil
+	case "blood-o-n-negative":
+		return BloodONNegative(), nil
+	case "blood-o-n-outline":
+		return BloodONOutline(), nil
+	case "blood-o-p":
+		return BloodOP(), nil
+	case "blood-o-p-negative":
+		return BloodOPNegative(), nil
+	case "blood-o-p-outline":
+		return BloodOPOutline(), nil
+	case "blood-pressure":
+		return BloodPressure(), nil
+	case "blood-pressure-monitor":
+		return BloodPressureMonitor(), nil
+	case "blood-pressure-monitor-negative":
+		return BloodPressureMonitorNegative(), nil
+	case "blood-pressure-monitor-outline":
+		return BloodPressureMonitorOutline(), nil
+	case "blood-pressure-negative":
+		return BloodPressureNegative(), nil
+	case "blood-pressure-outline":
+		return BloodPressureOutline(), nil
+	case "blood-pressure-2":
+		return BloodPressureTwo(), nil
+	case "blood-pressure-2-negative":
+		return BloodPressureTwoNegative(), nil
+	case "blood-pressure-2-outline":
+		return BloodPressureTwoOutline(), nil
+	case "blood-rh-n":
+		return BloodRhN(), nil
+	case "blood-rh-n-negative":
+		return BloodRhNNegative(), nil
+	case "blood-rh-n-outline":
+		return BloodRhNOutline(), nil
+	case "blood-rh-p":
+		return BloodRhP(), nil
+	case "blood-rh-p-negative":
+		return BloodRhPNegative(), nil
+	case "blood-rh-p-outline":
+		return BloodRhPOutline(), nil
+	case "body":
+		return Body(), nil
+	case "body-negative":
+		return BodyNegative(), nil
+	case "body-outline":
+		return BodyOutline(), nil
+	case "book":
+		return Book(), nil
+	case "book-negative":
+		return BookNegative(), nil
+	case "book-outline":
+		return BookOutline(), nil
+	case "boy-0105y":
+		return BoyOneHundredFiveY(), nil
+	case "boy-0105y-negative":
+		return BoyOneHundredFiveYNegative(), nil
+	case "boy-0105y-outline":
+		return BoyOneHundredFiveYOutline(), nil
+	case "boy-1015y":
+		return BoyOneThousandFifteenY(), nil
+	case "boy-1015y-negative":
+		return BoyOneThousandFifteenYNegative(), nil
+	case "boy-1015y-outline":
+		return BoyOneThousandFifteenYOutline(), nil
+	case "breeding-sites":
+		return BreedingSites(), nil
+	case "breeding-sites-negative":
+		return BreedingSitesNegative(), nil
+	case "breeding-sites-outline":
+		return BreedingSitesOutline(), nil
+	case "c":
+		return C(), nil
+	case "c-negative":
+		return CNegative(), nil
+	case "c-outline":
+		return COutline(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "calendar-negative":
+		return CalendarNegative(), nil
+	case "calendar-outline":
+		return CalendarOutline(), nil
+	case "calendar-quarantine":
+		return CalendarQuarantine(), nil
+	case "calendar-quarantine-negative":
+		return CalendarQuarantineNegative(), nil
+	case "calendar-quarantine-outline":
+		return CalendarQuarantineOutline(), nil
+	case "call-centre":
+		return CallCentre(), nil
+	case "call-centre-negative":
+		return CallCentreNegative(), nil
+	case "call-centre-outline":
+		return CallCentreOutline(), nil
+	case "calm":
+		return Calm(), nil
+	case "calm-negative":
+		return CalmNegative(), nil
+	case "calm-outline":
+		return CalmOutline(), nil
+	case "cannabis":
+		return Cannabis(), nil
+	case "cannabis-negative":
+		return CannabisNegative(), nil
+	case "cannabis-outline":
+		return CannabisOutline(), nil
+	case "cardiogram":
+		return Cardiogram(), nil
+	case "cardiogram-e":
+		return CardiogramE(), nil
+	case "cardiogram-e-negative":
+		return CardiogramENegative(), nil
+	case "cardiogram-e-outline":
+		return CardiogramEOutline(), nil
+	case "cardiogram-negative":
+		return CardiogramNegative(), nil
+	case "cardiogram-outline":
+		return CardiogramOutline(), nil
+	case "cardiology":
+		return Cardiology(), nil
+	case "cardiology-negative":
+		return CardiologyNegative(), nil
+	case "cardiology-outline":
+		return CardiologyOutline(), nil
+	case "cast":
+		return Cast(), nil
+	case "cast-negative":
+		return CastNegative(), nil
+	case "cast-outline":
+		return CastOutline(), nil
+	case "cervical-cancer":
+		return CervicalCancer(), nil
+	case "cervical-cancer-negative":
+		return CervicalCancerNegative(), nil
+	case "cervical-cancer-outline":
+		return CervicalCancerOutline(), nil
+	case "chaplaincy":
+		return Chaplaincy(), nil
+	case "chaplaincy-negative":
+		return ChaplaincyNegative(), nil
+	case "chaplaincy-outline":
+		return ChaplaincyOutline(), nil
+	case "chart-bar":
+		return ChartBar(), nil
+	case "chart-bar-negative":
+		return ChartBarNegative(), nil
+	case "chart-bar-outline":
+		return ChartBarOutline(), nil
+	case "chart-bar-stacked":
+		return ChartBarStacked(), nil
+	case "chart-bar-stacked-negative":
+		return ChartBarStackedNegative(), nil
+	case "chart-bar-stacked-outline":
+		return ChartBarStackedOutline(), nil
+	case "chart-cured-decreasing":
+		return ChartCuredDecreasing(), nil
+	case "chart-cured-decreasing-negative":
+		return ChartCuredDecreasingNegative(), nil
+	case "chart-cured-decreasing-outline":
+		return ChartCuredDecreasingOutline(), nil
+	case "chart-cured-increasing":
+		return ChartCuredIncreasing(), nil
+	case "chart-cured-increasing-negative":
+		return ChartCuredIncreasingNegative(), nil
+	case "chart-cured-increasing-outline":
+		return ChartCuredIncreasingOutline(), nil
+	case "chart-death-rate-decreasing":
+		return ChartDeathRateDecreasing(), nil
+	case "chart-death-rate-decreasing-negative":
+		return ChartDeathRateDecreasingNegative(), nil
+	case "chart-death-rate-decreasing-outline":
+		return ChartDeathRateDecreasingOutline(), nil
+	case "chart-death-rate-increasing":
+		return ChartDeathRateIncreasing(), nil
+	case "chart-death-rate-increasing-negative":
+		return ChartDeathRateIncreasingNegative(), nil
+	case "chart-death-rate-increasing-outline":
+		return ChartDeathRateIncreasingOutline(), nil
+	case "chart-death-rate-stable":
+		return ChartDeathRateStable(), nil
+	case "chart-death-rate-stable-negative":
+		return ChartDeathRateStableNegative(), nil
+	case "chart-death-rate-stable-outline":
+		return ChartDeathRateStableOutline(), nil
+	case "chart-infected-decreasing":
+		return ChartInfectedDecreasing(), nil
+	case "chart-infected-decreasing-negative":
+		return ChartInfectedDecreasingNegative(), nil
+	case "chart-infected-decreasing-outline":
+		return ChartInfectedDecreasingOutline(), nil
+	case "chart-infected-increasing":
+		return ChartInfectedIncreasing(), nil
+	case "chart-infected-increasing-negative":
+		return ChartInfectedIncreasingNegative(), nil
+	case "chart-infected-increasing-outline":
+		return ChartInfectedIncreasingOutline(), nil
+	case "chart-infected-stable":
+		return ChartInfectedStable(), nil
+	case "chart-infected-stable-negative":
+		return ChartInfectedStableNegative(), nil
+	case "chart-infected-stable-outline":
+		return ChartInfectedStableOutline(), nil
+	case "chart-line":
+		return ChartLine(), nil
+	case "chart-line-negative":
+		return ChartLineNegative(), nil
+	case "chart-line-outline":
+		return ChartLineOutline(), nil
+	case "chart-line-stacked":
+		return ChartLineStacked(), nil
+	case "chart-line-stacked-negative":
+		return ChartLineStackedNegative(), nil
+	case "chart-line-stacked-outline":
+		return ChartLineStackedOutline(), nil
+	case "chart-pie":
+		return ChartPie(), nil
+	case "chart-pie-negative":
+		return ChartPieNegative(), nil
+	case "chart-pie-outline":
+		return ChartPieOutline(), nil
+	case "child-care":
+		return ChildCare(), nil
+	case "child-care-negative":
+		return ChildCareNegative(), nil
+	case "child-care-outline":
+		return ChildCareOutline(), nil
+	case "child-cognition":
+		return ChildCognition(), nil
+	case "child-cognition-negative":
+		return ChildCognitionNegative(), nil
+	case "child-cognition-outline":
+		return ChildCognitionOutline(), nil
+	case "child-program":
+		return ChildProgram(), nil
+	case "child-program-negative":
+		return ChildProgramNegative(), nil
+	case "child-program-outline":
+		return ChildProgramOutline(), nil
+	case "chills":
+		return Chills(), nil
+	case "chills-fever":
+		return ChillsFever(), nil
+	case "chills-fever-negative":
+		return ChillsFeverNegative(), nil
+	case "chills-fever-outline":
+		return ChillsFeverOutline(), nil
+	case "chills-negative":
+		return ChillsNegative(), nil
+	case "chills-outline":
+		return ChillsOutline(), nil
+	case "cholera":
+		return Cholera(), nil
+	case "cholera-negative":
+		return CholeraNegative(), nil
+	case "cholera-outline":
+		return CholeraOutline(), nil
+	case "church":
+		return Church(), nil
+	case "church-negative":
+		return ChurchNegative(), nil
+	case "church-outline":
+		return ChurchOutline(), nil
+	case "circle-large":
+		return CircleLarge(), nil
+	case "circle-large-negative":
+		return CircleLargeNegative(), nil
+	case "circle-large-outline":
+		return CircleLargeOutline(), nil
+	case "circle-medium":
+		return CircleMedium(), nil
+	case "circle-medium-negative":
+		return CircleMediumNegative(), nil
+	case "circle-medium-outline":
+		return CircleMediumOutline(), nil
+	case "circle-small":
+		return CircleSmall(), nil
+	case "circle-small-negative":
+		return CircleSmallNegative(), nil
+	case "circle-small-outline":
+		return CircleSmallOutline(), nil
+	case "city":
+		return City(), nil
+	case "city-negative":
+		return CityNegative(), nil
+	case "city-outline":
+		return CityOutline(), nil
+	case "city-worker":
+		return CityWorker(), nil
+	case "city-worker-negative":
+		return CityWorkerNegative(), nil
+	case "city-worker-outline":
+		return CityWorkerOutline(), nil
+	case "clean-hands":
+		return CleanHands(), nil
+	case "clean-hands-negative":
+		return CleanHandsNegative(), nil
+	case "clean-hands-outline":
+		return CleanHandsOutline(), nil
+	case "cleaning":
+		return Cleaning(), nil
+	case "cleaning-negative":
+		return CleaningNegative(), nil
+	case "cleaning-outline":
+		return CleaningOutline(), nil
+	case "clinical-a":
+		return ClinicalA(), nil
+	case "clinical-a-negative":
+		return ClinicalANegative(), nil
+	case "clinical-a-outline":
+		return ClinicalAOutline(), nil
+	case "clinical-f":
+		return ClinicalF(), nil
+	case "clinical-f-negative":
+		return ClinicalFNegative(), nil
+	case "clinical-f-outline":
+		return ClinicalFOutline(), nil
+	case "clinical-fe":
+		return ClinicalFe(), nil
+	case "clinical-fe-negative":
+		return ClinicalFeNegative(), nil
+	case "clinical-fe-outline":
+		return ClinicalFeOutline(), nil
+	case "coins":
+		return Coins(), nil
+	case "coins-negative":
+		return CoinsNegative(), nil
+	case "coins-outline":
+		return CoinsOutline(), nil
+	case "cold-chain":
+		return ColdChain(), nil
+	case "cold-chain-negative":
+		return ColdChainNegative(), nil
+	case "cold-chain-outline":
+		return ColdChainOutline(), nil
+	case "communication":
+		return Communication(), nil
+	case "communication-negative":
+		return CommunicationNegative(), nil
+	case "communication-outline":
+		return CommunicationOutline(), nil
+	case "community-healthworker":
+		return CommunityHealthworker(), nil
+	case "community-healthworker-negative":
+		return CommunityHealthworkerNegative(), nil
+	case "community-healthworker-outline":
+		return CommunityHealthworkerOutline(), nil
+	case "community-meeting":
+		return CommunityMeeting(), nil
+	case "community-meeting-negative":
+		return CommunityMeetingNegative(), nil
+	case "community-meeting-outline":
+		return CommunityMeetingOutline(), nil
+	case "cone-test-on-nets":
+		return ConeTestOnNets(), nil
+	case "cone-test-on-nets-negative":
+		return ConeTestOnNetsNegative(), nil
+	case "cone-test-on-nets-outline":
+		return ConeTestOnNetsOutline(), nil
+	case "cone-test-on-walls":
+		return ConeTestOnWalls(), nil
+	case "cone-test-on-walls-negative":
+		return ConeTestOnWallsNegative(), nil
+	case "cone-test-on-walls-outline":
+		return ConeTestOnWallsOutline(), nil
+	case "confused":
+		return Confused(), nil
+	case "confused-negative":
+		return ConfusedNegative(), nil
+	case "confused-outline":
+		return ConfusedOutline(), nil
+	case "construction":
+		return Construction(), nil
+	case "construction-negative":
+		return ConstructionNegative(), nil
+	case "construction-outline":
+		return ConstructionOutline(), nil
+	case "construction-worker":
+		return ConstructionWorker(), nil
+	case "construction-worker-negative":
+		return ConstructionWorkerNegative(), nil
+	case "construction-worker-outline":
+		return ConstructionWorkerOutline(), nil
+	case "contact-lenses":
+		return ContactLenses(), nil
+	case "contact-lenses-negative":
+		return ContactLensesNegative(), nil
+	case "contact-lenses-outline":
+		return ContactLensesOutline(), nil
+	case "contact-support":
+		return ContactSupport(), nil
+	case "contact-support-negative":
+		return ContactSupportNegative(), nil
+	case "contact-support-outline":
+		return ContactSupportOutline(), nil
+	case "contraceptive-diaphragm":
+		return ContraceptiveDiaphragm(), nil
+	case "contraceptive-diaphragm-negative":
+		return ContraceptiveDiaphragmNegative(), nil
+	case "contraceptive-diaphragm-outline":
+		return ContraceptiveDiaphragmOutline(), nil
+	case "contraceptive-injection":
+		return ContraceptiveInjection(), nil
+	case "contraceptive-injection-negative":
+		return ContraceptiveInjectionNegative(), nil
+	case "contraceptive-injection-outline":
+		return ContraceptiveInjectionOutline(), nil
+	case "contraceptive-patch":
+		return ContraceptivePatch(), nil
+	case "contraceptive-patch-negative":
+		return ContraceptivePatchNegative(), nil
+	case "contraceptive-patch-outline":
+		return ContraceptivePatchOutline(), nil
+	case "contraceptive-voucher":
+		return ContraceptiveVoucher(), nil
+	case "contraceptive-voucher-negative":
+		return ContraceptiveVoucherNegative(), nil
+	case "contraceptive-voucher-outline":
+		return ContraceptiveVoucherOutline(), nil
+	case "copper-iud":
+		return CopperIud(), nil
+	case "copper-iud-negative":
+		return CopperIudNegative(), nil
+	case "copper-iud-outline":
+		return CopperIudOutline(), nil
+	case "coronary-care-unit":
+		return CoronaryCareUnit(), nil
+	case "coronary-care-unit-negative":
+		return CoronaryCareUnitNegative(), nil
+	case "coronary-care-unit-outline":
+		return CoronaryCareUnitOutline(), nil
+	case "coughing":
+		return Coughing(), nil
+	case "coughing-alt":
+		return CoughingAlt(), nil
+	case "coughing-alt-negative":
+		return CoughingAltNegative(), nil
+	case "coughing-alt-outline":
+		return CoughingAltOutline(), nil
+	case "coughing-negative":
+		return CoughingNegative(), nil
+	case "coughing-outline":
+		return CoughingOutline(), nil
+	case "credit-card":
+		return CreditCard(), nil
+	case "credit-card-negative":
+		return CreditCardNegative(), nil
+	case "credit-card-outline":
+		return CreditCardOutline(), nil
+	case "critical-care":
+		return CriticalCare(), nil
+	case "critical-care-negative":
+		return CriticalCareNegative(), nil
+	case "critical-care-outline":
+		return CriticalCareOutline(), nil
+	case "cross-country-motorcycle":
+		return CrossCountryMotorcycle(), nil
+	case "cross-country-motorcycle-negative":
+		return CrossCountryMotorcycleNegative(), nil
+	case "cross-country-motorcycle-outline":
+		return CrossCountryMotorcycleOutline(), nil
+	case "crying":
+		return Crying(), nil
+	case "crying-negative":
+		return CryingNegative(), nil
+	case "crying-outline":
+		return CryingOutline(), nil
+	case "d":
+		return D(), nil
+	case "d-negative":
+		return DNegative(), nil
+	case "d-outline":
+		return DOutline(), nil
+	case "database":
+		return Database(), nil
+	case "database-negative":
+		return DatabaseNegative(), nil
+	case "database-outline":
+		return DatabaseOutline(), nil
+	case "deaf":
+		return Deaf(), nil
+	case "deaf-negative":
+		return DeafNegative(), nil
+	case "deaf-outline":
+		return DeafOutline(), nil
+	case "death":
+		return Death(), nil
+	case "death-alt":
+		return DeathAlt(), nil
+	case "death-alt-negative":
+		return DeathAltNegative(), nil
+	case "death-alt-outline":
+		return DeathAltOutline(), nil
+	case "death-alt2":
+		return DeathAltTwo(), nil
+	case "death-alt2-negative":
+		return DeathAltTwoNegative(), nil
+	case "death-alt2-outline":
+		return DeathAltTwoOutline(), nil
+	case "death-negative":
+		return DeathNegative(), nil
+	case "death-outline":
+		return DeathOutline(), nil
+	case "default":
+		return Default(), nil
+	case "default-negative":
+		return DefaultNegative(), nil
+	case "default-outline":
+		return DefaultOutline(), nil
+	case "defibrilator":
+		return Defibrilator(), nil
+	case "defibrilator-negative":
+		return DefibrilatorNegative(), nil
+	case "defibrilator-outline":
+		return DefibrilatorOutline(), nil
+	case "dental-hygiene":
+		return DentalHygiene(), nil
+	case "dental-hygiene-negative":
+		return DentalHygieneNegative(), nil
+	case "dental-hygiene-outline":
+		return DentalHygieneOutline(), nil
+	case "desktop-app":
+		return DesktopApp(), nil
+	case "desktop-app-negative":
+		return DesktopAppNegative(), nil
+	case "desktop-app-outline":
+		return DesktopAppOutline(), nil
+	case "dhis2-logo":
+		return DhisTwoLogo(), nil
+	case "dhis2-logo-negative":
+		return DhisTwoLogoNegative(), nil
+	case "dhis2-logo-outline":
+		return DhisTwoLogoOutline(), nil
+	case "diabetes":
+		return Diabetes(), nil
+	case "diabetes-measure":
+		return DiabetesMeasure(), nil
+	case "diabetes-measure-negative":
+		return DiabetesMeasureNegative(), nil
+	case "diabetes-measure-outline":
+		return DiabetesMeasureOutline(), nil
+	case "diabetes-negative":
+		return DiabetesNegative(), nil
+	case "diabetes-outline":
+		return DiabetesOutline(), nil
+	case "diarrhea":
+		return Diarrhea(), nil
+	case "diarrhea-negative":
+		return DiarrheaNegative(), nil
+	case "diarrhea-outline":
+		return DiarrheaOutline(), nil
+	case "discharge":
+		return Discharge(), nil
+	case "discharge-lounge":
+		return DischargeLounge(), nil
+	case "discharge-lounge-negative":
+		return DischargeLoungeNegative(), nil
+	case "discharge-lounge-outline":
+		return DischargeLoungeOutline(), nil
+	case "discharge-negative":
+		return DischargeNegative(), nil
+	case "discharge-outline":
+		return DischargeOutline(), nil
+	case "discriminating-concentration-bioassays":
+		return DiscriminatingConcentrationBioassays(), nil
+	case "discriminating-concentration-bioassays-negative":
+		return DiscriminatingConcentrationBioassaysNegative(), nil
+	case "discriminating-concentration-bioassays-outline":
+		return DiscriminatingConcentrationBioassaysOutline(), nil
+	case "disinfecting-wipes":
+		return DisinfectingWipes(), nil
+	case "disinfecting-wipes-negative":
+		return DisinfectingWipesNegative(), nil
+	case "disinfecting-wipes-outline":
+		return DisinfectingWipesOutline(), nil
+	case "dizzy":
+		return Dizzy(), nil
+	case "dizzy-negative":
+		return DizzyNegative(), nil
+	case "dizzy-outline":
+		return DizzyOutline(), nil
+	case "dna":
+		return Dna(), nil
+	case "dna-negative":
+		return DnaNegative(), nil
+	case "dna-outline":
+		return DnaOutline(), nil
+	case "doctor":
+		return Doctor(), nil
+	case "doctor-female":
+		return DoctorFemale(), nil
+	case "doctor-female-negative":
+		return DoctorFemaleNegative(), nil
+	case "doctor-female-outline":
+		return DoctorFemaleOutline(), nil
+	case "doctor-male":
+		return DoctorMale(), nil
+	case "doctor-male-negative":
+		return DoctorMaleNegative(), nil
+	case "doctor-male-outline":
+		return DoctorMaleOutline(), nil
+	case "doctor-negative":
+		return DoctorNegative(), nil
+	case "doctor-outline":
+		return DoctorOutline(), nil
+	case "dollar":
+		return Dollar(), nil
+	case "dollar-negative":
+		return DollarNegative(), nil
+	case "dollar-outline":
+		return DollarOutline(), nil
+	case "domestic-worker":
+		return DomesticWorker(), nil
+	case "domestic-worker-alt":
+		return DomesticWorkerAlt(), nil
+	case "domestic-worker-alt-negative":
+		return DomesticWorkerAltNegative(), nil
+	case "domestic-worker-alt-outline":
+		return DomesticWorkerAltOutline(), nil
+	case "domestic-worker-negative":
+		return DomesticWorkerNegative(), nil
+	case "domestic-worker-outline":
+		return DomesticWorkerOutline(), nil
+	case "donkey":
+		return Donkey(), nil
+	case "donkey-negative":
+		return DonkeyNegative(), nil
+	case "donkey-outline":
+		return DonkeyOutline(), nil
+	case "drone":
+		return Drone(), nil
+	case "drone-negative":
+		return DroneNegative(), nil
+	case "drone-outline":
+		return DroneOutline(), nil
+	case "e":
+		return E(), nil
+	case "e-negative":
+		return ENegative(), nil
+	case "e-outline":
+		return EOutline(), nil
+	case "ear":
+		return Ear(), nil
+	case "ear-negative":
+		return EarNegative(), nil
+	case "ear-outline":
+		return EarOutline(), nil
+	case "ears-nose-and-throat":
+		return EarsNoseAndThroat(), nil
+	case "ears-nose-and-throat-negative":
+		return EarsNoseAndThroatNegative(), nil
+	case "ears-nose-and-throat-outline":
+		return EarsNoseAndThroatOutline(), nil
+	case "eco-care":
+		return EcoCare(), nil
+	case "eco-care-negative":
+		return EcoCareNegative(), nil
+	case "eco-care-outline":
+		return EcoCareOutline(), nil
+	case "8":
+		return Eight(), nil
+	case "8-negative":
+		return EightNegative(), nil
+	case "8-outline":
+		return EightOutline(), nil
+	case "elderly":
+		return Elderly(), nil
+	case "elderly-negative":
+		return ElderlyNegative(), nil
+	case "elderly-outline":
+		return ElderlyOutline(), nil
+	case "electricity":
+		return Electricity(), nil
+	case "electricity-negative":
+		return ElectricityNegative(), nil
+	case "electricity-outline":
+		return ElectricityOutline(), nil
+	case "emergency-post":
+		return EmergencyPost(), nil
+	case "emergency-post-negative":
+		return EmergencyPostNegative(), nil
+	case "emergency-post-outline":
+		return EmergencyPostOutline(), nil
+	case "endocrinology":
+		return Endocrinology(), nil
+	case "endocrinology-negative":
+		return EndocrinologyNegative(), nil
+	case "endocrinology-outline":
+		return EndocrinologyOutline(), nil
+	case "entry":
+		return Entry(), nil
+	case "entry-negative":
+		return EntryNegative(), nil
+	case "entry-outline":
+		return EntryOutline(), nil
+	case "enzyme":
+		return Enzyme(), nil
+	case "enzyme-negative":
+		return EnzymeNegative(), nil
+	case "enzyme-outline":
+		return EnzymeOutline(), nil
+	case "excel-logo":
+		return ExcelLogo(), nil
+	case "excel-logo-negative":
+		return ExcelLogoNegative(), nil
+	case "excel-logo-outline":
+		return ExcelLogoOutline(), nil
+	case "exercise":
+		return Exercise(), nil
+	case "exercise-negative":
+		return ExerciseNegative(), nil
+	case "exercise-outline":
+		return ExerciseOutline(), nil
+	case "exercise-running":
+		return ExerciseRunning(), nil
+	case "exercise-running-negative":
+		return ExerciseRunningNegative(), nil
+	case "exercise-running-outline":
+		return ExerciseRunningOutline(), nil
+	case "exercise-walk-supported":
+		return ExerciseWalkSupported(), nil
+	case "exercise-walk-supported-negative":
+		return ExerciseWalkSupportedNegative(), nil
+	case "exercise-walk-supported-outline":
+		return ExerciseWalkSupportedOutline(), nil
+	case "exercise-walking":
+		return ExerciseWalking(), nil
+	case "exercise-walking-negative":
+		return ExerciseWalkingNegative(), nil
+	case "exercise-walking-outline":
+		return ExerciseWalkingOutline(), nil
+	case "exercise-weights":
+		return ExerciseWeights(), nil
+	case "exercise-weights-negative":
+		return ExerciseWeightsNegative(), nil
+	case "exercise-weights-outline":
+		return ExerciseWeightsOutline(), nil
+	case "expectorate":
+		return Expectorate(), nil
+	case "expectorate-negative":
+		return ExpectorateNegative(), nil
+	case "expectorate-outline":
+		return ExpectorateOutline(), nil
+	case "eye":
+		return Eye(), nil
+	case "eye-negative":
+		return EyeNegative(), nil
+	case "eye-outline":
+		return EyeOutline(), nil
+	case "eyeglasses":
+		return Eyeglasses(), nil
+	case "eyeglasses-negative":
+		return EyeglassesNegative(), nil
+	case "eyeglasses-outline":
+		return EyeglassesOutline(), nil
+	case "eyes":
+		return Eyes(), nil
+	case "eyes-negative":
+		return EyesNegative(), nil
+	case "eyes-outline":
+		return EyesOutline(), nil
+	case "f":
+		return F(), nil
+	case "f-negative":
+		return FNegative(), nil
+	case "f-outline":
+		return FOutline(), nil
+	case "factory-worker":
+		return FactoryWorker(), nil
+	case "factory-worker-negative":
+		return FactoryWorkerNegative(), nil
+	case "factory-worker-outline":
+		return FactoryWorkerOutline(), nil
+	case "family-planning":
+		return FamilyPlanning(), nil
+	case "family-planning-negative":
+		return FamilyPlanningNegative(), nil
+	case "family-planning-outline":
+		return FamilyPlanningOutline(), nil
+	case "female-and-male":
+		return FemaleAndMale(), nil
+	case "female-and-male-negative":
+		return FemaleAndMaleNegative(), nil
+	case "female-and-male-outline":
+		return FemaleAndMaleOutline(), nil
+	case "female-condom":
+		return FemaleCondom(), nil
+	case "female-condom-negative":
+		return FemaleCondomNegative(), nil
+	case "female-condom-outline":
+		return FemaleCondomOutline(), nil
+	case "female-reproductive-system":
+		return FemaleReproductiveSystem(), nil
+	case "female-reproductive-system-negative":
+		return FemaleReproductiveSystemNegative(), nil
+	case "female-reproductive-system-outline":
+		return FemaleReproductiveSystemOutline(), nil
+	case "female-sex-worker":
+		return FemaleSexWorker(), nil
+	case "female-sex-worker-negative":
+		return FemaleSexWorkerNegative(), nil
+	case "female-sex-worker-outline":
+		return FemaleSexWorkerOutline(), nil
+	case "fetus":
+		return Fetus(), nil
+	case "fetus-negative":
+		return FetusNegative(), nil
+	case "fetus-outline":
+		return FetusOutline(), nil
+	case "fever":
+		return Fever(), nil
+	case "fever-negative":
+		return FeverNegative(), nil
+	case "fever-outline":
+		return FeverOutline(), nil
+	case "finance-dept":
+		return FinanceDept(), nil
+	case "finance-dept-negative":
+		return FinanceDeptNegative(), nil
+	case "finance-dept-outline":
+		return FinanceDeptOutline(), nil
+	case "fingerprint":
+		return Fingerprint(), nil
+	case "fingerprint-negative":
+		return FingerprintNegative(), nil
+	case "fingerprint-outline":
+		return FingerprintOutline(), nil
+	case "5":
+		return Five(), nil
+	case "5-negative":
+		return FiveNegative(), nil
+	case "5-outline":
+		return FiveOutline(), nil
+	case "foot":
+		return Foot(), nil
+	case "foot-negative":
+		return FootNegative(), nil
+	case "foot-outline":
+		return FootOutline(), nil
+	case "forest":
+		return Forest(), nil
+	case "forest-negative":
+		return ForestNegative(), nil
+	case "forest-outline":
+		return ForestOutline(), nil
+	case "forest-persons":
+		return ForestPersons(), nil
+	case "forest-persons-negative":
+		return ForestPersonsNegative(), nil
+	case "forest-persons-outline":
+		return ForestPersonsOutline(), nil
+	case "forum":
+		return Forum(), nil
+	case "forum-negative":
+		return ForumNegative(), nil
+	case "forum-outline":
+		return ForumOutline(), nil
+	case "4":
+		return Four(), nil
+	case "4-negative":
+		return FourNegative(), nil
+	case "4-outline":
+		return FourOutline(), nil
+	case "4x4":
+		return FourXFour(), nil
+	case "4x4-negative":
+		return FourXFourNegative(), nil
+	case "4x4-outline":
+		return FourXFourOutline(), nil
+	case "g":
+		return G(), nil
+	case "g-negative":
+		return GNegative(), nil
+	case "g-outline":
+		return GOutline(), nil
+	case "gallbladder":
+		return Gallbladder(), nil
+	case "gallbladder-negative":
+		return GallbladderNegative(), nil
+	case "gallbladder-outline":
+		return GallbladderOutline(), nil
+	case "gastroenterology":
+		return Gastroenterology(), nil
+	case "gastroenterology-negative":
+		return GastroenterologyNegative(), nil
+	case "gastroenterology-outline":
+		return GastroenterologyOutline(), nil
+	case "geo-location":
+		return GeoLocation(), nil
+	case "geo-location-negative":
+		return GeoLocationNegative(), nil
+	case "geo-location-outline":
+		return GeoLocationOutline(), nil
+	case "geriatrics":
+		return Geriatrics(), nil
+	case "geriatrics-negative":
+		return GeriatricsNegative(), nil
+	case "geriatrics-outline":
+		return GeriatricsOutline(), nil
+	case "ghana":
+		return Ghana(), nil
+	case "ghana-negative":
+		return GhanaNegative(), nil
+	case "ghana-outline":
+		return GhanaOutline(), nil
+	case "girl-0105y":
+		return GirlOneHundredFiveY(), nil
+	case "girl-0105y-negative":
+		return GirlOneHundredFiveYNegative(), nil
+	case "girl-0105y-outline":
+		return GirlOneHundredFiveYOutline(), nil
+	case "girl-1015y":
+		return GirlOneThousandFifteenY(), nil
+	case "girl-1015y-negative":
+		return GirlOneThousandFifteenYNegative(), nil
+	case "girl-1015y-outline":
+		return GirlOneThousandFifteenYOutline(), nil
+	case "global-pandemic":
+		return GlobalPandemic(), nil
+	case "global-pandemic-negative":
+		return GlobalPandemicNegative(), nil
+	case "global-pandemic-outline":
+		return GlobalPandemicOutline(), nil
+	case "globe":
+		return Globe(), nil
+	case "globe-negative":
+		return GlobeNegative(), nil
+	case "globe-outline":
+		return GlobeOutline(), nil
+	case "group-discussion-meeting":
+		return GroupDiscussionMeeting(), nil
+	case "group-discussion-meeting-negative":
+		return GroupDiscussionMeetingNegative(), nil
+	case "group-discussion-meeting-outline":
+		return GroupDiscussionMeetingOutline(), nil
+	case "group-discussion-meetingx3":
+		return GroupDiscussionMeetingxThree(), nil
+	case "group-discussion-meetingx3-negative":
+		return GroupDiscussionMeetingxThreeNegative(), nil
+	case "group-discussion-meetingx3-outline":
+		return GroupDiscussionMeetingxThreeOutline(), nil
+	case "guide-dog":
+		return GuideDog(), nil
+	case "guide-dog-negative":
+		return GuideDogNegative(), nil
+	case "guide-dog-outline":
+		return GuideDogOutline(), nil
+	case "gym":
+		return Gym(), nil
+	case "gym-negative":
+		return GymNegative(), nil
+	case "gym-outline":
+		return GymOutline(), nil
+	case "gynecology":
+		return Gynecology(), nil
+	case "gynecology-negative":
+		return GynecologyNegative(), nil
+	case "gynecology-outline":
+		return GynecologyOutline(), nil
+	case "h":
+		return H(), nil
+	case "h-negative":
+		return HNegative(), nil
+	case "h-outline":
+		return HOutline(), nil
+	case "happy":
+		return Happy(), nil
+	case "happy-negative":
+		return HappyNegative(), nil
+	case "happy-outline":
+		return HappyOutline(), nil
+	case "hazardous":
+		return Hazardous(), nil
+	case "hazardous-negative":
+		return HazardousNegative(), nil
+	case "hazardous-outline":
+		return HazardousOutline(), nil
+	case "headache":
+		return Headache(), nil
+	case "headache-negative":
+		return HeadacheNegative(), nil
+	case "headache-outline":
+		return HeadacheOutline(), nil
+	case "health":
+		return Health(), nil
+	case "health-alt":
+		return HealthAlt(), nil
+	case "health-alt-negative":
+		return HealthAltNegative(), nil
+	case "health-alt-outline":
+		return HealthAltOutline(), nil
+	case "health-data-security":
+		return HealthDataSecurity(), nil
+	case "health-data-security-negative":
+		return HealthDataSecurityNegative(), nil
+	case "health-data-security-outline":
+		return HealthDataSecurityOutline(), nil
+	case "health-data-sync":
+		return HealthDataSync(), nil
+	case "health-data-sync-negative":
+		return HealthDataSyncNegative(), nil
+	case "health-data-sync-outline":
+		return HealthDataSyncOutline(), nil
+	case "health-literacy":
+		return HealthLiteracy(), nil
+	case "health-literacy-negative":
+		return HealthLiteracyNegative(), nil
+	case "health-literacy-outline":
+		return HealthLiteracyOutline(), nil
+	case "health-negative":
+		return HealthNegative(), nil
+	case "health-outline":
+		return HealthOutline(), nil
+	case "health-worker":
+		return HealthWorker(), nil
+	case "health-worker-form":
+		return HealthWorkerForm(), nil
+	case "health-worker-form-negative":
+		return HealthWorkerFormNegative(), nil
+	case "health-worker-form-outline":
+		return HealthWorkerFormOutline(), nil
+	case "health-worker-negative":
+		return HealthWorkerNegative(), nil
+	case "health-worker-outline":
+		return HealthWorkerOutline(), nil
+	case "heart":
+		return Heart(), nil
+	case "heart-cardiogram":
+		return HeartCardiogram(), nil
+	case "heart-cardiogram-negative":
+		return HeartCardiogramNegative(), nil
+	case "heart-cardiogram-outline":
+		return HeartCardiogramOutline(), nil
+	case "heart-negative":
+		return HeartNegative(), nil
+	case "heart-outline":
+		return HeartOutline(), nil
+	case "helicopter":
+		return Helicopter(), nil
+	case "helicopter-negative":
+		return HelicopterNegative(), nil
+	case "helicopter-outline":
+		return HelicopterOutline(), nil
+	case "hematology":
+		return Hematology(), nil
+	case "hematology-laboratory":
+		return HematologyLaboratory(), nil
+	case "hematology-laboratory-negative":
+		return HematologyLaboratoryNegative(), nil
+	case "hematology-laboratory-outline":
+		return HematologyLaboratoryOutline(), nil
+	case "hematology-negative":
+		return HematologyNegative(), nil
+	case "hematology-outline":
+		return HematologyOutline(), nil
+	case "hepatology":
+		return Hepatology(), nil
+	case "hepatology-negative":
+		return HepatologyNegative(), nil
+	case "hepatology-outline":
+		return HepatologyOutline(), nil
+	case "high-bars":
+		return HighBars(), nil
+	case "high-bars-negative":
+		return HighBarsNegative(), nil
+	case "high-bars-outline":
+		return HighBarsOutline(), nil
+	case "high-level":
+		return HighLevel(), nil
+	case "high-level-negative":
+		return HighLevelNegative(), nil
+	case "high-level-outline":
+		return HighLevelOutline(), nil
+	case "hiv-ind":
+		return HivInd(), nil
+	case "hiv-ind-negative":
+		return HivIndNegative(), nil
+	case "hiv-ind-outline":
+		return HivIndOutline(), nil
+	case "hiv-neg":
+		return HivNeg(), nil
+	case "hiv-neg-negative":
+		return HivNegNegative(), nil
+	case "hiv-neg-outline":
+		return HivNegOutline(), nil
+	case "hiv-pos":
+		return HivPos(), nil
+	case "hiv-pos-negative":
+		return HivPosNegative(), nil
+	case "hiv-pos-outline":
+		return HivPosOutline(), nil
+	case "hiv-self-test":
+		return HivSelfTest(), nil
+	case "hiv-self-test-negative":
+		return HivSelfTestNegative(), nil
+	case "hiv-self-test-outline":
+		return HivSelfTestOutline(), nil
+	case "home":
+		return Home(), nil
+	case "home-alt":
+		return HomeAlt(), nil
+	case "home-alt-negative":
+		return HomeAltNegative(), nil
+	case "home-alt-outline":
+		return HomeAltOutline(), nil
+	case "home-negative":
+		return HomeNegative(), nil
+	case "home-outline":
+		return HomeOutline(), nil
+	case "home-quarantine":
+		return HomeQuarantine(), nil
+	case "home-quarantine-negative":
+		return HomeQuarantineNegative(), nil
+	case "home-quarantine-outline":
+		return HomeQuarantineOutline(), nil
+	case "hormonal-ring":
+		return HormonalRing(), nil
+	case "hormonal-ring-negative":
+		return HormonalRingNegative(), nil
+	case "hormonal-ring-outline":
+		return HormonalRingOutline(), nil
+	case "hospital":
+		return Hospital(), nil
+	case "hospital-negative":
+		return HospitalNegative(), nil
+	case "hospital-outline":
+		return HospitalOutline(), nil
+	case "hospital-symbol":
+		return HospitalSymbol(), nil
+	case "hospital-symbol-negative":
+		return HospitalSymbolNegative(), nil
+	case "hospital-symbol-outline":
+		return HospitalSymbolOutline(), nil
+	case "hospitalized":
+		return Hospitalized(), nil
+	case "hospitalized-negative":
+		return HospitalizedNegative(), nil
+	case "hospitalized-outline":
+		return HospitalizedOutline(), nil
+	case "hot-meal":
+		return HotMeal(), nil
+	case "hot-meal-negative":
+		return HotMealNegative(), nil
+	case "hot-meal-outline":
+		return HotMealOutline(), nil
+	case "hpv":
+		return Hpv(), nil
+	case "hpv-negative":
+		return HpvNegative(), nil
+	case "hpv-outline":
+		return HpvOutline(), nil
+	case "human-resoruces":
+		return HumanResoruces(), nil
+	case "human-resoruces-negative":
+		return HumanResorucesNegative(), nil
+	case "human-resoruces-outline":
+		return HumanResorucesOutline(), nil
+	case "i":
+		return I(), nil
+	case "i-certificate-paper":
+		return ICertificatePaper(), nil
+	case "i-certificate-paper-negative":
+		return ICertificatePaperNegative(), nil
+	case "i-certificate-paper-outline":
+		return ICertificatePaperOutline(), nil
+	case "i-documents-accepted":
+		return IDocumentsAccepted(), nil
+	case "i-documents-accepted-negative":
+		return IDocumentsAcceptedNegative(), nil
+	case "i-documents-accepted-outline":
+		return IDocumentsAcceptedOutline(), nil
+	case "i-documents-denied":
+		return IDocumentsDenied(), nil
+	case "i-documents-denied-negative":
+		return IDocumentsDeniedNegative(), nil
+	case "i-documents-denied-outline":
+		return IDocumentsDeniedOutline(), nil
+	case "i-exam-multiple-choice":
+		return IExamMultipleChoice(), nil
+	case "i-exam-multiple-choice-negative":
+		return IExamMultipleChoiceNegative(), nil
+	case "i-exam-multiple-choice-outline":
+		return IExamMultipleChoiceOutline(), nil
+	case "i-exam-qualification":
+		return IExamQualification(), nil
+	case "i-exam-qualification-negative":
+		return IExamQualificationNegative(), nil
+	case "i-exam-qualification-outline":
+		return IExamQualificationOutline(), nil
+	case "i-groups-perspective-crowd":
+		return IGroupsPerspectiveCrowd(), nil
+	case "i-groups-perspective-crowd-negative":
+		return IGroupsPerspectiveCrowdNegative(), nil
+	case "i-groups-perspective-crowd-outline":
+		return IGroupsPerspectiveCrowdOutline(), nil
+	case "i-negative":
+		return INegative(), nil
+	case "i-note-action":
+		return INoteAction(), nil
+	case "i-note-action-negative":
+		return INoteActionNegative(), nil
+	case "i-note-action-outline":
+		return INoteActionOutline(), nil
+	case "i-outline":
+		return IOutline(), nil
+	case "i-schedule-school-date-time":
+		return IScheduleSchoolDateTime(), nil
+	case "i-schedule-school-date-time-negative":
+		return IScheduleSchoolDateTimeNegative(), nil
+	case "i-schedule-school-date-time-outline":
+		return IScheduleSchoolDateTimeOutline(), nil
+	case "i-training-class":
+		return ITrainingClass(), nil
+	case "i-training-class-negative":
+		return ITrainingClassNegative(), nil
+	case "i-training-class-outline":
+		return ITrainingClassOutline(), nil
+	case "i-utensils":
+		return IUtensils(), nil
+	case "i-utensils-negative":
+		return IUtensilsNegative(), nil
+	case "i-utensils-outline":
+		return IUtensilsOutline(), nil
+	case "imm":
+		return Imm(), nil
+	case "imm-negative":
+		return ImmNegative(), nil
+	case "imm-outline":
+		return ImmOutline(), nil
+	case "implant":
+		return Implant(), nil
+	case "implant-negative":
+		return ImplantNegative(), nil
+	case "implant-outline":
+		return ImplantOutline(), nil
+	case "info":
+		return Info(), nil
+	case "info-negative":
+		return InfoNegative(), nil
+	case "info-outline":
+		return InfoOutline(), nil
+	case "information-campaign":
+		return InformationCampaign(), nil
+	case "information-campaign-negative":
+		return InformationCampaignNegative(), nil
+	case "information-campaign-outline":
+		return InformationCampaignOutline(), nil
+	case "inpatient":
+		return Inpatient(), nil
+	case "inpatient-negative":
+		return InpatientNegative(), nil
+	case "inpatient-outline":
+		return InpatientOutline(), nil
+	case "insecticide-resistance":
+		return InsecticideResistance(), nil
+	case "insecticide-resistance-negative":
+		return InsecticideResistanceNegative(), nil
+	case "insecticide-resistance-outline":
+		return InsecticideResistanceOutline(), nil
+	case "intensity-concentration-bioassays":
+		return IntensityConcentrationBioassays(), nil
+	case "intensity-concentration-bioassays-negative":
+		return IntensityConcentrationBioassaysNegative(), nil
+	case "intensity-concentration-bioassays-outline":
+		return IntensityConcentrationBioassaysOutline(), nil
+	case "intensive-care-unit":
+		return IntensiveCareUnit(), nil
+	case "intensive-care-unit-negative":
+		return IntensiveCareUnitNegative(), nil
+	case "intensive-care-unit-outline":
+		return IntensiveCareUnitOutline(), nil
+	case "intestinal-pain":
+		return IntestinalPain(), nil
+	case "intestinal-pain-negative":
+		return IntestinalPainNegative(), nil
+	case "intestinal-pain-outline":
+		return IntestinalPainOutline(), nil
+	case "intravenous-bag":
+		return IntravenousBag(), nil
+	case "intravenous-bag-negative":
+		return IntravenousBagNegative(), nil
+	case "intravenous-bag-outline":
+		return IntravenousBagOutline(), nil
+	case "iud":
+		return Iud(), nil
+	case "iud-negative":
+		return IudNegative(), nil
+	case "iud-outline":
+		return IudOutline(), nil
+	case "j":
+		return J(), nil
+	case "j-negative":
+		return JNegative(), nil
+	case "j-outline":
+		return JOutline(), nil
+	case "joints":
+		return Joints(), nil
+	case "joints-negative":
+		return JointsNegative(), nil
+	case "joints-outline":
+		return JointsOutline(), nil
+	case "justice":
+		return Justice(), nil
+	case "justice-negative":
+		return JusticeNegative(), nil
+	case "justice-outline":
+		return JusticeOutline(), nil
+	case "k":
+		return K(), nil
+	case "k-negative":
+		return KNegative(), nil
+	case "k-outline":
+		return KOutline(), nil
+	case "kidneys":
+		return Kidneys(), nil
+	case "kidneys-negative":
+		return KidneysNegative(), nil
+	case "kidneys-outline":
+		return KidneysOutline(), nil
+	case "l":
+		return L(), nil
+	case "l-negative":
+		return LNegative(), nil
+	case "l-outline":
+		return LOutline(), nil
+	case "lactation":
+		return Lactation(), nil
+	case "lactation-negative":
+		return LactationNegative(), nil
+	case "lactation-outline":
+		return LactationOutline(), nil
+	case "leg":
+		return Leg(), nil
+	case "leg-negative":
+		return LegNegative(), nil
+	case "leg-outline":
+		return LegOutline(), nil
+	case "letrina":
+		return Letrina(), nil
+	case "letrina-alt":
+		return LetrinaAlt(), nil
+	case "letrina-alt-negative":
+		return LetrinaAltNegative(), nil
+	case "letrina-alt-outline":
+		return LetrinaAltOutline(), nil
+	case "letrina-negative":
+		return LetrinaNegative(), nil
+	case "letrina-outline":
+		return LetrinaOutline(), nil
+	case "liver":
+		return Liver(), nil
+	case "liver-alt":
+		return LiverAlt(), nil
+	case "liver-alt-negative":
+		return LiverAltNegative(), nil
+	case "liver-alt-outline":
+		return LiverAltOutline(), nil
+	case "liver-negative":
+		return LiverNegative(), nil
+	case "liver-outline":
+		return LiverOutline(), nil
+	case "llin":
+		return Llin(), nil
+	case "llin-negative":
+		return LlinNegative(), nil
+	case "llin-outline":
+		return LlinOutline(), nil
+	case "loss-smell":
+		return LossSmell(), nil
+	case "loss-smell-negative":
+		return LossSmellNegative(), nil
+	case "loss-smell-outline":
+		return LossSmellOutline(), nil
+	case "loudly-crying":
+		return LoudlyCrying(), nil
+	case "loudly-crying-negative":
+		return LoudlyCryingNegative(), nil
+	case "loudly-crying-outline":
+		return LoudlyCryingOutline(), nil
+	case "low-bars":
+		return LowBars(), nil
+	case "low-bars-negative":
+		return LowBarsNegative(), nil
+	case "low-bars-outline":
+		return LowBarsOutline(), nil
+	case "low-level":
+		return LowLevel(), nil
+	case "low-level-negative":
+		return LowLevelNegative(), nil
+	case "low-level-outline":
+		return LowLevelOutline(), nil
+	case "low-vision":
+		return LowVision(), nil
+	case "low-vision-negative":
+		return LowVisionNegative(), nil
+	case "low-vision-outline":
+		return LowVisionOutline(), nil
+	case "lungs":
+		return Lungs(), nil
+	case "lungs-negative":
+		return LungsNegative(), nil
+	case "lungs-outline":
+		return LungsOutline(), nil
+	case "lymph-nodes":
+		return LymphNodes(), nil
+	case "lymph-nodes-negative":
+		return LymphNodesNegative(), nil
+	case "lymph-nodes-outline":
+		return LymphNodesOutline(), nil
+	case "m":
+		return M(), nil
+	case "m-negative":
+		return MNegative(), nil
+	case "m-outline":
+		return MOutline(), nil
+	case "machinery":
+		return Machinery(), nil
+	case "machinery-negative":
+		return MachineryNegative(), nil
+	case "machinery-outline":
+		return MachineryOutline(), nil
+	case "magnifying-glass":
+		return MagnifyingGlass(), nil
+	case "magnifying-glass-negative":
+		return MagnifyingGlassNegative(), nil
+	case "magnifying-glass-outline":
+		return MagnifyingGlassOutline(), nil
+	case "malaria-microscope":
+		return MalariaMicroscope(), nil
+	case "malaria-microscope-negative":
+		return MalariaMicroscopeNegative(), nil
+	case "malaria-microscope-outline":
+		return MalariaMicroscopeOutline(), nil
+	case "malaria-mixed-microscope":
+		return MalariaMixedMicroscope(), nil
+	case "malaria-mixed-microscope-negative":
+		return MalariaMixedMicroscopeNegative(), nil
+	case "malaria-mixed-microscope-outline":
+		return MalariaMixedMicroscopeOutline(), nil
+	case "malaria-outbreak":
+		return MalariaOutbreak(), nil
+	case "malaria-outbreak-negative":
+		return MalariaOutbreakNegative(), nil
+	case "malaria-outbreak-outline":
+		return MalariaOutbreakOutline(), nil
+	case "malaria-pf-microscope":
+		return MalariaPfMicroscope(), nil
+	case "malaria-pf-microscope-negative":
+		return MalariaPfMicroscopeNegative(), nil
+	case "malaria-pf-microscope-outline":
+		return MalariaPfMicroscopeOutline(), nil
+	case "malaria-pv-microscope":
+		return MalariaPvMicroscope(), nil
+	case "malaria-pv-microscope-negative":
+		return MalariaPvMicroscopeNegative(), nil
+	case "malaria-pv-microscope-outline":
+		return MalariaPvMicroscopeOutline(), nil
+	case "malaria-testing":
+		return MalariaTesting(), nil
+	case "malaria-testing-negative":
+		return MalariaTestingNegative(), nil
+	case "malaria-testing-outline":
+		return MalariaTestingOutline(), nil
+	case "male-and-female":
+		return MaleAndFemale(), nil
+	case "male-and-female-negative":
+		return MaleAndFemaleNegative(), nil
+	case "male-and-female-outline":
+		return MaleAndFemaleOutline(), nil
+	case "male-condom":
+		return MaleCondom(), nil
+	case "male-condom-negative":
+		return MaleCondomNegative(), nil
+	case "male-condom-outline":
+		return MaleCondomOutline(), nil
+	case "male-sex-worker":
+		return MaleSexWorker(), nil
+	case "male-sex-worker-negative":
+		return MaleSexWorkerNegative(), nil
+	case "male-sex-worker-outline":
+		return MaleSexWorkerOutline(), nil
+	case "man":
+		return Man(), nil
+	case "man-negative":
+		return ManNegative(), nil
+	case "man-outline":
+		return ManOutline(), nil
+	case "market-stall":
+		return MarketStall(), nil
+	case "market-stall-negative":
+		return MarketStallNegative(), nil
+	case "market-stall-outline":
+		return MarketStallOutline(), nil
+	case "masked":
+		return Masked(), nil
+	case "masked-negative":
+		return MaskedNegative(), nil
+	case "masked-outline":
+		return MaskedOutline(), nil
+	case "measles":
+		return Measles(), nil
+	case "measles-negative":
+		return MeaslesNegative(), nil
+	case "measles-outline":
+		return MeaslesOutline(), nil
+	case "medical-advice":
+		return MedicalAdvice(), nil
+	case "medical-advice-negative":
+		return MedicalAdviceNegative(), nil
+	case "medical-advice-outline":
+		return MedicalAdviceOutline(), nil
+	case "medical-records":
+		return MedicalRecords(), nil
+	case "medical-records-negative":
+		return MedicalRecordsNegative(), nil
+	case "medical-records-outline":
+		return MedicalRecordsOutline(), nil
+	case "medicines":
+		return Medicines(), nil
+	case "medicines-negative":
+		return MedicinesNegative(), nil
+	case "medicines-outline":
+		return MedicinesOutline(), nil
+	case "medium-bars":
+		return MediumBars(), nil
+	case "medium-bars-negative":
+		return MediumBarsNegative(), nil
+	case "medium-bars-outline":
+		return MediumBarsOutline(), nil
+	case "medium-level":
+		return MediumLevel(), nil
+	case "medium-level-negative":
+		return MediumLevelNegative(), nil
+	case "medium-level-outline":
+		return MediumLevelOutline(), nil
+	case "megaphone":
+		return Megaphone(), nil
+	case "megaphone-negative":
+		return MegaphoneNegative(), nil
+	case "megaphone-outline":
+		return MegaphoneOutline(), nil
+	case "mental-disorders":
+		return MentalDisorders(), nil
+	case "mental-disorders-negative":
+		return MentalDisordersNegative(), nil
+	case "mental-disorders-outline":
+		return MentalDisordersOutline(), nil
+	case "microscope":
+		return Microscope(), nil
+	case "microscope-negative":
+		return MicroscopeNegative(), nil
+	case "microscope-outline":
+		return MicroscopeOutline(), nil
+	case "military-worker":
+		return MilitaryWorker(), nil
+	case "military-worker-negative":
+		return MilitaryWorkerNegative(), nil
+	case "military-worker-outline":
+		return MilitaryWorkerOutline(), nil
+	case "miner-worker":
+		return MinerWorker(), nil
+	case "miner-worker-alt":
+		return MinerWorkerAlt(), nil
+	case "miner-worker-alt-negative":
+		return MinerWorkerAltNegative(), nil
+	case "miner-worker-alt-outline":
+		return MinerWorkerAltOutline(), nil
+	case "miner-worker-negative":
+		return MinerWorkerNegative(), nil
+	case "miner-worker-outline":
+		return MinerWorkerOutline(), nil
+	case "ministry-of-health":
+		return MinistryOfHealth(), nil
+	case "ministry-of-health-negative":
+		return MinistryOfHealthNegative(), nil
+	case "ministry-of-health-outline":
+		return MinistryOfHealthOutline(), nil
+	case "mobile":
+		return Mobile(), nil
+	case "mobile-clinic":
+		return MobileClinic(), nil
+	case "mobile-clinic-negative":
+		return MobileClinicNegative(), nil
+	case "mobile-clinic-outline":
+		return MobileClinicOutline(), nil
+	case "mobile-negative":
+		return MobileNegative(), nil
+	case "mobile-outline":
+		return MobileOutline(), nil
+	case "money-bag":
+		return MoneyBag(), nil
+	case "money-bag-negative":
+		return MoneyBagNegative(), nil
+	case "money-bag-outline":
+		return MoneyBagOutline(), nil
+	case "mosque":
+		return Mosque(), nil
+	case "mosque-negative":
+		return MosqueNegative(), nil
+	case "mosque-outline":
+		return MosqueOutline(), nil
+	case "mosquito":
+		return Mosquito(), nil
+	case "mosquito-collection":
+		return MosquitoCollection(), nil
+	case "mosquito-collection-negative":
+		return MosquitoCollectionNegative(), nil
+	case "mosquito-collection-outline":
+		return MosquitoCollectionOutline(), nil
+	case "mosquito-negative":
+		return MosquitoNegative(), nil
+	case "mosquito-outline":
+		return MosquitoOutline(), nil
+	case "mouth":
+		return Mouth(), nil
+	case "mouth-negative":
+		return MouthNegative(), nil
+	case "mouth-outline":
+		return MouthOutline(), nil
+	case "msm":
+		return Msm(), nil
+	case "msm-negative":
+		return MsmNegative(), nil
+	case "msm-outline":
+		return MsmOutline(), nil
+	case "n":
+		return N(), nil
+	case "n-negative":
+		return NNegative(), nil
+	case "n-outline":
+		return NOutline(), nil
+	case "nausea":
+		return Nausea(), nil
+	case "nausea-negative":
+		return NauseaNegative(), nil
+	case "nausea-outline":
+		return NauseaOutline(), nil
+	case "nauseous":
+		return Nauseous(), nil
+	case "nauseous-negative":
+		return NauseousNegative(), nil
+	case "nauseous-outline":
+		return NauseousOutline(), nil
+	case "negative":
+		return Negative(), nil
+	case "negative-negative":
+		return NegativeNegative(), nil
+	case "negative-outline":
+		return NegativeOutline(), nil
+	case "nephrology":
+		return Nephrology(), nil
+	case "nephrology-negative":
+		return NephrologyNegative(), nil
+	case "nephrology-outline":
+		return NephrologyOutline(), nil
+	case "nerve":
+		return Nerve(), nil
+	case "nerve-negative":
+		return NerveNegative(), nil
+	case "nerve-outline":
+		return NerveOutline(), nil
+	case "nervous":
+		return Nervous(), nil
+	case "nervous-negative":
+		return NervousNegative(), nil
+	case "nervous-outline":
+		return NervousOutline(), nil
+	case "network-5g":
+		return NetworkFiveG(), nil
+	case "network-5g-negative":
+		return NetworkFiveGNegative(), nil
+	case "network-5g-outline":
+		return NetworkFiveGOutline(), nil
+	case "network-4g":
+		return NetworkFourG(), nil
+	case "network-4g-negative":
+		return NetworkFourGNegative(), nil
+	case "network-4g-outline":
+		return NetworkFourGOutline(), nil
+	case "neuro-surgery":
+		return NeuroSurgery(), nil
+	case "neuro-surgery-negative":
+		return NeuroSurgeryNegative(), nil
+	case "neuro-surgery-outline":
+		return NeuroSurgeryOutline(), nil
+	case "neurology":
+		return Neurology(), nil
+	case "neurology-negative":
+		return NeurologyNegative(), nil
+	case "neurology-outline":
+		return NeurologyOutline(), nil
+	case "neutral":
+		return Neutral(), nil
+	case "neutral-negative":
+		return NeutralNegative(), nil
+	case "neutral-outline":
+		return NeutralOutline(), nil
+	case "9":
+		return Nine(), nil
+	case "9-negative":
+		return NineNegative(), nil
+	case "9-outline":
+		return NineOutline(), nil
+	case "no":
+		return No(), nil
+	case "no-negative":
+		return NoNegative(), nil
+	case "no-outline":
+		return NoOutline(), nil
+	case "nose":
+		return Nose(), nil
+	case "nose-negative":
+		return NoseNegative(), nil
+	case "nose-outline":
+		return NoseOutline(), nil
+	case "not-ok":
+		return NotOk(), nil
+	case "not-ok-negative":
+		return NotOkNegative(), nil
+	case "not-ok-outline":
+		return NotOkOutline(), nil
+	case "nurse":
+		return Nurse(), nil
+	case "nurse-negative":
+		return NurseNegative(), nil
+	case "nurse-outline":
+		return NurseOutline(), nil
+	case "nutrition":
+		return Nutrition(), nil
+	case "nutrition-negative":
+		return NutritionNegative(), nil
+	case "nutrition-outline":
+		return NutritionOutline(), nil
+	case "o":
+		return O(), nil
+	case "o-negative":
+		return ONegative(), nil
+	case "o-outline":
+		return OOutline(), nil
+	case "observation":
+		return Observation(), nil
+	case "observation-negative":
+		return ObservationNegative(), nil
+	case "observation-outline":
+		return ObservationOutline(), nil
+	case "obstetricsmonia":
+		return Obstetricsmonia(), nil
+	case "obstetricsmonia-negative":
+		return ObstetricsmoniaNegative(), nil
+	case "obstetricsmonia-outline":
+		return ObstetricsmoniaOutline(), nil
+	case "odontology":
+		return Odontology(), nil
+	case "odontology-implant":
+		return OdontologyImplant(), nil
+	case "odontology-implant-negative":
+		return OdontologyImplantNegative(), nil
+	case "odontology-implant-outline":
+		return OdontologyImplantOutline(), nil
+	case "odontology-negative":
+		return OdontologyNegative(), nil
+	case "odontology-outline":
+		return OdontologyOutline(), nil
+	case "officer":
+		return Officer(), nil
+	case "officer-negative":
+		return OfficerNegative(), nil
+	case "officer-outline":
+		return OfficerOutline(), nil
+	case "ok":
+		return Ok(), nil
+	case "ok-negative":
+		return OkNegative(), nil
+	case "ok-outline":
+		return OkOutline(), nil
+	case "old-man":
+		return OldMan(), nil
+	case "old-man-negative":
+		return OldManNegative(), nil
+	case "old-man-outline":
+		return OldManOutline(), nil
+	case "old-woman":
+		return OldWoman(), nil
+	case "old-woman-negative":
+		return OldWomanNegative(), nil
+	case "old-woman-outline":
+		return OldWomanOutline(), nil
+	case "oncology":
+		return Oncology(), nil
+	case "oncology-negative":
+		return OncologyNegative(), nil
+	case "oncology-outline":
+		return OncologyOutline(), nil
+	case "1":
+		return One(), nil
+	case "1-negative":
+		return OneNegative(), nil
+	case "1-outline":
+		return OneOutline(), nil
+	case "openmrs-logo":
+		return OpenmrsLogo(), nil
+	case "openmrs-logo-negative":
+		return OpenmrsLogoNegative(), nil
+	case "openmrs-logo-outline":
+		return OpenmrsLogoOutline(), nil
+	case "opthalmology":
+		return Opthalmology(), nil
+	case "opthalmology-negative":
+		return OpthalmologyNegative(), nil
+	case "opthalmology-outline":
+		return OpthalmologyOutline(), nil
+	case "oral-contraception-pillsx28":
+		return OralContraceptionPillsxTwentyEight(), nil
+	case "oral-contraception-pillsx28-negative":
+		return OralContraceptionPillsxTwentyEightNegative(), nil
+	case "oral-contraception-pillsx28-outline":
+		return OralContraceptionPillsxTwentyEightOutline(), nil
+	case "oral-contraception-pillsx21":
+		return OralContraceptionPillsxTwentyOne(), nil
+	case "oral-contraception-pillsx21-negative":
+		return OralContraceptionPillsxTwentyOneNegative(), nil
+	case "oral-contraception-pillsx21-outline":
+		return OralContraceptionPillsxTwentyOneOutline(), nil
+	case "orthopaedics":
+		return Orthopaedics(), nil
+	case "orthopaedics-negative":
+		return OrthopaedicsNegative(), nil
+	case "orthopaedics-outline":
+		return OrthopaedicsOutline(), nil
+	case "outbreak":
+		return Outbreak(), nil
+	case "outbreak-negative":
+		return OutbreakNegative(), nil
+	case "outbreak-outline":
+		return OutbreakOutline(), nil
+	case "outpatient":
+		return Outpatient(), nil
+	case "outpatient-department":
+		return OutpatientDepartment(), nil
+	case "outpatient-department-negative":
+		return OutpatientDepartmentNegative(), nil
+	case "outpatient-department-outline":
+		return OutpatientDepartmentOutline(), nil
+	case "outpatient-negative":
+		return OutpatientNegative(), nil
+	case "outpatient-outline":
+		return OutpatientOutline(), nil
+	case "overweight":
+		return Overweight(), nil
+	case "overweight-negative":
+		return OverweightNegative(), nil
+	case "overweight-outline":
+		return OverweightOutline(), nil
+	case "oxygen-tank":
+		return OxygenTank(), nil
+	case "oxygen-tank-negative":
+		return OxygenTankNegative(), nil
+	case "oxygen-tank-outline":
+		return OxygenTankOutline(), nil
+	case "p":
+		return P(), nil
+	case "p-negative":
+		return PNegative(), nil
+	case "p-outline":
+		return POutline(), nil
+	case "palm-branches-roof":
+		return PalmBranchesRoof(), nil
+	case "palm-branches-roof-negative":
+		return PalmBranchesRoofNegative(), nil
+	case "palm-branches-roof-outline":
+		return PalmBranchesRoofOutline(), nil
+	case "pancreas":
+		return Pancreas(), nil
+	case "pancreas-negative":
+		return PancreasNegative(), nil
+	case "pancreas-outline":
+		return PancreasOutline(), nil
+	case "paved-road":
+		return PavedRoad(), nil
+	case "paved-road-alt":
+		return PavedRoadAlt(), nil
+	case "paved-road-alt-negative":
+		return PavedRoadAltNegative(), nil
+	case "paved-road-alt-outline":
+		return PavedRoadAltOutline(), nil
+	case "paved-road-negative":
+		return PavedRoadNegative(), nil
+	case "paved-road-outline":
+		return PavedRoadOutline(), nil
+	case "peace":
+		return Peace(), nil
+	case "peace-negative":
+		return PeaceNegative(), nil
+	case "peace-outline":
+		return PeaceOutline(), nil
+	case "pediatric-surgery":
+		return PediatricSurgery(), nil
+	case "pediatric-surgery-negative":
+		return PediatricSurgeryNegative(), nil
+	case "pediatric-surgery-outline":
+		return PediatricSurgeryOutline(), nil
+	case "pediatrics":
+		return Pediatrics(), nil
+	case "pediatrics-negative":
+		return PediatricsNegative(), nil
+	case "pediatrics-outline":
+		return PediatricsOutline(), nil
+	case "people":
+		return People(), nil
+	case "people-negative":
+		return PeopleNegative(), nil
+	case "people-outline":
+		return PeopleOutline(), nil
+	case "person":
+		return Person(), nil
+	case "person-negative":
+		return PersonNegative(), nil
+	case "person-outline":
+		return PersonOutline(), nil
+	case "pharmacy":
+		return Pharmacy(), nil
+	case "pharmacy-alt":
+		return PharmacyAlt(), nil
+	case "pharmacy-alt-negative":
+		return PharmacyAltNegative(), nil
+	case "pharmacy-alt-outline":
+		return PharmacyAltOutline(), nil
+	case "pharmacy-negative":
+		return PharmacyNegative(), nil
+	case "pharmacy-outline":
+		return PharmacyOutline(), nil
+	case "phone":
+		return Phone(), nil
+	case "phone-negative":
+		return PhoneNegative(), nil
+	case "phone-outline":
+		return PhoneOutline(), nil
+	case "physical-therapy":
+		return PhysicalTherapy(), nil
+	case "physical-therapy-negative":
+		return PhysicalTherapyNegative(), nil
+	case "physical-therapy-outline":
+		return PhysicalTherapyOutline(), nil
+	case "pill-1":
+		return PillOne(), nil
+	case "pill-1-negative":
+		return PillOneNegative(), nil
+	case "pill-1-outline":
+		return PillOneOutline(), nil
+	case "pills-4":
+		return PillsFour(), nil
+	case "pills-4-negative":
+		return PillsFourNegative(), nil
+	case "pills-4-outline":
+		return PillsFourOutline(), nil
+	case "pills-3":
+		return PillsThree(), nil
+	case "pills-3-negative":
+		return PillsThreeNegative(), nil
+	case "pills-3-outline":
+		return PillsThreeOutline(), nil
+	case "pills-2":
+		return PillsTwo(), nil
+	case "pills-2-negative":
+		return PillsTwoNegative(), nil
+	case "pills-2-outline":
+		return PillsTwoOutline(), nil
+	case "plantation-worker":
+		return PlantationWorker(), nil
+	case "plantation-worker-alt":
+		return PlantationWorkerAlt(), nil
+	case "plantation-worker-alt-negative":
+		return PlantationWorkerAltNegative(), nil
+	case "plantation-worker-alt-outline":
+		return PlantationWorkerAltOutline(), nil
+	case "plantation-worker-negative":
+		return PlantationWorkerNegative(), nil
+	case "plantation-worker-outline":
+		return PlantationWorkerOutline(), nil
+	case "pneumonia":
+		return Pneumonia(), nil
+	case "pneumonia-negative":
+		return PneumoniaNegative(), nil
+	case "pneumonia-outline":
+		return PneumoniaOutline(), nil
+	case "poison":
+		return Poison(), nil
+	case "poison-negative":
+		return PoisonNegative(), nil
+	case "poison-outline":
+		return PoisonOutline(), nil
+	case "polygon":
+		return Polygon(), nil
+	case "polygon-negative":
+		return PolygonNegative(), nil
+	case "polygon-outline":
+		return PolygonOutline(), nil
+	case "positive":
+		return Positive(), nil
+	case "positive-negative":
+		return PositiveNegative(), nil
+	case "positive-outline":
+		return PositiveOutline(), nil
+	case "ppe-apron":
+		return PpeApron(), nil
+	case "ppe-apron-negative":
+		return PpeApronNegative(), nil
+	case "ppe-apron-outline":
+		return PpeApronOutline(), nil
+	case "ppe-face-mask":
+		return PpeFaceMask(), nil
+	case "ppe-face-mask-negative":
+		return PpeFaceMaskNegative(), nil
+	case "ppe-face-mask-outline":
+		return PpeFaceMaskOutline(), nil
+	case "ppe-face-shield":
+		return PpeFaceShield(), nil
+	case "ppe-face-shield-alt":
+		return PpeFaceShieldAlt(), nil
+	case "ppe-face-shield-alt-negative":
+		return PpeFaceShieldAltNegative(), nil
+	case "ppe-face-shield-alt-outline":
+		return PpeFaceShieldAltOutline(), nil
+	case "ppe-face-shield-negative":
+		return PpeFaceShieldNegative(), nil
+	case "ppe-face-shield-outline":
+		return PpeFaceShieldOutline(), nil
+	case "ppe-gloves":
+		return PpeGloves(), nil
+	case "ppe-gloves-negative":
+		return PpeGlovesNegative(), nil
+	case "ppe-gloves-outline":
+		return PpeGlovesOutline(), nil
+	case "ppe-goggles":
+		return PpeGoggles(), nil
+	case "ppe-goggles-negative":
+		return PpeGogglesNegative(), nil
+	case "ppe-goggles-outline":
+		return PpeGogglesOutline(), nil
+	case "ppe-gown":
+		return PpeGown(), nil
+	case "ppe-gown-negative":
+		return PpeGownNegative(), nil
+	case "ppe-gown-outline":
+		return PpeGownOutline(), nil
+	case "ppe-mask":
+		return PpeMask(), nil
+	case "ppe-mask-n95":
+		return PpeMaskNNinetyFive(), nil
+	case "ppe-mask-n95-negative":
+		return PpeMaskNNinetyFiveNegative(), nil
+	case "ppe-mask-n95-outline":
+		return PpeMaskNNinetyFiveOutline(), nil
+	case "ppe-mask-negative":
+		return PpeMaskNegative(), nil
+	case "ppe-mask-outline":
+		return PpeMaskOutline(), nil
+	case "ppe-sanitizer":
+		return PpeSanitizer(), nil
+	case "ppe-sanitizer-negative":
+		return PpeSanitizerNegative(), nil
+	case "ppe-sanitizer-outline":
+		return PpeSanitizerOutline(), nil
+	case "ppe-santizer-alt":
+		return PpeSantizerAlt(), nil
+	case "ppe-santizer-alt-negative":
+		return PpeSantizerAltNegative(), nil
+	case "ppe-santizer-alt-outline":
+		return PpeSantizerAltOutline(), nil
+	case "ppe-suit":
+		return PpeSuit(), nil
+	case "ppe-suit-negative":
+		return PpeSuitNegative(), nil
+	case "ppe-suit-outline":
+		return PpeSuitOutline(), nil
+	case "pregnant":
+		return Pregnant(), nil
+	case "pregnant-0812w":
+		return PregnantEightHundredTwelveW(), nil
+	case "pregnant-0812w-negative":
+		return PregnantEightHundredTwelveWNegative(), nil
+	case "pregnant-0812w-outline":
+		return PregnantEightHundredTwelveWOutline(), nil
+	case "pregnant-negative":
+		return PregnantNegative(), nil
+	case "pregnant-outline":
+		return PregnantOutline(), nil
+	case "pregnant-32w":
+		return PregnantThirtyTwoW(), nil
+	case "pregnant-32w-negative":
+		return PregnantThirtyTwoWNegative(), nil
+	case "pregnant-32w-outline":
+		return PregnantThirtyTwoWOutline(), nil
+	case "pregnant-3638w":
+		return PregnantThreeThousandSixHundredThirtyEightW(), nil
+	case "pregnant-3638w-negative":
+		return PregnantThreeThousandSixHundredThirtyEightWNegative(), nil
+	case "pregnant-3638w-outline":
+		return PregnantThreeThousandSixHundredThirtyEightWOutline(), nil
+	case "pregnant-2426w":
+		return PregnantTwoThousandFourHundredTwentySixW(), nil
+	case "pregnant-2426w-negative":
+		return PregnantTwoThousandFourHundredTwentySixWNegative(), nil
+	case "pregnant-2426w-outline":
+		return PregnantTwoThousandFourHundredTwentySixWOutline(), nil
+	case "prescription-document":
+		return PrescriptionDocument(), nil
+	case "prescription-document-negative":
+		return PrescriptionDocumentNegative(), nil
+	case "prescription-document-outline":
+		return PrescriptionDocumentOutline(), nil
+	case "prisoner":
+		return Prisoner(), nil
+	case "prisoner-negative":
+		return PrisonerNegative(), nil
+	case "prisoner-outline":
+		return PrisonerOutline(), nil
+	case "proper-roof":
+		return ProperRoof(), nil
+	case "proper-roof-negative":
+		return ProperRoofNegative(), nil
+	case "proper-roof-outline":
+		return ProperRoofOutline(), nil
+	case "provider-fst":
+		return ProviderFst(), nil
+	case "provider-fst-negative":
+		return ProviderFstNegative(), nil
+	case "provider-fst-outline":
+		return ProviderFstOutline(), nil
+	case "psychology":
+		return Psychology(), nil
+	case "psychology-negative":
+		return PsychologyNegative(), nil
+	case "psychology-outline":
+		return PsychologyOutline(), nil
+	case "pwid":
+		return Pwid(), nil
+	case "pwid-negative":
+		return PwidNegative(), nil
+	case "pwid-outline":
+		return PwidOutline(), nil
+	case "q":
+		return Q(), nil
+	case "q-negative":
+		return QNegative(), nil
+	case "q-outline":
+		return QOutline(), nil
+	case "question":
+		return Question(), nil
+	case "question-circle":
+		return QuestionCircle(), nil
+	case "question-circle-negative":
+		return QuestionCircleNegative(), nil
+	case "question-circle-outline":
+		return QuestionCircleOutline(), nil
+	case "question-mark":
+		return QuestionMark(), nil
+	case "question-mark-negative":
+		return QuestionMarkNegative(), nil
+	case "question-mark-outline":
+		return QuestionMarkOutline(), nil
+	case "question-negative":
+		return QuestionNegative(), nil
+	case "question-outline":
+		return QuestionOutline(), nil
+	case "question-triangle":
+		return QuestionTriangle(), nil
+	case "question-triangle-negative":
+		return QuestionTriangleNegative(), nil
+	case "question-triangle-outline":
+		return QuestionTriangleOutline(), nil
+	case "r":
+		return R(), nil
+	case "r-negative":
+		return RNegative(), nil
+	case "r-outline":
+		return ROutline(), nil
+	case "radiology":
+		return Radiology(), nil
+	case "radiology-negative":
+		return RadiologyNegative(), nil
+	case "radiology-outline":
+		return RadiologyOutline(), nil
+	case "rdt-result":
+		return RdtResult(), nil
+	case "rdt-result-invalid":
+		return RdtResultInvalid(), nil
+	case "rdt-result-invalid-negative":
+		return RdtResultInvalidNegative(), nil
+	case "rdt-result-invalid-outline":
+		return RdtResultInvalidOutline(), nil
+	case "rdt-result-mixed":
+		return RdtResultMixed(), nil
+	case "rdt-result-mixed-invalid":
+		return RdtResultMixedInvalid(), nil
+	case "rdt-result-mixed-invalid-negative":
+		return RdtResultMixedInvalidNegative(), nil
+	case "rdt-result-mixed-invalid-outline":
+		return RdtResultMixedInvalidOutline(), nil
+	case "rdt-result-mixed-invalid-rectangular":
+		return RdtResultMixedInvalidRectangular(), nil
+	case "rdt-result-mixed-invalid-rectangular-negative":
+		return RdtResultMixedInvalidRectangularNegative(), nil
+	case "rdt-result-mixed-invalid-rectangular-outline":
+		return RdtResultMixedInvalidRectangularOutline(), nil
+	case "rdt-result-mixed-negative":
+		return RdtResultMixedNegative(), nil
+	case "rdt-result-mixed-outline":
+		return RdtResultMixedOutline(), nil
+	case "rdt-result-mixed-rectangular":
+		return RdtResultMixedRectangular(), nil
+	case "rdt-result-mixed-rectangular-negative":
+		return RdtResultMixedRectangularNegative(), nil
+	case "rdt-result-mixed-rectangular-outline":
+		return RdtResultMixedRectangularOutline(), nil
+	case "rdt-result-neg":
+		return RdtResultNeg(), nil
+	case "rdt-result-neg-invalid":
+		return RdtResultNegInvalid(), nil
+	case "rdt-result-neg-invalid-negative":
+		return RdtResultNegInvalidNegative(), nil
+	case "rdt-result-neg-invalid-outline":
+		return RdtResultNegInvalidOutline(), nil
+	case "rdt-result-neg-invalid-rectangular":
+		return RdtResultNegInvalidRectangular(), nil
+	case "rdt-result-neg-invalid-rectangular-negative":
+		return RdtResultNegInvalidRectangularNegative(), nil
+	case "rdt-result-neg-invalid-rectangular-outline":
+		return RdtResultNegInvalidRectangularOutline(), nil
+	case "rdt-result-neg-negative":
+		return RdtResultNegNegative(), nil
+	case "rdt-result-neg-outline":
+		return RdtResultNegOutline(), nil
+	case "rdt-result-neg-rectangular":
+		return RdtResultNegRectangular(), nil
+	case "rdt-result-neg-rectangular-negative":
+		return RdtResultNegRectangularNegative(), nil
+	case "rdt-result-neg-rectangular-outline":
+		return RdtResultNegRectangularOutline(), nil
+	case "rdt-result-negative":
+		return RdtResultNegative(), nil
+	case "rdt-result-negative-negative":
+		return RdtResultNegativeNegative(), nil
+	case "rdt-result-no-test":
+		return RdtResultNoTest(), nil
+	case "rdt-result-no-test-negative":
+		return RdtResultNoTestNegative(), nil
+	case "rdt-result-no-test-outline":
+		return RdtResultNoTestOutline(), nil
+	case "rdt-result-out-stock":
+		return RdtResultOutStock(), nil
+	case "rdt-result-out-stock-negative":
+		return RdtResultOutStockNegative(), nil
+	case "rdt-result-out-stock-outline":
+		return RdtResultOutStockOutline(), nil
+	case "rdt-result-outline":
+		return RdtResultOutline(), nil
+	case "rdt-result-pf":
+		return RdtResultPf(), nil
+	case "rdt-result-pf-invalid":
+		return RdtResultPfInvalid(), nil
+	case "rdt-result-pf-invalid-negative":
+		return RdtResultPfInvalidNegative(), nil
+	case "rdt-result-pf-invalid-outline":
+		return RdtResultPfInvalidOutline(), nil
+	case "rdt-result-pf-invalid-rectangular":
+		return RdtResultPfInvalidRectangular(), nil
+	case "rdt-result-pf-invalid-rectangular-negative":
+		return RdtResultPfInvalidRectangularNegative(), nil
+	case "rdt-result-pf-invalid-rectangular-outline":
+		return RdtResultPfInvalidRectangularOutline(), nil
+	case "rdt-result-pf-negative":
+		return RdtResultPfNegative(), nil
+	case "rdt-result-pf-outline":
+		return RdtResultPfOutline(), nil
+	case "rdt-result-pf-rectangular":
+		return RdtResultPfRectangular(), nil
+	case "rdt-result-pf-rectangular-negative":
+		return RdtResultPfRectangularNegative(), nil
+	case "rdt-result-pf-rectangular-outline":
+		return RdtResultPfRectangularOutline(), nil
+	case "rdt-result-positive":
+		return RdtResultPositive(), nil
+	case "rdt-result-positive-negative":
+		return RdtResultPositiveNegative(), nil
+	case "rdt-result-positive-outline":
+		return RdtResultPositiveOutline(), nil
+	case "rdt-result-pv":
+		return RdtResultPv(), nil
+	case "rdt-result-pv-invalid":
+		return RdtResultPvInvalid(), nil
+	case "rdt-result-pv-invalid-negative":
+		return RdtResultPvInvalidNegative(), nil
+	case "rdt-result-pv-invalid-outline":
+		return RdtResultPvInvalidOutline(), nil
+	case "rdt-result-pv-invalid-rectangular":
+		return RdtResultPvInvalidRectangular(), nil
+	case "rdt-result-pv-invalid-rectangular-negative":
+		return RdtResultPvInvalidRectangularNegative(), nil
+	case "rdt-result-pv-invalid-rectangular-outline":
+		return RdtResultPvInvalidRectangularOutline(), nil
+	case "rdt-result-pv-negative":
+		return RdtResultPvNegative(), nil
+	case "rdt-result-pv-outline":
+		return RdtResultPvOutline(), nil
+	case "rdt-result-pv-rectangular":
+		return RdtResultPvRectangular(), nil
+	case "rdt-result-pv-rectangular-negative":
+		return RdtResultPvRectangularNegative(), nil
+	case "rdt-result-pv-rectangular-outline":
+		return RdtResultPvRectangularOutline(), nil
+	case "referral":
+		return Referral(), nil
+	case "referral-negative":
+		return ReferralNegative(), nil
+	case "referral-outline":
+		return ReferralOutline(), nil
+	case "refused":
+		return Refused(), nil
+	case "refused-negative":
+		return RefusedNegative(), nil
+	case "refused-outline":
+		return RefusedOutline(), nil
+	case "register-book":
+		return RegisterBook(), nil
+	case "register-book-negative":
+		return RegisterBookNegative(), nil
+	case "register-book-outline":
+		return RegisterBookOutline(), nil
+	case "respirator":
+		return Respirator(), nil
+	case "respirator-negative":
+		return RespiratorNegative(), nil
+	case "respirator-outline":
+		return RespiratorOutline(), nil
+	case "respirology":
+		return Respirology(), nil
+	case "respirology-negative":
+		return RespirologyNegative(), nil
+	case "respirology-outline":
+		return RespirologyOutline(), nil
+	case "rheumatology":
+		return Rheumatology(), nil
+	case "rheumatology-negative":
+		return RheumatologyNegative(), nil
+	case "rheumatology-outline":
+		return RheumatologyOutline(), nil
+	case "ribbon":
+		return Ribbon(), nil
+	case "ribbon-negative":
+		return RibbonNegative(), nil
+	case "ribbon-outline":
+		return RibbonOutline(), nil
+	case "rmnh":
+		return Rmnh(), nil
+	case "rmnh-negative":
+		return RmnhNegative(), nil
+	case "rmnh-outline":
+		return RmnhOutline(), nil
+	case "running-water":
+		return RunningWater(), nil
+	case "running-water-alt":
+		return RunningWaterAlt(), nil
+	case "running-water-alt-negative":
+		return RunningWaterAltNegative(), nil
+	case "running-water-alt-outline":
+		return RunningWaterAltOutline(), nil
+	case "running-water-negative":
+		return RunningWaterNegative(), nil
+	case "running-water-outline":
+		return RunningWaterOutline(), nil
+	case "rupee":
+		return Rupee(), nil
+	case "rupee-negative":
+		return RupeeNegative(), nil
+	case "rupee-outline":
+		return RupeeOutline(), nil
+	case "rural-post":
+		return RuralPost(), nil
+	case "rural-post-alt":
+		return RuralPostAlt(), nil
+	case "rural-post-alt-negative":
+		return RuralPostAltNegative(), nil
+	case "rural-post-alt-outline":
+		return RuralPostAltOutline(), nil
+	case "rural-post-negative":
+		return RuralPostNegative(), nil
+	case "rural-post-outline":
+		return RuralPostOutline(), nil
+	case "rx":
+		return Rx(), nil
+	case "rx-negative":
+		return RxNegative(), nil
+	case "rx-outline":
+		return RxOutline(), nil
+	case "s":
+		return S(), nil
+	case "s-negative":
+		return SNegative(), nil
+	case "s-outline":
+		return SOutline(), nil
+	case "sad":
+		return Sad(), nil
+	case "sad-negative":
+		return SadNegative(), nil
+	case "sad-outline":
+		return SadOutline(), nil
+	case "sayana-press":
+		return SayanaPress(), nil
+	case "sayana-press-negative":
+		return SayanaPressNegative(), nil
+	case "sayana-press-outline":
+		return SayanaPressOutline(), nil
+	case "security-worker":
+		return SecurityWorker(), nil
+	case "security-worker-negative":
+		return SecurityWorkerNegative(), nil
+	case "security-worker-outline":
+		return SecurityWorkerOutline(), nil
+	case "7":
+		return Seven(), nil
+	case "7-negative":
+		return SevenNegative(), nil
+	case "7-outline":
+		return SevenOutline(), nil
+	case "sexual-reproductive-health":
+		return SexualReproductiveHealth(), nil
+	case "sexual-reproductive-health-negative":
+		return SexualReproductiveHealthNegative(), nil
+	case "sexual-reproductive-health-outline":
+		return SexualReproductiveHealthOutline(), nil
+	case "simple-logo":
+		return SimpleLogo(), nil
+	case "simple-logo-negative":
+		return SimpleLogoNegative(), nil
+	case "simple-logo-outline":
+		return SimpleLogoOutline(), nil
+	case "6":
+		return Six(), nil
+	case "6-negative":
+		return SixNegative(), nil
+	case "6-outline":
+		return SixOutline(), nil
+	case "skeleton":
+		return Skeleton(), nil
+	case "skeleton-negative":
+		return SkeletonNegative(), nil
+	case "skeleton-outline":
+		return SkeletonOutline(), nil
+	case "skull":
+		return Skull(), nil
+	case "skull-negative":
+		return SkullNegative(), nil
+	case "skull-outline":
+		return SkullOutline(), nil
+	case "sleepy":
+		return Sleepy(), nil
+	case "sleepy-negative":
+		return SleepyNegative(), nil
+	case "sleepy-outline":
+		return SleepyOutline(), nil
+	case "sling":
+		return Sling(), nil
+	case "sling-negative":
+		return SlingNegative(), nil
+	case "sling-outline":
+		return SlingOutline(), nil
+	case "small-plane":
+		return SmallPlane(), nil
+	case "small-plane-negative":
+		return SmallPlaneNegative(), nil
+	case "small-plane-outline":
+		return SmallPlaneOutline(), nil
+	case "smoking":
+		return Smoking(), nil
+	case "smoking-cessation":
+		return SmokingCessation(), nil
+	case "smoking-cessation-negative":
+		return SmokingCessationNegative(), nil
+	case "smoking-cessation-outline":
+		return SmokingCessationOutline(), nil
+	case "smoking-negative":
+		return SmokingNegative(), nil
+	case "smoking-outline":
+		return SmokingOutline(), nil
+	case "social-distancing":
+		return SocialDistancing(), nil
+	case "social-distancing-alt":
+		return SocialDistancingAlt(), nil
+	case "social-distancing-alt-negative":
+		return SocialDistancingAltNegative(), nil
+	case "social-distancing-alt-outline":
+		return SocialDistancingAltOutline(), nil
+	case "social-distancing-negative":
+		return SocialDistancingNegative(), nil
+	case "social-distancing-outline":
+		return SocialDistancingOutline(), nil
+	case "social-work":
+		return SocialWork(), nil
+	case "social-work-negative":
+		return SocialWorkNegative(), nil
+	case "social-work-outline":
+		return SocialWorkOutline(), nil
+	case "speech-language-therapy":
+		return SpeechLanguageTherapy(), nil
+	case "speech-language-therapy-negative":
+		return SpeechLanguageTherapyNegative(), nil
+	case "speech-language-therapy-outline":
+		return SpeechLanguageTherapyOutline(), nil
+	case "sperm":
+		return Sperm(), nil
+	case "sperm-negative":
+		return SpermNegative(), nil
+	case "sperm-outline":
+		return SpermOutline(), nil
+	case "spine":
+		return Spine(), nil
+	case "spine-negative":
+		return SpineNegative(), nil
+	case "spine-outline":
+		return SpineOutline(), nil
+	case "spleen":
+		return Spleen(), nil
+	case "spleen-negative":
+		return SpleenNegative(), nil
+	case "spleen-outline":
+		return SpleenOutline(), nil
+	case "spraying":
+		return Spraying(), nil
+	case "spraying-negative":
+		return SprayingNegative(), nil
+	case "spraying-outline":
+		return SprayingOutline(), nil
+	case "spreadsheets":
+		return Spreadsheets(), nil
+	case "spreadsheets-negative":
+		return SpreadsheetsNegative(), nil
+	case "spreadsheets-outline":
+		return SpreadsheetsOutline(), nil
+	case "square-large":
+		return SquareLarge(), nil
+	case "square-large-negative":
+		return SquareLargeNegative(), nil
+	case "square-large-outline":
+		return SquareLargeOutline(), nil
+	case "square-medium":
+		return SquareMedium(), nil
+	case "square-medium-negative":
+		return SquareMediumNegative(), nil
+	case "square-medium-outline":
+		return SquareMediumOutline(), nil
+	case "square-small":
+		return SquareSmall(), nil
+	case "square-small-negative":
+		return SquareSmallNegative(), nil
+	case "square-small-outline":
+		return SquareSmallOutline(), nil
+	case "star-large":
+		return StarLarge(), nil
+	case "star-large-negative":
+		return StarLargeNegative(), nil
+	case "star-large-outline":
+		return StarLargeOutline(), nil
+	case "star-medium":
+		return StarMedium(), nil
+	case "star-medium-negative":
+		return StarMediumNegative(), nil
+	case "star-medium-outline":
+		return StarMediumOutline(), nil
+	case "star-small":
+		return StarSmall(), nil
+	case "star-small-negative":
+		return StarSmallNegative(), nil
+	case "star-small-outline":
+		return StarSmallOutline(), nil
+	case "stethoscope":
+		return Stethoscope(), nil
+	case "stethoscope-negative":
+		return StethoscopeNegative(), nil
+	case "stethoscope-outline":
+		return StethoscopeOutline(), nil
+	case "sti":
+		return Sti(), nil
+	case "sti-negative":
+		return StiNegative(), nil
+	case "sti-outline":
+		return StiOutline(), nil
+	case "stock-out":
+		return StockOut(), nil
+	case "stock-out-negative":
+		return StockOutNegative(), nil
+	case "stock-out-outline":
+		return StockOutOutline(), nil
+	case "stomach":
+		return Stomach(), nil
+	case "stomach-negative":
+		return StomachNegative(), nil
+	case "stomach-outline":
+		return StomachOutline(), nil
+	case "stop":
+		return Stop(), nil
+	case "stop-negative":
+		return StopNegative(), nil
+	case "stop-outline":
+		return StopOutline(), nil
+	case "surgical-sterilization":
+		return SurgicalSterilization(), nil
+	case "surgical-sterilization-negative":
+		return SurgicalSterilizationNegative(), nil
+	case "surgical-sterilization-outline":
+		return SurgicalSterilizationOutline(), nil
+	case "sweating":
+		return Sweating(), nil
+	case "sweating-negative":
+		return SweatingNegative(), nil
+	case "sweating-outline":
+		return SweatingOutline(), nil
+	case "symptom":
+		return Symptom(), nil
+	case "symptom-negative":
+		return SymptomNegative(), nil
+	case "symptom-outline":
+		return SymptomOutline(), nil
+	case "synergist-insecticide-bioassays":
+		return SynergistInsecticideBioassays(), nil
+	case "synergist-insecticide-bioassays-negative":
+		return SynergistInsecticideBioassaysNegative(), nil
+	case "synergist-insecticide-bioassays-outline":
+		return SynergistInsecticideBioassaysOutline(), nil
+	case "syringe":
+		return Syringe(), nil
+	case "syringe-negative":
+		return SyringeNegative(), nil
+	case "syringe-outline":
+		return SyringeOutline(), nil
+	case "syringe-vaccine":
+		return SyringeVaccine(), nil
+	case "syringe-vaccine-negative":
+		return SyringeVaccineNegative(), nil
+	case "syringe-vaccine-outline":
+		return SyringeVaccineOutline(), nil
+	case "t":
+		return T(), nil
+	case "t-negative":
+		return TNegative(), nil
+	case "t-outline":
+		return TOutline(), nil
+	case "tac":
+		return Tac(), nil
+	case "tac-negative":
+		return TacNegative(), nil
+	case "tac-outline":
+		return TacOutline(), nil
+	case "tally":
+		return Tally(), nil
+	case "tally-negative":
+		return TallyNegative(), nil
+	case "tally-outline":
+		return TallyOutline(), nil
+	case "tb":
+		return Tb(), nil
+	case "tb-negative":
+		return TbNegative(), nil
+	case "tb-outline":
+		return TbOutline(), nil
+	case "temple":
+		return Temple(), nil
+	case "temple-alt":
+		return TempleAlt(), nil
+	case "temple-alt-negative":
+		return TempleAltNegative(), nil
+	case "temple-alt-outline":
+		return TempleAltOutline(), nil
+	case "temple-negative":
+		return TempleNegative(), nil
+	case "temple-outline":
+		return TempleOutline(), nil
+	case "thermometer":
+		return Thermometer(), nil
+	case "thermometer-digital":
+		return ThermometerDigital(), nil
+	case "thermometer-digital-negative":
+		return ThermometerDigitalNegative(), nil
+	case "thermometer-digital-outline":
+		return ThermometerDigitalOutline(), nil
+	case "thermometer-negative":
+		return ThermometerNegative(), nil
+	case "thermometer-outline":
+		return ThermometerOutline(), nil
+	case "3":
+		return Three(), nil
+	case "3g":
+		return ThreeG(), nil
+	case "3g-negative":
+		return ThreeGNegative(), nil
+	case "3g-outline":
+		return ThreeGOutline(), nil
+	case "3-negative":
+		return ThreeNegative(), nil
+	case "3-outline":
+		return ThreeOutline(), nil
+	case "tongue":
+		return Tongue(), nil
+	case "tongue-negative":
+		return TongueNegative(), nil
+	case "tongue-outline":
+		return TongueOutline(), nil
+	case "tooth":
+		return Tooth(), nil
+	case "tooth-negative":
+		return ToothNegative(), nil
+	case "tooth-outline":
+		return ToothOutline(), nil
+	case "transgender":
+		return Transgender(), nil
+	case "transgender-negative":
+		return TransgenderNegative(), nil
+	case "transgender-outline":
+		return TransgenderOutline(), nil
+	case "traumatism":
+		return Traumatism(), nil
+	case "traumatism-negative":
+		return TraumatismNegative(), nil
+	case "traumatism-outline":
+		return TraumatismOutline(), nil
+	case "travel":
+		return Travel(), nil
+	case "travel-alt":
+		return TravelAlt(), nil
+	case "travel-alt-negative":
+		return TravelAltNegative(), nil
+	case "travel-alt-outline":
+		return TravelAltOutline(), nil
+	case "travel-negative":
+		return TravelNegative(), nil
+	case "travel-outline":
+		return TravelOutline(), nil
+	case "treated-water":
+		return TreatedWater(), nil
+	case "treated-water-negative":
+		return TreatedWaterNegative(), nil
+	case "treated-water-outline":
+		return TreatedWaterOutline(), nil
+	case "triangle-large":
+		return TriangleLarge(), nil
+	case "triangle-large-negative":
+		return TriangleLargeNegative(), nil
+	case "triangle-large-outline":
+		return TriangleLargeOutline(), nil
+	case "triangle-medium":
+		return TriangleMedium(), nil
+	case "triangle-medium-negative":
+		return TriangleMediumNegative(), nil
+	case "triangle-medium-outline":
+		return TriangleMediumOutline(), nil
+	case "triangle-small":
+		return TriangleSmall(), nil
+	case "triangle-small-negative":
+		return TriangleSmallNegative(), nil
+	case "triangle-small-outline":
+		return TriangleSmallOutline(), nil
+	case "truck-driver":
+		return TruckDriver(), nil
+	case "truck-driver-negative":
+		return TruckDriverNegative(), nil
+	case "truck-driver-outline":
+		return TruckDriverOutline(), nil
+	case "2":
+		return Two(), nil
+	case "2g":
+		return TwoG(), nil
+	case "2g-negative":
+		return TwoGNegative(), nil
+	case "2g-outline":
+		return TwoGOutline(), nil
+	case "2-negative":
+		return TwoNegative(), nil
+	case "2-outline":
+		return TwoOutline(), nil
+	case "u":
+		return U(), nil
+	case "u-negative":
+		return UNegative(), nil
+	case "u-outline":
+		return UOutline(), nil
+	case "ui-folder":
+		return UiFolder(), nil
+	case "ui-folder-family":
+		return UiFolderFamily(), nil
+	case "ui-folder-family-negative":
+		return UiFolderFamilyNegative(), nil
+	case "ui-folder-family-outline":
+		return UiFolderFamilyOutline(), nil
+	case "ui-folder-negative":
+		return UiFolderNegative(), nil
+	case "ui-folder-outline":
+		return UiFolderOutline(), nil
+	case "ui-menu":
+		return UiMenu(), nil
+	case "ui-menu-grid":
+		return UiMenuGrid(), nil
+	case "ui-menu-grid-negative":
+		return UiMenuGridNegative(), nil
+	case "ui-menu-grid-outline":
+		return UiMenuGridOutline(), nil
+	case "ui-menu-negative":
+		return UiMenuNegative(), nil
+	case "ui-menu-outline":
+		return UiMenuOutline(), nil
+	case "ui-preferences":
+		return UiPreferences(), nil
+	case "ui-preferences-negative":
+		return UiPreferencesNegative(), nil
+	case "ui-preferences-outline":
+		return UiPreferencesOutline(), nil
+	case "ui-secure":
+		return UiSecure(), nil
+	case "ui-secure-negative":
+		return UiSecureNegative(), nil
+	case "ui-secure-outline":
+		return UiSecureOutline(), nil
+	case "ui-settings":
+		return UiSettings(), nil
+	case "ui-settings-negative":
+		return UiSettingsNegative(), nil
+	case "ui-settings-outline":
+		return UiSettingsOutline(), nil
+	case "ui-user-profile":
+		return UiUserProfile(), nil
+	case "ui-user-profile-negative":
+		return UiUserProfileNegative(), nil
+	case "ui-user-profile-outline":
+		return UiUserProfileOutline(), nil
+	case "ui-zoom":
+		return UiZoom(), nil
+	case "ui-zoom-in":
+		return UiZoomIn(), nil
+	case "ui-zoom-in-negative":
+		return UiZoomInNegative(), nil
+	case "ui-zoom-in-outline":
+		return UiZoomInOutline(), nil
+	case "ui-zoom-negative":
+		return UiZoomNegative(), nil
+	case "ui-zoom-out":
+		return UiZoomOut(), nil
+	case "ui-zoom-out-negative":
+		return UiZoomOutNegative(), nil
+	case "ui-zoom-out-outline":
+		return UiZoomOutOutline(), nil
+	case "ui-zoom-outline":
+		return UiZoomOutline(), nil
+	case "umbrella":
+		return Umbrella(), nil
+	case "umbrella-negative":
+		return UmbrellaNegative(), nil
+	case "umbrella-outline":
+		return UmbrellaOutline(), nil
+	case "un-paved-road":
+		return UnPavedRoad(), nil
+	case "un-paved-road-negative":
+		return UnPavedRoadNegative(), nil
+	case "un-paved-road-outline":
+		return UnPavedRoadOutline(), nil
+	case "underweight":
+		return Underweight(), nil
+	case "underweight-negative":
+		return UnderweightNegative(), nil
+	case "underweight-outline":
+		return UnderweightOutline(), nil
+	case "unhealthy-food":
+		return UnhealthyFood(), nil
+	case "unhealthy-food-negative":
+		return UnhealthyFoodNegative(), nil
+	case "unhealthy-food-outline":
+		return UnhealthyFoodOutline(), nil
+	case "urology":
+		return Urology(), nil
+	case "urology-negative":
+		return UrologyNegative(), nil
+	case "urology-outline":
+		return UrologyOutline(), nil
+	case "v":
+		return V(), nil
+	case "v-negative":
+		return VNegative(), nil
+	case "v-outline":
+		return VOutline(), nil
+	case "ventilator":
+		return Ventilator(), nil
+	case "ventilator-alt":
+		return VentilatorAlt(), nil
+	case "ventilator-alt-negative":
+		return VentilatorAltNegative(), nil
+	case "ventilator-alt-outline":
+		return VentilatorAltOutline(), nil
+	case "ventilator-negative":
+		return VentilatorNegative(), nil
+	case "ventilator-outline":
+		return VentilatorOutline(), nil
+	case "vespa-motorcycle":
+		return VespaMotorcycle(), nil
+	case "vespa-motorcycle-negative":
+		return VespaMotorcycleNegative(), nil
+	case "vespa-motorcycle-outline":
+		return VespaMotorcycleOutline(), nil
+	case "vih":
+		return Vih(), nil
+	case "vih-negative":
+		return VihNegative(), nil
+	case "vih-outline":
+		return VihOutline(), nil
+	case "village":
+		return Village(), nil
+	case "village-negative":
+		return VillageNegative(), nil
+	case "village-outline":
+		return VillageOutline(), nil
+	case "viral-lung-infection":
+		return ViralLungInfection(), nil
+	case "viral-lung-infection-negative":
+		return ViralLungInfectionNegative(), nil
+	case "viral-lung-infection-outline":
+		return ViralLungInfectionOutline(), nil
+	case "virus":
+		return Virus(), nil
+	case "virus-alt":
+		return VirusAlt(), nil
+	case "virus-alt-negative":
+		return VirusAltNegative(), nil
+	case "virus-alt-outline":
+		return VirusAltOutline(), nil
+	case "virus-lab-research-syringe":
+		return VirusLabResearchSyringe(), nil
+	case "virus-lab-research-syringe-negative":
+		return VirusLabResearchSyringeNegative(), nil
+	case "virus-lab-research-syringe-outline":
+		return VirusLabResearchSyringeOutline(), nil
+	case "virus-lab-research-test-tube":
+		return VirusLabResearchTestTube(), nil
+	case "virus-lab-research-test-tube-negative":
+		return VirusLabResearchTestTubeNegative(), nil
+	case "virus-lab-research-test-tube-outline":
+		return VirusLabResearchTestTubeOutline(), nil
+	case "virus-mutation":
+		return VirusMutation(), nil
+	case "virus-mutation-negative":
+		return VirusMutationNegative(), nil
+	case "virus-mutation-outline":
+		return VirusMutationOutline(), nil
+	case "virus-negative":
+		return VirusNegative(), nil
+	case "virus-outline":
+		return VirusOutline(), nil
+	case "virus-patient":
+		return VirusPatient(), nil
+	case "virus-patient-negative":
+		return VirusPatientNegative(), nil
+	case "virus-patient-outline":
+		return VirusPatientOutline(), nil
+	case "virus-research":
+		return VirusResearch(), nil
+	case "virus-research-alt":
+		return VirusResearchAlt(), nil
+	case "virus-research-alt-negative":
+		return VirusResearchAltNegative(), nil
+	case "virus-research-alt-outline":
+		return VirusResearchAltOutline(), nil
+	case "virus-research-negative":
+		return VirusResearchNegative(), nil
+	case "virus-research-outline":
+		return VirusResearchOutline(), nil
+	case "virus-sanitizer-spray":
+		return VirusSanitizerSpray(), nil
+	case "virus-sanitizer-spray-negative":
+		return VirusSanitizerSprayNegative(), nil
+	case "virus-sanitizer-spray-outline":
+		return VirusSanitizerSprayOutline(), nil
+	case "virus-shield":
+		return VirusShield(), nil
+	case "virus-shield-negative":
+		return VirusShieldNegative(), nil
+	case "virus-shield-outline":
+		return VirusShieldOutline(), nil
+	case "vomiting":
+		return Vomiting(), nil
+	case "vomiting-negative":
+		return VomitingNegative(), nil
+	case "vomiting-outline":
+		return VomitingOutline(), nil
+	case "vomitting":
+		return Vomitting(), nil
+	case "vomitting-negative":
+		return VomittingNegative(), nil
+	case "vomitting-outline":
+		return VomittingOutline(), nil
+	case "w":
+		return W(), nil
+	case "w-negative":
+		return WNegative(), nil
+	case "w-outline":
+		return WOutline(), nil
+	case "war":
+		return War(), nil
+	case "war-negative":
+		return WarNegative(), nil
+	case "war-outline":
+		return WarOutline(), nil
+	case "warning":
+		return Warning(), nil
+	case "warning-negative":
+		return WarningNegative(), nil
+	case "warning-outline":
+		return WarningOutline(), nil
+	case "wash-hands":
+		return WashHands(), nil
+	case "wash-hands-negative":
+		return WashHandsNegative(), nil
+	case "wash-hands-outline":
+		return WashHandsOutline(), nil
+	case "water-sanitation":
+		return WaterSanitation(), nil
+	case "water-sanitation-negative":
+		return WaterSanitationNegative(), nil
+	case "water-sanitation-outline":
+		return WaterSanitationOutline(), nil
+	case "water-treatment":
+		return WaterTreatment(), nil
+	case "water-treatment-negative":
+		return WaterTreatmentNegative(), nil
+	case "water-treatment-outline":
+		return WaterTreatmentOutline(), nil
+	case "weight":
+		return Weight(), nil
+	case "weight-negative":
+		return WeightNegative(), nil
+	case "weight-outline":
+		return WeightOutline(), nil
+	case "wheelchair":
+		return Wheelchair(), nil
+	case "wheelchair-alt":
+		return WheelchairAlt(), nil
+	case "wheelchair-alt-negative":
+		return WheelchairAltNegative(), nil
+	case "wheelchair-alt-outline":
+		return WheelchairAltOutline(), nil
+	case "wheelchair-negative":
+		return WheelchairNegative(), nil
+	case "wheelchair-outline":
+		return WheelchairOutline(), nil
+	case "wold-care":
+		return WoldCare(), nil
+	case "wold-care-negative":
+		return WoldCareNegative(), nil
+	case "wold-care-outline":
+		return WoldCareOutline(), nil
+	case "woman":
+		return Woman(), nil
+	case "woman-negative":
+		return WomanNegative(), nil
+	case "woman-outline":
+		return WomanOutline(), nil
+	case "woozy":
+		return Woozy(), nil
+	case "woozy-negative":
+		return WoozyNegative(), nil
+	case "woozy-outline":
+		return WoozyOutline(), nil
+	case "x":
+		return X(), nil
+	case "x-negative":
+		return XNegative(), nil
+	case "x-outline":
+		return XOutline(), nil
+	case "xray":
+		return Xray(), nil
+	case "xray-negative":
+		return XrayNegative(), nil
+	case "xray-outline":
+		return XrayOutline(), nil
+	case "y":
+		return Y(), nil
+	case "y-negative":
+		return YNegative(), nil
+	case "y-outline":
+		return YOutline(), nil
+	case "yen":
+		return Yen(), nil
+	case "yen-negative":
+		return YenNegative(), nil
+	case "yen-outline":
+		return YenOutline(), nil
+	case "yes":
+		return Yes(), nil
+	case "yes-negative":
+		return YesNegative(), nil
+	case "yes-outline":
+		return YesOutline(), nil
+	case "young-people":
+		return YoungPeople(), nil
+	case "young-people-negative":
+		return YoungPeopleNegative(), nil
+	case "young-people-outline":
+		return YoungPeopleOutline(), nil
+	case "z":
+		return Z(), nil
+	case "z-negative":
+		return ZNegative(), nil
+	case "z-outline":
+		return ZOutline(), nil
+	case "0":
+		return Zero(), nil
+	case "0-negative":
+		return ZeroNegative(), nil
+	case "0-outline":
+		return ZeroOutline(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in healthicons icon set", name)
+	}
 }

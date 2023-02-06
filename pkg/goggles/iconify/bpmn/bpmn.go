@@ -1,6 +1,9 @@
 package bpmn
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	adHocMarkerInnerSVG                                           = `<path fill="currentColor" d="M300 1039.87c58.332-138.228 134.894-282.23 266.546-360.085c97.784-58.392 218.701-22.42 308.428 34.819c138.188 85.207 246.292 211.842 382.606 299.507c82.335 48.265 184.733 8.718 244.748-58.056c72.401-84.446 155.215-164.023 197.672-269.981v330.038c-61.331 121.67-140.231 248.152-266.392 307.169c-103.228 44.44-223.148 17.789-312.524-46.586c-131.02-87.979-227.486-223.69-369.854-294.78c-69.172-36.004-157.377-27.545-215.331 26.623C431.412 1101.042 371.534 1231.858 300 1350v-310.13z"/>`
@@ -1461,4 +1464,235 @@ func UserTask(children ...any) *engine.HTMLElement {
 		userTaskInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "ad-hoc-marker":
+		return AdHocMarker(), nil
+	case "business-rule":
+		return BusinessRule(), nil
+	case "business-rule-task":
+		return BusinessRuleTask(), nil
+	case "call-activity":
+		return CallActivity(), nil
+	case "compensation-marker":
+		return CompensationMarker(), nil
+	case "conditional-flow":
+		return ConditionalFlow(), nil
+	case "connection":
+		return Connection(), nil
+	case "connection-multi":
+		return ConnectionMulti(), nil
+	case "data-input":
+		return DataInput(), nil
+	case "data-object":
+		return DataObject(), nil
+	case "data-output":
+		return DataOutput(), nil
+	case "data-store":
+		return DataStore(), nil
+	case "default-flow":
+		return DefaultFlow(), nil
+	case "end-event":
+		return EndEvent(), nil
+	case "end-event-cancel":
+		return EndEventCancel(), nil
+	case "end-event-compensation":
+		return EndEventCompensation(), nil
+	case "end-event-error":
+		return EndEventError(), nil
+	case "end-event-escalation":
+		return EndEventEscalation(), nil
+	case "end-event-link":
+		return EndEventLink(), nil
+	case "end-event-message":
+		return EndEventMessage(), nil
+	case "end-event-multiple":
+		return EndEventMultiple(), nil
+	case "end-event-none":
+		return EndEventNone(), nil
+	case "end-event-signal":
+		return EndEventSignal(), nil
+	case "end-event-terminate":
+		return EndEventTerminate(), nil
+	case "event-subprocess-expanded":
+		return EventSubprocessExpanded(), nil
+	case "gateway":
+		return Gateway(), nil
+	case "gateway-complex":
+		return GatewayComplex(), nil
+	case "gateway-eventbased":
+		return GatewayEventbased(), nil
+	case "gateway-none":
+		return GatewayNone(), nil
+	case "gateway-or":
+		return GatewayOr(), nil
+	case "gateway-parallel":
+		return GatewayParallel(), nil
+	case "gateway-xor":
+		return GatewayXor(), nil
+	case "group":
+		return Group(), nil
+	case "hand-tool":
+		return HandTool(), nil
+	case "intermediate-event":
+		return IntermediateEvent(), nil
+	case "intermediate-event-catch-cancel":
+		return IntermediateEventCatchCancel(), nil
+	case "intermediate-event-catch-compensation":
+		return IntermediateEventCatchCompensation(), nil
+	case "intermediate-event-catch-condition":
+		return IntermediateEventCatchCondition(), nil
+	case "intermediate-event-catch-error":
+		return IntermediateEventCatchError(), nil
+	case "intermediate-event-catch-escalation":
+		return IntermediateEventCatchEscalation(), nil
+	case "intermediate-event-catch-link":
+		return IntermediateEventCatchLink(), nil
+	case "intermediate-event-catch-message":
+		return IntermediateEventCatchMessage(), nil
+	case "intermediate-event-catch-multiple":
+		return IntermediateEventCatchMultiple(), nil
+	case "intermediate-event-catch-non-interrupting-condition":
+		return IntermediateEventCatchNonInterruptingCondition(), nil
+	case "intermediate-event-catch-non-interrupting-escalation":
+		return IntermediateEventCatchNonInterruptingEscalation(), nil
+	case "intermediate-event-catch-non-interrupting-message":
+		return IntermediateEventCatchNonInterruptingMessage(), nil
+	case "intermediate-event-catch-non-interrupting-multiple":
+		return IntermediateEventCatchNonInterruptingMultiple(), nil
+	case "intermediate-event-catch-non-interrupting-parallel-multiple":
+		return IntermediateEventCatchNonInterruptingParallelMultiple(), nil
+	case "intermediate-event-catch-non-interrupting-signal":
+		return IntermediateEventCatchNonInterruptingSignal(), nil
+	case "intermediate-event-catch-non-interrupting-timer":
+		return IntermediateEventCatchNonInterruptingTimer(), nil
+	case "intermediate-event-catch-parallel-multiple":
+		return IntermediateEventCatchParallelMultiple(), nil
+	case "intermediate-event-catch-signal":
+		return IntermediateEventCatchSignal(), nil
+	case "intermediate-event-catch-timer":
+		return IntermediateEventCatchTimer(), nil
+	case "intermediate-event-non-interrupting":
+		return IntermediateEventNonInterrupting(), nil
+	case "intermediate-event-none":
+		return IntermediateEventNone(), nil
+	case "intermediate-event-throw-compensation":
+		return IntermediateEventThrowCompensation(), nil
+	case "intermediate-event-throw-escalation":
+		return IntermediateEventThrowEscalation(), nil
+	case "intermediate-event-throw-link":
+		return IntermediateEventThrowLink(), nil
+	case "intermediate-event-throw-message":
+		return IntermediateEventThrowMessage(), nil
+	case "intermediate-event-throw-multiple":
+		return IntermediateEventThrowMultiple(), nil
+	case "intermediate-event-throw-signal":
+		return IntermediateEventThrowSignal(), nil
+	case "lane":
+		return Lane(), nil
+	case "lane-divide-three":
+		return LaneDivideThree(), nil
+	case "lane-divide-two":
+		return LaneDivideTwo(), nil
+	case "lane-insert-above":
+		return LaneInsertAbove(), nil
+	case "lane-insert-below":
+		return LaneInsertBelow(), nil
+	case "lasso-tool":
+		return LassoTool(), nil
+	case "loop-marker":
+		return LoopMarker(), nil
+	case "manual":
+		return Manual(), nil
+	case "manual-task":
+		return ManualTask(), nil
+	case "parallel-mi-marker":
+		return ParallelMiMarker(), nil
+	case "participant":
+		return Participant(), nil
+	case "receive":
+		return Receive(), nil
+	case "receive-task":
+		return ReceiveTask(), nil
+	case "screw-wrench":
+		return ScrewWrench(), nil
+	case "script":
+		return Script(), nil
+	case "script-task":
+		return ScriptTask(), nil
+	case "send":
+		return Send(), nil
+	case "send-task":
+		return SendTask(), nil
+	case "sequential-mi-marker":
+		return SequentialMiMarker(), nil
+	case "service":
+		return Service(), nil
+	case "service-task":
+		return ServiceTask(), nil
+	case "space-tool":
+		return SpaceTool(), nil
+	case "start-event":
+		return StartEvent(), nil
+	case "start-event-compensation":
+		return StartEventCompensation(), nil
+	case "start-event-condition":
+		return StartEventCondition(), nil
+	case "start-event-error":
+		return StartEventError(), nil
+	case "start-event-escalation":
+		return StartEventEscalation(), nil
+	case "start-event-message":
+		return StartEventMessage(), nil
+	case "start-event-multiple":
+		return StartEventMultiple(), nil
+	case "start-event-non-interrupting":
+		return StartEventNonInterrupting(), nil
+	case "start-event-non-interrupting-condition":
+		return StartEventNonInterruptingCondition(), nil
+	case "start-event-non-interrupting-escalation":
+		return StartEventNonInterruptingEscalation(), nil
+	case "start-event-non-interrupting-message":
+		return StartEventNonInterruptingMessage(), nil
+	case "start-event-non-interrupting-multiple":
+		return StartEventNonInterruptingMultiple(), nil
+	case "start-event-non-interrupting-parallel-multiple":
+		return StartEventNonInterruptingParallelMultiple(), nil
+	case "start-event-non-interrupting-signal":
+		return StartEventNonInterruptingSignal(), nil
+	case "start-event-non-interrupting-timer":
+		return StartEventNonInterruptingTimer(), nil
+	case "start-event-none":
+		return StartEventNone(), nil
+	case "start-event-parallel-multiple":
+		return StartEventParallelMultiple(), nil
+	case "start-event-signal":
+		return StartEventSignal(), nil
+	case "start-event-timer":
+		return StartEventTimer(), nil
+	case "sub-process-marker":
+		return SubProcessMarker(), nil
+	case "subprocess-collapsed":
+		return SubprocessCollapsed(), nil
+	case "subprocess-expanded":
+		return SubprocessExpanded(), nil
+	case "task":
+		return Task(), nil
+	case "task-none":
+		return TaskNone(), nil
+	case "text-annotation":
+		return TextAnnotation(), nil
+	case "transaction":
+		return Transaction(), nil
+	case "trash":
+		return Trash(), nil
+	case "user":
+		return User(), nil
+	case "user-task":
+		return UserTask(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in bpmn icon set", name)
+	}
 }

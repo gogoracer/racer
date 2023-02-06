@@ -1,6 +1,9 @@
 package fa_regular
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	addressBookInnerSVG         = `<path fill="currentColor" d="M436 160c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h320c26.5 0 48-21.5 48-48v-48h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20zm-68 304H48V48h320v416zM208 256c35.3 0 64-28.7 64-64s-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64zm-89.6 128h179.2c12.4 0 22.4-8.6 22.4-19.2v-19.2c0-31.8-30.1-57.6-67.2-57.6c-10.8 0-18.7 8-44.8 8c-26.9 0-33.4-8-44.8-8c-37.1 0-67.2 25.8-67.2 57.6v19.2c0 10.6 10 19.2 22.4 19.2z"/>`
@@ -1968,4 +1971,313 @@ func WindowRestore(children ...any) *engine.HTMLElement {
 		windowRestoreInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "address-book":
+		return AddressBook(), nil
+	case "address-card":
+		return AddressCard(), nil
+	case "angry":
+		return Angry(), nil
+	case "arrow-alt-circle-down":
+		return ArrowAltCircleDown(), nil
+	case "arrow-alt-circle-left":
+		return ArrowAltCircleLeft(), nil
+	case "arrow-alt-circle-right":
+		return ArrowAltCircleRight(), nil
+	case "arrow-alt-circle-up":
+		return ArrowAltCircleUp(), nil
+	case "bell":
+		return Bell(), nil
+	case "bell-slash":
+		return BellSlash(), nil
+	case "bookmark":
+		return Bookmark(), nil
+	case "building":
+		return Building(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "calendar-alt":
+		return CalendarAlt(), nil
+	case "calendar-check":
+		return CalendarCheck(), nil
+	case "calendar-minus":
+		return CalendarMinus(), nil
+	case "calendar-plus":
+		return CalendarPlus(), nil
+	case "calendar-times":
+		return CalendarTimes(), nil
+	case "caret-square-down":
+		return CaretSquareDown(), nil
+	case "caret-square-left":
+		return CaretSquareLeft(), nil
+	case "caret-square-right":
+		return CaretSquareRight(), nil
+	case "caret-square-up":
+		return CaretSquareUp(), nil
+	case "chart-bar":
+		return ChartBar(), nil
+	case "check-circle":
+		return CheckCircle(), nil
+	case "check-square":
+		return CheckSquare(), nil
+	case "circle":
+		return Circle(), nil
+	case "clipboard":
+		return Clipboard(), nil
+	case "clock":
+		return Clock(), nil
+	case "clone":
+		return Clone(), nil
+	case "closed-captioning":
+		return ClosedCaptioning(), nil
+	case "comment":
+		return Comment(), nil
+	case "comment-alt":
+		return CommentAlt(), nil
+	case "comment-dots":
+		return CommentDots(), nil
+	case "comments":
+		return Comments(), nil
+	case "compass":
+		return Compass(), nil
+	case "copy":
+		return Copy(), nil
+	case "copyright":
+		return Copyright(), nil
+	case "credit-card":
+		return CreditCard(), nil
+	case "dizzy":
+		return Dizzy(), nil
+	case "dot-circle":
+		return DotCircle(), nil
+	case "edit":
+		return Edit(), nil
+	case "envelope":
+		return Envelope(), nil
+	case "envelope-open":
+		return EnvelopeOpen(), nil
+	case "eye":
+		return Eye(), nil
+	case "eye-slash":
+		return EyeSlash(), nil
+	case "file":
+		return File(), nil
+	case "file-alt":
+		return FileAlt(), nil
+	case "file-archive":
+		return FileArchive(), nil
+	case "file-audio":
+		return FileAudio(), nil
+	case "file-code":
+		return FileCode(), nil
+	case "file-excel":
+		return FileExcel(), nil
+	case "file-image":
+		return FileImage(), nil
+	case "file-pdf":
+		return FilePdf(), nil
+	case "file-powerpoint":
+		return FilePowerpoint(), nil
+	case "file-video":
+		return FileVideo(), nil
+	case "file-word":
+		return FileWord(), nil
+	case "flag":
+		return Flag(), nil
+	case "flushed":
+		return Flushed(), nil
+	case "folder":
+		return Folder(), nil
+	case "folder-open":
+		return FolderOpen(), nil
+	case "frown":
+		return Frown(), nil
+	case "frown-open":
+		return FrownOpen(), nil
+	case "futbol":
+		return Futbol(), nil
+	case "gem":
+		return Gem(), nil
+	case "grimace":
+		return Grimace(), nil
+	case "grin":
+		return Grin(), nil
+	case "grin-alt":
+		return GrinAlt(), nil
+	case "grin-beam":
+		return GrinBeam(), nil
+	case "grin-beam-sweat":
+		return GrinBeamSweat(), nil
+	case "grin-hearts":
+		return GrinHearts(), nil
+	case "grin-squint":
+		return GrinSquint(), nil
+	case "grin-squint-tears":
+		return GrinSquintTears(), nil
+	case "grin-stars":
+		return GrinStars(), nil
+	case "grin-tears":
+		return GrinTears(), nil
+	case "grin-tongue":
+		return GrinTongue(), nil
+	case "grin-tongue-squint":
+		return GrinTongueSquint(), nil
+	case "grin-tongue-wink":
+		return GrinTongueWink(), nil
+	case "grin-wink":
+		return GrinWink(), nil
+	case "hand-lizard":
+		return HandLizard(), nil
+	case "hand-paper":
+		return HandPaper(), nil
+	case "hand-peace":
+		return HandPeace(), nil
+	case "hand-point-down":
+		return HandPointDown(), nil
+	case "hand-point-left":
+		return HandPointLeft(), nil
+	case "hand-point-right":
+		return HandPointRight(), nil
+	case "hand-point-up":
+		return HandPointUp(), nil
+	case "hand-pointer":
+		return HandPointer(), nil
+	case "hand-rock":
+		return HandRock(), nil
+	case "hand-scissors":
+		return HandScissors(), nil
+	case "hand-spock":
+		return HandSpock(), nil
+	case "handshake":
+		return Handshake(), nil
+	case "hdd":
+		return Hdd(), nil
+	case "heart":
+		return Heart(), nil
+	case "hospital":
+		return Hospital(), nil
+	case "hourglass":
+		return Hourglass(), nil
+	case "id-badge":
+		return IdBadge(), nil
+	case "id-card":
+		return IdCard(), nil
+	case "image":
+		return Image(), nil
+	case "images":
+		return Images(), nil
+	case "keyboard":
+		return Keyboard(), nil
+	case "kiss":
+		return Kiss(), nil
+	case "kiss-beam":
+		return KissBeam(), nil
+	case "kiss-wink-heart":
+		return KissWinkHeart(), nil
+	case "laugh":
+		return Laugh(), nil
+	case "laugh-beam":
+		return LaughBeam(), nil
+	case "laugh-squint":
+		return LaughSquint(), nil
+	case "laugh-wink":
+		return LaughWink(), nil
+	case "lemon":
+		return Lemon(), nil
+	case "life-ring":
+		return LifeRing(), nil
+	case "lightbulb":
+		return Lightbulb(), nil
+	case "list-alt":
+		return ListAlt(), nil
+	case "map":
+		return Map(), nil
+	case "meh":
+		return Meh(), nil
+	case "meh-blank":
+		return MehBlank(), nil
+	case "meh-rolling-eyes":
+		return MehRollingEyes(), nil
+	case "minus-square":
+		return MinusSquare(), nil
+	case "money-bill-alt":
+		return MoneyBillAlt(), nil
+	case "moon":
+		return Moon(), nil
+	case "newspaper":
+		return Newspaper(), nil
+	case "object-group":
+		return ObjectGroup(), nil
+	case "object-ungroup":
+		return ObjectUngroup(), nil
+	case "paper-plane":
+		return PaperPlane(), nil
+	case "pause-circle":
+		return PauseCircle(), nil
+	case "play-circle":
+		return PlayCircle(), nil
+	case "plus-square":
+		return PlusSquare(), nil
+	case "question-circle":
+		return QuestionCircle(), nil
+	case "registered":
+		return Registered(), nil
+	case "sad-cry":
+		return SadCry(), nil
+	case "sad-tear":
+		return SadTear(), nil
+	case "save":
+		return Save(), nil
+	case "share-square":
+		return ShareSquare(), nil
+	case "smile":
+		return Smile(), nil
+	case "smile-beam":
+		return SmileBeam(), nil
+	case "smile-wink":
+		return SmileWink(), nil
+	case "snowflake":
+		return Snowflake(), nil
+	case "square":
+		return Square(), nil
+	case "star":
+		return Star(), nil
+	case "star-half":
+		return StarHalf(), nil
+	case "sticky-note":
+		return StickyNote(), nil
+	case "stop-circle":
+		return StopCircle(), nil
+	case "sun":
+		return Sun(), nil
+	case "surprise":
+		return Surprise(), nil
+	case "thumbs-down":
+		return ThumbsDown(), nil
+	case "thumbs-up":
+		return ThumbsUp(), nil
+	case "times-circle":
+		return TimesCircle(), nil
+	case "tired":
+		return Tired(), nil
+	case "trash-alt":
+		return TrashAlt(), nil
+	case "user":
+		return User(), nil
+	case "user-circle":
+		return UserCircle(), nil
+	case "window-close":
+		return WindowClose(), nil
+	case "window-maximize":
+		return WindowMaximize(), nil
+	case "window-minimize":
+		return WindowMinimize(), nil
+	case "window-restore":
+		return WindowRestore(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in fa_regular icon set", name)
+	}
 }

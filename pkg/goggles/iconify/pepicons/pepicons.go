@@ -1,6 +1,9 @@
 package pepicons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	airplaneInnerSVG                  = `<path fill="currentColor" fill-rule="evenodd" d="m10.755 12.996l1.859-1.704l1.472 5.269a1 1 0 0 0 1.643.464c1.579-1.465 2.44-2.82 2.519-4.13c.056-.941-.382-2.74-1.319-5.56l.23-.211c2.249-2.248 2.899-4.208 1.433-5.674c-1.465-1.465-3.426-.816-5.644 1.4l-.24.262c-2.821-.936-4.62-1.374-5.561-1.318c-1.311.078-2.665.94-4.13 2.519a1 1 0 0 0 .464 1.643l5.27 1.472l-1.704 1.859c-1.72-.236-2.798-.338-3.32-.307c-.937.056-1.859.643-2.834 1.694a1 1 0 0 0 .464 1.643l4.653 1.3l.415.414l1.3 4.654a1 1 0 0 0 1.643.464c1.05-.975 1.638-1.897 1.694-2.834c.03-.522-.072-1.6-.307-3.319Zm-1.739-1.119a1 1 0 0 0-.314.877c.239 1.687.36 2.816.366 3.304l-.788-2.817a1 1 0 0 0-.256-.438l-.785-.786a1 1 0 0 0-.438-.256l-2.818-.787c.488.005 1.619.127 3.305.366a1 1 0 0 0 .878-.314l3.16-3.447a1 1 0 0 0-.469-1.639L5.734 4.51c.599-.46 1.114-.694 1.532-.719c.642-.038 2.515.439 5.418 1.424a1 1 0 0 0 1.058-.271l.65-.709c1.507-1.505 2.366-1.79 2.786-1.37c.42.42.135 1.279-1.402 2.816l-.677.62a1 1 0 0 0-.271 1.058c.985 2.902 1.462 4.776 1.423 5.418c-.024.417-.259.933-.718 1.532l-1.431-5.123a1 1 0 0 0-1.64-.468l-3.446 3.16Z" clip-rule="evenodd"/>`
@@ -5569,4 +5572,867 @@ func WifiPrint(children ...any) *engine.HTMLElement {
 		wifiPrintInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "airplane":
+		return Airplane(), nil
+	case "airplane-print":
+		return AirplanePrint(), nil
+	case "alarm":
+		return Alarm(), nil
+	case "alarm-print":
+		return AlarmPrint(), nil
+	case "angle-down":
+		return AngleDown(), nil
+	case "angle-down-print":
+		return AngleDownPrint(), nil
+	case "angle-left":
+		return AngleLeft(), nil
+	case "angle-left-print":
+		return AngleLeftPrint(), nil
+	case "angle-right":
+		return AngleRight(), nil
+	case "angle-right-print":
+		return AngleRightPrint(), nil
+	case "angle-up":
+		return AngleUp(), nil
+	case "angle-up-print":
+		return AngleUpPrint(), nil
+	case "arrow-down":
+		return ArrowDown(), nil
+	case "arrow-down-left":
+		return ArrowDownLeft(), nil
+	case "arrow-down-left-print":
+		return ArrowDownLeftPrint(), nil
+	case "arrow-down-print":
+		return ArrowDownPrint(), nil
+	case "arrow-down-right":
+		return ArrowDownRight(), nil
+	case "arrow-down-right-print":
+		return ArrowDownRightPrint(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-left-print":
+		return ArrowLeftPrint(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrow-right-print":
+		return ArrowRightPrint(), nil
+	case "arrow-up":
+		return ArrowUp(), nil
+	case "arrow-up-left":
+		return ArrowUpLeft(), nil
+	case "arrow-up-left-print":
+		return ArrowUpLeftPrint(), nil
+	case "arrow-up-print":
+		return ArrowUpPrint(), nil
+	case "arrow-up-right":
+		return ArrowUpRight(), nil
+	case "arrow-up-right-print":
+		return ArrowUpRightPrint(), nil
+	case "bank":
+		return Bank(), nil
+	case "bank-print":
+		return BankPrint(), nil
+	case "battery":
+		return Battery(), nil
+	case "battery-print":
+		return BatteryPrint(), nil
+	case "bell":
+		return Bell(), nil
+	case "bell-off":
+		return BellOff(), nil
+	case "bell-off-print":
+		return BellOffPrint(), nil
+	case "bell-print":
+		return BellPrint(), nil
+	case "bicycle":
+		return Bicycle(), nil
+	case "bicycle-print":
+		return BicyclePrint(), nil
+	case "bluetooth":
+		return Bluetooth(), nil
+	case "bluetooth-print":
+		return BluetoothPrint(), nil
+	case "book":
+		return Book(), nil
+	case "book-print":
+		return BookPrint(), nil
+	case "bookmark":
+		return Bookmark(), nil
+	case "bookmark-filled":
+		return BookmarkFilled(), nil
+	case "bookmark-print":
+		return BookmarkPrint(), nil
+	case "briefcase":
+		return Briefcase(), nil
+	case "briefcase-print":
+		return BriefcasePrint(), nil
+	case "building":
+		return Building(), nil
+	case "building-print":
+		return BuildingPrint(), nil
+	case "calculator":
+		return Calculator(), nil
+	case "calculator-print":
+		return CalculatorPrint(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "calendar-print":
+		return CalendarPrint(), nil
+	case "camera":
+		return Camera(), nil
+	case "camera-print":
+		return CameraPrint(), nil
+	case "can":
+		return Can(), nil
+	case "can-print":
+		return CanPrint(), nil
+	case "car":
+		return Car(), nil
+	case "car-print":
+		return CarPrint(), nil
+	case "cart":
+		return Cart(), nil
+	case "cart-print":
+		return CartPrint(), nil
+	case "cellphone-eye":
+		return CellphoneEye(), nil
+	case "cellphone-eye-print":
+		return CellphoneEyePrint(), nil
+	case "cellphone-loop":
+		return CellphoneLoop(), nil
+	case "cellphone-loop-print":
+		return CellphoneLoopPrint(), nil
+	case "chain":
+		return Chain(), nil
+	case "chain-print":
+		return ChainPrint(), nil
+	case "checkmark":
+		return Checkmark(), nil
+	case "checkmark-print":
+		return CheckmarkPrint(), nil
+	case "circle":
+		return Circle(), nil
+	case "circle-filled":
+		return CircleFilled(), nil
+	case "circle-print":
+		return CirclePrint(), nil
+	case "clapperboard":
+		return Clapperboard(), nil
+	case "clapperboard-print":
+		return ClapperboardPrint(), nil
+	case "clipboard":
+		return Clipboard(), nil
+	case "clipboard-check":
+		return ClipboardCheck(), nil
+	case "clipboard-check-circle":
+		return ClipboardCheckCircle(), nil
+	case "clipboard-check-circle-print":
+		return ClipboardCheckCirclePrint(), nil
+	case "clipboard-check-print":
+		return ClipboardCheckPrint(), nil
+	case "clipboard-print":
+		return ClipboardPrint(), nil
+	case "clock":
+		return Clock(), nil
+	case "clock-print":
+		return ClockPrint(), nil
+	case "cloud":
+		return Cloud(), nil
+	case "cloud-down":
+		return CloudDown(), nil
+	case "cloud-down-filled":
+		return CloudDownFilled(), nil
+	case "cloud-down-print":
+		return CloudDownPrint(), nil
+	case "cloud-filled":
+		return CloudFilled(), nil
+	case "cloud-print":
+		return CloudPrint(), nil
+	case "cloud-up":
+		return CloudUp(), nil
+	case "cloud-up-filled":
+		return CloudUpFilled(), nil
+	case "cloud-up-print":
+		return CloudUpPrint(), nil
+	case "coctail":
+		return Coctail(), nil
+	case "coctail-print":
+		return CoctailPrint(), nil
+	case "code":
+		return Code(), nil
+	case "code-print":
+		return CodePrint(), nil
+	case "color-picker":
+		return ColorPicker(), nil
+	case "color-picker-print":
+		return ColorPickerPrint(), nil
+	case "contract":
+		return Contract(), nil
+	case "contract-print":
+		return ContractPrint(), nil
+	case "controller":
+		return Controller(), nil
+	case "controller-print":
+		return ControllerPrint(), nil
+	case "countdown":
+		return Countdown(), nil
+	case "countdown-print":
+		return CountdownPrint(), nil
+	case "credit-card":
+		return CreditCard(), nil
+	case "credit-card-print":
+		return CreditCardPrint(), nil
+	case "crown":
+		return Crown(), nil
+	case "crown-print":
+		return CrownPrint(), nil
+	case "cup":
+		return Cup(), nil
+	case "cup-print":
+		return CupPrint(), nil
+	case "cv":
+		return Cv(), nil
+	case "cv-print":
+		return CvPrint(), nil
+	case "division":
+		return Division(), nil
+	case "division-print":
+		return DivisionPrint(), nil
+	case "dots-x":
+		return DotsX(), nil
+	case "dots-x-print":
+		return DotsXPrint(), nil
+	case "dots-y":
+		return DotsY(), nil
+	case "dots-y-print":
+		return DotsYPrint(), nil
+	case "dress":
+		return Dress(), nil
+	case "dress-print":
+		return DressPrint(), nil
+	case "duplicate":
+		return Duplicate(), nil
+	case "duplicate-print":
+		return DuplicatePrint(), nil
+	case "electricity":
+		return Electricity(), nil
+	case "electricity-print":
+		return ElectricityPrint(), nil
+	case "enter":
+		return Enter(), nil
+	case "enter-print":
+		return EnterPrint(), nil
+	case "exclamation":
+		return Exclamation(), nil
+	case "exclamation-circle":
+		return ExclamationCircle(), nil
+	case "exclamation-circle-print":
+		return ExclamationCirclePrint(), nil
+	case "exclamation-filled":
+		return ExclamationFilled(), nil
+	case "exclamation-print":
+		return ExclamationPrint(), nil
+	case "expand":
+		return Expand(), nil
+	case "expand-print":
+		return ExpandPrint(), nil
+	case "eye":
+		return Eye(), nil
+	case "eye-closed":
+		return EyeClosed(), nil
+	case "eye-closed-print":
+		return EyeClosedPrint(), nil
+	case "eye-frame":
+		return EyeFrame(), nil
+	case "eye-frame-print":
+		return EyeFramePrint(), nil
+	case "eye-off":
+		return EyeOff(), nil
+	case "eye-off-print":
+		return EyeOffPrint(), nil
+	case "eye-print":
+		return EyePrint(), nil
+	case "fast-forward":
+		return FastForward(), nil
+	case "fast-forward-print":
+		return FastForwardPrint(), nil
+	case "file":
+		return File(), nil
+	case "file-loop":
+		return FileLoop(), nil
+	case "file-loop-print":
+		return FileLoopPrint(), nil
+	case "file-print":
+		return FilePrint(), nil
+	case "film-frame":
+		return FilmFrame(), nil
+	case "film-frame-print":
+		return FilmFramePrint(), nil
+	case "fire":
+		return Fire(), nil
+	case "fire-print":
+		return FirePrint(), nil
+	case "flag":
+		return Flag(), nil
+	case "flag-print":
+		return FlagPrint(), nil
+	case "flag-straight":
+		return FlagStraight(), nil
+	case "flag-straight-print":
+		return FlagStraightPrint(), nil
+	case "flower":
+		return Flower(), nil
+	case "flower-bud":
+		return FlowerBud(), nil
+	case "flower-bud-print":
+		return FlowerBudPrint(), nil
+	case "flower-print":
+		return FlowerPrint(), nil
+	case "folder":
+		return Folder(), nil
+	case "folder-print":
+		return FolderPrint(), nil
+	case "folding-stool":
+		return FoldingStool(), nil
+	case "folding-stool-print":
+		return FoldingStoolPrint(), nil
+	case "gear":
+		return Gear(), nil
+	case "gear-filled":
+		return GearFilled(), nil
+	case "gear-print":
+		return GearPrint(), nil
+	case "gift":
+		return Gift(), nil
+	case "gift-print":
+		return GiftPrint(), nil
+	case "grab":
+		return Grab(), nil
+	case "grab-print":
+		return GrabPrint(), nil
+	case "grid":
+		return Grid(), nil
+	case "grid-print":
+		return GridPrint(), nil
+	case "hamburger":
+		return Hamburger(), nil
+	case "hamburger-print":
+		return HamburgerPrint(), nil
+	case "hand-grab":
+		return HandGrab(), nil
+	case "hand-grab-print":
+		return HandGrabPrint(), nil
+	case "hand-open":
+		return HandOpen(), nil
+	case "hand-open-print":
+		return HandOpenPrint(), nil
+	case "hand-point":
+		return HandPoint(), nil
+	case "hand-point-open":
+		return HandPointOpen(), nil
+	case "hand-point-open-print":
+		return HandPointOpenPrint(), nil
+	case "hand-point-print":
+		return HandPointPrint(), nil
+	case "handshake":
+		return Handshake(), nil
+	case "handshake-print":
+		return HandshakePrint(), nil
+	case "hash":
+		return Hash(), nil
+	case "hash-print":
+		return HashPrint(), nil
+	case "headphone":
+		return Headphone(), nil
+	case "headphone-print":
+		return HeadphonePrint(), nil
+	case "heart":
+		return Heart(), nil
+	case "heart-print":
+		return HeartPrint(), nil
+	case "hourglass":
+		return Hourglass(), nil
+	case "hourglass-print":
+		return HourglassPrint(), nil
+	case "house":
+		return House(), nil
+	case "house-print":
+		return HousePrint(), nil
+	case "identification":
+		return Identification(), nil
+	case "identification-print":
+		return IdentificationPrint(), nil
+	case "info":
+		return Info(), nil
+	case "info-circle":
+		return InfoCircle(), nil
+	case "info-circle-print":
+		return InfoCirclePrint(), nil
+	case "info-filled":
+		return InfoFilled(), nil
+	case "info-print":
+		return InfoPrint(), nil
+	case "internet":
+		return Internet(), nil
+	case "internet-print":
+		return InternetPrint(), nil
+	case "key":
+		return Key(), nil
+	case "key-print":
+		return KeyPrint(), nil
+	case "knive-fork":
+		return KniveFork(), nil
+	case "knive-fork-print":
+		return KniveForkPrint(), nil
+	case "label":
+		return Label(), nil
+	case "label-print":
+		return LabelPrint(), nil
+	case "leave":
+		return Leave(), nil
+	case "leave-print":
+		return LeavePrint(), nil
+	case "letter":
+		return Letter(), nil
+	case "letter-open":
+		return LetterOpen(), nil
+	case "letter-open-print":
+		return LetterOpenPrint(), nil
+	case "letter-print":
+		return LetterPrint(), nil
+	case "list":
+		return List(), nil
+	case "list-print":
+		return ListPrint(), nil
+	case "lock-closed":
+		return LockClosed(), nil
+	case "lock-closed-print":
+		return LockClosedPrint(), nil
+	case "lock-open":
+		return LockOpen(), nil
+	case "lock-open-print":
+		return LockOpenPrint(), nil
+	case "loop":
+		return Loop(), nil
+	case "loop-minus":
+		return LoopMinus(), nil
+	case "loop-minus-print":
+		return LoopMinusPrint(), nil
+	case "loop-plus":
+		return LoopPlus(), nil
+	case "loop-plus-print":
+		return LoopPlusPrint(), nil
+	case "loop-print":
+		return LoopPrint(), nil
+	case "magnet":
+		return Magnet(), nil
+	case "magnet-print":
+		return MagnetPrint(), nil
+	case "map":
+		return Map(), nil
+	case "map-print":
+		return MapPrint(), nil
+	case "megaphone":
+		return Megaphone(), nil
+	case "megaphone-print":
+		return MegaphonePrint(), nil
+	case "menu":
+		return Menu(), nil
+	case "menu-print":
+		return MenuPrint(), nil
+	case "microphone":
+		return Microphone(), nil
+	case "microphone-print":
+		return MicrophonePrint(), nil
+	case "microphone2":
+		return MicrophoneTwo(), nil
+	case "microphone2-print":
+		return MicrophoneTwoPrint(), nil
+	case "minus":
+		return Minus(), nil
+	case "minus-print":
+		return MinusPrint(), nil
+	case "monitor":
+		return Monitor(), nil
+	case "monitor-eye":
+		return MonitorEye(), nil
+	case "monitor-eye-print":
+		return MonitorEyePrint(), nil
+	case "monitor-loop":
+		return MonitorLoop(), nil
+	case "monitor-loop-print":
+		return MonitorLoopPrint(), nil
+	case "monitor-print":
+		return MonitorPrint(), nil
+	case "monitor2":
+		return MonitorTwo(), nil
+	case "monitor2-print":
+		return MonitorTwoPrint(), nil
+	case "moon":
+		return Moon(), nil
+	case "moon-filled":
+		return MoonFilled(), nil
+	case "moon-print":
+		return MoonPrint(), nil
+	case "motorcycle":
+		return Motorcycle(), nil
+	case "motorcycle-print":
+		return MotorcyclePrint(), nil
+	case "move-x":
+		return MoveX(), nil
+	case "move-x-print":
+		return MoveXPrint(), nil
+	case "move-y":
+		return MoveY(), nil
+	case "move-y-print":
+		return MoveYPrint(), nil
+	case "music-note-double":
+		return MusicNoteDouble(), nil
+	case "music-note-double-print":
+		return MusicNoteDoublePrint(), nil
+	case "music-note-single":
+		return MusicNoteSingle(), nil
+	case "music-note-single-print":
+		return MusicNoteSinglePrint(), nil
+	case "next-track":
+		return NextTrack(), nil
+	case "next-track-print":
+		return NextTrackPrint(), nil
+	case "no-entry":
+		return NoEntry(), nil
+	case "no-entry-print":
+		return NoEntryPrint(), nil
+	case "open":
+		return Open(), nil
+	case "open-print":
+		return OpenPrint(), nil
+	case "paint-pallet":
+		return PaintPallet(), nil
+	case "paint-pallet-print":
+		return PaintPalletPrint(), nil
+	case "pause":
+		return Pause(), nil
+	case "pause-print":
+		return PausePrint(), nil
+	case "pen":
+		return Pen(), nil
+	case "pen-print":
+		return PenPrint(), nil
+	case "people":
+		return People(), nil
+	case "people-print":
+		return PeoplePrint(), nil
+	case "person":
+		return Person(), nil
+	case "person-checkmark":
+		return PersonCheckmark(), nil
+	case "person-checkmark-print":
+		return PersonCheckmarkPrint(), nil
+	case "person-filled":
+		return PersonFilled(), nil
+	case "person-plus":
+		return PersonPlus(), nil
+	case "person-plus-print":
+		return PersonPlusPrint(), nil
+	case "person-print":
+		return PersonPrint(), nil
+	case "persons":
+		return Persons(), nil
+	case "persons-print":
+		return PersonsPrint(), nil
+	case "phone":
+		return Phone(), nil
+	case "phone-print":
+		return PhonePrint(), nil
+	case "photo":
+		return Photo(), nil
+	case "photo-camera":
+		return PhotoCamera(), nil
+	case "photo-camera-print":
+		return PhotoCameraPrint(), nil
+	case "photo-print":
+		return PhotoPrint(), nil
+	case "photo-studio":
+		return PhotoStudio(), nil
+	case "photo-studio-print":
+		return PhotoStudioPrint(), nil
+	case "pill":
+		return Pill(), nil
+	case "pill-print":
+		return PillPrint(), nil
+	case "pin":
+		return Pin(), nil
+	case "pin-print":
+		return PinPrint(), nil
+	case "pinpoint":
+		return Pinpoint(), nil
+	case "pinpoint-filled":
+		return PinpointFilled(), nil
+	case "pinpoint-off":
+		return PinpointOff(), nil
+	case "pinpoint-off-filled":
+		return PinpointOffFilled(), nil
+	case "pinpoint-off-print":
+		return PinpointOffPrint(), nil
+	case "pinpoint-print":
+		return PinpointPrint(), nil
+	case "play":
+		return Play(), nil
+	case "play-print":
+		return PlayPrint(), nil
+	case "plus":
+		return Plus(), nil
+	case "plus-print":
+		return PlusPrint(), nil
+	case "power":
+		return Power(), nil
+	case "power-print":
+		return PowerPrint(), nil
+	case "previous-track":
+		return PreviousTrack(), nil
+	case "previous-track-print":
+		return PreviousTrackPrint(), nil
+	case "printer":
+		return Printer(), nil
+	case "printer-print":
+		return PrinterPrint(), nil
+	case "qr-code":
+		return QrCode(), nil
+	case "qr-code-print":
+		return QrCodePrint(), nil
+	case "question":
+		return Question(), nil
+	case "question-circle":
+		return QuestionCircle(), nil
+	case "question-circle-print":
+		return QuestionCirclePrint(), nil
+	case "question-filled":
+		return QuestionFilled(), nil
+	case "question-print":
+		return QuestionPrint(), nil
+	case "radio":
+		return Radio(), nil
+	case "radio-print":
+		return RadioPrint(), nil
+	case "refresh":
+		return Refresh(), nil
+	case "refresh-print":
+		return RefreshPrint(), nil
+	case "reload":
+		return Reload(), nil
+	case "reload-print":
+		return ReloadPrint(), nil
+	case "repeat":
+		return Repeat(), nil
+	case "repeat-print":
+		return RepeatPrint(), nil
+	case "rewind":
+		return Rewind(), nil
+	case "rewind-print":
+		return RewindPrint(), nil
+	case "rewind-time":
+		return RewindTime(), nil
+	case "rewind-time-print":
+		return RewindTimePrint(), nil
+	case "scissors":
+		return Scissors(), nil
+	case "scissors-print":
+		return ScissorsPrint(), nil
+	case "send":
+		return Send(), nil
+	case "send-print":
+		return SendPrint(), nil
+	case "share-android":
+		return ShareAndroid(), nil
+	case "share-android-print":
+		return ShareAndroidPrint(), nil
+	case "share-ios":
+		return ShareIos(), nil
+	case "share-ios-print":
+		return ShareIosPrint(), nil
+	case "shuffle":
+		return Shuffle(), nil
+	case "shuffle-print":
+		return ShufflePrint(), nil
+	case "sliders":
+		return Sliders(), nil
+	case "sliders-print":
+		return SlidersPrint(), nil
+	case "smartphone":
+		return Smartphone(), nil
+	case "smartphone-cutout":
+		return SmartphoneCutout(), nil
+	case "smartphone-cutout-print":
+		return SmartphoneCutoutPrint(), nil
+	case "smartphone-notch":
+		return SmartphoneNotch(), nil
+	case "smartphone-notch-print":
+		return SmartphoneNotchPrint(), nil
+	case "smartphone-print":
+		return SmartphonePrint(), nil
+	case "smartphone2":
+		return SmartphoneTwo(), nil
+	case "smartphone2-print":
+		return SmartphoneTwoPrint(), nil
+	case "soft-drink":
+		return SoftDrink(), nil
+	case "soft-drink-print":
+		return SoftDrinkPrint(), nil
+	case "sort":
+		return Sort(), nil
+	case "sort-print":
+		return SortPrint(), nil
+	case "speaker-high":
+		return SpeakerHigh(), nil
+	case "speaker-high-print":
+		return SpeakerHighPrint(), nil
+	case "speaker-low":
+		return SpeakerLow(), nil
+	case "speaker-low-print":
+		return SpeakerLowPrint(), nil
+	case "speaker-off":
+		return SpeakerOff(), nil
+	case "speaker-off-print":
+		return SpeakerOffPrint(), nil
+	case "square":
+		return Square(), nil
+	case "square-filled":
+		return SquareFilled(), nil
+	case "square-print":
+		return SquarePrint(), nil
+	case "star":
+		return Star(), nil
+	case "star-filled":
+		return StarFilled(), nil
+	case "star-print":
+		return StarPrint(), nil
+	case "stars":
+		return Stars(), nil
+	case "stars-print":
+		return StarsPrint(), nil
+	case "stopwatch":
+		return Stopwatch(), nil
+	case "stopwatch-print":
+		return StopwatchPrint(), nil
+	case "studio-backdrop":
+		return StudioBackdrop(), nil
+	case "studio-backdrop-print":
+		return StudioBackdropPrint(), nil
+	case "studio-light-front":
+		return StudioLightFront(), nil
+	case "studio-light-front-print":
+		return StudioLightFrontPrint(), nil
+	case "studio-light-side":
+		return StudioLightSide(), nil
+	case "studio-light-side-print":
+		return StudioLightSidePrint(), nil
+	case "sun":
+		return Sun(), nil
+	case "sun-filled":
+		return SunFilled(), nil
+	case "sun-print":
+		return SunPrint(), nil
+	case "syringe":
+		return Syringe(), nil
+	case "syringe-print":
+		return SyringePrint(), nil
+	case "t-shirt":
+		return TShirt(), nil
+	case "t-shirt-print":
+		return TShirtPrint(), nil
+	case "taxi":
+		return Taxi(), nil
+	case "taxi-print":
+		return TaxiPrint(), nil
+	case "television":
+		return Television(), nil
+	case "television-print":
+		return TelevisionPrint(), nil
+	case "text-bubble":
+		return TextBubble(), nil
+	case "text-bubble-print":
+		return TextBubblePrint(), nil
+	case "text-bubbles":
+		return TextBubbles(), nil
+	case "text-bubbles-print":
+		return TextBubblesPrint(), nil
+	case "thumbs-down":
+		return ThumbsDown(), nil
+	case "thumbs-down-print":
+		return ThumbsDownPrint(), nil
+	case "thumbs-up":
+		return ThumbsUp(), nil
+	case "thumbs-up-print":
+		return ThumbsUpPrint(), nil
+	case "times":
+		return Times(), nil
+	case "times-print":
+		return TimesPrint(), nil
+	case "tool":
+		return Tool(), nil
+	case "tool-print":
+		return ToolPrint(), nil
+	case "train":
+		return Train(), nil
+	case "train-print":
+		return TrainPrint(), nil
+	case "trash":
+		return Trash(), nil
+	case "trash-print":
+		return TrashPrint(), nil
+	case "triangle-down":
+		return TriangleDown(), nil
+	case "triangle-down-filled":
+		return TriangleDownFilled(), nil
+	case "triangle-down-print":
+		return TriangleDownPrint(), nil
+	case "triangle-left":
+		return TriangleLeft(), nil
+	case "triangle-left-filled":
+		return TriangleLeftFilled(), nil
+	case "triangle-left-print":
+		return TriangleLeftPrint(), nil
+	case "triangle-right":
+		return TriangleRight(), nil
+	case "triangle-right-filled":
+		return TriangleRightFilled(), nil
+	case "triangle-right-print":
+		return TriangleRightPrint(), nil
+	case "triangle-up":
+		return TriangleUp(), nil
+	case "triangle-up-filled":
+		return TriangleUpFilled(), nil
+	case "triangle-up-print":
+		return TriangleUpPrint(), nil
+	case "trophy":
+		return Trophy(), nil
+	case "trophy-print":
+		return TrophyPrint(), nil
+	case "truck":
+		return Truck(), nil
+	case "truck-print":
+		return TruckPrint(), nil
+	case "umbrella":
+		return Umbrella(), nil
+	case "umbrella-print":
+		return UmbrellaPrint(), nil
+	case "watch":
+		return Watch(), nil
+	case "watch-print":
+		return WatchPrint(), nil
+	case "water-drop":
+		return WaterDrop(), nil
+	case "water-drop-print":
+		return WaterDropPrint(), nil
+	case "wifi":
+		return Wifi(), nil
+	case "wifi-print":
+		return WifiPrint(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in pepicons icon set", name)
+	}
 }

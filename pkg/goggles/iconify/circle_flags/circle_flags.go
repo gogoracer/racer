@@ -1,6 +1,9 @@
 package circle_flags
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	acInnerSVG                    = `<mask id="circleFlagsAc0"><circle cx="256" cy="256" r="256" fill="#fff"/></mask><g mask="url(#circleFlagsAc0)"><path fill="#0052b4" d="M256 0h256v512H0V256Z"/><path fill="#eee" d="M0 0v32l32 32L0 96v160h32l32-32l32 32h32v-83l83 83h45l-8-16l8-15v-14l-83-83h83V96l-32-32l32-32V0H96L64 32L32 0Z"/><path fill="#d80027" d="M32 0v32H0v64h32v160h64V96h160V32H96V0Zm96 128l128 128v-31l-97-97z"/><path fill="#6da544" d="m320 144l48-80l48 80z"/><circle cx="368" cy="144" r="48" fill="#acabb1"/><path fill="#338af3" d="M320 144v77c0 36 48 48 48 48s48-12 48-48v-77z"/><rect width="32" height="128" x="288" y="128" fill="#ff9811" rx="16" ry="16"/><rect width="32" height="128" x="416" y="128" fill="#ff9811" rx="16" ry="16"/><path fill="#6da544" d="m368 160l-48 67c2 11 9 19 16 26l32-45l32 45c8-7 14-15 16-26z"/></g>`
@@ -4997,4 +5000,779 @@ func Zw(children ...any) *engine.HTMLElement {
 		zwInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "ac":
+		return Ac(), nil
+	case "ad":
+		return Ad(), nil
+	case "ae":
+		return Ae(), nil
+	case "af":
+		return Af(), nil
+	case "afar":
+		return Afar(), nil
+	case "ag":
+		return Ag(), nil
+	case "ai":
+		return Ai(), nil
+	case "al":
+		return Al(), nil
+	case "am":
+		return Am(), nil
+	case "an":
+		return An(), nil
+	case "ao":
+		return Ao(), nil
+	case "aq":
+		return Aq(), nil
+	case "ar":
+		return Ar(), nil
+	case "as":
+		return As(), nil
+	case "at":
+		return At(), nil
+	case "au":
+		return Au(), nil
+	case "au-aboriginal":
+		return AuAboriginal(), nil
+	case "au-act":
+		return AuAct(), nil
+	case "au-nsw":
+		return AuNsw(), nil
+	case "au-nt":
+		return AuNt(), nil
+	case "au-qld":
+		return AuQld(), nil
+	case "au-sa":
+		return AuSa(), nil
+	case "au-tas":
+		return AuTas(), nil
+	case "au-vic":
+		return AuVic(), nil
+	case "au-wa":
+		return AuWa(), nil
+	case "aw":
+		return Aw(), nil
+	case "ax":
+		return Ax(), nil
+	case "az":
+		return Az(), nil
+	case "ba":
+		return Ba(), nil
+	case "bb":
+		return Bb(), nil
+	case "bd":
+		return Bd(), nil
+	case "be":
+		return Be(), nil
+	case "bf":
+		return Bf(), nil
+	case "bg":
+		return Bg(), nil
+	case "bh":
+		return Bh(), nil
+	case "bi":
+		return Bi(), nil
+	case "bj":
+		return Bj(), nil
+	case "bl":
+		return Bl(), nil
+	case "bm":
+		return Bm(), nil
+	case "bn":
+		return Bn(), nil
+	case "bo":
+		return Bo(), nil
+	case "bq":
+		return Bq(), nil
+	case "bq-bo":
+		return BqBo(), nil
+	case "bq-sa":
+		return BqSa(), nil
+	case "bq-se":
+		return BqSe(), nil
+	case "br":
+		return Br(), nil
+	case "bs":
+		return Bs(), nil
+	case "bt":
+		return Bt(), nil
+	case "bv":
+		return Bv(), nil
+	case "bw":
+		return Bw(), nil
+	case "by":
+		return By(), nil
+	case "bz":
+		return Bz(), nil
+	case "ca":
+		return Ca(), nil
+	case "ca-bc":
+		return CaBc(), nil
+	case "cc":
+		return Cc(), nil
+	case "cd":
+		return Cd(), nil
+	case "cf":
+		return Cf(), nil
+	case "cg":
+		return Cg(), nil
+	case "ch":
+		return Ch(), nil
+	case "ch-gr":
+		return ChGr(), nil
+	case "ci":
+		return Ci(), nil
+	case "ck":
+		return Ck(), nil
+	case "cl":
+		return Cl(), nil
+	case "cm":
+		return Cm(), nil
+	case "cn":
+		return Cn(), nil
+	case "cn-xj":
+		return CnXj(), nil
+	case "co":
+		return Co(), nil
+	case "cp":
+		return Cp(), nil
+	case "cq":
+		return Cq(), nil
+	case "cr":
+		return Cr(), nil
+	case "cu":
+		return Cu(), nil
+	case "cv":
+		return Cv(), nil
+	case "cw":
+		return Cw(), nil
+	case "cx":
+		return Cx(), nil
+	case "cy":
+		return Cy(), nil
+	case "cz":
+		return Cz(), nil
+	case "de":
+		return De(), nil
+	case "dg":
+		return Dg(), nil
+	case "dj":
+		return Dj(), nil
+	case "dk":
+		return Dk(), nil
+	case "dm":
+		return Dm(), nil
+	case "do":
+		return Do(), nil
+	case "dz":
+		return Dz(), nil
+	case "ea":
+		return Ea(), nil
+	case "earth":
+		return Earth(), nil
+	case "east-african-federation":
+		return EastAfricanFederation(), nil
+	case "easter-island":
+		return EasterIsland(), nil
+	case "ec":
+		return Ec(), nil
+	case "ec-w":
+		return EcW(), nil
+	case "ee":
+		return Ee(), nil
+	case "eg":
+		return Eg(), nil
+	case "eh":
+		return Eh(), nil
+	case "en":
+		return En(), nil
+	case "eo":
+		return Eo(), nil
+	case "er":
+		return Er(), nil
+	case "es":
+		return Es(), nil
+	case "es-ar":
+		return EsAr(), nil
+	case "es-ce":
+		return EsCe(), nil
+	case "es-cn":
+		return EsCn(), nil
+	case "es-ct":
+		return EsCt(), nil
+	case "es-ga":
+		return EsGa(), nil
+	case "es-ib":
+		return EsIb(), nil
+	case "es-ml":
+		return EsMl(), nil
+	case "es-pv":
+		return EsPv(), nil
+	case "es-variant":
+		return EsVariant(), nil
+	case "et":
+		return Et(), nil
+	case "et-or":
+		return EtOr(), nil
+	case "et-ti":
+		return EtTi(), nil
+	case "eu":
+		return Eu(), nil
+	case "european-union":
+		return EuropeanUnion(), nil
+	case "ewe":
+		return Ewe(), nil
+	case "fi":
+		return Fi(), nil
+	case "fj":
+		return Fj(), nil
+	case "fk":
+		return Fk(), nil
+	case "fm":
+		return Fm(), nil
+	case "fo":
+		return Fo(), nil
+	case "fr":
+		return Fr(), nil
+	case "fr-bre":
+		return FrBre(), nil
+	case "fr-cp":
+		return FrCp(), nil
+	case "fr-20r":
+		return FrTwentyR(), nil
+	case "fx":
+		return Fx(), nil
+	case "ga":
+		return Ga(), nil
+	case "gb":
+		return Gb(), nil
+	case "gb-con":
+		return GbCon(), nil
+	case "gb-eng":
+		return GbEng(), nil
+	case "gb-nir":
+		return GbNir(), nil
+	case "gb-ork":
+		return GbOrk(), nil
+	case "gb-sct":
+		return GbSct(), nil
+	case "gb-wls":
+		return GbWls(), nil
+	case "gd":
+		return Gd(), nil
+	case "ge":
+		return Ge(), nil
+	case "ge-ab":
+		return GeAb(), nil
+	case "gf":
+		return Gf(), nil
+	case "gg":
+		return Gg(), nil
+	case "gh":
+		return Gh(), nil
+	case "gi":
+		return Gi(), nil
+	case "gl":
+		return Gl(), nil
+	case "gm":
+		return Gm(), nil
+	case "gn":
+		return Gn(), nil
+	case "gp":
+		return Gp(), nil
+	case "gq":
+		return Gq(), nil
+	case "gr":
+		return Gr(), nil
+	case "gs":
+		return Gs(), nil
+	case "gt":
+		return Gt(), nil
+	case "gu":
+		return Gu(), nil
+	case "guarani":
+		return Guarani(), nil
+	case "gw":
+		return Gw(), nil
+	case "gy":
+		return Gy(), nil
+	case "hausa":
+		return Hausa(), nil
+	case "hk":
+		return Hk(), nil
+	case "hm":
+		return Hm(), nil
+	case "hmong":
+		return Hmong(), nil
+	case "hn":
+		return Hn(), nil
+	case "hr":
+		return Hr(), nil
+	case "ht":
+		return Ht(), nil
+	case "hu":
+		return Hu(), nil
+	case "ia":
+		return Ia(), nil
+	case "ic":
+		return Ic(), nil
+	case "id":
+		return Id(), nil
+	case "id-jb":
+		return IdJb(), nil
+	case "id-jt":
+		return IdJt(), nil
+	case "ie":
+		return Ie(), nil
+	case "il":
+		return Il(), nil
+	case "im":
+		return Im(), nil
+	case "in":
+		return In(), nil
+	case "in-as":
+		return InAs(), nil
+	case "in-gj":
+		return InGj(), nil
+	case "in-ka":
+		return InKa(), nil
+	case "in-or":
+		return InOr(), nil
+	case "in-tg":
+		return InTg(), nil
+	case "in-tn":
+		return InTn(), nil
+	case "io":
+		return Io(), nil
+	case "iq":
+		return Iq(), nil
+	case "ir":
+		return Ir(), nil
+	case "is":
+		return Is(), nil
+	case "it":
+		return It(), nil
+	case "it-88":
+		return ItEightyEight(), nil
+	case "it-82":
+		return ItEightyTwo(), nil
+	case "it-23":
+		return ItTwentyThree(), nil
+	case "je":
+		return Je(), nil
+	case "jm":
+		return Jm(), nil
+	case "jo":
+		return Jo(), nil
+	case "jp":
+		return Jp(), nil
+	case "kanuri":
+		return Kanuri(), nil
+	case "ke":
+		return Ke(), nil
+	case "kg":
+		return Kg(), nil
+	case "kh":
+		return Kh(), nil
+	case "ki":
+		return Ki(), nil
+	case "kikuyu":
+		return Kikuyu(), nil
+	case "klingon":
+		return Klingon(), nil
+	case "km":
+		return Km(), nil
+	case "kn":
+		return Kn(), nil
+	case "kongo":
+		return Kongo(), nil
+	case "kp":
+		return Kp(), nil
+	case "kr":
+		return Kr(), nil
+	case "kurdistan":
+		return Kurdistan(), nil
+	case "kw":
+		return Kw(), nil
+	case "ky":
+		return Ky(), nil
+	case "kz":
+		return Kz(), nil
+	case "la":
+		return La(), nil
+	case "lb":
+		return Lb(), nil
+	case "lc":
+		return Lc(), nil
+	case "li":
+		return Li(), nil
+	case "lk":
+		return Lk(), nil
+	case "lr":
+		return Lr(), nil
+	case "ls":
+		return Ls(), nil
+	case "lt":
+		return Lt(), nil
+	case "lu":
+		return Lu(), nil
+	case "lv":
+		return Lv(), nil
+	case "ly":
+		return Ly(), nil
+	case "ma":
+		return Ma(), nil
+	case "malayali":
+		return Malayali(), nil
+	case "manipur":
+		return Manipur(), nil
+	case "maori":
+		return Maori(), nil
+	case "mc":
+		return Mc(), nil
+	case "md":
+		return Md(), nil
+	case "me":
+		return Me(), nil
+	case "mf":
+		return Mf(), nil
+	case "mg":
+		return Mg(), nil
+	case "mh":
+		return Mh(), nil
+	case "mizoram":
+		return Mizoram(), nil
+	case "mk":
+		return Mk(), nil
+	case "ml":
+		return Ml(), nil
+	case "mm":
+		return Mm(), nil
+	case "mn":
+		return Mn(), nil
+	case "mo":
+		return Mo(), nil
+	case "mp":
+		return Mp(), nil
+	case "mq":
+		return Mq(), nil
+	case "mr":
+		return Mr(), nil
+	case "ms":
+		return Ms(), nil
+	case "mt":
+		return Mt(), nil
+	case "mu":
+		return Mu(), nil
+	case "mv":
+		return Mv(), nil
+	case "mw":
+		return Mw(), nil
+	case "mx":
+		return Mx(), nil
+	case "my":
+		return My(), nil
+	case "mz":
+		return Mz(), nil
+	case "na":
+		return Na(), nil
+	case "nato":
+		return Nato(), nil
+	case "nc":
+		return Nc(), nil
+	case "ne":
+		return Ne(), nil
+	case "nf":
+		return Nf(), nil
+	case "ng":
+		return Ng(), nil
+	case "ni":
+		return Ni(), nil
+	case "nl":
+		return Nl(), nil
+	case "nl-fr":
+		return NlFr(), nil
+	case "no":
+		return No(), nil
+	case "northern-cyprus":
+		return NorthernCyprus(), nil
+	case "np":
+		return Np(), nil
+	case "nr":
+		return Nr(), nil
+	case "nu":
+		return Nu(), nil
+	case "nz":
+		return Nz(), nil
+	case "occitania":
+		return Occitania(), nil
+	case "olympics":
+		return Olympics(), nil
+	case "om":
+		return Om(), nil
+	case "otomi":
+		return Otomi(), nil
+	case "pa":
+		return Pa(), nil
+	case "pe":
+		return Pe(), nil
+	case "pf":
+		return Pf(), nil
+	case "pg":
+		return Pg(), nil
+	case "ph":
+		return Ph(), nil
+	case "pk":
+		return Pk(), nil
+	case "pk-jk":
+		return PkJk(), nil
+	case "pk-sd":
+		return PkSd(), nil
+	case "pl":
+		return Pl(), nil
+	case "pm":
+		return Pm(), nil
+	case "pn":
+		return Pn(), nil
+	case "pr":
+		return Pr(), nil
+	case "ps":
+		return Ps(), nil
+	case "pt":
+		return Pt(), nil
+	case "pt-30":
+		return PtThirty(), nil
+	case "pt-20":
+		return PtTwenty(), nil
+	case "pw":
+		return Pw(), nil
+	case "py":
+		return Py(), nil
+	case "qa":
+		return Qa(), nil
+	case "quechua":
+		return Quechua(), nil
+	case "re":
+		return Re(), nil
+	case "ro":
+		return Ro(), nil
+	case "rs":
+		return Rs(), nil
+	case "ru":
+		return Ru(), nil
+	case "ru-ba":
+		return RuBa(), nil
+	case "ru-ce":
+		return RuCe(), nil
+	case "ru-cu":
+		return RuCu(), nil
+	case "ru-da":
+		return RuDa(), nil
+	case "ru-ko":
+		return RuKo(), nil
+	case "ru-ta":
+		return RuTa(), nil
+	case "ru-ud":
+		return RuUd(), nil
+	case "rw":
+		return Rw(), nil
+	case "sa":
+		return Sa(), nil
+	case "sami":
+		return Sami(), nil
+	case "sb":
+		return Sb(), nil
+	case "sc":
+		return Sc(), nil
+	case "sd":
+		return Sd(), nil
+	case "se":
+		return Se(), nil
+	case "sg":
+		return Sg(), nil
+	case "sh":
+		return Sh(), nil
+	case "sh-ac":
+		return ShAc(), nil
+	case "sh-hl":
+		return ShHl(), nil
+	case "sh-ta":
+		return ShTa(), nil
+	case "si":
+		return Si(), nil
+	case "sj":
+		return Sj(), nil
+	case "sk":
+		return Sk(), nil
+	case "sl":
+		return Sl(), nil
+	case "sm":
+		return Sm(), nil
+	case "sn":
+		return Sn(), nil
+	case "so":
+		return So(), nil
+	case "somaliland":
+		return Somaliland(), nil
+	case "south-ossetia":
+		return SouthOssetia(), nil
+	case "soviet-union":
+		return SovietUnion(), nil
+	case "sr":
+		return Sr(), nil
+	case "ss":
+		return Ss(), nil
+	case "st":
+		return St(), nil
+	case "su":
+		return Su(), nil
+	case "sv":
+		return Sv(), nil
+	case "sx":
+		return Sx(), nil
+	case "sy":
+		return Sy(), nil
+	case "sz":
+		return Sz(), nil
+	case "ta":
+		return Ta(), nil
+	case "tc":
+		return Tc(), nil
+	case "td":
+		return Td(), nil
+	case "tf":
+		return Tf(), nil
+	case "tg":
+		return Tg(), nil
+	case "th":
+		return Th(), nil
+	case "tibet":
+		return Tibet(), nil
+	case "tj":
+		return Tj(), nil
+	case "tk":
+		return Tk(), nil
+	case "tl":
+		return Tl(), nil
+	case "tm":
+		return Tm(), nil
+	case "tn":
+		return Tn(), nil
+	case "to":
+		return To(), nil
+	case "torres-strait-islands":
+		return TorresStraitIslands(), nil
+	case "tr":
+		return Tr(), nil
+	case "transnistria":
+		return Transnistria(), nil
+	case "tt":
+		return Tt(), nil
+	case "tv":
+		return Tv(), nil
+	case "tw":
+		return Tw(), nil
+	case "tz":
+		return Tz(), nil
+	case "ua":
+		return Ua(), nil
+	case "ug":
+		return Ug(), nil
+	case "uk":
+		return Uk(), nil
+	case "um":
+		return Um(), nil
+	case "un":
+		return Un(), nil
+	case "united-nations":
+		return UnitedNations(), nil
+	case "us":
+		return Us(), nil
+	case "us-ak":
+		return UsAk(), nil
+	case "us-al":
+		return UsAl(), nil
+	case "us-ar":
+		return UsAr(), nil
+	case "us-az":
+		return UsAz(), nil
+	case "us-ca":
+		return UsCa(), nil
+	case "us-co":
+		return UsCo(), nil
+	case "us-dc":
+		return UsDc(), nil
+	case "us-fl":
+		return UsFl(), nil
+	case "us-ga":
+		return UsGa(), nil
+	case "us-hi":
+		return UsHi(), nil
+	case "us-in":
+		return UsIn(), nil
+	case "us-mo":
+		return UsMo(), nil
+	case "us-ms":
+		return UsMs(), nil
+	case "us-nc":
+		return UsNc(), nil
+	case "us-nm":
+		return UsNm(), nil
+	case "us-ri":
+		return UsRi(), nil
+	case "us-tn":
+		return UsTn(), nil
+	case "us-tx":
+		return UsTx(), nil
+	case "uy":
+		return Uy(), nil
+	case "uz":
+		return Uz(), nil
+	case "va":
+		return Va(), nil
+	case "vc":
+		return Vc(), nil
+	case "ve":
+		return Ve(), nil
+	case "vg":
+		return Vg(), nil
+	case "vi":
+		return Vi(), nil
+	case "vn":
+		return Vn(), nil
+	case "vo":
+		return Vo(), nil
+	case "vu":
+		return Vu(), nil
+	case "wf":
+		return Wf(), nil
+	case "wiphala":
+		return Wiphala(), nil
+	case "ws":
+		return Ws(), nil
+	case "xk":
+		return Xk(), nil
+	case "xx":
+		return Xx(), nil
+	case "ye":
+		return Ye(), nil
+	case "yi":
+		return Yi(), nil
+	case "yorubaland":
+		return Yorubaland(), nil
+	case "yt":
+		return Yt(), nil
+	case "za":
+		return Za(), nil
+	case "zm":
+		return Zm(), nil
+	case "zw":
+		return Zw(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in circle_flags icon set", name)
+	}
 }

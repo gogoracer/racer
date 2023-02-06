@@ -119,7 +119,10 @@ func (e *{%s elementName %}) {%s evt %}(fn engine.EventHandler) (*{%s elementNam
 {%- func GenerateIcon(pkg iconPackage) -%}
 package {%s pkg.Name %}
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+    "fmt"
+    "github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 {%- for _, namedIcon := range pkg.Icons -%}
@@ -148,7 +151,7 @@ func {%s namedIcon.Name %}(children ...any) *engine.HTMLElement {
 }
 {%- endfor -%}
 
-{% comment %} func ByName(name string) (engine.Element,error) {
+func ByName(name string) (*engine.HTMLElement,error) {
     switch name {
     {%- for _, namedIcon := range pkg.Icons -%}
     case "{%s namedIcon.OriginalName %}":
@@ -157,5 +160,5 @@ func {%s namedIcon.Name %}(children ...any) *engine.HTMLElement {
     default:
         return nil, fmt.Errorf("icon '%s' not found in {%s pkg.Name %} icon set", name)
     }
-} {% endcomment %}
+}
 {%- endfunc -%}

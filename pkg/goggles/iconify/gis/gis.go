@@ -1,6 +1,9 @@
 package gis
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	arrowInnerSVG                = `<path id="gisArrow0" fill="currentColor" fill-opacity="1" fill-rule="nonzero" stroke="none" stroke-dasharray="none" stroke-dashoffset="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-opacity="1" stroke-width="10" d="M17.09 1.853a4.999 4.999 0 0 0-5.276 5.596l7.557 81.087c.483 3.938 5.137 5.773 8.176 3.223l15.947-12.932l7.15 12.385c4.112 7.122 10.636 8.872 17.758 4.76s8.87-10.638 4.758-17.76l-7.125-12.34l18.896-7.244c3.728-1.357 4.467-6.306 1.3-8.693L19.784 2.847a4.995 4.995 0 0 0-2.695-.994Z" color="currentColor" color-interpolation="sRGB" color-rendering="auto" display="inline" vector-effect="none" visibility="visible"/>`
@@ -4477,4 +4480,699 @@ func ZoomOut(children ...any) *engine.HTMLElement {
 		zoomOutInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "arrow":
+		return Arrow(), nil
+	case "arrow-o":
+		return ArrowO(), nil
+	case "azimuth":
+		return Azimuth(), nil
+	case "bbox":
+		return Bbox(), nil
+	case "bbox-alt":
+		return BboxAlt(), nil
+	case "bicycle":
+		return Bicycle(), nil
+	case "bookmark-poi":
+		return BookmarkPoi(), nil
+	case "bookmark-poi-b":
+		return BookmarkPoiB(), nil
+	case "buffer":
+		return Buffer(), nil
+	case "bus-map":
+		return BusMap(), nil
+	case "cadastre-map":
+		return CadastreMap(), nil
+	case "car":
+		return Car(), nil
+	case "circle":
+		return Circle(), nil
+	case "circle-o":
+		return CircleO(), nil
+	case "color":
+		return Color(), nil
+	case "compare-map":
+		return CompareMap(), nil
+	case "compass":
+		return Compass(), nil
+	case "compass-alt":
+		return CompassAlt(), nil
+	case "compass-alt-o":
+		return CompassAltO(), nil
+	case "compass-needle":
+		return CompassNeedle(), nil
+	case "compass-rose":
+		return CompassRose(), nil
+	case "compass-rose-n":
+		return CompassRoseN(), nil
+	case "contour-map":
+		return ContourMap(), nil
+	case "convex-hull":
+		return ConvexHull(), nil
+	case "coord-grid":
+		return CoordGrid(), nil
+	case "coord-system":
+		return CoordSystem(), nil
+	case "coord-system-alt":
+		return CoordSystemAlt(), nil
+	case "coord-system-3d":
+		return CoordSystemThreeD(), nil
+	case "coord-system-3d-alt":
+		return CoordSystemThreeDAlt(), nil
+	case "copy-line":
+		return CopyLine(), nil
+	case "copy-point":
+		return CopyPoint(), nil
+	case "copy-poly":
+		return CopyPoly(), nil
+	case "cube-3d":
+		return CubeThreeD(), nil
+	case "difference":
+		return Difference(), nil
+	case "dilatation":
+		return Dilatation(), nil
+	case "direct":
+		return Direct(), nil
+	case "direction":
+		return Direction(), nil
+	case "directions":
+		return Directions(), nil
+	case "drone":
+		return Drone(), nil
+	case "earth":
+		return Earth(), nil
+	case "earth-america":
+		return EarthAmerica(), nil
+	case "earth-america-o":
+		return EarthAmericaO(), nil
+	case "earth-asia":
+		return EarthAsia(), nil
+	case "earth-asia-o":
+		return EarthAsiaO(), nil
+	case "earth-atlantic":
+		return EarthAtlantic(), nil
+	case "earth-atlantic-o":
+		return EarthAtlanticO(), nil
+	case "earth-australia":
+		return EarthAustralia(), nil
+	case "earth-australia-o":
+		return EarthAustraliaO(), nil
+	case "earth-euro-africa":
+		return EarthEuroAfrica(), nil
+	case "earth-euro-africa-o":
+		return EarthEuroAfricaO(), nil
+	case "earth-gear":
+		return EarthGear(), nil
+	case "earth-net":
+		return EarthNet(), nil
+	case "earth-net-o":
+		return EarthNetO(), nil
+	case "earth-network":
+		return EarthNetwork(), nil
+	case "earth-network-o":
+		return EarthNetworkO(), nil
+	case "earth-north":
+		return EarthNorth(), nil
+	case "earth-north-o":
+		return EarthNorthO(), nil
+	case "earth-o":
+		return EarthO(), nil
+	case "earth-pacific":
+		return EarthPacific(), nil
+	case "earth-pacific-o":
+		return EarthPacificO(), nil
+	case "earth-south":
+		return EarthSouth(), nil
+	case "earth-south-o":
+		return EarthSouthO(), nil
+	case "erosion":
+		return Erosion(), nil
+	case "esri-json-file":
+		return EsriJsonFile(), nil
+	case "extent":
+		return Extent(), nil
+	case "extent-alt":
+		return ExtentAlt(), nil
+	case "finish":
+		return Finish(), nil
+	case "flab-b-o":
+		return FlabBO(), nil
+	case "flag":
+		return Flag(), nil
+	case "flag-b":
+		return FlagB(), nil
+	case "flag-finish":
+		return FlagFinish(), nil
+	case "flag-finish-b-o":
+		return FlagFinishBO(), nil
+	case "flag-o":
+		return FlagO(), nil
+	case "flag-start":
+		return FlagStart(), nil
+	case "flag-start-b":
+		return FlagStartB(), nil
+	case "flag-start-b-o":
+		return FlagStartBO(), nil
+	case "flag-start-o":
+		return FlagStartO(), nil
+	case "flip-h":
+		return FlipH(), nil
+	case "flip-v":
+		return FlipV(), nil
+	case "flow-map":
+		return FlowMap(), nil
+	case "folder-globe":
+		return FolderGlobe(), nil
+	case "folder-globe-o":
+		return FolderGlobeO(), nil
+	case "folder-map":
+		return FolderMap(), nil
+	case "folder-maps":
+		return FolderMaps(), nil
+	case "folder-poi":
+		return FolderPoi(), nil
+	case "folder-poi-o":
+		return FolderPoiO(), nil
+	case "folder-pois":
+		return FolderPois(), nil
+	case "full-screen":
+		return FullScreen(), nil
+	case "geojson-file":
+		return GeojsonFile(), nil
+	case "globe":
+		return Globe(), nil
+	case "globe-alt":
+		return GlobeAlt(), nil
+	case "globe-alt-o":
+		return GlobeAltO(), nil
+	case "globe-earth":
+		return GlobeEarth(), nil
+	case "globe-earth-alt":
+		return GlobeEarthAlt(), nil
+	case "globe-favorite":
+		return GlobeFavorite(), nil
+	case "globe-gear":
+		return GlobeGear(), nil
+	case "globe-o":
+		return GlobeO(), nil
+	case "globe-options":
+		return GlobeOptions(), nil
+	case "globe-poi":
+		return GlobePoi(), nil
+	case "globe-share":
+		return GlobeShare(), nil
+	case "globe-shield":
+		return GlobeShield(), nil
+	case "globe-smiley":
+		return GlobeSmiley(), nil
+	case "globe-star":
+		return GlobeStar(), nil
+	case "globe-user":
+		return GlobeUser(), nil
+	case "globe-users":
+		return GlobeUsers(), nil
+	case "gnss":
+		return Gnss(), nil
+	case "gnss-antenna":
+		return GnssAntenna(), nil
+	case "gpx-file":
+		return GpxFile(), nil
+	case "grid":
+		return Grid(), nil
+	case "height-map":
+		return HeightMap(), nil
+	case "help-larrow":
+		return HelpLarrow(), nil
+	case "help-rarrow":
+		return HelpRarrow(), nil
+	case "hex-map":
+		return HexMap(), nil
+	case "hiker":
+		return Hiker(), nil
+	case "home":
+		return Home(), nil
+	case "hydro-map":
+		return HydroMap(), nil
+	case "intersection":
+		return Intersection(), nil
+	case "kml-file":
+		return KmlFile(), nil
+	case "landcover-map":
+		return LandcoverMap(), nil
+	case "layer":
+		return Layer(), nil
+	case "layer-add":
+		return LayerAdd(), nil
+	case "layer-add-o":
+		return LayerAddO(), nil
+	case "layer-alt":
+		return LayerAlt(), nil
+	case "layer-alt-add-o":
+		return LayerAltAddO(), nil
+	case "layer-alt-edit":
+		return LayerAltEdit(), nil
+	case "layer-alt-o":
+		return LayerAltO(), nil
+	case "layer-alt-poi":
+		return LayerAltPoi(), nil
+	case "layer-alt-rm-o":
+		return LayerAltRmO(), nil
+	case "layer-alt-x-o":
+		return LayerAltXO(), nil
+	case "layer-contour":
+		return LayerContour(), nil
+	case "layer-down":
+		return LayerDown(), nil
+	case "layer-download":
+		return LayerDownload(), nil
+	case "layer-edit":
+		return LayerEdit(), nil
+	case "layer-height":
+		return LayerHeight(), nil
+	case "layer-hydro":
+		return LayerHydro(), nil
+	case "layer-landcover":
+		return LayerLandcover(), nil
+	case "layer-o":
+		return LayerO(), nil
+	case "layer-poi":
+		return LayerPoi(), nil
+	case "layer-rm":
+		return LayerRm(), nil
+	case "layer-rm-o":
+		return LayerRmO(), nil
+	case "layer-road":
+		return LayerRoad(), nil
+	case "layer-stack":
+		return LayerStack(), nil
+	case "layer-stack-o":
+		return LayerStackO(), nil
+	case "layer-stat":
+		return LayerStat(), nil
+	case "layer-stat-alt":
+		return LayerStatAlt(), nil
+	case "layer-2-add-o":
+		return LayerTwoAddO(), nil
+	case "layer-2-rm-o":
+		return LayerTwoRmO(), nil
+	case "layer-up":
+		return LayerUp(), nil
+	case "layer-upload":
+		return LayerUpload(), nil
+	case "layers":
+		return Layers(), nil
+	case "layers-o":
+		return LayersO(), nil
+	case "layers-poi":
+		return LayersPoi(), nil
+	case "location":
+		return Location(), nil
+	case "location-arrow":
+		return LocationArrow(), nil
+	case "location-arrow-o":
+		return LocationArrowO(), nil
+	case "location-man":
+		return LocationMan(), nil
+	case "location-man-alt":
+		return LocationManAlt(), nil
+	case "location-on":
+		return LocationOn(), nil
+	case "location-poi":
+		return LocationPoi(), nil
+	case "location-poi-o":
+		return LocationPoiO(), nil
+	case "magnify-map":
+		return MagnifyMap(), nil
+	case "map":
+		return Map(), nil
+	case "map-add":
+		return MapAdd(), nil
+	case "map-book":
+		return MapBook(), nil
+	case "map-bookmark":
+		return MapBookmark(), nil
+	case "map-control":
+		return MapControl(), nil
+	case "map-edit":
+		return MapEdit(), nil
+	case "map-extent":
+		return MapExtent(), nil
+	case "map-favorite":
+		return MapFavorite(), nil
+	case "map-legend":
+		return MapLegend(), nil
+	case "map-legend-o":
+		return MapLegendO(), nil
+	case "map-lock":
+		return MapLock(), nil
+	case "map-o":
+		return MapO(), nil
+	case "map-options":
+		return MapOptions(), nil
+	case "map-options-alt":
+		return MapOptionsAlt(), nil
+	case "map-play":
+		return MapPlay(), nil
+	case "map-poi":
+		return MapPoi(), nil
+	case "map-print":
+		return MapPrint(), nil
+	case "map-rm":
+		return MapRm(), nil
+	case "map-route":
+		return MapRoute(), nil
+	case "map-search":
+		return MapSearch(), nil
+	case "map-send":
+		return MapSend(), nil
+	case "map-share":
+		return MapShare(), nil
+	case "map-share-alt":
+		return MapShareAlt(), nil
+	case "map-smiley":
+		return MapSmiley(), nil
+	case "map-star":
+		return MapStar(), nil
+	case "map-stat":
+		return MapStat(), nil
+	case "map-tag":
+		return MapTag(), nil
+	case "map-tags":
+		return MapTags(), nil
+	case "map-time":
+		return MapTime(), nil
+	case "map-unlock":
+		return MapUnlock(), nil
+	case "map-user":
+		return MapUser(), nil
+	case "map-users":
+		return MapUsers(), nil
+	case "measure":
+		return Measure(), nil
+	case "measure-area":
+		return MeasureArea(), nil
+	case "measure-area-alt":
+		return MeasureAreaAlt(), nil
+	case "measure-line":
+		return MeasureLine(), nil
+	case "modify-line":
+		return ModifyLine(), nil
+	case "modify-poly":
+		return ModifyPoly(), nil
+	case "modify-poly-o":
+		return ModifyPolyO(), nil
+	case "move":
+		return Move(), nil
+	case "move-alt":
+		return MoveAlt(), nil
+	case "multipoint":
+		return Multipoint(), nil
+	case "mvt":
+		return Mvt(), nil
+	case "network":
+		return Network(), nil
+	case "network-o":
+		return NetworkO(), nil
+	case "north-arrow":
+		return NorthArrow(), nil
+	case "north-arrow-n":
+		return NorthArrowN(), nil
+	case "offset":
+		return Offset(), nil
+	case "pedestrian":
+		return Pedestrian(), nil
+	case "phone-map":
+		return PhoneMap(), nil
+	case "phone-route":
+		return PhoneRoute(), nil
+	case "phone-route-alt":
+		return PhoneRouteAlt(), nil
+	case "phone-route-alt-r":
+		return PhoneRouteAltR(), nil
+	case "photogrammetry":
+		return Photogrammetry(), nil
+	case "pin":
+		return Pin(), nil
+	case "pin-earth":
+		return PinEarth(), nil
+	case "pirate-map":
+		return PirateMap(), nil
+	case "pirate-poi":
+		return PiratePoi(), nil
+	case "poi":
+		return Poi(), nil
+	case "poi-alt":
+		return PoiAlt(), nil
+	case "poi-alt-o":
+		return PoiAltO(), nil
+	case "poi-earth":
+		return PoiEarth(), nil
+	case "poi-favorite":
+		return PoiFavorite(), nil
+	case "poi-favorite-o":
+		return PoiFavoriteO(), nil
+	case "poi-home":
+		return PoiHome(), nil
+	case "poi-home-o":
+		return PoiHomeO(), nil
+	case "poi-info":
+		return PoiInfo(), nil
+	case "poi-info-o":
+		return PoiInfoO(), nil
+	case "poi-map":
+		return PoiMap(), nil
+	case "poi-map-o":
+		return PoiMapO(), nil
+	case "poi-o":
+		return PoiO(), nil
+	case "poi-slash":
+		return PoiSlash(), nil
+	case "poi-slash-o":
+		return PoiSlashO(), nil
+	case "point":
+		return Point(), nil
+	case "pois":
+		return Pois(), nil
+	case "pois-o":
+		return PoisO(), nil
+	case "polygon":
+		return Polygon(), nil
+	case "polygon-hole":
+		return PolygonHole(), nil
+	case "polygon-hole-o":
+		return PolygonHoleO(), nil
+	case "polygon-hole-pt":
+		return PolygonHolePt(), nil
+	case "polygon-o":
+		return PolygonO(), nil
+	case "polygon-pt":
+		return PolygonPt(), nil
+	case "polyline":
+		return Polyline(), nil
+	case "polyline-pt":
+		return PolylinePt(), nil
+	case "position":
+		return Position(), nil
+	case "position-man":
+		return PositionMan(), nil
+	case "position-o":
+		return PositionO(), nil
+	case "profile":
+		return Profile(), nil
+	case "profile-o":
+		return ProfileO(), nil
+	case "proj-point":
+		return ProjPoint(), nil
+	case "pushpin":
+		return Pushpin(), nil
+	case "rectangle":
+		return Rectangle(), nil
+	case "rectangle-o":
+		return RectangleO(), nil
+	case "rectangle-pt":
+		return RectanglePt(), nil
+	case "regular-shape":
+		return RegularShape(), nil
+	case "regular-shape-o":
+		return RegularShapeO(), nil
+	case "regular-shape-pt":
+		return RegularShapePt(), nil
+	case "revers":
+		return Revers(), nil
+	case "road-map":
+		return RoadMap(), nil
+	case "rotate":
+		return Rotate(), nil
+	case "route":
+		return Route(), nil
+	case "route-end":
+		return RouteEnd(), nil
+	case "route-start":
+		return RouteStart(), nil
+	case "satellite":
+		return Satellite(), nil
+	case "satellite-earth":
+		return SatelliteEarth(), nil
+	case "scale":
+		return Scale(), nil
+	case "scale-poly":
+		return ScalePoly(), nil
+	case "screen-dub":
+		return ScreenDub(), nil
+	case "screen-dub-o":
+		return ScreenDubO(), nil
+	case "screen-dub1":
+		return ScreenDubOne(), nil
+	case "screen-dub2":
+		return ScreenDubTwo(), nil
+	case "screen-mag":
+		return ScreenMag(), nil
+	case "screen-mag-alt":
+		return ScreenMagAlt(), nil
+	case "screen-mag-o":
+		return ScreenMagO(), nil
+	case "screen-split-h":
+		return ScreenSplitH(), nil
+	case "screen-split-v":
+		return ScreenSplitV(), nil
+	case "search-address":
+		return SearchAddress(), nil
+	case "search-attribtues":
+		return SearchAttribtues(), nil
+	case "search-coord":
+		return SearchCoord(), nil
+	case "search-country":
+		return SearchCountry(), nil
+	case "search-data":
+		return SearchData(), nil
+	case "search-feature":
+		return SearchFeature(), nil
+	case "search-globe":
+		return SearchGlobe(), nil
+	case "search-globe-alt":
+		return SearchGlobeAlt(), nil
+	case "search-home":
+		return SearchHome(), nil
+	case "search-layer":
+		return SearchLayer(), nil
+	case "search-map":
+		return SearchMap(), nil
+	case "search-poi":
+		return SearchPoi(), nil
+	case "search-propertie":
+		return SearchPropertie(), nil
+	case "select-extent":
+		return SelectExtent(), nil
+	case "shape-file":
+		return ShapeFile(), nil
+	case "signpost":
+		return Signpost(), nil
+	case "simplify":
+		return Simplify(), nil
+	case "skeletonize":
+		return Skeletonize(), nil
+	case "snap":
+		return Snap(), nil
+	case "snap-ortho":
+		return SnapOrtho(), nil
+	case "split":
+		return Split(), nil
+	case "split-line":
+		return SplitLine(), nil
+	case "split-polygon":
+		return SplitPolygon(), nil
+	case "square":
+		return Square(), nil
+	case "square-o":
+		return SquareO(), nil
+	case "square-pt":
+		return SquarePt(), nil
+	case "start":
+		return Start(), nil
+	case "start-o":
+		return StartO(), nil
+	case "statistic-map":
+		return StatisticMap(), nil
+	case "step":
+		return Step(), nil
+	case "step-o":
+		return StepO(), nil
+	case "story-map":
+		return StoryMap(), nil
+	case "story-map-o":
+		return StoryMapO(), nil
+	case "story-maps":
+		return StoryMaps(), nil
+	case "swipe-map-h":
+		return SwipeMapH(), nil
+	case "swipe-map-v":
+		return SwipeMapV(), nil
+	case "sym-difference":
+		return SymDifference(), nil
+	case "tacheometer":
+		return Tacheometer(), nil
+	case "tag":
+		return Tag(), nil
+	case "tag-o":
+		return TagO(), nil
+	case "tags":
+		return Tags(), nil
+	case "tags-o":
+		return TagsO(), nil
+	case "theodolite":
+		return Theodolite(), nil
+	case "360":
+		return ThreeHundredSixty(), nil
+	case "time-map":
+		return TimeMap(), nil
+	case "timer":
+		return Timer(), nil
+	case "topography":
+		return Topography(), nil
+	case "topojson-file":
+		return TopojsonFile(), nil
+	case "translate":
+		return Translate(), nil
+	case "translate-x":
+		return TranslateX(), nil
+	case "translate-y":
+		return TranslateY(), nil
+	case "triangle-map":
+		return TriangleMap(), nil
+	case "union":
+		return Union(), nil
+	case "voronoi-map":
+		return VoronoiMap(), nil
+	case "weather-map":
+		return WeatherMap(), nil
+	case "wfs":
+		return Wfs(), nil
+	case "wfs-t":
+		return WfsT(), nil
+	case "wms":
+		return Wms(), nil
+	case "wmts":
+		return Wmts(), nil
+	case "world-folder":
+		return WorldFolder(), nil
+	case "world-folder-o":
+		return WorldFolderO(), nil
+	case "world-map":
+		return WorldMap(), nil
+	case "world-map-alt":
+		return WorldMapAlt(), nil
+	case "world-map-alt-o":
+		return WorldMapAltO(), nil
+	case "xyz":
+		return Xyz(), nil
+	case "zoom-in":
+		return ZoomIn(), nil
+	case "zoom-out":
+		return ZoomOut(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in gis icon set", name)
+	}
 }

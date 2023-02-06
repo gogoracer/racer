@@ -1,6 +1,9 @@
 package bytesize
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	activityInnerSVG           = `<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16h7l3 13l4-26l3 13h7"/>`
@@ -1331,4 +1334,215 @@ func ZoomReset(children ...any) *engine.HTMLElement {
 		zoomResetInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "activity":
+		return Activity(), nil
+	case "alert":
+		return Alert(), nil
+	case "archive":
+		return Archive(), nil
+	case "arrow-bottom":
+		return ArrowBottom(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrow-top":
+		return ArrowTop(), nil
+	case "backwards":
+		return Backwards(), nil
+	case "bag":
+		return Bag(), nil
+	case "ban":
+		return Ban(), nil
+	case "bell":
+		return Bell(), nil
+	case "book":
+		return Book(), nil
+	case "bookmark":
+		return Bookmark(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "camera":
+		return Camera(), nil
+	case "caret-bottom":
+		return CaretBottom(), nil
+	case "caret-left":
+		return CaretLeft(), nil
+	case "caret-right":
+		return CaretRight(), nil
+	case "caret-top":
+		return CaretTop(), nil
+	case "cart":
+		return Cart(), nil
+	case "checkmark":
+		return Checkmark(), nil
+	case "chevron-bottom":
+		return ChevronBottom(), nil
+	case "chevron-left":
+		return ChevronLeft(), nil
+	case "chevron-right":
+		return ChevronRight(), nil
+	case "chevron-top":
+		return ChevronTop(), nil
+	case "clipboard":
+		return Clipboard(), nil
+	case "clock":
+		return Clock(), nil
+	case "close":
+		return Close(), nil
+	case "code":
+		return Code(), nil
+	case "compose":
+		return Compose(), nil
+	case "creditcard":
+		return Creditcard(), nil
+	case "desktop":
+		return Desktop(), nil
+	case "download":
+		return Download(), nil
+	case "edit":
+		return Edit(), nil
+	case "eject":
+		return Eject(), nil
+	case "ellipsis-horizontal":
+		return EllipsisHorizontal(), nil
+	case "ellipsis-vertical":
+		return EllipsisVertical(), nil
+	case "end":
+		return End(), nil
+	case "export":
+		return Export(), nil
+	case "external":
+		return External(), nil
+	case "eye":
+		return Eye(), nil
+	case "feed":
+		return Feed(), nil
+	case "file":
+		return File(), nil
+	case "filter":
+		return Filter(), nil
+	case "fire":
+		return Fire(), nil
+	case "flag":
+		return Flag(), nil
+	case "folder":
+		return Folder(), nil
+	case "folder-open":
+		return FolderOpen(), nil
+	case "forwards":
+		return Forwards(), nil
+	case "fullscreen":
+		return Fullscreen(), nil
+	case "fullscreen-exit":
+		return FullscreenExit(), nil
+	case "gift":
+		return Gift(), nil
+	case "github":
+		return Github(), nil
+	case "heart":
+		return Heart(), nil
+	case "home":
+		return Home(), nil
+	case "import":
+		return Import(), nil
+	case "inbox":
+		return Inbox(), nil
+	case "info":
+		return Info(), nil
+	case "lightning":
+		return Lightning(), nil
+	case "link":
+		return Link(), nil
+	case "location":
+		return Location(), nil
+	case "lock":
+		return Lock(), nil
+	case "mail":
+		return Mail(), nil
+	case "menu":
+		return Menu(), nil
+	case "message":
+		return Message(), nil
+	case "microphone":
+		return Microphone(), nil
+	case "minus":
+		return Minus(), nil
+	case "mobile":
+		return Mobile(), nil
+	case "moon":
+		return Moon(), nil
+	case "move":
+		return Move(), nil
+	case "music":
+		return Music(), nil
+	case "mute":
+		return Mute(), nil
+	case "options":
+		return Options(), nil
+	case "paperclip":
+		return Paperclip(), nil
+	case "pause":
+		return Pause(), nil
+	case "photo":
+		return Photo(), nil
+	case "play":
+		return Play(), nil
+	case "plus":
+		return Plus(), nil
+	case "portfolio":
+		return Portfolio(), nil
+	case "print":
+		return Print(), nil
+	case "reload":
+		return Reload(), nil
+	case "reply":
+		return Reply(), nil
+	case "search":
+		return Search(), nil
+	case "send":
+		return Send(), nil
+	case "settings":
+		return Settings(), nil
+	case "sign-in":
+		return SignIn(), nil
+	case "sign-out":
+		return SignOut(), nil
+	case "star":
+		return Star(), nil
+	case "start":
+		return Start(), nil
+	case "tag":
+		return Tag(), nil
+	case "telephone":
+		return Telephone(), nil
+	case "trash":
+		return Trash(), nil
+	case "twitter":
+		return Twitter(), nil
+	case "unlock":
+		return Unlock(), nil
+	case "upload":
+		return Upload(), nil
+	case "user":
+		return User(), nil
+	case "video":
+		return Video(), nil
+	case "volume":
+		return Volume(), nil
+	case "work":
+		return Work(), nil
+	case "zoom-in":
+		return ZoomIn(), nil
+	case "zoom-out":
+		return ZoomOut(), nil
+	case "zoom-reset":
+		return ZoomReset(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in bytesize icon set", name)
+	}
 }

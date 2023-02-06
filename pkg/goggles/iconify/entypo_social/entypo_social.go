@@ -1,6 +1,9 @@
 package entypo_social
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	basecampInnerSVG                = `<path fill="currentColor" d="M10 2C5.327 2 .7 8.481.7 14.422C.7 15.799 5.234 18 10 18s9.3-2.201 9.3-3.578C19.3 8.481 14.673 2 10 2zm.006 13.615c-5.198 0-6.673-2.068-6.673-2.722c0-1.287 2.13-4.485 2.906-4.485c.719 0 1.542 1.811 2.314 1.811c1.241 0 2.567-3.954 3.579-3.954s4.601 5.178 4.601 6.749c0 .271-1.084 2.601-6.727 2.601z"/>`
@@ -993,4 +996,163 @@ func YoutubeWithCircle(children ...any) *engine.HTMLElement {
 		youtubeWithCircleInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "basecamp":
+		return Basecamp(), nil
+	case "behance":
+		return Behance(), nil
+	case "creative-cloud":
+		return CreativeCloud(), nil
+	case "dribbble":
+		return Dribbble(), nil
+	case "dribbble-with-circle":
+		return DribbbleWithCircle(), nil
+	case "dropbox":
+		return Dropbox(), nil
+	case "evernote":
+		return Evernote(), nil
+	case "facebook":
+		return Facebook(), nil
+	case "facebook-with-circle":
+		return FacebookWithCircle(), nil
+	case "500px":
+		return FiveHundredPx(), nil
+	case "500px-with-circle":
+		return FiveHundredPxWithCircle(), nil
+	case "flattr":
+		return Flattr(), nil
+	case "flickr":
+		return Flickr(), nil
+	case "flickr-with-circle":
+		return FlickrWithCircle(), nil
+	case "foursquare":
+		return Foursquare(), nil
+	case "github":
+		return Github(), nil
+	case "github-with-circle":
+		return GithubWithCircle(), nil
+	case "google":
+		return Google(), nil
+	case "google-drive":
+		return GoogleDrive(), nil
+	case "google-hangouts":
+		return GoogleHangouts(), nil
+	case "google-with-circle":
+		return GoogleWithCircle(), nil
+	case "grooveshark":
+		return Grooveshark(), nil
+	case "icloud":
+		return Icloud(), nil
+	case "instagram":
+		return Instagram(), nil
+	case "instagram-with-circle":
+		return InstagramWithCircle(), nil
+	case "lastfm":
+		return Lastfm(), nil
+	case "lastfm-with-circle":
+		return LastfmWithCircle(), nil
+	case "linkedin":
+		return Linkedin(), nil
+	case "linkedin-with-circle":
+		return LinkedinWithCircle(), nil
+	case "medium":
+		return Medium(), nil
+	case "medium-with-circle":
+		return MediumWithCircle(), nil
+	case "mixi":
+		return Mixi(), nil
+	case "onedrive":
+		return Onedrive(), nil
+	case "paypal":
+		return Paypal(), nil
+	case "picasa":
+		return Picasa(), nil
+	case "pinterest":
+		return Pinterest(), nil
+	case "pinterest-with-circle":
+		return PinterestWithCircle(), nil
+	case "qq":
+		return Qq(), nil
+	case "qq-with-circle":
+		return QqWithCircle(), nil
+	case "raft":
+		return Raft(), nil
+	case "raft-with-circle":
+		return RaftWithCircle(), nil
+	case "rainbow":
+		return Rainbow(), nil
+	case "rdio":
+		return Rdio(), nil
+	case "rdio-with-circle":
+		return RdioWithCircle(), nil
+	case "renren":
+		return Renren(), nil
+	case "scribd":
+		return Scribd(), nil
+	case "sina-weibo":
+		return SinaWeibo(), nil
+	case "skype":
+		return Skype(), nil
+	case "skype-with-circle":
+		return SkypeWithCircle(), nil
+	case "slideshare":
+		return Slideshare(), nil
+	case "smashing":
+		return Smashing(), nil
+	case "soundcloud":
+		return Soundcloud(), nil
+	case "spotify":
+		return Spotify(), nil
+	case "spotify-with-circle":
+		return SpotifyWithCircle(), nil
+	case "stumbleupon":
+		return Stumbleupon(), nil
+	case "stumbleupon-with-circle":
+		return StumbleuponWithCircle(), nil
+	case "swarm":
+		return Swarm(), nil
+	case "tripadvisor":
+		return Tripadvisor(), nil
+	case "tumblr":
+		return Tumblr(), nil
+	case "tumblr-with-circle":
+		return TumblrWithCircle(), nil
+	case "twitter":
+		return Twitter(), nil
+	case "twitter-with-circle":
+		return TwitterWithCircle(), nil
+	case "vimeo":
+		return Vimeo(), nil
+	case "vimeo-with-circle":
+		return VimeoWithCircle(), nil
+	case "vine":
+		return Vine(), nil
+	case "vine-with-circle":
+		return VineWithCircle(), nil
+	case "vk":
+		return Vk(), nil
+	case "vk-alternitive":
+		return VkAlternitive(), nil
+	case "vk-with-circle":
+		return VkWithCircle(), nil
+	case "xing":
+		return Xing(), nil
+	case "xing-with-circle":
+		return XingWithCircle(), nil
+	case "yelp":
+		return Yelp(), nil
+	case "youko":
+		return Youko(), nil
+	case "youko-with-circle":
+		return YoukoWithCircle(), nil
+	case "youtube":
+		return Youtube(), nil
+	case "youtube-with-circle":
+		return YoutubeWithCircle(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in entypo_social icon set", name)
+	}
 }

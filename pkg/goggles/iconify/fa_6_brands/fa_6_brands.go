@@ -1,6 +1,9 @@
 package fa_6_brands
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	accessibleIconInnerSVG              = `<path fill="currentColor" d="M423.9 255.8L411 413.1c-3.3 40.7-63.9 35.1-60.6-4.9l10-122.5l-41.1 2.3c10.1 20.7 15.8 43.9 15.8 68.5c0 41.2-16.1 78.7-42.3 106.5l-39.3-39.3c57.9-63.7 13.1-167.2-74-167.2c-25.9 0-49.5 9.9-67.2 26L73 243.2c22-20.7 50.1-35.1 81.4-40.2l75.3-85.7l-42.6-24.8l-51.6 46c-30 26.8-70.6-18.5-40.5-45.4l68-60.7c9.8-8.8 24.1-10.2 35.5-3.6c0 0 139.3 80.9 139.5 81.1c16.2 10.1 20.7 36 6.1 52.6L285.7 229l106.1-5.9c18.5-1.1 33.6 14.4 32.1 32.7zm-64.9-154c28.1 0 50.9-22.8 50.9-50.9C409.9 22.8 387.1 0 359 0c-28.1 0-50.9 22.8-50.9 50.9c0 28.1 22.8 50.9 50.9 50.9zM179.6 456.5c-80.6 0-127.4-90.6-82.7-156.1l-39.7-39.7C36.4 287 24 320.3 24 356.4c0 130.7 150.7 201.4 251.4 122.5l-39.7-39.7c-16 10.9-35.3 17.3-56.1 17.3z"/>`
@@ -6050,4 +6053,941 @@ func Zhihu(children ...any) *engine.HTMLElement {
 		zhihuInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "accessible-icon":
+		return AccessibleIcon(), nil
+	case "accusoft":
+		return Accusoft(), nil
+	case "adn":
+		return Adn(), nil
+	case "adversal":
+		return Adversal(), nil
+	case "affiliatetheme":
+		return Affiliatetheme(), nil
+	case "airbnb":
+		return Airbnb(), nil
+	case "algolia":
+		return Algolia(), nil
+	case "alipay":
+		return Alipay(), nil
+	case "amazon":
+		return Amazon(), nil
+	case "amazon-pay":
+		return AmazonPay(), nil
+	case "amilia":
+		return Amilia(), nil
+	case "android":
+		return Android(), nil
+	case "angellist":
+		return Angellist(), nil
+	case "angrycreative":
+		return Angrycreative(), nil
+	case "angular":
+		return Angular(), nil
+	case "app-store":
+		return AppStore(), nil
+	case "app-store-ios":
+		return AppStoreIos(), nil
+	case "apper":
+		return Apper(), nil
+	case "apple":
+		return Apple(), nil
+	case "apple-pay":
+		return ApplePay(), nil
+	case "artstation":
+		return Artstation(), nil
+	case "asymmetrik":
+		return Asymmetrik(), nil
+	case "atlassian":
+		return Atlassian(), nil
+	case "audible":
+		return Audible(), nil
+	case "autoprefixer":
+		return Autoprefixer(), nil
+	case "avianex":
+		return Avianex(), nil
+	case "aviato":
+		return Aviato(), nil
+	case "aws":
+		return Aws(), nil
+	case "bandcamp":
+		return Bandcamp(), nil
+	case "battle-net":
+		return BattleNet(), nil
+	case "behance":
+		return Behance(), nil
+	case "bilibili":
+		return Bilibili(), nil
+	case "bimobject":
+		return Bimobject(), nil
+	case "bitbucket":
+		return Bitbucket(), nil
+	case "bitcoin":
+		return Bitcoin(), nil
+	case "bity":
+		return Bity(), nil
+	case "black-tie":
+		return BlackTie(), nil
+	case "blackberry":
+		return Blackberry(), nil
+	case "blogger":
+		return Blogger(), nil
+	case "blogger-b":
+		return BloggerB(), nil
+	case "bluetooth":
+		return Bluetooth(), nil
+	case "bluetooth-b":
+		return BluetoothB(), nil
+	case "bootstrap":
+		return Bootstrap(), nil
+	case "bots":
+		return Bots(), nil
+	case "btc":
+		return Btc(), nil
+	case "buffer":
+		return Buffer(), nil
+	case "buromobelexperte":
+		return Buromobelexperte(), nil
+	case "buy-n-large":
+		return BuyNLarge(), nil
+	case "buysellads":
+		return Buysellads(), nil
+	case "canadian-maple-leaf":
+		return CanadianMapleLeaf(), nil
+	case "cc-amazon-pay":
+		return CcAmazonPay(), nil
+	case "cc-amex":
+		return CcAmex(), nil
+	case "cc-apple-pay":
+		return CcApplePay(), nil
+	case "cc-diners-club":
+		return CcDinersClub(), nil
+	case "cc-discover":
+		return CcDiscover(), nil
+	case "cc-jcb":
+		return CcJcb(), nil
+	case "cc-mastercard":
+		return CcMastercard(), nil
+	case "cc-paypal":
+		return CcPaypal(), nil
+	case "cc-stripe":
+		return CcStripe(), nil
+	case "cc-visa":
+		return CcVisa(), nil
+	case "centercode":
+		return Centercode(), nil
+	case "centos":
+		return Centos(), nil
+	case "chrome":
+		return Chrome(), nil
+	case "chromecast":
+		return Chromecast(), nil
+	case "cloudflare":
+		return Cloudflare(), nil
+	case "cloudscale":
+		return Cloudscale(), nil
+	case "cloudsmith":
+		return Cloudsmith(), nil
+	case "cloudversify":
+		return Cloudversify(), nil
+	case "cmplid":
+		return Cmplid(), nil
+	case "codepen":
+		return Codepen(), nil
+	case "codiepie":
+		return Codiepie(), nil
+	case "confluence":
+		return Confluence(), nil
+	case "connectdevelop":
+		return Connectdevelop(), nil
+	case "contao":
+		return Contao(), nil
+	case "cotton-bureau":
+		return CottonBureau(), nil
+	case "cpanel":
+		return Cpanel(), nil
+	case "creative-commons":
+		return CreativeCommons(), nil
+	case "creative-commons-by":
+		return CreativeCommonsBy(), nil
+	case "creative-commons-nc":
+		return CreativeCommonsNc(), nil
+	case "creative-commons-nc-eu":
+		return CreativeCommonsNcEu(), nil
+	case "creative-commons-nc-jp":
+		return CreativeCommonsNcJp(), nil
+	case "creative-commons-nd":
+		return CreativeCommonsNd(), nil
+	case "creative-commons-pd":
+		return CreativeCommonsPd(), nil
+	case "creative-commons-pd-alt":
+		return CreativeCommonsPdAlt(), nil
+	case "creative-commons-remix":
+		return CreativeCommonsRemix(), nil
+	case "creative-commons-sa":
+		return CreativeCommonsSa(), nil
+	case "creative-commons-sampling":
+		return CreativeCommonsSampling(), nil
+	case "creative-commons-sampling-plus":
+		return CreativeCommonsSamplingPlus(), nil
+	case "creative-commons-share":
+		return CreativeCommonsShare(), nil
+	case "creative-commons-zero":
+		return CreativeCommonsZero(), nil
+	case "critical-role":
+		return CriticalRole(), nil
+	case "css3":
+		return CssThree(), nil
+	case "css3-alt":
+		return CssThreeAlt(), nil
+	case "cuttlefish":
+		return Cuttlefish(), nil
+	case "d-and-d":
+		return DAndD(), nil
+	case "d-and-d-beyond":
+		return DAndDBeyond(), nil
+	case "dailymotion":
+		return Dailymotion(), nil
+	case "dashcube":
+		return Dashcube(), nil
+	case "deezer":
+		return Deezer(), nil
+	case "delicious":
+		return Delicious(), nil
+	case "deploydog":
+		return Deploydog(), nil
+	case "deskpro":
+		return Deskpro(), nil
+	case "dev":
+		return Dev(), nil
+	case "deviantart":
+		return Deviantart(), nil
+	case "dhl":
+		return Dhl(), nil
+	case "diaspora":
+		return Diaspora(), nil
+	case "digg":
+		return Digg(), nil
+	case "digital-ocean":
+		return DigitalOcean(), nil
+	case "discord":
+		return Discord(), nil
+	case "discourse":
+		return Discourse(), nil
+	case "dochub":
+		return Dochub(), nil
+	case "docker":
+		return Docker(), nil
+	case "draft2digital":
+		return DraftTwoDigital(), nil
+	case "dribbble":
+		return Dribbble(), nil
+	case "dropbox":
+		return Dropbox(), nil
+	case "drupal":
+		return Drupal(), nil
+	case "dyalog":
+		return Dyalog(), nil
+	case "earlybirds":
+		return Earlybirds(), nil
+	case "ebay":
+		return Ebay(), nil
+	case "edge":
+		return Edge(), nil
+	case "edge-legacy":
+		return EdgeLegacy(), nil
+	case "elementor":
+		return Elementor(), nil
+	case "ello":
+		return Ello(), nil
+	case "ember":
+		return Ember(), nil
+	case "empire":
+		return Empire(), nil
+	case "envira":
+		return Envira(), nil
+	case "erlang":
+		return Erlang(), nil
+	case "ethereum":
+		return Ethereum(), nil
+	case "etsy":
+		return Etsy(), nil
+	case "evernote":
+		return Evernote(), nil
+	case "expeditedssl":
+		return Expeditedssl(), nil
+	case "facebook":
+		return Facebook(), nil
+	case "facebook-f":
+		return FacebookF(), nil
+	case "facebook-messenger":
+		return FacebookMessenger(), nil
+	case "fantasy-flight-games":
+		return FantasyFlightGames(), nil
+	case "fedex":
+		return Fedex(), nil
+	case "fedora":
+		return Fedora(), nil
+	case "figma":
+		return Figma(), nil
+	case "firefox":
+		return Firefox(), nil
+	case "firefox-browser":
+		return FirefoxBrowser(), nil
+	case "first-order":
+		return FirstOrder(), nil
+	case "first-order-alt":
+		return FirstOrderAlt(), nil
+	case "firstdraft":
+		return Firstdraft(), nil
+	case "500px":
+		return FiveHundredPx(), nil
+	case "flickr":
+		return Flickr(), nil
+	case "flipboard":
+		return Flipboard(), nil
+	case "fly":
+		return Fly(), nil
+	case "font-awesome":
+		return FontAwesome(), nil
+	case "fonticons":
+		return Fonticons(), nil
+	case "fonticons-fi":
+		return FonticonsFi(), nil
+	case "fort-awesome":
+		return FortAwesome(), nil
+	case "fort-awesome-alt":
+		return FortAwesomeAlt(), nil
+	case "42-group":
+		return FortyTwoGroup(), nil
+	case "forumbee":
+		return Forumbee(), nil
+	case "foursquare":
+		return Foursquare(), nil
+	case "free-code-camp":
+		return FreeCodeCamp(), nil
+	case "freebsd":
+		return Freebsd(), nil
+	case "fulcrum":
+		return Fulcrum(), nil
+	case "galactic-republic":
+		return GalacticRepublic(), nil
+	case "galactic-senate":
+		return GalacticSenate(), nil
+	case "get-pocket":
+		return GetPocket(), nil
+	case "gg":
+		return Gg(), nil
+	case "gg-circle":
+		return GgCircle(), nil
+	case "git":
+		return Git(), nil
+	case "git-alt":
+		return GitAlt(), nil
+	case "github":
+		return Github(), nil
+	case "github-alt":
+		return GithubAlt(), nil
+	case "gitkraken":
+		return Gitkraken(), nil
+	case "gitlab":
+		return Gitlab(), nil
+	case "gitter":
+		return Gitter(), nil
+	case "glide":
+		return Glide(), nil
+	case "glide-g":
+		return GlideG(), nil
+	case "gofore":
+		return Gofore(), nil
+	case "golang":
+		return Golang(), nil
+	case "goodreads":
+		return Goodreads(), nil
+	case "goodreads-g":
+		return GoodreadsG(), nil
+	case "google":
+		return Google(), nil
+	case "google-drive":
+		return GoogleDrive(), nil
+	case "google-pay":
+		return GooglePay(), nil
+	case "google-play":
+		return GooglePlay(), nil
+	case "google-plus":
+		return GooglePlus(), nil
+	case "google-plus-g":
+		return GooglePlusG(), nil
+	case "google-wallet":
+		return GoogleWallet(), nil
+	case "gratipay":
+		return Gratipay(), nil
+	case "grav":
+		return Grav(), nil
+	case "gripfire":
+		return Gripfire(), nil
+	case "grunt":
+		return Grunt(), nil
+	case "guilded":
+		return Guilded(), nil
+	case "gulp":
+		return Gulp(), nil
+	case "hacker-news":
+		return HackerNews(), nil
+	case "hackerrank":
+		return Hackerrank(), nil
+	case "hashnode":
+		return Hashnode(), nil
+	case "hips":
+		return Hips(), nil
+	case "hire-a-helper":
+		return HireAHelper(), nil
+	case "hive":
+		return Hive(), nil
+	case "hooli":
+		return Hooli(), nil
+	case "hornbill":
+		return Hornbill(), nil
+	case "hotjar":
+		return Hotjar(), nil
+	case "houzz":
+		return Houzz(), nil
+	case "html5":
+		return HtmlFive(), nil
+	case "hubspot":
+		return Hubspot(), nil
+	case "ideal":
+		return Ideal(), nil
+	case "imdb":
+		return Imdb(), nil
+	case "instagram":
+		return Instagram(), nil
+	case "instalod":
+		return Instalod(), nil
+	case "intercom":
+		return Intercom(), nil
+	case "internet-explorer":
+		return InternetExplorer(), nil
+	case "invision":
+		return Invision(), nil
+	case "ioxhost":
+		return Ioxhost(), nil
+	case "itch-io":
+		return ItchIo(), nil
+	case "itunes":
+		return Itunes(), nil
+	case "itunes-note":
+		return ItunesNote(), nil
+	case "java":
+		return Java(), nil
+	case "jedi-order":
+		return JediOrder(), nil
+	case "jenkins":
+		return Jenkins(), nil
+	case "jira":
+		return Jira(), nil
+	case "joget":
+		return Joget(), nil
+	case "joomla":
+		return Joomla(), nil
+	case "js":
+		return Js(), nil
+	case "jsfiddle":
+		return Jsfiddle(), nil
+	case "kaggle":
+		return Kaggle(), nil
+	case "keybase":
+		return Keybase(), nil
+	case "keycdn":
+		return Keycdn(), nil
+	case "kickstarter":
+		return Kickstarter(), nil
+	case "kickstarter-k":
+		return KickstarterK(), nil
+	case "korvue":
+		return Korvue(), nil
+	case "laravel":
+		return Laravel(), nil
+	case "lastfm":
+		return Lastfm(), nil
+	case "leanpub":
+		return Leanpub(), nil
+	case "less":
+		return Less(), nil
+	case "line":
+		return Line(), nil
+	case "linkedin":
+		return Linkedin(), nil
+	case "linkedin-in":
+		return LinkedinIn(), nil
+	case "linode":
+		return Linode(), nil
+	case "linux":
+		return Linux(), nil
+	case "lyft":
+		return Lyft(), nil
+	case "magento":
+		return Magento(), nil
+	case "mailchimp":
+		return Mailchimp(), nil
+	case "mandalorian":
+		return Mandalorian(), nil
+	case "markdown":
+		return Markdown(), nil
+	case "mastodon":
+		return Mastodon(), nil
+	case "maxcdn":
+		return Maxcdn(), nil
+	case "mdb":
+		return Mdb(), nil
+	case "medapps":
+		return Medapps(), nil
+	case "medium":
+		return Medium(), nil
+	case "medrt":
+		return Medrt(), nil
+	case "meetup":
+		return Meetup(), nil
+	case "megaport":
+		return Megaport(), nil
+	case "mendeley":
+		return Mendeley(), nil
+	case "meta":
+		return Meta(), nil
+	case "microblog":
+		return Microblog(), nil
+	case "microsoft":
+		return Microsoft(), nil
+	case "mix":
+		return Mix(), nil
+	case "mixcloud":
+		return Mixcloud(), nil
+	case "mixer":
+		return Mixer(), nil
+	case "mizuni":
+		return Mizuni(), nil
+	case "modx":
+		return Modx(), nil
+	case "monero":
+		return Monero(), nil
+	case "napster":
+		return Napster(), nil
+	case "neos":
+		return Neos(), nil
+	case "nfc-directional":
+		return NfcDirectional(), nil
+	case "nfc-symbol":
+		return NfcSymbol(), nil
+	case "nimblr":
+		return Nimblr(), nil
+	case "node":
+		return Node(), nil
+	case "node-js":
+		return NodeJs(), nil
+	case "npm":
+		return Npm(), nil
+	case "ns8":
+		return NsEight(), nil
+	case "nutritionix":
+		return Nutritionix(), nil
+	case "octopus-deploy":
+		return OctopusDeploy(), nil
+	case "odnoklassniki":
+		return Odnoklassniki(), nil
+	case "old-republic":
+		return OldRepublic(), nil
+	case "opencart":
+		return Opencart(), nil
+	case "openid":
+		return Openid(), nil
+	case "opera":
+		return Opera(), nil
+	case "optin-monster":
+		return OptinMonster(), nil
+	case "orcid":
+		return Orcid(), nil
+	case "osi":
+		return Osi(), nil
+	case "padlet":
+		return Padlet(), nil
+	case "page4":
+		return PageFour(), nil
+	case "pagelines":
+		return Pagelines(), nil
+	case "palfed":
+		return Palfed(), nil
+	case "patreon":
+		return Patreon(), nil
+	case "paypal":
+		return Paypal(), nil
+	case "perbyte":
+		return Perbyte(), nil
+	case "periscope":
+		return Periscope(), nil
+	case "phabricator":
+		return Phabricator(), nil
+	case "phoenix-framework":
+		return PhoenixFramework(), nil
+	case "phoenix-squadron":
+		return PhoenixSquadron(), nil
+	case "php":
+		return Php(), nil
+	case "pied-piper":
+		return PiedPiper(), nil
+	case "pied-piper-alt":
+		return PiedPiperAlt(), nil
+	case "pied-piper-hat":
+		return PiedPiperHat(), nil
+	case "pied-piper-pp":
+		return PiedPiperPp(), nil
+	case "pinterest":
+		return Pinterest(), nil
+	case "pinterest-p":
+		return PinterestP(), nil
+	case "pix":
+		return Pix(), nil
+	case "playstation":
+		return Playstation(), nil
+	case "product-hunt":
+		return ProductHunt(), nil
+	case "pushed":
+		return Pushed(), nil
+	case "python":
+		return Python(), nil
+	case "qq":
+		return Qq(), nil
+	case "quinscape":
+		return Quinscape(), nil
+	case "quora":
+		return Quora(), nil
+	case "r-project":
+		return RProject(), nil
+	case "raspberry-pi":
+		return RaspberryPi(), nil
+	case "ravelry":
+		return Ravelry(), nil
+	case "react":
+		return React(), nil
+	case "reacteurope":
+		return Reacteurope(), nil
+	case "readme":
+		return Readme(), nil
+	case "rebel":
+		return Rebel(), nil
+	case "red-river":
+		return RedRiver(), nil
+	case "reddit":
+		return Reddit(), nil
+	case "reddit-alien":
+		return RedditAlien(), nil
+	case "redhat":
+		return Redhat(), nil
+	case "renren":
+		return Renren(), nil
+	case "replyd":
+		return Replyd(), nil
+	case "researchgate":
+		return Researchgate(), nil
+	case "resolving":
+		return Resolving(), nil
+	case "rev":
+		return Rev(), nil
+	case "rocketchat":
+		return Rocketchat(), nil
+	case "rockrms":
+		return Rockrms(), nil
+	case "rust":
+		return Rust(), nil
+	case "safari":
+		return Safari(), nil
+	case "salesforce":
+		return Salesforce(), nil
+	case "sass":
+		return Sass(), nil
+	case "schlix":
+		return Schlix(), nil
+	case "screenpal":
+		return Screenpal(), nil
+	case "scribd":
+		return Scribd(), nil
+	case "searchengin":
+		return Searchengin(), nil
+	case "sellcast":
+		return Sellcast(), nil
+	case "sellsy":
+		return Sellsy(), nil
+	case "servicestack":
+		return Servicestack(), nil
+	case "shirtsinbulk":
+		return Shirtsinbulk(), nil
+	case "shopify":
+		return Shopify(), nil
+	case "shopware":
+		return Shopware(), nil
+	case "simplybuilt":
+		return Simplybuilt(), nil
+	case "sistrix":
+		return Sistrix(), nil
+	case "sith":
+		return Sith(), nil
+	case "sitrox":
+		return Sitrox(), nil
+	case "sketch":
+		return Sketch(), nil
+	case "skyatlas":
+		return Skyatlas(), nil
+	case "skype":
+		return Skype(), nil
+	case "slack":
+		return Slack(), nil
+	case "slideshare":
+		return Slideshare(), nil
+	case "snapchat":
+		return Snapchat(), nil
+	case "soundcloud":
+		return Soundcloud(), nil
+	case "sourcetree":
+		return Sourcetree(), nil
+	case "space-awesome":
+		return SpaceAwesome(), nil
+	case "speakap":
+		return Speakap(), nil
+	case "speaker-deck":
+		return SpeakerDeck(), nil
+	case "spotify":
+		return Spotify(), nil
+	case "square-behance":
+		return SquareBehance(), nil
+	case "square-dribbble":
+		return SquareDribbble(), nil
+	case "square-facebook":
+		return SquareFacebook(), nil
+	case "square-font-awesome":
+		return SquareFontAwesome(), nil
+	case "square-font-awesome-stroke":
+		return SquareFontAwesomeStroke(), nil
+	case "square-git":
+		return SquareGit(), nil
+	case "square-github":
+		return SquareGithub(), nil
+	case "square-gitlab":
+		return SquareGitlab(), nil
+	case "square-google-plus":
+		return SquareGooglePlus(), nil
+	case "square-hacker-news":
+		return SquareHackerNews(), nil
+	case "square-instagram":
+		return SquareInstagram(), nil
+	case "square-js":
+		return SquareJs(), nil
+	case "square-lastfm":
+		return SquareLastfm(), nil
+	case "square-odnoklassniki":
+		return SquareOdnoklassniki(), nil
+	case "square-pied-piper":
+		return SquarePiedPiper(), nil
+	case "square-pinterest":
+		return SquarePinterest(), nil
+	case "square-reddit":
+		return SquareReddit(), nil
+	case "square-snapchat":
+		return SquareSnapchat(), nil
+	case "square-steam":
+		return SquareSteam(), nil
+	case "square-tumblr":
+		return SquareTumblr(), nil
+	case "square-twitter":
+		return SquareTwitter(), nil
+	case "square-viadeo":
+		return SquareViadeo(), nil
+	case "square-vimeo":
+		return SquareVimeo(), nil
+	case "square-whatsapp":
+		return SquareWhatsapp(), nil
+	case "square-xing":
+		return SquareXing(), nil
+	case "square-youtube":
+		return SquareYoutube(), nil
+	case "squarespace":
+		return Squarespace(), nil
+	case "stack-exchange":
+		return StackExchange(), nil
+	case "stack-overflow":
+		return StackOverflow(), nil
+	case "stackpath":
+		return Stackpath(), nil
+	case "staylinked":
+		return Staylinked(), nil
+	case "steam":
+		return Steam(), nil
+	case "steam-symbol":
+		return SteamSymbol(), nil
+	case "sticker-mule":
+		return StickerMule(), nil
+	case "strava":
+		return Strava(), nil
+	case "stripe":
+		return Stripe(), nil
+	case "stripe-s":
+		return StripeS(), nil
+	case "studiovinari":
+		return Studiovinari(), nil
+	case "stumbleupon":
+		return Stumbleupon(), nil
+	case "stumbleupon-circle":
+		return StumbleuponCircle(), nil
+	case "superpowers":
+		return Superpowers(), nil
+	case "supple":
+		return Supple(), nil
+	case "suse":
+		return Suse(), nil
+	case "swift":
+		return Swift(), nil
+	case "symfony":
+		return Symfony(), nil
+	case "teamspeak":
+		return Teamspeak(), nil
+	case "telegram":
+		return Telegram(), nil
+	case "tencent-weibo":
+		return TencentWeibo(), nil
+	case "the-red-yeti":
+		return TheRedYeti(), nil
+	case "themeco":
+		return Themeco(), nil
+	case "themeisle":
+		return Themeisle(), nil
+	case "think-peaks":
+		return ThinkPeaks(), nil
+	case "tiktok":
+		return Tiktok(), nil
+	case "trade-federation":
+		return TradeFederation(), nil
+	case "trello":
+		return Trello(), nil
+	case "tumblr":
+		return Tumblr(), nil
+	case "twitch":
+		return Twitch(), nil
+	case "twitter":
+		return Twitter(), nil
+	case "typo3":
+		return TypoThree(), nil
+	case "uber":
+		return Uber(), nil
+	case "ubuntu":
+		return Ubuntu(), nil
+	case "uikit":
+		return Uikit(), nil
+	case "umbraco":
+		return Umbraco(), nil
+	case "uncharted":
+		return Uncharted(), nil
+	case "uniregistry":
+		return Uniregistry(), nil
+	case "unity":
+		return Unity(), nil
+	case "unsplash":
+		return Unsplash(), nil
+	case "untappd":
+		return Untappd(), nil
+	case "ups":
+		return Ups(), nil
+	case "usb":
+		return Usb(), nil
+	case "usps":
+		return Usps(), nil
+	case "ussunnah":
+		return Ussunnah(), nil
+	case "vaadin":
+		return Vaadin(), nil
+	case "viacoin":
+		return Viacoin(), nil
+	case "viadeo":
+		return Viadeo(), nil
+	case "viber":
+		return Viber(), nil
+	case "vimeo":
+		return Vimeo(), nil
+	case "vimeo-v":
+		return VimeoV(), nil
+	case "vine":
+		return Vine(), nil
+	case "vk":
+		return Vk(), nil
+	case "vnv":
+		return Vnv(), nil
+	case "vuejs":
+		return Vuejs(), nil
+	case "watchman-monitoring":
+		return WatchmanMonitoring(), nil
+	case "waze":
+		return Waze(), nil
+	case "weebly":
+		return Weebly(), nil
+	case "weibo":
+		return Weibo(), nil
+	case "weixin":
+		return Weixin(), nil
+	case "whatsapp":
+		return Whatsapp(), nil
+	case "whmcs":
+		return Whmcs(), nil
+	case "wikipedia-w":
+		return WikipediaW(), nil
+	case "windows":
+		return Windows(), nil
+	case "wirsindhandwerk":
+		return Wirsindhandwerk(), nil
+	case "wix":
+		return Wix(), nil
+	case "wizards-of-the-coast":
+		return WizardsOfTheCoast(), nil
+	case "wodu":
+		return Wodu(), nil
+	case "wolf-pack-battalion":
+		return WolfPackBattalion(), nil
+	case "wordpress":
+		return Wordpress(), nil
+	case "wordpress-simple":
+		return WordpressSimple(), nil
+	case "wpbeginner":
+		return Wpbeginner(), nil
+	case "wpexplorer":
+		return Wpexplorer(), nil
+	case "wpforms":
+		return Wpforms(), nil
+	case "wpressr":
+		return Wpressr(), nil
+	case "xbox":
+		return Xbox(), nil
+	case "xing":
+		return Xing(), nil
+	case "y-combinator":
+		return YCombinator(), nil
+	case "yahoo":
+		return Yahoo(), nil
+	case "yammer":
+		return Yammer(), nil
+	case "yandex":
+		return Yandex(), nil
+	case "yandex-international":
+		return YandexInternational(), nil
+	case "yarn":
+		return Yarn(), nil
+	case "yelp":
+		return Yelp(), nil
+	case "yoast":
+		return Yoast(), nil
+	case "youtube":
+		return Youtube(), nil
+	case "zhihu":
+		return Zhihu(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in fa_6_brands icon set", name)
+	}
 }

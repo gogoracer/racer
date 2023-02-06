@@ -1,6 +1,9 @@
 package gala
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	addInnerSVG             = `<g id="galaAdd0" fill="none" stroke="currentColor" stroke-dasharray="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="4" stroke-opacity="1" stroke-width="16"><circle id="galaAdd1" cx="128" cy="128" r="112"/><path id="galaAdd2" d="M 79.999992,128 H 176.0001"/><path id="galaAdd3" d="m 128.00004,79.99995 v 96.0001"/></g>`
@@ -668,4 +671,113 @@ func Window(children ...any) *engine.HTMLElement {
 		windowInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "add":
+		return Add(), nil
+	case "airplay":
+		return Airplay(), nil
+	case "apple":
+		return Apple(), nil
+	case "bag":
+		return Bag(), nil
+	case "bell":
+		return Bell(), nil
+	case "book":
+		return Book(), nil
+	case "brochure":
+		return Brochure(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "chart":
+		return Chart(), nil
+	case "chat":
+		return Chat(), nil
+	case "clock":
+		return Clock(), nil
+	case "copy":
+		return Copy(), nil
+	case "data":
+		return Data(), nil
+	case "display":
+		return Display(), nil
+	case "editor":
+		return Editor(), nil
+	case "file":
+		return File(), nil
+	case "file-code1":
+		return FileCodeOne(), nil
+	case "file-code2":
+		return FileCodeTwo(), nil
+	case "file-document":
+		return FileDocument(), nil
+	case "file-error":
+		return FileError(), nil
+	case "file-script":
+		return FileScript(), nil
+	case "file-spreadsheet":
+		return FileSpreadsheet(), nil
+	case "file-text":
+		return FileText(), nil
+	case "folder":
+		return Folder(), nil
+	case "globe":
+		return Globe(), nil
+	case "help":
+		return Help(), nil
+	case "image":
+		return Image(), nil
+	case "issue":
+		return Issue(), nil
+	case "layer":
+		return Layer(), nil
+	case "lock":
+		return Lock(), nil
+	case "mouse":
+		return Mouse(), nil
+	case "multi":
+		return Multi(), nil
+	case "orbit":
+		return Orbit(), nil
+	case "portrait1":
+		return PortraitOne(), nil
+	case "portrait2":
+		return PortraitTwo(), nil
+	case "radar":
+		return Radar(), nil
+	case "remove":
+		return Remove(), nil
+	case "search":
+		return Search(), nil
+	case "secure":
+		return Secure(), nil
+	case "select":
+		return Select(), nil
+	case "settings":
+		return Settings(), nil
+	case "shield":
+		return Shield(), nil
+	case "sidebar-left":
+		return SidebarLeft(), nil
+	case "sidebar-right":
+		return SidebarRight(), nil
+	case "store":
+		return Store(), nil
+	case "terminal":
+		return Terminal(), nil
+	case "tv":
+		return Tv(), nil
+	case "unlock":
+		return Unlock(), nil
+	case "usb":
+		return Usb(), nil
+	case "video":
+		return Video(), nil
+	case "window":
+		return Window(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in gala icon set", name)
+	}
 }

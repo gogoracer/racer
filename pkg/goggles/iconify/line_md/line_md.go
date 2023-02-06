@@ -1,6 +1,9 @@
 package line_md
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	accountInnerSVG                                           = `<g fill="none" stroke="currentColor" stroke-dasharray="28" stroke-dashoffset="28" stroke-linecap="round" stroke-width="2"><path d="M4 21V20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20V21"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="28;0"/></path><path d="M12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7C16 9.20914 14.2091 11 12 11Z"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.4s" values="28;0"/></path></g>`
@@ -4516,4 +4519,705 @@ func WeatherCloudyLoop(children ...any) *engine.HTMLElement {
 		weatherCloudyLoopInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "account":
+		return Account(), nil
+	case "account-add":
+		return AccountAdd(), nil
+	case "account-alert":
+		return AccountAlert(), nil
+	case "account-delete":
+		return AccountDelete(), nil
+	case "account-remove":
+		return AccountRemove(), nil
+	case "account-small":
+		return AccountSmall(), nil
+	case "alert":
+		return Alert(), nil
+	case "alert-circle":
+		return AlertCircle(), nil
+	case "alert-circle-twotone":
+		return AlertCircleTwotone(), nil
+	case "alert-twotone":
+		return AlertTwotone(), nil
+	case "align-center":
+		return AlignCenter(), nil
+	case "align-justify":
+		return AlignJustify(), nil
+	case "align-left":
+		return AlignLeft(), nil
+	case "arrow-align-center":
+		return ArrowAlignCenter(), nil
+	case "arrow-align-left":
+		return ArrowAlignLeft(), nil
+	case "arrow-close-left":
+		return ArrowCloseLeft(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-left-circle":
+		return ArrowLeftCircle(), nil
+	case "arrow-left-circle-twotone":
+		return ArrowLeftCircleTwotone(), nil
+	case "arrow-long-diagonal":
+		return ArrowLongDiagonal(), nil
+	case "arrow-open-left":
+		return ArrowOpenLeft(), nil
+	case "arrow-small-left":
+		return ArrowSmallLeft(), nil
+	case "arrows-diagonal":
+		return ArrowsDiagonal(), nil
+	case "arrows-horizontal":
+		return ArrowsHorizontal(), nil
+	case "arrows-horizontal-alt":
+		return ArrowsHorizontalAlt(), nil
+	case "beer":
+		return Beer(), nil
+	case "beer-alt-filled":
+		return BeerAltFilled(), nil
+	case "beer-alt-filled-loop":
+		return BeerAltFilledLoop(), nil
+	case "beer-alt-twotone":
+		return BeerAltTwotone(), nil
+	case "beer-alt-twotone-loop":
+		return BeerAltTwotoneLoop(), nil
+	case "beer-filled":
+		return BeerFilled(), nil
+	case "beer-loop":
+		return BeerLoop(), nil
+	case "beer-twotone":
+		return BeerTwotone(), nil
+	case "beer-twotone-loop":
+		return BeerTwotoneLoop(), nil
+	case "bell":
+		return Bell(), nil
+	case "bell-twotone":
+		return BellTwotone(), nil
+	case "buy-me-a-coffee":
+		return BuyMeACoffee(), nil
+	case "buy-me-a-coffee-filled":
+		return BuyMeACoffeeFilled(), nil
+	case "buy-me-a-coffee-twotone":
+		return BuyMeACoffeeTwotone(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "calendar-out":
+		return CalendarOut(), nil
+	case "cancel":
+		return Cancel(), nil
+	case "cancel-twotone":
+		return CancelTwotone(), nil
+	case "check-list-3":
+		return CheckListThree(), nil
+	case "check-list-3-filled":
+		return CheckListThreeFilled(), nil
+	case "check-list-3-twotone":
+		return CheckListThreeTwotone(), nil
+	case "chevron-double-left":
+		return ChevronDoubleLeft(), nil
+	case "chevron-left":
+		return ChevronLeft(), nil
+	case "chevron-left-circle":
+		return ChevronLeftCircle(), nil
+	case "chevron-left-circle-twotone":
+		return ChevronLeftCircleTwotone(), nil
+	case "chevron-small-double-left":
+		return ChevronSmallDoubleLeft(), nil
+	case "chevron-small-left":
+		return ChevronSmallLeft(), nil
+	case "chevron-small-triple-left":
+		return ChevronSmallTripleLeft(), nil
+	case "chevron-triple-left":
+		return ChevronTripleLeft(), nil
+	case "circle":
+		return Circle(), nil
+	case "circle-to-confirm-circle-transition":
+		return CircleToConfirmCircleTransition(), nil
+	case "circle-to-confirm-circle-twotone-transition":
+		return CircleToConfirmCircleTwotoneTransition(), nil
+	case "circle-twotone":
+		return CircleTwotone(), nil
+	case "circle-twotone-to-confirm-circle-twotone-transition":
+		return CircleTwotoneToConfirmCircleTwotoneTransition(), nil
+	case "clipboard":
+		return Clipboard(), nil
+	case "clipboard-arrow":
+		return ClipboardArrow(), nil
+	case "clipboard-arrow-twotone":
+		return ClipboardArrowTwotone(), nil
+	case "clipboard-check":
+		return ClipboardCheck(), nil
+	case "clipboard-check-to-clipboard-transition":
+		return ClipboardCheckToClipboardTransition(), nil
+	case "clipboard-check-twotone":
+		return ClipboardCheckTwotone(), nil
+	case "clipboard-check-twotone-to-clipboard-twotone-transition":
+		return ClipboardCheckTwotoneToClipboardTwotoneTransition(), nil
+	case "clipboard-list":
+		return ClipboardList(), nil
+	case "clipboard-list-twotone":
+		return ClipboardListTwotone(), nil
+	case "clipboard-minus":
+		return ClipboardMinus(), nil
+	case "clipboard-minus-twotone":
+		return ClipboardMinusTwotone(), nil
+	case "clipboard-plus":
+		return ClipboardPlus(), nil
+	case "clipboard-plus-twotone":
+		return ClipboardPlusTwotone(), nil
+	case "clipboard-to-clipboard-check-transition":
+		return ClipboardToClipboardCheckTransition(), nil
+	case "clipboard-twotone":
+		return ClipboardTwotone(), nil
+	case "clipboard-twotone-to-clipboard-twotone-check-transition":
+		return ClipboardTwotoneToClipboardTwotoneCheckTransition(), nil
+	case "close":
+		return Close(), nil
+	case "close-circle":
+		return CloseCircle(), nil
+	case "close-circle-twotone":
+		return CloseCircleTwotone(), nil
+	case "close-to-menu-alt-transition":
+		return CloseToMenuAltTransition(), nil
+	case "close-to-menu-transition":
+		return CloseToMenuTransition(), nil
+	case "cloud":
+		return Cloud(), nil
+	case "cloud-braces-loop":
+		return CloudBracesLoop(), nil
+	case "cloud-down":
+		return CloudDown(), nil
+	case "cloud-down-twotone":
+		return CloudDownTwotone(), nil
+	case "cloud-download-loop":
+		return CloudDownloadLoop(), nil
+	case "cloud-download-outline-loop":
+		return CloudDownloadOutlineLoop(), nil
+	case "cloud-filled":
+		return CloudFilled(), nil
+	case "cloud-loop":
+		return CloudLoop(), nil
+	case "cloud-off-outline-loop":
+		return CloudOffOutlineLoop(), nil
+	case "cloud-outline-loop":
+		return CloudOutlineLoop(), nil
+	case "cloud-print-loop":
+		return CloudPrintLoop(), nil
+	case "cloud-print-outline-loop":
+		return CloudPrintOutlineLoop(), nil
+	case "cloud-tags-loop":
+		return CloudTagsLoop(), nil
+	case "cloud-twotone":
+		return CloudTwotone(), nil
+	case "cloud-up":
+		return CloudUp(), nil
+	case "cloud-up-twotone":
+		return CloudUpTwotone(), nil
+	case "cloud-upload-loop":
+		return CloudUploadLoop(), nil
+	case "cloud-upload-outline-loop":
+		return CloudUploadOutlineLoop(), nil
+	case "coffee":
+		return Coffee(), nil
+	case "coffee-arrow":
+		return CoffeeArrow(), nil
+	case "coffee-arrow-filled":
+		return CoffeeArrowFilled(), nil
+	case "coffee-arrow-twotone":
+		return CoffeeArrowTwotone(), nil
+	case "coffee-filled":
+		return CoffeeFilled(), nil
+	case "coffee-half-empty-twotone-loop":
+		return CoffeeHalfEmptyTwotoneLoop(), nil
+	case "coffee-loop":
+		return CoffeeLoop(), nil
+	case "coffee-twotone":
+		return CoffeeTwotone(), nil
+	case "coffee-twotone-loop":
+		return CoffeeTwotoneLoop(), nil
+	case "computer":
+		return Computer(), nil
+	case "computer-twotone":
+		return ComputerTwotone(), nil
+	case "confirm":
+		return Confirm(), nil
+	case "confirm-circle":
+		return ConfirmCircle(), nil
+	case "confirm-circle-to-circle-transition":
+		return ConfirmCircleToCircleTransition(), nil
+	case "confirm-circle-twotone":
+		return ConfirmCircleTwotone(), nil
+	case "confirm-circle-twotone-to-circle-transition":
+		return ConfirmCircleTwotoneToCircleTransition(), nil
+	case "confirm-circle-twotone-to-circle-twotone-transition":
+		return ConfirmCircleTwotoneToCircleTwotoneTransition(), nil
+	case "construction":
+		return Construction(), nil
+	case "construction-twotone":
+		return ConstructionTwotone(), nil
+	case "discord":
+		return Discord(), nil
+	case "discord-twotone":
+		return DiscordTwotone(), nil
+	case "document":
+		return Document(), nil
+	case "document-add":
+		return DocumentAdd(), nil
+	case "document-add-twotone":
+		return DocumentAddTwotone(), nil
+	case "document-code":
+		return DocumentCode(), nil
+	case "document-code-twotone":
+		return DocumentCodeTwotone(), nil
+	case "document-list":
+		return DocumentList(), nil
+	case "document-list-twotone":
+		return DocumentListTwotone(), nil
+	case "document-remove":
+		return DocumentRemove(), nil
+	case "document-remove-twotone":
+		return DocumentRemoveTwotone(), nil
+	case "document-report":
+		return DocumentReport(), nil
+	case "document-report-twotone":
+		return DocumentReportTwotone(), nil
+	case "document-twotone":
+		return DocumentTwotone(), nil
+	case "double-arrow-horizontal":
+		return DoubleArrowHorizontal(), nil
+	case "download-loop":
+		return DownloadLoop(), nil
+	case "download-off-loop":
+		return DownloadOffLoop(), nil
+	case "download-off-outline":
+		return DownloadOffOutline(), nil
+	case "download-off-outline-loop":
+		return DownloadOffOutlineLoop(), nil
+	case "download-outline":
+		return DownloadOutline(), nil
+	case "download-outline-loop":
+		return DownloadOutlineLoop(), nil
+	case "downloading-loop":
+		return DownloadingLoop(), nil
+	case "edit":
+		return Edit(), nil
+	case "edit-twotone":
+		return EditTwotone(), nil
+	case "edit-twotone-full":
+		return EditTwotoneFull(), nil
+	case "email":
+		return Email(), nil
+	case "email-opened":
+		return EmailOpened(), nil
+	case "email-opened-twotone":
+		return EmailOpenedTwotone(), nil
+	case "email-opened-twotone-alt":
+		return EmailOpenedTwotoneAlt(), nil
+	case "email-twotone":
+		return EmailTwotone(), nil
+	case "email-twotone-alt":
+		return EmailTwotoneAlt(), nil
+	case "emoji-angry":
+		return EmojiAngry(), nil
+	case "emoji-angry-twotone":
+		return EmojiAngryTwotone(), nil
+	case "emoji-frown":
+		return EmojiFrown(), nil
+	case "emoji-frown-open":
+		return EmojiFrownOpen(), nil
+	case "emoji-frown-open-twotone":
+		return EmojiFrownOpenTwotone(), nil
+	case "emoji-frown-twotone":
+		return EmojiFrownTwotone(), nil
+	case "emoji-grin":
+		return EmojiGrin(), nil
+	case "emoji-grin-twotone":
+		return EmojiGrinTwotone(), nil
+	case "emoji-neutral":
+		return EmojiNeutral(), nil
+	case "emoji-neutral-twotone":
+		return EmojiNeutralTwotone(), nil
+	case "emoji-smile":
+		return EmojiSmile(), nil
+	case "emoji-smile-twotone":
+		return EmojiSmileTwotone(), nil
+	case "emoji-smile-wink":
+		return EmojiSmileWink(), nil
+	case "emoji-smile-wink-twotone":
+		return EmojiSmileWinkTwotone(), nil
+	case "external-link":
+		return ExternalLink(), nil
+	case "external-link-rounded":
+		return ExternalLinkRounded(), nil
+	case "facebook":
+		return Facebook(), nil
+	case "github":
+		return Github(), nil
+	case "github-loop":
+		return GithubLoop(), nil
+	case "github-twotone":
+		return GithubTwotone(), nil
+	case "grid-3":
+		return GridThree(), nil
+	case "grid-3-filled":
+		return GridThreeFilled(), nil
+	case "grid-3-twotone":
+		return GridThreeTwotone(), nil
+	case "hash":
+		return Hash(), nil
+	case "hash-small":
+		return HashSmall(), nil
+	case "heart":
+		return Heart(), nil
+	case "heart-filled":
+		return HeartFilled(), nil
+	case "heart-filled-half":
+		return HeartFilledHalf(), nil
+	case "heart-half":
+		return HeartHalf(), nil
+	case "heart-half-filled":
+		return HeartHalfFilled(), nil
+	case "heart-half-twotone":
+		return HeartHalfTwotone(), nil
+	case "heart-twotone":
+		return HeartTwotone(), nil
+	case "heart-twotone-half":
+		return HeartTwotoneHalf(), nil
+	case "heart-twotone-half-filled":
+		return HeartTwotoneHalfFilled(), nil
+	case "home":
+		return Home(), nil
+	case "home-md":
+		return HomeMd(), nil
+	case "home-md-twotone":
+		return HomeMdTwotone(), nil
+	case "home-md-twotone-alt":
+		return HomeMdTwotoneAlt(), nil
+	case "home-simple":
+		return HomeSimple(), nil
+	case "home-simple-filled":
+		return HomeSimpleFilled(), nil
+	case "home-simple-twotone":
+		return HomeSimpleTwotone(), nil
+	case "home-twotone":
+		return HomeTwotone(), nil
+	case "home-twotone-alt":
+		return HomeTwotoneAlt(), nil
+	case "iconify1":
+		return IconifyOne(), nil
+	case "iconify2":
+		return IconifyTwo(), nil
+	case "image":
+		return Image(), nil
+	case "image-twotone":
+		return ImageTwotone(), nil
+	case "instagram":
+		return Instagram(), nil
+	case "laptop":
+		return Laptop(), nil
+	case "laptop-twotone":
+		return LaptopTwotone(), nil
+	case "light-dark":
+		return LightDark(), nil
+	case "light-dark-loop":
+		return LightDarkLoop(), nil
+	case "lightbulb":
+		return Lightbulb(), nil
+	case "lightbulb-filled":
+		return LightbulbFilled(), nil
+	case "lightbulb-off":
+		return LightbulbOff(), nil
+	case "lightbulb-off-filled":
+		return LightbulbOffFilled(), nil
+	case "lightbulb-off-filled-loop":
+		return LightbulbOffFilledLoop(), nil
+	case "lightbulb-off-loop":
+		return LightbulbOffLoop(), nil
+	case "lightbulb-off-twotone":
+		return LightbulbOffTwotone(), nil
+	case "lightbulb-off-twotone-loop":
+		return LightbulbOffTwotoneLoop(), nil
+	case "lightbulb-twotone":
+		return LightbulbTwotone(), nil
+	case "linkedin":
+		return Linkedin(), nil
+	case "list":
+		return List(), nil
+	case "list-indented":
+		return ListIndented(), nil
+	case "list-3":
+		return ListThree(), nil
+	case "list-3-filled":
+		return ListThreeFilled(), nil
+	case "list-3-twotone":
+		return ListThreeTwotone(), nil
+	case "loading-alt-loop":
+		return LoadingAltLoop(), nil
+	case "loading-loop":
+		return LoadingLoop(), nil
+	case "loading-twotone-loop":
+		return LoadingTwotoneLoop(), nil
+	case "marker":
+		return Marker(), nil
+	case "marker-filled":
+		return MarkerFilled(), nil
+	case "marker-twotone":
+		return MarkerTwotone(), nil
+	case "mastodon":
+		return Mastodon(), nil
+	case "mastodon-filled":
+		return MastodonFilled(), nil
+	case "mastodon-twotone":
+		return MastodonTwotone(), nil
+	case "menu":
+		return Menu(), nil
+	case "menu-fold-left":
+		return MenuFoldLeft(), nil
+	case "menu-fold-right":
+		return MenuFoldRight(), nil
+	case "menu-to-close-alt-transition":
+		return MenuToCloseAltTransition(), nil
+	case "menu-to-close-transition":
+		return MenuToCloseTransition(), nil
+	case "menu-unfold-left":
+		return MenuUnfoldLeft(), nil
+	case "menu-unfold-right":
+		return MenuUnfoldRight(), nil
+	case "minus":
+		return Minus(), nil
+	case "minus-circle":
+		return MinusCircle(), nil
+	case "minus-circle-twotone":
+		return MinusCircleTwotone(), nil
+	case "moon":
+		return Moon(), nil
+	case "moon-alt-loop":
+		return MoonAltLoop(), nil
+	case "moon-alt-to-sunny-outline-loop-transition":
+		return MoonAltToSunnyOutlineLoopTransition(), nil
+	case "moon-filled":
+		return MoonFilled(), nil
+	case "moon-filled-alt-loop":
+		return MoonFilledAltLoop(), nil
+	case "moon-filled-alt-to-sunny-filled-loop-transition":
+		return MoonFilledAltToSunnyFilledLoopTransition(), nil
+	case "moon-filled-loop":
+		return MoonFilledLoop(), nil
+	case "moon-filled-to-sunny-filled-loop-transition":
+		return MoonFilledToSunnyFilledLoopTransition(), nil
+	case "moon-filled-to-sunny-filled-transition":
+		return MoonFilledToSunnyFilledTransition(), nil
+	case "moon-loop":
+		return MoonLoop(), nil
+	case "moon-rising-alt-loop":
+		return MoonRisingAltLoop(), nil
+	case "moon-rising-filled-alt-loop":
+		return MoonRisingFilledAltLoop(), nil
+	case "moon-rising-filled-loop":
+		return MoonRisingFilledLoop(), nil
+	case "moon-rising-loop":
+		return MoonRisingLoop(), nil
+	case "moon-rising-twotone-alt-loop":
+		return MoonRisingTwotoneAltLoop(), nil
+	case "moon-rising-twotone-loop":
+		return MoonRisingTwotoneLoop(), nil
+	case "moon-to-sunny-outline-loop-transition":
+		return MoonToSunnyOutlineLoopTransition(), nil
+	case "moon-to-sunny-outline-transition":
+		return MoonToSunnyOutlineTransition(), nil
+	case "moon-twotone":
+		return MoonTwotone(), nil
+	case "moon-twotone-alt-loop":
+		return MoonTwotoneAltLoop(), nil
+	case "moon-twotone-loop":
+		return MoonTwotoneLoop(), nil
+	case "navigation-left-down":
+		return NavigationLeftDown(), nil
+	case "navigation-left-up":
+		return NavigationLeftUp(), nil
+	case "navigation-right-down":
+		return NavigationRightDown(), nil
+	case "navigation-right-up":
+		return NavigationRightUp(), nil
+	case "paint-drop":
+		return PaintDrop(), nil
+	case "paint-drop-filled":
+		return PaintDropFilled(), nil
+	case "paint-drop-half-filled":
+		return PaintDropHalfFilled(), nil
+	case "paint-drop-half-filled-twotone":
+		return PaintDropHalfFilledTwotone(), nil
+	case "paint-drop-half-twotone":
+		return PaintDropHalfTwotone(), nil
+	case "paint-drop-twotone":
+		return PaintDropTwotone(), nil
+	case "pause":
+		return Pause(), nil
+	case "pause-to-play-filled-transition":
+		return PauseToPlayFilledTransition(), nil
+	case "pause-to-play-transition":
+		return PauseToPlayTransition(), nil
+	case "pencil":
+		return Pencil(), nil
+	case "pencil-twotone":
+		return PencilTwotone(), nil
+	case "pencil-twotone-alt":
+		return PencilTwotoneAlt(), nil
+	case "play":
+		return Play(), nil
+	case "play-filled":
+		return PlayFilled(), nil
+	case "play-filled-to-pause-transition":
+		return PlayFilledToPauseTransition(), nil
+	case "play-to-pause-transition":
+		return PlayToPauseTransition(), nil
+	case "play-twotone":
+		return PlayTwotone(), nil
+	case "plus":
+		return Plus(), nil
+	case "plus-circle":
+		return PlusCircle(), nil
+	case "plus-circle-twotone":
+		return PlusCircleTwotone(), nil
+	case "question":
+		return Question(), nil
+	case "question-circle":
+		return QuestionCircle(), nil
+	case "question-circle-twotone":
+		return QuestionCircleTwotone(), nil
+	case "reddit":
+		return Reddit(), nil
+	case "reddit-circle":
+		return RedditCircle(), nil
+	case "reddit-circle-loop":
+		return RedditCircleLoop(), nil
+	case "reddit-loop":
+		return RedditLoop(), nil
+	case "remove":
+		return Remove(), nil
+	case "rotate-90":
+		return RotateNinety(), nil
+	case "rotate-180":
+		return RotateOneHundredEighty(), nil
+	case "rotate-270":
+		return RotateTwoHundredSeventy(), nil
+	case "search":
+		return Search(), nil
+	case "search-filled":
+		return SearchFilled(), nil
+	case "search-twotone":
+		return SearchTwotone(), nil
+	case "sun-rising-filled-loop":
+		return SunRisingFilledLoop(), nil
+	case "sun-rising-loop":
+		return SunRisingLoop(), nil
+	case "sun-rising-twotone-loop":
+		return SunRisingTwotoneLoop(), nil
+	case "sunny-filled":
+		return SunnyFilled(), nil
+	case "sunny-filled-loop":
+		return SunnyFilledLoop(), nil
+	case "sunny-filled-loop-to-moon-alt-filled-loop-transition":
+		return SunnyFilledLoopToMoonAltFilledLoopTransition(), nil
+	case "sunny-filled-loop-to-moon-filled-loop-transition":
+		return SunnyFilledLoopToMoonFilledLoopTransition(), nil
+	case "sunny-filled-loop-to-moon-filled-transition":
+		return SunnyFilledLoopToMoonFilledTransition(), nil
+	case "sunny-outline":
+		return SunnyOutline(), nil
+	case "sunny-outline-loop":
+		return SunnyOutlineLoop(), nil
+	case "sunny-outline-to-moon-alt-loop-transition":
+		return SunnyOutlineToMoonAltLoopTransition(), nil
+	case "sunny-outline-to-moon-loop-transition":
+		return SunnyOutlineToMoonLoopTransition(), nil
+	case "sunny-outline-to-moon-transition":
+		return SunnyOutlineToMoonTransition(), nil
+	case "sunny-outline-twotone":
+		return SunnyOutlineTwotone(), nil
+	case "sunny-outline-twotone-loop":
+		return SunnyOutlineTwotoneLoop(), nil
+	case "switch":
+		return Switch(), nil
+	case "switch-filled":
+		return SwitchFilled(), nil
+	case "switch-filled-to-switch-off-filled-transition":
+		return SwitchFilledToSwitchOffFilledTransition(), nil
+	case "switch-off":
+		return SwitchOff(), nil
+	case "switch-off-filled":
+		return SwitchOffFilled(), nil
+	case "switch-off-filled-to-switch-filled-transition":
+		return SwitchOffFilledToSwitchFilledTransition(), nil
+	case "switch-off-to-switch-transition":
+		return SwitchOffToSwitchTransition(), nil
+	case "switch-to-switch-off-transition":
+		return SwitchToSwitchOffTransition(), nil
+	case "telegram":
+		return Telegram(), nil
+	case "text-box":
+		return TextBox(), nil
+	case "text-box-multiple":
+		return TextBoxMultiple(), nil
+	case "text-box-multiple-to-text-box-transition":
+		return TextBoxMultipleToTextBoxTransition(), nil
+	case "text-box-multiple-twotone":
+		return TextBoxMultipleTwotone(), nil
+	case "text-box-multiple-twotone-to-text-box-twotone-transition":
+		return TextBoxMultipleTwotoneToTextBoxTwotoneTransition(), nil
+	case "text-box-to-text-box-multiple-transition":
+		return TextBoxToTextBoxMultipleTransition(), nil
+	case "text-box-twotone":
+		return TextBoxTwotone(), nil
+	case "text-box-twotone-to-text-box-multiple-twotone-transition":
+		return TextBoxTwotoneToTextBoxMultipleTwotoneTransition(), nil
+	case "thumbs-down":
+		return ThumbsDown(), nil
+	case "thumbs-down-twotone":
+		return ThumbsDownTwotone(), nil
+	case "thumbs-up":
+		return ThumbsUp(), nil
+	case "thumbs-up-twotone":
+		return ThumbsUpTwotone(), nil
+	case "twitter":
+		return Twitter(), nil
+	case "twitter-twotone":
+		return TwitterTwotone(), nil
+	case "upload-loop":
+		return UploadLoop(), nil
+	case "upload-off-loop":
+		return UploadOffLoop(), nil
+	case "upload-off-outline":
+		return UploadOffOutline(), nil
+	case "upload-off-outline-loop":
+		return UploadOffOutlineLoop(), nil
+	case "upload-outline":
+		return UploadOutline(), nil
+	case "upload-outline-loop":
+		return UploadOutlineLoop(), nil
+	case "uploading-loop":
+		return UploadingLoop(), nil
+	case "valign-baseline":
+		return ValignBaseline(), nil
+	case "valign-baseline-twotone":
+		return ValignBaselineTwotone(), nil
+	case "valign-bottom":
+		return ValignBottom(), nil
+	case "valign-bottom-twotone":
+		return ValignBottomTwotone(), nil
+	case "valign-middle":
+		return ValignMiddle(), nil
+	case "valign-middle-twotone":
+		return ValignMiddleTwotone(), nil
+	case "valign-top":
+		return ValignTop(), nil
+	case "valign-top-twotone":
+		return ValignTopTwotone(), nil
+	case "weather-cloudy-loop":
+		return WeatherCloudyLoop(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in line_md icon set", name)
+	}
 }

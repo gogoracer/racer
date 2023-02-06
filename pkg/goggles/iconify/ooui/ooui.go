@@ -1,6 +1,9 @@
 package ooui
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	addInnerSVG                       = `<path fill="currentColor" d="M11 9V4H9v5H4v2h5v5h2v-5h5V9z"/>`
@@ -4425,4 +4428,691 @@ func ZoomOut(children ...any) *engine.HTMLElement {
 		zoomOutInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "add":
+		return Add(), nil
+	case "alert":
+		return Alert(), nil
+	case "align-center":
+		return AlignCenter(), nil
+	case "align-left":
+		return AlignLeft(), nil
+	case "align-right":
+		return AlignRight(), nil
+	case "arrow-next-ltr":
+		return ArrowNextLtr(), nil
+	case "arrow-next-rtl":
+		return ArrowNextRtl(), nil
+	case "arrow-previous-ltr":
+		return ArrowPreviousLtr(), nil
+	case "arrow-previous-rtl":
+		return ArrowPreviousRtl(), nil
+	case "article-add":
+		return ArticleAdd(), nil
+	case "article-check":
+		return ArticleCheck(), nil
+	case "article-disambiguation-ltr":
+		return ArticleDisambiguationLtr(), nil
+	case "article-disambiguation-rtl":
+		return ArticleDisambiguationRtl(), nil
+	case "article-ltr":
+		return ArticleLtr(), nil
+	case "article-not-found-ltr":
+		return ArticleNotFoundLtr(), nil
+	case "article-not-found-rtl":
+		return ArticleNotFoundRtl(), nil
+	case "article-redirect-ltr":
+		return ArticleRedirectLtr(), nil
+	case "article-redirect-rtl":
+		return ArticleRedirectRtl(), nil
+	case "article-rtl":
+		return ArticleRtl(), nil
+	case "article-search":
+		return ArticleSearch(), nil
+	case "articles-ltr":
+		return ArticlesLtr(), nil
+	case "articles-rtl":
+		return ArticlesRtl(), nil
+	case "articles-search-ltr":
+		return ArticlesSearchLtr(), nil
+	case "articles-search-rtl":
+		return ArticlesSearchRtl(), nil
+	case "attachment":
+		return Attachment(), nil
+	case "bell":
+		return Bell(), nil
+	case "bell-outline":
+		return BellOutline(), nil
+	case "bigger":
+		return Bigger(), nil
+	case "block":
+		return Block(), nil
+	case "bold-a":
+		return BoldA(), nil
+	case "bold-arab-ain":
+		return BoldArabAin(), nil
+	case "bold-arab-dad":
+		return BoldArabDad(), nil
+	case "bold-arab-jeem":
+		return BoldArabJeem(), nil
+	case "bold-armn-to":
+		return BoldArmnTo(), nil
+	case "bold-b":
+		return BoldB(), nil
+	case "bold-cyrl-be":
+		return BoldCyrlBe(), nil
+	case "bold-cyrl-palochka":
+		return BoldCyrlPalochka(), nil
+	case "bold-cyrl-te":
+		return BoldCyrlTe(), nil
+	case "bold-cyrl-zhe":
+		return BoldCyrlZhe(), nil
+	case "bold-f":
+		return BoldF(), nil
+	case "bold-g":
+		return BoldG(), nil
+	case "bold-geor-man":
+		return BoldGeorMan(), nil
+	case "bold-l":
+		return BoldL(), nil
+	case "bold-n":
+		return BoldN(), nil
+	case "bold-v":
+		return BoldV(), nil
+	case "book-ltr":
+		return BookLtr(), nil
+	case "book-rtl":
+		return BookRtl(), nil
+	case "bookmark":
+		return Bookmark(), nil
+	case "bookmark-outline":
+		return BookmarkOutline(), nil
+	case "bright":
+		return Bright(), nil
+	case "browser-ltr":
+		return BrowserLtr(), nil
+	case "browser-rtl":
+		return BrowserRtl(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "camera":
+		return Camera(), nil
+	case "cancel":
+		return Cancel(), nil
+	case "chart":
+		return Chart(), nil
+	case "check":
+		return Check(), nil
+	case "check-all":
+		return CheckAll(), nil
+	case "clear":
+		return Clear(), nil
+	case "clock":
+		return Clock(), nil
+	case "close":
+		return Close(), nil
+	case "code":
+		return Code(), nil
+	case "collapse":
+		return Collapse(), nil
+	case "copy-ltr":
+		return CopyLtr(), nil
+	case "copy-rtl":
+		return CopyRtl(), nil
+	case "cut-ltr":
+		return CutLtr(), nil
+	case "cut-rtl":
+		return CutRtl(), nil
+	case "database":
+		return Database(), nil
+	case "die":
+		return Die(), nil
+	case "double-chevron-end-ltr":
+		return DoubleChevronEndLtr(), nil
+	case "double-chevron-end-rtl":
+		return DoubleChevronEndRtl(), nil
+	case "double-chevron-start-ltr":
+		return DoubleChevronStartLtr(), nil
+	case "double-chevron-start-rtl":
+		return DoubleChevronStartRtl(), nil
+	case "down-triangle":
+		return DownTriangle(), nil
+	case "download":
+		return Download(), nil
+	case "draggable":
+		return Draggable(), nil
+	case "edit":
+		return Edit(), nil
+	case "edit-lock":
+		return EditLock(), nil
+	case "edit-undo-ltr":
+		return EditUndoLtr(), nil
+	case "edit-undo-rtl":
+		return EditUndoRtl(), nil
+	case "ellipsis":
+		return Ellipsis(), nil
+	case "error":
+		return Error(), nil
+	case "exit-fullscreen":
+		return ExitFullscreen(), nil
+	case "expand":
+		return Expand(), nil
+	case "eye":
+		return Eye(), nil
+	case "eye-closed":
+		return EyeClosed(), nil
+	case "feedback-ltr":
+		return FeedbackLtr(), nil
+	case "feedback-rtl":
+		return FeedbackRtl(), nil
+	case "flag-ltr":
+		return FlagLtr(), nil
+	case "flag-rtl":
+		return FlagRtl(), nil
+	case "folder-placeholder-ltr":
+		return FolderPlaceholderLtr(), nil
+	case "folder-placeholder-rtl":
+		return FolderPlaceholderRtl(), nil
+	case "full-screen":
+		return FullScreen(), nil
+	case "funnel-ltr":
+		return FunnelLtr(), nil
+	case "funnel-rtl":
+		return FunnelRtl(), nil
+	case "globe":
+		return Globe(), nil
+	case "half-bright-ltr":
+		return HalfBrightLtr(), nil
+	case "half-bright-rtl":
+		return HalfBrightRtl(), nil
+	case "half-star-ltr":
+		return HalfStarLtr(), nil
+	case "half-star-rtl":
+		return HalfStarRtl(), nil
+	case "hand":
+		return Hand(), nil
+	case "heart":
+		return Heart(), nil
+	case "help-ltr":
+		return HelpLtr(), nil
+	case "help-notice-ltr":
+		return HelpNoticeLtr(), nil
+	case "help-notice-rtl":
+		return HelpNoticeRtl(), nil
+	case "help-rtl":
+		return HelpRtl(), nil
+	case "hieroglyph":
+		return Hieroglyph(), nil
+	case "highlight":
+		return Highlight(), nil
+	case "history":
+		return History(), nil
+	case "home":
+		return Home(), nil
+	case "image":
+		return Image(), nil
+	case "image-add-ltr":
+		return ImageAddLtr(), nil
+	case "image-add-rtl":
+		return ImageAddRtl(), nil
+	case "image-broken":
+		return ImageBroken(), nil
+	case "image-gallery":
+		return ImageGallery(), nil
+	case "image-layout-basic":
+		return ImageLayoutBasic(), nil
+	case "image-layout-frame":
+		return ImageLayoutFrame(), nil
+	case "image-layout-frameless":
+		return ImageLayoutFrameless(), nil
+	case "image-layout-thumbnail":
+		return ImageLayoutThumbnail(), nil
+	case "image-lock-ltr":
+		return ImageLockLtr(), nil
+	case "image-lock-rtl":
+		return ImageLockRtl(), nil
+	case "indent-ltr":
+		return IndentLtr(), nil
+	case "indent-rtl":
+		return IndentRtl(), nil
+	case "info":
+		return Info(), nil
+	case "info-filled":
+		return InfoFilled(), nil
+	case "italic-a":
+		return ItalicA(), nil
+	case "italic-arab-keheh-jeem":
+		return ItalicArabKehehJeem(), nil
+	case "italic-arab-meem":
+		return ItalicArabMeem(), nil
+	case "italic-arab-teh":
+		return ItalicArabTeh(), nil
+	case "italic-armn-sha":
+		return ItalicArmnSha(), nil
+	case "italic-c":
+		return ItalicC(), nil
+	case "italic-d":
+		return ItalicD(), nil
+	case "italic-e":
+		return ItalicE(), nil
+	case "italic-geor-kan":
+		return ItalicGeorKan(), nil
+	case "italic-i":
+		return ItalicI(), nil
+	case "italic-k":
+		return ItalicK(), nil
+	case "italic-s":
+		return ItalicS(), nil
+	case "journal-ltr":
+		return JournalLtr(), nil
+	case "journal-rtl":
+		return JournalRtl(), nil
+	case "key":
+		return Key(), nil
+	case "keyboard":
+		return Keyboard(), nil
+	case "lab-flask":
+		return LabFlask(), nil
+	case "language":
+		return Language(), nil
+	case "larger-text":
+		return LargerText(), nil
+	case "layout-ltr":
+		return LayoutLtr(), nil
+	case "layout-rtl":
+		return LayoutRtl(), nil
+	case "lightbulb":
+		return Lightbulb(), nil
+	case "link":
+		return Link(), nil
+	case "link-external-ltr":
+		return LinkExternalLtr(), nil
+	case "link-external-rtl":
+		return LinkExternalRtl(), nil
+	case "link-secure":
+		return LinkSecure(), nil
+	case "list-bullet-ltr":
+		return ListBulletLtr(), nil
+	case "list-bullet-rtl":
+		return ListBulletRtl(), nil
+	case "list-numbered-ltr":
+		return ListNumberedLtr(), nil
+	case "list-numbered-rtl":
+		return ListNumberedRtl(), nil
+	case "lock":
+		return Lock(), nil
+	case "log-in-ltr":
+		return LogInLtr(), nil
+	case "log-in-rtl":
+		return LogInRtl(), nil
+	case "log-out-ltr":
+		return LogOutLtr(), nil
+	case "log-out-rtl":
+		return LogOutRtl(), nil
+	case "logo-cc":
+		return LogoCc(), nil
+	case "logo-media-wiki":
+		return LogoMediaWiki(), nil
+	case "logo-meta-wiki":
+		return LogoMetaWiki(), nil
+	case "logo-wikibooks":
+		return LogoWikibooks(), nil
+	case "logo-wikidata":
+		return LogoWikidata(), nil
+	case "logo-wikifunctions":
+		return LogoWikifunctions(), nil
+	case "logo-wikimedia":
+		return LogoWikimedia(), nil
+	case "logo-wikimedia-commons":
+		return LogoWikimediaCommons(), nil
+	case "logo-wikimedia-discovery":
+		return LogoWikimediaDiscovery(), nil
+	case "logo-wikinews":
+		return LogoWikinews(), nil
+	case "logo-wikipedia":
+		return LogoWikipedia(), nil
+	case "logo-wikiquote":
+		return LogoWikiquote(), nil
+	case "logo-wikispecies":
+		return LogoWikispecies(), nil
+	case "logo-wikiversity":
+		return LogoWikiversity(), nil
+	case "logo-wikivoyage":
+		return LogoWikivoyage(), nil
+	case "map-ltr":
+		return MapLtr(), nil
+	case "map-pin":
+		return MapPin(), nil
+	case "map-pin-add":
+		return MapPinAdd(), nil
+	case "map-rtl":
+		return MapRtl(), nil
+	case "map-trail":
+		return MapTrail(), nil
+	case "markup":
+		return Markup(), nil
+	case "mathematics":
+		return Mathematics(), nil
+	case "mathematics-display-block":
+		return MathematicsDisplayBlock(), nil
+	case "mathematics-display-default":
+		return MathematicsDisplayDefault(), nil
+	case "mathematics-display-inline":
+		return MathematicsDisplayInline(), nil
+	case "menu":
+		return Menu(), nil
+	case "message":
+		return Message(), nil
+	case "moon":
+		return Moon(), nil
+	case "move":
+		return Move(), nil
+	case "move-first-ltr":
+		return MoveFirstLtr(), nil
+	case "move-first-rtl":
+		return MoveFirstRtl(), nil
+	case "move-last-ltr":
+		return MoveLastLtr(), nil
+	case "move-last-rtl":
+		return MoveLastRtl(), nil
+	case "musical-score":
+		return MusicalScore(), nil
+	case "network":
+		return Network(), nil
+	case "network-off":
+		return NetworkOff(), nil
+	case "new-window-ltr":
+		return NewWindowLtr(), nil
+	case "new-window-rtl":
+		return NewWindowRtl(), nil
+	case "newline-ltr":
+		return NewlineLtr(), nil
+	case "newline-rtl":
+		return NewlineRtl(), nil
+	case "newspaper-ltr":
+		return NewspaperLtr(), nil
+	case "newspaper-rtl":
+		return NewspaperRtl(), nil
+	case "next-ltr":
+		return NextLtr(), nil
+	case "next-rtl":
+		return NextRtl(), nil
+	case "no-wiki-text":
+		return NoWikiText(), nil
+	case "not-bright":
+		return NotBright(), nil
+	case "notice":
+		return Notice(), nil
+	case "ocr":
+		return Ocr(), nil
+	case "ongoing-conversation-ltr":
+		return OngoingConversationLtr(), nil
+	case "ongoing-conversation-rtl":
+		return OngoingConversationRtl(), nil
+	case "outdent-ltr":
+		return OutdentLtr(), nil
+	case "outdent-rtl":
+		return OutdentRtl(), nil
+	case "outline-ltr":
+		return OutlineLtr(), nil
+	case "outline-rtl":
+		return OutlineRtl(), nil
+	case "page-settings":
+		return PageSettings(), nil
+	case "palette-ltr":
+		return PaletteLtr(), nil
+	case "palette-rtl":
+		return PaletteRtl(), nil
+	case "paste-ltr":
+		return PasteLtr(), nil
+	case "paste-rtl":
+		return PasteRtl(), nil
+	case "pause":
+		return Pause(), nil
+	case "play":
+		return Play(), nil
+	case "previous-ltr":
+		return PreviousLtr(), nil
+	case "previous-rtl":
+		return PreviousRtl(), nil
+	case "printer":
+		return Printer(), nil
+	case "push-pin":
+		return PushPin(), nil
+	case "puzzle-ltr":
+		return PuzzleLtr(), nil
+	case "puzzle-rtl":
+		return PuzzleRtl(), nil
+	case "quotes-ltr":
+		return QuotesLtr(), nil
+	case "quotes-rtl":
+		return QuotesRtl(), nil
+	case "recent-changes-ltr":
+		return RecentChangesLtr(), nil
+	case "recent-changes-rtl":
+		return RecentChangesRtl(), nil
+	case "redo-ltr":
+		return RedoLtr(), nil
+	case "redo-rtl":
+		return RedoRtl(), nil
+	case "reference":
+		return Reference(), nil
+	case "reference-existing-ltr":
+		return ReferenceExistingLtr(), nil
+	case "reference-existing-rtl":
+		return ReferenceExistingRtl(), nil
+	case "references-ltr":
+		return ReferencesLtr(), nil
+	case "references-rtl":
+		return ReferencesRtl(), nil
+	case "reload":
+		return Reload(), nil
+	case "restore":
+		return Restore(), nil
+	case "robot":
+		return Robot(), nil
+	case "sandbox":
+		return Sandbox(), nil
+	case "search":
+		return Search(), nil
+	case "search-case-sensitive":
+		return SearchCaseSensitive(), nil
+	case "search-diacritics":
+		return SearchDiacritics(), nil
+	case "search-regular-expression":
+		return SearchRegularExpression(), nil
+	case "settings":
+		return Settings(), nil
+	case "share":
+		return Share(), nil
+	case "signature-ltr":
+		return SignatureLtr(), nil
+	case "signature-rtl":
+		return SignatureRtl(), nil
+	case "smaller":
+		return Smaller(), nil
+	case "smaller-text":
+		return SmallerText(), nil
+	case "special-character":
+		return SpecialCharacter(), nil
+	case "special-pages-ltr":
+		return SpecialPagesLtr(), nil
+	case "special-pages-rtl":
+		return SpecialPagesRtl(), nil
+	case "speech-bubble-add-ltr":
+		return SpeechBubbleAddLtr(), nil
+	case "speech-bubble-add-rtl":
+		return SpeechBubbleAddRtl(), nil
+	case "speech-bubble-ltr":
+		return SpeechBubbleLtr(), nil
+	case "speech-bubble-rtl":
+		return SpeechBubbleRtl(), nil
+	case "speech-bubbles-ltr":
+		return SpeechBubblesLtr(), nil
+	case "speech-bubbles-rtl":
+		return SpeechBubblesRtl(), nil
+	case "star":
+		return Star(), nil
+	case "stop":
+		return Stop(), nil
+	case "strikethrough-a":
+		return StrikethroughA(), nil
+	case "strikethrough-s":
+		return StrikethroughS(), nil
+	case "strikethrough-y":
+		return StrikethroughY(), nil
+	case "subscript-ltr":
+		return SubscriptLtr(), nil
+	case "subscript-rtl":
+		return SubscriptRtl(), nil
+	case "subtract":
+		return Subtract(), nil
+	case "success":
+		return Success(), nil
+	case "superscript-ltr":
+		return SuperscriptLtr(), nil
+	case "superscript-rtl":
+		return SuperscriptRtl(), nil
+	case "table":
+		return Table(), nil
+	case "table-add-column-after-ltr":
+		return TableAddColumnAfterLtr(), nil
+	case "table-add-column-after-rtl":
+		return TableAddColumnAfterRtl(), nil
+	case "table-add-column-before-ltr":
+		return TableAddColumnBeforeLtr(), nil
+	case "table-add-column-before-rtl":
+		return TableAddColumnBeforeRtl(), nil
+	case "table-add-row-after":
+		return TableAddRowAfter(), nil
+	case "table-add-row-before":
+		return TableAddRowBefore(), nil
+	case "table-caption":
+		return TableCaption(), nil
+	case "table-merge-cells":
+		return TableMergeCells(), nil
+	case "table-move-column-after-ltr":
+		return TableMoveColumnAfterLtr(), nil
+	case "table-move-column-after-rtl":
+		return TableMoveColumnAfterRtl(), nil
+	case "table-move-column-before-ltr":
+		return TableMoveColumnBeforeLtr(), nil
+	case "table-move-column-before-rtl":
+		return TableMoveColumnBeforeRtl(), nil
+	case "table-move-row-after":
+		return TableMoveRowAfter(), nil
+	case "table-move-row-before":
+		return TableMoveRowBefore(), nil
+	case "tag-ltr":
+		return TagLtr(), nil
+	case "tag-rtl":
+		return TagRtl(), nil
+	case "template-add-ltr":
+		return TemplateAddLtr(), nil
+	case "template-add-rtl":
+		return TemplateAddRtl(), nil
+	case "text-dir-ltr":
+		return TextDirLtr(), nil
+	case "text-dir-rtl":
+		return TextDirRtl(), nil
+	case "text-flow-ltr":
+		return TextFlowLtr(), nil
+	case "text-flow-rtl":
+		return TextFlowRtl(), nil
+	case "text-style":
+		return TextStyle(), nil
+	case "text-summary-ltr":
+		return TextSummaryLtr(), nil
+	case "text-summary-rtl":
+		return TextSummaryRtl(), nil
+	case "trash":
+		return Trash(), nil
+	case "tray":
+		return Tray(), nil
+	case "un-block":
+		return UnBlock(), nil
+	case "un-flag-ltr":
+		return UnFlagLtr(), nil
+	case "un-flag-rtl":
+		return UnFlagRtl(), nil
+	case "un-link":
+		return UnLink(), nil
+	case "un-lock":
+		return UnLock(), nil
+	case "un-star":
+		return UnStar(), nil
+	case "underline-a":
+		return UnderlineA(), nil
+	case "underline-u":
+		return UnderlineU(), nil
+	case "undo-ltr":
+		return UndoLtr(), nil
+	case "undo-rtl":
+		return UndoRtl(), nil
+	case "up-triangle":
+		return UpTriangle(), nil
+	case "upload":
+		return Upload(), nil
+	case "user-active":
+		return UserActive(), nil
+	case "user-add-ltr":
+		return UserAddLtr(), nil
+	case "user-add-rtl":
+		return UserAddRtl(), nil
+	case "user-anonymous":
+		return UserAnonymous(), nil
+	case "user-avatar":
+		return UserAvatar(), nil
+	case "user-avatar-outline":
+		return UserAvatarOutline(), nil
+	case "user-contributions-ltr":
+		return UserContributionsLtr(), nil
+	case "user-contributions-rtl":
+		return UserContributionsRtl(), nil
+	case "user-group-ltr":
+		return UserGroupLtr(), nil
+	case "user-group-rtl":
+		return UserGroupRtl(), nil
+	case "user-talk-ltr":
+		return UserTalkLtr(), nil
+	case "user-talk-rtl":
+		return UserTalkRtl(), nil
+	case "view-compact":
+		return ViewCompact(), nil
+	case "view-details-ltr":
+		return ViewDetailsLtr(), nil
+	case "view-details-rtl":
+		return ViewDetailsRtl(), nil
+	case "vision-simulator":
+		return VisionSimulator(), nil
+	case "volume-down-ltr":
+		return VolumeDownLtr(), nil
+	case "volume-down-rtl":
+		return VolumeDownRtl(), nil
+	case "volume-off-ltr":
+		return VolumeOffLtr(), nil
+	case "volume-off-rtl":
+		return VolumeOffRtl(), nil
+	case "volume-up-ltr":
+		return VolumeUpLtr(), nil
+	case "volume-up-rtl":
+		return VolumeUpRtl(), nil
+	case "watchlist-ltr":
+		return WatchlistLtr(), nil
+	case "watchlist-rtl":
+		return WatchlistRtl(), nil
+	case "wiki-text":
+		return WikiText(), nil
+	case "window":
+		return Window(), nil
+	case "zoom-in":
+		return ZoomIn(), nil
+	case "zoom-out":
+		return ZoomOut(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in ooui icon set", name)
+	}
 }

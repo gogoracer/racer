@@ -1,6 +1,9 @@
 package file_icons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	aInnerSVG                      = `<path fill="currentColor" d="M286.883 449.302c-32.074-5.598-44.248-61.722-57.684-141.257c-35.493 5.57-84.224 15.62-136.646 26.918c-8.547 22.392-23.16 55.117-43.838 98.189C37.15 458.017-.483 447.932.005 421.615c0-8.204 12.902-39.392 38.711-93.573c-10.963-19.661-1.16-37.43 20.766-42.046c44.515-79.694 125.23-218.94 149.464-223.298c34.272.02 27.712 46.153 43.839 114.341l38.2 178.177c16.024 46.692 41.436 85.73-4.102 94.086zm-90.5-293.03l-73.32 118.188c20.678-5.295 52.043-11.705 94.088-19.227l-20.766-98.96zm224.6-39.731c-1.207 16.875-2.378 36.667-1.537 57.427c47.449 1.985 91.73-8.746 92.549 23.585c.268 12.222-9.834 24.105-22.047 23.586c-22.209-3.485-45.74-.7-69.99-1.539v60.247c2.12 31.834-48.317 30.886-45.633 0l-.513-59.221c-52.638 3.635-83.997 3.46-83.576-21.79c1.267-29.974 19.67-18.519 83.576-23.844c-.739-23.628-.75-45.79 2.052-62.297c6-28.701 44.984-21.366 45.119 3.846z"/>`
@@ -12095,4 +12098,1871 @@ func Zork(children ...any) *engine.HTMLElement {
 		zorkInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "a":
+		return A(), nil
+	case "abap":
+		return Abap(), nil
+	case "abif":
+		return Abif(), nil
+	case "acre":
+		return Acre(), nil
+	case "actionscript":
+		return Actionscript(), nil
+	case "ada":
+		return Ada(), nil
+	case "adobe":
+		return Adobe(), nil
+	case "adobe-acrobat":
+		return AdobeAcrobat(), nil
+	case "adobe-aftereffects":
+		return AdobeAftereffects(), nil
+	case "adobe-animate":
+		return AdobeAnimate(), nil
+	case "adobe-audition":
+		return AdobeAudition(), nil
+	case "adobe-bridge":
+		return AdobeBridge(), nil
+	case "adobe-characteranimator":
+		return AdobeCharacteranimator(), nil
+	case "adobe-creativecloud":
+		return AdobeCreativecloud(), nil
+	case "adobe-dimension":
+		return AdobeDimension(), nil
+	case "adobe-dreamweaver":
+		return AdobeDreamweaver(), nil
+	case "adobe-flash":
+		return AdobeFlash(), nil
+	case "adobe-fuse":
+		return AdobeFuse(), nil
+	case "adobe-illustrator":
+		return AdobeIllustrator(), nil
+	case "adobe-incopy":
+		return AdobeIncopy(), nil
+	case "adobe-indesign":
+		return AdobeIndesign(), nil
+	case "adobe-lightroom":
+		return AdobeLightroom(), nil
+	case "adobe-mediaencoder":
+		return AdobeMediaencoder(), nil
+	case "adobe-photoshop":
+		return AdobePhotoshop(), nil
+	case "adobe-prelude":
+		return AdobePrelude(), nil
+	case "adobe-premiere":
+		return AdobePremiere(), nil
+	case "adobe-premiererush":
+		return AdobePremiererush(), nil
+	case "adobe-xd":
+		return AdobeXd(), nil
+	case "adonisjs":
+		return Adonisjs(), nil
+	case "aeternity":
+		return Aeternity(), nil
+	case "affectscript":
+		return Affectscript(), nil
+	case "affinitydesigner":
+		return Affinitydesigner(), nil
+	case "agc":
+		return Agc(), nil
+	case "agda":
+		return Agda(), nil
+	case "akka":
+		return Akka(), nil
+	case "alacritty":
+		return Alacritty(), nil
+	case "alacritty-alt":
+		return AlacrittyAlt(), nil
+	case "alex":
+		return Alex(), nil
+	case "alloy":
+		return Alloy(), nil
+	case "alpine-linux":
+		return AlpineLinux(), nil
+	case "amd":
+		return Amd(), nil
+	case "amigaos":
+		return Amigaos(), nil
+	case "ampl":
+		return Ampl(), nil
+	case "amusewiki":
+		return Amusewiki(), nil
+	case "analytica":
+		return Analytica(), nil
+	case "angelscript":
+		return Angelscript(), nil
+	case "animestudio":
+		return Animestudio(), nil
+	case "ansible":
+		return Ansible(), nil
+	case "ansible-alt":
+		return AnsibleAlt(), nil
+	case "antlr":
+		return Antlr(), nil
+	case "antwar":
+		return Antwar(), nil
+	case "anyscript":
+		return Anyscript(), nil
+	case "apache-ant":
+		return ApacheAnt(), nil
+	case "api-blueprint":
+		return ApiBlueprint(), nil
+	case "apiextractor":
+		return Apiextractor(), nil
+	case "apl":
+		return Apl(), nil
+	case "apl-old":
+		return AplOld(), nil
+	case "apollo":
+		return Apollo(), nil
+	case "apple":
+		return Apple(), nil
+	case "appveyor":
+		return Appveyor(), nil
+	case "arc":
+		return Arc(), nil
+	case "arch-linux":
+		return ArchLinux(), nil
+	case "arduino":
+		return Arduino(), nil
+	case "arm":
+		return Arm(), nil
+	case "arttext":
+		return Arttext(), nil
+	case "arttext4":
+		return ArttextFour(), nil
+	case "asciidoc":
+		return Asciidoc(), nil
+	case "asciidoctor":
+		return Asciidoctor(), nil
+	case "assembly-agc":
+		return AssemblyAgc(), nil
+	case "assembly-amd":
+		return AssemblyAmd(), nil
+	case "assembly-arm":
+		return AssemblyArm(), nil
+	case "assembly-att":
+		return AssemblyAtt(), nil
+	case "assembly-avr":
+		return AssemblyAvr(), nil
+	case "assembly-generic":
+		return AssemblyGeneric(), nil
+	case "assembly-hitachi":
+		return AssemblyHitachi(), nil
+	case "assembly-intel":
+		return AssemblyIntel(), nil
+	case "assembly-motorola":
+		return AssemblyMotorola(), nil
+	case "assembly-powerpc":
+		return AssemblyPowerpc(), nil
+	case "assembly-riscv":
+		return AssemblyRiscv(), nil
+	case "assembly-sparc":
+		return AssemblySparc(), nil
+	case "assembly-vax":
+		return AssemblyVax(), nil
+	case "assembly-zilog":
+		return AssemblyZilog(), nil
+	case "asymptote":
+		return Asymptote(), nil
+	case "asymptote-alt":
+		return AsymptoteAlt(), nil
+	case "atoum":
+		return Atoum(), nil
+	case "ats":
+		return Ats(), nil
+	case "att":
+		return Att(), nil
+	case "audacity":
+		return Audacity(), nil
+	case "augeas":
+		return Augeas(), nil
+	case "aurelia":
+		return Aurelia(), nil
+	case "autohotkey":
+		return Autohotkey(), nil
+	case "autoit":
+		return Autoit(), nil
+	case "automator":
+		return Automator(), nil
+	case "avr":
+		return Avr(), nil
+	case "avro":
+		return Avro(), nil
+	case "awk":
+		return Awk(), nil
+	case "azure-pipelines":
+		return AzurePipelines(), nil
+	case "babel":
+		return Babel(), nil
+	case "ballerina":
+		return Ballerina(), nil
+	case "bazaar":
+		return Bazaar(), nil
+	case "bazel":
+		return Bazel(), nil
+	case "bazel-old":
+		return BazelOld(), nil
+	case "behat":
+		return Behat(), nil
+	case "bem":
+		return Bem(), nil
+	case "bibtex":
+		return Bibtex(), nil
+	case "bikeshed":
+		return Bikeshed(), nil
+	case "biml":
+		return Biml(), nil
+	case "binder":
+		return Binder(), nil
+	case "bintray":
+		return Bintray(), nil
+	case "bison":
+		return Bison(), nil
+	case "bithound":
+		return Bithound(), nil
+	case "blender":
+		return Blender(), nil
+	case "blitzbasic":
+		return Blitzbasic(), nil
+	case "bloc":
+		return Bloc(), nil
+	case "bluespec":
+		return Bluespec(), nil
+	case "bnf":
+		return Bnf(), nil
+	case "boo":
+		return Boo(), nil
+	case "bors":
+		return Bors(), nil
+	case "bosque":
+		return Bosque(), nil
+	case "brainfuck":
+		return Brainfuck(), nil
+	case "brakeman":
+		return Brakeman(), nil
+	case "bro":
+		return Bro(), nil
+	case "broccoli":
+		return Broccoli(), nil
+	case "brotli":
+		return Brotli(), nil
+	case "brotli-old":
+		return BrotliOld(), nil
+	case "browserslist":
+		return Browserslist(), nil
+	case "browsersync":
+		return Browsersync(), nil
+	case "brunch":
+		return Brunch(), nil
+	case "buck":
+		return Buck(), nil
+	case "build-boot":
+		return BuildBoot(), nil
+	case "buildkite":
+		return Buildkite(), nil
+	case "bundler":
+		return Bundler(), nil
+	case "byond":
+		return Byond(), nil
+	case "c":
+		return C(), nil
+	case "c-script":
+		return CScript(), nil
+	case "cabal":
+		return Cabal(), nil
+	case "caddy":
+		return Caddy(), nil
+	case "caddy-old":
+		return CaddyOld(), nil
+	case "caffe":
+		return Caffe(), nil
+	case "caffe2":
+		return CaffeTwo(), nil
+	case "cairo":
+		return Cairo(), nil
+	case "cake":
+		return Cake(), nil
+	case "cakefile":
+		return Cakefile(), nil
+	case "cakephp":
+		return Cakephp(), nil
+	case "cakephp-old":
+		return CakephpOld(), nil
+	case "calva":
+		return Calva(), nil
+	case "carthage":
+		return Carthage(), nil
+	case "casc":
+		return Casc(), nil
+	case "cdf":
+		return Cdf(), nil
+	case "ceylon":
+		return Ceylon(), nil
+	case "chai":
+		return Chai(), nil
+	case "chapel":
+		return Chapel(), nil
+	case "chartjs":
+		return Chartjs(), nil
+	case "cheetah3d":
+		return CheetahThreeD(), nil
+	case "chef":
+		return Chef(), nil
+	case "chocolatey":
+		return Chocolatey(), nil
+	case "chuck":
+		return Chuck(), nil
+	case "circleci":
+		return Circleci(), nil
+	case "cirru":
+		return Cirru(), nil
+	case "ckeditor":
+		return Ckeditor(), nil
+	case "clarion":
+		return Clarion(), nil
+	case "clean":
+		return Clean(), nil
+	case "click":
+		return Click(), nil
+	case "clips":
+		return Clips(), nil
+	case "clojurejs":
+		return Clojurejs(), nil
+	case "closuretemplate":
+		return Closuretemplate(), nil
+	case "cloudfoundry":
+		return Cloudfoundry(), nil
+	case "cmake":
+		return Cmake(), nil
+	case "cnab":
+		return Cnab(), nil
+	case "cobol":
+		return Cobol(), nil
+	case "cocoapods":
+		return Cocoapods(), nil
+	case "codacy":
+		return Codacy(), nil
+	case "code-climate":
+		return CodeClimate(), nil
+	case "codecov":
+		return Codecov(), nil
+	case "codekit":
+		return Codekit(), nil
+	case "codemeta":
+		return Codemeta(), nil
+	case "codemirror":
+		return Codemirror(), nil
+	case "codeship":
+		return Codeship(), nil
+	case "coldfusion":
+		return Coldfusion(), nil
+	case "commitizen":
+		return Commitizen(), nil
+	case "commitlint":
+		return Commitlint(), nil
+	case "common-lisp":
+		return CommonLisp(), nil
+	case "component-pascal":
+		return ComponentPascal(), nil
+	case "composer":
+		return Composer(), nil
+	case "conan":
+		return Conan(), nil
+	case "conda":
+		return Conda(), nil
+	case "config":
+		return Config(), nil
+	case "config-coffeescript":
+		return ConfigCoffeescript(), nil
+	case "config-go":
+		return ConfigGo(), nil
+	case "config-haskell":
+		return ConfigHaskell(), nil
+	case "config-js":
+		return ConfigJs(), nil
+	case "config-perl":
+		return ConfigPerl(), nil
+	case "config-python":
+		return ConfigPython(), nil
+	case "config-react":
+		return ConfigReact(), nil
+	case "config-ruby":
+		return ConfigRuby(), nil
+	case "config-rust":
+		return ConfigRust(), nil
+	case "config-typescript":
+		return ConfigTypescript(), nil
+	case "conll":
+		return Conll(), nil
+	case "coq":
+		return Coq(), nil
+	case "cordova":
+		return Cordova(), nil
+	case "coreldraw":
+		return Coreldraw(), nil
+	case "coreldraw-alt":
+		return CoreldrawAlt(), nil
+	case "coveralls":
+		return Coveralls(), nil
+	case "cpan":
+		return Cpan(), nil
+	case "cpcdosc":
+		return Cpcdosc(), nil
+	case "crafttweaker":
+		return Crafttweaker(), nil
+	case "creole":
+		return Creole(), nil
+	case "crowdin":
+		return Crowdin(), nil
+	case "crystal":
+		return Crystal(), nil
+	case "csound":
+		return Csound(), nil
+	case "cubit":
+		return Cubit(), nil
+	case "cucumber":
+		return Cucumber(), nil
+	case "cuneiform":
+		return Cuneiform(), nil
+	case "curl":
+		return Curl(), nil
+	case "curl-lang":
+		return CurlLang(), nil
+	case "curry":
+		return Curry(), nil
+	case "cvs":
+		return Cvs(), nil
+	case "cwl":
+		return Cwl(), nil
+	case "cython":
+		return Cython(), nil
+	case "d3":
+		return DThree(), nil
+	case "dafny":
+		return Dafny(), nil
+	case "darcs-patch":
+		return DarcsPatch(), nil
+	case "dashboard":
+		return Dashboard(), nil
+	case "dataweave":
+		return Dataweave(), nil
+	case "dbase":
+		return Dbase(), nil
+	case "default":
+		return Default(), nil
+	case "delphi":
+		return Delphi(), nil
+	case "deno":
+		return Deno(), nil
+	case "dependabot":
+		return Dependabot(), nil
+	case "devcontainer":
+		return Devcontainer(), nil
+	case "devicetree":
+		return Devicetree(), nil
+	case "dhall":
+		return Dhall(), nil
+	case "dia":
+		return Dia(), nil
+	case "diff":
+		return Diff(), nil
+	case "digdag":
+		return Digdag(), nil
+	case "dna":
+		return Dna(), nil
+	case "docbook":
+		return Docbook(), nil
+	case "docker":
+		return Docker(), nil
+	case "doclets":
+		return Doclets(), nil
+	case "docpad":
+		return Docpad(), nil
+	case "docz":
+		return Docz(), nil
+	case "dogescript":
+		return Dogescript(), nil
+	case "dom":
+		return Dom(), nil
+	case "donejs":
+		return Donejs(), nil
+	case "dosbox":
+		return Dosbox(), nil
+	case "dosbox-alt":
+		return DosboxAlt(), nil
+	case "dotenv":
+		return Dotenv(), nil
+	case "dotjs":
+		return Dotjs(), nil
+	case "doxygen":
+		return Doxygen(), nil
+	case "dragonflybsd":
+		return Dragonflybsd(), nil
+	case "dragula":
+		return Dragula(), nil
+	case "draw-io":
+		return DrawIo(), nil
+	case "drone":
+		return Drone(), nil
+	case "dub":
+		return Dub(), nil
+	case "dvc":
+		return Dvc(), nil
+	case "dyalog":
+		return Dyalog(), nil
+	case "dylib":
+		return Dylib(), nil
+	case "e":
+		return E(), nil
+	case "eagle":
+		return Eagle(), nil
+	case "easybuild":
+		return Easybuild(), nil
+	case "ec":
+		return Ec(), nil
+	case "ecere":
+		return Ecere(), nil
+	case "eclipse-lang":
+		return EclipseLang(), nil
+	case "edge":
+		return Edge(), nil
+	case "editorconfig":
+		return Editorconfig(), nil
+	case "eiffel":
+		return Eiffel(), nil
+	case "ejs":
+		return Ejs(), nil
+	case "electron":
+		return Electron(), nil
+	case "elementaryos":
+		return Elementaryos(), nil
+	case "elm":
+		return Elm(), nil
+	case "emacs":
+		return Emacs(), nil
+	case "ember":
+		return Ember(), nil
+	case "emberscript":
+		return Emberscript(), nil
+	case "ensime":
+		return Ensime(), nil
+	case "eq":
+		return Eq(), nil
+	case "esdoc":
+		return Esdoc(), nil
+	case "eslint":
+		return Eslint(), nil
+	case "eslint-old":
+		return EslintOld(), nil
+	case "expo":
+		return Expo(), nil
+	case "fabfile":
+		return Fabfile(), nil
+	case "fabric":
+		return Fabric(), nil
+	case "factor":
+		return Factor(), nil
+	case "falcon":
+		return Falcon(), nil
+	case "fancy":
+		return Fancy(), nil
+	case "fantom":
+		return Fantom(), nil
+	case "fauna":
+		return Fauna(), nil
+	case "faust":
+		return Faust(), nil
+	case "fbx":
+		return Fbx(), nil
+	case "fexl":
+		return Fexl(), nil
+	case "ffmpeg":
+		return Ffmpeg(), nil
+	case "fiddle":
+		return Fiddle(), nil
+	case "figma":
+		return Figma(), nil
+	case "finaldraft":
+		return Finaldraft(), nil
+	case "finder":
+		return Finder(), nil
+	case "firebase":
+		return Firebase(), nil
+	case "firebase-bolt":
+		return FirebaseBolt(), nil
+	case "flask":
+		return Flask(), nil
+	case "floobits":
+		return Floobits(), nil
+	case "flow":
+		return Flow(), nil
+	case "flutter":
+		return Flutter(), nil
+	case "flux":
+		return Flux(), nil
+	case "font":
+		return Font(), nil
+	case "font-bitmap":
+		return FontBitmap(), nil
+	case "font-outline":
+		return FontOutline(), nil
+	case "fontforge":
+		return Fontforge(), nil
+	case "fork":
+		return Fork(), nil
+	case "fortherecord":
+		return Fortherecord(), nil
+	case "fortran":
+		return Fortran(), nil
+	case "fossa":
+		return Fossa(), nil
+	case "fossil":
+		return Fossil(), nil
+	case "fountain":
+		return Fountain(), nil
+	case "4d":
+		return FourD(), nil
+	case "franca":
+		return Franca(), nil
+	case "freedesktop":
+		return Freedesktop(), nil
+	case "freedos":
+		return Freedos(), nil
+	case "freemarker":
+		return Freemarker(), nil
+	case "freemat":
+		return Freemat(), nil
+	case "frege":
+		return Frege(), nil
+	case "fthtml":
+		return Fthtml(), nil
+	case "fuelux":
+		return Fuelux(), nil
+	case "fusebox":
+		return Fusebox(), nil
+	case "futhark":
+		return Futhark(), nil
+	case "galaxy":
+		return Galaxy(), nil
+	case "galen":
+		return Galen(), nil
+	case "gamemaker":
+		return Gamemaker(), nil
+	case "gams":
+		return Gams(), nil
+	case "gap":
+		return Gap(), nil
+	case "gatsby":
+		return Gatsby(), nil
+	case "gauss":
+		return Gauss(), nil
+	case "gdb":
+		return Gdb(), nil
+	case "genshi":
+		return Genshi(), nil
+	case "genstat":
+		return Genstat(), nil
+	case "gentoo":
+		return Gentoo(), nil
+	case "gf":
+		return Gf(), nil
+	case "ghostscript":
+		return Ghostscript(), nil
+	case "gimp":
+		return Gimp(), nil
+	case "gitlab":
+		return Gitlab(), nil
+	case "gitpod":
+		return Gitpod(), nil
+	case "glade":
+		return Glade(), nil
+	case "glide":
+		return Glide(), nil
+	case "gltf":
+		return Gltf(), nil
+	case "glyphs":
+		return Glyphs(), nil
+	case "gn":
+		return Gn(), nil
+	case "gnu":
+		return Gnu(), nil
+	case "gnuplot":
+		return Gnuplot(), nil
+	case "go":
+		return Go(), nil
+	case "go-old":
+		return GoOld(), nil
+	case "godot":
+		return Godot(), nil
+	case "golo":
+		return Golo(), nil
+	case "goreleaser":
+		return Goreleaser(), nil
+	case "gosu":
+		return Gosu(), nil
+	case "gradle":
+		return Gradle(), nil
+	case "grapher":
+		return Grapher(), nil
+	case "graphite":
+		return Graphite(), nil
+	case "graphql":
+		return Graphql(), nil
+	case "graphql-codegenerator":
+		return GraphqlCodegenerator(), nil
+	case "graphviz":
+		return Graphviz(), nil
+	case "gravit-designer":
+		return GravitDesigner(), nil
+	case "greenkeeper":
+		return Greenkeeper(), nil
+	case "gridsome":
+		return Gridsome(), nil
+	case "groovy":
+		return Groovy(), nil
+	case "grunt":
+		return Grunt(), nil
+	case "gulp":
+		return Gulp(), nil
+	case "hack":
+		return Hack(), nil
+	case "haml":
+		return Haml(), nil
+	case "harbour":
+		return Harbour(), nil
+	case "hashicorp":
+		return Hashicorp(), nil
+	case "haxe":
+		return Haxe(), nil
+	case "haxedevelop":
+		return Haxedevelop(), nil
+	case "helix":
+		return Helix(), nil
+	case "hewlettpackard":
+		return Hewlettpackard(), nil
+	case "hie":
+		return Hie(), nil
+	case "hitachi":
+		return Hitachi(), nil
+	case "hjson":
+		return Hjson(), nil
+	case "homebrew":
+		return Homebrew(), nil
+	case "hop":
+		return Hop(), nil
+	case "hoplon":
+		return Hoplon(), nil
+	case "houdini":
+		return Houdini(), nil
+	case "houndci":
+		return Houndci(), nil
+	case "hugo":
+		return Hugo(), nil
+	case "husky":
+		return Husky(), nil
+	case "hy":
+		return Hy(), nil
+	case "hygen":
+		return Hygen(), nil
+	case "hyper":
+		return Hyper(), nil
+	case "icomoon":
+		return Icomoon(), nil
+	case "icu":
+		return Icu(), nil
+	case "idl":
+		return Idl(), nil
+	case "idris":
+		return Idris(), nil
+	case "igor-pro":
+		return IgorPro(), nil
+	case "illumos":
+		return Illumos(), nil
+	case "image":
+		return Image(), nil
+	case "imba":
+		return Imba(), nil
+	case "imba-alt":
+		return ImbaAlt(), nil
+	case "imba-old":
+		return ImbaOld(), nil
+	case "imgbot":
+		return Imgbot(), nil
+	case "influxdata":
+		return Influxdata(), nil
+	case "inform7":
+		return InformSeven(), nil
+	case "ink":
+		return Ink(), nil
+	case "inkscape":
+		return Inkscape(), nil
+	case "innosetup":
+		return Innosetup(), nil
+	case "intel":
+		return Intel(), nil
+	case "io":
+		return Io(), nil
+	case "ioke":
+		return Ioke(), nil
+	case "ionic-project":
+		return IonicProject(), nil
+	case "isabelle":
+		return Isabelle(), nil
+	case "istanbul":
+		return Istanbul(), nil
+	case "j":
+		return J(), nil
+	case "jade":
+		return Jade(), nil
+	case "jakefile":
+		return Jakefile(), nil
+	case "janet":
+		return Janet(), nil
+	case "jasmine":
+		return Jasmine(), nil
+	case "jenkins":
+		return Jenkins(), nil
+	case "jest":
+		return Jest(), nil
+	case "jinja":
+		return Jinja(), nil
+	case "jison":
+		return Jison(), nil
+	case "jolie":
+		return Jolie(), nil
+	case "jscpd":
+		return Jscpd(), nil
+	case "json5":
+		return JsonFive(), nil
+	case "json-ld1":
+		return JsonLdOne(), nil
+	case "json-ld2":
+		return JsonLdTwo(), nil
+	case "json-1":
+		return JsonOne(), nil
+	case "json-2":
+		return JsonTwo(), nil
+	case "jsonnet":
+		return Jsonnet(), nil
+	case "jsx":
+		return Jsx(), nil
+	case "jsx-alt":
+		return JsxAlt(), nil
+	case "jsx-atom":
+		return JsxAtom(), nil
+	case "julia":
+		return Julia(), nil
+	case "junos":
+		return Junos(), nil
+	case "jupyter":
+		return Jupyter(), nil
+	case "kaitai":
+		return Kaitai(), nil
+	case "karma":
+		return Karma(), nil
+	case "keybase":
+		return Keybase(), nil
+	case "keynote":
+		return Keynote(), nil
+	case "khronos":
+		return Khronos(), nil
+	case "kibo":
+		return Kibo(), nil
+	case "kicad":
+		return Kicad(), nil
+	case "kitchenci":
+		return Kitchenci(), nil
+	case "kivy":
+		return Kivy(), nil
+	case "knime":
+		return Knime(), nil
+	case "knockout":
+		return Knockout(), nil
+	case "kos":
+		return Kos(), nil
+	case "kotlin":
+		return Kotlin(), nil
+	case "krl":
+		return Krl(), nil
+	case "kubernetes":
+		return Kubernetes(), nil
+	case "kusto":
+		return Kusto(), nil
+	case "kusto-alt":
+		return KustoAlt(), nil
+	case "kx":
+		return Kx(), nil
+	case "labview":
+		return Labview(), nil
+	case "laravel":
+		return Laravel(), nil
+	case "lark":
+		return Lark(), nil
+	case "lasso":
+		return Lasso(), nil
+	case "latex":
+		return Latex(), nil
+	case "latino":
+		return Latino(), nil
+	case "leaflet":
+		return Leaflet(), nil
+	case "lean":
+		return Lean(), nil
+	case "lefthook":
+		return Lefthook(), nil
+	case "lefthook-alt":
+		return LefthookAlt(), nil
+	case "leiningen":
+		return Leiningen(), nil
+	case "lektor":
+		return Lektor(), nil
+	case "lerna":
+		return Lerna(), nil
+	case "lex":
+		return Lex(), nil
+	case "lex-alt":
+		return LexAlt(), nil
+	case "lfe":
+		return Lfe(), nil
+	case "lgtm":
+		return Lgtm(), nil
+	case "libuv":
+		return Libuv(), nil
+	case "lighthouse":
+		return Lighthouse(), nil
+	case "lightwave":
+		return Lightwave(), nil
+	case "lilypond":
+		return Lilypond(), nil
+	case "lime":
+		return Lime(), nil
+	case "linqpad":
+		return Linqpad(), nil
+	case "lisp":
+		return Lisp(), nil
+	case "livescript":
+		return Livescript(), nil
+	case "llvm":
+		return Llvm(), nil
+	case "logtalk":
+		return Logtalk(), nil
+	case "lolcode":
+		return Lolcode(), nil
+	case "lookml":
+		return Lookml(), nil
+	case "lsl":
+		return Lsl(), nil
+	case "lua":
+		return Lua(), nil
+	case "macaulay2":
+		return MacaulayTwo(), nil
+	case "macvim":
+		return Macvim(), nil
+	case "magit":
+		return Magit(), nil
+	case "mako":
+		return Mako(), nil
+	case "manjaro":
+		return Manjaro(), nil
+	case "manpage":
+		return Manpage(), nil
+	case "mapbox":
+		return Mapbox(), nil
+	case "markdownlint":
+		return Markdownlint(), nil
+	case "marko":
+		return Marko(), nil
+	case "mathematica":
+		return Mathematica(), nil
+	case "mathjax":
+		return Mathjax(), nil
+	case "matlab":
+		return Matlab(), nil
+	case "matroska":
+		return Matroska(), nil
+	case "max":
+		return Max(), nil
+	case "maya":
+		return Maya(), nil
+	case "mdx":
+		return Mdx(), nil
+	case "mediawiki":
+		return Mediawiki(), nil
+	case "melpa":
+		return Melpa(), nil
+	case "mercurial":
+		return Mercurial(), nil
+	case "mercury":
+		return Mercury(), nil
+	case "mermaid":
+		return Mermaid(), nil
+	case "meson":
+		return Meson(), nil
+	case "meson-old":
+		return MesonOld(), nil
+	case "metal":
+		return Metal(), nil
+	case "metapost":
+		return Metapost(), nil
+	case "meteor":
+		return Meteor(), nil
+	case "microsoft-access":
+		return MicrosoftAccess(), nil
+	case "microsoft-excel":
+		return MicrosoftExcel(), nil
+	case "microsoft-infopath":
+		return MicrosoftInfopath(), nil
+	case "microsoft-lync":
+		return MicrosoftLync(), nil
+	case "microsoft-onenote":
+		return MicrosoftOnenote(), nil
+	case "microsoft-outlook":
+		return MicrosoftOutlook(), nil
+	case "microsoft-powerpoint":
+		return MicrosoftPowerpoint(), nil
+	case "microsoft-project":
+		return MicrosoftProject(), nil
+	case "microsoft-publisher":
+		return MicrosoftPublisher(), nil
+	case "microsoft-visio":
+		return MicrosoftVisio(), nil
+	case "microsoft-word":
+		return MicrosoftWord(), nil
+	case "minecraft":
+		return Minecraft(), nil
+	case "minizinc":
+		return Minizinc(), nil
+	case "mint":
+		return Mint(), nil
+	case "mirah":
+		return Mirah(), nil
+	case "miranda":
+		return Miranda(), nil
+	case "mirc":
+		return Mirc(), nil
+	case "mixin":
+		return Mixin(), nil
+	case "mjml":
+		return Mjml(), nil
+	case "mocha":
+		return Mocha(), nil
+	case "modelica":
+		return Modelica(), nil
+	case "modernweb":
+		return Modernweb(), nil
+	case "modo":
+		return Modo(), nil
+	case "modula-3":
+		return ModulaThree(), nil
+	case "modula-2":
+		return ModulaTwo(), nil
+	case "moho":
+		return Moho(), nil
+	case "moleculer":
+		return Moleculer(), nil
+	case "moment":
+		return Moment(), nil
+	case "moment-timezone":
+		return MomentTimezone(), nil
+	case "monkey":
+		return Monkey(), nil
+	case "mono":
+		return Mono(), nil
+	case "monotone":
+		return Monotone(), nil
+	case "motorola":
+		return Motorola(), nil
+	case "moustache":
+		return Moustache(), nil
+	case "mruby":
+		return Mruby(), nil
+	case "ms-dos":
+		return MsDos(), nil
+	case "mupad":
+		return Mupad(), nil
+	case "nano":
+		return Nano(), nil
+	case "nanoc":
+		return Nanoc(), nil
+	case "nant":
+		return Nant(), nil
+	case "nasm":
+		return Nasm(), nil
+	case "ndepend":
+		return Ndepend(), nil
+	case "neko":
+		return Neko(), nil
+	case "nemerle":
+		return Nemerle(), nil
+	case "neo4j":
+		return NeoFourJ(), nil
+	case "neon":
+		return Neon(), nil
+	case "nessus":
+		return Nessus(), nil
+	case "nestjs":
+		return Nestjs(), nil
+	case "netlify":
+		return Netlify(), nil
+	case "netlinx":
+		return Netlinx(), nil
+	case "netlogo":
+		return Netlogo(), nil
+	case "new-relic":
+		return NewRelic(), nil
+	case "nextflow":
+		return Nextflow(), nil
+	case "nextjs":
+		return Nextjs(), nil
+	case "nginx":
+		return Nginx(), nil
+	case "ngrx":
+		return Ngrx(), nil
+	case "nib":
+		return Nib(), nil
+	case "nickle":
+		return Nickle(), nil
+	case "nightwatch":
+		return Nightwatch(), nil
+	case "nimble":
+		return Nimble(), nil
+	case "nimrod":
+		return Nimrod(), nil
+	case "nintendo64":
+		return NintendoSixtyFour(), nil
+	case "nit":
+		return Nit(), nil
+	case "nix":
+		return Nix(), nil
+	case "nmap":
+		return Nmap(), nil
+	case "nodemon":
+		return Nodemon(), nil
+	case "nokogiri":
+		return Nokogiri(), nil
+	case "nomad":
+		return Nomad(), nil
+	case "noon":
+		return Noon(), nil
+	case "normalise":
+		return Normalise(), nil
+	case "npm":
+		return Npm(), nil
+	case "npm-old":
+		return NpmOld(), nil
+	case "nsis":
+		return Nsis(), nil
+	case "nsis-old":
+		return NsisOld(), nil
+	case "nsri":
+		return Nsri(), nil
+	case "nsri-alt":
+		return NsriAlt(), nil
+	case "nuclide":
+		return Nuclide(), nil
+	case "nuget":
+		return Nuget(), nil
+	case "numpy":
+		return Numpy(), nil
+	case "numpy-old":
+		return NumpyOld(), nil
+	case "nunjucks":
+		return Nunjucks(), nil
+	case "nuxt":
+		return Nuxt(), nil
+	case "nvidia":
+		return Nvidia(), nil
+	case "nwscript":
+		return Nwscript(), nil
+	case "nx":
+		return Nx(), nil
+	case "nxc":
+		return Nxc(), nil
+	case "oberon":
+		return Oberon(), nil
+	case "objective-j":
+		return ObjectiveJ(), nil
+	case "ocaml":
+		return Ocaml(), nil
+	case "octave":
+		return Octave(), nil
+	case "odin":
+		return Odin(), nil
+	case "ogone":
+		return Ogone(), nil
+	case "omnigraffle":
+		return Omnigraffle(), nil
+	case "1c":
+		return OneC(), nil
+	case "1c-alt":
+		return OneCAlt(), nil
+	case "ooc":
+		return Ooc(), nil
+	case "opa":
+		return Opa(), nil
+	case "openapi":
+		return Openapi(), nil
+	case "openbsd":
+		return Openbsd(), nil
+	case "openbsd-alt":
+		return OpenbsdAlt(), nil
+	case "opencl":
+		return Opencl(), nil
+	case "opencv":
+		return Opencv(), nil
+	case "openexr":
+		return Openexr(), nil
+	case "opengl":
+		return Opengl(), nil
+	case "openindiana":
+		return Openindiana(), nil
+	case "openoffice":
+		return Openoffice(), nil
+	case "openpolicyagent":
+		return Openpolicyagent(), nil
+	case "openscad":
+		return Openscad(), nil
+	case "opensolaris":
+		return Opensolaris(), nil
+	case "openstack":
+		return Openstack(), nil
+	case "openvms":
+		return Openvms(), nil
+	case "openvpn":
+		return Openvpn(), nil
+	case "openzfs":
+		return Openzfs(), nil
+	case "org-mode":
+		return OrgMode(), nil
+	case "os2":
+		return OsTwo(), nil
+	case "owl":
+		return Owl(), nil
+	case "ox":
+		return Ox(), nil
+	case "oxygene":
+		return Oxygene(), nil
+	case "oz":
+		return Oz(), nil
+	case "p4":
+		return PFour(), nil
+	case "pan":
+		return Pan(), nil
+	case "papyrus":
+		return Papyrus(), nil
+	case "parrot":
+		return Parrot(), nil
+	case "pascal":
+		return Pascal(), nil
+	case "patch":
+		return Patch(), nil
+	case "patreon":
+		return Patreon(), nil
+	case "pawn":
+		return Pawn(), nil
+	case "pcd":
+		return Pcd(), nil
+	case "pegjs":
+		return Pegjs(), nil
+	case "perl6":
+		return PerlSix(), nil
+	case "phalcon":
+		return Phalcon(), nil
+	case "phoenix":
+		return Phoenix(), nil
+	case "photorec":
+		return Photorec(), nil
+	case "php":
+		return Php(), nil
+	case "phpunit":
+		return Phpunit(), nil
+	case "phraseapp":
+		return Phraseapp(), nil
+	case "pickle":
+		return Pickle(), nil
+	case "pico-8":
+		return PicoEight(), nil
+	case "picolisp":
+		return Picolisp(), nil
+	case "pike":
+		return Pike(), nil
+	case "pinescript":
+		return Pinescript(), nil
+	case "pipenv":
+		return Pipenv(), nil
+	case "pkgsrc":
+		return Pkgsrc(), nil
+	case "platformio":
+		return Platformio(), nil
+	case "pm2":
+		return PmTwo(), nil
+	case "pnpm":
+		return Pnpm(), nil
+	case "pod":
+		return Pod(), nil
+	case "pogoscript":
+		return Pogoscript(), nil
+	case "pointwise":
+		return Pointwise(), nil
+	case "polymer":
+		return Polymer(), nil
+	case "pony":
+		return Pony(), nil
+	case "postcss":
+		return Postcss(), nil
+	case "postscript":
+		return Postscript(), nil
+	case "pov-ray":
+		return PovRay(), nil
+	case "powerbuilder":
+		return Powerbuilder(), nil
+	case "powerpc":
+		return Powerpc(), nil
+	case "powershell":
+		return Powershell(), nil
+	case "precision":
+		return Precision(), nil
+	case "precommit":
+		return Precommit(), nil
+	case "prettier":
+		return Prettier(), nil
+	case "prisma":
+		return Prisma(), nil
+	case "processing":
+		return Processing(), nil
+	case "progress":
+		return Progress(), nil
+	case "progress-old":
+		return ProgressOld(), nil
+	case "propeller":
+		return Propeller(), nil
+	case "pros":
+		return Pros(), nil
+	case "proselint":
+		return Proselint(), nil
+	case "protractor":
+		return Protractor(), nil
+	case "pug":
+		return Pug(), nil
+	case "pug-old":
+		return PugOld(), nil
+	case "pullapprove":
+		return Pullapprove(), nil
+	case "puppet":
+		return Puppet(), nil
+	case "pure":
+		return Pure(), nil
+	case "purebasic":
+		return Purebasic(), nil
+	case "purescript":
+		return Purescript(), nil
+	case "pypi":
+		return Pypi(), nil
+	case "pyret":
+		return Pyret(), nil
+	case "pytest":
+		return Pytest(), nil
+	case "pyup":
+		return Pyup(), nil
+	case "q":
+		return Q(), nil
+	case "qiskit":
+		return Qiskit(), nil
+	case "qlikview":
+		return Qlikview(), nil
+	case "qt":
+		return Qt(), nil
+	case "quasar":
+		return Quasar(), nil
+	case "r":
+		return R(), nil
+	case "racket":
+		return Racket(), nil
+	case "raml":
+		return Raml(), nil
+	case "rascal":
+		return Rascal(), nil
+	case "razzle":
+		return Razzle(), nil
+	case "rdata":
+		return Rdata(), nil
+	case "rdoc":
+		return Rdoc(), nil
+	case "reactos":
+		return Reactos(), nil
+	case "readthedocs":
+		return Readthedocs(), nil
+	case "realbasic":
+		return Realbasic(), nil
+	case "reason":
+		return Reason(), nil
+	case "reasonstudios":
+		return Reasonstudios(), nil
+	case "reasonstudios-alt":
+		return ReasonstudiosAlt(), nil
+	case "rebol":
+		return Rebol(), nil
+	case "red":
+		return Red(), nil
+	case "red-old":
+		return RedOld(), nil
+	case "redux":
+		return Redux(), nil
+	case "reek":
+		return Reek(), nil
+	case "regex":
+		return Regex(), nil
+	case "remark":
+		return Remark(), nil
+	case "renovate":
+		return Renovate(), nil
+	case "rescript":
+		return Rescript(), nil
+	case "restql":
+		return Restql(), nil
+	case "restructuredtext":
+		return Restructuredtext(), nil
+	case "rexx":
+		return Rexx(), nil
+	case "rhino3d":
+		return RhinoThreeD(), nil
+	case "ring":
+		return Ring(), nil
+	case "riot":
+		return Riot(), nil
+	case "riot-old":
+		return RiotOld(), nil
+	case "risc-v":
+		return RiscV(), nil
+	case "rmarkdown":
+		return Rmarkdown(), nil
+	case "robotframework":
+		return Robotframework(), nil
+	case "robotframework-old":
+		return RobotframeworkOld(), nil
+	case "robots":
+		return Robots(), nil
+	case "rollup":
+		return Rollup(), nil
+	case "rollup-old":
+		return RollupOld(), nil
+	case "rspec":
+		return Rspec(), nil
+	case "rstudio":
+		return Rstudio(), nil
+	case "rsync":
+		return Rsync(), nil
+	case "rubocop":
+		return Rubocop(), nil
+	case "rubygems":
+		return Rubygems(), nil
+	case "sac":
+		return Sac(), nil
+	case "sage":
+		return Sage(), nil
+	case "sails":
+		return Sails(), nil
+	case "saltstack":
+		return Saltstack(), nil
+	case "san":
+		return San(), nil
+	case "sandbox":
+		return Sandbox(), nil
+	case "sas":
+		return Sas(), nil
+	case "sbt":
+		return Sbt(), nil
+	case "scheme":
+		return Scheme(), nil
+	case "scilab":
+		return Scilab(), nil
+	case "scilla":
+		return Scilla(), nil
+	case "scratch":
+		return Scratch(), nil
+	case "scrutinizer":
+		return Scrutinizer(), nil
+	case "self":
+		return Self(), nil
+	case "semanticrelease":
+		return Semanticrelease(), nil
+	case "sentry":
+		return Sentry(), nil
+	case "sequelize":
+		return Sequelize(), nil
+	case "serverless":
+		return Serverless(), nil
+	case "service-fabric":
+		return ServiceFabric(), nil
+	case "shadowcljs":
+		return Shadowcljs(), nil
+	case "shellcheck":
+		return Shellcheck(), nil
+	case "shen":
+		return Shen(), nil
+	case "shipit":
+		return Shipit(), nil
+	case "shippable":
+		return Shippable(), nil
+	case "shopify":
+		return Shopify(), nil
+	case "shuriken":
+		return Shuriken(), nil
+	case "sigils":
+		return Sigils(), nil
+	case "silicongraphics":
+		return Silicongraphics(), nil
+	case "silverstripe":
+		return Silverstripe(), nil
+	case "sinatra":
+		return Sinatra(), nil
+	case "sketch":
+		return Sketch(), nil
+	case "sketchup-layout":
+		return SketchupLayout(), nil
+	case "sketchup-make":
+		return SketchupMake(), nil
+	case "sketchup-stylebuilder":
+		return SketchupStylebuilder(), nil
+	case "slash":
+		return Slash(), nil
+	case "smartos":
+		return Smartos(), nil
+	case "smartos-alt":
+		return SmartosAlt(), nil
+	case "snapcraft":
+		return Snapcraft(), nil
+	case "snort":
+		return Snort(), nil
+	case "snowpack":
+		return Snowpack(), nil
+	case "snyk":
+		return Snyk(), nil
+	case "solidarity":
+		return Solidarity(), nil
+	case "solidity":
+		return Solidity(), nil
+	case "sophia":
+		return Sophia(), nil
+	case "sorbet":
+		return Sorbet(), nil
+	case "source":
+		return Source(), nil
+	case "spacemacs":
+		return Spacemacs(), nil
+	case "spacengine":
+		return Spacengine(), nil
+	case "sparc":
+		return Sparc(), nil
+	case "spray":
+		return Spray(), nil
+	case "sqf":
+		return Sqf(), nil
+	case "sqlite":
+		return Sqlite(), nil
+	case "squarespace":
+		return Squarespace(), nil
+	case "stan":
+		return Stan(), nil
+	case "stata":
+		return Stata(), nil
+	case "stdlibjs":
+		return Stdlibjs(), nil
+	case "stencil":
+		return Stencil(), nil
+	case "stitches":
+		return Stitches(), nil
+	case "storybook":
+		return Storybook(), nil
+	case "storyist":
+		return Storyist(), nil
+	case "strings":
+		return Strings(), nil
+	case "stylable":
+		return Stylable(), nil
+	case "styledcomponents":
+		return Styledcomponents(), nil
+	case "stylelint":
+		return Stylelint(), nil
+	case "stylishhaskell":
+		return Stylishhaskell(), nil
+	case "stylus":
+		return Stylus(), nil
+	case "stylus-orb":
+		return StylusOrb(), nil
+	case "stylus-s":
+		return StylusS(), nil
+	case "sublime":
+		return Sublime(), nil
+	case "supercollider":
+		return Supercollider(), nil
+	case "svelte":
+		return Svelte(), nil
+	case "svn":
+		return Svn(), nil
+	case "swagger":
+		return Swagger(), nil
+	case "systemverilog":
+		return Systemverilog(), nil
+	case "tag":
+		return Tag(), nil
+	case "tailwind":
+		return Tailwind(), nil
+	case "tcl":
+		return Tcl(), nil
+	case "telegram":
+		return Telegram(), nil
+	case "templatetoolkit":
+		return Templatetoolkit(), nil
+	case "templeos":
+		return Templeos(), nil
+	case "terminal":
+		return Terminal(), nil
+	case "tern":
+		return Tern(), nil
+	case "terraform":
+		return Terraform(), nil
+	case "terser":
+		return Terser(), nil
+	case "test-coffeescript":
+		return TestCoffeescript(), nil
+	case "test-directory":
+		return TestDirectory(), nil
+	case "test-generic":
+		return TestGeneric(), nil
+	case "test-go":
+		return TestGo(), nil
+	case "test-haskell":
+		return TestHaskell(), nil
+	case "test-js":
+		return TestJs(), nil
+	case "test-perl":
+		return TestPerl(), nil
+	case "test-python":
+		return TestPython(), nil
+	case "test-react":
+		return TestReact(), nil
+	case "test-ruby":
+		return TestRuby(), nil
+	case "test-rust":
+		return TestRust(), nil
+	case "test-typescript":
+		return TestTypescript(), nil
+	case "testcafe":
+		return Testcafe(), nil
+	case "textile":
+		return Textile(), nil
+	case "textmate":
+		return Textmate(), nil
+	case "tfs":
+		return Tfs(), nil
+	case "thor":
+		return Thor(), nil
+	case "3d-model":
+		return ThreeDModel(), nil
+	case "3ds-max":
+		return ThreeDsMax(), nil
+	case "tilt":
+		return Tilt(), nil
+	case "tinymce":
+		return Tinymce(), nil
+	case "tipe":
+		return Tipe(), nil
+	case "tla":
+		return Tla(), nil
+	case "tmux":
+		return Tmux(), nil
+	case "toml":
+		return Toml(), nil
+	case "tortoisesvn":
+		return Tortoisesvn(), nil
+	case "totvs":
+		return Totvs(), nil
+	case "truffle":
+		return Truffle(), nil
+	case "tsx":
+		return Tsx(), nil
+	case "tsx-alt":
+		return TsxAlt(), nil
+	case "ttcn-3":
+		return TtcnThree(), nil
+	case "turing":
+		return Turing(), nil
+	case "twig":
+		return Twig(), nil
+	case "twine":
+		return Twine(), nil
+	case "txl":
+		return Txl(), nil
+	case "typedoc":
+		return Typedoc(), nil
+	case "typescript":
+		return Typescript(), nil
+	case "typescript-alt":
+		return TypescriptAlt(), nil
+	case "typings":
+		return Typings(), nil
+	case "ufo":
+		return Ufo(), nil
+	case "unibeautify":
+		return Unibeautify(), nil
+	case "unicode":
+		return Unicode(), nil
+	case "uno":
+		return Uno(), nil
+	case "unrealscript":
+		return Unrealscript(), nil
+	case "urweb":
+		return Urweb(), nil
+	case "v":
+		return V(), nil
+	case "v8":
+		return VEight(), nil
+	case "v8-turbofan":
+		return VEightTurbofan(), nil
+	case "v-ray":
+		return VRay(), nil
+	case "vagrant":
+		return Vagrant(), nil
+	case "vala":
+		return Vala(), nil
+	case "vax":
+		return Vax(), nil
+	case "vcl":
+		return Vcl(), nil
+	case "velocity":
+		return Velocity(), nil
+	case "verilog":
+		return Verilog(), nil
+	case "vertexshader":
+		return Vertexshader(), nil
+	case "vhdl":
+		return Vhdl(), nil
+	case "video":
+		return Video(), nil
+	case "virtualbox":
+		return Virtualbox(), nil
+	case "virtualbox-alt":
+		return VirtualboxAlt(), nil
+	case "vite":
+		return Vite(), nil
+	case "vmware":
+		return Vmware(), nil
+	case "vscode":
+		return Vscode(), nil
+	case "vsts":
+		return Vsts(), nil
+	case "vue":
+		return Vue(), nil
+	case "vyper":
+		return Vyper(), nil
+	case "w3c":
+		return WThreeC(), nil
+	case "wallaby":
+		return Wallaby(), nil
+	case "walt":
+		return Walt(), nil
+	case "warcraft-iii":
+		return WarcraftIii(), nil
+	case "wasi":
+		return Wasi(), nil
+	case "watchman":
+		return Watchman(), nil
+	case "wdl":
+		return Wdl(), nil
+	case "webassembly":
+		return Webassembly(), nil
+	case "webgl":
+		return Webgl(), nil
+	case "webhint":
+		return Webhint(), nil
+	case "webpack":
+		return Webpack(), nil
+	case "webpack-old":
+		return WebpackOld(), nil
+	case "webvtt":
+		return Webvtt(), nil
+	case "wenyan":
+		return Wenyan(), nil
+	case "wercker":
+		return Wercker(), nil
+	case "wget":
+		return Wget(), nil
+	case "windi":
+		return Windi(), nil
+	case "wine":
+		return Wine(), nil
+	case "winui":
+		return Winui(), nil
+	case "wix":
+		return Wix(), nil
+	case "wolfram":
+		return Wolfram(), nil
+	case "workbox":
+		return Workbox(), nil
+	case "wurst":
+		return Wurst(), nil
+	case "x10":
+		return XTen(), nil
+	case "xamarin":
+		return Xamarin(), nil
+	case "xmake":
+		return Xmake(), nil
+	case "xmos":
+		return Xmos(), nil
+	case "xpages":
+		return Xpages(), nil
+	case "xtend":
+		return Xtend(), nil
+	case "xubuntu":
+		return Xubuntu(), nil
+	case "yaml":
+		return Yaml(), nil
+	case "yaml-alt4":
+		return YamlAltFour(), nil
+	case "yaml-alt1":
+		return YamlAltOne(), nil
+	case "yaml-alt3":
+		return YamlAltThree(), nil
+	case "yaml-alt2":
+		return YamlAltTwo(), nil
+	case "yamllint":
+		return Yamllint(), nil
+	case "yandex":
+		return Yandex(), nil
+	case "yang":
+		return Yang(), nil
+	case "yara":
+		return Yara(), nil
+	case "yarn":
+		return Yarn(), nil
+	case "yasm":
+		return Yasm(), nil
+	case "yorick":
+		return Yorick(), nil
+	case "yui":
+		return Yui(), nil
+	case "zbrush":
+		return Zbrush(), nil
+	case "zeit":
+		return Zeit(), nil
+	case "zephir":
+		return Zephir(), nil
+	case "zig":
+		return Zig(), nil
+	case "zilog":
+		return Zilog(), nil
+	case "zimpl":
+		return Zimpl(), nil
+	case "zorinos":
+		return Zorinos(), nil
+	case "zork":
+		return Zork(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in file_icons icon set", name)
+	}
 }

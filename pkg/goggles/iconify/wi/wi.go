@@ -1,6 +1,9 @@
 package wi
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	alienInnerSVG                      = `<path fill="currentColor" d="M8.75 15.54c-1.12-2.4-.95-4.66.52-6.79c1.03-1.48 2.6-2.39 4.73-2.72c.16-.04.34-.07.54-.08h.63c2.91.09 5.05 1.38 6.4 3.88c.64 1.18.8 2.48.48 3.91c-.26 1.13-.68 2.19-1.28 3.17c-1.29 2.01-2.63 3.64-4 4.88c-.07.07-.17.16-.3.26c-.46.35-.89.53-1.28.54s-.83-.14-1.31-.45a3.37 3.37 0 0 1-.74-.59c-1.96-2-3.43-4-4.39-6.01zm.11-2.21c.02.11.05.25.09.44s.07.32.09.4c.28 1.26.86 2.23 1.73 2.93c.88.7 1.96 1.11 3.26 1.23c.29.03.46.02.51-.03s.08-.23.09-.52c-.01-.08-.03-.21-.05-.39c-.02-.18-.04-.31-.06-.39c-.25-1.34-.88-2.32-1.9-2.93c-.18-.11-.39-.22-.62-.34s-.44-.2-.61-.27c-.17-.07-.4-.16-.69-.27c-.29-.11-.5-.19-.63-.25c-.16-.06-.42-.1-.8-.11c-.32 0-.46.17-.41.5zm6.8 4.4c-.02.31 0 .49.06.56c.07.07.25.08.55.04c.38-.04.78-.12 1.2-.22c1.07-.27 1.94-.84 2.62-1.71c.34-.41.6-.86.77-1.34s.34-1.05.47-1.72c.05-.23.04-.38-.03-.46c-.07-.08-.22-.11-.44-.08c-.59.1-1.12.23-1.59.4c-1.15.43-2.02 1.01-2.62 1.74c-.6.74-.93 1.66-.99 2.79z"/>`
@@ -2995,4 +2998,471 @@ func Windy(children ...any) *engine.HTMLElement {
 		windyInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "alien":
+		return Alien(), nil
+	case "aliens":
+		return Aliens(), nil
+	case "barometer":
+		return Barometer(), nil
+	case "celsius":
+		return Celsius(), nil
+	case "cloud":
+		return Cloud(), nil
+	case "cloud-down":
+		return CloudDown(), nil
+	case "cloud-refresh":
+		return CloudRefresh(), nil
+	case "cloud-up":
+		return CloudUp(), nil
+	case "cloudy":
+		return Cloudy(), nil
+	case "cloudy-gusts":
+		return CloudyGusts(), nil
+	case "cloudy-windy":
+		return CloudyWindy(), nil
+	case "day-cloudy":
+		return DayCloudy(), nil
+	case "day-cloudy-gusts":
+		return DayCloudyGusts(), nil
+	case "day-cloudy-high":
+		return DayCloudyHigh(), nil
+	case "day-cloudy-windy":
+		return DayCloudyWindy(), nil
+	case "day-fog":
+		return DayFog(), nil
+	case "day-hail":
+		return DayHail(), nil
+	case "day-haze":
+		return DayHaze(), nil
+	case "day-light-wind":
+		return DayLightWind(), nil
+	case "day-lightning":
+		return DayLightning(), nil
+	case "day-rain":
+		return DayRain(), nil
+	case "day-rain-mix":
+		return DayRainMix(), nil
+	case "day-rain-wind":
+		return DayRainWind(), nil
+	case "day-showers":
+		return DayShowers(), nil
+	case "day-sleet":
+		return DaySleet(), nil
+	case "day-sleet-storm":
+		return DaySleetStorm(), nil
+	case "day-snow":
+		return DaySnow(), nil
+	case "day-snow-thunderstorm":
+		return DaySnowThunderstorm(), nil
+	case "day-snow-wind":
+		return DaySnowWind(), nil
+	case "day-sprinkle":
+		return DaySprinkle(), nil
+	case "day-storm-showers":
+		return DayStormShowers(), nil
+	case "day-sunny":
+		return DaySunny(), nil
+	case "day-sunny-overcast":
+		return DaySunnyOvercast(), nil
+	case "day-thunderstorm":
+		return DayThunderstorm(), nil
+	case "day-windy":
+		return DayWindy(), nil
+	case "degrees":
+		return Degrees(), nil
+	case "direction-down":
+		return DirectionDown(), nil
+	case "direction-down-left":
+		return DirectionDownLeft(), nil
+	case "direction-down-right":
+		return DirectionDownRight(), nil
+	case "direction-left":
+		return DirectionLeft(), nil
+	case "direction-right":
+		return DirectionRight(), nil
+	case "direction-up":
+		return DirectionUp(), nil
+	case "direction-up-left":
+		return DirectionUpLeft(), nil
+	case "direction-up-right":
+		return DirectionUpRight(), nil
+	case "dust":
+		return Dust(), nil
+	case "earthquake":
+		return Earthquake(), nil
+	case "fahrenheit":
+		return Fahrenheit(), nil
+	case "fire":
+		return Fire(), nil
+	case "flood":
+		return Flood(), nil
+	case "fog":
+		return Fog(), nil
+	case "gale-warning":
+		return GaleWarning(), nil
+	case "hail":
+		return Hail(), nil
+	case "horizon":
+		return Horizon(), nil
+	case "horizon-alt":
+		return HorizonAlt(), nil
+	case "hot":
+		return Hot(), nil
+	case "humidity":
+		return Humidity(), nil
+	case "hurricane":
+		return Hurricane(), nil
+	case "hurricane-warning":
+		return HurricaneWarning(), nil
+	case "lightning":
+		return Lightning(), nil
+	case "lunar-eclipse":
+		return LunarEclipse(), nil
+	case "meteor":
+		return Meteor(), nil
+	case "moon-alt-first-quarter":
+		return MoonAltFirstQuarter(), nil
+	case "moon-alt-full":
+		return MoonAltFull(), nil
+	case "moon-alt-new":
+		return MoonAltNew(), nil
+	case "moon-alt-third-quarter":
+		return MoonAltThirdQuarter(), nil
+	case "moon-alt-waning-crescent-5":
+		return MoonAltWaningCrescentFive(), nil
+	case "moon-alt-waning-crescent-4":
+		return MoonAltWaningCrescentFour(), nil
+	case "moon-alt-waning-crescent-1":
+		return MoonAltWaningCrescentOne(), nil
+	case "moon-alt-waning-crescent-6":
+		return MoonAltWaningCrescentSix(), nil
+	case "moon-alt-waning-crescent-3":
+		return MoonAltWaningCrescentThree(), nil
+	case "moon-alt-waning-crescent-2":
+		return MoonAltWaningCrescentTwo(), nil
+	case "moon-alt-waning-gibbous-5":
+		return MoonAltWaningGibbousFive(), nil
+	case "moon-alt-waning-gibbous-4":
+		return MoonAltWaningGibbousFour(), nil
+	case "moon-alt-waning-gibbous-1":
+		return MoonAltWaningGibbousOne(), nil
+	case "moon-alt-waning-gibbous-6":
+		return MoonAltWaningGibbousSix(), nil
+	case "moon-alt-waning-gibbous-3":
+		return MoonAltWaningGibbousThree(), nil
+	case "moon-alt-waning-gibbous-2":
+		return MoonAltWaningGibbousTwo(), nil
+	case "moon-alt-waxing-crescent-5":
+		return MoonAltWaxingCrescentFive(), nil
+	case "moon-alt-waxing-crescent-4":
+		return MoonAltWaxingCrescentFour(), nil
+	case "moon-alt-waxing-crescent-1":
+		return MoonAltWaxingCrescentOne(), nil
+	case "moon-alt-waxing-crescent-6":
+		return MoonAltWaxingCrescentSix(), nil
+	case "moon-alt-waxing-crescent-3":
+		return MoonAltWaxingCrescentThree(), nil
+	case "moon-alt-waxing-crescent-2":
+		return MoonAltWaxingCrescentTwo(), nil
+	case "moon-alt-waxing-gibbous-5":
+		return MoonAltWaxingGibbousFive(), nil
+	case "moon-alt-waxing-gibbous-4":
+		return MoonAltWaxingGibbousFour(), nil
+	case "moon-alt-waxing-gibbous-1":
+		return MoonAltWaxingGibbousOne(), nil
+	case "moon-alt-waxing-gibbous-6":
+		return MoonAltWaxingGibbousSix(), nil
+	case "moon-alt-waxing-gibbous-3":
+		return MoonAltWaxingGibbousThree(), nil
+	case "moon-alt-waxing-gibbous-2":
+		return MoonAltWaxingGibbousTwo(), nil
+	case "moon-first-quarter":
+		return MoonFirstQuarter(), nil
+	case "moon-full":
+		return MoonFull(), nil
+	case "moon-new":
+		return MoonNew(), nil
+	case "moon-third-quarter":
+		return MoonThirdQuarter(), nil
+	case "moon-waning-crescent-5":
+		return MoonWaningCrescentFive(), nil
+	case "moon-waning-crescent-4":
+		return MoonWaningCrescentFour(), nil
+	case "moon-waning-crescent-1":
+		return MoonWaningCrescentOne(), nil
+	case "moon-waning-crescent-6":
+		return MoonWaningCrescentSix(), nil
+	case "moon-waning-crescent-3":
+		return MoonWaningCrescentThree(), nil
+	case "moon-waning-crescent-2":
+		return MoonWaningCrescentTwo(), nil
+	case "moon-waning-gibbous-5":
+		return MoonWaningGibbousFive(), nil
+	case "moon-waning-gibbous-4":
+		return MoonWaningGibbousFour(), nil
+	case "moon-waning-gibbous-1":
+		return MoonWaningGibbousOne(), nil
+	case "moon-waning-gibbous-6":
+		return MoonWaningGibbousSix(), nil
+	case "moon-waning-gibbous-3":
+		return MoonWaningGibbousThree(), nil
+	case "moon-waning-gibbous-2":
+		return MoonWaningGibbousTwo(), nil
+	case "moon-waxing-crescent-5":
+		return MoonWaxingCrescentFive(), nil
+	case "moon-waxing-crescent-4":
+		return MoonWaxingCrescentFour(), nil
+	case "moon-waxing-crescent-1":
+		return MoonWaxingCrescentOne(), nil
+	case "moon-waxing-crescent-6":
+		return MoonWaxingCrescentSix(), nil
+	case "moon-waxing-crescent-3":
+		return MoonWaxingCrescentThree(), nil
+	case "moon-waxing-crescent-2":
+		return MoonWaxingCrescentTwo(), nil
+	case "moon-waxing-gibbous-5":
+		return MoonWaxingGibbousFive(), nil
+	case "moon-waxing-gibbous-4":
+		return MoonWaxingGibbousFour(), nil
+	case "moon-waxing-gibbous-1":
+		return MoonWaxingGibbousOne(), nil
+	case "moon-waxing-gibbous-6":
+		return MoonWaxingGibbousSix(), nil
+	case "moon-waxing-gibbous-3":
+		return MoonWaxingGibbousThree(), nil
+	case "moon-waxing-gibbous-2":
+		return MoonWaxingGibbousTwo(), nil
+	case "moon-waxing-6":
+		return MoonWaxingSix(), nil
+	case "moonrise":
+		return Moonrise(), nil
+	case "moonset":
+		return Moonset(), nil
+	case "na":
+		return Na(), nil
+	case "night-alt-cloudy":
+		return NightAltCloudy(), nil
+	case "night-alt-cloudy-gusts":
+		return NightAltCloudyGusts(), nil
+	case "night-alt-cloudy-high":
+		return NightAltCloudyHigh(), nil
+	case "night-alt-cloudy-windy":
+		return NightAltCloudyWindy(), nil
+	case "night-alt-hail":
+		return NightAltHail(), nil
+	case "night-alt-lightning":
+		return NightAltLightning(), nil
+	case "night-alt-partly-cloudy":
+		return NightAltPartlyCloudy(), nil
+	case "night-alt-rain":
+		return NightAltRain(), nil
+	case "night-alt-rain-mix":
+		return NightAltRainMix(), nil
+	case "night-alt-rain-wind":
+		return NightAltRainWind(), nil
+	case "night-alt-showers":
+		return NightAltShowers(), nil
+	case "night-alt-sleet":
+		return NightAltSleet(), nil
+	case "night-alt-sleet-storm":
+		return NightAltSleetStorm(), nil
+	case "night-alt-snow":
+		return NightAltSnow(), nil
+	case "night-alt-snow-thunderstorm":
+		return NightAltSnowThunderstorm(), nil
+	case "night-alt-snow-wind":
+		return NightAltSnowWind(), nil
+	case "night-alt-sprinkle":
+		return NightAltSprinkle(), nil
+	case "night-alt-storm-showers":
+		return NightAltStormShowers(), nil
+	case "night-alt-thunderstorm":
+		return NightAltThunderstorm(), nil
+	case "night-clear":
+		return NightClear(), nil
+	case "night-cloudy":
+		return NightCloudy(), nil
+	case "night-cloudy-gusts":
+		return NightCloudyGusts(), nil
+	case "night-cloudy-high":
+		return NightCloudyHigh(), nil
+	case "night-cloudy-windy":
+		return NightCloudyWindy(), nil
+	case "night-fog":
+		return NightFog(), nil
+	case "night-hail":
+		return NightHail(), nil
+	case "night-lightning":
+		return NightLightning(), nil
+	case "night-partly-cloudy":
+		return NightPartlyCloudy(), nil
+	case "night-rain":
+		return NightRain(), nil
+	case "night-rain-mix":
+		return NightRainMix(), nil
+	case "night-rain-wind":
+		return NightRainWind(), nil
+	case "night-showers":
+		return NightShowers(), nil
+	case "night-sleet":
+		return NightSleet(), nil
+	case "night-sleet-storm":
+		return NightSleetStorm(), nil
+	case "night-snow":
+		return NightSnow(), nil
+	case "night-snow-thunderstorm":
+		return NightSnowThunderstorm(), nil
+	case "night-snow-wind":
+		return NightSnowWind(), nil
+	case "night-sprinkle":
+		return NightSprinkle(), nil
+	case "night-storm-showers":
+		return NightStormShowers(), nil
+	case "night-thunderstorm":
+		return NightThunderstorm(), nil
+	case "rain":
+		return Rain(), nil
+	case "rain-mix":
+		return RainMix(), nil
+	case "rain-wind":
+		return RainWind(), nil
+	case "raindrop":
+		return Raindrop(), nil
+	case "raindrops":
+		return Raindrops(), nil
+	case "refresh":
+		return Refresh(), nil
+	case "refresh-alt":
+		return RefreshAlt(), nil
+	case "sandstorm":
+		return Sandstorm(), nil
+	case "showers":
+		return Showers(), nil
+	case "sleet":
+		return Sleet(), nil
+	case "small-craft-advisory":
+		return SmallCraftAdvisory(), nil
+	case "smog":
+		return Smog(), nil
+	case "smoke":
+		return Smoke(), nil
+	case "snow":
+		return Snow(), nil
+	case "snow-wind":
+		return SnowWind(), nil
+	case "snowflake-cold":
+		return SnowflakeCold(), nil
+	case "solar-eclipse":
+		return SolarEclipse(), nil
+	case "sprinkle":
+		return Sprinkle(), nil
+	case "stars":
+		return Stars(), nil
+	case "storm-showers":
+		return StormShowers(), nil
+	case "storm-warning":
+		return StormWarning(), nil
+	case "strong-wind":
+		return StrongWind(), nil
+	case "sunrise":
+		return Sunrise(), nil
+	case "sunset":
+		return Sunset(), nil
+	case "thermometer":
+		return Thermometer(), nil
+	case "thermometer-exterior":
+		return ThermometerExterior(), nil
+	case "thermometer-internal":
+		return ThermometerInternal(), nil
+	case "thunderstorm":
+		return Thunderstorm(), nil
+	case "time-8":
+		return TimeEight(), nil
+	case "time-11":
+		return TimeEleven(), nil
+	case "time-5":
+		return TimeFive(), nil
+	case "time-4":
+		return TimeFour(), nil
+	case "time-9":
+		return TimeNine(), nil
+	case "time-1":
+		return TimeOne(), nil
+	case "time-7":
+		return TimeSeven(), nil
+	case "time-6":
+		return TimeSix(), nil
+	case "time-10":
+		return TimeTen(), nil
+	case "time-3":
+		return TimeThree(), nil
+	case "time-12":
+		return TimeTwelve(), nil
+	case "time-2":
+		return TimeTwo(), nil
+	case "tornado":
+		return Tornado(), nil
+	case "train":
+		return Train(), nil
+	case "tsunami":
+		return Tsunami(), nil
+	case "umbrella":
+		return Umbrella(), nil
+	case "volcano":
+		return Volcano(), nil
+	case "wind-beaufort-8":
+		return WindBeaufortEight(), nil
+	case "wind-beaufort-11":
+		return WindBeaufortEleven(), nil
+	case "wind-beaufort-5":
+		return WindBeaufortFive(), nil
+	case "wind-beaufort-4":
+		return WindBeaufortFour(), nil
+	case "wind-beaufort-9":
+		return WindBeaufortNine(), nil
+	case "wind-beaufort-1":
+		return WindBeaufortOne(), nil
+	case "wind-beaufort-7":
+		return WindBeaufortSeven(), nil
+	case "wind-beaufort-6":
+		return WindBeaufortSix(), nil
+	case "wind-beaufort-10":
+		return WindBeaufortTen(), nil
+	case "wind-beaufort-3":
+		return WindBeaufortThree(), nil
+	case "wind-beaufort-12":
+		return WindBeaufortTwelve(), nil
+	case "wind-beaufort-2":
+		return WindBeaufortTwo(), nil
+	case "wind-beaufort-0":
+		return WindBeaufortZero(), nil
+	case "wind-deg":
+		return WindDeg(), nil
+	case "wind-direction":
+		return WindDirection(), nil
+	case "wind-direction-e":
+		return WindDirectionE(), nil
+	case "wind-direction-n":
+		return WindDirectionN(), nil
+	case "wind-direction-ne":
+		return WindDirectionNe(), nil
+	case "wind-direction-nw":
+		return WindDirectionNw(), nil
+	case "wind-direction-s":
+		return WindDirectionS(), nil
+	case "wind-direction-se":
+		return WindDirectionSe(), nil
+	case "wind-direction-sw":
+		return WindDirectionSw(), nil
+	case "wind-direction-w":
+		return WindDirectionW(), nil
+	case "windy":
+		return Windy(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in wi icon set", name)
+	}
 }

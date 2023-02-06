@@ -1,6 +1,9 @@
 package eos_icons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	abstractInnerSVG                      = `<path fill="currentColor" d="M16 3H8a2 2 0 0 0-1.71 1l-4 7a2 2 0 0 0 0 2l4 7A2 2 0 0 0 8 21h8a2 2 0 0 0 1.74-1l4-7a2 2 0 0 0 0-2l-4-7A2 2 0 0 0 16 3Z"/>`
@@ -3294,4 +3297,517 @@ func Workload(children ...any) *engine.HTMLElement {
 		workloadInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "abstract":
+		return Abstract(), nil
+	case "abstract-incomplete":
+		return AbstractIncomplete(), nil
+	case "abstract-instance":
+		return AbstractInstance(), nil
+	case "abstract-instance-outlined":
+		return AbstractInstanceOutlined(), nil
+	case "abstract-outlined":
+		return AbstractOutlined(), nil
+	case "action-chains":
+		return ActionChains(), nil
+	case "action-chains-outlined":
+		return ActionChainsOutlined(), nil
+	case "activate-subscriptions":
+		return ActivateSubscriptions(), nil
+	case "activate-subscriptions-outlined":
+		return ActivateSubscriptionsOutlined(), nil
+	case "admin":
+		return Admin(), nil
+	case "admin-outlined":
+		return AdminOutlined(), nil
+	case "ai":
+		return Ai(), nil
+	case "ai-healing":
+		return AiHealing(), nil
+	case "ai-healing-outlined":
+		return AiHealingOutlined(), nil
+	case "ai-operator":
+		return AiOperator(), nil
+	case "api":
+		return Api(), nil
+	case "api-outlined":
+		return ApiOutlined(), nil
+	case "application":
+		return Application(), nil
+	case "application-incomplete":
+		return ApplicationIncomplete(), nil
+	case "application-incomplete-outlined":
+		return ApplicationIncompleteOutlined(), nil
+	case "application-instance":
+		return ApplicationInstance(), nil
+	case "application-instance-outlined":
+		return ApplicationInstanceOutlined(), nil
+	case "application-outlined":
+		return ApplicationOutlined(), nil
+	case "application-window":
+		return ApplicationWindow(), nil
+	case "application-window-outlined":
+		return ApplicationWindowOutlined(), nil
+	case "arrow-rotate":
+		return ArrowRotate(), nil
+	case "atom-electron":
+		return AtomElectron(), nil
+	case "augmented-reality":
+		return AugmentedReality(), nil
+	case "autoinstallation":
+		return Autoinstallation(), nil
+	case "background-tasks":
+		return BackgroundTasks(), nil
+	case "big-data":
+		return BigData(), nil
+	case "big-data-outlined":
+		return BigDataOutlined(), nil
+	case "blockchain":
+		return Blockchain(), nil
+	case "bootstrapping":
+		return Bootstrapping(), nil
+	case "bootstrapping-outlined":
+		return BootstrappingOutlined(), nil
+	case "branch":
+		return Branch(), nil
+	case "branch-outlined":
+		return BranchOutlined(), nil
+	case "bubble-loading":
+		return BubbleLoading(), nil
+	case "cleanup":
+		return Cleanup(), nil
+	case "cloud-computing":
+		return CloudComputing(), nil
+	case "cloud-computing-outlined":
+		return CloudComputingOutlined(), nil
+	case "cloud-controller-manager":
+		return CloudControllerManager(), nil
+	case "cluster":
+		return Cluster(), nil
+	case "cluster-management":
+		return ClusterManagement(), nil
+	case "cluster-management-outlined":
+		return ClusterManagementOutlined(), nil
+	case "cluster-outlined":
+		return ClusterOutlined(), nil
+	case "cluster-role":
+		return ClusterRole(), nil
+	case "cluster-role-binding":
+		return ClusterRoleBinding(), nil
+	case "code-deploy":
+		return CodeDeploy(), nil
+	case "code-deploy-outlined":
+		return CodeDeployOutlined(), nil
+	case "collocation":
+		return Collocation(), nil
+	case "commit":
+		return Commit(), nil
+	case "commit-outlined":
+		return CommitOutlined(), nil
+	case "compare-states":
+		return CompareStates(), nil
+	case "compare-states-outlined":
+		return CompareStatesOutlined(), nil
+	case "compass":
+		return Compass(), nil
+	case "config-map":
+		return ConfigMap(), nil
+	case "configuration-file":
+		return ConfigurationFile(), nil
+	case "configuration-file-outlined":
+		return ConfigurationFileOutlined(), nil
+	case "constraint":
+		return Constraint(), nil
+	case "container":
+		return Container(), nil
+	case "container-outlined":
+		return ContainerOutlined(), nil
+	case "content-deleted":
+		return ContentDeleted(), nil
+	case "content-lifecycle-management":
+		return ContentLifecycleManagement(), nil
+	case "content-modified":
+		return ContentModified(), nil
+	case "content-new":
+		return ContentNew(), nil
+	case "counting":
+		return Counting(), nil
+	case "critical-bug":
+		return CriticalBug(), nil
+	case "critical-bug-outlined":
+		return CriticalBugOutlined(), nil
+	case "cronjob":
+		return Cronjob(), nil
+	case "csv-file":
+		return CsvFile(), nil
+	case "daemon":
+		return Daemon(), nil
+	case "daemon-outlined":
+		return DaemonOutlined(), nil
+	case "daemon-set":
+		return DaemonSet(), nil
+	case "daemon-set-outlined":
+		return DaemonSetOutlined(), nil
+	case "data-mining":
+		return DataMining(), nil
+	case "data-scientist":
+		return DataScientist(), nil
+	case "data-scientist-outlined":
+		return DataScientistOutlined(), nil
+	case "database":
+		return Database(), nil
+	case "database-migration":
+		return DatabaseMigration(), nil
+	case "database-migration-outlined":
+		return DatabaseMigrationOutlined(), nil
+	case "database-outlined":
+		return DatabaseOutlined(), nil
+	case "deploy":
+		return Deploy(), nil
+	case "diff-modified":
+		return DiffModified(), nil
+	case "diff-modified-outlined":
+		return DiffModifiedOutlined(), nil
+	case "dns":
+		return Dns(), nil
+	case "drone":
+		return Drone(), nil
+	case "edge-computing":
+		return EdgeComputing(), nil
+	case "edge-computing-outlined":
+		return EdgeComputingOutlined(), nil
+	case "endpoints":
+		return Endpoints(), nil
+	case "endpoints-connected":
+		return EndpointsConnected(), nil
+	case "endpoints-disconnected":
+		return EndpointsDisconnected(), nil
+	case "enhancement":
+		return Enhancement(), nil
+	case "env":
+		return Env(), nil
+	case "file-system":
+		return FileSystem(), nil
+	case "file-system-outlined":
+		return FileSystemOutlined(), nil
+	case "flask":
+		return Flask(), nil
+	case "fork":
+		return Fork(), nil
+	case "fork-outlined":
+		return ForkOutlined(), nil
+	case "genomic":
+		return Genomic(), nil
+	case "hardware-circuit":
+		return HardwareCircuit(), nil
+	case "hourglass":
+		return Hourglass(), nil
+	case "inbound":
+		return Inbound(), nil
+	case "infinity":
+		return Infinity(), nil
+	case "ingress":
+		return Ingress(), nil
+	case "init-container":
+		return InitContainer(), nil
+	case "init-container-outlined":
+		return InitContainerOutlined(), nil
+	case "installing":
+		return Installing(), nil
+	case "iot":
+		return Iot(), nil
+	case "ip":
+		return Ip(), nil
+	case "ip-outlined":
+		return IpOutlined(), nil
+	case "job":
+		return Job(), nil
+	case "kubelet":
+		return Kubelet(), nil
+	case "kubelet-outlined":
+		return KubeletOutlined(), nil
+	case "loading":
+		return Loading(), nil
+	case "locked-env":
+		return LockedEnv(), nil
+	case "locked-env-outlined":
+		return LockedEnvOutlined(), nil
+	case "machine-learning":
+		return MachineLearning(), nil
+	case "machine-learning-outlined":
+		return MachineLearningOutlined(), nil
+	case "master":
+		return Master(), nil
+	case "master-outlined":
+		return MasterOutlined(), nil
+	case "merge":
+		return Merge(), nil
+	case "merge-outlined":
+		return MergeOutlined(), nil
+	case "miscellaneous":
+		return Miscellaneous(), nil
+	case "miscellaneous-outlined":
+		return MiscellaneousOutlined(), nil
+	case "modified-date":
+		return ModifiedDate(), nil
+	case "modified-date-outlined":
+		return ModifiedDateOutlined(), nil
+	case "molecules":
+		return Molecules(), nil
+	case "molecules-outlined":
+		return MoleculesOutlined(), nil
+	case "monitoring":
+		return Monitoring(), nil
+	case "move":
+		return Move(), nil
+	case "multistate":
+		return Multistate(), nil
+	case "namespace":
+		return Namespace(), nil
+	case "network":
+		return Network(), nil
+	case "network-file-system":
+		return NetworkFileSystem(), nil
+	case "network-file-system-outlined":
+		return NetworkFileSystemOutlined(), nil
+	case "network-policy":
+		return NetworkPolicy(), nil
+	case "network-policy-outlined":
+		return NetworkPolicyOutlined(), nil
+	case "neural-network":
+		return NeuralNetwork(), nil
+	case "node":
+		return Node(), nil
+	case "node-outlined":
+		return NodeOutlined(), nil
+	case "organisms":
+		return Organisms(), nil
+	case "organisms-outlined":
+		return OrganismsOutlined(), nil
+	case "organization":
+		return Organization(), nil
+	case "organization-outlined":
+		return OrganizationOutlined(), nil
+	case "outbound":
+		return Outbound(), nil
+	case "package":
+		return Package(), nil
+	case "package-outlined":
+		return PackageOutlined(), nil
+	case "package-upgrade":
+		return PackageUpgrade(), nil
+	case "package-upgrade-outlined":
+		return PackageUpgradeOutlined(), nil
+	case "packages":
+		return Packages(), nil
+	case "packages-outlined":
+		return PackagesOutlined(), nil
+	case "patch-fixes":
+		return PatchFixes(), nil
+	case "patch-fixes-outlined":
+		return PatchFixesOutlined(), nil
+	case "patterns":
+		return Patterns(), nil
+	case "patterns-outlined":
+		return PatternsOutlined(), nil
+	case "performance":
+		return Performance(), nil
+	case "persistent-volume":
+		return PersistentVolume(), nil
+	case "pin":
+		return Pin(), nil
+	case "pin-outlined":
+		return PinOutlined(), nil
+	case "pipeline":
+		return Pipeline(), nil
+	case "pipeline-outlined":
+		return PipelineOutlined(), nil
+	case "pod":
+		return Pod(), nil
+	case "pod-autoscaler":
+		return PodAutoscaler(), nil
+	case "pod-autoscaler-outlined":
+		return PodAutoscalerOutlined(), nil
+	case "pod-outlined":
+		return PodOutlined(), nil
+	case "pod-security":
+		return PodSecurity(), nil
+	case "pod-security-outlined":
+		return PodSecurityOutlined(), nil
+	case "primitive":
+		return Primitive(), nil
+	case "product-classes":
+		return ProductClasses(), nil
+	case "product-classes-outlined":
+		return ProductClassesOutlined(), nil
+	case "product-subscriptions":
+		return ProductSubscriptions(), nil
+	case "product-subscriptions-outlined":
+		return ProductSubscriptionsOutlined(), nil
+	case "products":
+		return Products(), nil
+	case "products-outlined":
+		return ProductsOutlined(), nil
+	case "project":
+		return Project(), nil
+	case "project-outlined":
+		return ProjectOutlined(), nil
+	case "proxy":
+		return Proxy(), nil
+	case "proxy-outlined":
+		return ProxyOutlined(), nil
+	case "pull-request":
+		return PullRequest(), nil
+	case "pull-request-outlined":
+		return PullRequestOutlined(), nil
+	case "push-pin":
+		return PushPin(), nil
+	case "push-pin-outlined":
+		return PushPinOutlined(), nil
+	case "quota":
+		return Quota(), nil
+	case "quota-outlined":
+		return QuotaOutlined(), nil
+	case "replica":
+		return Replica(), nil
+	case "replica-set":
+		return ReplicaSet(), nil
+	case "repositories":
+		return Repositories(), nil
+	case "role-binding":
+		return RoleBinding(), nil
+	case "role-binding-outlined":
+		return RoleBindingOutlined(), nil
+	case "rotating-gear":
+		return RotatingGear(), nil
+	case "route":
+		return Route(), nil
+	case "sandbox":
+		return Sandbox(), nil
+	case "sandbox-outlined":
+		return SandboxOutlined(), nil
+	case "satellite-alt":
+		return SatelliteAlt(), nil
+	case "satellite-alt-outlined":
+		return SatelliteAltOutlined(), nil
+	case "science":
+		return Science(), nil
+	case "science-outlined":
+		return ScienceOutlined(), nil
+	case "scientist":
+		return Scientist(), nil
+	case "scientist-outlined":
+		return ScientistOutlined(), nil
+	case "secret":
+		return Secret(), nil
+	case "secret-outlined":
+		return SecretOutlined(), nil
+	case "secure-data":
+		return SecureData(), nil
+	case "secure-data-outlined":
+		return SecureDataOutlined(), nil
+	case "self-healing":
+		return SelfHealing(), nil
+	case "service":
+		return Service(), nil
+	case "service-instance":
+		return ServiceInstance(), nil
+	case "service-instance-outlined":
+		return ServiceInstanceOutlined(), nil
+	case "service-outlined":
+		return ServiceOutlined(), nil
+	case "service-plan":
+		return ServicePlan(), nil
+	case "service-plan-outlined":
+		return ServicePlanOutlined(), nil
+	case "snapshot-rollback":
+		return SnapshotRollback(), nil
+	case "software":
+		return Software(), nil
+	case "software-outlined":
+		return SoftwareOutlined(), nil
+	case "spinner":
+		return Spinner(), nil
+	case "state":
+		return State(), nil
+	case "stateful-set":
+		return StatefulSet(), nil
+	case "stateful-set-outlined":
+		return StatefulSetOutlined(), nil
+	case "storage-class":
+		return StorageClass(), nil
+	case "storage-class-outlined":
+		return StorageClassOutlined(), nil
+	case "subscription-management":
+		return SubscriptionManagement(), nil
+	case "subscriptions-created":
+		return SubscriptionsCreated(), nil
+	case "subscriptions-created-outlined":
+		return SubscriptionsCreatedOutlined(), nil
+	case "symlink":
+		return Symlink(), nil
+	case "symlink-outlined":
+		return SymlinkOutlined(), nil
+	case "system-group":
+		return SystemGroup(), nil
+	case "system-image":
+		return SystemImage(), nil
+	case "system-image-outlined":
+		return SystemImageOutlined(), nil
+	case "system-ok":
+		return SystemOk(), nil
+	case "system-ok-outlined":
+		return SystemOkOutlined(), nil
+	case "system-re-registered":
+		return SystemReRegistered(), nil
+	case "system-warning":
+		return SystemWarning(), nil
+	case "templates":
+		return Templates(), nil
+	case "templates-outlined":
+		return TemplatesOutlined(), nil
+	case "terminal":
+		return Terminal(), nil
+	case "terminal-outlined":
+		return TerminalOutlined(), nil
+	case "test-tube":
+		return TestTube(), nil
+	case "3d-print":
+		return ThreeDPrint(), nil
+	case "three-dots-loading":
+		return ThreeDotsLoading(), nil
+	case "timeout":
+		return Timeout(), nil
+	case "troubleshooting":
+		return Troubleshooting(), nil
+	case "trusted-organization":
+		return TrustedOrganization(), nil
+	case "typing":
+		return Typing(), nil
+	case "virtual-guest":
+		return VirtualGuest(), nil
+	case "virtual-host-manager":
+		return VirtualHostManager(), nil
+	case "virtual-reality":
+		return VirtualReality(), nil
+	case "virtual-reality-outlined":
+		return VirtualRealityOutlined(), nil
+	case "virtual-space":
+		return VirtualSpace(), nil
+	case "volume":
+		return Volume(), nil
+	case "volume-binding":
+		return VolumeBinding(), nil
+	case "volume-binding-outlined":
+		return VolumeBindingOutlined(), nil
+	case "volume-outlined":
+		return VolumeOutlined(), nil
+	case "workload":
+		return Workload(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in eos_icons icon set", name)
+	}
 }

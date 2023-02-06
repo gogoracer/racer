@@ -1,6 +1,9 @@
 package teenyicons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	abTestingOutlineInnerSVG                 = `<path fill="none" stroke="currentColor" d="M1.5 11V6.5a2 2 0 1 1 4 0V11m-4-2.5h4m6.5-1H9.5m2.5 0a1.5 1.5 0 0 0 0-3H9.5v3m2.5 0a1.5 1.5 0 0 1 0 3H9.5v-3M7.5 1v13"/>`
@@ -15605,4 +15608,2411 @@ func ZoomOutSolid(children ...any) *engine.HTMLElement {
 		zoomOutSolidInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "ab-testing-outline":
+		return AbTestingOutline(), nil
+	case "ab-testing-solid":
+		return AbTestingSolid(), nil
+	case "add-outline":
+		return AddOutline(), nil
+	case "add-small-outline":
+		return AddSmallOutline(), nil
+	case "add-small-solid":
+		return AddSmallSolid(), nil
+	case "add-solid":
+		return AddSolid(), nil
+	case "address-book-outline":
+		return AddressBookOutline(), nil
+	case "address-book-solid":
+		return AddressBookSolid(), nil
+	case "adjust-horizontal-alt-outline":
+		return AdjustHorizontalAltOutline(), nil
+	case "adjust-horizontal-alt-solid":
+		return AdjustHorizontalAltSolid(), nil
+	case "adjust-horizontal-outline":
+		return AdjustHorizontalOutline(), nil
+	case "adjust-horizontal-solid":
+		return AdjustHorizontalSolid(), nil
+	case "adjust-vertical-alt-outline":
+		return AdjustVerticalAltOutline(), nil
+	case "adjust-vertical-alt-solid":
+		return AdjustVerticalAltSolid(), nil
+	case "adjust-vertical-outline":
+		return AdjustVerticalOutline(), nil
+	case "adjust-vertical-solid":
+		return AdjustVerticalSolid(), nil
+	case "airplay-outline":
+		return AirplayOutline(), nil
+	case "airplay-solid":
+		return AirplaySolid(), nil
+	case "airpods-outline":
+		return AirpodsOutline(), nil
+	case "airpods-solid":
+		return AirpodsSolid(), nil
+	case "alarm-outline":
+		return AlarmOutline(), nil
+	case "alarm-solid":
+		return AlarmSolid(), nil
+	case "alien-outline":
+		return AlienOutline(), nil
+	case "alien-solid":
+		return AlienSolid(), nil
+	case "align-bottom-outline":
+		return AlignBottomOutline(), nil
+	case "align-bottom-solid":
+		return AlignBottomSolid(), nil
+	case "align-center-horizontal-outline":
+		return AlignCenterHorizontalOutline(), nil
+	case "align-center-horizontal-solid":
+		return AlignCenterHorizontalSolid(), nil
+	case "align-center-vertical-outline":
+		return AlignCenterVerticalOutline(), nil
+	case "align-center-vertical-solid":
+		return AlignCenterVerticalSolid(), nil
+	case "align-left-outline":
+		return AlignLeftOutline(), nil
+	case "align-left-solid":
+		return AlignLeftSolid(), nil
+	case "align-right-outline":
+		return AlignRightOutline(), nil
+	case "align-right-solid":
+		return AlignRightSolid(), nil
+	case "align-text-center-outline":
+		return AlignTextCenterOutline(), nil
+	case "align-text-center-solid":
+		return AlignTextCenterSolid(), nil
+	case "align-text-justify-outline":
+		return AlignTextJustifyOutline(), nil
+	case "align-text-justify-solid":
+		return AlignTextJustifySolid(), nil
+	case "align-text-left-outline":
+		return AlignTextLeftOutline(), nil
+	case "align-text-left-solid":
+		return AlignTextLeftSolid(), nil
+	case "align-text-right-outline":
+		return AlignTextRightOutline(), nil
+	case "align-text-right-solid":
+		return AlignTextRightSolid(), nil
+	case "align-top-outline":
+		return AlignTopOutline(), nil
+	case "align-top-solid":
+		return AlignTopSolid(), nil
+	case "anchor-outline":
+		return AnchorOutline(), nil
+	case "anchor-solid":
+		return AnchorSolid(), nil
+	case "android-outline":
+		return AndroidOutline(), nil
+	case "android-solid":
+		return AndroidSolid(), nil
+	case "angular-outline":
+		return AngularOutline(), nil
+	case "angular-solid":
+		return AngularSolid(), nil
+	case "anja-outline":
+		return AnjaOutline(), nil
+	case "anja-solid":
+		return AnjaSolid(), nil
+	case "anti-clockwise-outline":
+		return AntiClockwiseOutline(), nil
+	case "anti-clockwise-solid":
+		return AntiClockwiseSolid(), nil
+	case "apple-outline":
+		return AppleOutline(), nil
+	case "apple-solid":
+		return AppleSolid(), nil
+	case "appointments-outline":
+		return AppointmentsOutline(), nil
+	case "appointments-solid":
+		return AppointmentsSolid(), nil
+	case "archive-outline":
+		return ArchiveOutline(), nil
+	case "archive-solid":
+		return ArchiveSolid(), nil
+	case "area-chart-alt-outline":
+		return AreaChartAltOutline(), nil
+	case "area-chart-alt-solid":
+		return AreaChartAltSolid(), nil
+	case "area-chart-outline":
+		return AreaChartOutline(), nil
+	case "area-chart-solid":
+		return AreaChartSolid(), nil
+	case "arrow-down-circle-outline":
+		return ArrowDownCircleOutline(), nil
+	case "arrow-down-circle-solid":
+		return ArrowDownCircleSolid(), nil
+	case "arrow-down-outline":
+		return ArrowDownOutline(), nil
+	case "arrow-down-small-outline":
+		return ArrowDownSmallOutline(), nil
+	case "arrow-down-small-solid":
+		return ArrowDownSmallSolid(), nil
+	case "arrow-down-solid":
+		return ArrowDownSolid(), nil
+	case "arrow-left-circle-outline":
+		return ArrowLeftCircleOutline(), nil
+	case "arrow-left-circle-solid":
+		return ArrowLeftCircleSolid(), nil
+	case "arrow-left-outline":
+		return ArrowLeftOutline(), nil
+	case "arrow-left-small-outline":
+		return ArrowLeftSmallOutline(), nil
+	case "arrow-left-small-solid":
+		return ArrowLeftSmallSolid(), nil
+	case "arrow-left-solid":
+		return ArrowLeftSolid(), nil
+	case "arrow-outline":
+		return ArrowOutline(), nil
+	case "arrow-right-circle-outline":
+		return ArrowRightCircleOutline(), nil
+	case "arrow-right-circle-solid":
+		return ArrowRightCircleSolid(), nil
+	case "arrow-right-outline":
+		return ArrowRightOutline(), nil
+	case "arrow-right-small-outline":
+		return ArrowRightSmallOutline(), nil
+	case "arrow-right-small-solid":
+		return ArrowRightSmallSolid(), nil
+	case "arrow-right-solid":
+		return ArrowRightSolid(), nil
+	case "arrow-solid":
+		return ArrowSolid(), nil
+	case "arrow-up-circle-outline":
+		return ArrowUpCircleOutline(), nil
+	case "arrow-up-circle-solid":
+		return ArrowUpCircleSolid(), nil
+	case "arrow-up-outline":
+		return ArrowUpOutline(), nil
+	case "arrow-up-small-outline":
+		return ArrowUpSmallOutline(), nil
+	case "arrow-up-small-solid":
+		return ArrowUpSmallSolid(), nil
+	case "arrow-up-solid":
+		return ArrowUpSolid(), nil
+	case "artboard-outline":
+		return ArtboardOutline(), nil
+	case "artboard-solid":
+		return ArtboardSolid(), nil
+	case "at-outline":
+		return AtOutline(), nil
+	case "at-solid":
+		return AtSolid(), nil
+	case "attach-outline":
+		return AttachOutline(), nil
+	case "attach-solid":
+		return AttachSolid(), nil
+	case "attachment-outline":
+		return AttachmentOutline(), nil
+	case "attachment-solid":
+		return AttachmentSolid(), nil
+	case "audio-cable-outline":
+		return AudioCableOutline(), nil
+	case "audio-cable-solid":
+		return AudioCableSolid(), nil
+	case "audio-document-outline":
+		return AudioDocumentOutline(), nil
+	case "audio-document-solid":
+		return AudioDocumentSolid(), nil
+	case "azure-outline":
+		return AzureOutline(), nil
+	case "azure-solid":
+		return AzureSolid(), nil
+	case "backspace-outline":
+		return BackspaceOutline(), nil
+	case "backspace-solid":
+		return BackspaceSolid(), nil
+	case "bag-alt-outline":
+		return BagAltOutline(), nil
+	case "bag-alt-solid":
+		return BagAltSolid(), nil
+	case "bag-minus-outline":
+		return BagMinusOutline(), nil
+	case "bag-minus-solid":
+		return BagMinusSolid(), nil
+	case "bag-outline":
+		return BagOutline(), nil
+	case "bag-plus-outline":
+		return BagPlusOutline(), nil
+	case "bag-plus-solid":
+		return BagPlusSolid(), nil
+	case "bag-solid":
+		return BagSolid(), nil
+	case "bank-outline":
+		return BankOutline(), nil
+	case "bank-solid":
+		return BankSolid(), nil
+	case "bar-chart-outline":
+		return BarChartOutline(), nil
+	case "bar-chart-solid":
+		return BarChartSolid(), nil
+	case "barcode-outline":
+		return BarcodeOutline(), nil
+	case "barcode-solid":
+		return BarcodeSolid(), nil
+	case "basket-minus-outline":
+		return BasketMinusOutline(), nil
+	case "basket-minus-solid":
+		return BasketMinusSolid(), nil
+	case "basket-outline":
+		return BasketOutline(), nil
+	case "basket-plus-outline":
+		return BasketPlusOutline(), nil
+	case "basket-plus-solid":
+		return BasketPlusSolid(), nil
+	case "basket-solid":
+		return BasketSolid(), nil
+	case "bath-outline":
+		return BathOutline(), nil
+	case "bath-solid":
+		return BathSolid(), nil
+	case "battery-charge-outline":
+		return BatteryChargeOutline(), nil
+	case "battery-charge-solid":
+		return BatteryChargeSolid(), nil
+	case "battery-5-outline":
+		return BatteryFiveOutline(), nil
+	case "battery-5-solid":
+		return BatteryFiveSolid(), nil
+	case "battery-4-outline":
+		return BatteryFourOutline(), nil
+	case "battery-4-solid":
+		return BatteryFourSolid(), nil
+	case "battery-1-outline":
+		return BatteryOneOutline(), nil
+	case "battery-1-solid":
+		return BatteryOneSolid(), nil
+	case "battery-3-outline":
+		return BatteryThreeOutline(), nil
+	case "battery-3-solid":
+		return BatteryThreeSolid(), nil
+	case "battery-2-outline":
+		return BatteryTwoOutline(), nil
+	case "battery-2-solid":
+		return BatteryTwoSolid(), nil
+	case "battery-0-outline":
+		return BatteryZeroOutline(), nil
+	case "battery-0-solid":
+		return BatteryZeroSolid(), nil
+	case "bed-double-outline":
+		return BedDoubleOutline(), nil
+	case "bed-double-solid":
+		return BedDoubleSolid(), nil
+	case "bed-single-outline":
+		return BedSingleOutline(), nil
+	case "bed-single-solid":
+		return BedSingleSolid(), nil
+	case "behance-outline":
+		return BehanceOutline(), nil
+	case "behance-solid":
+		return BehanceSolid(), nil
+	case "bell-outline":
+		return BellOutline(), nil
+	case "bell-solid":
+		return BellSolid(), nil
+	case "bin-outline":
+		return BinOutline(), nil
+	case "bin-solid":
+		return BinSolid(), nil
+	case "bitbucket-outline":
+		return BitbucketOutline(), nil
+	case "bitbucket-solid":
+		return BitbucketSolid(), nil
+	case "bitcoin-outline":
+		return BitcoinOutline(), nil
+	case "bitcoin-solid":
+		return BitcoinSolid(), nil
+	case "bluetooth-outline":
+		return BluetoothOutline(), nil
+	case "bluetooth-solid":
+		return BluetoothSolid(), nil
+	case "bold-outline":
+		return BoldOutline(), nil
+	case "bold-solid":
+		return BoldSolid(), nil
+	case "book-outline":
+		return BookOutline(), nil
+	case "book-solid":
+		return BookSolid(), nil
+	case "bookmark-outline":
+		return BookmarkOutline(), nil
+	case "bookmark-solid":
+		return BookmarkSolid(), nil
+	case "border-all-outline":
+		return BorderAllOutline(), nil
+	case "border-all-solid":
+		return BorderAllSolid(), nil
+	case "border-bottom-outline":
+		return BorderBottomOutline(), nil
+	case "border-bottom-solid":
+		return BorderBottomSolid(), nil
+	case "border-horizontal-outline":
+		return BorderHorizontalOutline(), nil
+	case "border-horizontal-solid":
+		return BorderHorizontalSolid(), nil
+	case "border-inner-outline":
+		return BorderInnerOutline(), nil
+	case "border-inner-solid":
+		return BorderInnerSolid(), nil
+	case "border-left-outline":
+		return BorderLeftOutline(), nil
+	case "border-left-solid":
+		return BorderLeftSolid(), nil
+	case "border-none-outline":
+		return BorderNoneOutline(), nil
+	case "border-none-solid":
+		return BorderNoneSolid(), nil
+	case "border-outer-outline":
+		return BorderOuterOutline(), nil
+	case "border-outer-solid":
+		return BorderOuterSolid(), nil
+	case "border-radius-outline":
+		return BorderRadiusOutline(), nil
+	case "border-radius-solid":
+		return BorderRadiusSolid(), nil
+	case "border-right-outline":
+		return BorderRightOutline(), nil
+	case "border-right-solid":
+		return BorderRightSolid(), nil
+	case "border-top-outline":
+		return BorderTopOutline(), nil
+	case "border-top-solid":
+		return BorderTopSolid(), nil
+	case "border-vertical-outline":
+		return BorderVerticalOutline(), nil
+	case "border-vertical-solid":
+		return BorderVerticalSolid(), nil
+	case "bottom-left-outline":
+		return BottomLeftOutline(), nil
+	case "bottom-left-solid":
+		return BottomLeftSolid(), nil
+	case "bottom-right-outline":
+		return BottomRightOutline(), nil
+	case "bottom-right-solid":
+		return BottomRightSolid(), nil
+	case "box-outline":
+		return BoxOutline(), nil
+	case "box-solid":
+		return BoxSolid(), nil
+	case "bracket-outline":
+		return BracketOutline(), nil
+	case "bracket-solid":
+		return BracketSolid(), nil
+	case "briefcase-alt-outline":
+		return BriefcaseAltOutline(), nil
+	case "briefcase-alt-solid":
+		return BriefcaseAltSolid(), nil
+	case "briefcase-outline":
+		return BriefcaseOutline(), nil
+	case "briefcase-solid":
+		return BriefcaseSolid(), nil
+	case "brush-outline":
+		return BrushOutline(), nil
+	case "brush-solid":
+		return BrushSolid(), nil
+	case "bug-outline":
+		return BugOutline(), nil
+	case "bug-solid":
+		return BugSolid(), nil
+	case "building-outline":
+		return BuildingOutline(), nil
+	case "building-solid":
+		return BuildingSolid(), nil
+	case "bulb-off-outline":
+		return BulbOffOutline(), nil
+	case "bulb-off-solid":
+		return BulbOffSolid(), nil
+	case "bulb-on-outline":
+		return BulbOnOutline(), nil
+	case "bulb-on-solid":
+		return BulbOnSolid(), nil
+	case "button-outline":
+		return ButtonOutline(), nil
+	case "button-solid":
+		return ButtonSolid(), nil
+	case "c-outline":
+		return COutline(), nil
+	case "c-sharp-outline":
+		return CSharpOutline(), nil
+	case "c-sharp-solid":
+		return CSharpSolid(), nil
+	case "c-solid":
+		return CSolid(), nil
+	case "calculator-outline":
+		return CalculatorOutline(), nil
+	case "calculator-solid":
+		return CalculatorSolid(), nil
+	case "calendar-minus-outline":
+		return CalendarMinusOutline(), nil
+	case "calendar-minus-solid":
+		return CalendarMinusSolid(), nil
+	case "calendar-no-access-outline":
+		return CalendarNoAccessOutline(), nil
+	case "calendar-no-access-solid":
+		return CalendarNoAccessSolid(), nil
+	case "calendar-outline":
+		return CalendarOutline(), nil
+	case "calendar-plus-outline":
+		return CalendarPlusOutline(), nil
+	case "calendar-plus-solid":
+		return CalendarPlusSolid(), nil
+	case "calendar-solid":
+		return CalendarSolid(), nil
+	case "calendar-tick-outline":
+		return CalendarTickOutline(), nil
+	case "calendar-tick-solid":
+		return CalendarTickSolid(), nil
+	case "calendar-x-outline":
+		return CalendarXOutline(), nil
+	case "calendar-x-solid":
+		return CalendarXSolid(), nil
+	case "camera-outline":
+		return CameraOutline(), nil
+	case "camera-solid":
+		return CameraSolid(), nil
+	case "candle-chart-outline":
+		return CandleChartOutline(), nil
+	case "candle-chart-solid":
+		return CandleChartSolid(), nil
+	case "car-outline":
+		return CarOutline(), nil
+	case "car-solid":
+		return CarSolid(), nil
+	case "caret-vertical-circle-outline":
+		return CaretVerticalCircleOutline(), nil
+	case "caret-vertical-circle-solid":
+		return CaretVerticalCircleSolid(), nil
+	case "caret-vertical-outline":
+		return CaretVerticalOutline(), nil
+	case "caret-vertical-small-outline":
+		return CaretVerticalSmallOutline(), nil
+	case "caret-vertical-small-solid":
+		return CaretVerticalSmallSolid(), nil
+	case "caret-vertical-solid":
+		return CaretVerticalSolid(), nil
+	case "cart-minus-outline":
+		return CartMinusOutline(), nil
+	case "cart-minus-solid":
+		return CartMinusSolid(), nil
+	case "cart-outline":
+		return CartOutline(), nil
+	case "cart-plus-outline":
+		return CartPlusOutline(), nil
+	case "cart-plus-solid":
+		return CartPlusSolid(), nil
+	case "cart-solid":
+		return CartSolid(), nil
+	case "certificate-outline":
+		return CertificateOutline(), nil
+	case "certificate-solid":
+		return CertificateSolid(), nil
+	case "chat-outline":
+		return ChatOutline(), nil
+	case "chat-solid":
+		return ChatSolid(), nil
+	case "chat-typing-alt-outline":
+		return ChatTypingAltOutline(), nil
+	case "chat-typing-alt-solid":
+		return ChatTypingAltSolid(), nil
+	case "chat-typing-outline":
+		return ChatTypingOutline(), nil
+	case "chat-typing-solid":
+		return ChatTypingSolid(), nil
+	case "chatbot-outline":
+		return ChatbotOutline(), nil
+	case "chatbot-solid":
+		return ChatbotSolid(), nil
+	case "chrome-outline":
+		return ChromeOutline(), nil
+	case "chrome-solid":
+		return ChromeSolid(), nil
+	case "church-outline":
+		return ChurchOutline(), nil
+	case "church-solid":
+		return ChurchSolid(), nil
+	case "circle-outline":
+		return CircleOutline(), nil
+	case "circle-solid":
+		return CircleSolid(), nil
+	case "clipboard-minus-outline":
+		return ClipboardMinusOutline(), nil
+	case "clipboard-minus-solid":
+		return ClipboardMinusSolid(), nil
+	case "clipboard-no-access-outline":
+		return ClipboardNoAccessOutline(), nil
+	case "clipboard-no-access-solid":
+		return ClipboardNoAccessSolid(), nil
+	case "clipboard-outline":
+		return ClipboardOutline(), nil
+	case "clipboard-plus-outline":
+		return ClipboardPlusOutline(), nil
+	case "clipboard-plus-solid":
+		return ClipboardPlusSolid(), nil
+	case "clipboard-solid":
+		return ClipboardSolid(), nil
+	case "clipboard-tick-outline":
+		return ClipboardTickOutline(), nil
+	case "clipboard-tick-solid":
+		return ClipboardTickSolid(), nil
+	case "clipboard-x-outline":
+		return ClipboardXOutline(), nil
+	case "clipboard-x-solid":
+		return ClipboardXSolid(), nil
+	case "clock-outline":
+		return ClockOutline(), nil
+	case "clock-solid":
+		return ClockSolid(), nil
+	case "clockwise-outline":
+		return ClockwiseOutline(), nil
+	case "clockwise-solid":
+		return ClockwiseSolid(), nil
+	case "code-outline":
+		return CodeOutline(), nil
+	case "code-solid":
+		return CodeSolid(), nil
+	case "codepen-outline":
+		return CodepenOutline(), nil
+	case "codepen-solid":
+		return CodepenSolid(), nil
+	case "cog-outline":
+		return CogOutline(), nil
+	case "cog-solid":
+		return CogSolid(), nil
+	case "compass-outline":
+		return CompassOutline(), nil
+	case "compass-solid":
+		return CompassSolid(), nil
+	case "computer-outline":
+		return ComputerOutline(), nil
+	case "computer-solid":
+		return ComputerSolid(), nil
+	case "contact-outline":
+		return ContactOutline(), nil
+	case "contact-solid":
+		return ContactSolid(), nil
+	case "contract-outline":
+		return ContractOutline(), nil
+	case "contract-solid":
+		return ContractSolid(), nil
+	case "cost-estimate-outline":
+		return CostEstimateOutline(), nil
+	case "cost-estimate-solid":
+		return CostEstimateSolid(), nil
+	case "cplusplus-outline":
+		return CplusplusOutline(), nil
+	case "cplusplus-solid":
+		return CplusplusSolid(), nil
+	case "credit-card-outline":
+		return CreditCardOutline(), nil
+	case "credit-card-solid":
+		return CreditCardSolid(), nil
+	case "crop-outline":
+		return CropOutline(), nil
+	case "crop-solid":
+		return CropSolid(), nil
+	case "css3-outline":
+		return CssThreeOutline(), nil
+	case "css3-solid":
+		return CssThreeSolid(), nil
+	case "csv-outline":
+		return CsvOutline(), nil
+	case "csv-solid":
+		return CsvSolid(), nil
+	case "cup-outline":
+		return CupOutline(), nil
+	case "cup-solid":
+		return CupSolid(), nil
+	case "curved-connector-outline":
+		return CurvedConnectorOutline(), nil
+	case "curved-connector-solid":
+		return CurvedConnectorSolid(), nil
+	case "d3-outline":
+		return DThreeOutline(), nil
+	case "d3-solid":
+		return DThreeSolid(), nil
+	case "database-outline":
+		return DatabaseOutline(), nil
+	case "database-solid":
+		return DatabaseSolid(), nil
+	case "denied-outline":
+		return DeniedOutline(), nil
+	case "denied-solid":
+		return DeniedSolid(), nil
+	case "deno-outline":
+		return DenoOutline(), nil
+	case "deno-solid":
+		return DenoSolid(), nil
+	case "depth-chart-outline":
+		return DepthChartOutline(), nil
+	case "depth-chart-solid":
+		return DepthChartSolid(), nil
+	case "desklamp-outline":
+		return DesklampOutline(), nil
+	case "desklamp-solid":
+		return DesklampSolid(), nil
+	case "diamond-outline":
+		return DiamondOutline(), nil
+	case "diamond-solid":
+		return DiamondSolid(), nil
+	case "direction-outline":
+		return DirectionOutline(), nil
+	case "direction-solid":
+		return DirectionSolid(), nil
+	case "discord-outline":
+		return DiscordOutline(), nil
+	case "discord-solid":
+		return DiscordSolid(), nil
+	case "discount-outline":
+		return DiscountOutline(), nil
+	case "discount-solid":
+		return DiscountSolid(), nil
+	case "distribute-horizontal-outline":
+		return DistributeHorizontalOutline(), nil
+	case "distribute-horizontal-solid":
+		return DistributeHorizontalSolid(), nil
+	case "distribute-vertical-outline":
+		return DistributeVerticalOutline(), nil
+	case "distribute-vertical-solid":
+		return DistributeVerticalSolid(), nil
+	case "divider-line-outline":
+		return DividerLineOutline(), nil
+	case "divider-line-solid":
+		return DividerLineSolid(), nil
+	case "doc-outline":
+		return DocOutline(), nil
+	case "doc-solid":
+		return DocSolid(), nil
+	case "docker-outline":
+		return DockerOutline(), nil
+	case "docker-solid":
+		return DockerSolid(), nil
+	case "documents-outline":
+		return DocumentsOutline(), nil
+	case "documents-solid":
+		return DocumentsSolid(), nil
+	case "dollar-outline":
+		return DollarOutline(), nil
+	case "dollar-solid":
+		return DollarSolid(), nil
+	case "donut-chart-outline":
+		return DonutChartOutline(), nil
+	case "donut-chart-solid":
+		return DonutChartSolid(), nil
+	case "double-caret-down-circle-outline":
+		return DoubleCaretDownCircleOutline(), nil
+	case "double-caret-down-circle-solid":
+		return DoubleCaretDownCircleSolid(), nil
+	case "double-caret-down-outline":
+		return DoubleCaretDownOutline(), nil
+	case "double-caret-down-small-outline":
+		return DoubleCaretDownSmallOutline(), nil
+	case "double-caret-down-small-solid":
+		return DoubleCaretDownSmallSolid(), nil
+	case "double-caret-down-solid":
+		return DoubleCaretDownSolid(), nil
+	case "double-caret-left-circle-outline":
+		return DoubleCaretLeftCircleOutline(), nil
+	case "double-caret-left-circle-solid":
+		return DoubleCaretLeftCircleSolid(), nil
+	case "double-caret-left-outline":
+		return DoubleCaretLeftOutline(), nil
+	case "double-caret-left-small-outline":
+		return DoubleCaretLeftSmallOutline(), nil
+	case "double-caret-left-small-solid":
+		return DoubleCaretLeftSmallSolid(), nil
+	case "double-caret-left-solid":
+		return DoubleCaretLeftSolid(), nil
+	case "double-caret-right-circle-outline":
+		return DoubleCaretRightCircleOutline(), nil
+	case "double-caret-right-circle-solid":
+		return DoubleCaretRightCircleSolid(), nil
+	case "double-caret-right-outline":
+		return DoubleCaretRightOutline(), nil
+	case "double-caret-right-small-outline":
+		return DoubleCaretRightSmallOutline(), nil
+	case "double-caret-right-small-solid":
+		return DoubleCaretRightSmallSolid(), nil
+	case "double-caret-right-solid":
+		return DoubleCaretRightSolid(), nil
+	case "double-caret-up-circle-outline":
+		return DoubleCaretUpCircleOutline(), nil
+	case "double-caret-up-circle-solid":
+		return DoubleCaretUpCircleSolid(), nil
+	case "double-caret-up-outline":
+		return DoubleCaretUpOutline(), nil
+	case "double-caret-up-small-outline":
+		return DoubleCaretUpSmallOutline(), nil
+	case "double-caret-up-small-solid":
+		return DoubleCaretUpSmallSolid(), nil
+	case "double-caret-up-solid":
+		return DoubleCaretUpSolid(), nil
+	case "down-circle-outline":
+		return DownCircleOutline(), nil
+	case "down-circle-solid":
+		return DownCircleSolid(), nil
+	case "down-outline":
+		return DownOutline(), nil
+	case "down-small-outline":
+		return DownSmallOutline(), nil
+	case "down-small-solid":
+		return DownSmallSolid(), nil
+	case "down-solid":
+		return DownSolid(), nil
+	case "download-outline":
+		return DownloadOutline(), nil
+	case "download-solid":
+		return DownloadSolid(), nil
+	case "drag-horizontal-outline":
+		return DragHorizontalOutline(), nil
+	case "drag-horizontal-solid":
+		return DragHorizontalSolid(), nil
+	case "drag-outline":
+		return DragOutline(), nil
+	case "drag-solid":
+		return DragSolid(), nil
+	case "drag-vertical-outline":
+		return DragVerticalOutline(), nil
+	case "drag-vertical-solid":
+		return DragVerticalSolid(), nil
+	case "dribbble-outline":
+		return DribbbleOutline(), nil
+	case "dribbble-solid":
+		return DribbbleSolid(), nil
+	case "drop-outline":
+		return DropOutline(), nil
+	case "drop-solid":
+		return DropSolid(), nil
+	case "dropper-outline":
+		return DropperOutline(), nil
+	case "dropper-solid":
+		return DropperSolid(), nil
+	case "edge-outline":
+		return EdgeOutline(), nil
+	case "edge-solid":
+		return EdgeSolid(), nil
+	case "edit-circle-outline":
+		return EditCircleOutline(), nil
+	case "edit-circle-solid":
+		return EditCircleSolid(), nil
+	case "edit-1-outline":
+		return EditOneOutline(), nil
+	case "edit-1-solid":
+		return EditOneSolid(), nil
+	case "edit-outline":
+		return EditOutline(), nil
+	case "edit-small-outline":
+		return EditSmallOutline(), nil
+	case "edit-small-solid":
+		return EditSmallSolid(), nil
+	case "edit-solid":
+		return EditSolid(), nil
+	case "elbow-connector-outline":
+		return ElbowConnectorOutline(), nil
+	case "elbow-connector-solid":
+		return ElbowConnectorSolid(), nil
+	case "envelope-open-outline":
+		return EnvelopeOpenOutline(), nil
+	case "envelope-open-solid":
+		return EnvelopeOpenSolid(), nil
+	case "envelope-outline":
+		return EnvelopeOutline(), nil
+	case "envelope-solid":
+		return EnvelopeSolid(), nil
+	case "eps-outline":
+		return EpsOutline(), nil
+	case "eps-solid":
+		return EpsSolid(), nil
+	case "eslint-outline":
+		return EslintOutline(), nil
+	case "eslint-solid":
+		return EslintSolid(), nil
+	case "ethereum-outline":
+		return EthereumOutline(), nil
+	case "ethereum-solid":
+		return EthereumSolid(), nil
+	case "euro-outline":
+		return EuroOutline(), nil
+	case "euro-solid":
+		return EuroSolid(), nil
+	case "exclamation-circle-outline":
+		return ExclamationCircleOutline(), nil
+	case "exclamation-circle-solid":
+		return ExclamationCircleSolid(), nil
+	case "exclamation-outline":
+		return ExclamationOutline(), nil
+	case "exclamation-small-outline":
+		return ExclamationSmallOutline(), nil
+	case "exclamation-small-solid":
+		return ExclamationSmallSolid(), nil
+	case "exclamation-solid":
+		return ExclamationSolid(), nil
+	case "expand-alt-outline":
+		return ExpandAltOutline(), nil
+	case "expand-alt-solid":
+		return ExpandAltSolid(), nil
+	case "expand-outline":
+		return ExpandOutline(), nil
+	case "expand-solid":
+		return ExpandSolid(), nil
+	case "eye-closed-outline":
+		return EyeClosedOutline(), nil
+	case "eye-closed-solid":
+		return EyeClosedSolid(), nil
+	case "eye-outline":
+		return EyeOutline(), nil
+	case "eye-solid":
+		return EyeSolid(), nil
+	case "face-id-outline":
+		return FaceIdOutline(), nil
+	case "face-id-solid":
+		return FaceIdSolid(), nil
+	case "facebook-outline":
+		return FacebookOutline(), nil
+	case "facebook-solid":
+		return FacebookSolid(), nil
+	case "figma-outline":
+		return FigmaOutline(), nil
+	case "figma-solid":
+		return FigmaSolid(), nil
+	case "file-minus-outline":
+		return FileMinusOutline(), nil
+	case "file-minus-solid":
+		return FileMinusSolid(), nil
+	case "file-no-access-outline":
+		return FileNoAccessOutline(), nil
+	case "file-no-access-solid":
+		return FileNoAccessSolid(), nil
+	case "file-outline":
+		return FileOutline(), nil
+	case "file-plus-outline":
+		return FilePlusOutline(), nil
+	case "file-plus-solid":
+		return FilePlusSolid(), nil
+	case "file-solid":
+		return FileSolid(), nil
+	case "file-tick-outline":
+		return FileTickOutline(), nil
+	case "file-tick-solid":
+		return FileTickSolid(), nil
+	case "file-x-outline":
+		return FileXOutline(), nil
+	case "file-x-solid":
+		return FileXSolid(), nil
+	case "filter-outline":
+		return FilterOutline(), nil
+	case "filter-solid":
+		return FilterSolid(), nil
+	case "fingerprint-outline":
+		return FingerprintOutline(), nil
+	case "fingerprint-solid":
+		return FingerprintSolid(), nil
+	case "firebase-outline":
+		return FirebaseOutline(), nil
+	case "firebase-solid":
+		return FirebaseSolid(), nil
+	case "flag-alt-outline":
+		return FlagAltOutline(), nil
+	case "flag-alt-solid":
+		return FlagAltSolid(), nil
+	case "flag-outline":
+		return FlagOutline(), nil
+	case "flag-solid":
+		return FlagSolid(), nil
+	case "flip-horizontal-outline":
+		return FlipHorizontalOutline(), nil
+	case "flip-horizontal-solid":
+		return FlipHorizontalSolid(), nil
+	case "flip-vertical-outline":
+		return FlipVerticalOutline(), nil
+	case "flip-vertical-solid":
+		return FlipVerticalSolid(), nil
+	case "float-center-outline":
+		return FloatCenterOutline(), nil
+	case "float-center-solid":
+		return FloatCenterSolid(), nil
+	case "float-left-outline":
+		return FloatLeftOutline(), nil
+	case "float-left-solid":
+		return FloatLeftSolid(), nil
+	case "float-right-outline":
+		return FloatRightOutline(), nil
+	case "float-right-solid":
+		return FloatRightSolid(), nil
+	case "floorplan-outline":
+		return FloorplanOutline(), nil
+	case "floorplan-solid":
+		return FloorplanSolid(), nil
+	case "folder-minus-outline":
+		return FolderMinusOutline(), nil
+	case "folder-minus-solid":
+		return FolderMinusSolid(), nil
+	case "folder-no-access-outline":
+		return FolderNoAccessOutline(), nil
+	case "folder-no-access-solid":
+		return FolderNoAccessSolid(), nil
+	case "folder-outline":
+		return FolderOutline(), nil
+	case "folder-plus-outline":
+		return FolderPlusOutline(), nil
+	case "folder-plus-solid":
+		return FolderPlusSolid(), nil
+	case "folder-solid":
+		return FolderSolid(), nil
+	case "folder-tick-outline":
+		return FolderTickOutline(), nil
+	case "folder-tick-solid":
+		return FolderTickSolid(), nil
+	case "folder-x-outline":
+		return FolderXOutline(), nil
+	case "folder-x-solid":
+		return FolderXSolid(), nil
+	case "folders-outline":
+		return FoldersOutline(), nil
+	case "folders-solid":
+		return FoldersSolid(), nil
+	case "forward-circle-outline":
+		return ForwardCircleOutline(), nil
+	case "forward-circle-solid":
+		return ForwardCircleSolid(), nil
+	case "forward-outline":
+		return ForwardOutline(), nil
+	case "forward-small-outline":
+		return ForwardSmallOutline(), nil
+	case "forward-small-solid":
+		return ForwardSmallSolid(), nil
+	case "forward-solid":
+		return ForwardSolid(), nil
+	case "frame-outline":
+		return FrameOutline(), nil
+	case "frame-solid":
+		return FrameSolid(), nil
+	case "framer-outline":
+		return FramerOutline(), nil
+	case "framer-solid":
+		return FramerSolid(), nil
+	case "game-controller-outline":
+		return GameControllerOutline(), nil
+	case "game-controller-retro-outline":
+		return GameControllerRetroOutline(), nil
+	case "game-controller-retro-solid":
+		return GameControllerRetroSolid(), nil
+	case "game-controller-solid":
+		return GameControllerSolid(), nil
+	case "gantt-chart-outline":
+		return GanttChartOutline(), nil
+	case "gantt-chart-solid":
+		return GanttChartSolid(), nil
+	case "garage-outline":
+		return GarageOutline(), nil
+	case "garage-solid":
+		return GarageSolid(), nil
+	case "gatsbyjs-outline":
+		return GatsbyjsOutline(), nil
+	case "gatsbyjs-solid":
+		return GatsbyjsSolid(), nil
+	case "gba-outline":
+		return GbaOutline(), nil
+	case "gba-solid":
+		return GbaSolid(), nil
+	case "gbc-outline":
+		return GbcOutline(), nil
+	case "gbc-solid":
+		return GbcSolid(), nil
+	case "ghost-outline":
+		return GhostOutline(), nil
+	case "ghost-solid":
+		return GhostSolid(), nil
+	case "gif-outline":
+		return GifOutline(), nil
+	case "gif-solid":
+		return GifSolid(), nil
+	case "gift-outline":
+		return GiftOutline(), nil
+	case "gift-solid":
+		return GiftSolid(), nil
+	case "git-branch-outline":
+		return GitBranchOutline(), nil
+	case "git-branch-solid":
+		return GitBranchSolid(), nil
+	case "git-commit-outline":
+		return GitCommitOutline(), nil
+	case "git-commit-solid":
+		return GitCommitSolid(), nil
+	case "git-compare-outline":
+		return GitCompareOutline(), nil
+	case "git-compare-solid":
+		return GitCompareSolid(), nil
+	case "git-fork-outline":
+		return GitForkOutline(), nil
+	case "git-fork-solid":
+		return GitForkSolid(), nil
+	case "git-merge-outline":
+		return GitMergeOutline(), nil
+	case "git-merge-solid":
+		return GitMergeSolid(), nil
+	case "git-outline":
+		return GitOutline(), nil
+	case "git-pull-outline":
+		return GitPullOutline(), nil
+	case "git-pull-solid":
+		return GitPullSolid(), nil
+	case "git-solid":
+		return GitSolid(), nil
+	case "github-outline":
+		return GithubOutline(), nil
+	case "github-solid":
+		return GithubSolid(), nil
+	case "gitlab-outline":
+		return GitlabOutline(), nil
+	case "gitlab-solid":
+		return GitlabSolid(), nil
+	case "globe-africa-outline":
+		return GlobeAfricaOutline(), nil
+	case "globe-africa-solid":
+		return GlobeAfricaSolid(), nil
+	case "globe-americas-outline":
+		return GlobeAmericasOutline(), nil
+	case "globe-americas-solid":
+		return GlobeAmericasSolid(), nil
+	case "globe-outline":
+		return GlobeOutline(), nil
+	case "globe-solid":
+		return GlobeSolid(), nil
+	case "google-ad-outline":
+		return GoogleAdOutline(), nil
+	case "google-ad-solid":
+		return GoogleAdSolid(), nil
+	case "google-drive-outline":
+		return GoogleDriveOutline(), nil
+	case "google-drive-solid":
+		return GoogleDriveSolid(), nil
+	case "google-outline":
+		return GoogleOutline(), nil
+	case "google-play-store-outline":
+		return GooglePlayStoreOutline(), nil
+	case "google-play-store-solid":
+		return GooglePlayStoreSolid(), nil
+	case "google-solid":
+		return GoogleSolid(), nil
+	case "google-streetview-outline":
+		return GoogleStreetviewOutline(), nil
+	case "google-streetview-solid":
+		return GoogleStreetviewSolid(), nil
+	case "graphql-outline":
+		return GraphqlOutline(), nil
+	case "graphql-solid":
+		return GraphqlSolid(), nil
+	case "grid-layout-outline":
+		return GridLayoutOutline(), nil
+	case "grid-layout-solid":
+		return GridLayoutSolid(), nil
+	case "hashtag-outline":
+		return HashtagOutline(), nil
+	case "hashtag-solid":
+		return HashtagSolid(), nil
+	case "hd-screen-outline":
+		return HdScreenOutline(), nil
+	case "hd-screen-solid":
+		return HdScreenSolid(), nil
+	case "hdmi-cable-outline":
+		return HdmiCableOutline(), nil
+	case "hdmi-cable-solid":
+		return HdmiCableSolid(), nil
+	case "headphones-outline":
+		return HeadphonesOutline(), nil
+	case "headphones-solid":
+		return HeadphonesSolid(), nil
+	case "headset-outline":
+		return HeadsetOutline(), nil
+	case "headset-solid":
+		return HeadsetSolid(), nil
+	case "heart-circle-outline":
+		return HeartCircleOutline(), nil
+	case "heart-circle-solid":
+		return HeartCircleSolid(), nil
+	case "heart-outline":
+		return HeartOutline(), nil
+	case "heart-small-outline":
+		return HeartSmallOutline(), nil
+	case "heart-small-solid":
+		return HeartSmallSolid(), nil
+	case "heart-solid":
+		return HeartSolid(), nil
+	case "hexagon-outline":
+		return HexagonOutline(), nil
+	case "hexagon-solid":
+		return HexagonSolid(), nil
+	case "history-outline":
+		return HistoryOutline(), nil
+	case "history-solid":
+		return HistorySolid(), nil
+	case "home-alt-outline":
+		return HomeAltOutline(), nil
+	case "home-alt-solid":
+		return HomeAltSolid(), nil
+	case "home-outline":
+		return HomeOutline(), nil
+	case "home-solid":
+		return HomeSolid(), nil
+	case "hospital-outline":
+		return HospitalOutline(), nil
+	case "hospital-solid":
+		return HospitalSolid(), nil
+	case "hourglass-outline":
+		return HourglassOutline(), nil
+	case "hourglass-solid":
+		return HourglassSolid(), nil
+	case "house-outline":
+		return HouseOutline(), nil
+	case "house-solid":
+		return HouseSolid(), nil
+	case "html5-outline":
+		return HtmlFiveOutline(), nil
+	case "html5-solid":
+		return HtmlFiveSolid(), nil
+	case "id-outline":
+		return IdOutline(), nil
+	case "id-solid":
+		return IdSolid(), nil
+	case "imac-outline":
+		return ImacOutline(), nil
+	case "imac-solid":
+		return ImacSolid(), nil
+	case "image-alt-outline":
+		return ImageAltOutline(), nil
+	case "image-alt-solid":
+		return ImageAltSolid(), nil
+	case "image-document-outline":
+		return ImageDocumentOutline(), nil
+	case "image-document-solid":
+		return ImageDocumentSolid(), nil
+	case "image-outline":
+		return ImageOutline(), nil
+	case "image-solid":
+		return ImageSolid(), nil
+	case "in-ear-headphones-outline":
+		return InEarHeadphonesOutline(), nil
+	case "in-ear-headphones-solid":
+		return InEarHeadphonesSolid(), nil
+	case "inbox-outline":
+		return InboxOutline(), nil
+	case "inbox-solid":
+		return InboxSolid(), nil
+	case "indent-decrease-outline":
+		return IndentDecreaseOutline(), nil
+	case "indent-decrease-solid":
+		return IndentDecreaseSolid(), nil
+	case "indent-increase-outline":
+		return IndentIncreaseOutline(), nil
+	case "indent-increase-solid":
+		return IndentIncreaseSolid(), nil
+	case "info-circle-outline":
+		return InfoCircleOutline(), nil
+	case "info-circle-solid":
+		return InfoCircleSolid(), nil
+	case "info-outline":
+		return InfoOutline(), nil
+	case "info-small-outline":
+		return InfoSmallOutline(), nil
+	case "info-small-solid":
+		return InfoSmallSolid(), nil
+	case "info-solid":
+		return InfoSolid(), nil
+	case "instagram-outline":
+		return InstagramOutline(), nil
+	case "instagram-solid":
+		return InstagramSolid(), nil
+	case "invoice-outline":
+		return InvoiceOutline(), nil
+	case "invoice-solid":
+		return InvoiceSolid(), nil
+	case "italic-outline":
+		return ItalicOutline(), nil
+	case "italic-solid":
+		return ItalicSolid(), nil
+	case "javascript-outline":
+		return JavascriptOutline(), nil
+	case "javascript-solid":
+		return JavascriptSolid(), nil
+	case "joystick-outline":
+		return JoystickOutline(), nil
+	case "joystick-solid":
+		return JoystickSolid(), nil
+	case "jpg-outline":
+		return JpgOutline(), nil
+	case "jpg-solid":
+		return JpgSolid(), nil
+	case "kanban-outline":
+		return KanbanOutline(), nil
+	case "kanban-solid":
+		return KanbanSolid(), nil
+	case "key-outline":
+		return KeyOutline(), nil
+	case "key-solid":
+		return KeySolid(), nil
+	case "keyboard-outline":
+		return KeyboardOutline(), nil
+	case "keyboard-solid":
+		return KeyboardSolid(), nil
+	case "lan-cable-outline":
+		return LanCableOutline(), nil
+	case "lan-cable-solid":
+		return LanCableSolid(), nil
+	case "laptop-outline":
+		return LaptopOutline(), nil
+	case "laptop-solid":
+		return LaptopSolid(), nil
+	case "laravel-outline":
+		return LaravelOutline(), nil
+	case "laravel-solid":
+		return LaravelSolid(), nil
+	case "layers-difference-outline":
+		return LayersDifferenceOutline(), nil
+	case "layers-difference-solid":
+		return LayersDifferenceSolid(), nil
+	case "layers-intersect-outline":
+		return LayersIntersectOutline(), nil
+	case "layers-intersect-solid":
+		return LayersIntersectSolid(), nil
+	case "layers-outline":
+		return LayersOutline(), nil
+	case "layers-solid":
+		return LayersSolid(), nil
+	case "layers-subtract-outline":
+		return LayersSubtractOutline(), nil
+	case "layers-subtract-solid":
+		return LayersSubtractSolid(), nil
+	case "layers-union-outline":
+		return LayersUnionOutline(), nil
+	case "layers-union-solid":
+		return LayersUnionSolid(), nil
+	case "left-circle-outline":
+		return LeftCircleOutline(), nil
+	case "left-circle-solid":
+		return LeftCircleSolid(), nil
+	case "left-outline":
+		return LeftOutline(), nil
+	case "left-small-outline":
+		return LeftSmallOutline(), nil
+	case "left-small-solid":
+		return LeftSmallSolid(), nil
+	case "left-solid":
+		return LeftSolid(), nil
+	case "lego-outline":
+		return LegoOutline(), nil
+	case "lego-solid":
+		return LegoSolid(), nil
+	case "lifebuoy-outline":
+		return LifebuoyOutline(), nil
+	case "lifebuoy-solid":
+		return LifebuoySolid(), nil
+	case "lightning-cable-outline":
+		return LightningCableOutline(), nil
+	case "lightning-cable-solid":
+		return LightningCableSolid(), nil
+	case "line-outline":
+		return LineOutline(), nil
+	case "line-solid":
+		return LineSolid(), nil
+	case "link-outline":
+		return LinkOutline(), nil
+	case "link-remove-outline":
+		return LinkRemoveOutline(), nil
+	case "link-remove-solid":
+		return LinkRemoveSolid(), nil
+	case "link-solid":
+		return LinkSolid(), nil
+	case "linkedin-outline":
+		return LinkedinOutline(), nil
+	case "linkedin-solid":
+		return LinkedinSolid(), nil
+	case "linux-alt-outline":
+		return LinuxAltOutline(), nil
+	case "linux-alt-solid":
+		return LinuxAltSolid(), nil
+	case "linux-outline":
+		return LinuxOutline(), nil
+	case "linux-solid":
+		return LinuxSolid(), nil
+	case "list-layout-outline":
+		return ListLayoutOutline(), nil
+	case "list-layout-solid":
+		return ListLayoutSolid(), nil
+	case "list-ordered-outline":
+		return ListOrderedOutline(), nil
+	case "list-ordered-solid":
+		return ListOrderedSolid(), nil
+	case "list-unordered-outline":
+		return ListUnorderedOutline(), nil
+	case "list-unordered-solid":
+		return ListUnorderedSolid(), nil
+	case "litecoin-outline":
+		return LitecoinOutline(), nil
+	case "litecoin-solid":
+		return LitecoinSolid(), nil
+	case "loader-outline":
+		return LoaderOutline(), nil
+	case "loader-solid":
+		return LoaderSolid(), nil
+	case "location-outline":
+		return LocationOutline(), nil
+	case "location-solid":
+		return LocationSolid(), nil
+	case "lock-circle-outline":
+		return LockCircleOutline(), nil
+	case "lock-circle-solid":
+		return LockCircleSolid(), nil
+	case "lock-outline":
+		return LockOutline(), nil
+	case "lock-small-outline":
+		return LockSmallOutline(), nil
+	case "lock-small-solid":
+		return LockSmallSolid(), nil
+	case "lock-solid":
+		return LockSolid(), nil
+	case "logout-outline":
+		return LogoutOutline(), nil
+	case "logout-solid":
+		return LogoutSolid(), nil
+	case "loop-outline":
+		return LoopOutline(), nil
+	case "loop-solid":
+		return LoopSolid(), nil
+	case "magsafe-outline":
+		return MagsafeOutline(), nil
+	case "magsafe-solid":
+		return MagsafeSolid(), nil
+	case "markdown-outline":
+		return MarkdownOutline(), nil
+	case "markdown-solid":
+		return MarkdownSolid(), nil
+	case "medium-outline":
+		return MediumOutline(), nil
+	case "medium-solid":
+		return MediumSolid(), nil
+	case "menu-outline":
+		return MenuOutline(), nil
+	case "menu-solid":
+		return MenuSolid(), nil
+	case "message-minus-outline":
+		return MessageMinusOutline(), nil
+	case "message-minus-solid":
+		return MessageMinusSolid(), nil
+	case "message-no-access-outline":
+		return MessageNoAccessOutline(), nil
+	case "message-no-access-solid":
+		return MessageNoAccessSolid(), nil
+	case "message-outline":
+		return MessageOutline(), nil
+	case "message-plus-outline":
+		return MessagePlusOutline(), nil
+	case "message-plus-solid":
+		return MessagePlusSolid(), nil
+	case "message-solid":
+		return MessageSolid(), nil
+	case "message-text-alt-outline":
+		return MessageTextAltOutline(), nil
+	case "message-text-alt-solid":
+		return MessageTextAltSolid(), nil
+	case "message-text-outline":
+		return MessageTextOutline(), nil
+	case "message-text-solid":
+		return MessageTextSolid(), nil
+	case "message-tick-outline":
+		return MessageTickOutline(), nil
+	case "message-tick-solid":
+		return MessageTickSolid(), nil
+	case "message-x-outline":
+		return MessageXOutline(), nil
+	case "message-x-solid":
+		return MessageXSolid(), nil
+	case "messenger-outline":
+		return MessengerOutline(), nil
+	case "messenger-solid":
+		return MessengerSolid(), nil
+	case "micro-sd-card-outline":
+		return MicroSdCardOutline(), nil
+	case "micro-sd-card-solid":
+		return MicroSdCardSolid(), nil
+	case "microphone-outline":
+		return MicrophoneOutline(), nil
+	case "microphone-solid":
+		return MicrophoneSolid(), nil
+	case "minimise-alt-outline":
+		return MinimiseAltOutline(), nil
+	case "minimise-alt-solid":
+		return MinimiseAltSolid(), nil
+	case "minimise-outline":
+		return MinimiseOutline(), nil
+	case "minimise-solid":
+		return MinimiseSolid(), nil
+	case "minus-circle-outline":
+		return MinusCircleOutline(), nil
+	case "minus-circle-solid":
+		return MinusCircleSolid(), nil
+	case "minus-outline":
+		return MinusOutline(), nil
+	case "minus-small-outline":
+		return MinusSmallOutline(), nil
+	case "minus-small-solid":
+		return MinusSmallSolid(), nil
+	case "minus-solid":
+		return MinusSolid(), nil
+	case "mobile-outline":
+		return MobileOutline(), nil
+	case "mobile-solid":
+		return MobileSolid(), nil
+	case "money-outline":
+		return MoneyOutline(), nil
+	case "money-solid":
+		return MoneySolid(), nil
+	case "money-stack-outline":
+		return MoneyStackOutline(), nil
+	case "money-stack-solid":
+		return MoneyStackSolid(), nil
+	case "mongodb-outline":
+		return MongodbOutline(), nil
+	case "mongodb-solid":
+		return MongodbSolid(), nil
+	case "mood-flat-outline":
+		return MoodFlatOutline(), nil
+	case "mood-flat-solid":
+		return MoodFlatSolid(), nil
+	case "mood-frown-outline":
+		return MoodFrownOutline(), nil
+	case "mood-frown-solid":
+		return MoodFrownSolid(), nil
+	case "mood-laugh-outline":
+		return MoodLaughOutline(), nil
+	case "mood-laugh-solid":
+		return MoodLaughSolid(), nil
+	case "mood-sad-outline":
+		return MoodSadOutline(), nil
+	case "mood-sad-solid":
+		return MoodSadSolid(), nil
+	case "mood-smile-outline":
+		return MoodSmileOutline(), nil
+	case "mood-smile-solid":
+		return MoodSmileSolid(), nil
+	case "mood-surprised-outline":
+		return MoodSurprisedOutline(), nil
+	case "mood-surprised-solid":
+		return MoodSurprisedSolid(), nil
+	case "mood-tongue-outline":
+		return MoodTongueOutline(), nil
+	case "mood-tongue-solid":
+		return MoodTongueSolid(), nil
+	case "moon-outline":
+		return MoonOutline(), nil
+	case "moon-solid":
+		return MoonSolid(), nil
+	case "more-horizontal-outline":
+		return MoreHorizontalOutline(), nil
+	case "more-horizontal-solid":
+		return MoreHorizontalSolid(), nil
+	case "more-vertical-outline":
+		return MoreVerticalOutline(), nil
+	case "more-vertical-solid":
+		return MoreVerticalSolid(), nil
+	case "mouse-outline":
+		return MouseOutline(), nil
+	case "mouse-solid":
+		return MouseSolid(), nil
+	case "mov-outline":
+		return MovOutline(), nil
+	case "mov-solid":
+		return MovSolid(), nil
+	case "mp4-outline":
+		return MpFourOutline(), nil
+	case "mp4-solid":
+		return MpFourSolid(), nil
+	case "mp3-outline":
+		return MpThreeOutline(), nil
+	case "mp3-solid":
+		return MpThreeSolid(), nil
+	case "ms-excel-outline":
+		return MsExcelOutline(), nil
+	case "ms-excel-solid":
+		return MsExcelSolid(), nil
+	case "ms-powerpoint-outline":
+		return MsPowerpointOutline(), nil
+	case "ms-powerpoint-solid":
+		return MsPowerpointSolid(), nil
+	case "ms-word-outline":
+		return MsWordOutline(), nil
+	case "ms-word-solid":
+		return MsWordSolid(), nil
+	case "n64-outline":
+		return NSixtyFourOutline(), nil
+	case "n64-solid":
+		return NSixtyFourSolid(), nil
+	case "nes-outline":
+		return NesOutline(), nil
+	case "nes-solid":
+		return NesSolid(), nil
+	case "netlify-outline":
+		return NetlifyOutline(), nil
+	case "netlify-solid":
+		return NetlifySolid(), nil
+	case "next-circle-outline":
+		return NextCircleOutline(), nil
+	case "next-circle-solid":
+		return NextCircleSolid(), nil
+	case "next-outline":
+		return NextOutline(), nil
+	case "next-small-outline":
+		return NextSmallOutline(), nil
+	case "next-small-solid":
+		return NextSmallSolid(), nil
+	case "next-solid":
+		return NextSolid(), nil
+	case "nextjs-outline":
+		return NextjsOutline(), nil
+	case "nextjs-solid":
+		return NextjsSolid(), nil
+	case "ngc-outline":
+		return NgcOutline(), nil
+	case "ngc-solid":
+		return NgcSolid(), nil
+	case "nintendo-switch-outline":
+		return NintendoSwitchOutline(), nil
+	case "nintendo-switch-solid":
+		return NintendoSwitchSolid(), nil
+	case "nodejs-outline":
+		return NodejsOutline(), nil
+	case "nodejs-solid":
+		return NodejsSolid(), nil
+	case "note-outline":
+		return NoteOutline(), nil
+	case "note-solid":
+		return NoteSolid(), nil
+	case "npm-outline":
+		return NpmOutline(), nil
+	case "npm-solid":
+		return NpmSolid(), nil
+	case "nuxtjs-outline":
+		return NuxtjsOutline(), nil
+	case "nuxtjs-solid":
+		return NuxtjsSolid(), nil
+	case "omega-outline":
+		return OmegaOutline(), nil
+	case "omega-solid":
+		return OmegaSolid(), nil
+	case "opera-outline":
+		return OperaOutline(), nil
+	case "opera-solid":
+		return OperaSolid(), nil
+	case "otp-outline":
+		return OtpOutline(), nil
+	case "otp-solid":
+		return OtpSolid(), nil
+	case "page-break-outline":
+		return PageBreakOutline(), nil
+	case "page-break-solid":
+		return PageBreakSolid(), nil
+	case "page-number-outline":
+		return PageNumberOutline(), nil
+	case "page-number-solid":
+		return PageNumberSolid(), nil
+	case "paintbrush-outline":
+		return PaintbrushOutline(), nil
+	case "paintbrush-solid":
+		return PaintbrushSolid(), nil
+	case "paintbucket-outline":
+		return PaintbucketOutline(), nil
+	case "paintbucket-solid":
+		return PaintbucketSolid(), nil
+	case "paragraph-outline":
+		return ParagraphOutline(), nil
+	case "paragraph-solid":
+		return ParagraphSolid(), nil
+	case "password-outline":
+		return PasswordOutline(), nil
+	case "password-solid":
+		return PasswordSolid(), nil
+	case "patreon-outline":
+		return PatreonOutline(), nil
+	case "patreon-solid":
+		return PatreonSolid(), nil
+	case "pause-circle-outline":
+		return PauseCircleOutline(), nil
+	case "pause-circle-solid":
+		return PauseCircleSolid(), nil
+	case "pause-outline":
+		return PauseOutline(), nil
+	case "pause-small-outline":
+		return PauseSmallOutline(), nil
+	case "pause-small-solid":
+		return PauseSmallSolid(), nil
+	case "pause-solid":
+		return PauseSolid(), nil
+	case "paw-outline":
+		return PawOutline(), nil
+	case "paw-solid":
+		return PawSolid(), nil
+	case "paws-outline":
+		return PawsOutline(), nil
+	case "paws-solid":
+		return PawsSolid(), nil
+	case "paypal-outline":
+		return PaypalOutline(), nil
+	case "paypal-solid":
+		return PaypalSolid(), nil
+	case "pdf-outline":
+		return PdfOutline(), nil
+	case "pdf-solid":
+		return PdfSolid(), nil
+	case "pen-outline":
+		return PenOutline(), nil
+	case "pen-solid":
+		return PenSolid(), nil
+	case "phone-outline":
+		return PhoneOutline(), nil
+	case "phone-solid":
+		return PhoneSolid(), nil
+	case "phonecall-blocked-outline":
+		return PhonecallBlockedOutline(), nil
+	case "phonecall-blocked-solid":
+		return PhonecallBlockedSolid(), nil
+	case "phonecall-outline":
+		return PhonecallOutline(), nil
+	case "phonecall-receive-outline":
+		return PhonecallReceiveOutline(), nil
+	case "phonecall-receive-solid":
+		return PhonecallReceiveSolid(), nil
+	case "phonecall-solid":
+		return PhonecallSolid(), nil
+	case "pie-chart-alt-outline":
+		return PieChartAltOutline(), nil
+	case "pie-chart-alt-solid":
+		return PieChartAltSolid(), nil
+	case "pie-chart-outline":
+		return PieChartOutline(), nil
+	case "pie-chart-solid":
+		return PieChartSolid(), nil
+	case "pin-alt-outline":
+		return PinAltOutline(), nil
+	case "pin-alt-solid":
+		return PinAltSolid(), nil
+	case "pin-outline":
+		return PinOutline(), nil
+	case "pin-solid":
+		return PinSolid(), nil
+	case "pinterest-outline":
+		return PinterestOutline(), nil
+	case "pinterest-solid":
+		return PinterestSolid(), nil
+	case "plant-outline":
+		return PlantOutline(), nil
+	case "plant-solid":
+		return PlantSolid(), nil
+	case "play-circle-outline":
+		return PlayCircleOutline(), nil
+	case "play-circle-solid":
+		return PlayCircleSolid(), nil
+	case "play-outline":
+		return PlayOutline(), nil
+	case "play-small-outline":
+		return PlaySmallOutline(), nil
+	case "play-small-solid":
+		return PlaySmallSolid(), nil
+	case "play-solid":
+		return PlaySolid(), nil
+	case "plug-outline":
+		return PlugOutline(), nil
+	case "plug-solid":
+		return PlugSolid(), nil
+	case "plus-circle-outline":
+		return PlusCircleOutline(), nil
+	case "plus-circle-solid":
+		return PlusCircleSolid(), nil
+	case "png-outline":
+		return PngOutline(), nil
+	case "png-solid":
+		return PngSolid(), nil
+	case "pool-outline":
+		return PoolOutline(), nil
+	case "pool-solid":
+		return PoolSolid(), nil
+	case "pound-outline":
+		return PoundOutline(), nil
+	case "pound-solid":
+		return PoundSolid(), nil
+	case "power-outline":
+		return PowerOutline(), nil
+	case "power-solid":
+		return PowerSolid(), nil
+	case "ppt-outline":
+		return PptOutline(), nil
+	case "ppt-solid":
+		return PptSolid(), nil
+	case "print-outline":
+		return PrintOutline(), nil
+	case "print-solid":
+		return PrintSolid(), nil
+	case "python-outline":
+		return PythonOutline(), nil
+	case "python-solid":
+		return PythonSolid(), nil
+	case "qr-code-outline":
+		return QrCodeOutline(), nil
+	case "qr-code-solid":
+		return QrCodeSolid(), nil
+	case "question-circle-outline":
+		return QuestionCircleOutline(), nil
+	case "question-circle-solid":
+		return QuestionCircleSolid(), nil
+	case "question-outline":
+		return QuestionOutline(), nil
+	case "question-small-outline":
+		return QuestionSmallOutline(), nil
+	case "question-small-solid":
+		return QuestionSmallSolid(), nil
+	case "question-solid":
+		return QuestionSolid(), nil
+	case "quote-outline":
+		return QuoteOutline(), nil
+	case "quote-solid":
+		return QuoteSolid(), nil
+	case "rand-outline":
+		return RandOutline(), nil
+	case "rand-solid":
+		return RandSolid(), nil
+	case "react-outline":
+		return ReactOutline(), nil
+	case "react-solid":
+		return ReactSolid(), nil
+	case "receipt-outline":
+		return ReceiptOutline(), nil
+	case "receipt-solid":
+		return ReceiptSolid(), nil
+	case "reddit-outline":
+		return RedditOutline(), nil
+	case "reddit-solid":
+		return RedditSolid(), nil
+	case "redwoodjs-outline":
+		return RedwoodjsOutline(), nil
+	case "redwoodjs-solid":
+		return RedwoodjsSolid(), nil
+	case "refresh-alt-outline":
+		return RefreshAltOutline(), nil
+	case "refresh-alt-solid":
+		return RefreshAltSolid(), nil
+	case "refresh-outline":
+		return RefreshOutline(), nil
+	case "refresh-solid":
+		return RefreshSolid(), nil
+	case "rewind-circle-outline":
+		return RewindCircleOutline(), nil
+	case "rewind-circle-solid":
+		return RewindCircleSolid(), nil
+	case "rewind-outline":
+		return RewindOutline(), nil
+	case "rewind-small-outline":
+		return RewindSmallOutline(), nil
+	case "rewind-small-solid":
+		return RewindSmallSolid(), nil
+	case "rewind-solid":
+		return RewindSolid(), nil
+	case "right-circle-outline":
+		return RightCircleOutline(), nil
+	case "right-circle-solid":
+		return RightCircleSolid(), nil
+	case "right-outline":
+		return RightOutline(), nil
+	case "right-small-outline":
+		return RightSmallOutline(), nil
+	case "right-small-solid":
+		return RightSmallSolid(), nil
+	case "right-solid":
+		return RightSolid(), nil
+	case "ripple-outline":
+		return RippleOutline(), nil
+	case "ripple-solid":
+		return RippleSolid(), nil
+	case "robot-outline":
+		return RobotOutline(), nil
+	case "robot-solid":
+		return RobotSolid(), nil
+	case "roller-outline":
+		return RollerOutline(), nil
+	case "roller-solid":
+		return RollerSolid(), nil
+	case "rollupjs-outline":
+		return RollupjsOutline(), nil
+	case "rollupjs-solid":
+		return RollupjsSolid(), nil
+	case "router-outline":
+		return RouterOutline(), nil
+	case "router-solid":
+		return RouterSolid(), nil
+	case "rss-outline":
+		return RssOutline(), nil
+	case "rss-solid":
+		return RssSolid(), nil
+	case "ruby-outline":
+		return RubyOutline(), nil
+	case "ruby-solid":
+		return RubySolid(), nil
+	case "rupee-outline":
+		return RupeeOutline(), nil
+	case "rupee-solid":
+		return RupeeSolid(), nil
+	case "rust-outline":
+		return RustOutline(), nil
+	case "rust-solid":
+		return RustSolid(), nil
+	case "safari-outline":
+		return SafariOutline(), nil
+	case "safari-solid":
+		return SafariSolid(), nil
+	case "safe-outline":
+		return SafeOutline(), nil
+	case "safe-solid":
+		return SafeSolid(), nil
+	case "save-outline":
+		return SaveOutline(), nil
+	case "save-solid":
+		return SaveSolid(), nil
+	case "scan-outline":
+		return ScanOutline(), nil
+	case "scan-solid":
+		return ScanSolid(), nil
+	case "school-outline":
+		return SchoolOutline(), nil
+	case "school-solid":
+		return SchoolSolid(), nil
+	case "screen-alt-outline":
+		return ScreenAltOutline(), nil
+	case "screen-alt-solid":
+		return ScreenAltSolid(), nil
+	case "screen-alt-2-outline":
+		return ScreenAltTwoOutline(), nil
+	case "screen-alt-2-solid":
+		return ScreenAltTwoSolid(), nil
+	case "screen-outline":
+		return ScreenOutline(), nil
+	case "screen-solid":
+		return ScreenSolid(), nil
+	case "scribble-outline":
+		return ScribbleOutline(), nil
+	case "scribble-solid":
+		return ScribbleSolid(), nil
+	case "sd-card-outline":
+		return SdCardOutline(), nil
+	case "sd-card-solid":
+		return SdCardSolid(), nil
+	case "search-circle-outline":
+		return SearchCircleOutline(), nil
+	case "search-circle-solid":
+		return SearchCircleSolid(), nil
+	case "search-outline":
+		return SearchOutline(), nil
+	case "search-property-outline":
+		return SearchPropertyOutline(), nil
+	case "search-property-solid":
+		return SearchPropertySolid(), nil
+	case "search-small-outline":
+		return SearchSmallOutline(), nil
+	case "search-small-solid":
+		return SearchSmallSolid(), nil
+	case "search-solid":
+		return SearchSolid(), nil
+	case "section-add-outline":
+		return SectionAddOutline(), nil
+	case "section-add-solid":
+		return SectionAddSolid(), nil
+	case "section-remove-outline":
+		return SectionRemoveOutline(), nil
+	case "section-remove-solid":
+		return SectionRemoveSolid(), nil
+	case "send-down-outline":
+		return SendDownOutline(), nil
+	case "send-down-solid":
+		return SendDownSolid(), nil
+	case "send-left-outline":
+		return SendLeftOutline(), nil
+	case "send-left-solid":
+		return SendLeftSolid(), nil
+	case "send-outline":
+		return SendOutline(), nil
+	case "send-right-outline":
+		return SendRightOutline(), nil
+	case "send-right-solid":
+		return SendRightSolid(), nil
+	case "send-solid":
+		return SendSolid(), nil
+	case "send-up-outline":
+		return SendUpOutline(), nil
+	case "send-up-solid":
+		return SendUpSolid(), nil
+	case "servers-outline":
+		return ServersOutline(), nil
+	case "servers-solid":
+		return ServersSolid(), nil
+	case "share-outline":
+		return ShareOutline(), nil
+	case "share-solid":
+		return ShareSolid(), nil
+	case "shield-outline":
+		return ShieldOutline(), nil
+	case "shield-solid":
+		return ShieldSolid(), nil
+	case "shield-tick-outline":
+		return ShieldTickOutline(), nil
+	case "shield-tick-solid":
+		return ShieldTickSolid(), nil
+	case "shield-x-outline":
+		return ShieldXOutline(), nil
+	case "shield-x-solid":
+		return ShieldXSolid(), nil
+	case "shop-outline":
+		return ShopOutline(), nil
+	case "shop-solid":
+		return ShopSolid(), nil
+	case "sign-outline":
+		return SignOutline(), nil
+	case "sign-solid":
+		return SignSolid(), nil
+	case "signin-outline":
+		return SigninOutline(), nil
+	case "signin-solid":
+		return SigninSolid(), nil
+	case "sim-outline":
+		return SimOutline(), nil
+	case "sim-solid":
+		return SimSolid(), nil
+	case "simohamed-outline":
+		return SimohamedOutline(), nil
+	case "simohamed-solid":
+		return SimohamedSolid(), nil
+	case "skull-outline":
+		return SkullOutline(), nil
+	case "skull-solid":
+		return SkullSolid(), nil
+	case "skype-outline":
+		return SkypeOutline(), nil
+	case "skype-solid":
+		return SkypeSolid(), nil
+	case "slack-outline":
+		return SlackOutline(), nil
+	case "slack-solid":
+		return SlackSolid(), nil
+	case "snapchat-outline":
+		return SnapchatOutline(), nil
+	case "snapchat-solid":
+		return SnapchatSolid(), nil
+	case "snes-outline":
+		return SnesOutline(), nil
+	case "snes-solid":
+		return SnesSolid(), nil
+	case "sort-alphabetically-outline":
+		return SortAlphabeticallyOutline(), nil
+	case "sort-alphabetically-solid":
+		return SortAlphabeticallySolid(), nil
+	case "sort-down-outline":
+		return SortDownOutline(), nil
+	case "sort-down-solid":
+		return SortDownSolid(), nil
+	case "sort-high-to-low-outline":
+		return SortHighToLowOutline(), nil
+	case "sort-high-to-low-solid":
+		return SortHighToLowSolid(), nil
+	case "sort-low-to-high-outline":
+		return SortLowToHighOutline(), nil
+	case "sort-low-to-high-solid":
+		return SortLowToHighSolid(), nil
+	case "sort-reverse-alphabetically-outline":
+		return SortReverseAlphabeticallyOutline(), nil
+	case "sort-reverse-alphabetically-solid":
+		return SortReverseAlphabeticallySolid(), nil
+	case "sort-up-outline":
+		return SortUpOutline(), nil
+	case "sort-up-solid":
+		return SortUpSolid(), nil
+	case "sound-off-outline":
+		return SoundOffOutline(), nil
+	case "sound-off-solid":
+		return SoundOffSolid(), nil
+	case "sound-on-outline":
+		return SoundOnOutline(), nil
+	case "sound-on-solid":
+		return SoundOnSolid(), nil
+	case "spotify-outline":
+		return SpotifyOutline(), nil
+	case "spotify-solid":
+		return SpotifySolid(), nil
+	case "spreadsheet-outline":
+		return SpreadsheetOutline(), nil
+	case "spreadsheet-solid":
+		return SpreadsheetSolid(), nil
+	case "square-outline":
+		return SquareOutline(), nil
+	case "square-solid":
+		return SquareSolid(), nil
+	case "stackoverflow-outline":
+		return StackoverflowOutline(), nil
+	case "stackoverflow-solid":
+		return StackoverflowSolid(), nil
+	case "stamp-outline":
+		return StampOutline(), nil
+	case "stamp-solid":
+		return StampSolid(), nil
+	case "star-circle-outline":
+		return StarCircleOutline(), nil
+	case "star-circle-solid":
+		return StarCircleSolid(), nil
+	case "star-outline":
+		return StarOutline(), nil
+	case "star-small-outline":
+		return StarSmallOutline(), nil
+	case "star-small-solid":
+		return StarSmallSolid(), nil
+	case "star-solid":
+		return StarSolid(), nil
+	case "stop-circle-outline":
+		return StopCircleOutline(), nil
+	case "stop-circle-solid":
+		return StopCircleSolid(), nil
+	case "stop-outline":
+		return StopOutline(), nil
+	case "stop-small-outline":
+		return StopSmallOutline(), nil
+	case "stop-small-solid":
+		return StopSmallSolid(), nil
+	case "stop-solid":
+		return StopSolid(), nil
+	case "stopwatch-outline":
+		return StopwatchOutline(), nil
+	case "stopwatch-solid":
+		return StopwatchSolid(), nil
+	case "strikethrough-outline":
+		return StrikethroughOutline(), nil
+	case "strikethrough-solid":
+		return StrikethroughSolid(), nil
+	case "subscript-outline":
+		return SubscriptOutline(), nil
+	case "subscript-solid":
+		return SubscriptSolid(), nil
+	case "sun-outline":
+		return SunOutline(), nil
+	case "sun-solid":
+		return SunSolid(), nil
+	case "superscript-outline":
+		return SuperscriptOutline(), nil
+	case "superscript-solid":
+		return SuperscriptSolid(), nil
+	case "svelte-outline":
+		return SvelteOutline(), nil
+	case "svelte-solid":
+		return SvelteSolid(), nil
+	case "svg-outline":
+		return SvgOutline(), nil
+	case "svg-solid":
+		return SvgSolid(), nil
+	case "table-outline":
+		return TableOutline(), nil
+	case "table-solid":
+		return TableSolid(), nil
+	case "tablet-outline":
+		return TabletOutline(), nil
+	case "tablet-solid":
+		return TabletSolid(), nil
+	case "tag-outline":
+		return TagOutline(), nil
+	case "tag-solid":
+		return TagSolid(), nil
+	case "tailwind-outline":
+		return TailwindOutline(), nil
+	case "tailwind-solid":
+		return TailwindSolid(), nil
+	case "target-outline":
+		return TargetOutline(), nil
+	case "target-solid":
+		return TargetSolid(), nil
+	case "telegram-outline":
+		return TelegramOutline(), nil
+	case "telegram-solid":
+		return TelegramSolid(), nil
+	case "terminal-outline":
+		return TerminalOutline(), nil
+	case "terminal-solid":
+		return TerminalSolid(), nil
+	case "text-document-alt-outline":
+		return TextDocumentAltOutline(), nil
+	case "text-document-alt-solid":
+		return TextDocumentAltSolid(), nil
+	case "text-document-outline":
+		return TextDocumentOutline(), nil
+	case "text-document-solid":
+		return TextDocumentSolid(), nil
+	case "text-outline":
+		return TextOutline(), nil
+	case "text-solid":
+		return TextSolid(), nil
+	case "360-outline":
+		return ThreeHundredSixtyOutline(), nil
+	case "360-solid":
+		return ThreeHundredSixtySolid(), nil
+	case "thumb-down-outline":
+		return ThumbDownOutline(), nil
+	case "thumb-down-solid":
+		return ThumbDownSolid(), nil
+	case "thumb-up-outline":
+		return ThumbUpOutline(), nil
+	case "thumb-up-solid":
+		return ThumbUpSolid(), nil
+	case "thumbtack-outline":
+		return ThumbtackOutline(), nil
+	case "thumbtack-solid":
+		return ThumbtackSolid(), nil
+	case "tick-circle-outline":
+		return TickCircleOutline(), nil
+	case "tick-circle-solid":
+		return TickCircleSolid(), nil
+	case "tick-outline":
+		return TickOutline(), nil
+	case "tick-small-outline":
+		return TickSmallOutline(), nil
+	case "tick-small-solid":
+		return TickSmallSolid(), nil
+	case "tick-solid":
+		return TickSolid(), nil
+	case "tiktok-outline":
+		return TiktokOutline(), nil
+	case "tiktok-solid":
+		return TiktokSolid(), nil
+	case "toggle-outline":
+		return ToggleOutline(), nil
+	case "toggle-solid":
+		return ToggleSolid(), nil
+	case "top-left-outline":
+		return TopLeftOutline(), nil
+	case "top-left-solid":
+		return TopLeftSolid(), nil
+	case "top-right-outline":
+		return TopRightOutline(), nil
+	case "top-right-solid":
+		return TopRightSolid(), nil
+	case "trend-down-outline":
+		return TrendDownOutline(), nil
+	case "trend-down-solid":
+		return TrendDownSolid(), nil
+	case "trend-up-outline":
+		return TrendUpOutline(), nil
+	case "trend-up-solid":
+		return TrendUpSolid(), nil
+	case "triangle-outline":
+		return TriangleOutline(), nil
+	case "triangle-solid":
+		return TriangleSolid(), nil
+	case "trophy-outline":
+		return TrophyOutline(), nil
+	case "trophy-solid":
+		return TrophySolid(), nil
+	case "tv-outline":
+		return TvOutline(), nil
+	case "tv-solid":
+		return TvSolid(), nil
+	case "twitch-outline":
+		return TwitchOutline(), nil
+	case "twitch-solid":
+		return TwitchSolid(), nil
+	case "twitter-outline":
+		return TwitterOutline(), nil
+	case "twitter-solid":
+		return TwitterSolid(), nil
+	case "typescript-outline":
+		return TypescriptOutline(), nil
+	case "typescript-solid":
+		return TypescriptSolid(), nil
+	case "underline-outline":
+		return UnderlineOutline(), nil
+	case "underline-solid":
+		return UnderlineSolid(), nil
+	case "unlock-circle-outline":
+		return UnlockCircleOutline(), nil
+	case "unlock-circle-solid":
+		return UnlockCircleSolid(), nil
+	case "unlock-outline":
+		return UnlockOutline(), nil
+	case "unlock-small-outline":
+		return UnlockSmallOutline(), nil
+	case "unlock-small-solid":
+		return UnlockSmallSolid(), nil
+	case "unlock-solid":
+		return UnlockSolid(), nil
+	case "up-circle-outline":
+		return UpCircleOutline(), nil
+	case "up-circle-solid":
+		return UpCircleSolid(), nil
+	case "up-outline":
+		return UpOutline(), nil
+	case "up-small-outline":
+		return UpSmallOutline(), nil
+	case "up-small-solid":
+		return UpSmallSolid(), nil
+	case "up-solid":
+		return UpSolid(), nil
+	case "upload-outline":
+		return UploadOutline(), nil
+	case "upload-solid":
+		return UploadSolid(), nil
+	case "usb-cable-outline":
+		return UsbCableOutline(), nil
+	case "usb-cable-solid":
+		return UsbCableSolid(), nil
+	case "user-circle-outline":
+		return UserCircleOutline(), nil
+	case "user-circle-solid":
+		return UserCircleSolid(), nil
+	case "user-minus-outline":
+		return UserMinusOutline(), nil
+	case "user-minus-solid":
+		return UserMinusSolid(), nil
+	case "user-outline":
+		return UserOutline(), nil
+	case "user-plus-outline":
+		return UserPlusOutline(), nil
+	case "user-plus-solid":
+		return UserPlusSolid(), nil
+	case "user-solid":
+		return UserSolid(), nil
+	case "user-square-outline":
+		return UserSquareOutline(), nil
+	case "user-square-solid":
+		return UserSquareSolid(), nil
+	case "users-outline":
+		return UsersOutline(), nil
+	case "users-solid":
+		return UsersSolid(), nil
+	case "vector-document-outline":
+		return VectorDocumentOutline(), nil
+	case "vector-document-solid":
+		return VectorDocumentSolid(), nil
+	case "venn-diagram-outline":
+		return VennDiagramOutline(), nil
+	case "venn-diagram-solid":
+		return VennDiagramSolid(), nil
+	case "view-column-outline":
+		return ViewColumnOutline(), nil
+	case "view-column-solid":
+		return ViewColumnSolid(), nil
+	case "view-grid-outline":
+		return ViewGridOutline(), nil
+	case "view-grid-solid":
+		return ViewGridSolid(), nil
+	case "vim-outline":
+		return VimOutline(), nil
+	case "vim-solid":
+		return VimSolid(), nil
+	case "volume-1-outline":
+		return VolumeOneOutline(), nil
+	case "volume-1-solid":
+		return VolumeOneSolid(), nil
+	case "volume-3-outline":
+		return VolumeThreeOutline(), nil
+	case "volume-3-solid":
+		return VolumeThreeSolid(), nil
+	case "volume-2-outline":
+		return VolumeTwoOutline(), nil
+	case "volume-2-solid":
+		return VolumeTwoSolid(), nil
+	case "vr-headset-outline":
+		return VrHeadsetOutline(), nil
+	case "vr-headset-solid":
+		return VrHeadsetSolid(), nil
+	case "vue-outline":
+		return VueOutline(), nil
+	case "vue-solid":
+		return VueSolid(), nil
+	case "wallet-alt-outline":
+		return WalletAltOutline(), nil
+	case "wallet-alt-solid":
+		return WalletAltSolid(), nil
+	case "wallet-outline":
+		return WalletOutline(), nil
+	case "wallet-solid":
+		return WalletSolid(), nil
+	case "wan-outline":
+		return WanOutline(), nil
+	case "wan-solid":
+		return WanSolid(), nil
+	case "wand-outline":
+		return WandOutline(), nil
+	case "wand-solid":
+		return WandSolid(), nil
+	case "watch-outline":
+		return WatchOutline(), nil
+	case "watch-solid":
+		return WatchSolid(), nil
+	case "webpack-outline":
+		return WebpackOutline(), nil
+	case "webpack-solid":
+		return WebpackSolid(), nil
+	case "whatsapp-outline":
+		return WhatsappOutline(), nil
+	case "whatsapp-solid":
+		return WhatsappSolid(), nil
+	case "wifi-full-outline":
+		return WifiFullOutline(), nil
+	case "wifi-full-solid":
+		return WifiFullSolid(), nil
+	case "wifi-low-outline":
+		return WifiLowOutline(), nil
+	case "wifi-low-solid":
+		return WifiLowSolid(), nil
+	case "wifi-none-outline":
+		return WifiNoneOutline(), nil
+	case "wifi-none-solid":
+		return WifiNoneSolid(), nil
+	case "windows-outline":
+		return WindowsOutline(), nil
+	case "windows-solid":
+		return WindowsSolid(), nil
+	case "wordpress-outline":
+		return WordpressOutline(), nil
+	case "wordpress-solid":
+		return WordpressSolid(), nil
+	case "x-circle-outline":
+		return XCircleOutline(), nil
+	case "x-circle-solid":
+		return XCircleSolid(), nil
+	case "x-outline":
+		return XOutline(), nil
+	case "x-small-outline":
+		return XSmallOutline(), nil
+	case "x-small-solid":
+		return XSmallSolid(), nil
+	case "x-solid":
+		return XSolid(), nil
+	case "xls-outline":
+		return XlsOutline(), nil
+	case "xls-solid":
+		return XlsSolid(), nil
+	case "yen-outline":
+		return YenOutline(), nil
+	case "yen-solid":
+		return YenSolid(), nil
+	case "youtube-outline":
+		return YoutubeOutline(), nil
+	case "youtube-solid":
+		return YoutubeSolid(), nil
+	case "zip-outline":
+		return ZipOutline(), nil
+	case "zip-solid":
+		return ZipSolid(), nil
+	case "zoom-in-outline":
+		return ZoomInOutline(), nil
+	case "zoom-in-solid":
+		return ZoomInSolid(), nil
+	case "zoom-out-outline":
+		return ZoomOutOutline(), nil
+	case "zoom-out-solid":
+		return ZoomOutSolid(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in teenyicons icon set", name)
+	}
 }

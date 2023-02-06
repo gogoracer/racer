@@ -1,6 +1,9 @@
 package ei
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	archiveInnerSVG         = `<path fill="currentColor" d="M42 20h-2v-5c0-.6-.4-1-1-1H11c-.6 0-1 .4-1 1v5H8v-5c0-1.7 1.3-3 3-3h28c1.7 0 3 1.3 3 3v5zm-5 20H13c-1.7 0-3-1.3-3-3V20h2v17c0 .6.4 1 1 1h24c.6 0 1-.4 1-1V20h2v17c0 1.7-1.3 3-3 3z"/><path fill="currentColor" d="M29 26h-8c-.6 0-1-.4-1-1s.4-1 1-1h8c.6 0 1 .4 1 1s-.4 1-1 1zM8 18h34v2H8z"/>`
@@ -915,4 +918,151 @@ func User(children ...any) *engine.HTMLElement {
 		userInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "archive":
+		return Archive(), nil
+	case "arrow-down":
+		return ArrowDown(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrow-up":
+		return ArrowUp(), nil
+	case "bell":
+		return Bell(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "camera":
+		return Camera(), nil
+	case "cart":
+		return Cart(), nil
+	case "chart":
+		return Chart(), nil
+	case "check":
+		return Check(), nil
+	case "chevron-down":
+		return ChevronDown(), nil
+	case "chevron-left":
+		return ChevronLeft(), nil
+	case "chevron-right":
+		return ChevronRight(), nil
+	case "chevron-up":
+		return ChevronUp(), nil
+	case "clock":
+		return Clock(), nil
+	case "close":
+		return Close(), nil
+	case "close-o":
+		return CloseO(), nil
+	case "comment":
+		return Comment(), nil
+	case "credit-card":
+		return CreditCard(), nil
+	case "envelope":
+		return Envelope(), nil
+	case "exclamation":
+		return Exclamation(), nil
+	case "external-link":
+		return ExternalLink(), nil
+	case "eye":
+		return Eye(), nil
+	case "gear":
+		return Gear(), nil
+	case "heart":
+		return Heart(), nil
+	case "image":
+		return Image(), nil
+	case "like":
+		return Like(), nil
+	case "link":
+		return Link(), nil
+	case "location":
+		return Location(), nil
+	case "lock":
+		return Lock(), nil
+	case "minus":
+		return Minus(), nil
+	case "navicon":
+		return Navicon(), nil
+	case "paperclip":
+		return Paperclip(), nil
+	case "pencil":
+		return Pencil(), nil
+	case "play":
+		return Play(), nil
+	case "plus":
+		return Plus(), nil
+	case "pointer":
+		return Pointer(), nil
+	case "question":
+		return Question(), nil
+	case "redo":
+		return Redo(), nil
+	case "refresh":
+		return Refresh(), nil
+	case "retweet":
+		return Retweet(), nil
+	case "sc-facebook":
+		return ScFacebook(), nil
+	case "sc-github":
+		return ScGithub(), nil
+	case "sc-google-plus":
+		return ScGooglePlus(), nil
+	case "sc-instagram":
+		return ScInstagram(), nil
+	case "sc-linkedin":
+		return ScLinkedin(), nil
+	case "sc-odnoklassniki":
+		return ScOdnoklassniki(), nil
+	case "sc-pinterest":
+		return ScPinterest(), nil
+	case "sc-skype":
+		return ScSkype(), nil
+	case "sc-soundcloud":
+		return ScSoundcloud(), nil
+	case "sc-telegram":
+		return ScTelegram(), nil
+	case "sc-tumblr":
+		return ScTumblr(), nil
+	case "sc-twitter":
+		return ScTwitter(), nil
+	case "sc-vimeo":
+		return ScVimeo(), nil
+	case "sc-vk":
+		return ScVk(), nil
+	case "sc-youtube":
+		return ScYoutube(), nil
+	case "search":
+		return Search(), nil
+	case "share-apple":
+		return ShareApple(), nil
+	case "share-google":
+		return ShareGoogle(), nil
+	case "spinner":
+		return Spinner(), nil
+	case "spinner-3":
+		return SpinnerThree(), nil
+	case "spinner-2":
+		return SpinnerTwo(), nil
+	case "star":
+		return Star(), nil
+	case "tag":
+		return Tag(), nil
+	case "trash":
+		return Trash(), nil
+	case "trophy":
+		return Trophy(), nil
+	case "undo":
+		return Undo(), nil
+	case "unlock":
+		return Unlock(), nil
+	case "user":
+		return User(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in ei icon set", name)
+	}
 }

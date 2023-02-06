@@ -1,6 +1,9 @@
 package zondicons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	addOutlineInnerSVG           = `<path fill="currentColor" d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16a8 8 0 0 0 0 16z"/>`
@@ -3866,4 +3869,605 @@ func ZoomOut(children ...any) *engine.HTMLElement {
 		zoomOutInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "add-outline":
+		return AddOutline(), nil
+	case "add-solid":
+		return AddSolid(), nil
+	case "adjust":
+		return Adjust(), nil
+	case "airplane":
+		return Airplane(), nil
+	case "album":
+		return Album(), nil
+	case "align-center":
+		return AlignCenter(), nil
+	case "align-justified":
+		return AlignJustified(), nil
+	case "align-left":
+		return AlignLeft(), nil
+	case "align-right":
+		return AlignRight(), nil
+	case "anchor":
+		return Anchor(), nil
+	case "announcement":
+		return Announcement(), nil
+	case "apparel":
+		return Apparel(), nil
+	case "arrow-down":
+		return ArrowDown(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-outline-down":
+		return ArrowOutlineDown(), nil
+	case "arrow-outline-left":
+		return ArrowOutlineLeft(), nil
+	case "arrow-outline-right":
+		return ArrowOutlineRight(), nil
+	case "arrow-outline-up":
+		return ArrowOutlineUp(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrow-thick-down":
+		return ArrowThickDown(), nil
+	case "arrow-thick-left":
+		return ArrowThickLeft(), nil
+	case "arrow-thick-right":
+		return ArrowThickRight(), nil
+	case "arrow-thick-up":
+		return ArrowThickUp(), nil
+	case "arrow-thin-down":
+		return ArrowThinDown(), nil
+	case "arrow-thin-left":
+		return ArrowThinLeft(), nil
+	case "arrow-thin-right":
+		return ArrowThinRight(), nil
+	case "arrow-thin-up":
+		return ArrowThinUp(), nil
+	case "arrow-up":
+		return ArrowUp(), nil
+	case "artist":
+		return Artist(), nil
+	case "at-symbol":
+		return AtSymbol(), nil
+	case "attachment":
+		return Attachment(), nil
+	case "backspace":
+		return Backspace(), nil
+	case "backward":
+		return Backward(), nil
+	case "backward-step":
+		return BackwardStep(), nil
+	case "badge":
+		return Badge(), nil
+	case "battery-full":
+		return BatteryFull(), nil
+	case "battery-half":
+		return BatteryHalf(), nil
+	case "battery-low":
+		return BatteryLow(), nil
+	case "beverage":
+		return Beverage(), nil
+	case "block":
+		return Block(), nil
+	case "bluetooth":
+		return Bluetooth(), nil
+	case "bolt":
+		return Bolt(), nil
+	case "book-reference":
+		return BookReference(), nil
+	case "bookmark":
+		return Bookmark(), nil
+	case "bookmark-copy-3":
+		return BookmarkCopyThree(), nil
+	case "bookmark-copy-2":
+		return BookmarkCopyTwo(), nil
+	case "bookmark-outline":
+		return BookmarkOutline(), nil
+	case "bookmark-outline-add":
+		return BookmarkOutlineAdd(), nil
+	case "border-all":
+		return BorderAll(), nil
+	case "border-bottom":
+		return BorderBottom(), nil
+	case "border-horizontal":
+		return BorderHorizontal(), nil
+	case "border-inner":
+		return BorderInner(), nil
+	case "border-left":
+		return BorderLeft(), nil
+	case "border-none":
+		return BorderNone(), nil
+	case "border-outer":
+		return BorderOuter(), nil
+	case "border-right":
+		return BorderRight(), nil
+	case "border-top":
+		return BorderTop(), nil
+	case "border-vertical":
+		return BorderVertical(), nil
+	case "box":
+		return Box(), nil
+	case "brightness-down":
+		return BrightnessDown(), nil
+	case "brightness-up":
+		return BrightnessUp(), nil
+	case "browser-window":
+		return BrowserWindow(), nil
+	case "browser-window-new":
+		return BrowserWindowNew(), nil
+	case "browser-window-open":
+		return BrowserWindowOpen(), nil
+	case "bug":
+		return Bug(), nil
+	case "buoy":
+		return Buoy(), nil
+	case "calculator":
+		return Calculator(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "camera":
+		return Camera(), nil
+	case "chart":
+		return Chart(), nil
+	case "chart-bar":
+		return ChartBar(), nil
+	case "chart-pie":
+		return ChartPie(), nil
+	case "chat-bubble-dots":
+		return ChatBubbleDots(), nil
+	case "checkmark":
+		return Checkmark(), nil
+	case "checkmark-outline":
+		return CheckmarkOutline(), nil
+	case "cheveron-down":
+		return CheveronDown(), nil
+	case "cheveron-left":
+		return CheveronLeft(), nil
+	case "cheveron-outline-down":
+		return CheveronOutlineDown(), nil
+	case "cheveron-outline-left":
+		return CheveronOutlineLeft(), nil
+	case "cheveron-outline-right":
+		return CheveronOutlineRight(), nil
+	case "cheveron-outline-up":
+		return CheveronOutlineUp(), nil
+	case "cheveron-right":
+		return CheveronRight(), nil
+	case "cheveron-up":
+		return CheveronUp(), nil
+	case "clipboard":
+		return Clipboard(), nil
+	case "close":
+		return Close(), nil
+	case "close-outline":
+		return CloseOutline(), nil
+	case "close-solid":
+		return CloseSolid(), nil
+	case "cloud":
+		return Cloud(), nil
+	case "cloud-upload":
+		return CloudUpload(), nil
+	case "code":
+		return Code(), nil
+	case "coffee":
+		return Coffee(), nil
+	case "cog":
+		return Cog(), nil
+	case "color-palette":
+		return ColorPalette(), nil
+	case "compose":
+		return Compose(), nil
+	case "computer-desktop":
+		return ComputerDesktop(), nil
+	case "computer-laptop":
+		return ComputerLaptop(), nil
+	case "conversation":
+		return Conversation(), nil
+	case "copy":
+		return Copy(), nil
+	case "credit-card":
+		return CreditCard(), nil
+	case "currency-dollar":
+		return CurrencyDollar(), nil
+	case "dashboard":
+		return Dashboard(), nil
+	case "date-add":
+		return DateAdd(), nil
+	case "dial-pad":
+		return DialPad(), nil
+	case "directions":
+		return Directions(), nil
+	case "document":
+		return Document(), nil
+	case "document-add":
+		return DocumentAdd(), nil
+	case "dots-horizontal-double":
+		return DotsHorizontalDouble(), nil
+	case "dots-horizontal-triple":
+		return DotsHorizontalTriple(), nil
+	case "download":
+		return Download(), nil
+	case "duplicate":
+		return Duplicate(), nil
+	case "edit-copy":
+		return EditCopy(), nil
+	case "edit-crop":
+		return EditCrop(), nil
+	case "edit-cut":
+		return EditCut(), nil
+	case "edit-pencil":
+		return EditPencil(), nil
+	case "education":
+		return Education(), nil
+	case "envelope":
+		return Envelope(), nil
+	case "exclamation-outline":
+		return ExclamationOutline(), nil
+	case "exclamation-solid":
+		return ExclamationSolid(), nil
+	case "explore":
+		return Explore(), nil
+	case "factory":
+		return Factory(), nil
+	case "fast-forward":
+		return FastForward(), nil
+	case "fast-rewind":
+		return FastRewind(), nil
+	case "film":
+		return Film(), nil
+	case "filter":
+		return Filter(), nil
+	case "flag":
+		return Flag(), nil
+	case "flashlight":
+		return Flashlight(), nil
+	case "folder":
+		return Folder(), nil
+	case "folder-outline":
+		return FolderOutline(), nil
+	case "folder-outline-add":
+		return FolderOutlineAdd(), nil
+	case "format-bold":
+		return FormatBold(), nil
+	case "format-font-size":
+		return FormatFontSize(), nil
+	case "format-italic":
+		return FormatItalic(), nil
+	case "format-text-size":
+		return FormatTextSize(), nil
+	case "format-underline":
+		return FormatUnderline(), nil
+	case "forward":
+		return Forward(), nil
+	case "forward-step":
+		return ForwardStep(), nil
+	case "gift":
+		return Gift(), nil
+	case "globe":
+		return Globe(), nil
+	case "hand-stop":
+		return HandStop(), nil
+	case "hard-drive":
+		return HardDrive(), nil
+	case "headphones":
+		return Headphones(), nil
+	case "heart":
+		return Heart(), nil
+	case "home":
+		return Home(), nil
+	case "hot":
+		return Hot(), nil
+	case "hour-glass":
+		return HourGlass(), nil
+	case "inbox":
+		return Inbox(), nil
+	case "inbox-check":
+		return InboxCheck(), nil
+	case "inbox-download":
+		return InboxDownload(), nil
+	case "inbox-full":
+		return InboxFull(), nil
+	case "indent-decrease":
+		return IndentDecrease(), nil
+	case "indent-increase":
+		return IndentIncrease(), nil
+	case "information-outline":
+		return InformationOutline(), nil
+	case "information-solid":
+		return InformationSolid(), nil
+	case "key":
+		return Key(), nil
+	case "keyboard":
+		return Keyboard(), nil
+	case "layers":
+		return Layers(), nil
+	case "library":
+		return Library(), nil
+	case "light-bulb":
+		return LightBulb(), nil
+	case "link":
+		return Link(), nil
+	case "list":
+		return List(), nil
+	case "list-add":
+		return ListAdd(), nil
+	case "list-bullet":
+		return ListBullet(), nil
+	case "load-balancer":
+		return LoadBalancer(), nil
+	case "location":
+		return Location(), nil
+	case "location-current":
+		return LocationCurrent(), nil
+	case "location-food":
+		return LocationFood(), nil
+	case "location-gas-station":
+		return LocationGasStation(), nil
+	case "location-hotel":
+		return LocationHotel(), nil
+	case "location-marina":
+		return LocationMarina(), nil
+	case "location-park":
+		return LocationPark(), nil
+	case "location-restroom":
+		return LocationRestroom(), nil
+	case "location-shopping":
+		return LocationShopping(), nil
+	case "lock-closed":
+		return LockClosed(), nil
+	case "lock-open":
+		return LockOpen(), nil
+	case "map":
+		return Map(), nil
+	case "menu":
+		return Menu(), nil
+	case "mic":
+		return Mic(), nil
+	case "minus-outline":
+		return MinusOutline(), nil
+	case "minus-solid":
+		return MinusSolid(), nil
+	case "mobile-devices":
+		return MobileDevices(), nil
+	case "mood-happy-outline":
+		return MoodHappyOutline(), nil
+	case "mood-happy-solid":
+		return MoodHappySolid(), nil
+	case "mood-neutral-outline":
+		return MoodNeutralOutline(), nil
+	case "mood-neutral-solid":
+		return MoodNeutralSolid(), nil
+	case "mood-sad-outline":
+		return MoodSadOutline(), nil
+	case "mood-sad-solid":
+		return MoodSadSolid(), nil
+	case "mouse":
+		return Mouse(), nil
+	case "music-album":
+		return MusicAlbum(), nil
+	case "music-artist":
+		return MusicArtist(), nil
+	case "music-notes":
+		return MusicNotes(), nil
+	case "music-playlist":
+		return MusicPlaylist(), nil
+	case "navigation-more":
+		return NavigationMore(), nil
+	case "network":
+		return Network(), nil
+	case "news-paper":
+		return NewsPaper(), nil
+	case "notification":
+		return Notification(), nil
+	case "notifications":
+		return Notifications(), nil
+	case "notifications-outline":
+		return NotificationsOutline(), nil
+	case "paste":
+		return Paste(), nil
+	case "pause":
+		return Pause(), nil
+	case "pause-outline":
+		return PauseOutline(), nil
+	case "pause-solid":
+		return PauseSolid(), nil
+	case "pen-tool":
+		return PenTool(), nil
+	case "phone":
+		return Phone(), nil
+	case "photo":
+		return Photo(), nil
+	case "php-elephant":
+		return PhpElephant(), nil
+	case "pin":
+		return Pin(), nil
+	case "play":
+		return Play(), nil
+	case "play-outline":
+		return PlayOutline(), nil
+	case "playlist":
+		return Playlist(), nil
+	case "plugin":
+		return Plugin(), nil
+	case "portfolio":
+		return Portfolio(), nil
+	case "printer":
+		return Printer(), nil
+	case "pylon":
+		return Pylon(), nil
+	case "question":
+		return Question(), nil
+	case "queue":
+		return Queue(), nil
+	case "radar":
+		return Radar(), nil
+	case "radar-copy-2":
+		return RadarCopyTwo(), nil
+	case "radio":
+		return Radio(), nil
+	case "refresh":
+		return Refresh(), nil
+	case "reload":
+		return Reload(), nil
+	case "reply":
+		return Reply(), nil
+	case "reply-all":
+		return ReplyAll(), nil
+	case "repost":
+		return Repost(), nil
+	case "save-disk":
+		return SaveDisk(), nil
+	case "screen-full":
+		return ScreenFull(), nil
+	case "search":
+		return Search(), nil
+	case "send":
+		return Send(), nil
+	case "servers":
+		return Servers(), nil
+	case "share":
+		return Share(), nil
+	case "share-alt":
+		return ShareAlt(), nil
+	case "share-01":
+		return ShareOne(), nil
+	case "shield":
+		return Shield(), nil
+	case "shopping-cart":
+		return ShoppingCart(), nil
+	case "show-sidebar":
+		return ShowSidebar(), nil
+	case "shuffle":
+		return Shuffle(), nil
+	case "stand-by":
+		return StandBy(), nil
+	case "star-full":
+		return StarFull(), nil
+	case "station":
+		return Station(), nil
+	case "step-backward":
+		return StepBackward(), nil
+	case "step-forward":
+		return StepForward(), nil
+	case "stethoscope":
+		return Stethoscope(), nil
+	case "store-front":
+		return StoreFront(), nil
+	case "stroke-width":
+		return StrokeWidth(), nil
+	case "subdirectory-left":
+		return SubdirectoryLeft(), nil
+	case "subdirectory-right":
+		return SubdirectoryRight(), nil
+	case "swap":
+		return Swap(), nil
+	case "tablet":
+		return Tablet(), nil
+	case "tag":
+		return Tag(), nil
+	case "target":
+		return Target(), nil
+	case "text-box":
+		return TextBox(), nil
+	case "text-decoration":
+		return TextDecoration(), nil
+	case "thermometer":
+		return Thermometer(), nil
+	case "thumbs-down":
+		return ThumbsDown(), nil
+	case "thumbs-up":
+		return ThumbsUp(), nil
+	case "ticket":
+		return Ticket(), nil
+	case "time":
+		return Time(), nil
+	case "timer":
+		return Timer(), nil
+	case "tools-copy":
+		return ToolsCopy(), nil
+	case "translate":
+		return Translate(), nil
+	case "trash":
+		return Trash(), nil
+	case "travel":
+		return Travel(), nil
+	case "travel-bus":
+		return TravelBus(), nil
+	case "travel-car":
+		return TravelCar(), nil
+	case "travel-case":
+		return TravelCase(), nil
+	case "travel-taxi-cab":
+		return TravelTaxiCab(), nil
+	case "travel-train":
+		return TravelTrain(), nil
+	case "travel-walk":
+		return TravelWalk(), nil
+	case "trophy":
+		return Trophy(), nil
+	case "tuning":
+		return Tuning(), nil
+	case "upload":
+		return Upload(), nil
+	case "usb":
+		return Usb(), nil
+	case "user":
+		return User(), nil
+	case "user-add":
+		return UserAdd(), nil
+	case "user-group":
+		return UserGroup(), nil
+	case "user-solid-circle":
+		return UserSolidCircle(), nil
+	case "user-solid-square":
+		return UserSolidSquare(), nil
+	case "vector":
+		return Vector(), nil
+	case "video-camera":
+		return VideoCamera(), nil
+	case "view-carousel":
+		return ViewCarousel(), nil
+	case "view-column":
+		return ViewColumn(), nil
+	case "view-hide":
+		return ViewHide(), nil
+	case "view-list":
+		return ViewList(), nil
+	case "view-show":
+		return ViewShow(), nil
+	case "view-tile":
+		return ViewTile(), nil
+	case "volume-down":
+		return VolumeDown(), nil
+	case "volume-mute":
+		return VolumeMute(), nil
+	case "volume-off":
+		return VolumeOff(), nil
+	case "volume-up":
+		return VolumeUp(), nil
+	case "wallet":
+		return Wallet(), nil
+	case "watch":
+		return Watch(), nil
+	case "window":
+		return Window(), nil
+	case "window-new":
+		return WindowNew(), nil
+	case "window-open":
+		return WindowOpen(), nil
+	case "wrench":
+		return Wrench(), nil
+	case "yin-yang":
+		return YinYang(), nil
+	case "zoom-in":
+		return ZoomIn(), nil
+	case "zoom-out":
+		return ZoomOut(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in zondicons icon set", name)
+	}
 }

@@ -1,6 +1,9 @@
 package simple_line_icons
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	actionRedoInnerSVG        = `<path fill="currentColor" d="M33.935 942.336c.336 0 .72 0 1.088-.031c16.193-.529 26.4-13.088 27.777-29.216C63.888 901.217 95.775 614 544.048 614.305l1.008 183.664c0 12.368 7.12 23.664 18.335 28.944c11.088 5.312 24.432 3.68 33.968-4.224l414.976-343.776a31.864 31.864 0 0 0 11.681-24.784c-.032-9.6-4.336-18.687-11.776-24.752L597.28 88.817c-9.569-7.807-22.785-9.311-33.937-4.095c-11.152 5.311-18.288 16.56-18.288 28.91l-1.008 179.633c-185.952 5.887-329.968 65.712-423.328 174.96C-31.217 646 2.69 904.385 4.287 915.137c2.368 15.68 13.872 27.199 29.649 27.199zm543.121-392.527h-.063c-320.208.192-442.591 108.32-512.464 203.824c10.224-76.496 40.064-168.72 105.008-244.031c86.336-100.096 225.44-152.848 407.536-152.848c17.68 0 32-14.32 32-32V180.978l332.433 273.344l-332.448 275.904v-148.4a31.953 31.953 0 0 0-9.409-22.656a31.96 31.96 0 0 0-22.592-9.36z"/>`
@@ -2527,4 +2530,399 @@ func Wrench(children ...any) *engine.HTMLElement {
 		wrenchInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "action-redo":
+		return ActionRedo(), nil
+	case "action-undo":
+		return ActionUndo(), nil
+	case "anchor":
+		return Anchor(), nil
+	case "arrow-down":
+		return ArrowDown(), nil
+	case "arrow-down-circle":
+		return ArrowDownCircle(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-left-circle":
+		return ArrowLeftCircle(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrow-right-circle":
+		return ArrowRightCircle(), nil
+	case "arrow-up":
+		return ArrowUp(), nil
+	case "arrow-up-circle":
+		return ArrowUpCircle(), nil
+	case "badge":
+		return Badge(), nil
+	case "bag":
+		return Bag(), nil
+	case "ban":
+		return Ban(), nil
+	case "basket":
+		return Basket(), nil
+	case "basket-loaded":
+		return BasketLoaded(), nil
+	case "bell":
+		return Bell(), nil
+	case "book-open":
+		return BookOpen(), nil
+	case "briefcase":
+		return Briefcase(), nil
+	case "bubble":
+		return Bubble(), nil
+	case "bubbles":
+		return Bubbles(), nil
+	case "bulb":
+		return Bulb(), nil
+	case "calculator":
+		return Calculator(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "calender":
+		return Calender(), nil
+	case "call-end":
+		return CallEnd(), nil
+	case "call-in":
+		return CallIn(), nil
+	case "call-out":
+		return CallOut(), nil
+	case "camera":
+		return Camera(), nil
+	case "camrecorder":
+		return Camrecorder(), nil
+	case "chart":
+		return Chart(), nil
+	case "check":
+		return Check(), nil
+	case "chemistry":
+		return Chemistry(), nil
+	case "clock":
+		return Clock(), nil
+	case "close":
+		return Close(), nil
+	case "cloud-download":
+		return CloudDownload(), nil
+	case "cloud-upload":
+		return CloudUpload(), nil
+	case "compass":
+		return Compass(), nil
+	case "control-end":
+		return ControlEnd(), nil
+	case "control-forward":
+		return ControlForward(), nil
+	case "control-pause":
+		return ControlPause(), nil
+	case "control-play":
+		return ControlPlay(), nil
+	case "control-rewind":
+		return ControlRewind(), nil
+	case "control-start":
+		return ControlStart(), nil
+	case "credit-card":
+		return CreditCard(), nil
+	case "crop":
+		return Crop(), nil
+	case "cup":
+		return Cup(), nil
+	case "cursor":
+		return Cursor(), nil
+	case "cursor-move":
+		return CursorMove(), nil
+	case "diamond":
+		return Diamond(), nil
+	case "direction":
+		return Direction(), nil
+	case "directions":
+		return Directions(), nil
+	case "disc":
+		return Disc(), nil
+	case "dislike":
+		return Dislike(), nil
+	case "doc":
+		return Doc(), nil
+	case "docs":
+		return Docs(), nil
+	case "drawer":
+		return Drawer(), nil
+	case "drop":
+		return Drop(), nil
+	case "earphones":
+		return Earphones(), nil
+	case "earphones-alt":
+		return EarphonesAlt(), nil
+	case "emotsmile":
+		return Emotsmile(), nil
+	case "energy":
+		return Energy(), nil
+	case "envelope":
+		return Envelope(), nil
+	case "envelope-letter":
+		return EnvelopeLetter(), nil
+	case "envelope-open":
+		return EnvelopeOpen(), nil
+	case "envolope":
+		return Envolope(), nil
+	case "envolope-letter":
+		return EnvolopeLetter(), nil
+	case "equalizer":
+		return Equalizer(), nil
+	case "event":
+		return Event(), nil
+	case "exclamation":
+		return Exclamation(), nil
+	case "eye":
+		return Eye(), nil
+	case "eyeglass":
+		return Eyeglass(), nil
+	case "feed":
+		return Feed(), nil
+	case "film":
+		return Film(), nil
+	case "fire":
+		return Fire(), nil
+	case "flag":
+		return Flag(), nil
+	case "folder":
+		return Folder(), nil
+	case "folder-alt":
+		return FolderAlt(), nil
+	case "frame":
+		return Frame(), nil
+	case "game-controller":
+		return GameController(), nil
+	case "ghost":
+		return Ghost(), nil
+	case "globe":
+		return Globe(), nil
+	case "globe-alt":
+		return GlobeAlt(), nil
+	case "graduation":
+		return Graduation(), nil
+	case "graph":
+		return Graph(), nil
+	case "grid":
+		return Grid(), nil
+	case "handbag":
+		return Handbag(), nil
+	case "heart":
+		return Heart(), nil
+	case "home":
+		return Home(), nil
+	case "hourglass":
+		return Hourglass(), nil
+	case "info":
+		return Info(), nil
+	case "key":
+		return Key(), nil
+	case "layers":
+		return Layers(), nil
+	case "like":
+		return Like(), nil
+	case "link":
+		return Link(), nil
+	case "list":
+		return List(), nil
+	case "location-pin":
+		return LocationPin(), nil
+	case "lock":
+		return Lock(), nil
+	case "lock-open":
+		return LockOpen(), nil
+	case "login":
+		return Login(), nil
+	case "logout":
+		return Logout(), nil
+	case "loop":
+		return Loop(), nil
+	case "magic-wand":
+		return MagicWand(), nil
+	case "magnet":
+		return Magnet(), nil
+	case "magnifier":
+		return Magnifier(), nil
+	case "magnifier-add":
+		return MagnifierAdd(), nil
+	case "magnifier-remove":
+		return MagnifierRemove(), nil
+	case "map":
+		return Map(), nil
+	case "menu":
+		return Menu(), nil
+	case "microphone":
+		return Microphone(), nil
+	case "minus":
+		return Minus(), nil
+	case "mouse":
+		return Mouse(), nil
+	case "music-tone":
+		return MusicTone(), nil
+	case "music-tone-alt":
+		return MusicToneAlt(), nil
+	case "mustache":
+		return Mustache(), nil
+	case "note":
+		return Note(), nil
+	case "notebook":
+		return Notebook(), nil
+	case "options":
+		return Options(), nil
+	case "options-vertical":
+		return OptionsVertical(), nil
+	case "organization":
+		return Organization(), nil
+	case "paper-clip":
+		return PaperClip(), nil
+	case "paper-plane":
+		return PaperPlane(), nil
+	case "paypal":
+		return Paypal(), nil
+	case "pencil":
+		return Pencil(), nil
+	case "people":
+		return People(), nil
+	case "phone":
+		return Phone(), nil
+	case "picture":
+		return Picture(), nil
+	case "pie-chart":
+		return PieChart(), nil
+	case "pin":
+		return Pin(), nil
+	case "plane":
+		return Plane(), nil
+	case "playlist":
+		return Playlist(), nil
+	case "plus":
+		return Plus(), nil
+	case "power":
+		return Power(), nil
+	case "present":
+		return Present(), nil
+	case "printer":
+		return Printer(), nil
+	case "puzzle":
+		return Puzzle(), nil
+	case "question":
+		return Question(), nil
+	case "refresh":
+		return Refresh(), nil
+	case "reload":
+		return Reload(), nil
+	case "rocket":
+		return Rocket(), nil
+	case "screen-desktop":
+		return ScreenDesktop(), nil
+	case "screen-smartphone":
+		return ScreenSmartphone(), nil
+	case "screen-tablet":
+		return ScreenTablet(), nil
+	case "settings":
+		return Settings(), nil
+	case "share":
+		return Share(), nil
+	case "share-alt":
+		return ShareAlt(), nil
+	case "shield":
+		return Shield(), nil
+	case "shuffle":
+		return Shuffle(), nil
+	case "size-actual":
+		return SizeActual(), nil
+	case "size-fullscreen":
+		return SizeFullscreen(), nil
+	case "social-behance":
+		return SocialBehance(), nil
+	case "social-dribbble":
+		return SocialDribbble(), nil
+	case "social-dropbox":
+		return SocialDropbox(), nil
+	case "social-facebook":
+		return SocialFacebook(), nil
+	case "social-foursqare":
+		return SocialFoursqare(), nil
+	case "social-github":
+		return SocialGithub(), nil
+	case "social-google":
+		return SocialGoogle(), nil
+	case "social-instagram":
+		return SocialInstagram(), nil
+	case "social-linkedin":
+		return SocialLinkedin(), nil
+	case "social-pintarest":
+		return SocialPintarest(), nil
+	case "social-pinterest":
+		return SocialPinterest(), nil
+	case "social-reddit":
+		return SocialReddit(), nil
+	case "social-skype":
+		return SocialSkype(), nil
+	case "social-soundcloud":
+		return SocialSoundcloud(), nil
+	case "social-spotify":
+		return SocialSpotify(), nil
+	case "social-steam":
+		return SocialSteam(), nil
+	case "social-stumbleupon":
+		return SocialStumbleupon(), nil
+	case "social-tumblr":
+		return SocialTumblr(), nil
+	case "social-twitter":
+		return SocialTwitter(), nil
+	case "social-vkontakte":
+		return SocialVkontakte(), nil
+	case "social-youtube":
+		return SocialYoutube(), nil
+	case "speech":
+		return Speech(), nil
+	case "speedometer":
+		return Speedometer(), nil
+	case "star":
+		return Star(), nil
+	case "support":
+		return Support(), nil
+	case "symble-female":
+		return SymbleFemale(), nil
+	case "symbol-female":
+		return SymbolFemale(), nil
+	case "symbol-male":
+		return SymbolMale(), nil
+	case "tag":
+		return Tag(), nil
+	case "target":
+		return Target(), nil
+	case "trash":
+		return Trash(), nil
+	case "trophy":
+		return Trophy(), nil
+	case "umbrella":
+		return Umbrella(), nil
+	case "user":
+		return User(), nil
+	case "user-female":
+		return UserFemale(), nil
+	case "user-follow":
+		return UserFollow(), nil
+	case "user-following":
+		return UserFollowing(), nil
+	case "user-unfollow":
+		return UserUnfollow(), nil
+	case "vector":
+		return Vector(), nil
+	case "volume-off":
+		return VolumeOff(), nil
+	case "volume-1":
+		return VolumeOne(), nil
+	case "volume-2":
+		return VolumeTwo(), nil
+	case "wallet":
+		return Wallet(), nil
+	case "wrench":
+		return Wrench(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in simple_line_icons icon set", name)
+	}
 }

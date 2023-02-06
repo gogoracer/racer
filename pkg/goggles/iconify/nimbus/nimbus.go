@@ -1,6 +1,9 @@
 package nimbus
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	accordionInnerSVG           = `<path fill="currentColor" d="M14.75 5.9V3.49L11 2.5L9.44 3L8 2.51L6.57 3L5 2.5l-2.82.75a1.24 1.24 0 0 0-.93 1.2V5.9A1.25 1.25 0 0 0 0 7.15v1.5A1.25 1.25 0 0 0 1.25 9.9v1.65a1.24 1.24 0 0 0 .93 1.2L5 13.5l1.57-.45l1.43.44l1.43-.44l1.57.45l3.75-1V9.9A1.25 1.25 0 0 0 16 8.65v-1.5a1.25 1.25 0 0 0-1.25-1.25zm-11 6l-1.25-.35v-7.1l1.25-.33zm1.25.3V3.8l1 .27v7.86zm2.21-.26V4.06L8 3.82l.79.24v7.88l-.79.24zm2.84 0V4.07L11 3.8v8.4zm3.45-.38l-1.25.33V4.12l1.25.33z"/>`
@@ -1825,4 +1828,291 @@ func Whatsapp(children ...any) *engine.HTMLElement {
 		whatsappInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "accordion":
+		return Accordion(), nil
+	case "align-center":
+		return AlignCenter(), nil
+	case "align-left":
+		return AlignLeft(), nil
+	case "align-right":
+		return AlignRight(), nil
+	case "apps":
+		return Apps(), nil
+	case "archive":
+		return Archive(), nil
+	case "arrow-left":
+		return ArrowLeft(), nil
+	case "arrow-right":
+		return ArrowRight(), nil
+	case "arrows-horizontal":
+		return ArrowsHorizontal(), nil
+	case "arrows-vertical":
+		return ArrowsVertical(), nil
+	case "backspace":
+		return Backspace(), nil
+	case "barcode":
+		return Barcode(), nil
+	case "bold":
+		return Bold(), nil
+	case "box-packed":
+		return BoxPacked(), nil
+	case "box-unpacked":
+		return BoxUnpacked(), nil
+	case "briefcase":
+		return Briefcase(), nil
+	case "browser":
+		return Browser(), nil
+	case "browser-search":
+		return BrowserSearch(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "calendar-days":
+		return CalendarDays(), nil
+	case "camera":
+		return Camera(), nil
+	case "cash":
+		return Cash(), nil
+	case "chat-dots":
+		return ChatDots(), nil
+	case "check":
+		return Check(), nil
+	case "check-circle":
+		return CheckCircle(), nil
+	case "chevron-down":
+		return ChevronDown(), nil
+	case "chevron-left":
+		return ChevronLeft(), nil
+	case "chevron-right":
+		return ChevronRight(), nil
+	case "chevron-up":
+		return ChevronUp(), nil
+	case "christ":
+		return Christ(), nil
+	case "clock":
+		return Clock(), nil
+	case "close":
+		return Close(), nil
+	case "code":
+		return Code(), nil
+	case "cog":
+		return Cog(), nil
+	case "color-palette":
+		return ColorPalette(), nil
+	case "copy":
+		return Copy(), nil
+	case "credit-card":
+		return CreditCard(), nil
+	case "desktop":
+		return Desktop(), nil
+	case "discount-circle":
+		return DiscountCircle(), nil
+	case "diskette":
+		return Diskette(), nil
+	case "download":
+		return Download(), nil
+	case "drag":
+		return Drag(), nil
+	case "drag-dots":
+		return DragDots(), nil
+	case "drink":
+		return Drink(), nil
+	case "drop":
+		return Drop(), nil
+	case "drums":
+		return Drums(), nil
+	case "duplicate":
+		return Duplicate(), nil
+	case "ecosystem":
+		return Ecosystem(), nil
+	case "edit":
+		return Edit(), nil
+	case "ellipsis":
+		return Ellipsis(), nil
+	case "exclamation-circle":
+		return ExclamationCircle(), nil
+	case "exclamation-triangle":
+		return ExclamationTriangle(), nil
+	case "external-link":
+		return ExternalLink(), nil
+	case "eye":
+		return Eye(), nil
+	case "eye-off":
+		return EyeOff(), nil
+	case "file":
+		return File(), nil
+	case "file-alt":
+		return FileAlt(), nil
+	case "fingerprint":
+		return Fingerprint(), nil
+	case "fire":
+		return Fire(), nil
+	case "flag":
+		return Flag(), nil
+	case "font":
+		return Font(), nil
+	case "forbidden":
+		return Forbidden(), nil
+	case "gift-box":
+		return GiftBox(), nil
+	case "gift-card":
+		return GiftCard(), nil
+	case "glasses":
+		return Glasses(), nil
+	case "globe":
+		return Globe(), nil
+	case "guitar":
+		return Guitar(), nil
+	case "heart":
+		return Heart(), nil
+	case "history":
+		return History(), nil
+	case "home":
+		return Home(), nil
+	case "infinite":
+		return Infinite(), nil
+	case "info-circle":
+		return InfoCircle(), nil
+	case "invoice":
+		return Invoice(), nil
+	case "italic":
+		return Italic(), nil
+	case "life-ring":
+		return LifeRing(), nil
+	case "lightbulb":
+		return Lightbulb(), nil
+	case "link":
+		return Link(), nil
+	case "link-off":
+		return LinkOff(), nil
+	case "list":
+		return List(), nil
+	case "location":
+		return Location(), nil
+	case "lock":
+		return Lock(), nil
+	case "lock-open":
+		return LockOpen(), nil
+	case "log-out":
+		return LogOut(), nil
+	case "mail":
+		return Mail(), nil
+	case "marketing":
+		return Marketing(), nil
+	case "mate":
+		return Mate(), nil
+	case "menu":
+		return Menu(), nil
+	case "mobile":
+		return Mobile(), nil
+	case "money":
+		return Money(), nil
+	case "moon":
+		return Moon(), nil
+	case "notification":
+		return Notification(), nil
+	case "obelisk":
+		return Obelisk(), nil
+	case "ordered-list":
+		return OrderedList(), nil
+	case "pencil":
+		return Pencil(), nil
+	case "peso":
+		return Peso(), nil
+	case "picture":
+		return Picture(), nil
+	case "pix":
+		return Pix(), nil
+	case "planet":
+		return Planet(), nil
+	case "plus-circle":
+		return PlusCircle(), nil
+	case "printer":
+		return Printer(), nil
+	case "pyramid":
+		return Pyramid(), nil
+	case "qr-code":
+		return QrCode(), nil
+	case "question-circle":
+		return QuestionCircle(), nil
+	case "real":
+		return Real(), nil
+	case "redo":
+		return Redo(), nil
+	case "remove-format":
+		return RemoveFormat(), nil
+	case "rocket":
+		return Rocket(), nil
+	case "scooter":
+		return Scooter(), nil
+	case "search":
+		return Search(), nil
+	case "share":
+		return Share(), nil
+	case "shopping-cart":
+		return ShoppingCart(), nil
+	case "shot":
+		return Shot(), nil
+	case "size-height":
+		return SizeHeight(), nil
+	case "size-width":
+		return SizeWidth(), nil
+	case "sliders":
+		return Sliders(), nil
+	case "star":
+		return Star(), nil
+	case "stats":
+		return Stats(), nil
+	case "sticky-note":
+		return StickyNote(), nil
+	case "stop":
+		return Stop(), nil
+	case "store":
+		return Store(), nil
+	case "sun":
+		return Sun(), nil
+	case "tag":
+		return Tag(), nil
+	case "telephone":
+		return Telephone(), nil
+	case "text-size":
+		return TextSize(), nil
+	case "tiendanube":
+		return Tiendanube(), nil
+	case "tools":
+		return Tools(), nil
+	case "transfer-peso":
+		return TransferPeso(), nil
+	case "transfer-real":
+		return TransferReal(), nil
+	case "trash":
+		return Trash(), nil
+	case "truck":
+		return Truck(), nil
+	case "undo":
+		return Undo(), nil
+	case "university":
+		return University(), nil
+	case "upload":
+		return Upload(), nil
+	case "user":
+		return User(), nil
+	case "user-circle":
+		return UserCircle(), nil
+	case "user-group":
+		return UserGroup(), nil
+	case "vertical-stacks":
+		return VerticalStacks(), nil
+	case "volume":
+		return Volume(), nil
+	case "wallet":
+		return Wallet(), nil
+	case "whatsapp":
+		return Whatsapp(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in nimbus icon set", name)
+	}
 }

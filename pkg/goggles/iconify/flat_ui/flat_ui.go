@@ -1,6 +1,9 @@
 package flat_ui
 
-import "github.com/gogoracer/racer/pkg/engine"
+import (
+	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
+)
 
 const (
 	androidInnerSVG       = `<path fill="#1C3C50" d="M10 0h34c6.014 0 10 4.035 10 10v80c0 5.926-4.004 10-10 10H10c-5.974 0-10-3.996-10-10V10C0 4.104 3.95 0 10 0z"/><path fill="#23475F" d="M4 10h46v79H4V10zm18.5 82h9a2.499 2.499 0 1 1 0 5h-9a2.5 2.5 0 1 1 0-5z"/>`
@@ -1305,4 +1308,211 @@ func Yinyang(children ...any) *engine.HTMLElement {
 		yinyangInnerSVG,
 		children,
 	)
+}
+
+func ByName(name string) (*engine.HTMLElement, error) {
+	switch name {
+	case "android":
+		return Android(), nil
+	case "android1":
+		return AndroidOne(), nil
+	case "app-store":
+		return AppStore(), nil
+	case "arrow":
+		return Arrow(), nil
+	case "art":
+		return Art(), nil
+	case "bag":
+		return Bag(), nil
+	case "basket":
+		return Basket(), nil
+	case "book":
+		return Book(), nil
+	case "bowling":
+		return Bowling(), nil
+	case "box":
+		return Box(), nil
+	case "brush":
+		return Brush(), nil
+	case "building":
+		return Building(), nil
+	case "bulb":
+		return Bulb(), nil
+	case "button":
+		return Button(), nil
+	case "calculator":
+		return Calculator(), nil
+	case "calendar":
+		return Calendar(), nil
+	case "camera":
+		return Camera(), nil
+	case "car":
+		return Car(), nil
+	case "card":
+		return Card(), nil
+	case "chair":
+		return Chair(), nil
+	case "chat":
+		return Chat(), nil
+	case "clipboard":
+		return Clipboard(), nil
+	case "clocks":
+		return Clocks(), nil
+	case "compas":
+		return Compas(), nil
+	case "converse":
+		return Converse(), nil
+	case "cup":
+		return Cup(), nil
+	case "dj":
+		return Dj(), nil
+	case "donut":
+		return Donut(), nil
+	case "dude":
+		return Dude(), nil
+	case "dynamite":
+		return Dynamite(), nil
+	case "earth":
+		return Earth(), nil
+	case "egg":
+		return Egg(), nil
+	case "eye":
+		return Eye(), nil
+	case "file":
+		return File(), nil
+	case "fit":
+		return Fit(), nil
+	case "flag":
+		return Flag(), nil
+	case "flask":
+		return Flask(), nil
+	case "flower":
+		return Flower(), nil
+	case "games":
+		return Games(), nil
+	case "gift-box":
+		return GiftBox(), nil
+	case "girl":
+		return Girl(), nil
+	case "goal":
+		return Goal(), nil
+	case "google":
+		return Google(), nil
+	case "graph":
+		return Graph(), nil
+	case "icecream":
+		return Icecream(), nil
+	case "imac":
+		return Imac(), nil
+	case "ipad":
+		return Ipad(), nil
+	case "iphone":
+		return Iphone(), nil
+	case "key":
+		return Key(), nil
+	case "lettersymbol":
+		return Lettersymbol(), nil
+	case "lock":
+		return Lock(), nil
+	case "loop":
+		return Loop(), nil
+	case "macbook":
+		return Macbook(), nil
+	case "magic":
+		return Magic(), nil
+	case "magicmouse":
+		return Magicmouse(), nil
+	case "mail":
+		return Mail(), nil
+	case "map":
+		return Map(), nil
+	case "medal":
+		return Medal(), nil
+	case "mic":
+		return Mic(), nil
+	case "money":
+		return Money(), nil
+	case "mortarboard":
+		return Mortarboard(), nil
+	case "mountain":
+		return Mountain(), nil
+	case "news":
+		return News(), nil
+	case "paper-bag":
+		return PaperBag(), nil
+	case "pc":
+		return Pc(), nil
+	case "pencil":
+		return Pencil(), nil
+	case "pencils":
+		return Pencils(), nil
+	case "picture":
+		return Picture(), nil
+	case "pig":
+		return Pig(), nil
+	case "pills":
+		return Pills(), nil
+	case "play":
+		return Play(), nil
+	case "printer":
+		return Printer(), nil
+	case "responsive":
+		return Responsive(), nil
+	case "retina":
+		return Retina(), nil
+	case "ring":
+		return Ring(), nil
+	case "rocket":
+		return Rocket(), nil
+	case "rss":
+		return Rss(), nil
+	case "safe":
+		return Safe(), nil
+	case "save":
+		return Save(), nil
+	case "search":
+		return Search(), nil
+	case "settings":
+		return Settings(), nil
+	case "shield":
+		return Shield(), nil
+	case "shirt":
+		return Shirt(), nil
+	case "skateboard":
+		return Skateboard(), nil
+	case "spray":
+		return Spray(), nil
+	case "storage":
+		return Storage(), nil
+	case "support":
+		return Support(), nil
+	case "ticket":
+		return Ticket(), nil
+	case "toilet-paper":
+		return ToiletPaper(), nil
+	case "touch":
+		return Touch(), nil
+	case "trash":
+		return Trash(), nil
+	case "trip-bag":
+		return TripBag(), nil
+	case "trunk":
+		return Trunk(), nil
+	case "ubmrella":
+		return Ubmrella(), nil
+	case "user-interface":
+		return UserInterface(), nil
+	case "video":
+		return Video(), nil
+	case "weather":
+		return Weather(), nil
+	case "wi-fi":
+		return WiFi(), nil
+	case "wine":
+		return Wine(), nil
+	case "yinyang":
+		return Yinyang(), nil
+	default:
+		return nil, fmt.Errorf("icon '%s' not found in flat_ui icon set", name)
+	}
 }
