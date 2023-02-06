@@ -399,6 +399,11 @@ export class Page {
       for (let i = 0; i < pairs.length; i++) {
         const [eventID, eventNameRaw] = pairs[i].split('|')
         const eventName = eventNameRaw.toLowerCase()
+
+        if (map[eventName] == undefined) {
+          map[eventName] = []
+        }
+
         map[eventName] = [...map[eventName], eventID]
       }
     }
@@ -415,7 +420,7 @@ export class Page {
         break
       case 'elementSelector':
         const possibleTarget = document.querySelector(
-          `[hid="${diff.root.elementSelector}`,
+          `[hid="${diff.root.elementSelector}"]`,
         )
 
         if (!possibleTarget) {
@@ -593,7 +598,7 @@ export class Page {
       // Generic delete
       if (
         diff.diffType === DiffType.DELETE &&
-        diff.contentType === ContentType.ATTRIBUTE
+        diff.contentType !== ContentType.ATTRIBUTE
       ) {
         this.removeEventHandlers(target)
         target.remove()

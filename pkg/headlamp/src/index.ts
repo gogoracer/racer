@@ -6,6 +6,9 @@ export * from './page'
 export * from './nats'
 export * from './alpine'
 
-export const hive = new Page(StopPropagationPlugin, PreventDefaultPlugin)
+export const hlive = new Page(StopPropagationPlugin, PreventDefaultPlugin)
+
+    ; (window as any).hlive = hlive
+
 
 loadAlpineOnWindow()
