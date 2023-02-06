@@ -180,14 +180,7 @@ func anyToAttributes(attrs ...any) []Attributer {
 				newAttrs = append(newAttrs, v[j])
 			}
 		default:
-			_ = "TODO: DELANEY deal with logging"
-
-			// LoggerDev.Error().
-			// 	Str("callers", CallerStackStr()).
-			// 	Str("value", fmt.Sprintf("%#v", v)).
-			// 	Msg("invalid attribute")
-
-			continue
+			panic(fmt.Sprintf("invalid attribute type: %T", v))
 		}
 	}
 

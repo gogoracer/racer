@@ -2,6 +2,7 @@ package engine
 
 import (
 	"context"
+	"fmt"
 	"sync"
 
 	"github.com/vmihailenco/msgpack/v5"
@@ -57,11 +58,7 @@ func (b NodeBox[V]) GetNode() any {
 
 func Box[V any](node V) *NodeBox[V] {
 	if !IsNode(node) {
-		_ = "TODO: DELANEY deal with logging"
-		// LoggerDev.Error().
-		// 	Str("callers", CallerStackStr()).
-		// 	Str("node", fmt.Sprintf("%#v", node)).
-		// 	Msg("invalid node")
+		panic(fmt.Sprintf("invalid node: %#v", node))
 	}
 
 	return &NodeBox[V]{NewLockBox(node)}
@@ -176,10 +173,7 @@ func (g *NodeGroup) UnmarshalMsgpack(b []byte) error {
 
 func (g *NodeGroup) Add(nodes ...any) {
 	if g == nil {
-		_ = "TODO: DELANEY deal with logging"
-		// LoggerDev.Error().Str("callers", CallerStackStr()).Msg("nil call")
-
-		return
+		panic("nil call")
 	}
 
 	g.mu.Lock()
@@ -187,13 +181,7 @@ func (g *NodeGroup) Add(nodes ...any) {
 
 	for i := 0; i < len(nodes); i++ {
 		if !IsNode(nodes[i]) {
-			_ = "TODO: DELANEY deal with logging"
-			// LoggerDev.Error().
-			// 	Str("callers", CallerStackStr()).
-			// 	Str("node", fmt.Sprintf("%#v", nodes[i])).
-			// 	Msg("invalid node")
-
-			continue
+			panic(fmt.Sprintf("invalid node: %#v", nodes[i]))
 		}
 
 		g.group = append(g.group, nodes[i])
@@ -203,10 +191,7 @@ func (g *NodeGroup) Add(nodes ...any) {
 // Get returns all nodes, dereferences any valid pointers
 func (g *NodeGroup) Get() []any {
 	if g == nil {
-		_ = "TODO: DELANEY deal with logging"
-		// LoggerDev.Error().Str("callers", CallerStackStr()).Msg("nil call")
-
-		return nil
+		panic("nil call")
 	}
 
 	g.mu.RLock()
@@ -250,10 +235,7 @@ type ElementGroup struct {
 
 func (g *ElementGroup) Add(elements ...any) {
 	if g == nil {
-		_ = "TODO: DELANEY deal with logging"
-		// LoggerDev.Error().Str("callers", CallerStackStr()).Msg("nil call")
-
-		return
+		panic("nil call")
 	}
 
 	g.mu.Lock()
@@ -261,13 +243,7 @@ func (g *ElementGroup) Add(elements ...any) {
 
 	for i := 0; i < len(elements); i++ {
 		if !IsElement(elements[i]) {
-			_ = "TODO: DELANEY deal with logging"
-			// LoggerDev.Error().
-			// 	Str("callers", CallerStackStr()).
-			// 	Str("element", fmt.Sprintf("%#v", elements[i])).
-			// 	Msg("invalid element")
-
-			continue
+			panic(fmt.Sprintf("invalid element: %#v", elements[i]))
 		}
 
 		g.group = append(g.group, elements[i])
@@ -276,10 +252,7 @@ func (g *ElementGroup) Add(elements ...any) {
 
 func (g *ElementGroup) Get() []any {
 	if g == nil {
-		_ = "TODO: DELANEY deal with logging"
-		// LoggerDev.Error().Str("callers", CallerStackStr()).Msg("nil call")
-
-		return nil
+		panic("nil call")
 	}
 
 	g.mu.RLock()
@@ -310,10 +283,7 @@ func (g *ElementGroup) Get() []any {
 func Render(ctx context.Context) {
 	render, ok := ctx.Value(CtxRenderKey).(func(context.Context))
 	if !ok {
-		_ = "TODO: DELANEY deal with logging"
-		// LoggerDev.Error().Str("callers", CallerStackStr()).Msg("render not found in context")
-
-		return
+		panic("render not found in context")
 	}
 
 	render(ctx)
@@ -323,10 +293,7 @@ func Render(ctx context.Context) {
 func RenderComponent(ctx context.Context, comp Componenter) {
 	render, ok := ctx.Value(CtxRenderComponentKey).(func(context.Context, Componenter))
 	if !ok {
-		_ = "TODO: DELANEY deal with logging"
-		// LoggerDev.Error().Str("callers", CallerStackStr()).Msg("component render not found in context")
-
-		return
+		panic("render not found in context")
 	}
 
 	render(ctx, comp)
