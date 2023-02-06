@@ -13,6 +13,7 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"github.com/goccy/go-json"
 	"github.com/iancoleman/strcase"
+	"golang.org/x/exp/slices"
 	"k8s.io/apimachinery/pkg/util/sets"
 )
 
@@ -52,9 +53,9 @@ type Element struct {
 	EventHandlers             []*EventHandler
 }
 
-func GenerateElements(ctx context.Context, gogglesPath string) error {
+func GenerateElements(ctx context.Context, genTmpDir, gogglesPath string) error {
 
-	elements, err := scrapeHTMLSpec(ctx)
+	elements, err := scrapeHTMLSpec(ctx, genTmpDir)
 	if err != nil {
 		return fmt.Errorf("could not scrape HTML spec: %v", err)
 	}
@@ -93,8 +94,8 @@ func GenerateElements(ctx context.Context, gogglesPath string) error {
 }
 
 // Scrapes the W3C HTML spec for information about HTML elements and attributes.
-func scrapeHTMLSpec(ctx context.Context) ([]*Element, error) {
-	cachedJSON := "html_spec.json"
+func scrapeHTMLSpec(ctx context.Context, genTmpDir string) ([]*Element, error) {
+	cachedJSON := filepath.Join(genTmpDir, "html_spec.json")
 	if _, err := os.Stat(cachedJSON); err == nil {
 		b, err := os.ReadFile(cachedJSON)
 		if err != nil {
@@ -278,7 +279,11 @@ func applyAttributes(htmlSpecDoc *goquery.Document, elements map[string]*Element
 		if !ok {
 			return fmt.Errorf("could not find element %s", elementTag)
 		}
-		for _, attributeName := range attributeNames.UnsortedList() {
+
+		attrNames := attributeNames.UnsortedList()
+		slices.Sort(attrNames)
+
+		for _, attributeName := range attrNames {
 			a, ok := attributes[attributeName]
 			if !ok {
 				return fmt.Errorf("could not find attribute %s", attributeName)
@@ -391,66 +396,12 @@ func applyEventHandlers(htmlSpecDoc *goquery.Document, elements map[string]*Elem
 		return fmt.Errorf("could not read event handlers: %v", err)
 	}
 
+	for _, element := range elements {
+		slices.SortFunc(element.EventHandlers, func(a, b *EventHandler) bool {
+			return a.Name < b.Name
+		})
+	}
 	return nil
-
-	// 		thead := table.Children[1]
-	// 		if thead.Children[0].ChildNodeCount != expectedColumns {
-	// 			return fmt.Errorf("expected %d headings, got %d", expectedColumns, len(thead.Children))
-	// 		}
-
-	// 		tbody := table.Children[2]
-
-	// 		for _, tr := range tbody.Children {
-	// 			if tr.ChildNodeCount != expectedColumns {
-	// 				return fmt.Errorf("expected %d columns, got %d", expectedColumns, tr.ChildNodeCount)
-	// 			}
-
-	// 			if err := dom.ScrollIntoViewIfNeeded().WithNodeID(tr.NodeID).Do(c); err != nil {
-	// 				return err
-	// 			}
-
-	// 			evtHandler := &EventHandler{}
-
-	// 			td := tr.Children[0]
-	// 			tdInner := td.Children[0]
-	// 			code := tdInner.Children[0]
-	// 			evtHandler.Name = code.NodeValue
-
-	// 			td = tr.Children[1]
-	// 			v := td
-	// 			for v.NodeName != "#text" {
-	// 				v = v.Children[0]
-	// 			}
-	// 			evtHandler.TargetsBody = v.NodeValue == "body"
-
-	// 			td = tr.Children[2]
-	// 			parts := make([]string, len(td.Children))
-	// 			var err error
-	// 			for i, child := range td.Children {
-	// 				parts[i], err = dom.GetOuterHTML().WithNodeID(child.NodeID).Do(c)
-	// 				if err != nil {
-	// 					return fmt.Errorf("could not get outer html: %v", err)
-	// 				}
-	// 			}
-	// 			evtHandler.Description = strings.Join(parts, " ")
-
-	// 			for _, el := range elements {
-	// 				isBody := el.Tag == "body"
-	// 				if !isBody && evtHandler.TargetsBody {
-	// 					continue
-	// 				}
-	// 				el.EventHandlers = append(el.EventHandlers, evtHandler)
-	// 			}
-
-	// 			eventHandlers = append(eventHandlers, evtHandler)
-	// 		}
-
-	// 		return nil
-	// 	}),
-	// ); err != nil {
-	// 	return fmt.Errorf("could not read elements: %v", err)
-	// }
-
 }
 
 func getDoc(url string) (*goquery.Document, error) {

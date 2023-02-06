@@ -27,7 +27,7 @@ require (
 	github.com/andybalholm/cascadia v1.3.1 // indirect
 	github.com/divan/num2words v0.0.0-20170904212200-57dba452f942
 	github.com/mattn/go-colorable v0.1.12 // indirect
-	github.com/mattn/go-isatty v0.0.14 // indirect
+	github.com/mattn/go-isatty v0.0.16 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/ysmood/goob v0.4.0 // indirect
 	github.com/ysmood/gson v0.7.3 // indirect

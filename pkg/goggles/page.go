@@ -3,8 +3,8 @@ package goggles
 import "github.com/gogoracer/racer/pkg/engine"
 
 type Page struct {
-	headElements []IsHandlebarElement
-	bodyElements []IsHandlebarElement
+	headElements []GogglesElement
+	bodyElements []GogglesElement
 	// page *engine.Page
 }
 
@@ -12,12 +12,12 @@ func NewPage() *Page {
 	return &Page{}
 }
 
-func (p *Page) Head(children ...IsHandlebarElement) *Page {
+func (p *Page) Head(children ...GogglesElement) *Page {
 	p.headElements = append(p.headElements, children...)
 	return p
 }
 
-func (p *Page) Body(children ...IsHandlebarElement) *Page {
+func (p *Page) Body(children ...GogglesElement) *Page {
 	p.bodyElements = append(p.bodyElements, children...)
 	return p
 }

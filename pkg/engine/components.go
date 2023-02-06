@@ -29,6 +29,10 @@ type Component struct {
 	bindings   []*EventBinding
 }
 
+func C(name string, elements ...any) *Component {
+	return NewComponent(name, elements...)
+}
+
 // NewComponent is a constructor for Component.
 //
 // You can add zero or many Attributes and Tags.
@@ -325,4 +329,10 @@ func WrapMountable(tag *Tag, elements ...any) *ComponentMountable {
 	return &ComponentMountable{
 		Component: Wrap(tag, elements),
 	}
+}
+
+type HTMLElement = ComponentMountable
+
+func Element(name string, elements ...any) *HTMLElement {
+	return CM(name, elements...)
 }

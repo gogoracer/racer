@@ -11,6 +11,8 @@ import (
 	"github.com/vmihailenco/msgpack/v5"
 )
 
+type PageFunc func() *Page
+
 func NewPageServer(pf func() *Page) (*PageServer, error) {
 	store, err := NewPageSessionStore()
 	if err != nil {
@@ -20,7 +22,7 @@ func NewPageServer(pf func() *Page) (*PageServer, error) {
 	return p, nil
 }
 
-func MustNewPageServer(pf func() *Page) *PageServer {
+func MustNewPageServer(pf PageFunc) *PageServer {
 	p, err := NewPageServer(pf)
 	if err != nil {
 		panic(err)
@@ -28,7 +30,7 @@ func MustNewPageServer(pf func() *Page) *PageServer {
 	return p
 }
 
-func NewPageServerWithSessionStore(pf func() *Page, sess *PageSessionStore) *PageServer {
+func NewPageServerWithSessionStore(pf PageFunc, sess *PageSessionStore) *PageServer {
 	return &PageServer{
 		pageFunc: pf,
 		Sessions: sess,

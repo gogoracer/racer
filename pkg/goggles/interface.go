@@ -2,10 +2,8 @@ package goggles
 
 import "github.com/gogoracer/racer/pkg/engine"
 
-type any = interface{}
-
-type IsHandlebarElement interface {
-	HandlebarElement()
+type GogglesElement interface {
+	IsGogglesElement()
 	GenerateVDOM() interface{}
 }
 
@@ -13,12 +11,10 @@ type baseElement struct {
 	name              string
 	shouldBeComponent bool
 	attrs             map[string]*engine.Attribute
-	children          []any
+	children          []GogglesElement
 }
 
-func (e *baseElement) HandlebarElement() {}
-
-func newBaseElement(name string, children ...any) *baseElement {
+func newBaseElement(name string, children ...GogglesElement) *baseElement {
 	return &baseElement{
 		name:     name,
 		attrs:    map[string]*engine.Attribute{},
@@ -26,7 +22,7 @@ func newBaseElement(name string, children ...any) *baseElement {
 	}
 }
 
-func (e *baseElement) add(children ...any) *baseElement {
+func (e *baseElement) add(children ...GogglesElement) *baseElement {
 	e.children = append(e.children, children...)
 	return e
 }
@@ -64,7 +60,7 @@ func (e *baseElement) generateVDOM() interface{} {
 	}
 	for _, child := range e.children {
 		switch c := child.(type) {
-		case IsHandlebarElement:
+		case GogglesElement:
 			childVDOMs = append(childVDOMs, c.GenerateVDOM())
 		default:
 			childVDOMs = append(childVDOMs, c)
@@ -77,28 +73,17 @@ func (e *baseElement) generateVDOM() interface{} {
 	}
 }
 
-type TextWrapper string
-
-func Text(text string) TextWrapper {
-	return TextWrapper(text)
+type EventHandlerWrapper struct {
+	Name    string
+	Handler engine.EventHandler
 }
 
-func (t TextWrapper) HandlebarElement() {}
-
-func (t TextWrapper) GenerateVDOM() interface{} {
-	return string(t)
+func EventHandler(name string, handler engine.EventHandler) EventHandlerWrapper {
+	return EventHandlerWrapper{Name: name, Handler: handler}
 }
 
-type BoundTextWrapper struct {
-	Value *string
-}
+func (e EventHandlerWrapper) IsGogglesElement() {}
 
-func BoundText(value *string) BoundTextWrapper {
-	return BoundTextWrapper{Value: value}
-}
-
-func (t BoundTextWrapper) HandlebarElement() {}
-
-func (t BoundTextWrapper) GenerateVDOM() interface{} {
-	return t.Value
+func (e EventHandlerWrapper) GenerateVDOM() interface{} {
+	return engine.On(e.Name, e.Handler)
 }

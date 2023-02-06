@@ -30,9 +30,9 @@ func run(ctx context.Context) error {
 
 	eg := errgroup.Group{}
 
-	eg.Go(func() error {
-		return gen.GenerateElements(ctx, gogglesPath)
-	})
+	// eg.Go(func() error {
+	// 	return gen.GenerateElements(ctx, genTmpDir, gogglesPath)
+	// })
 
 	eg.Go(func() error {
 		return gen.GenerateIconify(ctx, genTmpDir, gogglesPath)
