@@ -132,6 +132,10 @@ func (t *Tag) UnmarshalMsgpack(b []byte) error {
 	return nil
 }
 
+func T(name string, elements ...any) *Tag {
+	return NewTag(name, elements...)
+}
+
 // NewTag creates a new Tag value.
 func NewTag(name string, elements ...any) *Tag {
 	name = strings.ToLower(name)

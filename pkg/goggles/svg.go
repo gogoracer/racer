@@ -4,7 +4,7 @@ type ElementSVG struct {
 	*baseElement
 }
 
-func SVG(children ...any) *ElementSVG {
+func SVG(children ...GogglesElement) *ElementSVG {
 	return &ElementSVG{
 		baseElement: newBaseElement("svg", children...),
 	}

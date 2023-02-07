@@ -60,11 +60,13 @@ func PipelineProcessorMount() *PipelineProcessor {
 	pp := NewPipelineProcessor(PipelineProcessorKeyMount)
 
 	pp.BeforeTagger = func(ctx context.Context, w io.Writer, tag Tagger) (Tagger, error) {
-		if comp, ok := tag.(UniqueTagger); ok && comp.GetID() == "" {
-			comp.SetID(strconv.FormatUint(atomic.AddUint64(&compID, 1), 10))
+		ut, ok := tag.(UniqueTagger)
+		if ok && ut.GetID() == "" {
+			ut.SetID(strconv.FormatUint(atomic.AddUint64(&compID, 1), 10))
 
-			if comp, ok := tag.(Mounter); ok {
-				comp.Mount(ctx)
+			mounter, ok := tag.(Mounter)
+			if ok {
+				mounter.Mount(ctx)
 			}
 		}
 

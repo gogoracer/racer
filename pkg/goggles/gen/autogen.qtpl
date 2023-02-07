@@ -3,6 +3,7 @@
 import (
     "github.com/iancoleman/strcase"
     "strings"
+    "fmt"
 ) %}
 
 {% code
@@ -49,13 +50,15 @@ type {%s elementName %} struct {
     *baseElement
 }
 
-func {%s upper(tagPascal) %}(children ...any) *{%s elementName %} {
+func (e *{%s elementName %}) IsGogglesElement() {}
+
+func {%s upper(tagPascal) %}(children ...GogglesElement) *{%s elementName %} {
     return &{%s elementName %}{
         baseElement: newBaseElement("{%s e.Tag %}", children...),
     }
 }
 
-func (e *{%s elementName %}) Add(children ...any) *{%s elementName %} {
+func (e *{%s elementName %}) Add(children ...GogglesElement) *{%s elementName %} {
 	e.baseElement.add(children...)
 	return e
 }
@@ -105,7 +108,7 @@ func (e *{%s elementName %}) {%s evt %}(fn engine.EventHandler) (*{%s elementNam
     e.shouldBeComponent = true
     e.children = append(
         e.children,
-        engine.On("{%s eh.Name[2:] %}", fn),
+        EventHandler("{%s eh.Name[2:] %}", fn),
     )
     return e
 }
@@ -114,18 +117,48 @@ func (e *{%s elementName %}) {%s evt %}(fn engine.EventHandler) (*{%s elementNam
 {%- endfunc -%}
 
 {%- func GenerateIcon(pkg iconPackage) -%}
-/* cSpell:disable */
 package {%s pkg.Name %}
 
-import "github.com/gogoracer/racer/pkg/goggles"
+import (
+    "fmt"
+    "github.com/gogoracer/racer/pkg/engine"
+)
+
+const (
+{%- for _, namedIcon := range pkg.Icons -%}
+{%- code cn := camel(namedIcon.Name)+"InnerSVG" -%}
+{%s cn %} = `{%s= namedIcon.Icon.SvgBody %}`
+{%- endfor -%}
+)
+
+var sharedIconAttrs =  engine.Attrs{"width": "1em","height": "1em"}
 
 {%- for _, namedIcon := range pkg.Icons -%}
-func {%s namedIcon.Name %}() *goggles.ElementSVG {
-    return goggles.SVG(`{%s= namedIcon.Icon.SvgBody %}`).
-        Custom("viewBox","0,0,{%d pkg.Width %},{%d pkg.Height %}").
-        Custom("width","1em").
-        Custom("height","1em")
+{% code
+cn := camel(namedIcon.Name)+"InnerSVG"
+viewBox := fmt.Sprintf(`0 0 %d %d`, pkg.Width, pkg.Height)
+%}
+func {%s namedIcon.Name %}(children ...any) *engine.HTMLElement {
+    return engine.Element(
+        "svg",
+        sharedIconAttrs,
+        engine.Attrs{
+            "viewBox": "{%s viewBox %}",
+        },
+        {%s cn %},
+        children,
+    )
 }
-{% endfor %}
+{%- endfor -%}
 
+func ByName(name string) (*engine.HTMLElement,error) {
+    switch name {
+    {%- for _, namedIcon := range pkg.Icons -%}
+    case "{%s namedIcon.OriginalName %}":
+        return {%s namedIcon.Name %}(),nil
+    {%- endfor -%}
+    default:
+        return nil, fmt.Errorf("icon '%s' not found in {%s pkg.Name %} icon set", name)
+    }
+}
 {%- endfunc -%}

@@ -121,8 +121,9 @@ func GenerateIconify(ctx context.Context, gentmpDir, gogglesPath string) error {
 			}
 
 			namedIcons = append(namedIcons, namedIcon{
-				Name: revisedName,
-				Icon: icon,
+				OriginalName: iconName,
+				Name:         revisedName,
+				Icon:         icon,
 			})
 			namesUsed.Insert(revisedName)
 		}
@@ -283,6 +284,7 @@ type iconPackage struct {
 	Width, Height int
 }
 type namedIcon struct {
-	Name string
-	Icon icon
+	OriginalName string
+	Name         string
+	Icon         icon
 }
