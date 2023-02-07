@@ -1,4 +1,4 @@
-package parts_test
+package frame_test
 
 // import (
 // 	"github.com/SamHennessy/hlive/hlivetest"

@@ -1,4 +1,4 @@
-package parts_test
+package frame_test
 
 // func TestFocus(t *testing.T) {
 // 	t.Parallel()

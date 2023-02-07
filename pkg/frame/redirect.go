@@ -1,7 +1,8 @@
-package parts
+package frame
 
 import (
 	_ "embed"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_html"
 
 	"github.com/gogoracer/racer/pkg/engine"
 )
@@ -25,15 +26,15 @@ type RedirectAttribute struct {
 	rendered bool
 }
 
-func (a *RedirectAttribute) Initialize(page *engine.Page) {
+func (a *RedirectAttribute) Initialize(page engine.Pager) {
 	if a.rendered {
 		return
 	}
 
-	page.DOM().Head().Add(engine.NewTag("script", engine.HTML(RedirectJavaScript)))
+	page.(*Page).DOM().Head().Element(SCRIPT().HTML(string(RedirectJavaScript)))
 }
 
-func (a *RedirectAttribute) InitializeSSR(page *engine.Page) {
+func (a *RedirectAttribute) InitializeSSR(page engine.Pager) {
 	a.rendered = true
-	page.DOM().Head().Add(engine.NewTag("script", engine.HTML(RedirectJavaScript)))
+	page.(*Page).DOM().Head().Element(SCRIPT().HTML(string(RedirectJavaScript)))
 }

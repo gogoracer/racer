@@ -1,7 +1,8 @@
-package parts
+package frame
 
 import (
 	_ "embed"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_html"
 
 	"github.com/gogoracer/racer/pkg/engine"
 )
@@ -29,15 +30,15 @@ type FocusAttribute struct {
 	rendered bool
 }
 
-func (a *FocusAttribute) Initialize(page *engine.Page) {
+func (a *FocusAttribute) Initialize(page engine.Pager) {
 	if a.rendered {
 		return
 	}
 
-	page.DOM().Head().Add(engine.NewTag("script", engine.HTML(FocusJavaScript)))
+	page.(*Page).DOM().Head().Element(SCRIPT().HTML(string(FocusJavaScript)))
 }
 
-func (a *FocusAttribute) InitializeSSR(page *engine.Page) {
+func (a *FocusAttribute) InitializeSSR(page engine.Pager) {
 	a.rendered = true
-	page.DOM().Head().Add(engine.NewTag("script", engine.HTML(FocusJavaScript)))
+	page.(*Page).DOM().Head().Element(SCRIPT().HTML(string(FocusJavaScript)))
 }

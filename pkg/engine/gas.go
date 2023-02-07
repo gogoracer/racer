@@ -123,7 +123,7 @@ func IsNode(node any) bool {
 		return true
 
 	// Taggers
-	case Tagger, []Tagger, []UniqueTagger:
+	case Tagger, []Tagger, []UniqueTagger, GetComponenter:
 		return true
 
 	// Internals:
@@ -297,4 +297,9 @@ func RenderComponent(ctx context.Context, comp Componenter) {
 	}
 
 	render(ctx, comp)
+}
+
+// RenderElement
+func RenderElement(ctx context.Context, comp *UberElement) {
+	RenderComponent(ctx, comp.GetComponent())
 }
