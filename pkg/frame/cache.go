@@ -1,10 +1,11 @@
-package engine
+package frame
 
 import (
 	"bytes"
 	"context"
 	"crypto/sha256"
 	"fmt"
+	"github.com/gogoracer/racer/pkg/engine"
 	"io"
 
 	"github.com/rs/zerolog"
@@ -24,10 +25,10 @@ const (
 )
 
 func init() {
-	msgpack.RegisterExt(msgpackExtHTML, (*HTML)(nil))
-	msgpack.RegisterExt(msgpackExtTag, (*Tag)(nil))
-	msgpack.RegisterExt(msgpackExtAttr, (*Attribute)(nil))
-	msgpack.RegisterExt(msgpackExtNodeGroup, (*NodeGroup)(nil))
+	msgpack.RegisterExt(msgpackExtHTML, (*engine.HTML)(nil))
+	msgpack.RegisterExt(msgpackExtTag, (*engine.Tag)(nil))
+	msgpack.RegisterExt(msgpackExtAttr, (*engine.Attribute)(nil))
+	msgpack.RegisterExt(msgpackExtNodeGroup, (*engine.NodeGroup)(nil))
 }
 
 // Cache allow cache adapters to be used in HLive
@@ -37,10 +38,10 @@ type Cache interface {
 }
 
 // PipelineProcessorRenderHashAndCache that will cache the returned tree to support SSR
-func PipelineProcessorRenderHashAndCache(logger zerolog.Logger, renderer *Renderer, cache Cache) *PipelineProcessor {
-	pp := NewPipelineProcessor(PipelineProcessorKeyRenderer)
+func PipelineProcessorRenderHashAndCache(logger zerolog.Logger, renderer *engine.Renderer, cache Cache) *engine.PipelineProcessor {
+	pp := engine.NewPipelineProcessor(engine.PipelineProcessorKeyRenderer)
 
-	pp.AfterWalk = func(ctx context.Context, w io.Writer, node *NodeGroup) (*NodeGroup, error) {
+	pp.AfterWalk = func(ctx context.Context, w io.Writer, node *engine.NodeGroup) (*engine.NodeGroup, error) {
 		byteBuf := bytes.NewBuffer(nil)
 		hasher := sha256.New()
 		multiW := io.MultiWriter(byteBuf, hasher)

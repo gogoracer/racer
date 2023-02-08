@@ -7,6 +7,9 @@ import (
 	"time"
 
 	"github.com/gogoracer/racer/pkg/engine"
+	"github.com/gogoracer/racer/pkg/frame"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_attribute"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_html"
 )
 
 func main() {
@@ -20,22 +23,24 @@ func main() {
 }
 
 func home() *engine.PageServer {
-	f := func() *engine.Page {
+	f := func() engine.Pager {
 
-		page := engine.NewPage()
-		page.DOM().Title().Add("Clock Example")
-		page.DOM().Head().Add(
-			engine.NewTag("link", engine.Attrs{"rel": "stylesheet", "href": "https://cdn.simplecss.org/simple.min.css"}))
+		page := frame.NewPage()
+		page.DOM().Title().Val().Str("Click Example")
+		page.DOM().Head().Element(
+			LINK().
+				Attr(REL("stylesheet")).
+				Attr(HREF("https://cdn.simplecss.org/simple.min.css")))
 
-		page.DOM().Body().Add(
-			engine.NewTag("header",
-				engine.NewTag("h1", "Clock"),
-				engine.NewTag("p", "The time updates are being push from the server every 10ms"),
-			),
-			engine.NewTag("main",
-				engine.NewTag("pre", newClock()),
-			),
-		)
+		page.DOM().Body().
+			Element(
+				HEADER().
+					Element(H1().Val().Str("Clock")).
+					Element(P().Val().Str("The time updates are being push from the server every 10ms")))
+
+		page.DOM().Body().
+			Element(
+				MAIN().Element(PRE().Component(newClock())))
 
 		return page
 	}
@@ -53,20 +58,25 @@ func home() *engine.PageServer {
 func newClock() *clock {
 	t := engine.NewLockBox("")
 
-	return &clock{
-		Component: engine.NewComponent("code", "Server: ", t),
-		timeStr:   t,
+	c := &clock{
+		UberElement: CODE().Val().Str("Server: ").LockBox(t),
+		timeStr:     t,
 	}
+
+	c.SetMount(c.mount)
+	c.SetUnmount(c.unmount)
+
+	return c
 }
 
 type clock struct {
-	*engine.Component
+	*engine.UberElement
 
 	timeStr *engine.LockBox[string]
 	tick    *time.Ticker
 }
 
-func (c *clock) Mount(ctx context.Context) {
+func (c *clock) mount(ctx context.Context) {
 	log.Println("DEBU: start tick")
 
 	c.tick = time.NewTicker(10 * time.Millisecond)
@@ -81,7 +91,7 @@ func (c *clock) Mount(ctx context.Context) {
 			case t := <-c.tick.C:
 				c.timeStr.Set(t.String())
 
-				engine.RenderComponent(ctx, c)
+				engine.RenderElement(ctx, c.UberElement)
 			}
 		}
 	}()
@@ -89,7 +99,7 @@ func (c *clock) Mount(ctx context.Context) {
 
 // Unmount
 // Will be called after the page session is deleted
-func (c *clock) Unmount(_ context.Context) {
+func (c *clock) unmount(_ context.Context) {
 	log.Println("DEBU: stop tick")
 
 	if c.tick != nil {

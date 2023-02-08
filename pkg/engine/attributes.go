@@ -18,9 +18,9 @@ type AttributePluginer interface {
 	Attributer
 
 	// Initialize will only be called once per attribute name for diff render
-	Initialize(page *Page)
+	Initialize(page Pager)
 	// InitializeSSR will only be called once per attribute name for server side render
-	InitializeSSR(page *Page)
+	InitializeSSR(page Pager)
 }
 
 // Attrs is a helper for adding and updating Attributes to nodes

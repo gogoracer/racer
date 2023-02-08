@@ -1,7 +1,8 @@
-package parts
+package frame
 
 import (
 	_ "embed"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_html"
 
 	"github.com/gogoracer/racer/pkg/engine"
 )
@@ -14,13 +15,13 @@ var DiffApplyScript []byte
 // made it to the browser. You can then, if you wish, immediately remove it from the tree to prevent more triggers.
 // You can also add it as a OnOnce and it wil remove itself.
 
-func OnDiffApply(handler engine.EventHandler) *engine.ElementGroup {
+func OnDiffApply(handler engine.EventHandler) (*engine.EventBinding, *DiffApplyAttribute) {
 	eb := engine.On(DiffApplyEvent, handler)
 	attr := &DiffApplyAttribute{
 		Attribute: engine.NewAttribute(DiffApplyAttributeName, eb.ID),
 	}
 
-	return engine.Elements(eb, attr)
+	return eb, attr
 }
 
 // TODO: how we remove the attribute once done?
@@ -44,15 +45,16 @@ type DiffApplyAttribute struct {
 	rendered bool
 }
 
-func (a *DiffApplyAttribute) Initialize(page *engine.Page) {
+func (a *DiffApplyAttribute) Initialize(page engine.Pager) {
 	if a.rendered {
 		return
 	}
 
-	page.DOM().Head().Add(engine.NewTag("script", engine.HTML(DiffApplyScript)))
+	page.(*Page).DOM().Head().Element(SCRIPT().HTML(string(DiffApplyScript)))
 }
 
-func (a *DiffApplyAttribute) InitializeSSR(page *engine.Page) {
+func (a *DiffApplyAttribute) InitializeSSR(page engine.Pager) {
 	a.rendered = true
-	page.DOM().Head().Add(engine.NewTag("script", engine.HTML(DiffApplyScript)))
+
+	page.(*Page).DOM().Head().Element(SCRIPT().HTML(string(DiffApplyScript)))
 }

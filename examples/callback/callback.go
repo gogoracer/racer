@@ -6,7 +6,10 @@ import (
 	"net/http"
 
 	"github.com/gogoracer/racer/pkg/engine"
-	"github.com/gogoracer/racer/pkg/parts"
+	"github.com/gogoracer/racer/pkg/frame"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_attribute"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_event"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_html"
 )
 
 func main() {
@@ -23,43 +26,45 @@ func main() {
 	}
 }
 
-func callback(container *engine.Component) {
-	container.Add(
-		parts.OnDiffApply(
-			func(ctx context.Context, e engine.Event) {
-				container.Add(engine.NewTag("p", "Diff Applied"))
-				container.RemoveEventBinding(e.Binding.ID)
-			},
-		),
+func callback(container *engine.UberElement) {
+	eb, attr := frame.OnDiffApply(
+		func(ctx context.Context, e engine.Event) {
+			container.Element(P().Val().Str("Diff Applied"))
+			container.RemoveEventBinding(e.Binding.ID)
+		},
 	)
+
+	container.On(eb).Attr(attr)
+
 }
 
-func home() *engine.Page {
-	container := engine.NewComponent("code")
+func home() engine.Pager {
+	container := CODE()
 
-	btn := engine.NewComponent("button", "Trigger Click",
-		engine.On("click", func(ctx context.Context, e engine.Event) {
-			container.Add(engine.NewTag("p", "Click"))
-			callback(container)
-		}),
-	)
+	btn := BUTTON().Val().Str("Trigger Click").On(CLICK(func(ctx context.Context, e engine.Event) {
+		container.Element(P().Val().Str("Click"))
+		callback(container)
+	}))
 
-	page := engine.NewPage()
-	page.DOM().Title().Add("Callback Example")
-	page.DOM().Head().Add(
-		engine.NewTag("link", engine.Attrs{"rel": "stylesheet", "href": "https://cdn.simplecss.org/simple.min.css"}))
+	page := frame.NewPage()
+	page.DOM().Title().Val().Str("Callback Example")
+	page.DOM().Head().Element(
+		LINK().
+			Attr(REL("stylesheet")).
+			Attr(HREF("https://cdn.simplecss.org/simple.min.css")))
 
-	page.DOM().Body().Add(
-		engine.NewTag("header",
-			engine.NewTag("h1", "Callback"),
-			engine.NewTag("p", "Get notified when a change has been applied in the browser"),
-		),
-		engine.NewTag("main",
-			engine.NewTag("p", btn),
-			engine.NewTag("h2", "Events"),
-			engine.NewTag("pre", container),
-		),
-	)
+	page.DOM().Body().
+		Element(
+			HEADER().
+				Element(H1().Val().Str("Callback")).
+				Element(P().Val().Str("Get notified when a change has been applied in the browser")))
+
+	page.DOM().Body().
+		Element(
+			MAIN().
+				Element(P().Element(btn)).
+				Element(H2().Val().Str("Events")).
+				Element(PRE().Element(container)))
 
 	return page
 }

@@ -1,11 +1,11 @@
-package parts_test
+package engine_test
 
 import (
+	"github.com/gogoracer/racer/pkg/engine"
 	"sync"
 	"testing"
 
 	"github.com/go-test/deep"
-	"github.com/gogoracer/racer/pkg/parts"
 	"github.com/teris-io/shortid"
 )
 
@@ -24,7 +24,7 @@ func newSub() *testSubscriber {
 	return sub
 }
 
-func (s *testSubscriber) OnMessage(message parts.QueueMessage) {
+func (s *testSubscriber) OnMessage(message engine.QueueMessage) {
 	s.called = true
 	s.calledTopic = message.Topic
 	s.calledValue = message.Value
@@ -38,7 +38,7 @@ func (s *testSubscriber) GetID() string {
 func TestNewPubSub(t *testing.T) {
 	t.Parallel()
 
-	if parts.NewPubSub() == nil {
+	if engine.NewPubSub() == nil {
 		t.Error("nil returned")
 	}
 }
@@ -47,7 +47,7 @@ func TestPubSub_PublishAndSubscribe(t *testing.T) {
 	t.Parallel()
 
 	sub := newSub()
-	ps := parts.NewPubSub()
+	ps := engine.NewPubSub()
 
 	ps.SubscribeWait(sub, "topic_1")
 
@@ -72,7 +72,7 @@ func TestPubSub_PublishAsync(t *testing.T) {
 	t.Parallel()
 
 	sub := newSub()
-	ps := parts.NewPubSub()
+	ps := engine.NewPubSub()
 
 	ps.SubscribeWait(sub, "topic_1")
 
@@ -89,7 +89,7 @@ func TestPubSub_SubscribeMultiTopic(t *testing.T) {
 	t.Parallel()
 
 	sub := newSub()
-	ps := parts.NewPubSub()
+	ps := engine.NewPubSub()
 
 	ps.SubscribeWait(sub, "topic_1", "topic_2")
 
@@ -113,7 +113,7 @@ func TestPubSub_Unsubscribe(t *testing.T) {
 	t.Parallel()
 
 	sub := newSub()
-	ps := parts.NewPubSub()
+	ps := engine.NewPubSub()
 
 	ps.SubscribeWait(sub, "topic_1")
 
@@ -130,7 +130,7 @@ func TestPubSub_UnsubscribeOneOfMulti(t *testing.T) {
 	t.Parallel()
 
 	sub := newSub()
-	ps := parts.NewPubSub()
+	ps := engine.NewPubSub()
 
 	ps.SubscribeWait(sub, "topic_1", "topic_2")
 
@@ -153,7 +153,7 @@ func TestPubSub_UnsubscribeMulti(t *testing.T) {
 	t.Parallel()
 
 	sub := newSub()
-	ps := parts.NewPubSub()
+	ps := engine.NewPubSub()
 
 	ps.SubscribeWait(sub, "topic_1", "topic_2")
 

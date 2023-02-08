@@ -6,6 +6,10 @@ import (
 	"net/http"
 
 	"github.com/gogoracer/racer/pkg/engine"
+	"github.com/gogoracer/racer/pkg/frame"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_attribute"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_event"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_html"
 )
 
 func main() {
@@ -22,36 +26,38 @@ func main() {
 	}
 }
 
-func home() *engine.Page {
+func home() engine.Pager {
 	hoverState := engine.Box(" ")
 
-	hover := engine.NewComponent("h2",
-		engine.Style{"padding": "1em", "text-align": "center", "border": "solid"},
-		engine.On("mouseEnter", func(ctx context.Context, e engine.Event) {
+	hover := H2().
+		Styles(engine.Style{"padding": "1em", "text-align": "center", "border": "solid"}).
+		On(MOUSEENTER(func(_ context.Context, _ engine.Event) {
 			hoverState.Set("Mouse enter")
-		}),
-		engine.On("mouseLeave", func(ctx context.Context, e engine.Event) {
+		})).
+		On(MOUSELEAVE(func(_ context.Context, _ engine.Event) {
 			hoverState.Set("Mouse leave")
-		}),
-		"Hover over me",
-	)
+		})).
+		Val().Str("Hover over me")
 
-	page := engine.NewPage()
-	page.DOM().Title().Add("Hover Example")
-	page.DOM().Head().Add(
-		engine.NewTag("link", engine.Attrs{"rel": "stylesheet", "href": "https://cdn.simplecss.org/simple.min.css"}))
+	page := frame.NewPage()
+	page.DOM().Title().Val().Str("Hover Example")
+	page.DOM().Head().Element(
+		LINK().
+			Attr(REL("stylesheet")).
+			Attr(HREF("https://cdn.simplecss.org/simple.min.css")))
 
-	page.DOM().Body().Add(
-		engine.NewTag("header",
-			engine.NewTag("h1", "Hover"),
-			engine.NewTag("p", "React to hover events on the server"),
-		),
-		engine.NewTag("main",
-			engine.NewTag("div", hover),
-			engine.NewTag("hr"),
-			engine.NewTag("pre", engine.NewTag("code", hoverState)),
-		),
-	)
+	page.DOM().Body().
+		Element(
+			HEADER().
+				Element(H1().Val().Str("Hover")).
+				Element(P().Val().Str("React to hover events on the server")))
+
+	page.DOM().Body().
+		Element(
+			MAIN().
+				Element(DIV().Element(hover)).
+				Element(HR()).
+				Element(PRE().Element(CODE().Box(hoverState))))
 
 	return page
 }

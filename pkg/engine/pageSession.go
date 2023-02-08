@@ -17,7 +17,7 @@ type PageSession struct {
 	connected        bool
 	connectedAt      time.Time
 	lastActive       time.Time
-	page             *Page
+	page             Pager
 	ctxInitial       context.Context //nolint:containedctx // we are a router and create new contexts from this one
 	ctxPage          context.Context //nolint:containedctx // we are a router and create new contexts from this one
 	ctxPageCancel    context.CancelFunc
@@ -190,14 +190,14 @@ func (sess *PageSession) writePump() {
 	}
 }
 
-func (sess *PageSession) GetPage() *Page {
+func (sess *PageSession) GetPage() Pager {
 	sess.muSess.RLock()
 	defer sess.muSess.RUnlock()
 
 	return sess.page
 }
 
-func (sess *PageSession) SetPage(page *Page) {
+func (sess *PageSession) SetPage(page Pager) {
 	sess.muSess.Lock()
 	sess.page = page
 	sess.muSess.Unlock()

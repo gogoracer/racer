@@ -2,13 +2,17 @@ package main
 
 import (
 	"context"
+	"github.com/gogoracer/racer/pkg/frame"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_attribute"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_event"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_html"
 	"log"
 	"net/http"
 
 	"github.com/gogoracer/racer/pkg/engine"
 )
 
-const pageStyle engine.HTML = `
+const pageStyle string = `
 .box {
 	overflow: hidden;
 	padding: 3em;
@@ -43,7 +47,7 @@ func main() {
 	}
 }
 
-func home() *engine.Page {
+func home() engine.Pager {
 	var (
 		index    = engine.Box(0)
 		current  = engine.Box("")
@@ -51,11 +55,11 @@ func home() *engine.Page {
 		btnLabel = engine.Box("Start")
 	)
 
-	animationTarget := engine.NewComponent("div", engine.Class("animate__animated text"), "racer")
+	animationTarget := DIV().Class("animate__animated text").Val().Str("racer")
 
 	nextAnimation := func() {
 		index.Lock(func(v int) int {
-			animationTarget.Add(engine.ClassOff(animations[v]))
+			animationTarget.ClassOff(animations[v])
 
 			v++
 			if len(animations) == v {
@@ -63,26 +67,26 @@ func home() *engine.Page {
 			}
 
 			current.Set(animations[v])
-			animationTarget.Add(engine.Class(animations[v]))
+			animationTarget.Class(animations[v])
 
 			return v
 		})
 	}
 
-	animationTarget.Add(engine.On("animationend", func(ctx context.Context, e engine.Event) {
+	animationTarget.On(ANIMATIONEND(func(ctx context.Context, e engine.Event) {
 		if playing.Get() {
 			nextAnimation()
 		}
 	}))
 
-	animationTarget.Add(engine.On("animationcancel", func(ctx context.Context, e engine.Event) {
+	animationTarget.On(ANIMATIONCANCEL(func(ctx context.Context, e engine.Event) {
 		playing.Set(false)
 		btnLabel.Set("Start")
 		current.Set("")
 	}))
 
-	btn := engine.NewComponent("button", btnLabel,
-		engine.On("click", func(ctx context.Context, e engine.Event) {
+	btn := BUTTON().Box(btnLabel).
+		On(CLICK(func(ctx context.Context, e engine.Event) {
 			playing.Lock(func(v bool) bool {
 				if !v {
 					nextAnimation()
@@ -94,33 +98,39 @@ func home() *engine.Page {
 
 				return !v
 			})
-		}),
+		})).
 		// You can create multiple event bindings for the same event and component
-		engine.On("click", func(ctx context.Context, e engine.Event) {
+		On(CLICK(func(ctx context.Context, e engine.Event) {
 			log.Println("INFO: Button Clicked")
-		}),
-	)
+		}))
 
-	page := engine.NewPage()
-	page.DOM().Title().Add("Animation Example")
-	page.DOM().Head().Add(
-		engine.NewTag("link", engine.Attrs{"rel": "stylesheet", "href": "https://cdn.simplecss.org/simple.min.css"}),
-		engine.NewTag("link",
-			engine.Attrs{"rel": "stylesheet", "href": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"}),
-		engine.NewTag("style", pageStyle),
-	)
+	page := frame.NewPage()
+	page.DOM().Title().Val().Str("Animation Example")
 
-	page.DOM().Body().Add(
-		engine.NewTag("header",
-			engine.NewTag("h1", "CSS Animations"),
-			engine.NewTag("p", "We can wait for the CSS animation to end before starting the next one"),
-		),
-		engine.NewTag("main",
-			engine.NewTag("p", btn),
-			engine.NewTag("p", "Current: ", current),
-			engine.NewTag("div", engine.Class("box"), animationTarget),
-		),
-	)
+	page.DOM().Head().
+		Element(
+			LINK().
+				Attr(REL("stylesheet")).
+				Attr(HREF("https://cdn.simplecss.org/simple.min.css"))).
+		Element(
+			LINK().
+				Attr(REL("stylesheet")).
+				Attr(HREF("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"))).
+		Element(
+			STYLE().HTML(pageStyle))
+
+	page.DOM().Body().
+		Element(
+			HEADER().
+				Element(H1().Val().Str("CSS Animations")).
+				Element(P().Val().Str("We can wait for the CSS animation to end before starting the next one")))
+
+	page.DOM().Body().
+		Element(
+			MAIN().
+				Element(P().Element(btn)).
+				Element(P().Val().Str("Current: ").Box(current)).
+				Element(DIV().Class("box").Element(animationTarget)))
 
 	return page
 }
