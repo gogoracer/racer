@@ -6,12 +6,15 @@ require (
 	github.com/PuerkitoBio/goquery v1.8.0
 	github.com/cenkalti/backoff v2.2.1+incompatible
 	github.com/cornelk/hashmap v1.0.8
+	github.com/davecgh/go-spew v1.1.1
 	github.com/dgraph-io/ristretto v0.1.1
+	github.com/facette/natsort v0.0.0-20181210072756-2cd4dd1e2dcb
 	github.com/go-rod/rod v0.112.4
 	github.com/go-test/deep v1.1.0
 	github.com/goccy/go-json v0.10.0
 	github.com/gorilla/websocket v1.5.0
 	github.com/iancoleman/strcase v0.2.0
+	github.com/mazznoer/csscolorparser v0.1.3
 	github.com/rs/zerolog v1.29.0
 	github.com/teris-io/shortid v0.0.0-20220617161101-71ec9f2aa569
 	github.com/tpaschalis/daffodil v0.0.5

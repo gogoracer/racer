@@ -12,9 +12,17 @@ interval: 100ms
 tasks:
   goggles_gen:
     sources:
-      - "./**/*.qtpl"
+      - "./pkg/goggles/**/*.qtpl"
     cmds:
       - qtc -dir ./pkg/goggles/gen
+      - go run ./cmd/gen/main.go
+      - gofmt -w ./pkg/goggles
+
+  tailpipe_gen:
+    sources:
+      - "./pkg/tailpipe/**/*.qtpl"
+    cmds:
+      - qtc -dir ./pkg/tailpipe
       - go run ./cmd/gen/main.go
       - gofmt -w ./pkg/goggles
 

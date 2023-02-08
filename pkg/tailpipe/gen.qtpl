@@ -1,0 +1,753 @@
+{% import (
+"github.com/mazznoer/csscolorparser"
+"strconv"
+"log"
+) %}
+{%- func generateFromConfig(cfg TailPipeConfig) -%}
+package tailpipe
+
+import (
+    "fmt"
+    "strings"
+	"golang.org/x/exp/slices"
+	"k8s.io/apimachinery/pkg/util/sets"
+)
+
+
+type TailPipe struct {
+    classes sets.Set[string]
+    combined     string
+}
+
+func NewTailPipe() *TailPipe {
+	return &TailPipe{
+        classes: sets.New(`
+// Default margins are removed
+// Preflight removes all of the default margins from elements like headings, blockquotes, paragraphs, etc.
+// This makes it harder to accidentally rely on margin values applied by the user-agent stylesheet that are not part of your spacing scale.
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+// Headings are unstyled
+// All heading elements are completely unstyled by default, and have the same font-size and font-weight as normal text.
+// The reason for this is two-fold:
+// *  It helps you avoid accidentally deviating from your type scale. By default, browsers assign sizes to headings that don’t exist in Tailwind’s default type scale, and aren’t guaranteed to exist in your own type scale.
+// * In UI development, headings should often be visually de-emphasized. Making headings unstyled by default means any styling you apply to headings happens consciously and deliberately.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+// Lists are unstyled
+// Ordered and unordered lists are unstyled by default, with no bullets/numbers and no margin or padding.
+// If you’d like to style a list, you can do so using the list-style-type and list-style-position utilities
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Images are block-level
+// Images and other replaced elements (like svg, video, canvas, and others) are display: block by default.
+// This helps to avoid unexpected alignment issues that you often run into using the browser default of display: inline.
+// If you ever need to make one of these elements inline instead of block, simply use the inline utility:
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+// Images are constrained to the parent width
+// Images and videos are constrained to the parent width in a way that preserves their intrinsic aspect ratio.
+// This prevents them from overflowing their containers and makes them responsive by default. If you ever need to override this behavior, use the max-w-none utility:
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+// Border styles are reset globally
+// In order to make it easy to add a border by simply adding the border class, Tailwind overrides the default border styles for all elements with the following rules:
+// Since the border class only sets the border-width property, this reset ensures that adding that class always adds a solid 1px border using your configured default border color.
+// This can cause some unexpected results when integrating certain third-party libraries, like Google maps for example.
+*,
+::before,
+::after {
+  border-width: 0;
+  border-style: solid;
+  border-color: theme('borderColor.DEFAULT', currentColor);
+}
+
+// To ensure that we provide accessible styles out of the box, we made sure that buttons have a default outline. You can of course override this by applying focus:ring or similar utilities to your buttons.
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+`,
+        ),
+	}
+}
+
+func (p *TailPipe) generate() string {
+    arr := p.classes.UnsortedList()
+    slices.Sort(arr)
+    return strings.Join(arr, "\n")
+}
+
+func (p *TailPipe) CombinedClasses() string {
+    return p.combined
+}
+
+type AtomicClass struct {
+    parent *TailPipe
+    classes sets.Set[string]
+}
+
+func (p *TailPipe) Atomic() *AtomicClass {
+    ac := &AtomicClass{parent: p}
+    return ac
+}
+
+func (ac *AtomicClass) Build() string {
+    arr := ac.classes.UnsortedList()
+    slices.SortFunc(arr, func(a, b string) bool {
+        // Replace with Headwind sort
+        return a < b
+    })
+    return strings.Join(arr, " ")
+}
+
+func(ac *AtomicClass) upsertClass(groupName, name string, values ...string) *AtomicClass {
+    cls := fmt.Sprintf("%s-%s",groupName , name)
+
+    if strings.ToUpper(name) == "DEFAULT" {
+        name = ""
+        cls = groupName
+    }
+    if ac.classes.Has(cls) {
+        return ac
+    }
+    ac.classes.Insert(cls)
+
+    for i, v := range values {
+        values[i] = fmt.Sprintf("%s;", v)
+    }
+
+    css := fmt.Sprintf(`.%s {
+        "%s";
+    }`, cls, strings.Join( values,"\n"))
+
+    ac.parent.classes.Insert(css)
+    return ac
+}
+
+// Animations
+{% for _, kv := range cfg.Animation.SortedKV() -%}
+func (ac *AtomicClass) Animate{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("animate", "{%s kv.Key %}","{%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Aria TODO: Implement aria https://tailwindcss.com/docs/hover-focus-and-other-states#aria-states
+
+// AspectRatio
+{% for _, kv := range cfg.AspectRatio.SortedKV() -%}
+func (ac *AtomicClass) AspectRatio{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("aspect-ratio", "{%s kv.Key %}","{%s kv.Value %}}")
+    return ac
+}
+{% endfor %}
+
+// Backdrop Filter
+{% for _, kv := range cfg.BackdropFilter.Blur.SortedKV() -%}
+func (ac *AtomicClass) BackdropBlur{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("backdrop-blur", "{%s kv.Key %}", "backdrop-filter: blur({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+{% for _, kv := range cfg.BackdropFilter.Brightness.SortedKV() -%}
+func (ac *AtomicClass) BackdropBrightness{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("backdrop-brightness", "{%s kv.Key %}", "backdrop-filter: brightness({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+{% for _,kv := range cfg.BackdropFilter.Contrast.SortedKV() -%}
+func (ac *AtomicClass) BackdropContrast{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("backdrop-contrast", "{%s kv.Key %}", "backdrop-filter: contrast({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+{% for _,kv := range cfg.BackdropFilter.Grayscale.SortedKV() -%}
+func (ac *AtomicClass) BackdropGrayscale{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("backdrop-grayscale", "{%s kv.Key %}", "backdrop-filter: grayscale({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+{% for _,kv := range cfg.BackdropFilter.HueRotate.SortedKV() -%}
+func (ac *AtomicClass) BackdropHueRotate{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("backdrop-hue-rotate", "{%s kv.Key %}", "backdrop-filter: hue-rotate({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+{% for _,kv := range cfg.BackdropFilter.Invert.SortedKV() -%}
+func (ac *AtomicClass) BackdropInvert{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("backdrop-invert", "{%s kv.Key %}", "backdrop-filter: invert({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+{% for _,kv := range cfg.BackdropFilter.Opacity.SortedKV() -%}
+func (ac *AtomicClass) BackdropOpacity{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("backdrop-opacity", "{%s kv.Key %}", "backdrop-filter: opacity({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+{% for _,kv := range cfg.BackdropFilter.Saturate.SortedKV() -%}
+func (ac *AtomicClass) BackdropSaturate{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("backdrop-saturate", "{%s kv.Key %}", "backdrop-filter: saturate({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+{% for _,kv := range cfg.BackdropFilter.Sepia.SortedKV() -%}
+func (ac *AtomicClass) BackdropSepia{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("backdrop-sepia", "{%s kv.Key %}", "backdrop-filter: sepia({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+
+// Background
+{% for _,kv := range cfg.Background.Color.SortedKV() -%}
+{%- code
+    bgColor,err := csscolorparser.Parse(kv.Value)
+    bg := kv.Value
+    isColor := err == nil
+    if err == nil {
+        bg = bgColor.HexString()
+    }
+-%}
+func (ac *AtomicClass) BG{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("bg", "{%s kv.Key %}", "background-color: {%s bg %}")
+    return ac
+}
+{% if isColor %}
+// Background Opacity
+{% for _,opacityKV := range cfg.Background.Opacity.SortedKV() -%}
+{%- code
+    opacity,err := strconv.ParseFloat(opacityKV.Value, 64)
+    if err != nil {
+        log.Printf("%+v XXX %v", opacityKV,err)
+        continue
+    }
+    bgWithOpacity := bgColor
+    bgWithOpacity.A = opacity
+    bgWithOpacityStr := bgWithOpacity.HexString()
+-%}
+func (ac *AtomicClass) BG{%s atomicName(kv.Key) %}_{%s atomicName(opacityKV.Key)%}() *AtomicClass {
+    ac.upsertClass("bg","{%s kv.Key %}/{%s opacityKV.Key %}", "background-color: {%s bgWithOpacityStr %}")
+    return ac
+}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+// BG Image
+{% for _,kv := range cfg.Background.Image.SortedKV() -%}
+func (ac *AtomicClass) BG{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("bg", "{%s kv.Key %}", "background-image: {%s kv.Value %}")
+    return  ac
+}
+{% endfor %}
+
+// BG Position
+{% for _,kv := range cfg.Background.Position.SortedKV() -%}
+func (ac *AtomicClass) BG{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("bg", "{%s kv.Key %}", "background-position: {%s kv.Value %}")
+    return  ac
+}
+{% endfor %}
+
+// BG Size
+{% for _,kv := range cfg.Background.Size.SortedKV() -%}
+func (ac *AtomicClass) BG{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("bg", "{%s kv.Key %}", "background-size: {%s kv.Value %}")
+    return  ac
+}
+{% endfor %}
+
+// Blur
+{% for _,kv := range cfg.Blur.SortedKV() -%}
+func (ac *AtomicClass) Blur{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("blur", "{%s kv.Key %}", "filter: blur({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+
+// Border
+{% for _,kv := range cfg.Border.Color.SortedKV() -%}
+{%- code
+    borderColor,err := csscolorparser.Parse(kv.Value)
+    border := kv.Value
+    isColor := err == nil
+    if err == nil {
+        border = borderColor.HexString()
+    }
+-%}
+func (ac *AtomicClass) Border{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("border", "{%s kv.Key %}", "border-color: {%s border %}")
+    return ac
+}
+{% if isColor %}
+// Border Opacity
+{% for _,opacityKV := range cfg.Border.Opacity.SortedKV() -%}
+{%- code
+    opacity,err := strconv.ParseFloat(opacityKV.Value, 64)
+    if err != nil {
+        log.Printf("%+v XXX %v", opacityKV,err)
+        continue
+    }
+    borderWithOpacity := borderColor
+    borderWithOpacity.A = opacity
+    borderWithOpacityStr := borderWithOpacity.HexString()
+-%}
+func (ac *AtomicClass) Border{%s atomicName(kv.Key) %}_{%s atomicName(opacityKV.Key)%}() *AtomicClass {
+    ac.upsertClass("border","{%s atomicName(kv.Key) %}/{%s opacityKV.Key %}", "border-color: {%s borderWithOpacityStr %}")
+    return ac
+}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+// Border Radius
+{% for _,kv := range cfg.Border.Radius.SortedKV() -%}
+func (ac *AtomicClass) Rounded{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("rounded", "{%s kv.Key %}", "border-radius: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Border Spacing
+{% for _,kv := range cfg.Border.Spacing.SortedKV() -%}
+func (ac *AtomicClass) BorderSpacing{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("border-spacing", "{%s kv.Key %}", "border-spacing: {%s kv.Value %} {%s kv.Value %}")
+    return ac
+}
+func (ac *AtomicClass) BorderSpacingX{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("border-spacing-x", "{%s kv.Key %}", "border-spacing-x: {%s kv.Value %} var(--tw-border-spacing-y)")
+    return ac
+}
+func (ac *AtomicClass) BorderSpacingY{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("border-spacing-y", "{%s kv.Key %}", "border-spacing-y: var(--tw-border-spacing-x) {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Border Width
+{% for _,kv := range cfg.Border.Width.SortedKV() -%}
+func (ac *AtomicClass) Border{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("border", "{%s kv.Key %}", "border-width: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Box Shadow
+{% for _,kv := range cfg.BoxShadow.Value.SortedKV() -%}
+func (ac *AtomicClass) Shadow{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("shadow", "{%s kv.Key %}", "box-shadow: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Box Shadow Color
+{% for _,kv := range cfg.BoxShadow.Color.SortedKV() -%}
+{%- code
+    shadowColor,err := csscolorparser.Parse(kv.Value)
+    shadow := kv.Value
+    isColor := err == nil
+    if err == nil {
+        shadow = shadowColor.HexString()
+    }
+-%}
+func (ac *AtomicClass) Shadow{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("shadow", "{%s kv.Key %}", "box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), {%s shadow %} 0 0 0 3px")
+    return ac
+}
+{% if isColor %}
+// Box Shadow Opacity
+{% for _,opacityKV := range cfg.BoxShadow.Opacity.SortedKV() -%}
+{%- code
+    opacity,err := strconv.ParseFloat(opacityKV.Value, 64)
+    if err != nil {
+        log.Printf("%+v XXX %v", opacityKV,err)
+        continue
+    }
+    shadowWithOpacity := shadowColor
+    shadowWithOpacity.A = opacity
+    shadowWithOpacityStr := shadowWithOpacity.HexString()
+-%}
+func (ac *AtomicClass) Shadow{%s atomicName(kv.Key) %}_{%s atomicName(opacityKV.Key)%}() *AtomicClass {
+    ac.upsertClass("shadow","{%s atomicName(kv.Key) %}/{%s opacityKV.Key %}", "box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), {%s shadowWithOpacityStr %} 0 0 0 3px")
+    return ac
+}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+// Brightness
+{% for _,kv := range cfg.Brightness.SortedKV() -%}
+func (ac *AtomicClass) Brightness{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("brightness", "{%s kv.Key %}", "filter: brightness({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+
+// Caret Color
+{% for _,kv := range cfg.CaretColor.SortedKV() -%}
+{%- code
+    caretColor,err := csscolorparser.Parse(kv.Value)
+    caret := kv.Value
+    if err == nil {
+        caret = caretColor.HexString()
+    }
+-%}
+func (ac *AtomicClass) Caret{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("caret", "{%s kv.Key %}", "caret-color: {%s caret %}")
+    return ac
+}
+{% endfor %}
+
+// Columns
+{% for _,kv := range cfg.Columns.SortedKV() -%}
+func (ac *AtomicClass) Columns{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("columns", "{%s kv.Key %}", "columns: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Contrast
+{% for _,kv := range cfg.Contrast.SortedKV() -%}
+func (ac *AtomicClass) Contrast{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("contrast", "{%s kv.Key %}", "filter: contrast({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+
+// Cursor
+{% for _,kv := range cfg.Cursor.SortedKV() -%}
+func (ac *AtomicClass) Cursor{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("cursor", "{%s kv.Key %}", "cursor: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Divide Width
+{% for _,kv := range cfg.Divide.Width.SortedKV() -%}
+func (ac *AtomicClass) DivideX{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("divide-x", "{%s kv.Key %}","border-right-width: 0px","border-left-width: {%s kv.Value %}")
+    return ac
+}
+func (ac *AtomicClass) DivideY{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("divide-y", "{%s kv.Key %}","border-bottom-width: 0px","border-top-width: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Divide Color
+{% for _,kv := range cfg.Divide.Color.SortedKV() -%}
+{%- code
+    divideColor,err := csscolorparser.Parse(kv.Value)
+    divide := kv.Value
+    isColor := err == nil
+    if err == nil {
+        divide = divideColor.HexString()
+    }
+-%}
+func (ac *AtomicClass) Divide{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("divide", "{%s kv.Key %}","border-color: {%s divide %}")
+    return ac
+}
+{% if isColor %}
+// Divide Color Opacity
+{% for _,opacityKV := range cfg.Divide.Opacity.SortedKV() -%}
+{%- code
+    opacity,err := strconv.ParseFloat(opacityKV.Value, 64)
+    if err != nil {
+        log.Printf("%+v XXX %v", opacityKV,err)
+        continue
+    }
+    divideWithOpacity := divideColor
+    divideWithOpacity.A = opacity
+    divideWithOpacityStr := divideWithOpacity.HexString()
+-%}
+func (ac *AtomicClass) Divide{%s atomicName(kv.Key) %}_{%s atomicName(opacityKV.Key)%}() *AtomicClass {
+    ac.upsertClass("divide","{%s atomicName(kv.Key) %}/{%s opacityKV.Key %}", "border-color: {%s divideWithOpacityStr %}")
+    return ac
+}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+// Drop Shadow
+{% for _,kv := range cfg.DropShadow.SortedKV() -%}
+func (ac *AtomicClass) DropShadow{%s atomicName(kv.Key) %}{%s atomicName(kv.Value)%}() *AtomicClass {
+    ac.upsertClass("drop-shadow", "{%s kv.Key %}", "filter: drop-shadow({%s kv.Value %})")
+    return ac
+}
+{% endfor %}
+
+// Fill
+{% for _,kv := range cfg.Fill.SortedKV() -%}
+func (ac *AtomicClass) Fill{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("fill", "{%s kv.Key %}", "fill: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Flex Basis
+{% for _,kv := range cfg.Flex.Basis.SortedKV() -%}
+func (ac *AtomicClass) FlexBasis{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("flex-basis", "{%s kv.Key %}", "flex-basis: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Flex Direction
+{% for _,kv := range cfg.Flex.Direction.SortedKV() -%}
+func (ac *AtomicClass) FlexDirection{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("flex", "{%s kv.Key %}", "flex-direction: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Flex Wrap
+{% for _,kv := range cfg.Flex.Wrap.SortedKV() -%}
+func (ac *AtomicClass) FlexWrap{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("flex-wrap", "{%s kv.Key %}", "flex-wrap: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Flex
+{% for _,kv := range cfg.Flex.Value.SortedKV() -%}
+func (ac *AtomicClass) Flex{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("flex", "{%s kv.Key %}", "flex: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+
+// Flex Grow
+{% for _,kv := range cfg.Flex.Grow.SortedKV() -%}
+func (ac *AtomicClass) FlexGrow{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("flex-grow", "{%s kv.Key %}", "flex-grow: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Flex Shrink
+{% for _,kv := range cfg.Flex.Shrink.SortedKV() -%}
+func (ac *AtomicClass) FlexShrink{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("flex-shrink", "{%s kv.Key %}", "flex-shrink: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Fonts
+// Font Family
+{% for _,kv := range cfg.Font.Family.SortedKV() -%}
+func (ac *AtomicClass) Font{%s atomicName(kv.Key) %}{%s atomicName(kv.Value) %}() *AtomicClass {
+    ac.upsertClass("font", "{%s kv.Key %}", "font-family: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Font Size
+{% for k,size := range cfg.Font.Size -%}
+func (ac *AtomicClass) Text{%s atomicName(k) %}() *AtomicClass {
+    ac.upsertClass("text", "{%s k %}",
+        "font-size: {%s size.Value %}",
+        "line-height: {%s size.LineHeight %}",
+    )
+    return ac
+}
+{% endfor %}
+
+// Font Smoothing
+{% for _,kv := range cfg.Font.Smoothing.SortedKV() -%}
+func (ac *AtomicClass) FontSmoothing{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("antialiased", "{%s kv.Key %}", "font-smoothing: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Font Style
+{% for _,kv := range cfg.Font.Style.SortedKV() -%}
+func (ac *AtomicClass) FontStyle{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("font", "{%s kv.Key %}", "font-style: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Font Weight
+{% for _,kv := range cfg.Font.Weight.SortedKV() -%}
+func (ac *AtomicClass) Font{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("font", "{%s kv.Key %}", "font-weight: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Font Variant Numeric
+{% for _,kv := range cfg.Font.VariantNumeric.SortedKV() -%}
+func (ac *AtomicClass) FontVariantNumeric{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("font-variant-numeric", "{%s kv.Key %}", "font-variant-numeric: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+
+// Letter Spacing
+{% for _,kv := range cfg.LetterSpacing.SortedKV() -%}
+func (ac *AtomicClass) Tracking{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("tracking", "{%s kv.Key %}", "letter-spacing: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Line Height
+{% for _,kv := range cfg.LineHeight.SortedKV() -%}
+func (ac *AtomicClass) Leading{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("leading", "{%s kv.Key %}", "line-height: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// List Style Type
+{% for _,kv := range cfg.ListStyleType.SortedKV() -%}
+func (ac *AtomicClass) ListStyle{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("list", "{%s kv.Key %}", "list-style-type: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// List Style Position
+{% for _,kv := range cfg.ListStylePosition.SortedKV() -%}
+func (ac *AtomicClass) ListStyle{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("list", "{%s kv.Key %}", "list-style-position: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Text Align
+{% for _,kv := range cfg.Text.Align.SortedKV() -%}
+func (ac *AtomicClass) Text{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("text", "{%s kv.Key %}", "text-align: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Text Color
+{% for _,kv := range cfg.Text.Color.SortedKV() -%}
+{%- code
+    textColor,err := csscolorparser.Parse(kv.Value)
+    text := kv.Value
+    isColor := err == nil
+    if err == nil {
+        text = textColor.HexString()
+    }
+-%}
+func (ac *AtomicClass) Text{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("text", "{%s kv.Key %}", "color: {%s text %}")
+    return ac
+}
+
+{% if isColor %}
+
+// Text Opacity
+{% for _,opacityKV := range cfg.Text.Opacity.SortedKV() -%}
+{%- code
+    opacity,err := strconv.ParseFloat(opacityKV.Value, 64)
+    if err != nil {
+        log.Printf("%+v XXX %v", opacityKV,err)
+        continue
+    }
+    textWithOpacity := textColor
+    textWithOpacity.A = opacity
+    textWithOpacityStr := textWithOpacity.HexString()
+-%}
+func (ac *AtomicClass) Text{%s atomicName(kv.Key) %}_{%s atomicName(opacityKV.Key)%}() *AtomicClass {
+    ac.upsertClass("text","{%s kv.Key %}/{%s opacityKV.Key %}", "color: {%s textWithOpacityStr %}")
+    return ac
+}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+// Text Decoration
+{% for _,kv := range cfg.Text.Decoration.SortedKV() -%}
+func (ac *AtomicClass) Text{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("text", "{%s kv.Key %}", "text-decoration: {%s kv.Value %}")
+    return ac
+}
+{% endfor %}
+
+// Text Decoration Color
+{% for _,kv := range cfg.Text.DecorationColor.SortedKV() -%}
+{%- code
+    textDecorationColor,err := csscolorparser.Parse(kv.Value)
+    text := kv.Value
+    isColor := err == nil
+    if err == nil {
+        text = textDecorationColor.HexString()
+    }
+-%}
+func (ac *AtomicClass) Decoration{%s atomicName(kv.Key) %}() *AtomicClass {
+    ac.upsertClass("decoration", "{%s kv.Key %}", "text-decoration-color: {%s text %}")
+    return ac
+}
+
+{% if isColor %}
+// Text Decoration Opacity
+{% for _,opacityKV := range cfg.Text.Opacity.SortedKV() -%}
+{%- code
+    opacity,err := strconv.ParseFloat(opacityKV.Value, 64)
+    if err != nil {
+        log.Printf("%+v XXX %v", opacityKV,err)
+        continue
+    }
+    textDecorationColorWithOpacity := textDecorationColor
+    textDecorationColorWithOpacity.A = opacity
+    textDecorationColorWithOpacityStr := textDecorationColorWithOpacity.HexString()
+-%}
+func (ac *AtomicClass) Decoration{%s atomicName(kv.Key) %}_{%s atomicName(opacityKV.Key)%}() *AtomicClass {
+    ac.upsertClass("decoration","{%s kv.Key %}/{%s opacityKV.Key %}", "color: {%s textDecorationColorWithOpacityStr %}")
+    return ac
+}
+{% endfor %}
+{% endif %}
+{% endfor %}
+
+{%- endfunc -%}

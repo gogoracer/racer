@@ -7,16 +7,20 @@ import (
 	"log"
 	"path/filepath"
 	"strings"
+	"time"
 
-	"github.com/gogoracer/racer/pkg/goggles/gen"
+	gogglesgen "github.com/gogoracer/racer/pkg/goggles/gen"
+	"github.com/gogoracer/racer/pkg/tailpipe"
 	"golang.org/x/sync/errgroup"
 )
 
 func main() {
+	start := time.Now()
 	ctx := context.Background()
 	if err := run(ctx); err != nil {
 		log.Fatal(err)
 	}
+	log.Printf("done in %s", time.Since(start))
 }
 
 func run(ctx context.Context) error {
@@ -26,16 +30,15 @@ func run(ctx context.Context) error {
 	}
 
 	genTmpDir := filepath.Join(racerDir, "gentmp")
-	gogglesPath := filepath.Join(racerDir, "pkg", "goggles")
 
 	eg := errgroup.Group{}
 
-	// eg.Go(func() error {
-	// 	return gen.GenerateElements(ctx, genTmpDir, gogglesPath)
-	// })
+	eg.Go(func() error {
+		return genGoggles(ctx, racerDir, genTmpDir)
+	})
 
 	eg.Go(func() error {
-		return gen.GenerateIconify(ctx, genTmpDir, gogglesPath)
+		return genTailpipe(ctx, racerDir, genTmpDir)
 	})
 
 	if err := eg.Wait(); err != nil {
@@ -43,4 +46,24 @@ func run(ctx context.Context) error {
 	}
 
 	return nil
+}
+
+func genGoggles(ctx context.Context, racerDir, genTmpDir string) error {
+	eg := errgroup.Group{}
+	gogglesPath := filepath.Join(racerDir, "pkg", "goggles")
+
+	// eg.Go(func() error {
+	// 	return gogglesgen.GenerateElements(ctx, genTmpDir, gogglesPath)
+	// })
+
+	eg.Go(func() error {
+		return gogglesgen.GenerateIconify(ctx, genTmpDir, gogglesPath)
+	})
+	return eg.Wait()
+}
+
+func genTailpipe(ctx context.Context, racerDir, genTmpDir string) error {
+	cfg := tailpipe.DefaultTailPipeConfig()
+	tailpipePath := filepath.Join(racerDir, "pkg", "tailpipe")
+	return tailpipe.Generate(ctx, genTmpDir, tailpipePath, cfg)
 }
