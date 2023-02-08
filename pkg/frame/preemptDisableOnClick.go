@@ -1,8 +1,9 @@
-package parts
+package frame
 
 import (
 	"context"
 	_ "embed"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_html"
 
 	"github.com/gogoracer/racer/pkg/engine"
 )
@@ -25,7 +26,7 @@ func PreemptDisableOn(eb *engine.EventBinding) *engine.ElementGroup {
 	eb.Handler = func(ctx context.Context, e engine.Event) {
 		// Update the Browser DOM with what we've done client first
 		if sourceAttr.page != nil {
-			if browserTag := sourceAttr.page.GetBrowserNodeByID(e.Binding.Component.GetID()); browserTag != nil {
+			if browserTag := sourceAttr.page.GetPage().GetBrowserNodeByID(e.Binding.Component.GetID()); browserTag != nil {
 				browserTag.Add(engine.Attrs{"disabled": ""})
 			}
 		}
@@ -49,21 +50,22 @@ func PreemptDisableOn(eb *engine.EventBinding) *engine.ElementGroup {
 type PreemptDisableAttribute struct {
 	*engine.Attribute
 
-	page     *engine.Page
+	page     *Page
 	rendered bool
 }
 
-func (a *PreemptDisableAttribute) Initialize(page *engine.Page) {
+func (a *PreemptDisableAttribute) Initialize(page engine.Pager) {
 	if a.rendered {
 		return
 	}
 
-	a.page = page
-	page.DOM().Head().Add(engine.NewTag("script", engine.HTML(PreemptDisableOnClickJavaScript)))
+	a.page = page.(*Page)
+	a.page.DOM().Head().Element(SCRIPT().HTML(string(PreemptDisableOnClickJavaScript)))
 }
 
-func (a *PreemptDisableAttribute) InitializeSSR(page *engine.Page) {
+func (a *PreemptDisableAttribute) InitializeSSR(pager engine.Pager) {
 	a.rendered = true
-	a.page = page
-	page.DOM().Head().Add(engine.NewTag("script", engine.HTML(PreemptDisableOnClickJavaScript)))
+
+	a.page = pager.(*Page)
+	a.page.DOM().Head().Element(SCRIPT().HTML(string(PreemptDisableOnClickJavaScript)))
 }

@@ -8,12 +8,11 @@ import (
 
 	"github.com/gorilla/websocket"
 	"github.com/rs/zerolog"
-	"github.com/vmihailenco/msgpack/v5"
 )
 
-type PageFunc func() *Page
+type PageFunc func() Pager
 
-func NewPageServer(pf func() *Page) (*PageServer, error) {
+func NewPageServer(pf func() Pager) (*PageServer, error) {
 	store, err := NewPageSessionStore()
 	if err != nil {
 		return nil, fmt.Errorf("failed to create page session store: %w", err)
@@ -42,7 +41,7 @@ type PageServer struct {
 	Sessions *PageSessionStore
 	Upgrader websocket.Upgrader
 
-	pageFunc func() *Page
+	pageFunc func() Pager
 	logger   zerolog.Logger
 }
 
@@ -51,7 +50,7 @@ func (s *PageServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	sessID := r.URL.Query().Get("hlive")
 
 	if sessID == "" {
-		s.pageFunc().ServeHTTP(w, r)
+		s.pageFunc().GetPage().ServeHTTP(w, r)
 
 		return
 	}
@@ -110,26 +109,27 @@ func (s *PageServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	hhash := r.URL.Query().Get("hhash")
+	// TODO: move to frame?
+	//hhash := r.URL.Query().Get("hhash")
 
-	s.logger = sess.GetPage().logger
-	s.logger.Debug().Str("sessionID", sessID).Str("hash", hhash).Msg("ws start")
+	//s.logger = sess.GetPage().logger
+	//s.logger.Debug().Str("sessionID", sessID).Str("hash", hhash).Msg("ws start")
 
-	if sess.GetPage().cache != nil && hhash != "" && sessID == "1" {
-		val, hit := sess.GetPage().cache.Get(hhash)
-
-		b, ok := val.([]byte)
-		if hit && ok {
-			s.logger.Debug().Bool("hit", hit).Str("hhash", hhash).Int("size", len(b)/1024).
-				Msg("cache get")
-			newTree := G()
-			if err := msgpack.Unmarshal(b, newTree); err != nil {
-				s.logger.Err(err).Msg("ServeHTTP: msgpack.Unmarshal")
-			} else {
-				sess.GetPage().domBrowser = newTree
-			}
-		}
-	}
+	//if sess.GetPage().GetPage().GetCache() != nil && hhash != "" && sessID == "1" {
+	//	val, hit := sess.GetPage().GetCache().Get(hhash)
+	//
+	//	b, ok := val.([]byte)
+	//	if hit && ok {
+	//		s.logger.Debug().Bool("hit", hit).Str("hhash", hhash).Int("size", len(b)/1024).
+	//			Msg("cache get")
+	//		newTree := G()
+	//		if err := msgpack.Unmarshal(b, newTree); err != nil {
+	//			s.logger.Err(err).Msg("ServeHTTP: msgpack.Unmarshal")
+	//		} else {
+	//			sess.GetPage().SetDOMBrowser(newTree)
+	//		}
+	//	}
+	//}
 
 	sess.muSess.Lock()
 
@@ -150,8 +150,9 @@ func (s *PageServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	go sess.writePump()
 	go sess.readPump()
 
-	if err := sess.GetPage().ServeWS(sess.GetContextPage(), sess.GetID(), sess.Send, sess.Receive); err != nil {
-		sess.GetPage().logger.Err(err).Msg("ws serve")
+	if err := sess.GetPage().GetPage().ServeWS(sess.GetContextPage(), sess.GetID(), sess.Send, sess.Receive); err != nil {
+		// TODO
+		//sess.GetPage().logger.Err(err).Msg("ws serve")
 		w.WriteHeader(http.StatusInternalServerError)
 	}
 

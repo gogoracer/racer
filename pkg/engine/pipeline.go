@@ -135,6 +135,28 @@ func (p *Pipeline) AddBefore(processorKey string, processors ...*PipelineProcess
 	p.Add(newProcessors...)
 }
 
+func (p *Pipeline) Replace(processorKey string, processors ...*PipelineProcessor) {
+	var newProcessors []*PipelineProcessor
+
+	var hit bool
+
+	for i := 0; i < len(p.processors); i++ {
+		if p.processors[i].Key == processorKey {
+			hit = true
+			newProcessors = append(newProcessors, processors...)
+		} else {
+			newProcessors = append(newProcessors, p.processors[i])
+		}
+	}
+
+	if !hit {
+		newProcessors = append(newProcessors, processors...)
+	}
+
+	p.RemoveAll()
+	p.Add(newProcessors...)
+}
+
 func (p *Pipeline) onSimpleNode(ctx context.Context, w io.Writer, node any) (any, error) {
 	for _, processor := range p.onSimpleNodeCache {
 		if processor.Disabled {
@@ -294,6 +316,9 @@ func (p *Pipeline) walk(ctx context.Context, w io.Writer, node any) (any, error)
 		*string, *int, *int8, *int16, *int32, *int64, *uint, *uint8, *uint16, *uint32, *uint64, *float32, *float64:
 
 		return p.onSimpleNode(ctx, w, node)
+	// GetComponenter
+	case GetComponenter:
+		return p.walk(ctx, w, v.GetComponent())
 	// All Taggers wil be converted to a Tag
 	case Tagger:
 		if v.IsNil() {

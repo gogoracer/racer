@@ -25,6 +25,10 @@ type Tagger interface {
 	IsNil() bool
 }
 
+type GetComponenter interface {
+	GetComponent() Componenter
+}
+
 // UniqueTagger is a Tagger that can be uniquely identified in a DOM Tree.
 type UniqueTagger interface {
 	Tagger
@@ -345,12 +349,9 @@ func addElementToTag(t *Tag, v any) {
 	switch v := v.(type) {
 	// Common error
 	case *EventBinding:
-		_ = "TODO: DELANEY deal with logging"
-		// LoggerDev.Error().Str("callers", CallerStackStr()).Msg(
-		// 	"You've added an event binding to a Tag. You can only add these to a Component. " +
-		// 		"You can fix this by replacing l.T(\"div\"...) with l.C(\"div\"...)." +
-		// 		"You can also turn any Tag into a Component by using the Wrap function.")
-
+		panic("You've added an event binding to a Tag. You can only add these to a Component. " +
+			"You can fix this by replacing l.T(\"div\"...) with l.C(\"div\"...)." +
+			"You can also turn any Tag into a Component by using the Wrap function.")
 		return
 	// Groups
 	case []any:

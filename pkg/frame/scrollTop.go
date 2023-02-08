@@ -1,10 +1,11 @@
-package parts
+package frame
 
 import (
 	_ "embed"
 	"strconv"
 
 	"github.com/gogoracer/racer/pkg/engine"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_html"
 )
 
 const ScrollTopAttributeName = "data-scrollTop"
@@ -30,15 +31,15 @@ type ScrollTopAttribute struct {
 	rendered bool
 }
 
-func (a *ScrollTopAttribute) Initialize(page *engine.Page) {
+func (a *ScrollTopAttribute) Initialize(page engine.Pager) {
 	if a.rendered {
 		return
 	}
 
-	page.DOM().Head().Add(engine.NewTag("script", engine.HTML(ScrollTopJavaScript)))
+	page.(*Page).DOM().Head().Element(SCRIPT().HTML(string(ScrollTopJavaScript)))
 }
 
-func (a *ScrollTopAttribute) InitializeSSR(page *engine.Page) {
+func (a *ScrollTopAttribute) InitializeSSR(page engine.Pager) {
 	a.rendered = true
-	page.DOM().Head().Add(engine.NewTag("script", engine.HTML(ScrollTopJavaScript)))
+	page.(*Page).DOM().Head().Element(SCRIPT().HTML(string(ScrollTopJavaScript)))
 }

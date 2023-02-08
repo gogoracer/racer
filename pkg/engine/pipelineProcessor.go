@@ -76,10 +76,10 @@ func PipelineProcessorMount() *PipelineProcessor {
 	return pp
 }
 
-func PipelineProcessorUnmount(page *Page) *PipelineProcessor {
+func PipelineProcessorUnmount(page Pager) *PipelineProcessor {
 	cache := hashmap.New[string, Unmounter]()
 
-	page.hookClose = append(page.hookClose, func(ctx context.Context, page *Page) {
+	page.GetPage().hookClose = append(page.GetPage().hookClose, func(ctx context.Context, page *Page) {
 		cache.Range(func(key string, value Unmounter) bool {
 			if value != nil {
 				value.Unmount(ctx)
@@ -223,7 +223,7 @@ func PipelineProcessorConvertToString() *PipelineProcessor {
 	return pp
 }
 
-func PipelineProcessorAttributePluginMount(page *Page) *PipelineProcessor {
+func PipelineProcessorAttributePluginMount(page Pager) *PipelineProcessor {
 	cache := hashmap.New[string, *struct{}]()
 
 	pp := NewPipelineProcessor(PipelineProcessorKeyAttributePluginMount)
@@ -244,7 +244,7 @@ func PipelineProcessorAttributePluginMount(page *Page) *PipelineProcessor {
 	return pp
 }
 
-func PipelineProcessorAttributePluginMountSSR(page *Page) *PipelineProcessor {
+func PipelineProcessorAttributePluginMountSSR(page Pager) *PipelineProcessor {
 	cache := hashmap.New[string, *struct{}]()
 
 	pp := NewPipelineProcessor(PipelineProcessorKeyAttributePluginMount)

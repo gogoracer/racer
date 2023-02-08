@@ -1,11 +1,10 @@
-package parts
+package engine
 
 import (
 	"context"
 	"io"
 	"sync"
 
-	"github.com/gogoracer/racer/pkg/engine"
 	"github.com/teris-io/shortid"
 )
 
@@ -112,9 +111,7 @@ func (ps *PubSub) SubscribeFunc(subFunc func(message QueueMessage), topics ...st
 
 func (ps *PubSub) UnsubscribeWait(sub QueueSubscriber, topics ...string) {
 	if len(topics) == 0 {
-
-		// TODO: fix
-		// engine.LoggerDev.Warn().Str("callers", engine.CallerStackStr()).Msg("no topics passed")
+		panic("no topics passed")
 	}
 
 	if sub == nil {
@@ -144,8 +141,7 @@ func (ps *PubSub) UnsubscribeWait(sub QueueSubscriber, topics ...string) {
 
 func (ps *PubSub) Unsubscribe(sub QueueSubscriber, topics ...string) {
 	if len(topics) == 0 {
-		// TODO: fix
-		// engine.LoggerDev.Warn().Str("callers", engine.CallerStackStr()).Msg("no topics passed")
+		panic("no topics passed")
 	}
 
 	if sub == nil {
@@ -205,10 +201,10 @@ func NewSub(onMessageFn func(message QueueMessage)) SubscribeFunc {
 
 const PipelineProcessorKeyPubSubMount = "hlivekit_ps_mount"
 
-func (a *PubSubAttribute) PipelineProcessorPubSub() *engine.PipelineProcessor {
-	pp := engine.NewPipelineProcessor(PipelineProcessorKeyPubSubMount)
+func (a *PubSubAttribute) PipelineProcessorPubSub() *PipelineProcessor {
+	pp := NewPipelineProcessor(PipelineProcessorKeyPubSubMount)
 
-	pp.BeforeTagger = func(ctx context.Context, w io.Writer, tag engine.Tagger) (engine.Tagger, error) {
+	pp.BeforeTagger = func(ctx context.Context, w io.Writer, tag Tagger) (Tagger, error) {
 		if comp, ok := tag.(PubSubMounter); ok {
 			a.mu.Lock()
 			defer a.mu.Unlock()
@@ -223,7 +219,7 @@ func (a *PubSubAttribute) PipelineProcessorPubSub() *engine.PipelineProcessor {
 			}
 
 			// A way to remove the key when you delete a Component
-			if comp, ok := tag.(engine.Teardowner); ok {
+			if comp, ok := tag.(Teardowner); ok {
 				comp.AddTeardown(func() {
 					a.mu.Lock()
 					delete(a.mountedMap, comp.GetID())
@@ -235,7 +231,7 @@ func (a *PubSubAttribute) PipelineProcessorPubSub() *engine.PipelineProcessor {
 		return tag, nil
 	}
 
-	pp.AfterWalk = func(ctx context.Context, _ io.Writer, node *engine.NodeGroup) (*engine.NodeGroup, error) {
+	pp.AfterWalk = func(ctx context.Context, _ io.Writer, node *NodeGroup) (*NodeGroup, error) {
 		a.mu.Lock()
 		defer a.mu.Unlock()
 
@@ -257,9 +253,9 @@ func (a *PubSubAttribute) PipelineProcessorPubSub() *engine.PipelineProcessor {
 
 const PubSubAttributeName = "data-hlive-pubsub"
 
-func InstallPubSub(pubSub *PubSub) engine.Attributer {
+func InstallPubSub(pubSub *PubSub) Attributer {
 	attr := &PubSubAttribute{
-		Attribute:  engine.NewAttribute(PubSubAttributeName, ""),
+		Attribute:  NewAttribute(PubSubAttributeName, ""),
 		pubSub:     pubSub,
 		mountedMap: map[string]struct{}{},
 	}
@@ -268,7 +264,7 @@ func InstallPubSub(pubSub *PubSub) engine.Attributer {
 }
 
 type PubSubAttribute struct {
-	*engine.Attribute
+	*Attribute
 
 	pubSub *PubSub
 	// Will memory leak is you don't use a Teardowner when deleting Components
@@ -278,7 +274,7 @@ type PubSubAttribute struct {
 	rendered        bool
 }
 
-func (a *PubSubAttribute) Initialize(page *engine.Page) {
+func (a *PubSubAttribute) Initialize(page *Page) {
 	if a.rendered {
 		return
 	}
@@ -286,17 +282,17 @@ func (a *PubSubAttribute) Initialize(page *engine.Page) {
 	page.PipelineDiff().Add(a.PipelineProcessorPubSub())
 }
 
-func (a *PubSubAttribute) InitializeSSR(page *engine.Page) {
+func (a *PubSubAttribute) InitializeSSR(page *Page) {
 	a.rendered = true
 	page.PipelineDiff().Add(a.PipelineProcessorPubSub())
 }
 
 // ComponentPubSub add PubSub to ComponentMountable
 type ComponentPubSub struct {
-	*engine.ComponentMountable
+	*ComponentMountable
 
-	mountPubSubFunc      *engine.LockBox[func(ctx context.Context, pubSub *PubSub)]
-	afterMountPubSubFunc *engine.LockBox[func(ctx context.Context, pubSub *PubSub)]
+	mountPubSubFunc      *LockBox[func(ctx context.Context, pubSub *PubSub)]
+	afterMountPubSubFunc *LockBox[func(ctx context.Context, pubSub *PubSub)]
 }
 
 // CPS is a shortcut for NewComponentPubSub
@@ -306,9 +302,9 @@ func CPS(name string, elements ...any) *ComponentPubSub {
 
 func NewComponentPubSub(name string, elements ...any) *ComponentPubSub {
 	return &ComponentPubSub{
-		ComponentMountable:   engine.NewComponentMountable(name, elements...),
-		mountPubSubFunc:      engine.NewLockBox[func(ctx context.Context, pubSub *PubSub)](nil),
-		afterMountPubSubFunc: engine.NewLockBox[func(ctx context.Context, pubSub *PubSub)](nil),
+		ComponentMountable:   NewComponentMountable(name, elements...),
+		mountPubSubFunc:      NewLockBox[func(ctx context.Context, pubSub *PubSub)](nil),
+		afterMountPubSubFunc: NewLockBox[func(ctx context.Context, pubSub *PubSub)](nil),
 	}
 }
 

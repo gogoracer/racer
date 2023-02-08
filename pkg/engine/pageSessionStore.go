@@ -119,7 +119,7 @@ func (pss *PageSessionStore) GarbageCollection() {
 
 				if now.Sub(la) > pss.DisconnectTimeout {
 					if sess.page != nil {
-						sess.page.Close(sess.ctxPage)
+						sess.page.GetPage().Close(sess.ctxPage)
 					}
 
 					if sess.ctxInitialCancel != nil {
@@ -143,7 +143,7 @@ func (pss *PageSessionStore) Delete(id uint64) {
 	}
 
 	if ps.GetPage() != nil {
-		ps.GetPage().Close(ps.GetContextPage())
+		ps.GetPage().GetPage().Close(ps.GetContextPage())
 	}
 
 	pss.mapDelete(id)

@@ -11,7 +11,6 @@ import (
 
 	"github.com/cornelk/hashmap"
 	"github.com/gogoracer/racer/pkg/gas"
-	"github.com/gogoracer/racer/pkg/headlamp"
 	"github.com/rs/zerolog"
 	"github.com/valyala/bytebufferpool"
 )
@@ -20,16 +19,36 @@ const EventBindingsCacheDefault = 10 // Default for a small page
 
 type PageOption func(*Page)
 
-func PageOptionCache(cache Cache) func(*Page) {
-	return func(p *Page) {
-		p.cache = cache
-	}
-}
-
 func PageOptionEventBindingCache(m *hashmap.Map[string, *EventBinding]) func(*Page) {
 	return func(page *Page) {
 		page.eventBindings = m
 	}
+}
+
+func PageOptionDOMFunc(domFunc func() *NodeGroup) func(*Page) {
+	return func(p *Page) {
+		p.domFunc = domFunc
+	}
+}
+
+func PageOptionRenderer(renderer *Renderer) func(*Page) {
+	return func(p *Page) {
+		p.renderer = renderer
+	}
+}
+
+// Cache allow cache adapters to be used in HLive
+type Cache interface {
+	Get(key any) (value any, hit bool)
+	Set(key any, value any)
+}
+
+type Pager interface {
+	GetPage() *Page
+}
+
+func (p *Page) GetPage() *Page {
+	return p
 }
 
 type Page struct {
@@ -43,8 +62,8 @@ type Page struct {
 	pipelineSSR *Pipeline
 	// Internal debug logger
 	logger zerolog.Logger
-	// Virtual DOM
-	dom DOM
+	// TODO: docs
+	domFunc func() *NodeGroup
 	// What we think is the browser DOM is
 	domBrowser any
 	// Lock the page for writes
@@ -58,8 +77,7 @@ type Page struct {
 	send chan<- *gas.ToClient
 	// Channel of inbound messages.
 	receive <-chan *gas.FromClient
-	// cache async safe
-	cache Cache
+
 	//
 	// Hooks
 	//
@@ -78,27 +96,12 @@ type Page struct {
 	hookUnmount []func(context.Context, *Page)
 }
 
-var frontendShim *Tag
-
-func headlampShim() *Tag {
-	if frontendShim == nil {
-		dev, err := headlamp.DistFS.ReadFile("dist/gogoracer-headlamp-lib-dev.es.js")
-		if err != nil {
-			panic(err)
-		}
-
-		frontendShim = NewTag(
-			"script",
-			Attrs{"type": "module"},
-			HTML(dev),
-		)
-	}
-	return frontendShim
-}
-
 func NewPage(options ...PageOption) *Page {
 	p := &Page{
-		dom:    NewDOM(),
+		domFunc: func() *NodeGroup {
+			panic("DOM function not set")
+		},
+		//dom:    frame.NewDOM(),
 		logger: zerolog.Nop(),
 	}
 
@@ -116,7 +119,6 @@ func NewPage(options ...PageOption) *Page {
 
 	if p.differ == nil {
 		p.differ = NewDiffer()
-		p.dom.head.Add(headlampShim())
 	}
 
 	// Differ Pipeline
@@ -137,12 +139,7 @@ func NewPage(options ...PageOption) *Page {
 		)
 	}
 
-	if p.cache != nil {
-		p.pipelineSSR.Add(PipelineProcessorRenderHashAndCache(p.logger, p.renderer, p.cache))
-		p.DOM().HTML().Add(Attrs{PageHashAttr: PageHashAttrTmpl})
-	} else {
-		p.pipelineSSR.Add(PipelineProcessorRenderer(p.renderer))
-	}
+	p.pipelineSSR.Add(PipelineProcessorRenderer(p.renderer))
 
 	return p
 }
@@ -530,7 +527,7 @@ func (p *Page) GetNodes() *NodeGroup {
 }
 
 func (p *Page) getNodes() *NodeGroup {
-	return G(p.dom.docType, p.dom.html)
+	return p.domFunc()
 }
 
 // Gets a lock as it acts like a public function
@@ -632,10 +629,6 @@ func (p *Page) findComponent(id string, tree any) *Tag {
 	}
 
 	return nil
-}
-
-func (p *Page) DOM() DOM {
-	return p.dom
 }
 
 func (p *Page) PipelineDiff() *Pipeline {
