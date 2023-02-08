@@ -10,6 +10,11 @@ import (
 	"github.com/go-rod/rod"
 	"github.com/go-rod/rod/lib/launcher"
 	"github.com/gogoracer/racer/pkg/engine"
+	"github.com/gogoracer/racer/pkg/frame"
+	"github.com/gogoracer/racer/pkg/goggles/iconify/academicons"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_attribute"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_event"
+	. "github.com/gogoracer/racer/pkg/goggles/racer_html"
 
 	"github.com/rs/zerolog/log"
 )
@@ -17,9 +22,9 @@ import (
 var loadURLOnStart = "/step5"
 
 // Step 1
-func homeStep1() *engine.Page {
-	page := engine.NewPage()
-	page.DOM().Body().Add("Hello, world!!!!!")
+func homeStep1() engine.Pager {
+	page := frame.NewPage()
+	page.DOM().Body().Val().Str("Hello, world!!!!!")
 
 	//  Ignore this, well explain it later
 	addStageButtons(page, 1)
@@ -28,19 +33,24 @@ func homeStep1() *engine.Page {
 }
 
 // Step 2
-func homeStep2() *engine.Page {
+func homeStep2() engine.Pager {
 	var message string
 
-	input := engine.NewComponent("input")
-	input.Add(engine.Attrs{"type": "text"})
-	input.Add(engine.On("keyup", func(ctx context.Context, e engine.Event) {
-		message = e.Value
-	}))
+	page := frame.NewPage()
 
-	page := engine.NewPage()
-	page.DOM().Body().Add(engine.NewTag("div", input))
-	page.DOM().Body().Add(engine.NewTag("hr"))
-	page.DOM().Body().Add("Hello, ", &message)
+	page.DOM().Body(
+		DIV(
+			INPUT().
+				Attr(TYPE("text")).
+				On(KEYUP(func(ctx context.Context, e engine.Event) {
+					message = e.Value
+				})),
+		),
+		HR(),
+		DIV().
+			Val().Str("Hello, ").
+			Val().BindStr(&message),
+	)
 
 	// Ignore this, well explain it later
 	addStageButtons(page, 2)
@@ -48,127 +58,74 @@ func homeStep2() *engine.Page {
 	return page
 }
 
-// Step 2.1
-func homeStep3() *engine.Page {
-	var message string
+// Add styling
+func homeStep3() engine.Pager {
+	message := "abc"
 
-	page := engine.NewPage()
-	page.DOM().Body().Add(
-		engine.NewTag(
-			"div",
-			engine.NewComponent("input",
-				engine.Attrs{"type": "text"},
-				engine.On("keyup", func(_ context.Context, e engine.Event) {
-					message = e.Value
-				}),
-			)),
-		engine.NewTag("hr"),
-		"Hello!!, ", &message,
+	start := time.Now()
+
+	page := frame.NewPage()
+	dom := page.DOM()
+
+	dom.Head(
+		SCRIPT().Attr(
+			SRC("https://cdn.tailwindcss.com"),
+		),
+		SCRIPT().Attr(
+			DEFER(true),
+		).Val().Str(`tailwind.config = {
+			theme: {
+				extend: {
+				colors: {
+					clifford: "#da373d",
+				}
+				}
+			}
+		}`),
+		SCRIPT().Attr(
+			DEFER(true),
+			SRC("https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"),
+		),
 	)
 
-	// Ignore this, well explain it later
-	addStageButtons(page, 3)
+	dom.Body(
+		H1().Class("text-5xl font-bold text-clifford").Val().Str("HelloWold!!!"),
+		DIV(
+			INPUT().Attr(
+				TYPE("text"),
+				VALUE("message"),
+			).On(KEYUP(func(ctx context.Context, e engine.Event) {
+				message = e.Value
+			})),
+			// Custom("x-data", fmt.Sprintf("{message:%s}", message)).
+			// Custom("x-text", "message").
+			DIV(
+				SPAN().Val().Str("Hello, "),
+				SPAN().Val().BindStr(&message),
+				BUTTON().
+					Class("bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded").
+					Val().Str("Clear").
+					On(CLICK(func(ctx context.Context, e engine.Event) {
+						message = ""
+					})),
+			),
+			academicons.GoogleScholar(),
+		),
+	)
+
+	addStageButtons(page, 5)
+
+	page.DOM().Body().Class("bg-gray-200 min-h-screen w-full")
+
+	log.Info().Msgf("Page generated in %s", time.Since(start))
 
 	return page
 }
-
-// // Use the DSL
-// func homeStep4() *engine.Page {
-// 	message := "abc"
-
-// 	foo := INPUT().
-// 		Type("text").
-// 		Value("message").
-// 		Custom("x-data", fmt.Sprintf("{message:%s}", message)).
-// 		Custom("x-text", "message").
-// 		OnKeyup(func(ctx context.Context, e engine.Event) {
-// 			message = e.Value
-// 		})
-// 	page := NewPage().Body(
-// 		DIV(
-// 			foo,
-// 		),
-// 		HR(),
-// 		Text("Hello, "),
-// 		BoundText(&message),
-
-// 		BUTTON(Text("Clear")).
-// 			OnClick(func(ctx context.Context, e engine.Event) {
-// 				message = ""
-// 			}),
-// 	).GenerateVDOM()
-
-// 	addStageButtons(page, 4)
-
-// 	return page
-// }
-
-// Add styling
-// func homeStep5() *engine.Page {
-// 	message := "abc"
-
-// 	start := time.Now()
-
-// 	tailwindCustom := SCRIPT(Text(`
-// 	tailwind.config = {
-// 		theme: {
-// 		  extend: {
-// 			colors: {
-// 			  clifford: "#da373d",
-// 			}
-// 		  }
-// 		}
-// 	  }
-// 	`)).Defer("true")
-
-// 	page := NewPage().
-// 		Head(
-// 			SCRIPT().Src("https://cdn.tailwindcss.com"),
-// 			tailwindCustom,
-// 			SCRIPT().Defer("true").Src("https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"),
-// 		).
-// 		Body(
-// 			H1(Text(`HelloWold!!!`)).
-// 				Class("text-5xl font-bold text-clifford"),
-// 			DIV(
-// 				INPUT().
-// 					Type("text").
-// 					Value("message").
-// 					// Custom("x-data", fmt.Sprintf("{message:%s}", message)).
-// 					// Custom("x-text", "message").
-// 					OnKeyup(func(ctx context.Context, e engine.Event) {
-// 						message = e.Value
-// 					}),
-// 			),
-// 			DIV(
-// 				Text("Hello, "),
-// 				BoundText(&message),
-// 				BUTTON(Text("Clear")).
-// 					Class("bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded").
-// 					OnClick(func(ctx context.Context, e engine.Event) {
-// 						message = ""
-// 					}),
-// 				// academicons.GoogleScholar(),
-// 			).Class("flex gap-4"),
-// 		).GenerateVDOM()
-
-// 	addStageButtons(page, 5)
-
-// 	page.DOM().Body().Add(engine.Attrs{
-// 		"class": "bg-gray-200 min-h-screen w-full",
-// 	})
-
-// 	log.Info().Msgf("Page generated in %s", time.Since(start))
-
-// 	return page
-// }
 
 func main() {
 	http.Handle("/step1", engine.MustNewPageServer(homeStep1))
 	http.Handle("/step2", engine.MustNewPageServer(homeStep2))
 	http.Handle("/step3", engine.MustNewPageServer(homeStep3))
-	// http.Handle("/step4", engine.MustNewPageServer(homeStep4))
-	// http.Handle("/step5", engine.MustNewPageServer(homeStep5))
 	http.Handle("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/step1", http.StatusFound)
 	}))
@@ -245,27 +202,29 @@ func main() {
 
 }
 
-func addStageButtons(page *engine.Page, stage int) {
-	// const gotoFmt = "/step%d"
-	// buttonContainer := DIV().Class("flex gap-4")
+func addStageButtons(page *frame.Page, stage int) {
+	const gotoFmt = "/step%d"
+	buttonContainer := DIV().Class("flex gap-4")
 
-	// if stage > 1 {
-	// 	buttonContainer.Add(
-	// 		A(Text("Previous")).
-	// 			Href(fmt.Sprintf(gotoFmt, stage-1)).
-	// 			Class(btnClass),
-	// 	)
-	// }
+	if stage > 1 {
+		buttonContainer.Element(
+			HYPERLINK().Attr(
+				HREF(fmt.Sprintf(gotoFmt, stage-1)),
+				CLASS(btnClass),
+			).Val().Str("Previous"),
+		)
+	}
 
-	// if stage < 5 {
-	// 	buttonContainer.Add(
-	// 		A(Text("Next")).
-	// 			Href(fmt.Sprintf(gotoFmt, stage+1)).
-	// 			Class(btnClass),
-	// 	)
-	// }
+	if stage < 5 {
+		buttonContainer.Element(
+			HYPERLINK().Val().Str("Next").Attr(
+				HREF(fmt.Sprintf(gotoFmt, stage+1)),
+				CLASS(btnClass),
+			),
+		)
+	}
 
-	// page.DOM().Body().Add(buttonContainer.GenerateVDOM())
+	page.DOM().Body().Element(buttonContainer)
 }
 
 const btnClass = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"

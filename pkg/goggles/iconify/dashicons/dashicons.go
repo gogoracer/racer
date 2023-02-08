@@ -353,4149 +353,4497 @@ const (
 	youtubeInnerSVG                 = `<path fill="currentColor" d="M17.7 5.3c-.2-.7-.7-1.2-1.4-1.4c-2.1-.2-4.2-.4-6.3-.3c-2.1 0-4.2.1-6.3.3c-.6.2-1.2.8-1.4 1.4a37.08 37.08 0 0 0 0 9.4c.2.7.7 1.2 1.4 1.4c2.1.2 4.2.4 6.3.3c2.1 0 4.2-.1 6.3-.3c.7-.2 1.2-.7 1.4-1.4a37.08 37.08 0 0 0 0-9.4zM8 13V7l5.2 3L8 13z"/>`
 )
 
-var sharedIconAttrs = engine.Attrs{"width": "1em", "height": "1em"}
+var sharedIconAttrs = []engine.Attributer{
+	engine.NewAttribute("width", "1em"),
+	engine.NewAttribute("height", "1em"),
+}
 
-func AdminAppearance(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminAppearance(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminAppearanceInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminAppearanceInnerSVG).
+		Element(children...)
 }
 
-func AdminCollapse(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminCollapse(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminCollapseInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminCollapseInnerSVG).
+		Element(children...)
 }
 
-func AdminComments(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminComments(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminCommentsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminCommentsInnerSVG).
+		Element(children...)
 }
 
-func AdminCustomizer(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminCustomizer(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminCustomizerInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminCustomizerInnerSVG).
+		Element(children...)
 }
 
-func AdminGeneric(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminGeneric(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminGenericInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminGenericInnerSVG).
+		Element(children...)
 }
 
-func AdminHome(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminHome(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminHomeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminHomeInnerSVG).
+		Element(children...)
 }
 
-func AdminLinks(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminLinks(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminLinksInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminLinksInnerSVG).
+		Element(children...)
 }
 
-func AdminMedia(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminMedia(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminMediaInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminMediaInnerSVG).
+		Element(children...)
 }
 
-func AdminMultisite(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminMultisite(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminMultisiteInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminMultisiteInnerSVG).
+		Element(children...)
 }
 
-func AdminNetwork(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminNetwork(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminNetworkInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminNetworkInnerSVG).
+		Element(children...)
 }
 
-func AdminPage(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminPage(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminPageInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminPageInnerSVG).
+		Element(children...)
 }
 
-func AdminPlugins(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminPlugins(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminPluginsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminPluginsInnerSVG).
+		Element(children...)
 }
 
-func AdminPost(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminPost(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminPostInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminPostInnerSVG).
+		Element(children...)
 }
 
-func AdminSettings(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminSettings(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminSettingsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminSettingsInnerSVG).
+		Element(children...)
 }
 
-func AdminSite(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminSite(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminSiteInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminSiteInnerSVG).
+		Element(children...)
 }
 
-func AdminSiteAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminSiteAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminSiteAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminSiteAltInnerSVG).
+		Element(children...)
 }
 
-func AdminSiteAltThree(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminSiteAltThree(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminSiteAltThreeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminSiteAltThreeInnerSVG).
+		Element(children...)
 }
 
-func AdminSiteAltTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminSiteAltTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminSiteAltTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminSiteAltTwoInnerSVG).
+		Element(children...)
 }
 
-func AdminTools(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminTools(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminToolsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminToolsInnerSVG).
+		Element(children...)
 }
 
-func AdminUsers(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AdminUsers(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		adminUsersInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(adminUsersInnerSVG).
+		Element(children...)
 }
 
-func Airplane(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Airplane(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		airplaneInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(airplaneInnerSVG).
+		Element(children...)
 }
 
-func Album(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Album(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		albumInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(albumInnerSVG).
+		Element(children...)
 }
 
-func AlignCenter(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AlignCenter(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		alignCenterInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(alignCenterInnerSVG).
+		Element(children...)
 }
 
-func AlignFullWidth(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AlignFullWidth(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		alignFullWidthInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(alignFullWidthInnerSVG).
+		Element(children...)
 }
 
-func AlignLeft(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AlignLeft(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		alignLeftInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(alignLeftInnerSVG).
+		Element(children...)
 }
 
-func AlignNone(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AlignNone(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		alignNoneInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(alignNoneInnerSVG).
+		Element(children...)
 }
 
-func AlignPullLeft(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AlignPullLeft(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		alignPullLeftInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(alignPullLeftInnerSVG).
+		Element(children...)
 }
 
-func AlignPullRight(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AlignPullRight(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		alignPullRightInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(alignPullRightInnerSVG).
+		Element(children...)
 }
 
-func AlignRight(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AlignRight(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		alignRightInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(alignRightInnerSVG).
+		Element(children...)
 }
 
-func AlignWide(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func AlignWide(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		alignWideInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(alignWideInnerSVG).
+		Element(children...)
 }
 
-func Amazon(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Amazon(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		amazonInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(amazonInnerSVG).
+		Element(children...)
 }
 
-func Analytics(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Analytics(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		analyticsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(analyticsInnerSVG).
+		Element(children...)
 }
 
-func Archive(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Archive(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		archiveInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(archiveInnerSVG).
+		Element(children...)
 }
 
-func ArrowDown(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowDown(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowDownInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowDownInnerSVG).
+		Element(children...)
 }
 
-func ArrowDownAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowDownAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowDownAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowDownAltInnerSVG).
+		Element(children...)
 }
 
-func ArrowDownAltTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowDownAltTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowDownAltTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowDownAltTwoInnerSVG).
+		Element(children...)
 }
 
-func ArrowLeft(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowLeft(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowLeftInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowLeftInnerSVG).
+		Element(children...)
 }
 
-func ArrowLeftAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowLeftAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowLeftAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowLeftAltInnerSVG).
+		Element(children...)
 }
 
-func ArrowLeftAltTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowLeftAltTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowLeftAltTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowLeftAltTwoInnerSVG).
+		Element(children...)
 }
 
-func ArrowRight(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowRight(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowRightInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowRightInnerSVG).
+		Element(children...)
 }
 
-func ArrowRightAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowRightAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowRightAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowRightAltInnerSVG).
+		Element(children...)
 }
 
-func ArrowRightAltTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowRightAltTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowRightAltTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowRightAltTwoInnerSVG).
+		Element(children...)
 }
 
-func ArrowUp(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowUp(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowUpInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowUpInnerSVG).
+		Element(children...)
 }
 
-func ArrowUpAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowUpAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowUpAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowUpAltInnerSVG).
+		Element(children...)
 }
 
-func ArrowUpAltTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowUpAltTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowUpAltTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowUpAltTwoInnerSVG).
+		Element(children...)
 }
 
-func ArrowUpDuplicate(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ArrowUpDuplicate(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		arrowUpDuplicateInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(arrowUpDuplicateInnerSVG).
+		Element(children...)
 }
 
-func Art(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Art(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		artInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(artInnerSVG).
+		Element(children...)
 }
 
-func Awards(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Awards(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		awardsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(awardsInnerSVG).
+		Element(children...)
 }
 
-func Backup(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Backup(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		backupInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(backupInnerSVG).
+		Element(children...)
 }
 
-func Bank(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Bank(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		bankInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(bankInnerSVG).
+		Element(children...)
 }
 
-func Beer(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Beer(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		beerInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(beerInnerSVG).
+		Element(children...)
 }
 
-func Bell(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Bell(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		bellInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(bellInnerSVG).
+		Element(children...)
 }
 
-func BlockDefault(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BlockDefault(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		blockDefaultInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(blockDefaultInnerSVG).
+		Element(children...)
 }
 
-func Book(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Book(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		bookInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(bookInnerSVG).
+		Element(children...)
 }
 
-func BookAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BookAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		bookAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(bookAltInnerSVG).
+		Element(children...)
 }
 
-func BuddiconsActivity(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BuddiconsActivity(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buddiconsActivityInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buddiconsActivityInnerSVG).
+		Element(children...)
 }
 
-func BuddiconsBbpressLogo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BuddiconsBbpressLogo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buddiconsBbpressLogoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buddiconsBbpressLogoInnerSVG).
+		Element(children...)
 }
 
-func BuddiconsBuddypressLogo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BuddiconsBuddypressLogo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buddiconsBuddypressLogoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buddiconsBuddypressLogoInnerSVG).
+		Element(children...)
 }
 
-func BuddiconsCommunity(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BuddiconsCommunity(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buddiconsCommunityInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buddiconsCommunityInnerSVG).
+		Element(children...)
 }
 
-func BuddiconsForums(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BuddiconsForums(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buddiconsForumsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buddiconsForumsInnerSVG).
+		Element(children...)
 }
 
-func BuddiconsFriends(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BuddiconsFriends(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buddiconsFriendsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buddiconsFriendsInnerSVG).
+		Element(children...)
 }
 
-func BuddiconsGroups(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BuddiconsGroups(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buddiconsGroupsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buddiconsGroupsInnerSVG).
+		Element(children...)
 }
 
-func BuddiconsPm(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BuddiconsPm(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buddiconsPmInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buddiconsPmInnerSVG).
+		Element(children...)
 }
 
-func BuddiconsReplies(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BuddiconsReplies(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buddiconsRepliesInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buddiconsRepliesInnerSVG).
+		Element(children...)
 }
 
-func BuddiconsTopics(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BuddiconsTopics(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buddiconsTopicsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buddiconsTopicsInnerSVG).
+		Element(children...)
 }
 
-func BuddiconsTracking(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func BuddiconsTracking(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buddiconsTrackingInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buddiconsTrackingInnerSVG).
+		Element(children...)
 }
 
-func Building(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Building(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buildingInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buildingInnerSVG).
+		Element(children...)
 }
 
-func Businessman(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Businessman(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		businessmanInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(businessmanInnerSVG).
+		Element(children...)
 }
 
-func Businessperson(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Businessperson(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		businesspersonInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(businesspersonInnerSVG).
+		Element(children...)
 }
 
-func Businesswoman(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Businesswoman(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		businesswomanInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(businesswomanInnerSVG).
+		Element(children...)
 }
 
-func Button(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Button(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		buttonInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(buttonInnerSVG).
+		Element(children...)
 }
 
-func Calculator(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Calculator(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		calculatorInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(calculatorInnerSVG).
+		Element(children...)
 }
 
-func Calendar(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Calendar(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		calendarInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(calendarInnerSVG).
+		Element(children...)
 }
 
-func CalendarAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func CalendarAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		calendarAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(calendarAltInnerSVG).
+		Element(children...)
 }
 
-func Camera(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Camera(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		cameraInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(cameraInnerSVG).
+		Element(children...)
 }
 
-func CameraAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func CameraAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		cameraAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(cameraAltInnerSVG).
+		Element(children...)
 }
 
-func Car(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Car(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		carInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(carInnerSVG).
+		Element(children...)
 }
 
-func Carrot(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Carrot(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		carrotInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(carrotInnerSVG).
+		Element(children...)
 }
 
-func Cart(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Cart(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		cartInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(cartInnerSVG).
+		Element(children...)
 }
 
-func Category(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Category(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		categoryInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(categoryInnerSVG).
+		Element(children...)
 }
 
-func ChartArea(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ChartArea(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		chartAreaInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(chartAreaInnerSVG).
+		Element(children...)
 }
 
-func ChartBar(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ChartBar(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		chartBarInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(chartBarInnerSVG).
+		Element(children...)
 }
 
-func ChartLine(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ChartLine(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		chartLineInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(chartLineInnerSVG).
+		Element(children...)
 }
 
-func ChartPie(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ChartPie(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		chartPieInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(chartPieInnerSVG).
+		Element(children...)
 }
 
-func Clipboard(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Clipboard(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		clipboardInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(clipboardInnerSVG).
+		Element(children...)
 }
 
-func Clock(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Clock(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		clockInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(clockInnerSVG).
+		Element(children...)
 }
 
-func Cloud(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Cloud(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		cloudInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(cloudInnerSVG).
+		Element(children...)
 }
 
-func CloudSaved(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func CloudSaved(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		cloudSavedInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(cloudSavedInnerSVG).
+		Element(children...)
 }
 
-func CloudUpload(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func CloudUpload(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		cloudUploadInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(cloudUploadInnerSVG).
+		Element(children...)
 }
 
-func CodeStandards(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func CodeStandards(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		codeStandardsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(codeStandardsInnerSVG).
+		Element(children...)
 }
 
-func Coffee(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Coffee(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		coffeeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(coffeeInnerSVG).
+		Element(children...)
 }
 
-func ColorPicker(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ColorPicker(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		colorPickerInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(colorPickerInnerSVG).
+		Element(children...)
 }
 
-func Columns(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Columns(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		columnsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(columnsInnerSVG).
+		Element(children...)
 }
 
-func ControlsBack(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ControlsBack(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		controlsBackInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(controlsBackInnerSVG).
+		Element(children...)
 }
 
-func ControlsForward(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ControlsForward(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		controlsForwardInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(controlsForwardInnerSVG).
+		Element(children...)
 }
 
-func ControlsPause(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ControlsPause(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		controlsPauseInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(controlsPauseInnerSVG).
+		Element(children...)
 }
 
-func ControlsPlay(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ControlsPlay(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		controlsPlayInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(controlsPlayInnerSVG).
+		Element(children...)
 }
 
-func ControlsRepeat(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ControlsRepeat(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		controlsRepeatInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(controlsRepeatInnerSVG).
+		Element(children...)
 }
 
-func ControlsSkipback(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ControlsSkipback(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		controlsSkipbackInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(controlsSkipbackInnerSVG).
+		Element(children...)
 }
 
-func ControlsSkipforward(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ControlsSkipforward(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		controlsSkipforwardInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(controlsSkipforwardInnerSVG).
+		Element(children...)
 }
 
-func ControlsVolumeoff(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ControlsVolumeoff(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		controlsVolumeoffInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(controlsVolumeoffInnerSVG).
+		Element(children...)
 }
 
-func ControlsVolumeon(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ControlsVolumeon(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		controlsVolumeonInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(controlsVolumeonInnerSVG).
+		Element(children...)
 }
 
-func CoverImage(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func CoverImage(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		coverImageInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(coverImageInnerSVG).
+		Element(children...)
 }
 
-func Dashboard(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Dashboard(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		dashboardInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(dashboardInnerSVG).
+		Element(children...)
 }
 
-func Database(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Database(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		databaseInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(databaseInnerSVG).
+		Element(children...)
 }
 
-func DatabaseAdd(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func DatabaseAdd(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		databaseAddInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(databaseAddInnerSVG).
+		Element(children...)
 }
 
-func DatabaseExport(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func DatabaseExport(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		databaseExportInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(databaseExportInnerSVG).
+		Element(children...)
 }
 
-func DatabaseImport(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func DatabaseImport(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		databaseImportInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(databaseImportInnerSVG).
+		Element(children...)
 }
 
-func DatabaseRemove(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func DatabaseRemove(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		databaseRemoveInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(databaseRemoveInnerSVG).
+		Element(children...)
 }
 
-func DatabaseView(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func DatabaseView(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		databaseViewInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(databaseViewInnerSVG).
+		Element(children...)
 }
 
-func Desktop(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Desktop(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		desktopInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(desktopInnerSVG).
+		Element(children...)
 }
 
-func Dismiss(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Dismiss(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		dismissInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(dismissInnerSVG).
+		Element(children...)
 }
 
-func Download(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Download(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		downloadInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(downloadInnerSVG).
+		Element(children...)
 }
 
-func Drumstick(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Drumstick(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		drumstickInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(drumstickInnerSVG).
+		Element(children...)
 }
 
-func Edit(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Edit(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editInnerSVG).
+		Element(children...)
 }
 
-func EditLarge(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditLarge(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editLargeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editLargeInnerSVG).
+		Element(children...)
 }
 
-func EditPage(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditPage(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editPageInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editPageInnerSVG).
+		Element(children...)
 }
 
-func EditorAligncenter(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorAligncenter(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorAligncenterInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorAligncenterInnerSVG).
+		Element(children...)
 }
 
-func EditorAlignleft(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorAlignleft(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorAlignleftInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorAlignleftInnerSVG).
+		Element(children...)
 }
 
-func EditorAlignright(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorAlignright(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorAlignrightInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorAlignrightInnerSVG).
+		Element(children...)
 }
 
-func EditorBold(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorBold(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorBoldInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorBoldInnerSVG).
+		Element(children...)
 }
 
-func EditorBreak(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorBreak(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorBreakInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorBreakInnerSVG).
+		Element(children...)
 }
 
-func EditorCode(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorCode(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorCodeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorCodeInnerSVG).
+		Element(children...)
 }
 
-func EditorCodeDuplicate(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorCodeDuplicate(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorCodeDuplicateInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorCodeDuplicateInnerSVG).
+		Element(children...)
 }
 
-func EditorContract(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorContract(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorContractInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorContractInnerSVG).
+		Element(children...)
 }
 
-func EditorCustomchar(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorCustomchar(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorCustomcharInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorCustomcharInnerSVG).
+		Element(children...)
 }
 
-func EditorExpand(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorExpand(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorExpandInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorExpandInnerSVG).
+		Element(children...)
 }
 
-func EditorHelp(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorHelp(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorHelpInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorHelpInnerSVG).
+		Element(children...)
 }
 
-func EditorIndent(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorIndent(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorIndentInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorIndentInnerSVG).
+		Element(children...)
 }
 
-func EditorInsertmore(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorInsertmore(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorInsertmoreInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorInsertmoreInnerSVG).
+		Element(children...)
 }
 
-func EditorItalic(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorItalic(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorItalicInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorItalicInnerSVG).
+		Element(children...)
 }
 
-func EditorJustify(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorJustify(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorJustifyInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorJustifyInnerSVG).
+		Element(children...)
 }
 
-func EditorKitchensink(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorKitchensink(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorKitchensinkInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorKitchensinkInnerSVG).
+		Element(children...)
 }
 
-func EditorLtr(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorLtr(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorLtrInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorLtrInnerSVG).
+		Element(children...)
 }
 
-func EditorOl(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorOl(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorOlInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorOlInnerSVG).
+		Element(children...)
 }
 
-func EditorOlRtl(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorOlRtl(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorOlRtlInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorOlRtlInnerSVG).
+		Element(children...)
 }
 
-func EditorOutdent(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorOutdent(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorOutdentInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorOutdentInnerSVG).
+		Element(children...)
 }
 
-func EditorParagraph(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorParagraph(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorParagraphInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorParagraphInnerSVG).
+		Element(children...)
 }
 
-func EditorPasteText(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorPasteText(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorPasteTextInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorPasteTextInnerSVG).
+		Element(children...)
 }
 
-func EditorPasteWord(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorPasteWord(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorPasteWordInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorPasteWordInnerSVG).
+		Element(children...)
 }
 
-func EditorQuote(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorQuote(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorQuoteInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorQuoteInnerSVG).
+		Element(children...)
 }
 
-func EditorRemoveformatting(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorRemoveformatting(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorRemoveformattingInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorRemoveformattingInnerSVG).
+		Element(children...)
 }
 
-func EditorRtl(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorRtl(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorRtlInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorRtlInnerSVG).
+		Element(children...)
 }
 
-func EditorSpellcheck(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorSpellcheck(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorSpellcheckInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorSpellcheckInnerSVG).
+		Element(children...)
 }
 
-func EditorStrikethrough(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorStrikethrough(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorStrikethroughInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorStrikethroughInnerSVG).
+		Element(children...)
 }
 
-func EditorTable(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorTable(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorTableInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorTableInnerSVG).
+		Element(children...)
 }
 
-func EditorTextcolor(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorTextcolor(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorTextcolorInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorTextcolorInnerSVG).
+		Element(children...)
 }
 
-func EditorUl(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorUl(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorUlInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorUlInnerSVG).
+		Element(children...)
 }
 
-func EditorUnderline(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorUnderline(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorUnderlineInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorUnderlineInnerSVG).
+		Element(children...)
 }
 
-func EditorUnlink(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorUnlink(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorUnlinkInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorUnlinkInnerSVG).
+		Element(children...)
 }
 
-func EditorVideo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EditorVideo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		editorVideoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(editorVideoInnerSVG).
+		Element(children...)
 }
 
-func Ellipsis(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Ellipsis(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		ellipsisInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(ellipsisInnerSVG).
+		Element(children...)
 }
 
-func Email(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Email(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		emailInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(emailInnerSVG).
+		Element(children...)
 }
 
-func EmailAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EmailAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		emailAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(emailAltInnerSVG).
+		Element(children...)
 }
 
-func EmailAltTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EmailAltTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		emailAltTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(emailAltTwoInnerSVG).
+		Element(children...)
 }
 
-func EmbedAudio(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EmbedAudio(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		embedAudioInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(embedAudioInnerSVG).
+		Element(children...)
 }
 
-func EmbedGeneric(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EmbedGeneric(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		embedGenericInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(embedGenericInnerSVG).
+		Element(children...)
 }
 
-func EmbedPhoto(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EmbedPhoto(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		embedPhotoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(embedPhotoInnerSVG).
+		Element(children...)
 }
 
-func EmbedPost(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EmbedPost(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		embedPostInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(embedPostInnerSVG).
+		Element(children...)
 }
 
-func EmbedVideo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func EmbedVideo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		embedVideoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(embedVideoInnerSVG).
+		Element(children...)
 }
 
-func ExcerptView(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ExcerptView(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		excerptViewInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(excerptViewInnerSVG).
+		Element(children...)
 }
 
-func Exit(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Exit(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		exitInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(exitInnerSVG).
+		Element(children...)
 }
 
-func External(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func External(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		externalInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(externalInnerSVG).
+		Element(children...)
 }
 
-func Facebook(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Facebook(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		facebookInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(facebookInnerSVG).
+		Element(children...)
 }
 
-func FacebookAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func FacebookAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		facebookAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(facebookAltInnerSVG).
+		Element(children...)
 }
 
-func Feedback(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Feedback(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		feedbackInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(feedbackInnerSVG).
+		Element(children...)
 }
 
-func Filter(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Filter(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		filterInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(filterInnerSVG).
+		Element(children...)
 }
 
-func Flag(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Flag(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		flagInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(flagInnerSVG).
+		Element(children...)
 }
 
-func Food(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Food(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		foodInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(foodInnerSVG).
+		Element(children...)
 }
 
-func FormatAside(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func FormatAside(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		formatAsideInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(formatAsideInnerSVG).
+		Element(children...)
 }
 
-func FormatAudio(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func FormatAudio(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		formatAudioInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(formatAudioInnerSVG).
+		Element(children...)
 }
 
-func FormatChat(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func FormatChat(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		formatChatInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(formatChatInnerSVG).
+		Element(children...)
 }
 
-func FormatGallery(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func FormatGallery(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		formatGalleryInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(formatGalleryInnerSVG).
+		Element(children...)
 }
 
-func FormatImage(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func FormatImage(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		formatImageInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(formatImageInnerSVG).
+		Element(children...)
 }
 
-func FormatQuote(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func FormatQuote(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		formatQuoteInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(formatQuoteInnerSVG).
+		Element(children...)
 }
 
-func FormatStatus(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func FormatStatus(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		formatStatusInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(formatStatusInnerSVG).
+		Element(children...)
 }
 
-func FormatVideo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func FormatVideo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		formatVideoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(formatVideoInnerSVG).
+		Element(children...)
 }
 
-func Forms(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Forms(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		formsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(formsInnerSVG).
+		Element(children...)
 }
 
-func FullscreenAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func FullscreenAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		fullscreenAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(fullscreenAltInnerSVG).
+		Element(children...)
 }
 
-func FullscreenExitAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func FullscreenExitAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		fullscreenExitAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(fullscreenExitAltInnerSVG).
+		Element(children...)
 }
 
-func Games(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Games(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		gamesInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(gamesInnerSVG).
+		Element(children...)
 }
 
-func Google(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Google(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		googleInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(googleInnerSVG).
+		Element(children...)
 }
 
-func Googleplus(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Googleplus(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		googleplusInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(googleplusInnerSVG).
+		Element(children...)
 }
 
-func GridView(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func GridView(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		gridViewInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(gridViewInnerSVG).
+		Element(children...)
 }
 
-func Groups(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Groups(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		groupsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(groupsInnerSVG).
+		Element(children...)
 }
 
-func Hammer(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Hammer(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		hammerInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(hammerInnerSVG).
+		Element(children...)
 }
 
-func Heading(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Heading(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		headingInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(headingInnerSVG).
+		Element(children...)
 }
 
-func Heart(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Heart(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		heartInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(heartInnerSVG).
+		Element(children...)
 }
 
-func Hidden(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Hidden(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		hiddenInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(hiddenInnerSVG).
+		Element(children...)
 }
 
-func Hourglass(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Hourglass(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		hourglassInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(hourglassInnerSVG).
+		Element(children...)
 }
 
-func Html(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Html(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		htmlInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(htmlInnerSVG).
+		Element(children...)
 }
 
-func Id(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Id(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		idInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(idInnerSVG).
+		Element(children...)
 }
 
-func IdAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func IdAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		idAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(idAltInnerSVG).
+		Element(children...)
 }
 
-func ImageCrop(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ImageCrop(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		imageCropInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(imageCropInnerSVG).
+		Element(children...)
 }
 
-func ImageFilter(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ImageFilter(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		imageFilterInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(imageFilterInnerSVG).
+		Element(children...)
 }
 
-func ImageFlipHorizontal(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ImageFlipHorizontal(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		imageFlipHorizontalInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(imageFlipHorizontalInnerSVG).
+		Element(children...)
 }
 
-func ImageFlipVertical(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ImageFlipVertical(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		imageFlipVerticalInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(imageFlipVerticalInnerSVG).
+		Element(children...)
 }
 
-func ImageRotate(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ImageRotate(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		imageRotateInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(imageRotateInnerSVG).
+		Element(children...)
 }
 
-func ImageRotateLeft(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ImageRotateLeft(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		imageRotateLeftInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(imageRotateLeftInnerSVG).
+		Element(children...)
 }
 
-func ImageRotateRight(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ImageRotateRight(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		imageRotateRightInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(imageRotateRightInnerSVG).
+		Element(children...)
 }
 
-func ImagesAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ImagesAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		imagesAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(imagesAltInnerSVG).
+		Element(children...)
 }
 
-func ImagesAltTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ImagesAltTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		imagesAltTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(imagesAltTwoInnerSVG).
+		Element(children...)
 }
 
-func IndexCard(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func IndexCard(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		indexCardInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(indexCardInnerSVG).
+		Element(children...)
 }
 
-func Info(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Info(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		infoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(infoInnerSVG).
+		Element(children...)
 }
 
-func InfoOutline(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func InfoOutline(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		infoOutlineInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(infoOutlineInnerSVG).
+		Element(children...)
 }
 
-func Insert(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Insert(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		insertInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(insertInnerSVG).
+		Element(children...)
 }
 
-func InsertAfter(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func InsertAfter(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		insertAfterInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(insertAfterInnerSVG).
+		Element(children...)
 }
 
-func InsertBefore(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func InsertBefore(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		insertBeforeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(insertBeforeInnerSVG).
+		Element(children...)
 }
 
-func Instagram(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Instagram(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		instagramInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(instagramInnerSVG).
+		Element(children...)
 }
 
-func Laptop(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Laptop(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		laptopInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(laptopInnerSVG).
+		Element(children...)
 }
 
-func Layout(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Layout(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		layoutInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(layoutInnerSVG).
+		Element(children...)
 }
 
-func Leftright(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Leftright(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		leftrightInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(leftrightInnerSVG).
+		Element(children...)
 }
 
-func Lightbulb(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Lightbulb(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		lightbulbInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(lightbulbInnerSVG).
+		Element(children...)
 }
 
-func Linkedin(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Linkedin(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		linkedinInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(linkedinInnerSVG).
+		Element(children...)
 }
 
-func ListView(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ListView(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		listViewInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(listViewInnerSVG).
+		Element(children...)
 }
 
-func Location(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Location(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		locationInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(locationInnerSVG).
+		Element(children...)
 }
 
-func LocationAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func LocationAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		locationAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(locationAltInnerSVG).
+		Element(children...)
 }
 
-func Lock(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Lock(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		lockInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(lockInnerSVG).
+		Element(children...)
 }
 
-func LockAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func LockAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		lockAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(lockAltInnerSVG).
+		Element(children...)
 }
 
-func LockDuplicate(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func LockDuplicate(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		lockDuplicateInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(lockDuplicateInnerSVG).
+		Element(children...)
 }
 
-func Marker(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Marker(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		markerInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(markerInnerSVG).
+		Element(children...)
 }
 
-func MediaArchive(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MediaArchive(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		mediaArchiveInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(mediaArchiveInnerSVG).
+		Element(children...)
 }
 
-func MediaAudio(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MediaAudio(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		mediaAudioInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(mediaAudioInnerSVG).
+		Element(children...)
 }
 
-func MediaCode(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MediaCode(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		mediaCodeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(mediaCodeInnerSVG).
+		Element(children...)
 }
 
-func MediaDefault(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MediaDefault(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		mediaDefaultInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(mediaDefaultInnerSVG).
+		Element(children...)
 }
 
-func MediaDocument(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MediaDocument(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		mediaDocumentInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(mediaDocumentInnerSVG).
+		Element(children...)
 }
 
-func MediaInteractive(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MediaInteractive(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		mediaInteractiveInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(mediaInteractiveInnerSVG).
+		Element(children...)
 }
 
-func MediaSpreadsheet(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MediaSpreadsheet(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		mediaSpreadsheetInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(mediaSpreadsheetInnerSVG).
+		Element(children...)
 }
 
-func MediaText(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MediaText(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		mediaTextInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(mediaTextInnerSVG).
+		Element(children...)
 }
 
-func MediaVideo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MediaVideo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		mediaVideoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(mediaVideoInnerSVG).
+		Element(children...)
 }
 
-func Megaphone(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Megaphone(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		megaphoneInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(megaphoneInnerSVG).
+		Element(children...)
 }
 
-func Menu(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Menu(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		menuInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(menuInnerSVG).
+		Element(children...)
 }
 
-func MenuAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MenuAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		menuAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(menuAltInnerSVG).
+		Element(children...)
 }
 
-func MenuAltThree(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MenuAltThree(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		menuAltThreeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(menuAltThreeInnerSVG).
+		Element(children...)
 }
 
-func MenuAltTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MenuAltTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		menuAltTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(menuAltTwoInnerSVG).
+		Element(children...)
 }
 
-func MenuTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MenuTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		menuTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(menuTwoInnerSVG).
+		Element(children...)
 }
 
-func Microphone(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Microphone(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		microphoneInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(microphoneInnerSVG).
+		Element(children...)
 }
 
-func Migrate(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Migrate(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		migrateInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(migrateInnerSVG).
+		Element(children...)
 }
 
-func Minus(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Minus(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		minusInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(minusInnerSVG).
+		Element(children...)
 }
 
-func Money(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Money(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		moneyInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(moneyInnerSVG).
+		Element(children...)
 }
 
-func MoneyAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func MoneyAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		moneyAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(moneyAltInnerSVG).
+		Element(children...)
 }
 
-func Move(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Move(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		moveInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(moveInnerSVG).
+		Element(children...)
 }
 
-func Nametag(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Nametag(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		nametagInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(nametagInnerSVG).
+		Element(children...)
 }
 
-func Networking(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Networking(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		networkingInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(networkingInnerSVG).
+		Element(children...)
 }
 
-func No(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func No(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		noInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(noInnerSVG).
+		Element(children...)
 }
 
-func NoAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func NoAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		noAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(noAltInnerSVG).
+		Element(children...)
 }
 
-func OpenFolder(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func OpenFolder(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		openFolderInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(openFolderInnerSVG).
+		Element(children...)
 }
 
-func Palmtree(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Palmtree(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		palmtreeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(palmtreeInnerSVG).
+		Element(children...)
 }
 
-func Paperclip(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Paperclip(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		paperclipInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(paperclipInnerSVG).
+		Element(children...)
 }
 
-func Pdf(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Pdf(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		pdfInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(pdfInnerSVG).
+		Element(children...)
 }
 
-func Performance(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Performance(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		performanceInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(performanceInnerSVG).
+		Element(children...)
 }
 
-func Pets(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Pets(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		petsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(petsInnerSVG).
+		Element(children...)
 }
 
-func Phone(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Phone(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		phoneInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(phoneInnerSVG).
+		Element(children...)
 }
 
-func Pinterest(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Pinterest(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		pinterestInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(pinterestInnerSVG).
+		Element(children...)
 }
 
-func PlaylistAudio(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func PlaylistAudio(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		playlistAudioInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(playlistAudioInnerSVG).
+		Element(children...)
 }
 
-func PlaylistVideo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func PlaylistVideo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		playlistVideoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(playlistVideoInnerSVG).
+		Element(children...)
 }
 
-func PluginsChecked(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func PluginsChecked(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		pluginsCheckedInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(pluginsCheckedInnerSVG).
+		Element(children...)
 }
 
-func Plus(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Plus(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		plusInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(plusInnerSVG).
+		Element(children...)
 }
 
-func PlusAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func PlusAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		plusAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(plusAltInnerSVG).
+		Element(children...)
 }
 
-func PlusAltTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func PlusAltTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		plusAltTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(plusAltTwoInnerSVG).
+		Element(children...)
 }
 
-func Podio(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Podio(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		podioInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(podioInnerSVG).
+		Element(children...)
 }
 
-func Portfolio(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Portfolio(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		portfolioInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(portfolioInnerSVG).
+		Element(children...)
 }
 
-func PostStatus(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func PostStatus(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		postStatusInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(postStatusInnerSVG).
+		Element(children...)
 }
 
-func Pressthis(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Pressthis(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		pressthisInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(pressthisInnerSVG).
+		Element(children...)
 }
 
-func Printer(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Printer(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		printerInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(printerInnerSVG).
+		Element(children...)
 }
 
-func Privacy(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Privacy(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		privacyInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(privacyInnerSVG).
+		Element(children...)
 }
 
-func Products(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Products(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		productsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(productsInnerSVG).
+		Element(children...)
 }
 
-func Randomize(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Randomize(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		randomizeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(randomizeInnerSVG).
+		Element(children...)
 }
 
-func Reddit(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Reddit(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		redditInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(redditInnerSVG).
+		Element(children...)
 }
 
-func Redo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Redo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		redoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(redoInnerSVG).
+		Element(children...)
 }
 
-func Remove(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Remove(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		removeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(removeInnerSVG).
+		Element(children...)
 }
 
-func RestApi(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func RestApi(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		restApiInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(restApiInnerSVG).
+		Element(children...)
 }
 
-func Rss(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Rss(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		rssInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(rssInnerSVG).
+		Element(children...)
 }
 
-func Saved(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Saved(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		savedInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(savedInnerSVG).
+		Element(children...)
 }
 
-func Schedule(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Schedule(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		scheduleInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(scheduleInnerSVG).
+		Element(children...)
 }
 
-func Screenoptions(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Screenoptions(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		screenoptionsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(screenoptionsInnerSVG).
+		Element(children...)
 }
 
-func Search(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Search(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		searchInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(searchInnerSVG).
+		Element(children...)
 }
 
-func Share(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Share(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		shareInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(shareInnerSVG).
+		Element(children...)
 }
 
-func ShareAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ShareAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		shareAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(shareAltInnerSVG).
+		Element(children...)
 }
 
-func ShareAltTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ShareAltTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		shareAltTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(shareAltTwoInnerSVG).
+		Element(children...)
 }
 
-func Shield(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Shield(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		shieldInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(shieldInnerSVG).
+		Element(children...)
 }
 
-func ShieldAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ShieldAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		shieldAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(shieldAltInnerSVG).
+		Element(children...)
 }
 
-func Shortcode(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Shortcode(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		shortcodeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(shortcodeInnerSVG).
+		Element(children...)
 }
 
-func Slides(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Slides(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		slidesInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(slidesInnerSVG).
+		Element(children...)
 }
 
-func Smartphone(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Smartphone(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		smartphoneInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(smartphoneInnerSVG).
+		Element(children...)
 }
 
-func Smiley(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Smiley(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		smileyInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(smileyInnerSVG).
+		Element(children...)
 }
 
-func Sort(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Sort(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		sortInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(sortInnerSVG).
+		Element(children...)
 }
 
-func Sos(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Sos(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		sosInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(sosInnerSVG).
+		Element(children...)
 }
 
-func Spotify(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Spotify(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		spotifyInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(spotifyInnerSVG).
+		Element(children...)
 }
 
-func StarEmpty(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func StarEmpty(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		starEmptyInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(starEmptyInnerSVG).
+		Element(children...)
 }
 
-func StarFilled(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func StarFilled(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		starFilledInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(starFilledInnerSVG).
+		Element(children...)
 }
 
-func StarHalf(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func StarHalf(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		starHalfInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(starHalfInnerSVG).
+		Element(children...)
 }
 
-func Sticky(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Sticky(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		stickyInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(stickyInnerSVG).
+		Element(children...)
 }
 
-func Store(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Store(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		storeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(storeInnerSVG).
+		Element(children...)
 }
 
-func Superhero(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Superhero(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		superheroInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(superheroInnerSVG).
+		Element(children...)
 }
 
-func SuperheroAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func SuperheroAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		superheroAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(superheroAltInnerSVG).
+		Element(children...)
 }
 
-func TableColAfter(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func TableColAfter(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		tableColAfterInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(tableColAfterInnerSVG).
+		Element(children...)
 }
 
-func TableColBefore(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func TableColBefore(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		tableColBeforeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(tableColBeforeInnerSVG).
+		Element(children...)
 }
 
-func TableColDelete(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func TableColDelete(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		tableColDeleteInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(tableColDeleteInnerSVG).
+		Element(children...)
 }
 
-func TableRowAfter(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func TableRowAfter(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		tableRowAfterInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(tableRowAfterInnerSVG).
+		Element(children...)
 }
 
-func TableRowBefore(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func TableRowBefore(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		tableRowBeforeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(tableRowBeforeInnerSVG).
+		Element(children...)
 }
 
-func TableRowDelete(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func TableRowDelete(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		tableRowDeleteInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(tableRowDeleteInnerSVG).
+		Element(children...)
 }
 
-func Tablet(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Tablet(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		tabletInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(tabletInnerSVG).
+		Element(children...)
 }
 
-func Tag(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Tag(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		tagInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(tagInnerSVG).
+		Element(children...)
 }
 
-func Tagcloud(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Tagcloud(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		tagcloudInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(tagcloudInnerSVG).
+		Element(children...)
 }
 
-func Testimonial(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Testimonial(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		testimonialInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(testimonialInnerSVG).
+		Element(children...)
 }
 
-func Text(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Text(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		textInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(textInnerSVG).
+		Element(children...)
 }
 
-func TextPage(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func TextPage(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		textPageInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(textPageInnerSVG).
+		Element(children...)
 }
 
-func ThumbsDown(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ThumbsDown(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		thumbsDownInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(thumbsDownInnerSVG).
+		Element(children...)
 }
 
-func ThumbsUp(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func ThumbsUp(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		thumbsUpInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(thumbsUpInnerSVG).
+		Element(children...)
 }
 
-func Tickets(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Tickets(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		ticketsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(ticketsInnerSVG).
+		Element(children...)
 }
 
-func TicketsAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func TicketsAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		ticketsAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(ticketsAltInnerSVG).
+		Element(children...)
 }
 
-func Tide(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Tide(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		tideInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(tideInnerSVG).
+		Element(children...)
 }
 
-func Translation(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Translation(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		translationInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(translationInnerSVG).
+		Element(children...)
 }
 
-func Trash(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Trash(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		trashInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(trashInnerSVG).
+		Element(children...)
 }
 
-func Twitch(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Twitch(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		twitchInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(twitchInnerSVG).
+		Element(children...)
 }
 
-func Twitter(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Twitter(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		twitterInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(twitterInnerSVG).
+		Element(children...)
 }
 
-func TwitterAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func TwitterAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		twitterAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(twitterAltInnerSVG).
+		Element(children...)
 }
 
-func Undo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Undo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		undoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(undoInnerSVG).
+		Element(children...)
 }
 
-func UniversalAccess(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func UniversalAccess(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		universalAccessInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(universalAccessInnerSVG).
+		Element(children...)
 }
 
-func UniversalAccessAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func UniversalAccessAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		universalAccessAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(universalAccessAltInnerSVG).
+		Element(children...)
 }
 
-func Unlock(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Unlock(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		unlockInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(unlockInnerSVG).
+		Element(children...)
 }
 
-func Update(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Update(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		updateInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(updateInnerSVG).
+		Element(children...)
 }
 
-func UpdateAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func UpdateAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		updateAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(updateAltInnerSVG).
+		Element(children...)
 }
 
-func UpdateTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func UpdateTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		updateTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(updateTwoInnerSVG).
+		Element(children...)
 }
 
-func Upload(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Upload(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		uploadInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(uploadInnerSVG).
+		Element(children...)
 }
 
-func Vault(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Vault(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		vaultInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(vaultInnerSVG).
+		Element(children...)
 }
 
-func VideoAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func VideoAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		videoAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(videoAltInnerSVG).
+		Element(children...)
 }
 
-func VideoAltThree(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func VideoAltThree(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		videoAltThreeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(videoAltThreeInnerSVG).
+		Element(children...)
 }
 
-func VideoAltTwo(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func VideoAltTwo(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		videoAltTwoInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(videoAltTwoInnerSVG).
+		Element(children...)
 }
 
-func Visibility(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Visibility(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		visibilityInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(visibilityInnerSVG).
+		Element(children...)
 }
 
-func Warning(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Warning(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		warningInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(warningInnerSVG).
+		Element(children...)
 }
 
-func WelcomeAddPage(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func WelcomeAddPage(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		welcomeAddPageInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(welcomeAddPageInnerSVG).
+		Element(children...)
 }
 
-func WelcomeComments(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func WelcomeComments(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		welcomeCommentsInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(welcomeCommentsInnerSVG).
+		Element(children...)
 }
 
-func WelcomeLearnMore(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func WelcomeLearnMore(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		welcomeLearnMoreInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(welcomeLearnMoreInnerSVG).
+		Element(children...)
 }
 
-func WelcomeViewSite(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func WelcomeViewSite(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		welcomeViewSiteInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(welcomeViewSiteInnerSVG).
+		Element(children...)
 }
 
-func WelcomeWidgetsMenus(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func WelcomeWidgetsMenus(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		welcomeWidgetsMenusInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(welcomeWidgetsMenusInnerSVG).
+		Element(children...)
 }
 
-func WelcomeWriteBlog(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func WelcomeWriteBlog(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		welcomeWriteBlogInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(welcomeWriteBlogInnerSVG).
+		Element(children...)
 }
 
-func Whatsapp(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Whatsapp(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		whatsappInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(whatsappInnerSVG).
+		Element(children...)
 }
 
-func Wordpress(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Wordpress(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		wordpressInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(wordpressInnerSVG).
+		Element(children...)
 }
 
-func WordpressAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func WordpressAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		wordpressAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(wordpressAltInnerSVG).
+		Element(children...)
 }
 
-func Xing(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Xing(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		xingInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(xingInnerSVG).
+		Element(children...)
 }
 
-func Yes(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Yes(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		yesInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(yesInnerSVG).
+		Element(children...)
 }
 
-func YesAlt(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func YesAlt(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		yesAltInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(yesAltInnerSVG).
+		Element(children...)
 }
 
-func Youtube(children ...any) *engine.HTMLElement {
-	return engine.Element(
-		"svg",
-		sharedIconAttrs,
-		engine.Attrs{
-			"viewBox": "0 0 20 20",
+func Youtube(children ...*engine.UberElement) *engine.UberElement {
+	attrs := append(
+		[]engine.Attributer{
+			engine.NewAttribute("viewBox", "0 0 20 20"),
 		},
-		youtubeInnerSVG,
-		children,
+		sharedIconAttrs...,
 	)
+	return engine.Uber("svg").
+		Attr(attrs...).
+		HTML(youtubeInnerSVG).
+		Element(children...)
 }
 
-func ByName(name string) (*engine.HTMLElement, error) {
+func ByName(name string) (*engine.UberElement, error) {
 	switch name {
 	case "admin-appearance":
 		return AdminAppearance(), nil

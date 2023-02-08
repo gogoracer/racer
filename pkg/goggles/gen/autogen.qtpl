@@ -131,27 +131,31 @@ const (
 {%- endfor -%}
 )
 
-var sharedIconAttrs =  engine.Attrs{"width": "1em","height": "1em"}
+var sharedIconAttrs = []engine.Attributer{
+	engine.NewAttribute("width", "1em"),
+	engine.NewAttribute("height", "1em"),
+}
 
 {%- for _, namedIcon := range pkg.Icons -%}
 {% code
 cn := camel(namedIcon.Name)+"InnerSVG"
 viewBox := fmt.Sprintf(`0 0 %d %d`, pkg.Width, pkg.Height)
 %}
-func {%s namedIcon.Name %}(children ...any) *engine.HTMLElement {
-    return engine.Element(
-        "svg",
-        sharedIconAttrs,
-        engine.Attrs{
-            "viewBox": "{%s viewBox %}",
+func {%s namedIcon.Name %}(children ...*engine.UberElement) *engine.UberElement {
+    attrs := append(
+        []engine.Attributer{
+        engine.NewAttribute("viewBox", "{%s viewBox %}"),
         },
-        {%s cn %},
-        children,
+        sharedIconAttrs...,
     )
+	return engine.Uber("svg").
+        Attr(attrs...).
+        HTML({%s cn %}).
+        Element(children...)
 }
 {%- endfor -%}
 
-func ByName(name string) (*engine.HTMLElement,error) {
+func ByName(name string) (*engine.UberElement,error) {
     switch name {
     {%- for _, namedIcon := range pkg.Icons -%}
     case "{%s namedIcon.OriginalName %}":

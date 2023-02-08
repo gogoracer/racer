@@ -21,3 +21,15 @@ func MOUSEENTER(eventHandler engine.EventHandler) *engine.EventBinding {
 func MOUSELEAVE(eventHandler engine.EventHandler) *engine.EventBinding {
 	return engine.On("mouseLeave", eventHandler)
 }
+
+func KEYUP(eventHandler engine.EventHandler) *engine.EventBinding {
+	return engine.On("keyup", eventHandler)
+}
+
+func KEYDOWN(eventHandler engine.EventHandler) *engine.EventBinding {
+	return engine.On("keydown", eventHandler)
+}
+
+func INPUT_INPUT(eventHandler engine.EventHandler) *engine.EventBinding {
+	return engine.On("input", eventHandler)
+}

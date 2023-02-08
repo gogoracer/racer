@@ -342,99 +342,103 @@ const (
 //line pkg/goggles/gen/autogen.qtpl:131
 	qw422016.N().S(`)
 
-var sharedIconAttrs =  engine.Attrs{"width": "1em","height": "1em"}
+var sharedIconAttrs = []engine.Attributer{
+	engine.NewAttribute("width", "1em"),
+	engine.NewAttribute("height", "1em"),
+}
 
 `)
-//line pkg/goggles/gen/autogen.qtpl:136
+//line pkg/goggles/gen/autogen.qtpl:139
 	for _, namedIcon := range pkg.Icons {
-//line pkg/goggles/gen/autogen.qtpl:138
+//line pkg/goggles/gen/autogen.qtpl:141
 		cn := camel(namedIcon.Name) + "InnerSVG"
 		viewBox := fmt.Sprintf(`0 0 %d %d`, pkg.Width, pkg.Height)
 
-//line pkg/goggles/gen/autogen.qtpl:140
+//line pkg/goggles/gen/autogen.qtpl:143
 		qw422016.N().S(`
 func `)
-//line pkg/goggles/gen/autogen.qtpl:141
+//line pkg/goggles/gen/autogen.qtpl:144
 		qw422016.E().S(namedIcon.Name)
-//line pkg/goggles/gen/autogen.qtpl:141
-		qw422016.N().S(`(children ...any) *engine.HTMLElement {
-    return engine.Element(
-        "svg",
-        sharedIconAttrs,
-        engine.Attrs{
-            "viewBox": "`)
-//line pkg/goggles/gen/autogen.qtpl:146
+//line pkg/goggles/gen/autogen.qtpl:144
+		qw422016.N().S(`(children ...*engine.UberElement) *engine.UberElement {
+    attrs := append(
+        []engine.Attributer{
+        engine.NewAttribute("viewBox", "`)
+//line pkg/goggles/gen/autogen.qtpl:147
 		qw422016.E().S(viewBox)
-//line pkg/goggles/gen/autogen.qtpl:146
-		qw422016.N().S(`",
+//line pkg/goggles/gen/autogen.qtpl:147
+		qw422016.N().S(`"),
         },
-        `)
-//line pkg/goggles/gen/autogen.qtpl:148
-		qw422016.E().S(cn)
-//line pkg/goggles/gen/autogen.qtpl:148
-		qw422016.N().S(`,
-        children,
+        sharedIconAttrs...,
     )
+	return engine.Uber("svg").
+        Attr(attrs...).
+        HTML(`)
+//line pkg/goggles/gen/autogen.qtpl:153
+		qw422016.E().S(cn)
+//line pkg/goggles/gen/autogen.qtpl:153
+		qw422016.N().S(`).
+        Element(children...)
 }
 `)
-//line pkg/goggles/gen/autogen.qtpl:152
+//line pkg/goggles/gen/autogen.qtpl:156
 	}
-//line pkg/goggles/gen/autogen.qtpl:152
+//line pkg/goggles/gen/autogen.qtpl:156
 	qw422016.N().S(`
-func ByName(name string) (*engine.HTMLElement,error) {
+func ByName(name string) (*engine.UberElement,error) {
     switch name {
 `)
-//line pkg/goggles/gen/autogen.qtpl:156
+//line pkg/goggles/gen/autogen.qtpl:160
 	for _, namedIcon := range pkg.Icons {
-//line pkg/goggles/gen/autogen.qtpl:156
+//line pkg/goggles/gen/autogen.qtpl:160
 		qw422016.N().S(`    case "`)
-//line pkg/goggles/gen/autogen.qtpl:157
+//line pkg/goggles/gen/autogen.qtpl:161
 		qw422016.E().S(namedIcon.OriginalName)
-//line pkg/goggles/gen/autogen.qtpl:157
+//line pkg/goggles/gen/autogen.qtpl:161
 		qw422016.N().S(`":
         return `)
-//line pkg/goggles/gen/autogen.qtpl:158
+//line pkg/goggles/gen/autogen.qtpl:162
 		qw422016.E().S(namedIcon.Name)
-//line pkg/goggles/gen/autogen.qtpl:158
+//line pkg/goggles/gen/autogen.qtpl:162
 		qw422016.N().S(`(),nil
 `)
-//line pkg/goggles/gen/autogen.qtpl:159
+//line pkg/goggles/gen/autogen.qtpl:163
 	}
-//line pkg/goggles/gen/autogen.qtpl:159
+//line pkg/goggles/gen/autogen.qtpl:163
 	qw422016.N().S(`    default:
         return nil, fmt.Errorf("icon '%s' not found in `)
-//line pkg/goggles/gen/autogen.qtpl:161
+//line pkg/goggles/gen/autogen.qtpl:165
 	qw422016.E().S(pkg.Name)
-//line pkg/goggles/gen/autogen.qtpl:161
+//line pkg/goggles/gen/autogen.qtpl:165
 	qw422016.N().S(` icon set", name)
     }
 }
 `)
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 }
 
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 func WriteGenerateIcon(qq422016 qtio422016.Writer, pkg iconPackage) {
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 	qw422016 := qt422016.AcquireWriter(qq422016)
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 	StreamGenerateIcon(qw422016, pkg)
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 	qt422016.ReleaseWriter(qw422016)
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 }
 
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 func GenerateIcon(pkg iconPackage) string {
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 	qb422016 := qt422016.AcquireByteBuffer()
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 	WriteGenerateIcon(qb422016, pkg)
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 	qs422016 := string(qb422016.B)
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 	qt422016.ReleaseByteBuffer(qb422016)
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 	return qs422016
-//line pkg/goggles/gen/autogen.qtpl:164
+//line pkg/goggles/gen/autogen.qtpl:168
 }

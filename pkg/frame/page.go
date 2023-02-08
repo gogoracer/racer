@@ -47,6 +47,7 @@ func (p *Page) GetCache() engine.Cache {
 	return p.cache
 }
 
+// TODO: Sam should this be private since its exposed in engine with the same name?
 func NewPage() *Page {
 	p := &Page{
 		eventBindings: hashmap.NewSized[string, *engine.EventBinding](engine.EventBindingsCacheDefault),

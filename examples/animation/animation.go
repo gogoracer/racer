@@ -2,12 +2,13 @@ package main
 
 import (
 	"context"
+	"log"
+	"net/http"
+
 	"github.com/gogoracer/racer/pkg/frame"
 	. "github.com/gogoracer/racer/pkg/goggles/racer_attribute"
 	. "github.com/gogoracer/racer/pkg/goggles/racer_event"
 	. "github.com/gogoracer/racer/pkg/goggles/racer_html"
-	"log"
-	"net/http"
 
 	"github.com/gogoracer/racer/pkg/engine"
 )
@@ -117,7 +118,7 @@ func home() engine.Pager {
 				Attr(REL("stylesheet")).
 				Attr(HREF("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"))).
 		Element(
-			STYLE().HTML(pageStyle))
+			STYLETAG().HTML(pageStyle))
 
 	page.DOM().Body().
 		Element(
