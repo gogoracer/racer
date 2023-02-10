@@ -131,12 +131,8 @@ func (sess *PageSession) writePump() {
 				sess.logger.Err(err).Msg("write pump: message set write deadline")
 			}
 
-			sess.muWrite.Unlock()
-
 			if !ok {
 				// Send channel closed.
-				sess.muWrite.Lock()
-
 				if err := sess.websocketConn.WriteMessage(websocket.CloseMessage, []byte{}); err != nil {
 					sess.logger.Err(err).Msg("write pump: write close message")
 				}
@@ -145,8 +141,6 @@ func (sess *PageSession) writePump() {
 
 				return
 			}
-
-			sess.muWrite.Lock()
 
 			w, err := sess.websocketConn.NextWriter(websocket.BinaryMessage)
 			if err != nil {
