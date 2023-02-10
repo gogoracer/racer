@@ -71,17 +71,18 @@ export class Page {
       ws + '://' + window.location.host + window.location.pathname + q,
     )
 
+    this.connection.binaryType = "arraybuffer";
+
     this.connection.onopen = (evt) => {
       this.log('connection: open')
       this.reconnectCount = 0
     }
 
-    this.connection.onmessage = async (evt) => {
-      const blob = evt.data as Blob
-      if (!blob.arrayBuffer)
+    this.connection.onmessage = (evt) => {
+      const buf = evt.data as ArrayBuffer
+      if (!buf.byteLength)
         throw new Error('MessageEvent does not support arrayBuffer')
-      const buf = await blob.arrayBuffer()
-      const view = new Uint8Array(buf)
+      const view = new Uint8Array(evt.data)
       const toClient = ToClient.fromBinary(view)
 
       switch (toClient.message.oneofKind) {
