@@ -1211,7 +1211,7 @@ var sharedIconAttrs = []engine.Attributer{
 	engine.NewAttribute("height", "1em"),
 }
 
-func DefaultFile(children ...*engine.UberElement) *engine.UberElement {
+func DefaultFile(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1224,7 +1224,7 @@ func DefaultFile(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DefaultFolder(children ...*engine.UberElement) *engine.UberElement {
+func DefaultFolder(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1237,7 +1237,7 @@ func DefaultFolder(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DefaultFolderOpened(children ...*engine.UberElement) *engine.UberElement {
+func DefaultFolderOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1250,7 +1250,7 @@ func DefaultFolderOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DefaultRootFolder(children ...*engine.UberElement) *engine.UberElement {
+func DefaultRootFolder(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1263,7 +1263,7 @@ func DefaultRootFolder(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DefaultRootFolderOpened(children ...*engine.UberElement) *engine.UberElement {
+func DefaultRootFolderOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1276,7 +1276,7 @@ func DefaultRootFolderOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeAccess(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAccess(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1289,7 +1289,7 @@ func FileTypeAccess(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAccessTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAccessTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1302,7 +1302,7 @@ func FileTypeAccessTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeActionscript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeActionscript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1315,7 +1315,7 @@ func FileTypeActionscript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeActionscriptTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeActionscriptTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1328,7 +1328,7 @@ func FileTypeActionscriptTwo(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeAda(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAda(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1341,7 +1341,7 @@ func FileTypeAda(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAdvpl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAdvpl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1354,7 +1354,7 @@ func FileTypeAdvpl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAffinitydesigner(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAffinitydesigner(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1367,7 +1367,7 @@ func FileTypeAffinitydesigner(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeAffinityphoto(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAffinityphoto(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1380,7 +1380,7 @@ func FileTypeAffinityphoto(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeAffinitypublisher(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAffinitypublisher(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1393,7 +1393,7 @@ func FileTypeAffinitypublisher(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FileTypeAi(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAi(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1406,7 +1406,7 @@ func FileTypeAi(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAiTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAiTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1419,7 +1419,7 @@ func FileTypeAiTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1432,7 +1432,7 @@ func FileTypeAl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAlDal(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAlDal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1445,7 +1445,7 @@ func FileTypeAlDal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAllcontributors(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAllcontributors(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1458,7 +1458,7 @@ func FileTypeAllcontributors(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeAngular(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAngular(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1471,7 +1471,7 @@ func FileTypeAngular(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAnsible(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAnsible(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1484,7 +1484,7 @@ func FileTypeAnsible(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAntlr(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAntlr(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1497,7 +1497,7 @@ func FileTypeAntlr(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAnyscript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAnyscript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1510,7 +1510,7 @@ func FileTypeAnyscript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeApache(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeApache(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1523,7 +1523,7 @@ func FileTypeApache(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeApex(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeApex(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1536,7 +1536,7 @@ func FileTypeApex(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeApiExtractor(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeApiExtractor(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1549,7 +1549,7 @@ func FileTypeApiExtractor(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeApib(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeApib(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1562,7 +1562,7 @@ func FileTypeApib(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeApibTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeApibTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1575,7 +1575,7 @@ func FileTypeApibTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeApl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeApl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1588,7 +1588,7 @@ func FileTypeApl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeApplescript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeApplescript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1601,7 +1601,7 @@ func FileTypeApplescript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAppscript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAppscript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1614,7 +1614,7 @@ func FileTypeAppscript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAppsemble(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAppsemble(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1627,7 +1627,7 @@ func FileTypeAppsemble(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAppveyor(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAppveyor(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1640,7 +1640,7 @@ func FileTypeAppveyor(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeArduino(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeArduino(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1653,7 +1653,7 @@ func FileTypeArduino(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAsciidoc(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAsciidoc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1666,7 +1666,7 @@ func FileTypeAsciidoc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAsp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAsp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1679,7 +1679,7 @@ func FileTypeAsp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAspx(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAspx(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1692,7 +1692,7 @@ func FileTypeAspx(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAssembly(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAssembly(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1705,7 +1705,7 @@ func FileTypeAssembly(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAstro(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAstro(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1718,7 +1718,7 @@ func FileTypeAstro(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAstroconfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAstroconfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1731,7 +1731,7 @@ func FileTypeAstroconfig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAts(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAts(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1744,7 +1744,7 @@ func FileTypeAts(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAudio(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAudio(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1757,7 +1757,7 @@ func FileTypeAudio(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAurelia(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAurelia(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1770,7 +1770,7 @@ func FileTypeAurelia(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAutohotkey(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAutohotkey(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1783,7 +1783,7 @@ func FileTypeAutohotkey(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAutoit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAutoit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1796,7 +1796,7 @@ func FileTypeAutoit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAvif(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAvif(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1809,7 +1809,7 @@ func FileTypeAvif(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAvro(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAvro(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1822,7 +1822,7 @@ func FileTypeAvro(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAwk(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAwk(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1835,7 +1835,7 @@ func FileTypeAwk(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAws(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAws(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1848,7 +1848,7 @@ func FileTypeAws(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAzure(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAzure(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1861,7 +1861,7 @@ func FileTypeAzure(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeAzurepipelines(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeAzurepipelines(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1874,7 +1874,7 @@ func FileTypeAzurepipelines(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeBabel(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBabel(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1887,7 +1887,7 @@ func FileTypeBabel(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBabelTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBabelTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1900,7 +1900,7 @@ func FileTypeBabelTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBallerina(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBallerina(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1913,7 +1913,7 @@ func FileTypeBallerina(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBat(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBat(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1926,7 +1926,7 @@ func FileTypeBat(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBats(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBats(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1939,7 +1939,7 @@ func FileTypeBats(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBazaar(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBazaar(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1952,7 +1952,7 @@ func FileTypeBazaar(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBazel(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBazel(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1965,7 +1965,7 @@ func FileTypeBazel(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBazelIgnore(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBazelIgnore(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1978,7 +1978,7 @@ func FileTypeBazelIgnore(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBazelVersion(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBazelVersion(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -1991,7 +1991,7 @@ func FileTypeBazelVersion(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBefunge(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBefunge(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2004,7 +2004,7 @@ func FileTypeBefunge(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBicep(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBicep(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2017,7 +2017,7 @@ func FileTypeBicep(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBiml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBiml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2030,7 +2030,7 @@ func FileTypeBiml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBinary(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBinary(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2043,7 +2043,7 @@ func FileTypeBinary(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBitbucketpipeline(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBitbucketpipeline(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2056,7 +2056,7 @@ func FileTypeBitbucketpipeline(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FileTypeBithound(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBithound(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2069,7 +2069,7 @@ func FileTypeBithound(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBlade(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBlade(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2082,7 +2082,7 @@ func FileTypeBlade(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBlitzbasic(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBlitzbasic(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2095,7 +2095,7 @@ func FileTypeBlitzbasic(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBolt(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBolt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2108,7 +2108,7 @@ func FileTypeBolt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBosque(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBosque(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2121,7 +2121,7 @@ func FileTypeBosque(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBower(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBower(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2134,7 +2134,7 @@ func FileTypeBower(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBowerTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBowerTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2147,7 +2147,7 @@ func FileTypeBowerTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBrowserslist(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBrowserslist(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2160,7 +2160,7 @@ func FileTypeBrowserslist(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBuckbuild(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBuckbuild(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2173,7 +2173,7 @@ func FileTypeBuckbuild(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBun(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBun(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2186,7 +2186,7 @@ func FileTypeBun(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBundler(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBundler(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2199,7 +2199,7 @@ func FileTypeBundler(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeBunfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeBunfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2212,7 +2212,7 @@ func FileTypeBunfig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeC(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeC(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2225,7 +2225,7 @@ func FileTypeC(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCAl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCAl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2238,7 +2238,7 @@ func FileTypeCAl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCThree(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCThree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2251,7 +2251,7 @@ func FileTypeCThree(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2264,7 +2264,7 @@ func FileTypeCTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCabal(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCabal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2277,7 +2277,7 @@ func FileTypeCabal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCaddy(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCaddy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2290,7 +2290,7 @@ func FileTypeCaddy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCake(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCake(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2303,7 +2303,7 @@ func FileTypeCake(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCakephp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCakephp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2316,7 +2316,7 @@ func FileTypeCakephp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCapacitor(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCapacitor(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2329,7 +2329,7 @@ func FileTypeCapacitor(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCargo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCargo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2342,7 +2342,7 @@ func FileTypeCargo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCasc(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCasc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2355,7 +2355,7 @@ func FileTypeCasc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCddl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCddl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2368,7 +2368,7 @@ func FileTypeCddl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCert(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCert(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2381,7 +2381,7 @@ func FileTypeCert(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCeylon(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCeylon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2394,7 +2394,7 @@ func FileTypeCeylon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCf(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCf(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2407,7 +2407,7 @@ func FileTypeCf(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCfTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCfTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2420,7 +2420,7 @@ func FileTypeCfTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCfc(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCfc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2433,7 +2433,7 @@ func FileTypeCfc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCfcTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCfcTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2446,7 +2446,7 @@ func FileTypeCfcTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCfm(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCfm(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2459,7 +2459,7 @@ func FileTypeCfm(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCfmTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCfmTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2472,7 +2472,7 @@ func FileTypeCfmTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCheader(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCheader(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2485,7 +2485,7 @@ func FileTypeCheader(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeChef(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeChef(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2498,7 +2498,7 @@ func FileTypeChef(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeChefCookbook(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeChefCookbook(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2511,7 +2511,7 @@ func FileTypeChefCookbook(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCircleci(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCircleci(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2524,7 +2524,7 @@ func FileTypeCircleci(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeClass(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeClass(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2537,7 +2537,7 @@ func FileTypeClass(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeClojure(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeClojure(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2550,7 +2550,7 @@ func FileTypeClojure(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeClojurescript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeClojurescript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2563,7 +2563,7 @@ func FileTypeClojurescript(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeCloudfoundry(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCloudfoundry(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2576,7 +2576,7 @@ func FileTypeCloudfoundry(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCmake(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCmake(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2589,7 +2589,7 @@ func FileTypeCmake(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCobol(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCobol(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2602,7 +2602,7 @@ func FileTypeCobol(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCodacy(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCodacy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2615,7 +2615,7 @@ func FileTypeCodacy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCodeclimate(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCodeclimate(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2628,7 +2628,7 @@ func FileTypeCodeclimate(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCodecov(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCodecov(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2641,7 +2641,7 @@ func FileTypeCodecov(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCodekit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCodekit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2654,7 +2654,7 @@ func FileTypeCodekit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCodeowners(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCodeowners(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2667,7 +2667,7 @@ func FileTypeCodeowners(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCodeql(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCodeql(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2680,7 +2680,7 @@ func FileTypeCodeql(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCoffeelint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCoffeelint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2693,7 +2693,7 @@ func FileTypeCoffeelint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCoffeescript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCoffeescript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2706,7 +2706,7 @@ func FileTypeCoffeescript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCommitizen(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCommitizen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2719,7 +2719,7 @@ func FileTypeCommitizen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCommitlint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCommitlint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2732,7 +2732,7 @@ func FileTypeCommitlint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCompass(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCompass(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2745,7 +2745,7 @@ func FileTypeCompass(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeComposer(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeComposer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2758,7 +2758,7 @@ func FileTypeComposer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeConan(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeConan(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2771,7 +2771,7 @@ func FileTypeConan(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeConda(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeConda(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2784,7 +2784,7 @@ func FileTypeConda(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeConfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeConfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2797,7 +2797,7 @@ func FileTypeConfig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeConfluence(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeConfluence(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2810,7 +2810,7 @@ func FileTypeConfluence(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCoveralls(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCoveralls(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2823,7 +2823,7 @@ func FileTypeCoveralls(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCpp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCpp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2836,7 +2836,7 @@ func FileTypeCpp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCppThree(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCppThree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2849,7 +2849,7 @@ func FileTypeCppThree(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCppTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCppTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2862,7 +2862,7 @@ func FileTypeCppTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCppheader(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCppheader(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2875,7 +2875,7 @@ func FileTypeCppheader(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCrowdin(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCrowdin(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2888,7 +2888,7 @@ func FileTypeCrowdin(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCrystal(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCrystal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2901,7 +2901,7 @@ func FileTypeCrystal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCsharp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCsharp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2914,7 +2914,7 @@ func FileTypeCsharp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCsharpTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCsharpTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2927,7 +2927,7 @@ func FileTypeCsharpTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCspell(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCspell(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2940,7 +2940,7 @@ func FileTypeCspell(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCsproj(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCsproj(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2953,7 +2953,7 @@ func FileTypeCsproj(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCss(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCss(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2966,7 +2966,7 @@ func FileTypeCss(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCsscomb(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCsscomb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2979,7 +2979,7 @@ func FileTypeCsscomb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCsslint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCsslint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -2992,7 +2992,7 @@ func FileTypeCsslint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCssmap(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCssmap(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3005,7 +3005,7 @@ func FileTypeCssmap(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCucumber(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCucumber(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3018,7 +3018,7 @@ func FileTypeCucumber(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCuda(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCuda(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3031,7 +3031,7 @@ func FileTypeCuda(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCvs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCvs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3044,7 +3044,7 @@ func FileTypeCvs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCypress(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCypress(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3057,7 +3057,7 @@ func FileTypeCypress(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCypressSpec(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCypressSpec(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3070,7 +3070,7 @@ func FileTypeCypressSpec(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeCython(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeCython(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3083,7 +3083,7 @@ func FileTypeCython(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDal(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3096,7 +3096,7 @@ func FileTypeDal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDarcs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDarcs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3109,7 +3109,7 @@ func FileTypeDarcs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDartlang(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDartlang(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3122,7 +3122,7 @@ func FileTypeDartlang(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDartlangGenerated(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDartlangGenerated(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3135,7 +3135,7 @@ func FileTypeDartlangGenerated(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FileTypeDartlangIgnore(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDartlangIgnore(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3148,7 +3148,7 @@ func FileTypeDartlangIgnore(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeDatadog(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDatadog(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3161,7 +3161,7 @@ func FileTypeDatadog(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDb(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3174,7 +3174,7 @@ func FileTypeDb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDelphi(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDelphi(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3187,7 +3187,7 @@ func FileTypeDelphi(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDeno(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDeno(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3200,7 +3200,7 @@ func FileTypeDeno(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDependabot(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDependabot(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3213,7 +3213,7 @@ func FileTypeDependabot(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDependencies(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDependencies(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3226,7 +3226,7 @@ func FileTypeDependencies(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDevcontainer(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDevcontainer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3239,7 +3239,7 @@ func FileTypeDevcontainer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDhall(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDhall(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3252,7 +3252,7 @@ func FileTypeDhall(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDiff(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDiff(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3265,7 +3265,7 @@ func FileTypeDiff(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDjango(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDjango(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3278,7 +3278,7 @@ func FileTypeDjango(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDlang(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDlang(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3291,7 +3291,7 @@ func FileTypeDlang(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDocker(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDocker(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3304,7 +3304,7 @@ func FileTypeDocker(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDockerTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDockerTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3317,7 +3317,7 @@ func FileTypeDockerTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDockertest(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDockertest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3330,7 +3330,7 @@ func FileTypeDockertest(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDockertestTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDockertestTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3343,7 +3343,7 @@ func FileTypeDockertestTwo(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeDocpad(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDocpad(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3356,7 +3356,7 @@ func FileTypeDocpad(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDocz(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDocz(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3369,7 +3369,7 @@ func FileTypeDocz(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDojo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDojo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3382,7 +3382,7 @@ func FileTypeDojo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDoppler(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDoppler(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3395,7 +3395,7 @@ func FileTypeDoppler(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDotjs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDotjs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3408,7 +3408,7 @@ func FileTypeDotjs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDoxygen(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDoxygen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3421,7 +3421,7 @@ func FileTypeDoxygen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDrawio(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDrawio(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3434,7 +3434,7 @@ func FileTypeDrawio(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDrone(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDrone(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3447,7 +3447,7 @@ func FileTypeDrone(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDrools(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDrools(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3460,7 +3460,7 @@ func FileTypeDrools(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDustjs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDustjs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3473,7 +3473,7 @@ func FileTypeDustjs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDvc(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDvc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3486,7 +3486,7 @@ func FileTypeDvc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeDylan(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeDylan(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3499,7 +3499,7 @@ func FileTypeDylan(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEarthly(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEarthly(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3512,7 +3512,7 @@ func FileTypeEarthly(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEasMetadata(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEasMetadata(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3525,7 +3525,7 @@ func FileTypeEasMetadata(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEdge(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEdge(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3538,7 +3538,7 @@ func FileTypeEdge(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEdgeTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEdgeTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3551,7 +3551,7 @@ func FileTypeEdgeTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEditorconfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEditorconfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3564,7 +3564,7 @@ func FileTypeEditorconfig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEex(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEex(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3577,7 +3577,7 @@ func FileTypeEex(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEjs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEjs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3590,7 +3590,7 @@ func FileTypeEjs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeElastic(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeElastic(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3603,7 +3603,7 @@ func FileTypeElastic(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeElasticbeanstalk(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeElasticbeanstalk(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3616,7 +3616,7 @@ func FileTypeElasticbeanstalk(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeEleventy(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEleventy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3629,7 +3629,7 @@ func FileTypeEleventy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEleventyTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEleventyTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3642,7 +3642,7 @@ func FileTypeEleventyTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeElixir(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeElixir(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3655,7 +3655,7 @@ func FileTypeElixir(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeElm(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeElm(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3668,7 +3668,7 @@ func FileTypeElm(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeElmTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeElmTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3681,7 +3681,7 @@ func FileTypeElmTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEmacs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEmacs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3694,7 +3694,7 @@ func FileTypeEmacs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEmber(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEmber(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3707,7 +3707,7 @@ func FileTypeEmber(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEnsime(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEnsime(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3720,7 +3720,7 @@ func FileTypeEnsime(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEps(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEps(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3733,7 +3733,7 @@ func FileTypeEps(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeErb(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeErb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3746,7 +3746,7 @@ func FileTypeErb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeErlang(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeErlang(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3759,7 +3759,7 @@ func FileTypeErlang(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeErlangTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeErlangTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3772,7 +3772,7 @@ func FileTypeErlangTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEsbuild(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEsbuild(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3785,7 +3785,7 @@ func FileTypeEsbuild(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEslint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEslint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3798,7 +3798,7 @@ func FileTypeEslint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEslintTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEslintTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3811,7 +3811,7 @@ func FileTypeEslintTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeEsphome(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeEsphome(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3824,7 +3824,7 @@ func FileTypeEsphome(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeExcel(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeExcel(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3837,7 +3837,7 @@ func FileTypeExcel(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeExcelTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeExcelTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3850,7 +3850,7 @@ func FileTypeExcelTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeExpo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeExpo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3863,7 +3863,7 @@ func FileTypeExpo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFalcon(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFalcon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3876,7 +3876,7 @@ func FileTypeFalcon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFantasticon(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFantasticon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3889,7 +3889,7 @@ func FileTypeFantasticon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFauna(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFauna(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3902,7 +3902,7 @@ func FileTypeFauna(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFavicon(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFavicon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3915,7 +3915,7 @@ func FileTypeFavicon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFbx(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFbx(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3928,7 +3928,7 @@ func FileTypeFbx(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFirebase(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFirebase(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3941,7 +3941,7 @@ func FileTypeFirebase(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFirebasehosting(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFirebasehosting(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3954,7 +3954,7 @@ func FileTypeFirebasehosting(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeFirestore(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFirestore(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3967,7 +3967,7 @@ func FileTypeFirestore(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFitbit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFitbit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3980,7 +3980,7 @@ func FileTypeFitbit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFla(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFla(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -3993,7 +3993,7 @@ func FileTypeFla(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFlareact(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFlareact(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4006,7 +4006,7 @@ func FileTypeFlareact(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFlash(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFlash(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4019,7 +4019,7 @@ func FileTypeFlash(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFloobits(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFloobits(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4032,7 +4032,7 @@ func FileTypeFloobits(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFlow(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFlow(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4045,7 +4045,7 @@ func FileTypeFlow(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFlutter(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFlutter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4058,7 +4058,7 @@ func FileTypeFlutter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFlutterPackage(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFlutterPackage(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4071,7 +4071,7 @@ func FileTypeFlutterPackage(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeFont(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFont(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4084,7 +4084,7 @@ func FileTypeFont(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFormkit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFormkit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4097,7 +4097,7 @@ func FileTypeFormkit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFortran(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFortran(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4110,7 +4110,7 @@ func FileTypeFortran(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFossa(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFossa(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4123,7 +4123,7 @@ func FileTypeFossa(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFossil(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFossil(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4136,7 +4136,7 @@ func FileTypeFossil(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFreemarker(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFreemarker(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4149,7 +4149,7 @@ func FileTypeFreemarker(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFsharp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFsharp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4162,7 +4162,7 @@ func FileTypeFsharp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFsharpTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFsharpTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4175,7 +4175,7 @@ func FileTypeFsharpTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFsproj(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFsproj(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4188,7 +4188,7 @@ func FileTypeFsproj(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFthtml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFthtml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4201,7 +4201,7 @@ func FileTypeFthtml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFunding(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFunding(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4214,7 +4214,7 @@ func FileTypeFunding(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeFusebox(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeFusebox(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4227,7 +4227,7 @@ func FileTypeFusebox(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGalen(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGalen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4240,7 +4240,7 @@ func FileTypeGalen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGalenTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGalenTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4253,7 +4253,7 @@ func FileTypeGalenTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGamemaker(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGamemaker(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4266,7 +4266,7 @@ func FileTypeGamemaker(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGamemakerEightyOne(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGamemakerEightyOne(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4279,7 +4279,7 @@ func FileTypeGamemakerEightyOne(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FileTypeGamemakerTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGamemakerTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4292,7 +4292,7 @@ func FileTypeGamemakerTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGatsby(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGatsby(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4305,7 +4305,7 @@ func FileTypeGatsby(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGcloud(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGcloud(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4318,7 +4318,7 @@ func FileTypeGcloud(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGcode(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGcode(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4331,7 +4331,7 @@ func FileTypeGcode(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGdscript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGdscript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4344,7 +4344,7 @@ func FileTypeGdscript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGenstat(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGenstat(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4357,7 +4357,7 @@ func FileTypeGenstat(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4370,7 +4370,7 @@ func FileTypeGit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGitTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGitTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4383,7 +4383,7 @@ func FileTypeGitTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGitlab(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGitlab(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4396,7 +4396,7 @@ func FileTypeGitlab(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGitpod(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGitpod(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4409,7 +4409,7 @@ func FileTypeGitpod(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGlide(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGlide(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4422,7 +4422,7 @@ func FileTypeGlide(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGlitter(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGlitter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4435,7 +4435,7 @@ func FileTypeGlitter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGlsl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGlsl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4448,7 +4448,7 @@ func FileTypeGlsl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGlyphs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGlyphs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4461,7 +4461,7 @@ func FileTypeGlyphs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGnu(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGnu(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4474,7 +4474,7 @@ func FileTypeGnu(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGnuplot(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGnuplot(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4487,7 +4487,7 @@ func FileTypeGnuplot(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4500,7 +4500,7 @@ func FileTypeGo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGoAqua(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGoAqua(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4513,7 +4513,7 @@ func FileTypeGoAqua(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGoBlack(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGoBlack(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4526,7 +4526,7 @@ func FileTypeGoBlack(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGoFuchsia(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGoFuchsia(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4539,7 +4539,7 @@ func FileTypeGoFuchsia(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGoGopher(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGoGopher(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4552,7 +4552,7 @@ func FileTypeGoGopher(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGoLightblue(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGoLightblue(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4565,7 +4565,7 @@ func FileTypeGoLightblue(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGoPackage(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGoPackage(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4578,7 +4578,7 @@ func FileTypeGoPackage(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGoWhite(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGoWhite(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4591,7 +4591,7 @@ func FileTypeGoWhite(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGoWork(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGoWork(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4604,7 +4604,7 @@ func FileTypeGoWork(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGoYellow(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGoYellow(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4617,7 +4617,7 @@ func FileTypeGoYellow(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGoctl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGoctl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4630,7 +4630,7 @@ func FileTypeGoctl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGodot(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGodot(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4643,7 +4643,7 @@ func FileTypeGodot(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGradle(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGradle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4656,7 +4656,7 @@ func FileTypeGradle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGradleTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGradleTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4669,7 +4669,7 @@ func FileTypeGradleTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGraphql(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGraphql(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4682,7 +4682,7 @@ func FileTypeGraphql(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGraphqlConfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGraphqlConfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4695,7 +4695,7 @@ func FileTypeGraphqlConfig(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeGraphviz(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGraphviz(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4708,7 +4708,7 @@ func FileTypeGraphviz(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGreenkeeper(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGreenkeeper(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4721,7 +4721,7 @@ func FileTypeGreenkeeper(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGridsome(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGridsome(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4734,7 +4734,7 @@ func FileTypeGridsome(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGroovy(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGroovy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4747,7 +4747,7 @@ func FileTypeGroovy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGroovyTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGroovyTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4760,7 +4760,7 @@ func FileTypeGroovyTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGrunt(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGrunt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4773,7 +4773,7 @@ func FileTypeGrunt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeGulp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeGulp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4786,7 +4786,7 @@ func FileTypeGulp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHaml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHaml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4799,7 +4799,7 @@ func FileTypeHaml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHandlebars(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHandlebars(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4812,7 +4812,7 @@ func FileTypeHandlebars(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHandlebarsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHandlebarsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4825,7 +4825,7 @@ func FileTypeHandlebarsTwo(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeHarbour(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHarbour(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4838,7 +4838,7 @@ func FileTypeHarbour(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHardhat(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHardhat(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4851,7 +4851,7 @@ func FileTypeHardhat(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHashicorp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHashicorp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4864,7 +4864,7 @@ func FileTypeHashicorp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHaskell(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHaskell(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4877,7 +4877,7 @@ func FileTypeHaskell(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHaskellTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHaskellTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4890,7 +4890,7 @@ func FileTypeHaskellTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHaxe(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHaxe(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4903,7 +4903,7 @@ func FileTypeHaxe(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHaxecheckstyle(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHaxecheckstyle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4916,7 +4916,7 @@ func FileTypeHaxecheckstyle(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeHaxedevelop(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHaxedevelop(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4929,7 +4929,7 @@ func FileTypeHaxedevelop(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHelix(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHelix(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4942,7 +4942,7 @@ func FileTypeHelix(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHelm(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHelm(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4955,7 +4955,7 @@ func FileTypeHelm(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHjson(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHjson(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4968,7 +4968,7 @@ func FileTypeHjson(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHlsl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHlsl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4981,7 +4981,7 @@ func FileTypeHlsl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHomeassistant(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHomeassistant(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -4994,7 +4994,7 @@ func FileTypeHomeassistant(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeHorusec(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHorusec(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5007,7 +5007,7 @@ func FileTypeHorusec(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHost(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHost(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5020,7 +5020,7 @@ func FileTypeHost(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHtml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHtml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5033,7 +5033,7 @@ func FileTypeHtml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHtmlhint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHtmlhint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5046,7 +5046,7 @@ func FileTypeHtmlhint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHttp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHttp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5059,7 +5059,7 @@ func FileTypeHttp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHunspell(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHunspell(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5072,7 +5072,7 @@ func FileTypeHunspell(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHusky(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHusky(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5085,7 +5085,7 @@ func FileTypeHusky(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHy(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5098,7 +5098,7 @@ func FileTypeHy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHygen(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHygen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5111,7 +5111,7 @@ func FileTypeHygen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeHypr(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeHypr(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5124,7 +5124,7 @@ func FileTypeHypr(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeIcl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeIcl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5137,7 +5137,7 @@ func FileTypeIcl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeIdris(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeIdris(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5150,7 +5150,7 @@ func FileTypeIdris(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeIdrisbin(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeIdrisbin(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5163,7 +5163,7 @@ func FileTypeIdrisbin(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeIdrispkg(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeIdrispkg(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5176,7 +5176,7 @@ func FileTypeIdrispkg(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeImage(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeImage(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5189,7 +5189,7 @@ func FileTypeImage(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeImba(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeImba(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5202,7 +5202,7 @@ func FileTypeImba(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeInc(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeInc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5215,7 +5215,7 @@ func FileTypeInc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeInfopath(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeInfopath(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5228,7 +5228,7 @@ func FileTypeInfopath(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeInformix(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeInformix(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5241,7 +5241,7 @@ func FileTypeInformix(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeIni(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeIni(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5254,7 +5254,7 @@ func FileTypeIni(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeInk(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeInk(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5267,7 +5267,7 @@ func FileTypeInk(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeInnosetup(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeInnosetup(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5280,7 +5280,7 @@ func FileTypeInnosetup(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeIo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeIo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5293,7 +5293,7 @@ func FileTypeIo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeIodine(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeIodine(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5306,7 +5306,7 @@ func FileTypeIodine(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeIonic(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeIonic(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5319,7 +5319,7 @@ func FileTypeIonic(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJake(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJake(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5332,7 +5332,7 @@ func FileTypeJake(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJanet(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJanet(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5345,7 +5345,7 @@ func FileTypeJanet(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJar(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJar(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5358,7 +5358,7 @@ func FileTypeJar(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJasmine(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJasmine(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5371,7 +5371,7 @@ func FileTypeJasmine(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJava(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJava(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5384,7 +5384,7 @@ func FileTypeJava(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJbuilder(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJbuilder(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5397,7 +5397,7 @@ func FileTypeJbuilder(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJekyll(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJekyll(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5410,7 +5410,7 @@ func FileTypeJekyll(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJenkins(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJenkins(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5423,7 +5423,7 @@ func FileTypeJenkins(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJest(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5436,7 +5436,7 @@ func FileTypeJest(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJestSnapshot(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJestSnapshot(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5449,7 +5449,7 @@ func FileTypeJestSnapshot(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJinja(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJinja(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5462,7 +5462,7 @@ func FileTypeJinja(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJpm(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJpm(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5475,7 +5475,7 @@ func FileTypeJpm(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5488,7 +5488,7 @@ func FileTypeJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJsOfficial(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJsOfficial(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5501,7 +5501,7 @@ func FileTypeJsOfficial(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJsbeautify(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJsbeautify(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5514,7 +5514,7 @@ func FileTypeJsbeautify(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJsconfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJsconfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5527,7 +5527,7 @@ func FileTypeJsconfig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJscpd(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJscpd(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5540,7 +5540,7 @@ func FileTypeJscpd(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJshint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJshint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5553,7 +5553,7 @@ func FileTypeJshint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJsmap(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJsmap(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5566,7 +5566,7 @@ func FileTypeJsmap(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJson(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJson(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5579,7 +5579,7 @@ func FileTypeJson(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJsonFive(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJsonFive(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5592,7 +5592,7 @@ func FileTypeJsonFive(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJsonOfficial(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJsonOfficial(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5605,7 +5605,7 @@ func FileTypeJsonOfficial(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJsonTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJsonTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5618,7 +5618,7 @@ func FileTypeJsonTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJsonld(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJsonld(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5631,7 +5631,7 @@ func FileTypeJsonld(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJsonnet(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJsonnet(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5644,7 +5644,7 @@ func FileTypeJsonnet(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJsp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJsp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5657,7 +5657,7 @@ func FileTypeJsp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJss(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJss(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5670,7 +5670,7 @@ func FileTypeJss(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJulia(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJulia(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5683,7 +5683,7 @@ func FileTypeJulia(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJuliaTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJuliaTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5696,7 +5696,7 @@ func FileTypeJuliaTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeJupyter(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeJupyter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5709,7 +5709,7 @@ func FileTypeJupyter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeK(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeK(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5722,7 +5722,7 @@ func FileTypeK(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeKarma(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeKarma(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5735,7 +5735,7 @@ func FileTypeKarma(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeKey(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeKey(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5748,7 +5748,7 @@ func FileTypeKey(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeKitchenci(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeKitchenci(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5761,7 +5761,7 @@ func FileTypeKitchenci(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeKite(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeKite(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5774,7 +5774,7 @@ func FileTypeKite(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeKivy(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeKivy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5787,7 +5787,7 @@ func FileTypeKivy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeKos(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeKos(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5800,7 +5800,7 @@ func FileTypeKos(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeKotlin(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeKotlin(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5813,7 +5813,7 @@ func FileTypeKotlin(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeKusto(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeKusto(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5826,7 +5826,7 @@ func FileTypeKusto(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLatino(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLatino(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5839,7 +5839,7 @@ func FileTypeLatino(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLayout(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLayout(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5852,7 +5852,7 @@ func FileTypeLayout(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLerna(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLerna(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5865,7 +5865,7 @@ func FileTypeLerna(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLess(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLess(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5878,7 +5878,7 @@ func FileTypeLess(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLex(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLex(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5891,7 +5891,7 @@ func FileTypeLex(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLicense(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLicense(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5904,7 +5904,7 @@ func FileTypeLicense(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLicensebat(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLicensebat(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5917,7 +5917,7 @@ func FileTypeLicensebat(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightActionscriptTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightActionscriptTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5930,7 +5930,7 @@ func FileTypeLightActionscriptTwo(children ...*engine.UberElement) *engine.UberE
 		Element(children...)
 }
 
-func FileTypeLightAda(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightAda(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5943,7 +5943,7 @@ func FileTypeLightAda(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightApl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightApl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5956,7 +5956,7 @@ func FileTypeLightApl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightBabel(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightBabel(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5969,7 +5969,7 @@ func FileTypeLightBabel(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightBabelTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightBabelTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5982,7 +5982,7 @@ func FileTypeLightBabelTwo(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeLightCabal(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightCabal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -5995,7 +5995,7 @@ func FileTypeLightCabal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightCircleci(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightCircleci(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6008,7 +6008,7 @@ func FileTypeLightCircleci(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeLightCloudfoundry(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightCloudfoundry(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6021,7 +6021,7 @@ func FileTypeLightCloudfoundry(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FileTypeLightCodacy(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightCodacy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6034,7 +6034,7 @@ func FileTypeLightCodacy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightCodeclimate(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightCodeclimate(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6047,7 +6047,7 @@ func FileTypeLightCodeclimate(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeLightCodeowners(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightCodeowners(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6060,7 +6060,7 @@ func FileTypeLightCodeowners(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeLightConfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightConfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6073,7 +6073,7 @@ func FileTypeLightConfig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightCrystal(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightCrystal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6086,7 +6086,7 @@ func FileTypeLightCrystal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightCypress(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightCypress(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6099,7 +6099,7 @@ func FileTypeLightCypress(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightCypressSpec(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightCypressSpec(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6112,7 +6112,7 @@ func FileTypeLightCypressSpec(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeLightDb(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightDb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6125,7 +6125,7 @@ func FileTypeLightDb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightDeno(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightDeno(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6138,7 +6138,7 @@ func FileTypeLightDeno(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightDhall(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightDhall(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6151,7 +6151,7 @@ func FileTypeLightDhall(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightDocpad(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightDocpad(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6164,7 +6164,7 @@ func FileTypeLightDocpad(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightDrone(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightDrone(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6177,7 +6177,7 @@ func FileTypeLightDrone(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightEasMetadata(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightEasMetadata(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6190,7 +6190,7 @@ func FileTypeLightEasMetadata(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeLightEleventy(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightEleventy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6203,7 +6203,7 @@ func FileTypeLightEleventy(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeLightEleventyTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightEleventyTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6216,7 +6216,7 @@ func FileTypeLightEleventyTwo(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeLightEsphome(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightEsphome(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6229,7 +6229,7 @@ func FileTypeLightEsphome(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightExpo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightExpo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6242,7 +6242,7 @@ func FileTypeLightExpo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightFirebasehosting(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightFirebasehosting(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6255,7 +6255,7 @@ func FileTypeLightFirebasehosting(children ...*engine.UberElement) *engine.UberE
 		Element(children...)
 }
 
-func FileTypeLightFla(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightFla(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6268,7 +6268,7 @@ func FileTypeLightFla(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightFont(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightFont(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6281,7 +6281,7 @@ func FileTypeLightFont(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightGamemakerTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightGamemakerTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6294,7 +6294,7 @@ func FileTypeLightGamemakerTwo(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FileTypeLightGradle(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightGradle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6307,7 +6307,7 @@ func FileTypeLightGradle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightHashicorp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightHashicorp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6320,7 +6320,7 @@ func FileTypeLightHashicorp(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeLightHjson(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightHjson(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6333,7 +6333,7 @@ func FileTypeLightHjson(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightIni(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightIni(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6346,7 +6346,7 @@ func FileTypeLightIni(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightIo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightIo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6359,7 +6359,7 @@ func FileTypeLightIo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6372,7 +6372,7 @@ func FileTypeLightJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightJsconfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightJsconfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6385,7 +6385,7 @@ func FileTypeLightJsconfig(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeLightJsmap(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightJsmap(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6398,7 +6398,7 @@ func FileTypeLightJsmap(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightJson(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightJson(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6411,7 +6411,7 @@ func FileTypeLightJson(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightJsonFive(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightJsonFive(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6424,7 +6424,7 @@ func FileTypeLightJsonFive(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeLightJsonld(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightJsonld(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6437,7 +6437,7 @@ func FileTypeLightJsonld(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightKite(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightKite(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6450,7 +6450,7 @@ func FileTypeLightKite(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightLerna(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightLerna(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6463,7 +6463,7 @@ func FileTypeLightLerna(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightMailing(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightMailing(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6476,7 +6476,7 @@ func FileTypeLightMailing(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightMdx(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightMdx(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6489,7 +6489,7 @@ func FileTypeLightMdx(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightMlang(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightMlang(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6502,7 +6502,7 @@ func FileTypeLightMlang(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightMustache(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightMustache(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6515,7 +6515,7 @@ func FileTypeLightMustache(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeLightNext(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightNext(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6528,7 +6528,7 @@ func FileTypeLightNext(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightNim(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightNim(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6541,7 +6541,7 @@ func FileTypeLightNim(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightNx(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightNx(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6554,7 +6554,7 @@ func FileTypeLightNx(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightObjidconfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightObjidconfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6567,7 +6567,7 @@ func FileTypeLightObjidconfig(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeLightOpenhab(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightOpenhab(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6580,7 +6580,7 @@ func FileTypeLightOpenhab(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightPcl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightPcl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6593,7 +6593,7 @@ func FileTypeLightPcl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightPnpm(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightPnpm(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6606,7 +6606,7 @@ func FileTypeLightPnpm(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightPrettier(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightPrettier(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6619,7 +6619,7 @@ func FileTypeLightPrettier(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeLightPrisma(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightPrisma(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6632,7 +6632,7 @@ func FileTypeLightPrisma(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightPurescript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightPurescript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6645,7 +6645,7 @@ func FileTypeLightPurescript(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeLightQuasar(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightQuasar(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6658,7 +6658,7 @@ func FileTypeLightQuasar(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightRazzle(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightRazzle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6671,7 +6671,7 @@ func FileTypeLightRazzle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightRehype(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightRehype(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6684,7 +6684,7 @@ func FileTypeLightRehype(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightRemark(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightRemark(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6697,7 +6697,7 @@ func FileTypeLightRemark(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightReplit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightReplit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6710,7 +6710,7 @@ func FileTypeLightReplit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightRetext(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightRetext(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6723,7 +6723,7 @@ func FileTypeLightRetext(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightRome(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightRome(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6736,7 +6736,7 @@ func FileTypeLightRome(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightRubocop(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightRubocop(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6749,7 +6749,7 @@ func FileTypeLightRubocop(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightRust(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightRust(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6762,7 +6762,7 @@ func FileTypeLightRust(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightRustToolchain(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightRustToolchain(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6775,7 +6775,7 @@ func FileTypeLightRustToolchain(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FileTypeLightShaderlab(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightShaderlab(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6788,7 +6788,7 @@ func FileTypeLightShaderlab(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeLightSolidity(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightSolidity(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6801,7 +6801,7 @@ func FileTypeLightSolidity(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeLightStylelint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightStylelint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6814,7 +6814,7 @@ func FileTypeLightStylelint(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeLightStylus(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightStylus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6827,7 +6827,7 @@ func FileTypeLightStylus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightSymfony(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightSymfony(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6840,7 +6840,7 @@ func FileTypeLightSymfony(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightSystemd(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightSystemd(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6853,7 +6853,7 @@ func FileTypeLightSystemd(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightSystemverilog(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightSystemverilog(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6866,7 +6866,7 @@ func FileTypeLightSystemverilog(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FileTypeLightTestcafe(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightTestcafe(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6879,7 +6879,7 @@ func FileTypeLightTestcafe(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeLightTestjs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightTestjs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6892,7 +6892,7 @@ func FileTypeLightTestjs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightTex(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightTex(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6905,7 +6905,7 @@ func FileTypeLightTex(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightTodo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightTodo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6918,7 +6918,7 @@ func FileTypeLightTodo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightToit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightToit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6931,7 +6931,7 @@ func FileTypeLightToit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightToml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightToml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6944,7 +6944,7 @@ func FileTypeLightToml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightTree(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightTree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6957,7 +6957,7 @@ func FileTypeLightTree(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightTurbo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightTurbo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6970,7 +6970,7 @@ func FileTypeLightTurbo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightUnibeautify(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightUnibeautify(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6983,7 +6983,7 @@ func FileTypeLightUnibeautify(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeLightVash(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightVash(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -6996,7 +6996,7 @@ func FileTypeLightVash(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightVsix(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightVsix(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7009,7 +7009,7 @@ func FileTypeLightVsix(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightVsixmanifest(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightVsixmanifest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7022,7 +7022,7 @@ func FileTypeLightVsixmanifest(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FileTypeLightXfl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightXfl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7035,7 +7035,7 @@ func FileTypeLightXfl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightYaml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightYaml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7048,7 +7048,7 @@ func FileTypeLightYaml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLightZeit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLightZeit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7061,7 +7061,7 @@ func FileTypeLightZeit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLighthouse(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLighthouse(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7074,7 +7074,7 @@ func FileTypeLighthouse(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLilypond(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLilypond(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7087,7 +7087,7 @@ func FileTypeLilypond(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLime(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLime(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7100,7 +7100,7 @@ func FileTypeLime(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLintstagedrc(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLintstagedrc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7113,7 +7113,7 @@ func FileTypeLintstagedrc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLiquid(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLiquid(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7126,7 +7126,7 @@ func FileTypeLiquid(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLisp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLisp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7139,7 +7139,7 @@ func FileTypeLisp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLivescript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLivescript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7152,7 +7152,7 @@ func FileTypeLivescript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLnk(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLnk(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7165,7 +7165,7 @@ func FileTypeLnk(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLocale(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLocale(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7178,7 +7178,7 @@ func FileTypeLocale(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLog(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLog(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7191,7 +7191,7 @@ func FileTypeLog(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLolcode(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLolcode(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7204,7 +7204,7 @@ func FileTypeLolcode(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLsl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLsl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7217,7 +7217,7 @@ func FileTypeLsl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLua(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLua(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7230,7 +7230,7 @@ func FileTypeLua(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLuau(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLuau(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7243,7 +7243,7 @@ func FileTypeLuau(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeLync(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeLync(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7256,7 +7256,7 @@ func FileTypeLync(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMailing(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMailing(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7269,7 +7269,7 @@ func FileTypeMailing(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeManifest(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeManifest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7282,7 +7282,7 @@ func FileTypeManifest(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeManifestBak(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeManifestBak(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7295,7 +7295,7 @@ func FileTypeManifestBak(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeManifestSkip(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeManifestSkip(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7308,7 +7308,7 @@ func FileTypeManifestSkip(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMap(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMap(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7321,7 +7321,7 @@ func FileTypeMap(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMariadb(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMariadb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7334,7 +7334,7 @@ func FileTypeMariadb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMarkdown(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMarkdown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7347,7 +7347,7 @@ func FileTypeMarkdown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMarkdownlint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMarkdownlint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7360,7 +7360,7 @@ func FileTypeMarkdownlint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMarkdownlintIgnore(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMarkdownlintIgnore(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7373,7 +7373,7 @@ func FileTypeMarkdownlintIgnore(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FileTypeMarko(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMarko(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7386,7 +7386,7 @@ func FileTypeMarko(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMarkojs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMarkojs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7399,7 +7399,7 @@ func FileTypeMarkojs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMasterCo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMasterCo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7412,7 +7412,7 @@ func FileTypeMasterCo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMatlab(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMatlab(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7425,7 +7425,7 @@ func FileTypeMatlab(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMaven(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMaven(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7438,7 +7438,7 @@ func FileTypeMaven(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMaxscript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMaxscript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7451,7 +7451,7 @@ func FileTypeMaxscript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMaya(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMaya(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7464,7 +7464,7 @@ func FileTypeMaya(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMdx(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMdx(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7477,7 +7477,7 @@ func FileTypeMdx(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMediawiki(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMediawiki(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7490,7 +7490,7 @@ func FileTypeMediawiki(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMercurial(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMercurial(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7503,7 +7503,7 @@ func FileTypeMercurial(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMeson(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMeson(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7516,7 +7516,7 @@ func FileTypeMeson(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMeteor(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMeteor(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7529,7 +7529,7 @@ func FileTypeMeteor(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMjml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMjml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7542,7 +7542,7 @@ func FileTypeMjml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMlang(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMlang(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7555,7 +7555,7 @@ func FileTypeMlang(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMocha(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMocha(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7568,7 +7568,7 @@ func FileTypeMocha(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeModernizr(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeModernizr(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7581,7 +7581,7 @@ func FileTypeModernizr(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMojolicious(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMojolicious(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7594,7 +7594,7 @@ func FileTypeMojolicious(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMoleculer(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMoleculer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7607,7 +7607,7 @@ func FileTypeMoleculer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMondoo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMondoo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7620,7 +7620,7 @@ func FileTypeMondoo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMongo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMongo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7633,7 +7633,7 @@ func FileTypeMongo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMonotone(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMonotone(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7646,7 +7646,7 @@ func FileTypeMonotone(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMotif(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMotif(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7659,7 +7659,7 @@ func FileTypeMotif(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMson(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMson(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7672,7 +7672,7 @@ func FileTypeMson(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMustache(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMustache(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7685,7 +7685,7 @@ func FileTypeMustache(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeMysql(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeMysql(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7698,7 +7698,7 @@ func FileTypeMysql(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNdst(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNdst(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7711,7 +7711,7 @@ func FileTypeNdst(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNearly(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNearly(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7724,7 +7724,7 @@ func FileTypeNearly(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNestAdapterJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestAdapterJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7737,7 +7737,7 @@ func FileTypeNestAdapterJs(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNestAdapterTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestAdapterTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7750,7 +7750,7 @@ func FileTypeNestAdapterTs(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNestControllerJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestControllerJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7763,7 +7763,7 @@ func FileTypeNestControllerJs(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeNestControllerTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestControllerTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7776,7 +7776,7 @@ func FileTypeNestControllerTs(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeNestDecoratorJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestDecoratorJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7789,7 +7789,7 @@ func FileTypeNestDecoratorJs(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeNestDecoratorTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestDecoratorTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7802,7 +7802,7 @@ func FileTypeNestDecoratorTs(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeNestFilterJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestFilterJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7815,7 +7815,7 @@ func FileTypeNestFilterJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNestFilterTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestFilterTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7828,7 +7828,7 @@ func FileTypeNestFilterTs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNestGatewayJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestGatewayJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7841,7 +7841,7 @@ func FileTypeNestGatewayJs(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNestGatewayTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestGatewayTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7854,7 +7854,7 @@ func FileTypeNestGatewayTs(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNestGuardJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestGuardJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7867,7 +7867,7 @@ func FileTypeNestGuardJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNestGuardTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestGuardTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7880,7 +7880,7 @@ func FileTypeNestGuardTs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNestInterceptorJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestInterceptorJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7893,7 +7893,7 @@ func FileTypeNestInterceptorJs(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FileTypeNestInterceptorTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestInterceptorTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7906,7 +7906,7 @@ func FileTypeNestInterceptorTs(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FileTypeNestMiddlewareJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestMiddlewareJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7919,7 +7919,7 @@ func FileTypeNestMiddlewareJs(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeNestMiddlewareTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestMiddlewareTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7932,7 +7932,7 @@ func FileTypeNestMiddlewareTs(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeNestModuleJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestModuleJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7945,7 +7945,7 @@ func FileTypeNestModuleJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNestModuleTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestModuleTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7958,7 +7958,7 @@ func FileTypeNestModuleTs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNestPipeJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestPipeJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7971,7 +7971,7 @@ func FileTypeNestPipeJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNestPipeTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestPipeTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7984,7 +7984,7 @@ func FileTypeNestPipeTs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNestServiceJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestServiceJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -7997,7 +7997,7 @@ func FileTypeNestServiceJs(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNestServiceTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestServiceTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8010,7 +8010,7 @@ func FileTypeNestServiceTs(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNestjs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNestjs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8023,7 +8023,7 @@ func FileTypeNestjs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNetlify(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNetlify(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8036,7 +8036,7 @@ func FileTypeNetlify(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNext(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNext(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8049,7 +8049,7 @@ func FileTypeNext(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgComponentCss(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgComponentCss(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8062,7 +8062,7 @@ func FileTypeNgComponentCss(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeNgComponentDart(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgComponentDart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8075,7 +8075,7 @@ func FileTypeNgComponentDart(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeNgComponentHtml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgComponentHtml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8088,7 +8088,7 @@ func FileTypeNgComponentHtml(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeNgComponentJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgComponentJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8101,7 +8101,7 @@ func FileTypeNgComponentJs(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNgComponentJsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgComponentJsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8114,7 +8114,7 @@ func FileTypeNgComponentJsTwo(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeNgComponentLess(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgComponentLess(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8127,7 +8127,7 @@ func FileTypeNgComponentLess(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeNgComponentSass(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgComponentSass(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8140,7 +8140,7 @@ func FileTypeNgComponentSass(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeNgComponentScss(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgComponentScss(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8153,7 +8153,7 @@ func FileTypeNgComponentScss(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeNgComponentTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgComponentTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8166,7 +8166,7 @@ func FileTypeNgComponentTs(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNgComponentTsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgComponentTsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8179,7 +8179,7 @@ func FileTypeNgComponentTsTwo(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeNgControllerJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgControllerJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8192,7 +8192,7 @@ func FileTypeNgControllerJs(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeNgControllerTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgControllerTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8205,7 +8205,7 @@ func FileTypeNgControllerTs(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeNgDirectiveDart(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgDirectiveDart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8218,7 +8218,7 @@ func FileTypeNgDirectiveDart(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeNgDirectiveJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgDirectiveJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8231,7 +8231,7 @@ func FileTypeNgDirectiveJs(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNgDirectiveJsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgDirectiveJsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8244,7 +8244,7 @@ func FileTypeNgDirectiveJsTwo(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeNgDirectiveTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgDirectiveTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8257,7 +8257,7 @@ func FileTypeNgDirectiveTs(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNgDirectiveTsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgDirectiveTsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8270,7 +8270,7 @@ func FileTypeNgDirectiveTsTwo(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeNgGuardDart(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgGuardDart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8283,7 +8283,7 @@ func FileTypeNgGuardDart(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgGuardJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgGuardJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8296,7 +8296,7 @@ func FileTypeNgGuardJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgGuardTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgGuardTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8309,7 +8309,7 @@ func FileTypeNgGuardTs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgInterceptorDart(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgInterceptorDart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8322,7 +8322,7 @@ func FileTypeNgInterceptorDart(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FileTypeNgInterceptorJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgInterceptorJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8335,7 +8335,7 @@ func FileTypeNgInterceptorJs(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeNgInterceptorTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgInterceptorTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8348,7 +8348,7 @@ func FileTypeNgInterceptorTs(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypeNgModuleDart(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgModuleDart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8361,7 +8361,7 @@ func FileTypeNgModuleDart(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgModuleJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgModuleJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8374,7 +8374,7 @@ func FileTypeNgModuleJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgModuleJsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgModuleJsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8387,7 +8387,7 @@ func FileTypeNgModuleJsTwo(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNgModuleTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgModuleTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8400,7 +8400,7 @@ func FileTypeNgModuleTs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgModuleTsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgModuleTsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8413,7 +8413,7 @@ func FileTypeNgModuleTsTwo(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNgPipeDart(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgPipeDart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8426,7 +8426,7 @@ func FileTypeNgPipeDart(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgPipeJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgPipeJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8439,7 +8439,7 @@ func FileTypeNgPipeJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgPipeJsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgPipeJsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8452,7 +8452,7 @@ func FileTypeNgPipeJsTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgPipeTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgPipeTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8465,7 +8465,7 @@ func FileTypeNgPipeTs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgPipeTsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgPipeTsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8478,7 +8478,7 @@ func FileTypeNgPipeTsTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgRoutingDart(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgRoutingDart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8491,7 +8491,7 @@ func FileTypeNgRoutingDart(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNgRoutingJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgRoutingJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8504,7 +8504,7 @@ func FileTypeNgRoutingJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgRoutingJsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgRoutingJsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8517,7 +8517,7 @@ func FileTypeNgRoutingJsTwo(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeNgRoutingTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgRoutingTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8530,7 +8530,7 @@ func FileTypeNgRoutingTs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgRoutingTsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgRoutingTsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8543,7 +8543,7 @@ func FileTypeNgRoutingTsTwo(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeNgServiceDart(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgServiceDart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8556,7 +8556,7 @@ func FileTypeNgServiceDart(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNgServiceJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgServiceJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8569,7 +8569,7 @@ func FileTypeNgServiceJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgServiceJsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgServiceJsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8582,7 +8582,7 @@ func FileTypeNgServiceJsTwo(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeNgServiceTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgServiceTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8595,7 +8595,7 @@ func FileTypeNgServiceTs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNgServiceTsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgServiceTsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8608,7 +8608,7 @@ func FileTypeNgServiceTsTwo(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeNgSmartComponentDart(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgSmartComponentDart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8621,7 +8621,7 @@ func FileTypeNgSmartComponentDart(children ...*engine.UberElement) *engine.UberE
 		Element(children...)
 }
 
-func FileTypeNgSmartComponentJs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgSmartComponentJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8634,7 +8634,7 @@ func FileTypeNgSmartComponentJs(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FileTypeNgSmartComponentJsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgSmartComponentJsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8647,7 +8647,7 @@ func FileTypeNgSmartComponentJsTwo(children ...*engine.UberElement) *engine.Uber
 		Element(children...)
 }
 
-func FileTypeNgSmartComponentTs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgSmartComponentTs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8660,7 +8660,7 @@ func FileTypeNgSmartComponentTs(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FileTypeNgSmartComponentTsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgSmartComponentTsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8673,7 +8673,7 @@ func FileTypeNgSmartComponentTsTwo(children ...*engine.UberElement) *engine.Uber
 		Element(children...)
 }
 
-func FileTypeNgTailwind(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNgTailwind(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8686,7 +8686,7 @@ func FileTypeNgTailwind(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNginx(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNginx(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8699,7 +8699,7 @@ func FileTypeNginx(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNim(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNim(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8712,7 +8712,7 @@ func FileTypeNim(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNimble(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNimble(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8725,7 +8725,7 @@ func FileTypeNimble(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNinja(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNinja(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8738,7 +8738,7 @@ func FileTypeNinja(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNix(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNix(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8751,7 +8751,7 @@ func FileTypeNix(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNjsproj(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNjsproj(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8764,7 +8764,7 @@ func FileTypeNjsproj(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNoc(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNoc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8777,7 +8777,7 @@ func FileTypeNoc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNode(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNode(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8790,7 +8790,7 @@ func FileTypeNode(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNodeTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNodeTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8803,7 +8803,7 @@ func FileTypeNodeTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNodemon(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNodemon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8816,7 +8816,7 @@ func FileTypeNodemon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNpm(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNpm(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8829,7 +8829,7 @@ func FileTypeNpm(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNsi(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNsi(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8842,7 +8842,7 @@ func FileTypeNsi(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNsri(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNsri(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8855,7 +8855,7 @@ func FileTypeNsri(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNsriIntegrity(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNsriIntegrity(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8868,7 +8868,7 @@ func FileTypeNsriIntegrity(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeNuget(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNuget(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8881,7 +8881,7 @@ func FileTypeNuget(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNumpy(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNumpy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8894,7 +8894,7 @@ func FileTypeNumpy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNunjucks(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNunjucks(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8907,7 +8907,7 @@ func FileTypeNunjucks(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNuxt(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNuxt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8920,7 +8920,7 @@ func FileTypeNuxt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNx(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNx(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8933,7 +8933,7 @@ func FileTypeNx(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeNyc(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeNyc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8946,7 +8946,7 @@ func FileTypeNyc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeObjectivec(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeObjectivec(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8959,7 +8959,7 @@ func FileTypeObjectivec(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeObjectivecpp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeObjectivecpp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8972,7 +8972,7 @@ func FileTypeObjectivecpp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeObjidconfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeObjidconfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8985,7 +8985,7 @@ func FileTypeObjidconfig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeOcaml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeOcaml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -8998,7 +8998,7 @@ func FileTypeOcaml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeOgone(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeOgone(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9011,7 +9011,7 @@ func FileTypeOgone(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeOnenote(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeOnenote(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9024,7 +9024,7 @@ func FileTypeOnenote(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeOpencl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeOpencl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9037,7 +9037,7 @@ func FileTypeOpencl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeOpenhab(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeOpenhab(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9050,7 +9050,7 @@ func FileTypeOpenhab(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeOpenscad(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeOpenscad(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9063,7 +9063,7 @@ func FileTypeOpenscad(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeOrg(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeOrg(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9076,7 +9076,7 @@ func FileTypeOrg(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeOutlook(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeOutlook(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9089,7 +9089,7 @@ func FileTypeOutlook(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeOvpn(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeOvpn(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9102,7 +9102,7 @@ func FileTypeOvpn(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePackage(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePackage(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9115,7 +9115,7 @@ func FileTypePackage(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePaket(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePaket(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9128,7 +9128,7 @@ func FileTypePaket(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePatch(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePatch(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9141,7 +9141,7 @@ func FileTypePatch(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePcl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePcl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9154,7 +9154,7 @@ func FileTypePcl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePddl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePddl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9167,7 +9167,7 @@ func FileTypePddl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePddlHappenings(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePddlHappenings(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9180,7 +9180,7 @@ func FileTypePddlHappenings(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypePddlPlan(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePddlPlan(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9193,7 +9193,7 @@ func FileTypePddlPlan(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePdfTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePdfTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9206,7 +9206,7 @@ func FileTypePdfTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePeeky(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePeeky(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9219,7 +9219,7 @@ func FileTypePeeky(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePerl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePerl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9232,7 +9232,7 @@ func FileTypePerl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePerlSix(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePerlSix(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9245,7 +9245,7 @@ func FileTypePerlSix(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePerlTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePerlTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9258,7 +9258,7 @@ func FileTypePerlTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePgsql(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePgsql(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9271,7 +9271,7 @@ func FileTypePgsql(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePhotoshop(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePhotoshop(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9284,7 +9284,7 @@ func FileTypePhotoshop(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePhotoshopTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePhotoshopTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9297,7 +9297,7 @@ func FileTypePhotoshopTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePhp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePhp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9310,7 +9310,7 @@ func FileTypePhp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePhpThree(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePhpThree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9323,7 +9323,7 @@ func FileTypePhpThree(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePhpTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePhpTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9336,7 +9336,7 @@ func FileTypePhpTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePhpcsfixer(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePhpcsfixer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9349,7 +9349,7 @@ func FileTypePhpcsfixer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePhpstan(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePhpstan(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9362,7 +9362,7 @@ func FileTypePhpstan(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePhpunit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePhpunit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9375,7 +9375,7 @@ func FileTypePhpunit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePhraseapp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePhraseapp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9388,7 +9388,7 @@ func FileTypePhraseapp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePine(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePine(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9401,7 +9401,7 @@ func FileTypePine(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePip(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePip(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9414,7 +9414,7 @@ func FileTypePip(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePipeline(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePipeline(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9427,7 +9427,7 @@ func FileTypePipeline(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePlantuml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePlantuml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9440,7 +9440,7 @@ func FileTypePlantuml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePlatformio(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePlatformio(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9453,7 +9453,7 @@ func FileTypePlatformio(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePlaywright(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePlaywright(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9466,7 +9466,7 @@ func FileTypePlaywright(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePlsql(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePlsql(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9479,7 +9479,7 @@ func FileTypePlsql(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePlsqlPackage(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePlsqlPackage(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9492,7 +9492,7 @@ func FileTypePlsqlPackage(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePlsqlPackageBody(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePlsqlPackageBody(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9505,7 +9505,7 @@ func FileTypePlsqlPackageBody(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypePlsqlPackageHeader(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePlsqlPackageHeader(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9518,7 +9518,7 @@ func FileTypePlsqlPackageHeader(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FileTypePlsqlPackageSpec(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePlsqlPackageSpec(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9531,7 +9531,7 @@ func FileTypePlsqlPackageSpec(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypePmTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePmTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9544,7 +9544,7 @@ func FileTypePmTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePnpm(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePnpm(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9557,7 +9557,7 @@ func FileTypePnpm(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePoedit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePoedit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9570,7 +9570,7 @@ func FileTypePoedit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePoetry(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePoetry(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9583,7 +9583,7 @@ func FileTypePoetry(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePolymer(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePolymer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9596,7 +9596,7 @@ func FileTypePolymer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePony(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePony(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9609,7 +9609,7 @@ func FileTypePony(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePostcss(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePostcss(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9622,7 +9622,7 @@ func FileTypePostcss(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePostcssconfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePostcssconfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9635,7 +9635,7 @@ func FileTypePostcssconfig(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypePowerpoint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePowerpoint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9648,7 +9648,7 @@ func FileTypePowerpoint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePowerpointTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePowerpointTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9661,7 +9661,7 @@ func FileTypePowerpointTwo(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypePowershell(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePowershell(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9674,7 +9674,7 @@ func FileTypePowershell(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePowershellFormat(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePowershellFormat(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9687,7 +9687,7 @@ func FileTypePowershellFormat(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypePowershellPsd(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePowershellPsd(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9700,7 +9700,7 @@ func FileTypePowershellPsd(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypePowershellPsdTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePowershellPsdTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9713,7 +9713,7 @@ func FileTypePowershellPsdTwo(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypePowershellPsm(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePowershellPsm(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9726,7 +9726,7 @@ func FileTypePowershellPsm(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypePowershellPsmTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePowershellPsmTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9739,7 +9739,7 @@ func FileTypePowershellPsmTwo(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypePowershellTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePowershellTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9752,7 +9752,7 @@ func FileTypePowershellTwo(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypePowershellTypes(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePowershellTypes(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9765,7 +9765,7 @@ func FileTypePowershellTypes(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FileTypePreact(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePreact(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9778,7 +9778,7 @@ func FileTypePreact(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePrecommit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePrecommit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9791,7 +9791,7 @@ func FileTypePrecommit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePrettier(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePrettier(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9804,7 +9804,7 @@ func FileTypePrettier(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePrisma(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePrisma(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9817,7 +9817,7 @@ func FileTypePrisma(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeProcessinglang(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeProcessinglang(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9830,7 +9830,7 @@ func FileTypeProcessinglang(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeProcfile(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeProcfile(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9843,7 +9843,7 @@ func FileTypeProcfile(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeProgress(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeProgress(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9856,7 +9856,7 @@ func FileTypeProgress(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeProlog(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeProlog(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9869,7 +9869,7 @@ func FileTypeProlog(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePrometheus(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePrometheus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9882,7 +9882,7 @@ func FileTypePrometheus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeProtobuf(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeProtobuf(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9895,7 +9895,7 @@ func FileTypeProtobuf(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeProtractor(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeProtractor(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9908,7 +9908,7 @@ func FileTypeProtractor(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePublisher(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePublisher(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9921,7 +9921,7 @@ func FileTypePublisher(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePug(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePug(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9934,7 +9934,7 @@ func FileTypePug(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePulumi(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePulumi(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9947,7 +9947,7 @@ func FileTypePulumi(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePuppet(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePuppet(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9960,7 +9960,7 @@ func FileTypePuppet(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePurescript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePurescript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9973,7 +9973,7 @@ func FileTypePurescript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePyret(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePyret(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9986,7 +9986,7 @@ func FileTypePyret(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePython(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePython(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -9999,7 +9999,7 @@ func FileTypePython(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePythowo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePythowo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10012,7 +10012,7 @@ func FileTypePythowo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePytyped(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePytyped(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10025,7 +10025,7 @@ func FileTypePytyped(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypePyup(children ...*engine.UberElement) *engine.UberElement {
+func FileTypePyup(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10038,7 +10038,7 @@ func FileTypePyup(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeQ(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeQ(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10051,7 +10051,7 @@ func FileTypeQ(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeQbs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeQbs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10064,7 +10064,7 @@ func FileTypeQbs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeQlikview(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeQlikview(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10077,7 +10077,7 @@ func FileTypeQlikview(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeQml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeQml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10090,7 +10090,7 @@ func FileTypeQml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeQmldir(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeQmldir(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10103,7 +10103,7 @@ func FileTypeQmldir(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeQsharp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeQsharp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10116,7 +10116,7 @@ func FileTypeQsharp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeQuasar(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeQuasar(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10129,7 +10129,7 @@ func FileTypeQuasar(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeR(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeR(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10142,7 +10142,7 @@ func FileTypeR(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRacket(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRacket(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10155,7 +10155,7 @@ func FileTypeRacket(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRails(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRails(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10168,7 +10168,7 @@ func FileTypeRails(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRake(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRake(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10181,7 +10181,7 @@ func FileTypeRake(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRaml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRaml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10194,7 +10194,7 @@ func FileTypeRaml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRazor(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRazor(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10207,7 +10207,7 @@ func FileTypeRazor(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRazzle(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRazzle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10220,7 +10220,7 @@ func FileTypeRazzle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeReactjs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeReactjs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10233,7 +10233,7 @@ func FileTypeReactjs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeReacttemplate(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeReacttemplate(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10246,7 +10246,7 @@ func FileTypeReacttemplate(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeReactts(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeReactts(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10259,7 +10259,7 @@ func FileTypeReactts(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeReason(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeReason(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10272,7 +10272,7 @@ func FileTypeReason(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRed(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRed(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10285,7 +10285,7 @@ func FileTypeRed(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRegistry(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRegistry(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10298,7 +10298,7 @@ func FileTypeRegistry(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRego(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRego(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10311,7 +10311,7 @@ func FileTypeRego(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRehype(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRehype(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10324,7 +10324,7 @@ func FileTypeRehype(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRemark(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRemark(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10337,7 +10337,7 @@ func FileTypeRemark(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRenovate(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRenovate(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10350,7 +10350,7 @@ func FileTypeRenovate(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeReplit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeReplit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10363,7 +10363,7 @@ func FileTypeReplit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRescript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRescript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10376,7 +10376,7 @@ func FileTypeRescript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRest(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10389,7 +10389,7 @@ func FileTypeRest(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRetext(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRetext(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10402,7 +10402,7 @@ func FileTypeRetext(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRexx(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRexx(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10415,7 +10415,7 @@ func FileTypeRexx(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRiot(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRiot(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10428,7 +10428,7 @@ func FileTypeRiot(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRmd(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRmd(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10441,7 +10441,7 @@ func FileTypeRmd(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRobotframework(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRobotframework(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10454,7 +10454,7 @@ func FileTypeRobotframework(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeRobots(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRobots(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10467,7 +10467,7 @@ func FileTypeRobots(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRollup(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRollup(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10480,7 +10480,7 @@ func FileTypeRollup(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRome(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRome(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10493,7 +10493,7 @@ func FileTypeRome(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRon(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10506,7 +10506,7 @@ func FileTypeRon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRproj(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRproj(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10519,7 +10519,7 @@ func FileTypeRproj(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRspec(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRspec(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10532,7 +10532,7 @@ func FileTypeRspec(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRubocop(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRubocop(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10545,7 +10545,7 @@ func FileTypeRubocop(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRuby(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRuby(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10558,7 +10558,7 @@ func FileTypeRuby(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRust(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRust(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10571,7 +10571,7 @@ func FileTypeRust(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeRustToolchain(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeRustToolchain(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10584,7 +10584,7 @@ func FileTypeRustToolchain(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeSails(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSails(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10597,7 +10597,7 @@ func FileTypeSails(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSaltstack(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSaltstack(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10610,7 +10610,7 @@ func FileTypeSaltstack(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSan(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSan(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10623,7 +10623,7 @@ func FileTypeSan(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSapphireFrameworkCli(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSapphireFrameworkCli(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10636,7 +10636,7 @@ func FileTypeSapphireFrameworkCli(children ...*engine.UberElement) *engine.UberE
 		Element(children...)
 }
 
-func FileTypeSas(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSas(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10649,7 +10649,7 @@ func FileTypeSas(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSass(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSass(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10662,7 +10662,7 @@ func FileTypeSass(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSbt(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSbt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10675,7 +10675,7 @@ func FileTypeSbt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeScala(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeScala(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10688,7 +10688,7 @@ func FileTypeScala(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeScilab(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeScilab(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10701,7 +10701,7 @@ func FileTypeScilab(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeScript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeScript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10714,7 +10714,7 @@ func FileTypeScript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeScss(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeScss(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10727,7 +10727,7 @@ func FileTypeScss(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeScssTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeScssTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10740,7 +10740,7 @@ func FileTypeScssTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSdlang(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSdlang(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10753,7 +10753,7 @@ func FileTypeSdlang(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSentry(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSentry(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10766,7 +10766,7 @@ func FileTypeSentry(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSequelize(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSequelize(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10779,7 +10779,7 @@ func FileTypeSequelize(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeServerless(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeServerless(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10792,7 +10792,7 @@ func FileTypeServerless(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeShaderlab(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeShaderlab(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10805,7 +10805,7 @@ func FileTypeShaderlab(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeShell(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeShell(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10818,7 +10818,7 @@ func FileTypeShell(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeShuttle(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeShuttle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10831,7 +10831,7 @@ func FileTypeShuttle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSilverstripe(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSilverstripe(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10844,7 +10844,7 @@ func FileTypeSilverstripe(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSiyuan(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSiyuan(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10857,7 +10857,7 @@ func FileTypeSiyuan(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSketch(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSketch(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10870,7 +10870,7 @@ func FileTypeSketch(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSkipper(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSkipper(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10883,7 +10883,7 @@ func FileTypeSkipper(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSlang(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSlang(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10896,7 +10896,7 @@ func FileTypeSlang(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSlashup(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSlashup(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10909,7 +10909,7 @@ func FileTypeSlashup(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSlice(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSlice(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10922,7 +10922,7 @@ func FileTypeSlice(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSlim(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSlim(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10935,7 +10935,7 @@ func FileTypeSlim(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSln(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSln(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10948,7 +10948,7 @@ func FileTypeSln(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSlnTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSlnTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10961,7 +10961,7 @@ func FileTypeSlnTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSmarty(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSmarty(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10974,7 +10974,7 @@ func FileTypeSmarty(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSnapcraft(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSnapcraft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -10987,7 +10987,7 @@ func FileTypeSnapcraft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSnort(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSnort(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11000,7 +11000,7 @@ func FileTypeSnort(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSnyk(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSnyk(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11013,7 +11013,7 @@ func FileTypeSnyk(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSolidarity(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSolidarity(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11026,7 +11026,7 @@ func FileTypeSolidarity(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSolidity(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSolidity(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11039,7 +11039,7 @@ func FileTypeSolidity(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSource(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSource(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11052,7 +11052,7 @@ func FileTypeSource(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSpacengine(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSpacengine(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11065,7 +11065,7 @@ func FileTypeSpacengine(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSparql(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSparql(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11078,7 +11078,7 @@ func FileTypeSparql(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSqf(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSqf(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11091,7 +11091,7 @@ func FileTypeSqf(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSql(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSql(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11104,7 +11104,7 @@ func FileTypeSql(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSqlite(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSqlite(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11117,7 +11117,7 @@ func FileTypeSqlite(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSquirrel(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSquirrel(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11130,7 +11130,7 @@ func FileTypeSquirrel(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSss(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSss(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11143,7 +11143,7 @@ func FileTypeSss(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeStan(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStan(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11156,7 +11156,7 @@ func FileTypeStan(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeStata(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStata(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11169,7 +11169,7 @@ func FileTypeStata(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeStencil(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStencil(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11182,7 +11182,7 @@ func FileTypeStencil(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeStoryboard(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStoryboard(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11195,7 +11195,7 @@ func FileTypeStoryboard(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeStorybook(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStorybook(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11208,7 +11208,7 @@ func FileTypeStorybook(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeStryker(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStryker(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11221,7 +11221,7 @@ func FileTypeStryker(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeStylable(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStylable(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11234,7 +11234,7 @@ func FileTypeStylable(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeStyle(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStyle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11247,7 +11247,7 @@ func FileTypeStyle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeStyled(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStyled(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11260,7 +11260,7 @@ func FileTypeStyled(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeStylelint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStylelint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11273,7 +11273,7 @@ func FileTypeStylelint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeStylishHaskell(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStylishHaskell(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11286,7 +11286,7 @@ func FileTypeStylishHaskell(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeStylus(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeStylus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11299,7 +11299,7 @@ func FileTypeStylus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSubversion(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSubversion(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11312,7 +11312,7 @@ func FileTypeSubversion(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSvelte(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSvelte(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11325,7 +11325,7 @@ func FileTypeSvelte(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSvg(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSvg(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11338,7 +11338,7 @@ func FileTypeSvg(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSwagger(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSwagger(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11351,7 +11351,7 @@ func FileTypeSwagger(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSwift(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSwift(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11364,7 +11364,7 @@ func FileTypeSwift(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSwig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSwig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11377,7 +11377,7 @@ func FileTypeSwig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSymfony(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSymfony(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11390,7 +11390,7 @@ func FileTypeSymfony(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSystemd(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSystemd(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11403,7 +11403,7 @@ func FileTypeSystemd(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeSystemverilog(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeSystemverilog(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11416,7 +11416,7 @@ func FileTypeSystemverilog(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeTFourTt(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTFourTt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11429,7 +11429,7 @@ func FileTypeTFourTt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTailwind(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTailwind(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11442,7 +11442,7 @@ func FileTypeTailwind(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTauri(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTauri(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11455,7 +11455,7 @@ func FileTypeTauri(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTcl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTcl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11468,7 +11468,7 @@ func FileTypeTcl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTeal(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTeal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11481,7 +11481,7 @@ func FileTypeTeal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTera(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTera(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11494,7 +11494,7 @@ func FileTypeTera(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTerraform(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTerraform(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11507,7 +11507,7 @@ func FileTypeTerraform(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTest(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11520,7 +11520,7 @@ func FileTypeTest(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTestcafe(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTestcafe(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11533,7 +11533,7 @@ func FileTypeTestcafe(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTestjs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTestjs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11546,7 +11546,7 @@ func FileTypeTestjs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTestts(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTestts(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11559,7 +11559,7 @@ func FileTypeTestts(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTex(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTex(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11572,7 +11572,7 @@ func FileTypeTex(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeText(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeText(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11585,7 +11585,7 @@ func FileTypeText(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTextile(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTextile(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11598,7 +11598,7 @@ func FileTypeTextile(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTfs(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTfs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11611,7 +11611,7 @@ func FileTypeTfs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTiltfile(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTiltfile(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11624,7 +11624,7 @@ func FileTypeTiltfile(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTodo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTodo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11637,7 +11637,7 @@ func FileTypeTodo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeToit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeToit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11650,7 +11650,7 @@ func FileTypeToit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeToml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeToml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11663,7 +11663,7 @@ func FileTypeToml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTox(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTox(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11676,7 +11676,7 @@ func FileTypeTox(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTravis(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTravis(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11689,7 +11689,7 @@ func FileTypeTravis(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTree(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11702,7 +11702,7 @@ func FileTypeTree(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTres(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTres(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11715,7 +11715,7 @@ func FileTypeTres(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTruffle(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTruffle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11728,7 +11728,7 @@ func FileTypeTruffle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTrunk(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTrunk(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11741,7 +11741,7 @@ func FileTypeTrunk(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTscn(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTscn(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11754,7 +11754,7 @@ func FileTypeTscn(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTsconfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTsconfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11767,7 +11767,7 @@ func FileTypeTsconfig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTsconfigOfficial(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTsconfigOfficial(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11780,7 +11780,7 @@ func FileTypeTsconfigOfficial(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FileTypeTslint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTslint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11793,7 +11793,7 @@ func FileTypeTslint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTt(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11806,7 +11806,7 @@ func FileTypeTt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTtcn(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTtcn(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11819,7 +11819,7 @@ func FileTypeTtcn(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTuc(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTuc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11832,7 +11832,7 @@ func FileTypeTuc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTurbo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTurbo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11845,7 +11845,7 @@ func FileTypeTurbo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTwig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTwig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11858,7 +11858,7 @@ func FileTypeTwig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTypedoc(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTypedoc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11871,7 +11871,7 @@ func FileTypeTypedoc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTypescript(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTypescript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11884,7 +11884,7 @@ func FileTypeTypescript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeTypescriptOfficial(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTypescriptOfficial(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11897,7 +11897,7 @@ func FileTypeTypescriptOfficial(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FileTypeTypescriptdef(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTypescriptdef(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11910,7 +11910,7 @@ func FileTypeTypescriptdef(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FileTypeTypescriptdefOfficial(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTypescriptdefOfficial(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11923,7 +11923,7 @@ func FileTypeTypescriptdefOfficial(children ...*engine.UberElement) *engine.Uber
 		Element(children...)
 }
 
-func FileTypeTypoThree(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeTypoThree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11936,7 +11936,7 @@ func FileTypeTypoThree(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeUnibeautify(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeUnibeautify(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11949,7 +11949,7 @@ func FileTypeUnibeautify(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeUnison(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeUnison(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11962,7 +11962,7 @@ func FileTypeUnison(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeUnlicense(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeUnlicense(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11975,7 +11975,7 @@ func FileTypeUnlicense(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVagrant(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVagrant(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -11988,7 +11988,7 @@ func FileTypeVagrant(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVala(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVala(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12001,7 +12001,7 @@ func FileTypeVala(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVanillaExtract(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVanillaExtract(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12014,7 +12014,7 @@ func FileTypeVanillaExtract(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeVapi(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVapi(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12027,7 +12027,7 @@ func FileTypeVapi(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVapor(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVapor(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12040,7 +12040,7 @@ func FileTypeVapor(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVash(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVash(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12053,7 +12053,7 @@ func FileTypeVash(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVb(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12066,7 +12066,7 @@ func FileTypeVb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVba(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVba(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12079,7 +12079,7 @@ func FileTypeVba(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVbhtml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVbhtml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12092,7 +12092,7 @@ func FileTypeVbhtml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVbproj(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVbproj(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12105,7 +12105,7 @@ func FileTypeVbproj(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVcxproj(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVcxproj(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12118,7 +12118,7 @@ func FileTypeVcxproj(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVelocity(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVelocity(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12131,7 +12131,7 @@ func FileTypeVelocity(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVerilog(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVerilog(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12144,7 +12144,7 @@ func FileTypeVerilog(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVhdl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVhdl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12157,7 +12157,7 @@ func FileTypeVhdl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVideo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVideo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12170,7 +12170,7 @@ func FileTypeVideo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeView(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeView(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12183,7 +12183,7 @@ func FileTypeView(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVim(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVim(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12196,7 +12196,7 @@ func FileTypeVim(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVite(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVite(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12209,7 +12209,7 @@ func FileTypeVite(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVitest(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVitest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12222,7 +12222,7 @@ func FileTypeVitest(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVlang(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVlang(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12235,7 +12235,7 @@ func FileTypeVlang(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVolt(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVolt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12248,7 +12248,7 @@ func FileTypeVolt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVscode(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVscode(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12261,7 +12261,7 @@ func FileTypeVscode(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVscodeInsiders(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVscodeInsiders(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12274,7 +12274,7 @@ func FileTypeVscodeInsiders(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeVscodeThree(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVscodeThree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12287,7 +12287,7 @@ func FileTypeVscodeThree(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVscodeTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVscodeTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12300,7 +12300,7 @@ func FileTypeVscodeTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVsix(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVsix(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12313,7 +12313,7 @@ func FileTypeVsix(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVsixmanifest(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVsixmanifest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12326,7 +12326,7 @@ func FileTypeVsixmanifest(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVue(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVue(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12339,7 +12339,7 @@ func FileTypeVue(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeVueconfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeVueconfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12352,7 +12352,7 @@ func FileTypeVueconfig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWallaby(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWallaby(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12365,7 +12365,7 @@ func FileTypeWallaby(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWally(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWally(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12378,7 +12378,7 @@ func FileTypeWally(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWasm(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWasm(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12391,7 +12391,7 @@ func FileTypeWasm(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWatchmanconfig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWatchmanconfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12404,7 +12404,7 @@ func FileTypeWatchmanconfig(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FileTypeWebp(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWebp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12417,7 +12417,7 @@ func FileTypeWebp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWebpack(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWebpack(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12430,7 +12430,7 @@ func FileTypeWebpack(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWenyan(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWenyan(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12443,7 +12443,7 @@ func FileTypeWenyan(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWercker(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWercker(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12456,7 +12456,7 @@ func FileTypeWercker(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWgsl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWgsl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12469,7 +12469,7 @@ func FileTypeWgsl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWikitext(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWikitext(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12482,7 +12482,7 @@ func FileTypeWikitext(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWindi(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWindi(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12495,7 +12495,7 @@ func FileTypeWindi(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWolfram(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWolfram(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12508,7 +12508,7 @@ func FileTypeWolfram(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWord(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWord(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12521,7 +12521,7 @@ func FileTypeWord(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWordTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWordTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12534,7 +12534,7 @@ func FileTypeWordTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWpml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWpml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12547,7 +12547,7 @@ func FileTypeWpml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWurst(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWurst(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12560,7 +12560,7 @@ func FileTypeWurst(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWxml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWxml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12573,7 +12573,7 @@ func FileTypeWxml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeWxss(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeWxss(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12586,7 +12586,7 @@ func FileTypeWxss(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeXcode(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeXcode(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12599,7 +12599,7 @@ func FileTypeXcode(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeXfl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeXfl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12612,7 +12612,7 @@ func FileTypeXfl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeXib(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeXib(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12625,7 +12625,7 @@ func FileTypeXib(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeXliff(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeXliff(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12638,7 +12638,7 @@ func FileTypeXliff(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeXmake(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeXmake(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12651,7 +12651,7 @@ func FileTypeXmake(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeXml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeXml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12664,7 +12664,7 @@ func FileTypeXml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeXquery(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeXquery(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12677,7 +12677,7 @@ func FileTypeXquery(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeXsl(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeXsl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12690,7 +12690,7 @@ func FileTypeXsl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeYacc(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeYacc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12703,7 +12703,7 @@ func FileTypeYacc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeYaml(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeYaml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12716,7 +12716,7 @@ func FileTypeYaml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeYamllint(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeYamllint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12729,7 +12729,7 @@ func FileTypeYamllint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeYandex(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeYandex(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12742,7 +12742,7 @@ func FileTypeYandex(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeYang(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeYang(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12755,7 +12755,7 @@ func FileTypeYang(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeYarn(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeYarn(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12768,7 +12768,7 @@ func FileTypeYarn(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeYeoman(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeYeoman(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12781,7 +12781,7 @@ func FileTypeYeoman(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeZeit(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeZeit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12794,7 +12794,7 @@ func FileTypeZeit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeZig(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeZig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12807,7 +12807,7 @@ func FileTypeZig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeZip(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeZip(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12820,7 +12820,7 @@ func FileTypeZip(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileTypeZipTwo(children ...*engine.UberElement) *engine.UberElement {
+func FileTypeZipTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12833,7 +12833,7 @@ func FileTypeZipTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeAndroid(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAndroid(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12846,7 +12846,7 @@ func FolderTypeAndroid(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeAndroidOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAndroidOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12859,7 +12859,7 @@ func FolderTypeAndroidOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeApi(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeApi(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12872,7 +12872,7 @@ func FolderTypeApi(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeApiOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeApiOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12885,7 +12885,7 @@ func FolderTypeApiOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeApp(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeApp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12898,7 +12898,7 @@ func FolderTypeApp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeAppOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAppOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12911,7 +12911,7 @@ func FolderTypeAppOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeArangodb(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeArangodb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12924,7 +12924,7 @@ func FolderTypeArangodb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeArangodbOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeArangodbOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12937,7 +12937,7 @@ func FolderTypeArangodbOpened(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FolderTypeAsset(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAsset(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12950,7 +12950,7 @@ func FolderTypeAsset(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeAssetOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAssetOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12963,7 +12963,7 @@ func FolderTypeAssetOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeAudio(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAudio(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12976,7 +12976,7 @@ func FolderTypeAudio(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeAudioOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAudioOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -12989,7 +12989,7 @@ func FolderTypeAudioOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeAurelia(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAurelia(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13002,7 +13002,7 @@ func FolderTypeAurelia(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeAureliaOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAureliaOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13015,7 +13015,7 @@ func FolderTypeAureliaOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeAws(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAws(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13028,7 +13028,7 @@ func FolderTypeAws(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeAwsOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAwsOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13041,7 +13041,7 @@ func FolderTypeAwsOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeAzure(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAzure(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13054,7 +13054,7 @@ func FolderTypeAzure(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeAzureOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAzureOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13067,7 +13067,7 @@ func FolderTypeAzureOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeAzurepipelines(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAzurepipelines(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13080,7 +13080,7 @@ func FolderTypeAzurepipelines(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FolderTypeAzurepipelinesOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeAzurepipelinesOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13093,7 +13093,7 @@ func FolderTypeAzurepipelinesOpened(children ...*engine.UberElement) *engine.Ube
 		Element(children...)
 }
 
-func FolderTypeBinary(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBinary(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13106,7 +13106,7 @@ func FolderTypeBinary(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeBinaryOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBinaryOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13119,7 +13119,7 @@ func FolderTypeBinaryOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeBloc(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBloc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13132,7 +13132,7 @@ func FolderTypeBloc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeBlocOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBlocOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13145,7 +13145,7 @@ func FolderTypeBlocOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeBlueprint(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBlueprint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13158,7 +13158,7 @@ func FolderTypeBlueprint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeBlueprintOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBlueprintOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13171,7 +13171,7 @@ func FolderTypeBlueprintOpened(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FolderTypeBot(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBot(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13184,7 +13184,7 @@ func FolderTypeBot(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeBotOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBotOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13197,7 +13197,7 @@ func FolderTypeBotOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeBower(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBower(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13210,7 +13210,7 @@ func FolderTypeBower(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeBowerOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBowerOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13223,7 +13223,7 @@ func FolderTypeBowerOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeBuildkite(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBuildkite(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13236,7 +13236,7 @@ func FolderTypeBuildkite(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeBuildkiteOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeBuildkiteOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13249,7 +13249,7 @@ func FolderTypeBuildkiteOpened(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FolderTypeCake(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCake(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13262,7 +13262,7 @@ func FolderTypeCake(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCakeOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCakeOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13275,7 +13275,7 @@ func FolderTypeCakeOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCertificate(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCertificate(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13288,7 +13288,7 @@ func FolderTypeCertificate(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeCertificateOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCertificateOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13301,7 +13301,7 @@ func FolderTypeCertificateOpened(children ...*engine.UberElement) *engine.UberEl
 		Element(children...)
 }
 
-func FolderTypeChef(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeChef(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13314,7 +13314,7 @@ func FolderTypeChef(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeChefOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeChefOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13327,7 +13327,7 @@ func FolderTypeChefOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCircleci(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCircleci(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13340,7 +13340,7 @@ func FolderTypeCircleci(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCircleciOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCircleciOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13353,7 +13353,7 @@ func FolderTypeCircleciOpened(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FolderTypeCli(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCli(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13366,7 +13366,7 @@ func FolderTypeCli(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCliOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCliOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13379,7 +13379,7 @@ func FolderTypeCliOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeClient(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeClient(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13392,7 +13392,7 @@ func FolderTypeClient(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeClientOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeClientOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13405,7 +13405,7 @@ func FolderTypeClientOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeCmake(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCmake(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13418,7 +13418,7 @@ func FolderTypeCmake(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCmakeOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCmakeOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13431,7 +13431,7 @@ func FolderTypeCmakeOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeCommon(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCommon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13444,7 +13444,7 @@ func FolderTypeCommon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCommonOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCommonOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13457,7 +13457,7 @@ func FolderTypeCommonOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeComponent(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeComponent(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13470,7 +13470,7 @@ func FolderTypeComponent(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeComponentOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeComponentOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13483,7 +13483,7 @@ func FolderTypeComponentOpened(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FolderTypeComposer(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeComposer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13496,7 +13496,7 @@ func FolderTypeComposer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeComposerOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeComposerOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13509,7 +13509,7 @@ func FolderTypeComposerOpened(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FolderTypeConfig(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeConfig(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13522,7 +13522,7 @@ func FolderTypeConfig(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeConfigOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeConfigOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13535,7 +13535,7 @@ func FolderTypeConfigOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeController(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeController(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13548,7 +13548,7 @@ func FolderTypeController(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeControllerOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeControllerOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13561,7 +13561,7 @@ func FolderTypeControllerOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeCoverage(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCoverage(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13574,7 +13574,7 @@ func FolderTypeCoverage(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCoverageOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCoverageOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13587,7 +13587,7 @@ func FolderTypeCoverageOpened(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FolderTypeCss(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCss(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13600,7 +13600,7 @@ func FolderTypeCss(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCssOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCssOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13613,7 +13613,7 @@ func FolderTypeCssOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCubit(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCubit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13626,7 +13626,7 @@ func FolderTypeCubit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCubitOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCubitOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13639,7 +13639,7 @@ func FolderTypeCubitOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeCypress(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCypress(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13652,7 +13652,7 @@ func FolderTypeCypress(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeCypressOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeCypressOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13665,7 +13665,7 @@ func FolderTypeCypressOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeDapr(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDapr(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13678,7 +13678,7 @@ func FolderTypeDapr(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeDaprOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDaprOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13691,7 +13691,7 @@ func FolderTypeDaprOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeDatadog(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDatadog(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13704,7 +13704,7 @@ func FolderTypeDatadog(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeDatadogOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDatadogOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13717,7 +13717,7 @@ func FolderTypeDatadogOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeDb(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13730,7 +13730,7 @@ func FolderTypeDb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeDbOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDbOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13743,7 +13743,7 @@ func FolderTypeDbOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeDebian(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDebian(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13756,7 +13756,7 @@ func FolderTypeDebian(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeDebianOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDebianOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13769,7 +13769,7 @@ func FolderTypeDebianOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeDependabot(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDependabot(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13782,7 +13782,7 @@ func FolderTypeDependabot(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeDependabotOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDependabotOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13795,7 +13795,7 @@ func FolderTypeDependabotOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeDevcontainer(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDevcontainer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13808,7 +13808,7 @@ func FolderTypeDevcontainer(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeDevcontainerOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDevcontainerOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13821,7 +13821,7 @@ func FolderTypeDevcontainerOpened(children ...*engine.UberElement) *engine.UberE
 		Element(children...)
 }
 
-func FolderTypeDist(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDist(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13834,7 +13834,7 @@ func FolderTypeDist(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeDistOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDistOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13847,7 +13847,7 @@ func FolderTypeDistOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeDocker(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDocker(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13860,7 +13860,7 @@ func FolderTypeDocker(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeDockerOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDockerOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13873,7 +13873,7 @@ func FolderTypeDockerOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeDocs(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDocs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13886,7 +13886,7 @@ func FolderTypeDocs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeDocsOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeDocsOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13899,7 +13899,7 @@ func FolderTypeDocsOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeETwoE(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeETwoE(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13912,7 +13912,7 @@ func FolderTypeETwoE(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeETwoEOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeETwoEOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13925,7 +13925,7 @@ func FolderTypeETwoEOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeElasticbeanstalk(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeElasticbeanstalk(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13938,7 +13938,7 @@ func FolderTypeElasticbeanstalk(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeElasticbeanstalkOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeElasticbeanstalkOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13951,7 +13951,7 @@ func FolderTypeElasticbeanstalkOpened(children ...*engine.UberElement) *engine.U
 		Element(children...)
 }
 
-func FolderTypeElectron(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeElectron(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13964,7 +13964,7 @@ func FolderTypeElectron(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeElectronOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeElectronOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13977,7 +13977,7 @@ func FolderTypeElectronOpened(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FolderTypeExpo(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeExpo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -13990,7 +13990,7 @@ func FolderTypeExpo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeExpoOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeExpoOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14003,7 +14003,7 @@ func FolderTypeExpoOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeFavicon(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeFavicon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14016,7 +14016,7 @@ func FolderTypeFavicon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeFaviconOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeFaviconOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14029,7 +14029,7 @@ func FolderTypeFaviconOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeFlow(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeFlow(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14042,7 +14042,7 @@ func FolderTypeFlow(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeFlowOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeFlowOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14055,7 +14055,7 @@ func FolderTypeFlowOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeFonts(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeFonts(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14068,7 +14068,7 @@ func FolderTypeFonts(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeFontsOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeFontsOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14081,7 +14081,7 @@ func FolderTypeFontsOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeGcp(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGcp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14094,7 +14094,7 @@ func FolderTypeGcp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeGcpOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGcpOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14107,7 +14107,7 @@ func FolderTypeGcpOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeGit(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14120,7 +14120,7 @@ func FolderTypeGit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeGitOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGitOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14133,7 +14133,7 @@ func FolderTypeGitOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeGithub(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGithub(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14146,7 +14146,7 @@ func FolderTypeGithub(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeGithubOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGithubOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14159,7 +14159,7 @@ func FolderTypeGithubOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeGitlab(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGitlab(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14172,7 +14172,7 @@ func FolderTypeGitlab(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeGitlabOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGitlabOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14185,7 +14185,7 @@ func FolderTypeGitlabOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeGradle(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGradle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14198,7 +14198,7 @@ func FolderTypeGradle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeGradleOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGradleOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14211,7 +14211,7 @@ func FolderTypeGradleOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeGraphql(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGraphql(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14224,7 +14224,7 @@ func FolderTypeGraphql(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeGraphqlOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGraphqlOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14237,7 +14237,7 @@ func FolderTypeGraphqlOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeGrunt(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGrunt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14250,7 +14250,7 @@ func FolderTypeGrunt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeGruntOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGruntOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14263,7 +14263,7 @@ func FolderTypeGruntOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeGulp(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGulp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14276,7 +14276,7 @@ func FolderTypeGulp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeGulpOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeGulpOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14289,7 +14289,7 @@ func FolderTypeGulpOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeHaxelib(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeHaxelib(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14302,7 +14302,7 @@ func FolderTypeHaxelib(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeHaxelibOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeHaxelibOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14315,7 +14315,7 @@ func FolderTypeHaxelibOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeHelper(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeHelper(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14328,7 +14328,7 @@ func FolderTypeHelper(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeHelperOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeHelperOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14341,7 +14341,7 @@ func FolderTypeHelperOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeHook(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeHook(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14354,7 +14354,7 @@ func FolderTypeHook(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeHookOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeHookOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14367,7 +14367,7 @@ func FolderTypeHookOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeHusky(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeHusky(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14380,7 +14380,7 @@ func FolderTypeHusky(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeHuskyOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeHuskyOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14393,7 +14393,7 @@ func FolderTypeHuskyOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeIdea(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeIdea(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14406,7 +14406,7 @@ func FolderTypeIdea(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeIdeaOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeIdeaOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14419,7 +14419,7 @@ func FolderTypeIdeaOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeImages(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeImages(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14432,7 +14432,7 @@ func FolderTypeImages(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeImagesOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeImagesOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14445,7 +14445,7 @@ func FolderTypeImagesOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeInclude(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeInclude(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14458,7 +14458,7 @@ func FolderTypeInclude(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeIncludeOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeIncludeOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14471,7 +14471,7 @@ func FolderTypeIncludeOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeInterfaces(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeInterfaces(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14484,7 +14484,7 @@ func FolderTypeInterfaces(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeInterfacesOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeInterfacesOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14497,7 +14497,7 @@ func FolderTypeInterfacesOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeIos(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeIos(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14510,7 +14510,7 @@ func FolderTypeIos(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeIosOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeIosOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14523,7 +14523,7 @@ func FolderTypeIosOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeJs(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeJs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14536,7 +14536,7 @@ func FolderTypeJs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeJsOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeJsOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14549,7 +14549,7 @@ func FolderTypeJsOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeJson(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeJson(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14562,7 +14562,7 @@ func FolderTypeJson(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeJsonOfficial(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeJsonOfficial(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14575,7 +14575,7 @@ func FolderTypeJsonOfficial(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeJsonOfficialOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeJsonOfficialOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14588,7 +14588,7 @@ func FolderTypeJsonOfficialOpened(children ...*engine.UberElement) *engine.UberE
 		Element(children...)
 }
 
-func FolderTypeJsonOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeJsonOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14601,7 +14601,7 @@ func FolderTypeJsonOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeKubernetes(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeKubernetes(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14614,7 +14614,7 @@ func FolderTypeKubernetes(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeKubernetesOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeKubernetesOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14627,7 +14627,7 @@ func FolderTypeKubernetesOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeLess(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLess(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14640,7 +14640,7 @@ func FolderTypeLess(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLessOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLessOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14653,7 +14653,7 @@ func FolderTypeLessOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLibrary(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLibrary(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14666,7 +14666,7 @@ func FolderTypeLibrary(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLibraryOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLibraryOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14679,7 +14679,7 @@ func FolderTypeLibraryOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeLightCypress(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightCypress(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14692,7 +14692,7 @@ func FolderTypeLightCypress(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeLightCypressOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightCypressOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14705,7 +14705,7 @@ func FolderTypeLightCypressOpened(children ...*engine.UberElement) *engine.UberE
 		Element(children...)
 }
 
-func FolderTypeLightElectron(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightElectron(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14718,7 +14718,7 @@ func FolderTypeLightElectron(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeLightElectronOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightElectronOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14731,7 +14731,7 @@ func FolderTypeLightElectronOpened(children ...*engine.UberElement) *engine.Uber
 		Element(children...)
 }
 
-func FolderTypeLightExpo(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightExpo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14744,7 +14744,7 @@ func FolderTypeLightExpo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLightExpoOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightExpoOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14757,7 +14757,7 @@ func FolderTypeLightExpoOpened(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FolderTypeLightFonts(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightFonts(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14770,7 +14770,7 @@ func FolderTypeLightFonts(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLightFontsOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightFontsOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14783,7 +14783,7 @@ func FolderTypeLightFontsOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeLightGradle(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightGradle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14796,7 +14796,7 @@ func FolderTypeLightGradle(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeLightGradleOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightGradleOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14809,7 +14809,7 @@ func FolderTypeLightGradleOpened(children ...*engine.UberElement) *engine.UberEl
 		Element(children...)
 }
 
-func FolderTypeLightMeteor(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightMeteor(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14822,7 +14822,7 @@ func FolderTypeLightMeteor(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeLightMeteorOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightMeteorOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14835,7 +14835,7 @@ func FolderTypeLightMeteorOpened(children ...*engine.UberElement) *engine.UberEl
 		Element(children...)
 }
 
-func FolderTypeLightMysql(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightMysql(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14848,7 +14848,7 @@ func FolderTypeLightMysql(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLightMysqlOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightMysqlOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14861,7 +14861,7 @@ func FolderTypeLightMysqlOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeLightNode(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightNode(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14874,7 +14874,7 @@ func FolderTypeLightNode(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLightNodeOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightNodeOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14887,7 +14887,7 @@ func FolderTypeLightNodeOpened(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FolderTypeLightRedux(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightRedux(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14900,7 +14900,7 @@ func FolderTypeLightRedux(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLightReduxOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightReduxOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14913,7 +14913,7 @@ func FolderTypeLightReduxOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeLightSass(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightSass(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14926,7 +14926,7 @@ func FolderTypeLightSass(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLightSassOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLightSassOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14939,7 +14939,7 @@ func FolderTypeLightSassOpened(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FolderTypeLinux(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLinux(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14952,7 +14952,7 @@ func FolderTypeLinux(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLinuxOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLinuxOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14965,7 +14965,7 @@ func FolderTypeLinuxOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeLocale(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLocale(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14978,7 +14978,7 @@ func FolderTypeLocale(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLocaleOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLocaleOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -14991,7 +14991,7 @@ func FolderTypeLocaleOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeLog(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLog(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15004,7 +15004,7 @@ func FolderTypeLog(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeLogOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeLogOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15017,7 +15017,7 @@ func FolderTypeLogOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMacos(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMacos(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15030,7 +15030,7 @@ func FolderTypeMacos(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMacosOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMacosOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15043,7 +15043,7 @@ func FolderTypeMacosOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeMariadb(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMariadb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15056,7 +15056,7 @@ func FolderTypeMariadb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMariadbOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMariadbOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15069,7 +15069,7 @@ func FolderTypeMariadbOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeMaven(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMaven(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15082,7 +15082,7 @@ func FolderTypeMaven(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMavenOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMavenOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15095,7 +15095,7 @@ func FolderTypeMavenOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeMemcached(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMemcached(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15108,7 +15108,7 @@ func FolderTypeMemcached(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMemcachedOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMemcachedOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15121,7 +15121,7 @@ func FolderTypeMemcachedOpened(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FolderTypeMeteor(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMeteor(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15134,7 +15134,7 @@ func FolderTypeMeteor(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMeteorOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMeteorOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15147,7 +15147,7 @@ func FolderTypeMeteorOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeMiddleware(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMiddleware(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15160,7 +15160,7 @@ func FolderTypeMiddleware(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMiddlewareOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMiddlewareOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15173,7 +15173,7 @@ func FolderTypeMiddlewareOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeMinikube(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMinikube(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15186,7 +15186,7 @@ func FolderTypeMinikube(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMinikubeOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMinikubeOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15199,7 +15199,7 @@ func FolderTypeMinikubeOpened(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FolderTypeMjml(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMjml(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15212,7 +15212,7 @@ func FolderTypeMjml(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMjmlOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMjmlOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15225,7 +15225,7 @@ func FolderTypeMjmlOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMock(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMock(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15238,7 +15238,7 @@ func FolderTypeMock(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMockOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMockOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15251,7 +15251,7 @@ func FolderTypeMockOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeModel(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeModel(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15264,7 +15264,7 @@ func FolderTypeModel(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeModelOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeModelOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15277,7 +15277,7 @@ func FolderTypeModelOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeModule(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeModule(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15290,7 +15290,7 @@ func FolderTypeModule(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeModuleOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeModuleOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15303,7 +15303,7 @@ func FolderTypeModuleOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeMongodb(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMongodb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15316,7 +15316,7 @@ func FolderTypeMongodb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMongodbOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMongodbOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15329,7 +15329,7 @@ func FolderTypeMongodbOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeMysql(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMysql(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15342,7 +15342,7 @@ func FolderTypeMysql(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeMysqlOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeMysqlOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15355,7 +15355,7 @@ func FolderTypeMysqlOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeNext(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNext(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15368,7 +15368,7 @@ func FolderTypeNext(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeNextOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNextOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15381,7 +15381,7 @@ func FolderTypeNextOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeNginx(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNginx(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15394,7 +15394,7 @@ func FolderTypeNginx(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeNginxOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNginxOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15407,7 +15407,7 @@ func FolderTypeNginxOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeNix(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNix(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15420,7 +15420,7 @@ func FolderTypeNix(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeNixOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNixOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15433,7 +15433,7 @@ func FolderTypeNixOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeNode(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNode(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15446,7 +15446,7 @@ func FolderTypeNode(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeNodeOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNodeOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15459,7 +15459,7 @@ func FolderTypeNodeOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeNotification(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNotification(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15472,7 +15472,7 @@ func FolderTypeNotification(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeNotificationOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNotificationOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15485,7 +15485,7 @@ func FolderTypeNotificationOpened(children ...*engine.UberElement) *engine.UberE
 		Element(children...)
 }
 
-func FolderTypeNuget(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNuget(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15498,7 +15498,7 @@ func FolderTypeNuget(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeNugetOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNugetOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15511,7 +15511,7 @@ func FolderTypeNugetOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeNuxt(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNuxt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15524,7 +15524,7 @@ func FolderTypeNuxt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeNuxtOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeNuxtOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15537,7 +15537,7 @@ func FolderTypeNuxtOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypePackage(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePackage(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15550,7 +15550,7 @@ func FolderTypePackage(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypePackageOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePackageOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15563,7 +15563,7 @@ func FolderTypePackageOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypePaket(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePaket(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15576,7 +15576,7 @@ func FolderTypePaket(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypePaketOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePaketOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15589,7 +15589,7 @@ func FolderTypePaketOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypePhp(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePhp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15602,7 +15602,7 @@ func FolderTypePhp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypePhpOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePhpOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15615,7 +15615,7 @@ func FolderTypePhpOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypePlatformio(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePlatformio(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15628,7 +15628,7 @@ func FolderTypePlatformio(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypePlatformioOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePlatformioOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15641,7 +15641,7 @@ func FolderTypePlatformioOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypePlugin(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePlugin(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15654,7 +15654,7 @@ func FolderTypePlugin(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypePluginOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePluginOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15667,7 +15667,7 @@ func FolderTypePluginOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypePrisma(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePrisma(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15680,7 +15680,7 @@ func FolderTypePrisma(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypePrismaOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePrismaOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15693,7 +15693,7 @@ func FolderTypePrismaOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypePrivate(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePrivate(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15706,7 +15706,7 @@ func FolderTypePrivate(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypePrivateOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePrivateOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15719,7 +15719,7 @@ func FolderTypePrivateOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypePublic(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePublic(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15732,7 +15732,7 @@ func FolderTypePublic(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypePublicOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePublicOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15745,7 +15745,7 @@ func FolderTypePublicOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypePython(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePython(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15758,7 +15758,7 @@ func FolderTypePython(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypePythonOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypePythonOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15771,7 +15771,7 @@ func FolderTypePythonOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeRavendb(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeRavendb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15784,7 +15784,7 @@ func FolderTypeRavendb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeRavendbOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeRavendbOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15797,7 +15797,7 @@ func FolderTypeRavendbOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeRedis(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeRedis(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15810,7 +15810,7 @@ func FolderTypeRedis(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeRedisOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeRedisOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15823,7 +15823,7 @@ func FolderTypeRedisOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeRedux(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeRedux(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15836,7 +15836,7 @@ func FolderTypeRedux(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeReduxOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeReduxOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15849,7 +15849,7 @@ func FolderTypeReduxOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeRoute(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeRoute(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15862,7 +15862,7 @@ func FolderTypeRoute(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeRouteOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeRouteOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15875,7 +15875,7 @@ func FolderTypeRouteOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeSass(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeSass(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15888,7 +15888,7 @@ func FolderTypeSass(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeSassOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeSassOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15901,7 +15901,7 @@ func FolderTypeSassOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeScript(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeScript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15914,7 +15914,7 @@ func FolderTypeScript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeScriptOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeScriptOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15927,7 +15927,7 @@ func FolderTypeScriptOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeServer(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeServer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15940,7 +15940,7 @@ func FolderTypeServer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeServerOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeServerOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15953,7 +15953,7 @@ func FolderTypeServerOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeServices(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeServices(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15966,7 +15966,7 @@ func FolderTypeServices(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeServicesOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeServicesOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15979,7 +15979,7 @@ func FolderTypeServicesOpened(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FolderTypeShared(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeShared(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -15992,7 +15992,7 @@ func FolderTypeShared(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeSharedOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeSharedOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16005,7 +16005,7 @@ func FolderTypeSharedOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeSrc(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeSrc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16018,7 +16018,7 @@ func FolderTypeSrc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeSrcOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeSrcOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16031,7 +16031,7 @@ func FolderTypeSrcOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeSso(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeSso(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16044,7 +16044,7 @@ func FolderTypeSso(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeSsoOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeSsoOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16057,7 +16057,7 @@ func FolderTypeSsoOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeStory(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeStory(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16070,7 +16070,7 @@ func FolderTypeStory(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeStoryOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeStoryOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16083,7 +16083,7 @@ func FolderTypeStoryOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeStyle(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeStyle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16096,7 +16096,7 @@ func FolderTypeStyle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeStyleOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeStyleOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16109,7 +16109,7 @@ func FolderTypeStyleOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeTauri(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTauri(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16122,7 +16122,7 @@ func FolderTypeTauri(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeTauriOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTauriOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16135,7 +16135,7 @@ func FolderTypeTauriOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeTemp(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTemp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16148,7 +16148,7 @@ func FolderTypeTemp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeTempOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTempOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16161,7 +16161,7 @@ func FolderTypeTempOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeTemplate(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTemplate(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16174,7 +16174,7 @@ func FolderTypeTemplate(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeTemplateOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTemplateOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16187,7 +16187,7 @@ func FolderTypeTemplateOpened(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func FolderTypeTest(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16200,7 +16200,7 @@ func FolderTypeTest(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeTestOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTestOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16213,7 +16213,7 @@ func FolderTypeTestOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeTheme(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTheme(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16226,7 +16226,7 @@ func FolderTypeTheme(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeThemeOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeThemeOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16239,7 +16239,7 @@ func FolderTypeThemeOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeTools(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTools(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16252,7 +16252,7 @@ func FolderTypeTools(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeToolsOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeToolsOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16265,7 +16265,7 @@ func FolderTypeToolsOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeTravis(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTravis(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16278,7 +16278,7 @@ func FolderTypeTravis(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeTravisOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTravisOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16291,7 +16291,7 @@ func FolderTypeTravisOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeTrunk(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTrunk(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16304,7 +16304,7 @@ func FolderTypeTrunk(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeTrunkOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTrunkOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16317,7 +16317,7 @@ func FolderTypeTrunkOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeTypescript(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTypescript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16330,7 +16330,7 @@ func FolderTypeTypescript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeTypescriptOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTypescriptOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16343,7 +16343,7 @@ func FolderTypeTypescriptOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeTypings(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTypings(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16356,7 +16356,7 @@ func FolderTypeTypings(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeTypingsOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTypingsOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16369,7 +16369,7 @@ func FolderTypeTypingsOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeTypingsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTypingsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16382,7 +16382,7 @@ func FolderTypeTypingsTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeTypingsTwoOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeTypingsTwoOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16395,7 +16395,7 @@ func FolderTypeTypingsTwoOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeVagrant(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVagrant(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16408,7 +16408,7 @@ func FolderTypeVagrant(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeVagrantOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVagrantOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16421,7 +16421,7 @@ func FolderTypeVagrantOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeVideo(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVideo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16434,7 +16434,7 @@ func FolderTypeVideo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeVideoOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVideoOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16447,7 +16447,7 @@ func FolderTypeVideoOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeView(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeView(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16460,7 +16460,7 @@ func FolderTypeView(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeViewOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeViewOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16473,7 +16473,7 @@ func FolderTypeViewOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeVs(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16486,7 +16486,7 @@ func FolderTypeVs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeVsOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVsOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16499,7 +16499,7 @@ func FolderTypeVsOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeVsTwo(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVsTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16512,7 +16512,7 @@ func FolderTypeVsTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeVsTwoOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVsTwoOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16525,7 +16525,7 @@ func FolderTypeVsTwoOpened(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeVscode(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscode(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16538,7 +16538,7 @@ func FolderTypeVscode(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeVscodeOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscodeOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16551,7 +16551,7 @@ func FolderTypeVscodeOpened(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func FolderTypeVscodeTest(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscodeTest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16564,7 +16564,7 @@ func FolderTypeVscodeTest(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeVscodeTestOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscodeTestOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16577,7 +16577,7 @@ func FolderTypeVscodeTestOpened(children ...*engine.UberElement) *engine.UberEle
 		Element(children...)
 }
 
-func FolderTypeVscodeTestThree(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscodeTestThree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16590,7 +16590,7 @@ func FolderTypeVscodeTestThree(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FolderTypeVscodeTestThreeOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscodeTestThreeOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16603,7 +16603,7 @@ func FolderTypeVscodeTestThreeOpened(children ...*engine.UberElement) *engine.Ub
 		Element(children...)
 }
 
-func FolderTypeVscodeTestTwo(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscodeTestTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16616,7 +16616,7 @@ func FolderTypeVscodeTestTwo(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeVscodeTestTwoOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscodeTestTwoOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16629,7 +16629,7 @@ func FolderTypeVscodeTestTwoOpened(children ...*engine.UberElement) *engine.Uber
 		Element(children...)
 }
 
-func FolderTypeVscodeThree(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscodeThree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16642,7 +16642,7 @@ func FolderTypeVscodeThree(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func FolderTypeVscodeThreeOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscodeThreeOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16655,7 +16655,7 @@ func FolderTypeVscodeThreeOpened(children ...*engine.UberElement) *engine.UberEl
 		Element(children...)
 }
 
-func FolderTypeVscodeTwo(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscodeTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16668,7 +16668,7 @@ func FolderTypeVscodeTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeVscodeTwoOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeVscodeTwoOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16681,7 +16681,7 @@ func FolderTypeVscodeTwoOpened(children ...*engine.UberElement) *engine.UberElem
 		Element(children...)
 }
 
-func FolderTypeWebpack(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeWebpack(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16694,7 +16694,7 @@ func FolderTypeWebpack(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeWebpackOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeWebpackOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16707,7 +16707,7 @@ func FolderTypeWebpackOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeWindows(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeWindows(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16720,7 +16720,7 @@ func FolderTypeWindows(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeWindowsOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeWindowsOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16733,7 +16733,7 @@ func FolderTypeWindowsOpened(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func FolderTypeWww(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeWww(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16746,7 +16746,7 @@ func FolderTypeWww(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeWwwOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeWwwOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16759,7 +16759,7 @@ func FolderTypeWwwOpened(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeYarn(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeYarn(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),
@@ -16772,7 +16772,7 @@ func FolderTypeYarn(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderTypeYarnOpened(children ...*engine.UberElement) *engine.UberElement {
+func FolderTypeYarnOpened(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 32 32"),

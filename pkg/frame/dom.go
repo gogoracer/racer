@@ -36,13 +36,13 @@ func (dom DOM) HTML() *engine.UberElement {
 	return dom.html
 }
 
-func (dom DOM) Head(children ...*engine.UberElement) *engine.UberElement {
+func (dom DOM) Head(children ...engine.UberChild) *engine.UberElement {
 	head := dom.head
 	head.Element(children...)
 	return dom.head
 }
 
-func (dom DOM) Meta(children ...*engine.UberElement) *engine.UberElement {
+func (dom DOM) Meta(children ...engine.UberChild) *engine.UberElement {
 	meta := dom.meta
 	meta.Element(children...)
 	return dom.meta
@@ -52,7 +52,7 @@ func (dom DOM) Title() *engine.UberElement {
 	return dom.title
 }
 
-func (dom DOM) Body(children ...*engine.UberElement) *engine.UberElement {
+func (dom DOM) Body(children ...engine.UberChild) *engine.UberElement {
 	body := dom.body
 	body.Element(children...)
 	return body

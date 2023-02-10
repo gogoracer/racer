@@ -141,7 +141,7 @@ var sharedIconAttrs = []engine.Attributer{
 cn := camel(namedIcon.Name)+"InnerSVG"
 viewBox := fmt.Sprintf(`0 0 %d %d`, pkg.Width, pkg.Height)
 %}
-func {%s namedIcon.Name %}(children ...*engine.UberElement) *engine.UberElement {
+func {%s namedIcon.Name %}(children ...engine.UberChild) *engine.UberElement {
     attrs := append(
         []engine.Attributer{
         engine.NewAttribute("viewBox", "{%s viewBox %}"),

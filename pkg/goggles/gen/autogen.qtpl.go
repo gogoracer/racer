@@ -360,7 +360,7 @@ func `)
 //line pkg/goggles/gen/autogen.qtpl:144
 		qw422016.E().S(namedIcon.Name)
 //line pkg/goggles/gen/autogen.qtpl:144
-		qw422016.N().S(`(children ...*engine.UberElement) *engine.UberElement {
+		qw422016.N().S(`(children ...engine.UberChild) *engine.UberElement {
     attrs := append(
         []engine.Attributer{
         engine.NewAttribute("viewBox", "`)

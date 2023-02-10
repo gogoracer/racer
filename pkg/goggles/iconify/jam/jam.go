@@ -953,7 +953,7 @@ var sharedIconAttrs = []engine.Attributer{
 	engine.NewAttribute("height", "1em"),
 }
 
-func Accessibility(children ...*engine.UberElement) *engine.UberElement {
+func Accessibility(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -966,7 +966,7 @@ func Accessibility(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Activity(children ...*engine.UberElement) *engine.UberElement {
+func Activity(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -979,7 +979,7 @@ func Activity(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Airbnb(children ...*engine.UberElement) *engine.UberElement {
+func Airbnb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -992,7 +992,7 @@ func Airbnb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AlarmClock(children ...*engine.UberElement) *engine.UberElement {
+func AlarmClock(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1005,7 +1005,7 @@ func AlarmClock(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AlarmClockF(children ...*engine.UberElement) *engine.UberElement {
+func AlarmClockF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1018,7 +1018,7 @@ func AlarmClockF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Alert(children ...*engine.UberElement) *engine.UberElement {
+func Alert(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1031,7 +1031,7 @@ func Alert(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AlertF(children ...*engine.UberElement) *engine.UberElement {
+func AlertF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1044,7 +1044,7 @@ func AlertF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Alien(children ...*engine.UberElement) *engine.UberElement {
+func Alien(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1057,7 +1057,7 @@ func Alien(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AlienF(children ...*engine.UberElement) *engine.UberElement {
+func AlienF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1070,7 +1070,7 @@ func AlienF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AlignCenter(children ...*engine.UberElement) *engine.UberElement {
+func AlignCenter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1083,7 +1083,7 @@ func AlignCenter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AlignJustify(children ...*engine.UberElement) *engine.UberElement {
+func AlignJustify(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1096,7 +1096,7 @@ func AlignJustify(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AlignLeft(children ...*engine.UberElement) *engine.UberElement {
+func AlignLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1109,7 +1109,7 @@ func AlignLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AlignRight(children ...*engine.UberElement) *engine.UberElement {
+func AlignRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1122,7 +1122,7 @@ func AlignRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Amazon(children ...*engine.UberElement) *engine.UberElement {
+func Amazon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1135,7 +1135,7 @@ func Amazon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Anchor(children ...*engine.UberElement) *engine.UberElement {
+func Anchor(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1148,7 +1148,7 @@ func Anchor(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Android(children ...*engine.UberElement) *engine.UberElement {
+func Android(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1161,7 +1161,7 @@ func Android(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AndroidCircle(children ...*engine.UberElement) *engine.UberElement {
+func AndroidCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1174,7 +1174,7 @@ func AndroidCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AndroidSquare(children ...*engine.UberElement) *engine.UberElement {
+func AndroidSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1187,7 +1187,7 @@ func AndroidSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Aperture(children ...*engine.UberElement) *engine.UberElement {
+func Aperture(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1200,7 +1200,7 @@ func Aperture(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Apple(children ...*engine.UberElement) *engine.UberElement {
+func Apple(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1213,7 +1213,7 @@ func Apple(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AppleCircle(children ...*engine.UberElement) *engine.UberElement {
+func AppleCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1226,7 +1226,7 @@ func AppleCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func AppleSquare(children ...*engine.UberElement) *engine.UberElement {
+func AppleSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1239,7 +1239,7 @@ func AppleSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Archive(children ...*engine.UberElement) *engine.UberElement {
+func Archive(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1252,7 +1252,7 @@ func Archive(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArchiveF(children ...*engine.UberElement) *engine.UberElement {
+func ArchiveF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1265,7 +1265,7 @@ func ArchiveF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleDown(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleDown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1278,7 +1278,7 @@ func ArrowCircleDown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleDownF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleDownF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1291,7 +1291,7 @@ func ArrowCircleDownF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleDownLeft(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleDownLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1304,7 +1304,7 @@ func ArrowCircleDownLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleDownLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleDownLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1317,7 +1317,7 @@ func ArrowCircleDownLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleDownRight(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleDownRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1330,7 +1330,7 @@ func ArrowCircleDownRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleDownRightF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleDownRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1343,7 +1343,7 @@ func ArrowCircleDownRightF(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func ArrowCircleLeft(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1356,7 +1356,7 @@ func ArrowCircleLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1369,7 +1369,7 @@ func ArrowCircleLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleRight(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1382,7 +1382,7 @@ func ArrowCircleRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleRightF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1395,7 +1395,7 @@ func ArrowCircleRightF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleUp(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleUp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1408,7 +1408,7 @@ func ArrowCircleUp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleUpF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleUpF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1421,7 +1421,7 @@ func ArrowCircleUpF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleUpLeft(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleUpLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1434,7 +1434,7 @@ func ArrowCircleUpLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleUpLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleUpLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1447,7 +1447,7 @@ func ArrowCircleUpLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleUpRight(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleUpRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1460,7 +1460,7 @@ func ArrowCircleUpRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowCircleUpRightF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowCircleUpRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1473,7 +1473,7 @@ func ArrowCircleUpRightF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowDown(children ...*engine.UberElement) *engine.UberElement {
+func ArrowDown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1486,7 +1486,7 @@ func ArrowDown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowDownLeft(children ...*engine.UberElement) *engine.UberElement {
+func ArrowDownLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1499,7 +1499,7 @@ func ArrowDownLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowDownRight(children ...*engine.UberElement) *engine.UberElement {
+func ArrowDownRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1512,7 +1512,7 @@ func ArrowDownRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowLeft(children ...*engine.UberElement) *engine.UberElement {
+func ArrowLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1525,7 +1525,7 @@ func ArrowLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowRight(children ...*engine.UberElement) *engine.UberElement {
+func ArrowRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1538,7 +1538,7 @@ func ArrowRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareDown(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareDown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1551,7 +1551,7 @@ func ArrowSquareDown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareDownF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareDownF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1564,7 +1564,7 @@ func ArrowSquareDownF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareDownLeft(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareDownLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1577,7 +1577,7 @@ func ArrowSquareDownLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareDownLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareDownLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1590,7 +1590,7 @@ func ArrowSquareDownLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareDownRight(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareDownRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1603,7 +1603,7 @@ func ArrowSquareDownRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareDownRightF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareDownRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1616,7 +1616,7 @@ func ArrowSquareDownRightF(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func ArrowSquareLeft(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1629,7 +1629,7 @@ func ArrowSquareLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1642,7 +1642,7 @@ func ArrowSquareLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareRight(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1655,7 +1655,7 @@ func ArrowSquareRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareRightF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1668,7 +1668,7 @@ func ArrowSquareRightF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareUp(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareUp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1681,7 +1681,7 @@ func ArrowSquareUp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareUpF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareUpF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1694,7 +1694,7 @@ func ArrowSquareUpF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareUpLeft(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareUpLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1707,7 +1707,7 @@ func ArrowSquareUpLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareUpLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareUpLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1720,7 +1720,7 @@ func ArrowSquareUpLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareUpRight(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareUpRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1733,7 +1733,7 @@ func ArrowSquareUpRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowSquareUpRightF(children ...*engine.UberElement) *engine.UberElement {
+func ArrowSquareUpRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1746,7 +1746,7 @@ func ArrowSquareUpRightF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowUp(children ...*engine.UberElement) *engine.UberElement {
+func ArrowUp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1759,7 +1759,7 @@ func ArrowUp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowUpLeft(children ...*engine.UberElement) *engine.UberElement {
+func ArrowUpLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1772,7 +1772,7 @@ func ArrowUpLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowUpRight(children ...*engine.UberElement) *engine.UberElement {
+func ArrowUpRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1785,7 +1785,7 @@ func ArrowUpRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowsCorners(children ...*engine.UberElement) *engine.UberElement {
+func ArrowsCorners(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1798,7 +1798,7 @@ func ArrowsCorners(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowsFullscreen(children ...*engine.UberElement) *engine.UberElement {
+func ArrowsFullscreen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1811,7 +1811,7 @@ func ArrowsFullscreen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowsH(children ...*engine.UberElement) *engine.UberElement {
+func ArrowsH(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1824,7 +1824,7 @@ func ArrowsH(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ArrowsV(children ...*engine.UberElement) *engine.UberElement {
+func ArrowsV(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1837,7 +1837,7 @@ func ArrowsV(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Attachment(children ...*engine.UberElement) *engine.UberElement {
+func Attachment(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1850,7 +1850,7 @@ func Attachment(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BackgroundColor(children ...*engine.UberElement) *engine.UberElement {
+func BackgroundColor(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1863,7 +1863,7 @@ func BackgroundColor(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Backpack(children ...*engine.UberElement) *engine.UberElement {
+func Backpack(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1876,7 +1876,7 @@ func Backpack(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BackpackF(children ...*engine.UberElement) *engine.UberElement {
+func BackpackF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1889,7 +1889,7 @@ func BackpackF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Backward(children ...*engine.UberElement) *engine.UberElement {
+func Backward(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1902,7 +1902,7 @@ func Backward(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BackwardCircle(children ...*engine.UberElement) *engine.UberElement {
+func BackwardCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1915,7 +1915,7 @@ func BackwardCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BackwardCircleF(children ...*engine.UberElement) *engine.UberElement {
+func BackwardCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1928,7 +1928,7 @@ func BackwardCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BackwardSquare(children ...*engine.UberElement) *engine.UberElement {
+func BackwardSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1941,7 +1941,7 @@ func BackwardSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BackwardSquareF(children ...*engine.UberElement) *engine.UberElement {
+func BackwardSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1954,7 +1954,7 @@ func BackwardSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Baidu(children ...*engine.UberElement) *engine.UberElement {
+func Baidu(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1967,7 +1967,7 @@ func Baidu(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BaiduCircle(children ...*engine.UberElement) *engine.UberElement {
+func BaiduCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1980,7 +1980,7 @@ func BaiduCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BaiduSquare(children ...*engine.UberElement) *engine.UberElement {
+func BaiduSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -1993,7 +1993,7 @@ func BaiduSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Bandage(children ...*engine.UberElement) *engine.UberElement {
+func Bandage(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2006,7 +2006,7 @@ func Bandage(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BandageF(children ...*engine.UberElement) *engine.UberElement {
+func BandageF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2019,7 +2019,7 @@ func BandageF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BarChart(children ...*engine.UberElement) *engine.UberElement {
+func BarChart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2032,7 +2032,7 @@ func BarChart(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Baseball(children ...*engine.UberElement) *engine.UberElement {
+func Baseball(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2045,7 +2045,7 @@ func Baseball(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Basketball(children ...*engine.UberElement) *engine.UberElement {
+func Basketball(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2058,7 +2058,7 @@ func Basketball(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Bathtub(children ...*engine.UberElement) *engine.UberElement {
+func Bathtub(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2071,7 +2071,7 @@ func Bathtub(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BathtubF(children ...*engine.UberElement) *engine.UberElement {
+func BathtubF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2084,7 +2084,7 @@ func BathtubF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Battery(children ...*engine.UberElement) *engine.UberElement {
+func Battery(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2097,7 +2097,7 @@ func Battery(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BatteryCharging(children ...*engine.UberElement) *engine.UberElement {
+func BatteryCharging(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2110,7 +2110,7 @@ func BatteryCharging(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BatteryChargingF(children ...*engine.UberElement) *engine.UberElement {
+func BatteryChargingF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2123,7 +2123,7 @@ func BatteryChargingF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BatteryF(children ...*engine.UberElement) *engine.UberElement {
+func BatteryF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2136,7 +2136,7 @@ func BatteryF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BatteryHalf(children ...*engine.UberElement) *engine.UberElement {
+func BatteryHalf(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2149,7 +2149,7 @@ func BatteryHalf(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BatteryHalfF(children ...*engine.UberElement) *engine.UberElement {
+func BatteryHalfF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2162,7 +2162,7 @@ func BatteryHalfF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BatteryOneQuarter(children ...*engine.UberElement) *engine.UberElement {
+func BatteryOneQuarter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2175,7 +2175,7 @@ func BatteryOneQuarter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BatteryOneQuarterF(children ...*engine.UberElement) *engine.UberElement {
+func BatteryOneQuarterF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2188,7 +2188,7 @@ func BatteryOneQuarterF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BatteryThreeQuarters(children ...*engine.UberElement) *engine.UberElement {
+func BatteryThreeQuarters(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2201,7 +2201,7 @@ func BatteryThreeQuarters(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BatteryThreeQuartersF(children ...*engine.UberElement) *engine.UberElement {
+func BatteryThreeQuartersF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2214,7 +2214,7 @@ func BatteryThreeQuartersF(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func Beatport(children ...*engine.UberElement) *engine.UberElement {
+func Beatport(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2227,7 +2227,7 @@ func Beatport(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BeatportCircle(children ...*engine.UberElement) *engine.UberElement {
+func BeatportCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2240,7 +2240,7 @@ func BeatportCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BeatportSquare(children ...*engine.UberElement) *engine.UberElement {
+func BeatportSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2253,7 +2253,7 @@ func BeatportSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Beer(children ...*engine.UberElement) *engine.UberElement {
+func Beer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2266,7 +2266,7 @@ func Beer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BeerF(children ...*engine.UberElement) *engine.UberElement {
+func BeerF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2279,7 +2279,7 @@ func BeerF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Behance(children ...*engine.UberElement) *engine.UberElement {
+func Behance(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2292,7 +2292,7 @@ func Behance(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BehanceCircle(children ...*engine.UberElement) *engine.UberElement {
+func BehanceCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2305,7 +2305,7 @@ func BehanceCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BehanceSquare(children ...*engine.UberElement) *engine.UberElement {
+func BehanceSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2318,7 +2318,7 @@ func BehanceSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Bell(children ...*engine.UberElement) *engine.UberElement {
+func Bell(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2331,7 +2331,7 @@ func Bell(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BellF(children ...*engine.UberElement) *engine.UberElement {
+func BellF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2344,7 +2344,7 @@ func BellF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BellOff(children ...*engine.UberElement) *engine.UberElement {
+func BellOff(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2357,7 +2357,7 @@ func BellOff(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BellOffF(children ...*engine.UberElement) *engine.UberElement {
+func BellOffF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2370,7 +2370,7 @@ func BellOffF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Bing(children ...*engine.UberElement) *engine.UberElement {
+func Bing(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2383,7 +2383,7 @@ func Bing(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BingCircle(children ...*engine.UberElement) *engine.UberElement {
+func BingCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2396,7 +2396,7 @@ func BingCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BingSquare(children ...*engine.UberElement) *engine.UberElement {
+func BingSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2409,7 +2409,7 @@ func BingSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BirthdayCake(children ...*engine.UberElement) *engine.UberElement {
+func BirthdayCake(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2422,7 +2422,7 @@ func BirthdayCake(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BirthdayCakeF(children ...*engine.UberElement) *engine.UberElement {
+func BirthdayCakeF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2435,7 +2435,7 @@ func BirthdayCakeF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Blogger(children ...*engine.UberElement) *engine.UberElement {
+func Blogger(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2448,7 +2448,7 @@ func Blogger(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BloggerCircle(children ...*engine.UberElement) *engine.UberElement {
+func BloggerCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2461,7 +2461,7 @@ func BloggerCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BloggerSquare(children ...*engine.UberElement) *engine.UberElement {
+func BloggerSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2474,7 +2474,7 @@ func BloggerSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Bluetooth(children ...*engine.UberElement) *engine.UberElement {
+func Bluetooth(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2487,7 +2487,7 @@ func Bluetooth(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Bold(children ...*engine.UberElement) *engine.UberElement {
+func Bold(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2500,7 +2500,7 @@ func Bold(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Book(children ...*engine.UberElement) *engine.UberElement {
+func Book(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2513,7 +2513,7 @@ func Book(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BookF(children ...*engine.UberElement) *engine.UberElement {
+func BookF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2526,7 +2526,7 @@ func BookF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Bookmark(children ...*engine.UberElement) *engine.UberElement {
+func Bookmark(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2539,7 +2539,7 @@ func Bookmark(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BookmarkF(children ...*engine.UberElement) *engine.UberElement {
+func BookmarkF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2552,7 +2552,7 @@ func BookmarkF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BookmarkMinus(children ...*engine.UberElement) *engine.UberElement {
+func BookmarkMinus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2565,7 +2565,7 @@ func BookmarkMinus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BookmarkMinusF(children ...*engine.UberElement) *engine.UberElement {
+func BookmarkMinusF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2578,7 +2578,7 @@ func BookmarkMinusF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BookmarkPlus(children ...*engine.UberElement) *engine.UberElement {
+func BookmarkPlus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2591,7 +2591,7 @@ func BookmarkPlus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BookmarkPlusF(children ...*engine.UberElement) *engine.UberElement {
+func BookmarkPlusF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2604,7 +2604,7 @@ func BookmarkPlusF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BookmarkRemove(children ...*engine.UberElement) *engine.UberElement {
+func BookmarkRemove(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2617,7 +2617,7 @@ func BookmarkRemove(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BookmarkRemoveF(children ...*engine.UberElement) *engine.UberElement {
+func BookmarkRemoveF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2630,7 +2630,7 @@ func BookmarkRemoveF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Bottle(children ...*engine.UberElement) *engine.UberElement {
+func Bottle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2643,7 +2643,7 @@ func Bottle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BottleF(children ...*engine.UberElement) *engine.UberElement {
+func BottleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2656,7 +2656,7 @@ func BottleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Box(children ...*engine.UberElement) *engine.UberElement {
+func Box(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2669,7 +2669,7 @@ func Box(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BoxF(children ...*engine.UberElement) *engine.UberElement {
+func BoxF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2682,7 +2682,7 @@ func BoxF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Branch(children ...*engine.UberElement) *engine.UberElement {
+func Branch(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2695,7 +2695,7 @@ func Branch(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BranchF(children ...*engine.UberElement) *engine.UberElement {
+func BranchF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2708,7 +2708,7 @@ func BranchF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Brightness(children ...*engine.UberElement) *engine.UberElement {
+func Brightness(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2721,7 +2721,7 @@ func Brightness(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BrightnessDown(children ...*engine.UberElement) *engine.UberElement {
+func BrightnessDown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2734,7 +2734,7 @@ func BrightnessDown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BrightnessDownF(children ...*engine.UberElement) *engine.UberElement {
+func BrightnessDownF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2747,7 +2747,7 @@ func BrightnessDownF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BrightnessUp(children ...*engine.UberElement) *engine.UberElement {
+func BrightnessUp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2760,7 +2760,7 @@ func BrightnessUp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BrightnessUpF(children ...*engine.UberElement) *engine.UberElement {
+func BrightnessUpF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2773,7 +2773,7 @@ func BrightnessUpF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Browse(children ...*engine.UberElement) *engine.UberElement {
+func Browse(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2786,7 +2786,7 @@ func Browse(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Brush(children ...*engine.UberElement) *engine.UberElement {
+func Brush(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2799,7 +2799,7 @@ func Brush(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BrushF(children ...*engine.UberElement) *engine.UberElement {
+func BrushF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2812,7 +2812,7 @@ func BrushF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Bug(children ...*engine.UberElement) *engine.UberElement {
+func Bug(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2825,7 +2825,7 @@ func Bug(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BugF(children ...*engine.UberElement) *engine.UberElement {
+func BugF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2838,7 +2838,7 @@ func BugF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Building(children ...*engine.UberElement) *engine.UberElement {
+func Building(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2851,7 +2851,7 @@ func Building(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BuildingF(children ...*engine.UberElement) *engine.UberElement {
+func BuildingF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2864,7 +2864,7 @@ func BuildingF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Bus(children ...*engine.UberElement) *engine.UberElement {
+func Bus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2877,7 +2877,7 @@ func Bus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func BusF(children ...*engine.UberElement) *engine.UberElement {
+func BusF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2890,7 +2890,7 @@ func BusF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Cactus(children ...*engine.UberElement) *engine.UberElement {
+func Cactus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2903,7 +2903,7 @@ func Cactus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CactusF(children ...*engine.UberElement) *engine.UberElement {
+func CactusF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2916,7 +2916,7 @@ func CactusF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Calculator(children ...*engine.UberElement) *engine.UberElement {
+func Calculator(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2929,7 +2929,7 @@ func Calculator(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Calendar(children ...*engine.UberElement) *engine.UberElement {
+func Calendar(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2942,7 +2942,7 @@ func Calendar(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CalendarAlt(children ...*engine.UberElement) *engine.UberElement {
+func CalendarAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2955,7 +2955,7 @@ func CalendarAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CalendarAltF(children ...*engine.UberElement) *engine.UberElement {
+func CalendarAltF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2968,7 +2968,7 @@ func CalendarAltF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CalendarF(children ...*engine.UberElement) *engine.UberElement {
+func CalendarF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2981,7 +2981,7 @@ func CalendarF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Camera(children ...*engine.UberElement) *engine.UberElement {
+func Camera(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -2994,7 +2994,7 @@ func Camera(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CameraAlt(children ...*engine.UberElement) *engine.UberElement {
+func CameraAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3007,7 +3007,7 @@ func CameraAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CameraAltF(children ...*engine.UberElement) *engine.UberElement {
+func CameraAltF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3020,7 +3020,7 @@ func CameraAltF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CameraF(children ...*engine.UberElement) *engine.UberElement {
+func CameraF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3033,7 +3033,7 @@ func CameraF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Candle(children ...*engine.UberElement) *engine.UberElement {
+func Candle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3046,7 +3046,7 @@ func Candle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CandleF(children ...*engine.UberElement) *engine.UberElement {
+func CandleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3059,7 +3059,7 @@ func CandleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Capsule(children ...*engine.UberElement) *engine.UberElement {
+func Capsule(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3072,7 +3072,7 @@ func Capsule(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CapsuleF(children ...*engine.UberElement) *engine.UberElement {
+func CapsuleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3085,7 +3085,7 @@ func CapsuleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Car(children ...*engine.UberElement) *engine.UberElement {
+func Car(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3098,7 +3098,7 @@ func Car(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CarF(children ...*engine.UberElement) *engine.UberElement {
+func CarF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3111,7 +3111,7 @@ func CarF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Castle(children ...*engine.UberElement) *engine.UberElement {
+func Castle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3124,7 +3124,7 @@ func Castle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CastleF(children ...*engine.UberElement) *engine.UberElement {
+func CastleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3137,7 +3137,7 @@ func CastleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Character(children ...*engine.UberElement) *engine.UberElement {
+func Character(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3150,7 +3150,7 @@ func Character(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Check(children ...*engine.UberElement) *engine.UberElement {
+func Check(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3163,7 +3163,7 @@ func Check(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleDown(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleDown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3176,7 +3176,7 @@ func ChevronCircleDown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleDownF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleDownF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3189,7 +3189,7 @@ func ChevronCircleDownF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleDownLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleDownLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3202,7 +3202,7 @@ func ChevronCircleDownLeft(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func ChevronCircleDownLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleDownLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3215,7 +3215,7 @@ func ChevronCircleDownLeftF(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func ChevronCircleDownRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleDownRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3228,7 +3228,7 @@ func ChevronCircleDownRight(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func ChevronCircleDownRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleDownRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3241,7 +3241,7 @@ func ChevronCircleDownRightF(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func ChevronCircleLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3254,7 +3254,7 @@ func ChevronCircleLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3267,7 +3267,7 @@ func ChevronCircleLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3280,7 +3280,7 @@ func ChevronCircleRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3293,7 +3293,7 @@ func ChevronCircleRightF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleUp(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleUp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3306,7 +3306,7 @@ func ChevronCircleUp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleUpF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleUpF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3319,7 +3319,7 @@ func ChevronCircleUpF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleUpLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleUpLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3332,7 +3332,7 @@ func ChevronCircleUpLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleUpLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleUpLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3345,7 +3345,7 @@ func ChevronCircleUpLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleUpRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleUpRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3358,7 +3358,7 @@ func ChevronCircleUpRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronCircleUpRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronCircleUpRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3371,7 +3371,7 @@ func ChevronCircleUpRightF(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func ChevronDown(children ...*engine.UberElement) *engine.UberElement {
+func ChevronDown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3384,7 +3384,7 @@ func ChevronDown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronDownLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronDownLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3397,7 +3397,7 @@ func ChevronDownLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronDownRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronDownRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3410,7 +3410,7 @@ func ChevronDownRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3423,7 +3423,7 @@ func ChevronLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3436,7 +3436,7 @@ func ChevronRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareDown(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareDown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3449,7 +3449,7 @@ func ChevronSquareDown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareDownF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareDownF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3462,7 +3462,7 @@ func ChevronSquareDownF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareDownLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareDownLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3475,7 +3475,7 @@ func ChevronSquareDownLeft(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func ChevronSquareDownLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareDownLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3488,7 +3488,7 @@ func ChevronSquareDownLeftF(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func ChevronSquareDownRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareDownRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3501,7 +3501,7 @@ func ChevronSquareDownRight(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func ChevronSquareDownRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareDownRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3514,7 +3514,7 @@ func ChevronSquareDownRightF(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func ChevronSquareLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3527,7 +3527,7 @@ func ChevronSquareLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3540,7 +3540,7 @@ func ChevronSquareLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3553,7 +3553,7 @@ func ChevronSquareRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3566,7 +3566,7 @@ func ChevronSquareRightF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareUp(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareUp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3579,7 +3579,7 @@ func ChevronSquareUp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareUpF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareUpF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3592,7 +3592,7 @@ func ChevronSquareUpF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareUpLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareUpLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3605,7 +3605,7 @@ func ChevronSquareUpLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareUpLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareUpLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3618,7 +3618,7 @@ func ChevronSquareUpLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareUpRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareUpRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3631,7 +3631,7 @@ func ChevronSquareUpRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronSquareUpRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronSquareUpRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3644,7 +3644,7 @@ func ChevronSquareUpRightF(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func ChevronUp(children ...*engine.UberElement) *engine.UberElement {
+func ChevronUp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3657,7 +3657,7 @@ func ChevronUp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronUpLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronUpLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3670,7 +3670,7 @@ func ChevronUpLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronUpRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronUpRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3683,7 +3683,7 @@ func ChevronUpRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsCircleDown(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleDown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3696,7 +3696,7 @@ func ChevronsCircleDown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsCircleDownF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleDownF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3709,7 +3709,7 @@ func ChevronsCircleDownF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsCircleDownLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleDownLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3722,7 +3722,7 @@ func ChevronsCircleDownLeft(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func ChevronsCircleDownLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleDownLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3735,7 +3735,7 @@ func ChevronsCircleDownLeftF(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func ChevronsCircleDownRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleDownRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3748,7 +3748,7 @@ func ChevronsCircleDownRight(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func ChevronsCircleDownRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleDownRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3761,7 +3761,7 @@ func ChevronsCircleDownRightF(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func ChevronsCircleLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3774,7 +3774,7 @@ func ChevronsCircleLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsCircleLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3787,7 +3787,7 @@ func ChevronsCircleLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsCircleRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3800,7 +3800,7 @@ func ChevronsCircleRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsCircleRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3813,7 +3813,7 @@ func ChevronsCircleRightF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsCircleUp(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleUp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3826,7 +3826,7 @@ func ChevronsCircleUp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsCircleUpF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleUpF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3839,7 +3839,7 @@ func ChevronsCircleUpF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsCircleUpLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleUpLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3852,7 +3852,7 @@ func ChevronsCircleUpLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsCircleUpLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleUpLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3865,7 +3865,7 @@ func ChevronsCircleUpLeftF(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func ChevronsCircleUpRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleUpRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3878,7 +3878,7 @@ func ChevronsCircleUpRight(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func ChevronsCircleUpRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsCircleUpRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3891,7 +3891,7 @@ func ChevronsCircleUpRightF(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func ChevronsDown(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsDown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3904,7 +3904,7 @@ func ChevronsDown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsDownLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsDownLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3917,7 +3917,7 @@ func ChevronsDownLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsDownRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsDownRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3930,7 +3930,7 @@ func ChevronsDownRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3943,7 +3943,7 @@ func ChevronsLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3956,7 +3956,7 @@ func ChevronsRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsSquareDown(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareDown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3969,7 +3969,7 @@ func ChevronsSquareDown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsSquareDownF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareDownF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3982,7 +3982,7 @@ func ChevronsSquareDownF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsSquareDownLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareDownLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -3995,7 +3995,7 @@ func ChevronsSquareDownLeft(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func ChevronsSquareDownLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareDownLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4008,7 +4008,7 @@ func ChevronsSquareDownLeftF(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func ChevronsSquareDownRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareDownRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4021,7 +4021,7 @@ func ChevronsSquareDownRight(children ...*engine.UberElement) *engine.UberElemen
 		Element(children...)
 }
 
-func ChevronsSquareDownRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareDownRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4034,7 +4034,7 @@ func ChevronsSquareDownRightF(children ...*engine.UberElement) *engine.UberEleme
 		Element(children...)
 }
 
-func ChevronsSquareLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4047,7 +4047,7 @@ func ChevronsSquareLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsSquareLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4060,7 +4060,7 @@ func ChevronsSquareLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsSquareRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4073,7 +4073,7 @@ func ChevronsSquareRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsSquareRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4086,7 +4086,7 @@ func ChevronsSquareRightF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsSquareUp(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareUp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4099,7 +4099,7 @@ func ChevronsSquareUp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsSquareUpF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareUpF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4112,7 +4112,7 @@ func ChevronsSquareUpF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsSquareUpLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareUpLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4125,7 +4125,7 @@ func ChevronsSquareUpLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsSquareUpLeftF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareUpLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4138,7 +4138,7 @@ func ChevronsSquareUpLeftF(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func ChevronsSquareUpRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareUpRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4151,7 +4151,7 @@ func ChevronsSquareUpRight(children ...*engine.UberElement) *engine.UberElement 
 		Element(children...)
 }
 
-func ChevronsSquareUpRightF(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsSquareUpRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4164,7 +4164,7 @@ func ChevronsSquareUpRightF(children ...*engine.UberElement) *engine.UberElement
 		Element(children...)
 }
 
-func ChevronsUp(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsUp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4177,7 +4177,7 @@ func ChevronsUp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsUpLeft(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsUpLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4190,7 +4190,7 @@ func ChevronsUpLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChevronsUpRight(children ...*engine.UberElement) *engine.UberElement {
+func ChevronsUpRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4203,7 +4203,7 @@ func ChevronsUpRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Chronometer(children ...*engine.UberElement) *engine.UberElement {
+func Chronometer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4216,7 +4216,7 @@ func Chronometer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ChronometerF(children ...*engine.UberElement) *engine.UberElement {
+func ChronometerF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4229,7 +4229,7 @@ func ChronometerF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Circle(children ...*engine.UberElement) *engine.UberElement {
+func Circle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4242,7 +4242,7 @@ func Circle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CircleF(children ...*engine.UberElement) *engine.UberElement {
+func CircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4255,7 +4255,7 @@ func CircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ClearFormat(children ...*engine.UberElement) *engine.UberElement {
+func ClearFormat(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4268,7 +4268,7 @@ func ClearFormat(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Clipboard(children ...*engine.UberElement) *engine.UberElement {
+func Clipboard(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4281,7 +4281,7 @@ func Clipboard(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ClipboardF(children ...*engine.UberElement) *engine.UberElement {
+func ClipboardF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4294,7 +4294,7 @@ func ClipboardF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Clock(children ...*engine.UberElement) *engine.UberElement {
+func Clock(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4307,7 +4307,7 @@ func Clock(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ClockF(children ...*engine.UberElement) *engine.UberElement {
+func ClockF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4320,7 +4320,7 @@ func ClockF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Close(children ...*engine.UberElement) *engine.UberElement {
+func Close(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4333,7 +4333,7 @@ func Close(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CloseCircle(children ...*engine.UberElement) *engine.UberElement {
+func CloseCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4346,7 +4346,7 @@ func CloseCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CloseCircleF(children ...*engine.UberElement) *engine.UberElement {
+func CloseCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4359,7 +4359,7 @@ func CloseCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CloseRectangle(children ...*engine.UberElement) *engine.UberElement {
+func CloseRectangle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4372,7 +4372,7 @@ func CloseRectangle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CloseRectangleF(children ...*engine.UberElement) *engine.UberElement {
+func CloseRectangleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4385,7 +4385,7 @@ func CloseRectangleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Cloud(children ...*engine.UberElement) *engine.UberElement {
+func Cloud(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4398,7 +4398,7 @@ func Cloud(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CloudF(children ...*engine.UberElement) *engine.UberElement {
+func CloudF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4411,7 +4411,7 @@ func CloudF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CloudRain(children ...*engine.UberElement) *engine.UberElement {
+func CloudRain(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4424,7 +4424,7 @@ func CloudRain(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CloudRainF(children ...*engine.UberElement) *engine.UberElement {
+func CloudRainF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4437,7 +4437,7 @@ func CloudRainF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CloudSnow(children ...*engine.UberElement) *engine.UberElement {
+func CloudSnow(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4450,7 +4450,7 @@ func CloudSnow(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CloudSnowF(children ...*engine.UberElement) *engine.UberElement {
+func CloudSnowF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4463,7 +4463,7 @@ func CloudSnowF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CloudThunder(children ...*engine.UberElement) *engine.UberElement {
+func CloudThunder(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4476,7 +4476,7 @@ func CloudThunder(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CloudThunderF(children ...*engine.UberElement) *engine.UberElement {
+func CloudThunderF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4489,7 +4489,7 @@ func CloudThunderF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Code(children ...*engine.UberElement) *engine.UberElement {
+func Code(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4502,7 +4502,7 @@ func Code(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CodeSample(children ...*engine.UberElement) *engine.UberElement {
+func CodeSample(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4515,7 +4515,7 @@ func CodeSample(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Codepen(children ...*engine.UberElement) *engine.UberElement {
+func Codepen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4528,7 +4528,7 @@ func Codepen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CodepenCircle(children ...*engine.UberElement) *engine.UberElement {
+func CodepenCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4541,7 +4541,7 @@ func CodepenCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CodepenSquare(children ...*engine.UberElement) *engine.UberElement {
+func CodepenSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4554,7 +4554,7 @@ func CodepenSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Coffee(children ...*engine.UberElement) *engine.UberElement {
+func Coffee(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4567,7 +4567,7 @@ func Coffee(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CoffeeCup(children ...*engine.UberElement) *engine.UberElement {
+func CoffeeCup(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4580,7 +4580,7 @@ func CoffeeCup(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CoffeeCupF(children ...*engine.UberElement) *engine.UberElement {
+func CoffeeCupF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4593,7 +4593,7 @@ func CoffeeCupF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Cog(children ...*engine.UberElement) *engine.UberElement {
+func Cog(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4606,7 +4606,7 @@ func Cog(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CogF(children ...*engine.UberElement) *engine.UberElement {
+func CogF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4619,7 +4619,7 @@ func CogF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Cogs(children ...*engine.UberElement) *engine.UberElement {
+func Cogs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4632,7 +4632,7 @@ func Cogs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CogsF(children ...*engine.UberElement) *engine.UberElement {
+func CogsF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4645,7 +4645,7 @@ func CogsF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Coin(children ...*engine.UberElement) *engine.UberElement {
+func Coin(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4658,7 +4658,7 @@ func Coin(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CoinF(children ...*engine.UberElement) *engine.UberElement {
+func CoinF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4671,7 +4671,7 @@ func CoinF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Color(children ...*engine.UberElement) *engine.UberElement {
+func Color(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4684,7 +4684,7 @@ func Color(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Compass(children ...*engine.UberElement) *engine.UberElement {
+func Compass(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4697,7 +4697,7 @@ func Compass(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CompassF(children ...*engine.UberElement) *engine.UberElement {
+func CompassF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4710,7 +4710,7 @@ func CompassF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Computer(children ...*engine.UberElement) *engine.UberElement {
+func Computer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4723,7 +4723,7 @@ func Computer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ComputerAlt(children ...*engine.UberElement) *engine.UberElement {
+func ComputerAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4736,7 +4736,7 @@ func ComputerAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ComputerAltF(children ...*engine.UberElement) *engine.UberElement {
+func ComputerAltF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4749,7 +4749,7 @@ func ComputerAltF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ComputerF(children ...*engine.UberElement) *engine.UberElement {
+func ComputerF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4762,7 +4762,7 @@ func ComputerF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CreditCard(children ...*engine.UberElement) *engine.UberElement {
+func CreditCard(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4775,7 +4775,7 @@ func CreditCard(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CreditCardF(children ...*engine.UberElement) *engine.UberElement {
+func CreditCardF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4788,7 +4788,7 @@ func CreditCardF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Crop(children ...*engine.UberElement) *engine.UberElement {
+func Crop(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4801,7 +4801,7 @@ func Crop(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Crown(children ...*engine.UberElement) *engine.UberElement {
+func Crown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4814,7 +4814,7 @@ func Crown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CrownF(children ...*engine.UberElement) *engine.UberElement {
+func CrownF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4827,7 +4827,7 @@ func CrownF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Cutlery(children ...*engine.UberElement) *engine.UberElement {
+func Cutlery(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4840,7 +4840,7 @@ func Cutlery(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CutleryF(children ...*engine.UberElement) *engine.UberElement {
+func CutleryF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4853,7 +4853,7 @@ func CutleryF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Cutter(children ...*engine.UberElement) *engine.UberElement {
+func Cutter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4866,7 +4866,7 @@ func Cutter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CutterF(children ...*engine.UberElement) *engine.UberElement {
+func CutterF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4879,7 +4879,7 @@ func CutterF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Dashboard(children ...*engine.UberElement) *engine.UberElement {
+func Dashboard(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4892,7 +4892,7 @@ func Dashboard(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DashboardF(children ...*engine.UberElement) *engine.UberElement {
+func DashboardF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4905,7 +4905,7 @@ func DashboardF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Database(children ...*engine.UberElement) *engine.UberElement {
+func Database(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4918,7 +4918,7 @@ func Database(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DatabaseF(children ...*engine.UberElement) *engine.UberElement {
+func DatabaseF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4931,7 +4931,7 @@ func DatabaseF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Deezer(children ...*engine.UberElement) *engine.UberElement {
+func Deezer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4944,7 +4944,7 @@ func Deezer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DeezerCircle(children ...*engine.UberElement) *engine.UberElement {
+func DeezerCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4957,7 +4957,7 @@ func DeezerCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DeezerSquare(children ...*engine.UberElement) *engine.UberElement {
+func DeezerSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4970,7 +4970,7 @@ func DeezerSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Delete(children ...*engine.UberElement) *engine.UberElement {
+func Delete(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4983,7 +4983,7 @@ func Delete(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DeleteF(children ...*engine.UberElement) *engine.UberElement {
+func DeleteF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -4996,7 +4996,7 @@ func DeleteF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Deviantart(children ...*engine.UberElement) *engine.UberElement {
+func Deviantart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5009,7 +5009,7 @@ func Deviantart(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DeviantartCircle(children ...*engine.UberElement) *engine.UberElement {
+func DeviantartCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5022,7 +5022,7 @@ func DeviantartCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DeviantartSquare(children ...*engine.UberElement) *engine.UberElement {
+func DeviantartSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5035,7 +5035,7 @@ func DeviantartSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Dice(children ...*engine.UberElement) *engine.UberElement {
+func Dice(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5048,7 +5048,7 @@ func Dice(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DiceF(children ...*engine.UberElement) *engine.UberElement {
+func DiceF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5061,7 +5061,7 @@ func DiceF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Dices(children ...*engine.UberElement) *engine.UberElement {
+func Dices(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5074,7 +5074,7 @@ func Dices(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DicesF(children ...*engine.UberElement) *engine.UberElement {
+func DicesF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5087,7 +5087,7 @@ func DicesF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Differenciation(children ...*engine.UberElement) *engine.UberElement {
+func Differenciation(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5100,7 +5100,7 @@ func Differenciation(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Digg(children ...*engine.UberElement) *engine.UberElement {
+func Digg(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5113,7 +5113,7 @@ func Digg(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Direction(children ...*engine.UberElement) *engine.UberElement {
+func Direction(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5126,7 +5126,7 @@ func Direction(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DirectionF(children ...*engine.UberElement) *engine.UberElement {
+func DirectionF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5139,7 +5139,7 @@ func DirectionF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Directions(children ...*engine.UberElement) *engine.UberElement {
+func Directions(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5152,7 +5152,7 @@ func Directions(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DirectionsF(children ...*engine.UberElement) *engine.UberElement {
+func DirectionsF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5165,7 +5165,7 @@ func DirectionsF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Disc(children ...*engine.UberElement) *engine.UberElement {
+func Disc(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5178,7 +5178,7 @@ func Disc(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DiscF(children ...*engine.UberElement) *engine.UberElement {
+func DiscF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5191,7 +5191,7 @@ func DiscF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Discord(children ...*engine.UberElement) *engine.UberElement {
+func Discord(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5204,7 +5204,7 @@ func Discord(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Disqus(children ...*engine.UberElement) *engine.UberElement {
+func Disqus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5217,7 +5217,7 @@ func Disqus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DisqusCircle(children ...*engine.UberElement) *engine.UberElement {
+func DisqusCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5230,7 +5230,7 @@ func DisqusCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DisqusSquare(children ...*engine.UberElement) *engine.UberElement {
+func DisqusSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5243,7 +5243,7 @@ func DisqusSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Dj(children ...*engine.UberElement) *engine.UberElement {
+func Dj(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5256,7 +5256,7 @@ func Dj(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DjF(children ...*engine.UberElement) *engine.UberElement {
+func DjF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5269,7 +5269,7 @@ func DjF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Dna(children ...*engine.UberElement) *engine.UberElement {
+func Dna(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5282,7 +5282,7 @@ func Dna(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Document(children ...*engine.UberElement) *engine.UberElement {
+func Document(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5295,7 +5295,7 @@ func Document(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DocumentF(children ...*engine.UberElement) *engine.UberElement {
+func DocumentF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5308,7 +5308,7 @@ func DocumentF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Door(children ...*engine.UberElement) *engine.UberElement {
+func Door(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5321,7 +5321,7 @@ func Door(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Download(children ...*engine.UberElement) *engine.UberElement {
+func Download(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5334,7 +5334,7 @@ func Download(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Dribbble(children ...*engine.UberElement) *engine.UberElement {
+func Dribbble(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5347,7 +5347,7 @@ func Dribbble(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Drupal(children ...*engine.UberElement) *engine.UberElement {
+func Drupal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5360,7 +5360,7 @@ func Drupal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DrupalCircle(children ...*engine.UberElement) *engine.UberElement {
+func DrupalCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5373,7 +5373,7 @@ func DrupalCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func DrupalSquare(children ...*engine.UberElement) *engine.UberElement {
+func DrupalSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5386,7 +5386,7 @@ func DrupalSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Ebay(children ...*engine.UberElement) *engine.UberElement {
+func Ebay(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5399,7 +5399,7 @@ func Ebay(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Egg(children ...*engine.UberElement) *engine.UberElement {
+func Egg(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5412,7 +5412,7 @@ func Egg(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EggF(children ...*engine.UberElement) *engine.UberElement {
+func EggF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5425,7 +5425,7 @@ func EggF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Eggs(children ...*engine.UberElement) *engine.UberElement {
+func Eggs(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5438,7 +5438,7 @@ func Eggs(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EggsF(children ...*engine.UberElement) *engine.UberElement {
+func EggsF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5451,7 +5451,7 @@ func EggsF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Eject(children ...*engine.UberElement) *engine.UberElement {
+func Eject(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5464,7 +5464,7 @@ func Eject(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EjectCircle(children ...*engine.UberElement) *engine.UberElement {
+func EjectCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5477,7 +5477,7 @@ func EjectCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EjectCircleF(children ...*engine.UberElement) *engine.UberElement {
+func EjectCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5490,7 +5490,7 @@ func EjectCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EjectSquare(children ...*engine.UberElement) *engine.UberElement {
+func EjectSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5503,7 +5503,7 @@ func EjectSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EjectSquareF(children ...*engine.UberElement) *engine.UberElement {
+func EjectSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5516,7 +5516,7 @@ func EjectSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Envelope(children ...*engine.UberElement) *engine.UberElement {
+func Envelope(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5529,7 +5529,7 @@ func Envelope(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EnvelopeF(children ...*engine.UberElement) *engine.UberElement {
+func EnvelopeF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5542,7 +5542,7 @@ func EnvelopeF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EnvelopeOpen(children ...*engine.UberElement) *engine.UberElement {
+func EnvelopeOpen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5555,7 +5555,7 @@ func EnvelopeOpen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EnvelopeOpenF(children ...*engine.UberElement) *engine.UberElement {
+func EnvelopeOpenF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5568,7 +5568,7 @@ func EnvelopeOpenF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Extinguisher(children ...*engine.UberElement) *engine.UberElement {
+func Extinguisher(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5581,7 +5581,7 @@ func Extinguisher(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ExtinguisherF(children ...*engine.UberElement) *engine.UberElement {
+func ExtinguisherF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5594,7 +5594,7 @@ func ExtinguisherF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Eye(children ...*engine.UberElement) *engine.UberElement {
+func Eye(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5607,7 +5607,7 @@ func Eye(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EyeClose(children ...*engine.UberElement) *engine.UberElement {
+func EyeClose(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5620,7 +5620,7 @@ func EyeClose(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EyeCloseF(children ...*engine.UberElement) *engine.UberElement {
+func EyeCloseF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5633,7 +5633,7 @@ func EyeCloseF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EyeF(children ...*engine.UberElement) *engine.UberElement {
+func EyeF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5646,7 +5646,7 @@ func EyeF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Eyedropper(children ...*engine.UberElement) *engine.UberElement {
+func Eyedropper(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5659,7 +5659,7 @@ func Eyedropper(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EyedropperF(children ...*engine.UberElement) *engine.UberElement {
+func EyedropperF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5672,7 +5672,7 @@ func EyedropperF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Facebook(children ...*engine.UberElement) *engine.UberElement {
+func Facebook(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5685,7 +5685,7 @@ func Facebook(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FacebookCircle(children ...*engine.UberElement) *engine.UberElement {
+func FacebookCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5698,7 +5698,7 @@ func FacebookCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FacebookSquare(children ...*engine.UberElement) *engine.UberElement {
+func FacebookSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5711,7 +5711,7 @@ func FacebookSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FastBackward(children ...*engine.UberElement) *engine.UberElement {
+func FastBackward(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5724,7 +5724,7 @@ func FastBackward(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FastBackwardCircle(children ...*engine.UberElement) *engine.UberElement {
+func FastBackwardCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5737,7 +5737,7 @@ func FastBackwardCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FastBackwardCircleF(children ...*engine.UberElement) *engine.UberElement {
+func FastBackwardCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5750,7 +5750,7 @@ func FastBackwardCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FastBackwardSquare(children ...*engine.UberElement) *engine.UberElement {
+func FastBackwardSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5763,7 +5763,7 @@ func FastBackwardSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FastBackwardSquareF(children ...*engine.UberElement) *engine.UberElement {
+func FastBackwardSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5776,7 +5776,7 @@ func FastBackwardSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FastForward(children ...*engine.UberElement) *engine.UberElement {
+func FastForward(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5789,7 +5789,7 @@ func FastForward(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FastForwardCircle(children ...*engine.UberElement) *engine.UberElement {
+func FastForwardCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5802,7 +5802,7 @@ func FastForwardCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FastForwardCircleF(children ...*engine.UberElement) *engine.UberElement {
+func FastForwardCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5815,7 +5815,7 @@ func FastForwardCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FastForwardSquare(children ...*engine.UberElement) *engine.UberElement {
+func FastForwardSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5828,7 +5828,7 @@ func FastForwardSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FastForwardSquareF(children ...*engine.UberElement) *engine.UberElement {
+func FastForwardSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5841,7 +5841,7 @@ func FastForwardSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Feather(children ...*engine.UberElement) *engine.UberElement {
+func Feather(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5854,7 +5854,7 @@ func Feather(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FeatherF(children ...*engine.UberElement) *engine.UberElement {
+func FeatherF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5867,7 +5867,7 @@ func FeatherF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Female(children ...*engine.UberElement) *engine.UberElement {
+func Female(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5880,7 +5880,7 @@ func Female(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func File(children ...*engine.UberElement) *engine.UberElement {
+func File(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5893,7 +5893,7 @@ func File(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FileF(children ...*engine.UberElement) *engine.UberElement {
+func FileF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5906,7 +5906,7 @@ func FileF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Files(children ...*engine.UberElement) *engine.UberElement {
+func Files(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5919,7 +5919,7 @@ func Files(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FilesF(children ...*engine.UberElement) *engine.UberElement {
+func FilesF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5932,7 +5932,7 @@ func FilesF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Filter(children ...*engine.UberElement) *engine.UberElement {
+func Filter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5945,7 +5945,7 @@ func Filter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FilterF(children ...*engine.UberElement) *engine.UberElement {
+func FilterF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5958,7 +5958,7 @@ func FilterF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Fingerprint(children ...*engine.UberElement) *engine.UberElement {
+func Fingerprint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5971,7 +5971,7 @@ func Fingerprint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FirstAid(children ...*engine.UberElement) *engine.UberElement {
+func FirstAid(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5984,7 +5984,7 @@ func FirstAid(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FirstAidF(children ...*engine.UberElement) *engine.UberElement {
+func FirstAidF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -5997,7 +5997,7 @@ func FirstAidF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Fish(children ...*engine.UberElement) *engine.UberElement {
+func Fish(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6010,7 +6010,7 @@ func Fish(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FiveHundredPx(children ...*engine.UberElement) *engine.UberElement {
+func FiveHundredPx(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6023,7 +6023,7 @@ func FiveHundredPx(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Fiverr(children ...*engine.UberElement) *engine.UberElement {
+func Fiverr(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6036,7 +6036,7 @@ func Fiverr(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FiverrCircle(children ...*engine.UberElement) *engine.UberElement {
+func FiverrCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6049,7 +6049,7 @@ func FiverrCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FiverrSquare(children ...*engine.UberElement) *engine.UberElement {
+func FiverrSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6062,7 +6062,7 @@ func FiverrSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Flag(children ...*engine.UberElement) *engine.UberElement {
+func Flag(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6075,7 +6075,7 @@ func Flag(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FlagF(children ...*engine.UberElement) *engine.UberElement {
+func FlagF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6088,7 +6088,7 @@ func FlagF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Flame(children ...*engine.UberElement) *engine.UberElement {
+func Flame(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6101,7 +6101,7 @@ func Flame(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FlameF(children ...*engine.UberElement) *engine.UberElement {
+func FlameF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6114,7 +6114,7 @@ func FlameF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FlashlightOff(children ...*engine.UberElement) *engine.UberElement {
+func FlashlightOff(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6127,7 +6127,7 @@ func FlashlightOff(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FlashlightOffF(children ...*engine.UberElement) *engine.UberElement {
+func FlashlightOffF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6140,7 +6140,7 @@ func FlashlightOffF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FlashlightOn(children ...*engine.UberElement) *engine.UberElement {
+func FlashlightOn(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6153,7 +6153,7 @@ func FlashlightOn(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FlashlightOnF(children ...*engine.UberElement) *engine.UberElement {
+func FlashlightOnF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6166,7 +6166,7 @@ func FlashlightOnF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Flask(children ...*engine.UberElement) *engine.UberElement {
+func Flask(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6179,7 +6179,7 @@ func Flask(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Flickr(children ...*engine.UberElement) *engine.UberElement {
+func Flickr(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6192,7 +6192,7 @@ func Flickr(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FlickrCircle(children ...*engine.UberElement) *engine.UberElement {
+func FlickrCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6205,7 +6205,7 @@ func FlickrCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FlickrSquare(children ...*engine.UberElement) *engine.UberElement {
+func FlickrSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6218,7 +6218,7 @@ func FlickrSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Flower(children ...*engine.UberElement) *engine.UberElement {
+func Flower(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6231,7 +6231,7 @@ func Flower(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Folder(children ...*engine.UberElement) *engine.UberElement {
+func Folder(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6244,7 +6244,7 @@ func Folder(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderF(children ...*engine.UberElement) *engine.UberElement {
+func FolderF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6257,7 +6257,7 @@ func FolderF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderOpen(children ...*engine.UberElement) *engine.UberElement {
+func FolderOpen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6270,7 +6270,7 @@ func FolderOpen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderOpenF(children ...*engine.UberElement) *engine.UberElement {
+func FolderOpenF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6283,7 +6283,7 @@ func FolderOpenF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderZip(children ...*engine.UberElement) *engine.UberElement {
+func FolderZip(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6296,7 +6296,7 @@ func FolderZip(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func FolderZipF(children ...*engine.UberElement) *engine.UberElement {
+func FolderZipF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6309,7 +6309,7 @@ func FolderZipF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Football(children ...*engine.UberElement) *engine.UberElement {
+func Football(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6322,7 +6322,7 @@ func Football(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Fork(children ...*engine.UberElement) *engine.UberElement {
+func Fork(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6335,7 +6335,7 @@ func Fork(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ForkF(children ...*engine.UberElement) *engine.UberElement {
+func ForkF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6348,7 +6348,7 @@ func ForkF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Forward(children ...*engine.UberElement) *engine.UberElement {
+func Forward(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6361,7 +6361,7 @@ func Forward(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ForwardCircle(children ...*engine.UberElement) *engine.UberElement {
+func ForwardCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6374,7 +6374,7 @@ func ForwardCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ForwardCircleF(children ...*engine.UberElement) *engine.UberElement {
+func ForwardCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6387,7 +6387,7 @@ func ForwardCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ForwardSquare(children ...*engine.UberElement) *engine.UberElement {
+func ForwardSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6400,7 +6400,7 @@ func ForwardSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ForwardSquareF(children ...*engine.UberElement) *engine.UberElement {
+func ForwardSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6413,7 +6413,7 @@ func ForwardSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Foursquare(children ...*engine.UberElement) *engine.UberElement {
+func Foursquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6426,7 +6426,7 @@ func Foursquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Gamepad(children ...*engine.UberElement) *engine.UberElement {
+func Gamepad(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6439,7 +6439,7 @@ func Gamepad(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GamepadF(children ...*engine.UberElement) *engine.UberElement {
+func GamepadF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6452,7 +6452,7 @@ func GamepadF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GamepadRetro(children ...*engine.UberElement) *engine.UberElement {
+func GamepadRetro(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6465,7 +6465,7 @@ func GamepadRetro(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GamepadRetroF(children ...*engine.UberElement) *engine.UberElement {
+func GamepadRetroF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6478,7 +6478,7 @@ func GamepadRetroF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Gamma(children ...*engine.UberElement) *engine.UberElement {
+func Gamma(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6491,7 +6491,7 @@ func Gamma(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Ghost(children ...*engine.UberElement) *engine.UberElement {
+func Ghost(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6504,7 +6504,7 @@ func Ghost(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GhostF(children ...*engine.UberElement) *engine.UberElement {
+func GhostF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6517,7 +6517,7 @@ func GhostF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GhostOrg(children ...*engine.UberElement) *engine.UberElement {
+func GhostOrg(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6530,7 +6530,7 @@ func GhostOrg(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GhostOrgCircle(children ...*engine.UberElement) *engine.UberElement {
+func GhostOrgCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6543,7 +6543,7 @@ func GhostOrgCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GhostOrgSquare(children ...*engine.UberElement) *engine.UberElement {
+func GhostOrgSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6556,7 +6556,7 @@ func GhostOrgSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Gift(children ...*engine.UberElement) *engine.UberElement {
+func Gift(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6569,7 +6569,7 @@ func Gift(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GiftF(children ...*engine.UberElement) *engine.UberElement {
+func GiftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6582,7 +6582,7 @@ func GiftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Github(children ...*engine.UberElement) *engine.UberElement {
+func Github(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6595,7 +6595,7 @@ func Github(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GithubCircle(children ...*engine.UberElement) *engine.UberElement {
+func GithubCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6608,7 +6608,7 @@ func GithubCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GithubSquare(children ...*engine.UberElement) *engine.UberElement {
+func GithubSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6621,7 +6621,7 @@ func GithubSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Gitlab(children ...*engine.UberElement) *engine.UberElement {
+func Gitlab(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6634,7 +6634,7 @@ func Gitlab(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GitlabCircle(children ...*engine.UberElement) *engine.UberElement {
+func GitlabCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6647,7 +6647,7 @@ func GitlabCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GitlabSquare(children ...*engine.UberElement) *engine.UberElement {
+func GitlabSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6660,7 +6660,7 @@ func GitlabSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GlassEmpty(children ...*engine.UberElement) *engine.UberElement {
+func GlassEmpty(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6673,7 +6673,7 @@ func GlassEmpty(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GlassFilled(children ...*engine.UberElement) *engine.UberElement {
+func GlassFilled(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6686,7 +6686,7 @@ func GlassFilled(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GlassFilledF(children ...*engine.UberElement) *engine.UberElement {
+func GlassFilledF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6699,7 +6699,7 @@ func GlassFilledF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Glue(children ...*engine.UberElement) *engine.UberElement {
+func Glue(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6712,7 +6712,7 @@ func Glue(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GlueF(children ...*engine.UberElement) *engine.UberElement {
+func GlueF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6725,7 +6725,7 @@ func GlueF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Google(children ...*engine.UberElement) *engine.UberElement {
+func Google(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6738,7 +6738,7 @@ func Google(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GoogleCircle(children ...*engine.UberElement) *engine.UberElement {
+func GoogleCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6751,7 +6751,7 @@ func GoogleCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GooglePlay(children ...*engine.UberElement) *engine.UberElement {
+func GooglePlay(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6764,7 +6764,7 @@ func GooglePlay(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GooglePlayCircle(children ...*engine.UberElement) *engine.UberElement {
+func GooglePlayCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6777,7 +6777,7 @@ func GooglePlayCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GooglePlaySquare(children ...*engine.UberElement) *engine.UberElement {
+func GooglePlaySquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6790,7 +6790,7 @@ func GooglePlaySquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GooglePlus(children ...*engine.UberElement) *engine.UberElement {
+func GooglePlus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6803,7 +6803,7 @@ func GooglePlus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GooglePlusCircle(children ...*engine.UberElement) *engine.UberElement {
+func GooglePlusCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6816,7 +6816,7 @@ func GooglePlusCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GooglePlusSquare(children ...*engine.UberElement) *engine.UberElement {
+func GooglePlusSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6829,7 +6829,7 @@ func GooglePlusSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GoogleSquare(children ...*engine.UberElement) *engine.UberElement {
+func GoogleSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6842,7 +6842,7 @@ func GoogleSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Gps(children ...*engine.UberElement) *engine.UberElement {
+func Gps(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6855,7 +6855,7 @@ func Gps(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GpsF(children ...*engine.UberElement) *engine.UberElement {
+func GpsF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6868,7 +6868,7 @@ func GpsF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Grid(children ...*engine.UberElement) *engine.UberElement {
+func Grid(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6881,7 +6881,7 @@ func Grid(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func GridF(children ...*engine.UberElement) *engine.UberElement {
+func GridF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6894,7 +6894,7 @@ func GridF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Hairdryer(children ...*engine.UberElement) *engine.UberElement {
+func Hairdryer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6907,7 +6907,7 @@ func Hairdryer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HairdryerF(children ...*engine.UberElement) *engine.UberElement {
+func HairdryerF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6920,7 +6920,7 @@ func HairdryerF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Hammer(children ...*engine.UberElement) *engine.UberElement {
+func Hammer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6933,7 +6933,7 @@ func Hammer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HammerF(children ...*engine.UberElement) *engine.UberElement {
+func HammerF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6946,7 +6946,7 @@ func HammerF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Hashtag(children ...*engine.UberElement) *engine.UberElement {
+func Hashtag(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6959,7 +6959,7 @@ func Hashtag(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Header(children ...*engine.UberElement) *engine.UberElement {
+func Header(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6972,7 +6972,7 @@ func Header(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HeaderFive(children ...*engine.UberElement) *engine.UberElement {
+func HeaderFive(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6985,7 +6985,7 @@ func HeaderFive(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HeaderFour(children ...*engine.UberElement) *engine.UberElement {
+func HeaderFour(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -6998,7 +6998,7 @@ func HeaderFour(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HeaderOne(children ...*engine.UberElement) *engine.UberElement {
+func HeaderOne(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7011,7 +7011,7 @@ func HeaderOne(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HeaderSix(children ...*engine.UberElement) *engine.UberElement {
+func HeaderSix(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7024,7 +7024,7 @@ func HeaderSix(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HeaderThree(children ...*engine.UberElement) *engine.UberElement {
+func HeaderThree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7037,7 +7037,7 @@ func HeaderThree(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HeaderTwo(children ...*engine.UberElement) *engine.UberElement {
+func HeaderTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7050,7 +7050,7 @@ func HeaderTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Headset(children ...*engine.UberElement) *engine.UberElement {
+func Headset(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7063,7 +7063,7 @@ func Headset(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HeadsetF(children ...*engine.UberElement) *engine.UberElement {
+func HeadsetF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7076,7 +7076,7 @@ func HeadsetF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Heart(children ...*engine.UberElement) *engine.UberElement {
+func Heart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7089,7 +7089,7 @@ func Heart(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HeartF(children ...*engine.UberElement) *engine.UberElement {
+func HeartF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7102,7 +7102,7 @@ func HeartF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Helmet(children ...*engine.UberElement) *engine.UberElement {
+func Helmet(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7115,7 +7115,7 @@ func Helmet(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HelmetF(children ...*engine.UberElement) *engine.UberElement {
+func HelmetF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7128,7 +7128,7 @@ func HelmetF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Help(children ...*engine.UberElement) *engine.UberElement {
+func Help(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7141,7 +7141,7 @@ func Help(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HelpF(children ...*engine.UberElement) *engine.UberElement {
+func HelpF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7154,7 +7154,7 @@ func HelpF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Highlighter(children ...*engine.UberElement) *engine.UberElement {
+func Highlighter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7167,7 +7167,7 @@ func Highlighter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HighlighterF(children ...*engine.UberElement) *engine.UberElement {
+func HighlighterF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7180,7 +7180,7 @@ func HighlighterF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func History(children ...*engine.UberElement) *engine.UberElement {
+func History(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7193,7 +7193,7 @@ func History(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Home(children ...*engine.UberElement) *engine.UberElement {
+func Home(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7206,7 +7206,7 @@ func Home(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HomeF(children ...*engine.UberElement) *engine.UberElement {
+func HomeF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7219,7 +7219,7 @@ func HomeF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Hourglass(children ...*engine.UberElement) *engine.UberElement {
+func Hourglass(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7232,7 +7232,7 @@ func Hourglass(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func HourglassF(children ...*engine.UberElement) *engine.UberElement {
+func HourglassF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7245,7 +7245,7 @@ func HourglassF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func IceCream(children ...*engine.UberElement) *engine.UberElement {
+func IceCream(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7258,7 +7258,7 @@ func IceCream(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func IceCreamF(children ...*engine.UberElement) *engine.UberElement {
+func IceCreamF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7271,7 +7271,7 @@ func IceCreamF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func IdCard(children ...*engine.UberElement) *engine.UberElement {
+func IdCard(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7284,7 +7284,7 @@ func IdCard(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func IdCardF(children ...*engine.UberElement) *engine.UberElement {
+func IdCardF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7297,7 +7297,7 @@ func IdCardF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Inbox(children ...*engine.UberElement) *engine.UberElement {
+func Inbox(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7310,7 +7310,7 @@ func Inbox(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func InboxF(children ...*engine.UberElement) *engine.UberElement {
+func InboxF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7323,7 +7323,7 @@ func InboxF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Inboxes(children ...*engine.UberElement) *engine.UberElement {
+func Inboxes(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7336,7 +7336,7 @@ func Inboxes(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func InboxesF(children ...*engine.UberElement) *engine.UberElement {
+func InboxesF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7349,7 +7349,7 @@ func InboxesF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Indent(children ...*engine.UberElement) *engine.UberElement {
+func Indent(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7362,7 +7362,7 @@ func Indent(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Infinite(children ...*engine.UberElement) *engine.UberElement {
+func Infinite(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7375,7 +7375,7 @@ func Infinite(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Info(children ...*engine.UberElement) *engine.UberElement {
+func Info(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7388,7 +7388,7 @@ func Info(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func InfoF(children ...*engine.UberElement) *engine.UberElement {
+func InfoF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7401,7 +7401,7 @@ func InfoF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Instagram(children ...*engine.UberElement) *engine.UberElement {
+func Instagram(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7414,7 +7414,7 @@ func Instagram(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func InstantPicture(children ...*engine.UberElement) *engine.UberElement {
+func InstantPicture(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7427,7 +7427,7 @@ func InstantPicture(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func InstantPictureF(children ...*engine.UberElement) *engine.UberElement {
+func InstantPictureF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7440,7 +7440,7 @@ func InstantPictureF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Intersection(children ...*engine.UberElement) *engine.UberElement {
+func Intersection(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7453,7 +7453,7 @@ func Intersection(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Italic(children ...*engine.UberElement) *engine.UberElement {
+func Italic(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7466,7 +7466,7 @@ func Italic(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Joystick(children ...*engine.UberElement) *engine.UberElement {
+func Joystick(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7479,7 +7479,7 @@ func Joystick(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func JoystickF(children ...*engine.UberElement) *engine.UberElement {
+func JoystickF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7492,7 +7492,7 @@ func JoystickF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Key(children ...*engine.UberElement) *engine.UberElement {
+func Key(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7505,7 +7505,7 @@ func Key(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func KeyF(children ...*engine.UberElement) *engine.UberElement {
+func KeyF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7518,7 +7518,7 @@ func KeyF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Keyboard(children ...*engine.UberElement) *engine.UberElement {
+func Keyboard(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7531,7 +7531,7 @@ func Keyboard(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func KeyboardF(children ...*engine.UberElement) *engine.UberElement {
+func KeyboardF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7544,7 +7544,7 @@ func KeyboardF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Language(children ...*engine.UberElement) *engine.UberElement {
+func Language(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7557,7 +7557,7 @@ func Language(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Layers(children ...*engine.UberElement) *engine.UberElement {
+func Layers(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7570,7 +7570,7 @@ func Layers(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func LayersF(children ...*engine.UberElement) *engine.UberElement {
+func LayersF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7583,7 +7583,7 @@ func LayersF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Layout(children ...*engine.UberElement) *engine.UberElement {
+func Layout(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7596,7 +7596,7 @@ func Layout(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func LayoutF(children ...*engine.UberElement) *engine.UberElement {
+func LayoutF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7609,7 +7609,7 @@ func LayoutF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Leaf(children ...*engine.UberElement) *engine.UberElement {
+func Leaf(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7622,7 +7622,7 @@ func Leaf(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func LeafF(children ...*engine.UberElement) *engine.UberElement {
+func LeafF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7635,7 +7635,7 @@ func LeafF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Lifebuoy(children ...*engine.UberElement) *engine.UberElement {
+func Lifebuoy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7648,7 +7648,7 @@ func Lifebuoy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func LifebuoyF(children ...*engine.UberElement) *engine.UberElement {
+func LifebuoyF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7661,7 +7661,7 @@ func LifebuoyF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Lightbulb(children ...*engine.UberElement) *engine.UberElement {
+func Lightbulb(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7674,7 +7674,7 @@ func Lightbulb(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func LightbulbF(children ...*engine.UberElement) *engine.UberElement {
+func LightbulbF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7687,7 +7687,7 @@ func LightbulbF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Line(children ...*engine.UberElement) *engine.UberElement {
+func Line(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7700,7 +7700,7 @@ func Line(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Link(children ...*engine.UberElement) *engine.UberElement {
+func Link(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7713,7 +7713,7 @@ func Link(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Linkedin(children ...*engine.UberElement) *engine.UberElement {
+func Linkedin(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7726,7 +7726,7 @@ func Linkedin(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func LinkedinCircle(children ...*engine.UberElement) *engine.UberElement {
+func LinkedinCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7739,7 +7739,7 @@ func LinkedinCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func LinkedinSquare(children ...*engine.UberElement) *engine.UberElement {
+func LinkedinSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7752,7 +7752,7 @@ func LinkedinSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func LogIn(children ...*engine.UberElement) *engine.UberElement {
+func LogIn(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7765,7 +7765,7 @@ func LogIn(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func LogOut(children ...*engine.UberElement) *engine.UberElement {
+func LogOut(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7778,7 +7778,7 @@ func LogOut(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Ltr(children ...*engine.UberElement) *engine.UberElement {
+func Ltr(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7791,7 +7791,7 @@ func Ltr(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Luggage(children ...*engine.UberElement) *engine.UberElement {
+func Luggage(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7804,7 +7804,7 @@ func Luggage(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func LuggageF(children ...*engine.UberElement) *engine.UberElement {
+func LuggageF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7817,7 +7817,7 @@ func LuggageF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Magic(children ...*engine.UberElement) *engine.UberElement {
+func Magic(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7830,7 +7830,7 @@ func Magic(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MagicF(children ...*engine.UberElement) *engine.UberElement {
+func MagicF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7843,7 +7843,7 @@ func MagicF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Magnet(children ...*engine.UberElement) *engine.UberElement {
+func Magnet(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7856,7 +7856,7 @@ func Magnet(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MagnetF(children ...*engine.UberElement) *engine.UberElement {
+func MagnetF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7869,7 +7869,7 @@ func MagnetF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Male(children ...*engine.UberElement) *engine.UberElement {
+func Male(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7882,7 +7882,7 @@ func Male(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Map(children ...*engine.UberElement) *engine.UberElement {
+func Map(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7895,7 +7895,7 @@ func Map(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MapF(children ...*engine.UberElement) *engine.UberElement {
+func MapF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7908,7 +7908,7 @@ func MapF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MapMarker(children ...*engine.UberElement) *engine.UberElement {
+func MapMarker(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7921,7 +7921,7 @@ func MapMarker(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MapMarkerF(children ...*engine.UberElement) *engine.UberElement {
+func MapMarkerF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7934,7 +7934,7 @@ func MapMarkerF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Mask(children ...*engine.UberElement) *engine.UberElement {
+func Mask(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7947,7 +7947,7 @@ func Mask(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MaskF(children ...*engine.UberElement) *engine.UberElement {
+func MaskF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7960,7 +7960,7 @@ func MaskF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Medal(children ...*engine.UberElement) *engine.UberElement {
+func Medal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7973,7 +7973,7 @@ func Medal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MedalF(children ...*engine.UberElement) *engine.UberElement {
+func MedalF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7986,7 +7986,7 @@ func MedalF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Medical(children ...*engine.UberElement) *engine.UberElement {
+func Medical(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -7999,7 +7999,7 @@ func Medical(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Medium(children ...*engine.UberElement) *engine.UberElement {
+func Medium(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8012,7 +8012,7 @@ func Medium(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MediumCircle(children ...*engine.UberElement) *engine.UberElement {
+func MediumCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8025,7 +8025,7 @@ func MediumCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MediumSquare(children ...*engine.UberElement) *engine.UberElement {
+func MediumSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8038,7 +8038,7 @@ func MediumSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Menu(children ...*engine.UberElement) *engine.UberElement {
+func Menu(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8051,7 +8051,7 @@ func Menu(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Merge(children ...*engine.UberElement) *engine.UberElement {
+func Merge(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8064,7 +8064,7 @@ func Merge(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MergeF(children ...*engine.UberElement) *engine.UberElement {
+func MergeF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8077,7 +8077,7 @@ func MergeF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Message(children ...*engine.UberElement) *engine.UberElement {
+func Message(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8090,7 +8090,7 @@ func Message(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MessageAlt(children ...*engine.UberElement) *engine.UberElement {
+func MessageAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8103,7 +8103,7 @@ func MessageAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MessageAltF(children ...*engine.UberElement) *engine.UberElement {
+func MessageAltF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8116,7 +8116,7 @@ func MessageAltF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MessageAltWriting(children ...*engine.UberElement) *engine.UberElement {
+func MessageAltWriting(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8129,7 +8129,7 @@ func MessageAltWriting(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MessageAltWritingF(children ...*engine.UberElement) *engine.UberElement {
+func MessageAltWritingF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8142,7 +8142,7 @@ func MessageAltWritingF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MessageF(children ...*engine.UberElement) *engine.UberElement {
+func MessageF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8155,7 +8155,7 @@ func MessageF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MessageWriting(children ...*engine.UberElement) *engine.UberElement {
+func MessageWriting(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8168,7 +8168,7 @@ func MessageWriting(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MessageWritingF(children ...*engine.UberElement) *engine.UberElement {
+func MessageWritingF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8181,7 +8181,7 @@ func MessageWritingF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Messages(children ...*engine.UberElement) *engine.UberElement {
+func Messages(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8194,7 +8194,7 @@ func Messages(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MessagesAlt(children ...*engine.UberElement) *engine.UberElement {
+func MessagesAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8207,7 +8207,7 @@ func MessagesAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MessagesAltF(children ...*engine.UberElement) *engine.UberElement {
+func MessagesAltF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8220,7 +8220,7 @@ func MessagesAltF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MessagesF(children ...*engine.UberElement) *engine.UberElement {
+func MessagesF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8233,7 +8233,7 @@ func MessagesF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Messenger(children ...*engine.UberElement) *engine.UberElement {
+func Messenger(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8246,7 +8246,7 @@ func Messenger(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Mic(children ...*engine.UberElement) *engine.UberElement {
+func Mic(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8259,7 +8259,7 @@ func Mic(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MicAlt(children ...*engine.UberElement) *engine.UberElement {
+func MicAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8272,7 +8272,7 @@ func MicAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MicCircle(children ...*engine.UberElement) *engine.UberElement {
+func MicCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8285,7 +8285,7 @@ func MicCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MicCircleF(children ...*engine.UberElement) *engine.UberElement {
+func MicCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8298,7 +8298,7 @@ func MicCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MicF(children ...*engine.UberElement) *engine.UberElement {
+func MicF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8311,7 +8311,7 @@ func MicF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MicSquare(children ...*engine.UberElement) *engine.UberElement {
+func MicSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8324,7 +8324,7 @@ func MicSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MicSquareF(children ...*engine.UberElement) *engine.UberElement {
+func MicSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8337,7 +8337,7 @@ func MicSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Microchip(children ...*engine.UberElement) *engine.UberElement {
+func Microchip(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8350,7 +8350,7 @@ func Microchip(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MicrochipF(children ...*engine.UberElement) *engine.UberElement {
+func MicrochipF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8363,7 +8363,7 @@ func MicrochipF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Minus(children ...*engine.UberElement) *engine.UberElement {
+func Minus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8376,7 +8376,7 @@ func Minus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MinusCircle(children ...*engine.UberElement) *engine.UberElement {
+func MinusCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8389,7 +8389,7 @@ func MinusCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MinusCircleF(children ...*engine.UberElement) *engine.UberElement {
+func MinusCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8402,7 +8402,7 @@ func MinusCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MinusRectangle(children ...*engine.UberElement) *engine.UberElement {
+func MinusRectangle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8415,7 +8415,7 @@ func MinusRectangle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MinusRectangleF(children ...*engine.UberElement) *engine.UberElement {
+func MinusRectangleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8428,7 +8428,7 @@ func MinusRectangleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Moon(children ...*engine.UberElement) *engine.UberElement {
+func Moon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8441,7 +8441,7 @@ func Moon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MoonF(children ...*engine.UberElement) *engine.UberElement {
+func MoonF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8454,7 +8454,7 @@ func MoonF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MoreHorizontal(children ...*engine.UberElement) *engine.UberElement {
+func MoreHorizontal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8467,7 +8467,7 @@ func MoreHorizontal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MoreHorizontalF(children ...*engine.UberElement) *engine.UberElement {
+func MoreHorizontalF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8480,7 +8480,7 @@ func MoreHorizontalF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MoreVertical(children ...*engine.UberElement) *engine.UberElement {
+func MoreVertical(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8493,7 +8493,7 @@ func MoreVertical(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MoreVerticalF(children ...*engine.UberElement) *engine.UberElement {
+func MoreVerticalF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8506,7 +8506,7 @@ func MoreVerticalF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Mountain(children ...*engine.UberElement) *engine.UberElement {
+func Mountain(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8519,7 +8519,7 @@ func Mountain(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MountainF(children ...*engine.UberElement) *engine.UberElement {
+func MountainF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8532,7 +8532,7 @@ func MountainF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Move(children ...*engine.UberElement) *engine.UberElement {
+func Move(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8545,7 +8545,7 @@ func Move(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MoveAlt(children ...*engine.UberElement) *engine.UberElement {
+func MoveAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8558,7 +8558,7 @@ func MoveAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Movie(children ...*engine.UberElement) *engine.UberElement {
+func Movie(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8571,7 +8571,7 @@ func Movie(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Mug(children ...*engine.UberElement) *engine.UberElement {
+func Mug(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8584,7 +8584,7 @@ func Mug(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MugF(children ...*engine.UberElement) *engine.UberElement {
+func MugF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8597,7 +8597,7 @@ func MugF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Music(children ...*engine.UberElement) *engine.UberElement {
+func Music(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8610,7 +8610,7 @@ func Music(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MusicF(children ...*engine.UberElement) *engine.UberElement {
+func MusicF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8623,7 +8623,7 @@ func MusicF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Myspace(children ...*engine.UberElement) *engine.UberElement {
+func Myspace(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8636,7 +8636,7 @@ func Myspace(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MyspaceCircle(children ...*engine.UberElement) *engine.UberElement {
+func MyspaceCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8649,7 +8649,7 @@ func MyspaceCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func MyspaceSquare(children ...*engine.UberElement) *engine.UberElement {
+func MyspaceSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8662,7 +8662,7 @@ func MyspaceSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Napster(children ...*engine.UberElement) *engine.UberElement {
+func Napster(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8675,7 +8675,7 @@ func Napster(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func NapsterCircle(children ...*engine.UberElement) *engine.UberElement {
+func NapsterCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8688,7 +8688,7 @@ func NapsterCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func NapsterSquare(children ...*engine.UberElement) *engine.UberElement {
+func NapsterSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8701,7 +8701,7 @@ func NapsterSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Newsletter(children ...*engine.UberElement) *engine.UberElement {
+func Newsletter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8714,7 +8714,7 @@ func Newsletter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func NewsletterF(children ...*engine.UberElement) *engine.UberElement {
+func NewsletterF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8727,7 +8727,7 @@ func NewsletterF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Newspaper(children ...*engine.UberElement) *engine.UberElement {
+func Newspaper(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8740,7 +8740,7 @@ func Newspaper(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func NewspaperF(children ...*engine.UberElement) *engine.UberElement {
+func NewspaperF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8753,7 +8753,7 @@ func NewspaperF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Npm(children ...*engine.UberElement) *engine.UberElement {
+func Npm(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8766,7 +8766,7 @@ func Npm(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Odnoklassniki(children ...*engine.UberElement) *engine.UberElement {
+func Odnoklassniki(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8779,7 +8779,7 @@ func Odnoklassniki(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func OdnoklassnikiCircle(children ...*engine.UberElement) *engine.UberElement {
+func OdnoklassnikiCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8792,7 +8792,7 @@ func OdnoklassnikiCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func OdnoklassnikiSquare(children ...*engine.UberElement) *engine.UberElement {
+func OdnoklassnikiSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8805,7 +8805,7 @@ func OdnoklassnikiSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Opera(children ...*engine.UberElement) *engine.UberElement {
+func Opera(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8818,7 +8818,7 @@ func Opera(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func OperaCircle(children ...*engine.UberElement) *engine.UberElement {
+func OperaCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8831,7 +8831,7 @@ func OperaCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func OperaSquare(children ...*engine.UberElement) *engine.UberElement {
+func OperaSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8844,7 +8844,7 @@ func OperaSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func OrderedList(children ...*engine.UberElement) *engine.UberElement {
+func OrderedList(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8857,7 +8857,7 @@ func OrderedList(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Orientaton(children ...*engine.UberElement) *engine.UberElement {
+func Orientaton(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8870,7 +8870,7 @@ func Orientaton(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Padlock(children ...*engine.UberElement) *engine.UberElement {
+func Padlock(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8883,7 +8883,7 @@ func Padlock(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PadlockAlt(children ...*engine.UberElement) *engine.UberElement {
+func PadlockAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8896,7 +8896,7 @@ func PadlockAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PadlockAltF(children ...*engine.UberElement) *engine.UberElement {
+func PadlockAltF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8909,7 +8909,7 @@ func PadlockAltF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PadlockAltOpen(children ...*engine.UberElement) *engine.UberElement {
+func PadlockAltOpen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8922,7 +8922,7 @@ func PadlockAltOpen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PadlockAltOpenF(children ...*engine.UberElement) *engine.UberElement {
+func PadlockAltOpenF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8935,7 +8935,7 @@ func PadlockAltOpenF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PadlockF(children ...*engine.UberElement) *engine.UberElement {
+func PadlockF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8948,7 +8948,7 @@ func PadlockF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PadlockOpen(children ...*engine.UberElement) *engine.UberElement {
+func PadlockOpen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8961,7 +8961,7 @@ func PadlockOpen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PadlockOpenF(children ...*engine.UberElement) *engine.UberElement {
+func PadlockOpenF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8974,7 +8974,7 @@ func PadlockOpenF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PageBreak(children ...*engine.UberElement) *engine.UberElement {
+func PageBreak(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -8987,7 +8987,7 @@ func PageBreak(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PaperPlane(children ...*engine.UberElement) *engine.UberElement {
+func PaperPlane(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9000,7 +9000,7 @@ func PaperPlane(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PaperPlaneF(children ...*engine.UberElement) *engine.UberElement {
+func PaperPlaneF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9013,7 +9013,7 @@ func PaperPlaneF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Paragraph(children ...*engine.UberElement) *engine.UberElement {
+func Paragraph(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9026,7 +9026,7 @@ func Paragraph(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Patreon(children ...*engine.UberElement) *engine.UberElement {
+func Patreon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9039,7 +9039,7 @@ func Patreon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PatreonCircle(children ...*engine.UberElement) *engine.UberElement {
+func PatreonCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9052,7 +9052,7 @@ func PatreonCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PatreonSquare(children ...*engine.UberElement) *engine.UberElement {
+func PatreonSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9065,7 +9065,7 @@ func PatreonSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Pause(children ...*engine.UberElement) *engine.UberElement {
+func Pause(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9078,7 +9078,7 @@ func Pause(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Paypal(children ...*engine.UberElement) *engine.UberElement {
+func Paypal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9091,7 +9091,7 @@ func Paypal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PaypalCircle(children ...*engine.UberElement) *engine.UberElement {
+func PaypalCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9104,7 +9104,7 @@ func PaypalCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PaypalSquare(children ...*engine.UberElement) *engine.UberElement {
+func PaypalSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9117,7 +9117,7 @@ func PaypalSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Pen(children ...*engine.UberElement) *engine.UberElement {
+func Pen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9130,7 +9130,7 @@ func Pen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PenF(children ...*engine.UberElement) *engine.UberElement {
+func PenF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9143,7 +9143,7 @@ func PenF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Pencil(children ...*engine.UberElement) *engine.UberElement {
+func Pencil(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9156,7 +9156,7 @@ func Pencil(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PencilF(children ...*engine.UberElement) *engine.UberElement {
+func PencilF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9169,7 +9169,7 @@ func PencilF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Periscope(children ...*engine.UberElement) *engine.UberElement {
+func Periscope(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9182,7 +9182,7 @@ func Periscope(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PeriscopeCircle(children ...*engine.UberElement) *engine.UberElement {
+func PeriscopeCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9195,7 +9195,7 @@ func PeriscopeCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PeriscopeSquare(children ...*engine.UberElement) *engine.UberElement {
+func PeriscopeSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9208,7 +9208,7 @@ func PeriscopeSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Phone(children ...*engine.UberElement) *engine.UberElement {
+func Phone(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9221,7 +9221,7 @@ func Phone(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PhoneF(children ...*engine.UberElement) *engine.UberElement {
+func PhoneF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9234,7 +9234,7 @@ func PhoneF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Picture(children ...*engine.UberElement) *engine.UberElement {
+func Picture(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9247,7 +9247,7 @@ func Picture(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PictureEdit(children ...*engine.UberElement) *engine.UberElement {
+func PictureEdit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9260,7 +9260,7 @@ func PictureEdit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PictureF(children ...*engine.UberElement) *engine.UberElement {
+func PictureF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9273,7 +9273,7 @@ func PictureF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Pictures(children ...*engine.UberElement) *engine.UberElement {
+func Pictures(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9286,7 +9286,7 @@ func Pictures(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PicturesF(children ...*engine.UberElement) *engine.UberElement {
+func PicturesF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9299,7 +9299,7 @@ func PicturesF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PieChart(children ...*engine.UberElement) *engine.UberElement {
+func PieChart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9312,7 +9312,7 @@ func PieChart(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PieChartAlt(children ...*engine.UberElement) *engine.UberElement {
+func PieChartAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9325,7 +9325,7 @@ func PieChartAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PieChartF(children ...*engine.UberElement) *engine.UberElement {
+func PieChartF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9338,7 +9338,7 @@ func PieChartF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Pin(children ...*engine.UberElement) *engine.UberElement {
+func Pin(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9351,7 +9351,7 @@ func Pin(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PinAlt(children ...*engine.UberElement) *engine.UberElement {
+func PinAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9364,7 +9364,7 @@ func PinAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PinAltF(children ...*engine.UberElement) *engine.UberElement {
+func PinAltF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9377,7 +9377,7 @@ func PinAltF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PinF(children ...*engine.UberElement) *engine.UberElement {
+func PinF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9390,7 +9390,7 @@ func PinF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Pinterest(children ...*engine.UberElement) *engine.UberElement {
+func Pinterest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9403,7 +9403,7 @@ func Pinterest(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PinterestCircle(children ...*engine.UberElement) *engine.UberElement {
+func PinterestCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9416,7 +9416,7 @@ func PinterestCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PinterestSquare(children ...*engine.UberElement) *engine.UberElement {
+func PinterestSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9429,7 +9429,7 @@ func PinterestSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PizzaSlice(children ...*engine.UberElement) *engine.UberElement {
+func PizzaSlice(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9442,7 +9442,7 @@ func PizzaSlice(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Plane(children ...*engine.UberElement) *engine.UberElement {
+func Plane(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9455,7 +9455,7 @@ func Plane(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PlaneF(children ...*engine.UberElement) *engine.UberElement {
+func PlaneF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9468,7 +9468,7 @@ func PlaneF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Play(children ...*engine.UberElement) *engine.UberElement {
+func Play(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9481,7 +9481,7 @@ func Play(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PlayCircle(children ...*engine.UberElement) *engine.UberElement {
+func PlayCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9494,7 +9494,7 @@ func PlayCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PlayCircleF(children ...*engine.UberElement) *engine.UberElement {
+func PlayCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9507,7 +9507,7 @@ func PlayCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PlaySquare(children ...*engine.UberElement) *engine.UberElement {
+func PlaySquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9520,7 +9520,7 @@ func PlaySquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PlaySquareF(children ...*engine.UberElement) *engine.UberElement {
+func PlaySquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9533,7 +9533,7 @@ func PlaySquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Plug(children ...*engine.UberElement) *engine.UberElement {
+func Plug(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9546,7 +9546,7 @@ func Plug(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PlugF(children ...*engine.UberElement) *engine.UberElement {
+func PlugF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9559,7 +9559,7 @@ func PlugF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Plus(children ...*engine.UberElement) *engine.UberElement {
+func Plus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9572,7 +9572,7 @@ func Plus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PlusCircle(children ...*engine.UberElement) *engine.UberElement {
+func PlusCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9585,7 +9585,7 @@ func PlusCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PlusCircleF(children ...*engine.UberElement) *engine.UberElement {
+func PlusCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9598,7 +9598,7 @@ func PlusCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PlusRectangle(children ...*engine.UberElement) *engine.UberElement {
+func PlusRectangle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9611,7 +9611,7 @@ func PlusRectangle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PlusRectangleF(children ...*engine.UberElement) *engine.UberElement {
+func PlusRectangleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9624,7 +9624,7 @@ func PlusRectangleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PocketWatch(children ...*engine.UberElement) *engine.UberElement {
+func PocketWatch(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9637,7 +9637,7 @@ func PocketWatch(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PocketWatchF(children ...*engine.UberElement) *engine.UberElement {
+func PocketWatchF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9650,7 +9650,7 @@ func PocketWatchF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Podcast(children ...*engine.UberElement) *engine.UberElement {
+func Podcast(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9663,7 +9663,7 @@ func Podcast(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Power(children ...*engine.UberElement) *engine.UberElement {
+func Power(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9676,7 +9676,7 @@ func Power(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Printer(children ...*engine.UberElement) *engine.UberElement {
+func Printer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9689,7 +9689,7 @@ func Printer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func PrinterF(children ...*engine.UberElement) *engine.UberElement {
+func PrinterF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9702,7 +9702,7 @@ func PrinterF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func QrCode(children ...*engine.UberElement) *engine.UberElement {
+func QrCode(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9715,7 +9715,7 @@ func QrCode(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Quora(children ...*engine.UberElement) *engine.UberElement {
+func Quora(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9728,7 +9728,7 @@ func Quora(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func QuoraCircle(children ...*engine.UberElement) *engine.UberElement {
+func QuoraCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9741,7 +9741,7 @@ func QuoraCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func QuoraSquare(children ...*engine.UberElement) *engine.UberElement {
+func QuoraSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9754,7 +9754,7 @@ func QuoraSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Quote(children ...*engine.UberElement) *engine.UberElement {
+func Quote(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9767,7 +9767,7 @@ func Quote(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Rainbow(children ...*engine.UberElement) *engine.UberElement {
+func Rainbow(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9780,7 +9780,7 @@ func Rainbow(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Rec(children ...*engine.UberElement) *engine.UberElement {
+func Rec(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9793,7 +9793,7 @@ func Rec(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Rectangle(children ...*engine.UberElement) *engine.UberElement {
+func Rectangle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9806,7 +9806,7 @@ func Rectangle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func RectangleF(children ...*engine.UberElement) *engine.UberElement {
+func RectangleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9819,7 +9819,7 @@ func RectangleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Reddit(children ...*engine.UberElement) *engine.UberElement {
+func Reddit(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9832,7 +9832,7 @@ func Reddit(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Redo(children ...*engine.UberElement) *engine.UberElement {
+func Redo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9845,7 +9845,7 @@ func Redo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Refresh(children ...*engine.UberElement) *engine.UberElement {
+func Refresh(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9858,7 +9858,7 @@ func Refresh(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func RefreshReverse(children ...*engine.UberElement) *engine.UberElement {
+func RefreshReverse(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9871,7 +9871,7 @@ func RefreshReverse(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Repeat(children ...*engine.UberElement) *engine.UberElement {
+func Repeat(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9884,7 +9884,7 @@ func Repeat(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Rocket(children ...*engine.UberElement) *engine.UberElement {
+func Rocket(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9897,7 +9897,7 @@ func Rocket(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func RocketF(children ...*engine.UberElement) *engine.UberElement {
+func RocketF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9910,7 +9910,7 @@ func RocketF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func RssFeed(children ...*engine.UberElement) *engine.UberElement {
+func RssFeed(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9923,7 +9923,7 @@ func RssFeed(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Rtl(children ...*engine.UberElement) *engine.UberElement {
+func Rtl(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9936,7 +9936,7 @@ func Rtl(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Rubber(children ...*engine.UberElement) *engine.UberElement {
+func Rubber(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9949,7 +9949,7 @@ func Rubber(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Ruler(children ...*engine.UberElement) *engine.UberElement {
+func Ruler(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9962,7 +9962,7 @@ func Ruler(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func RulerF(children ...*engine.UberElement) *engine.UberElement {
+func RulerF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9975,7 +9975,7 @@ func RulerF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Save(children ...*engine.UberElement) *engine.UberElement {
+func Save(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -9988,7 +9988,7 @@ func Save(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SaveF(children ...*engine.UberElement) *engine.UberElement {
+func SaveF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10001,7 +10001,7 @@ func SaveF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Scissors(children ...*engine.UberElement) *engine.UberElement {
+func Scissors(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10014,7 +10014,7 @@ func Scissors(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Screen(children ...*engine.UberElement) *engine.UberElement {
+func Screen(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10027,7 +10027,7 @@ func Screen(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ScreenF(children ...*engine.UberElement) *engine.UberElement {
+func ScreenF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10040,7 +10040,7 @@ func ScreenF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Screwdriver(children ...*engine.UberElement) *engine.UberElement {
+func Screwdriver(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10053,7 +10053,7 @@ func Screwdriver(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ScrewdriverF(children ...*engine.UberElement) *engine.UberElement {
+func ScrewdriverF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10066,7 +10066,7 @@ func ScrewdriverF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Search(children ...*engine.UberElement) *engine.UberElement {
+func Search(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10079,7 +10079,7 @@ func Search(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SearchFolder(children ...*engine.UberElement) *engine.UberElement {
+func SearchFolder(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10092,7 +10092,7 @@ func SearchFolder(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SearchMinus(children ...*engine.UberElement) *engine.UberElement {
+func SearchMinus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10105,7 +10105,7 @@ func SearchMinus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SearchPlus(children ...*engine.UberElement) *engine.UberElement {
+func SearchPlus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10118,7 +10118,7 @@ func SearchPlus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SelectAll(children ...*engine.UberElement) *engine.UberElement {
+func SelectAll(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10131,7 +10131,7 @@ func SelectAll(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetBackward(children ...*engine.UberElement) *engine.UberElement {
+func SetBackward(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10144,7 +10144,7 @@ func SetBackward(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetBackwardCircle(children ...*engine.UberElement) *engine.UberElement {
+func SetBackwardCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10157,7 +10157,7 @@ func SetBackwardCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetBackwardCircleF(children ...*engine.UberElement) *engine.UberElement {
+func SetBackwardCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10170,7 +10170,7 @@ func SetBackwardCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetBackwardSquare(children ...*engine.UberElement) *engine.UberElement {
+func SetBackwardSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10183,7 +10183,7 @@ func SetBackwardSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetBackwardSquareF(children ...*engine.UberElement) *engine.UberElement {
+func SetBackwardSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10196,7 +10196,7 @@ func SetBackwardSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetForward(children ...*engine.UberElement) *engine.UberElement {
+func SetForward(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10209,7 +10209,7 @@ func SetForward(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetForwardCircle(children ...*engine.UberElement) *engine.UberElement {
+func SetForwardCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10222,7 +10222,7 @@ func SetForwardCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetForwardCircleF(children ...*engine.UberElement) *engine.UberElement {
+func SetForwardCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10235,7 +10235,7 @@ func SetForwardCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetForwardSquare(children ...*engine.UberElement) *engine.UberElement {
+func SetForwardSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10248,7 +10248,7 @@ func SetForwardSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetForwardSquareF(children ...*engine.UberElement) *engine.UberElement {
+func SetForwardSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10261,7 +10261,7 @@ func SetForwardSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetSquare(children ...*engine.UberElement) *engine.UberElement {
+func SetSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10274,7 +10274,7 @@ func SetSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SetSquareF(children ...*engine.UberElement) *engine.UberElement {
+func SetSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10287,7 +10287,7 @@ func SetSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SettingsAlt(children ...*engine.UberElement) *engine.UberElement {
+func SettingsAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10300,7 +10300,7 @@ func SettingsAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Share(children ...*engine.UberElement) *engine.UberElement {
+func Share(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10313,7 +10313,7 @@ func Share(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShareAlt(children ...*engine.UberElement) *engine.UberElement {
+func ShareAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10326,7 +10326,7 @@ func ShareAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShareAltF(children ...*engine.UberElement) *engine.UberElement {
+func ShareAltF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10339,7 +10339,7 @@ func ShareAltF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Shield(children ...*engine.UberElement) *engine.UberElement {
+func Shield(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10352,7 +10352,7 @@ func Shield(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShieldCheck(children ...*engine.UberElement) *engine.UberElement {
+func ShieldCheck(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10365,7 +10365,7 @@ func ShieldCheck(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShieldCheckF(children ...*engine.UberElement) *engine.UberElement {
+func ShieldCheckF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10378,7 +10378,7 @@ func ShieldCheckF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShieldClose(children ...*engine.UberElement) *engine.UberElement {
+func ShieldClose(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10391,7 +10391,7 @@ func ShieldClose(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShieldCloseF(children ...*engine.UberElement) *engine.UberElement {
+func ShieldCloseF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10404,7 +10404,7 @@ func ShieldCloseF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShieldF(children ...*engine.UberElement) *engine.UberElement {
+func ShieldF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10417,7 +10417,7 @@ func ShieldF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShieldHalf(children ...*engine.UberElement) *engine.UberElement {
+func ShieldHalf(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10430,7 +10430,7 @@ func ShieldHalf(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShieldMinus(children ...*engine.UberElement) *engine.UberElement {
+func ShieldMinus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10443,7 +10443,7 @@ func ShieldMinus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShieldMinusF(children ...*engine.UberElement) *engine.UberElement {
+func ShieldMinusF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10456,7 +10456,7 @@ func ShieldMinusF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShieldPlus(children ...*engine.UberElement) *engine.UberElement {
+func ShieldPlus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10469,7 +10469,7 @@ func ShieldPlus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShieldPlusF(children ...*engine.UberElement) *engine.UberElement {
+func ShieldPlusF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10482,7 +10482,7 @@ func ShieldPlusF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Shopify(children ...*engine.UberElement) *engine.UberElement {
+func Shopify(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10495,7 +10495,7 @@ func Shopify(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShopifyCircle(children ...*engine.UberElement) *engine.UberElement {
+func ShopifyCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10508,7 +10508,7 @@ func ShopifyCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShopifySquare(children ...*engine.UberElement) *engine.UberElement {
+func ShopifySquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10521,7 +10521,7 @@ func ShopifySquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShoppingBag(children ...*engine.UberElement) *engine.UberElement {
+func ShoppingBag(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10534,7 +10534,7 @@ func ShoppingBag(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShoppingBagAlt(children ...*engine.UberElement) *engine.UberElement {
+func ShoppingBagAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10547,7 +10547,7 @@ func ShoppingBagAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShoppingBagAltF(children ...*engine.UberElement) *engine.UberElement {
+func ShoppingBagAltF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10560,7 +10560,7 @@ func ShoppingBagAltF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShoppingBagF(children ...*engine.UberElement) *engine.UberElement {
+func ShoppingBagF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10573,7 +10573,7 @@ func ShoppingBagF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ShoppingCart(children ...*engine.UberElement) *engine.UberElement {
+func ShoppingCart(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10586,7 +10586,7 @@ func ShoppingCart(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Shuffle(children ...*engine.UberElement) *engine.UberElement {
+func Shuffle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10599,7 +10599,7 @@ func Shuffle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Signal(children ...*engine.UberElement) *engine.UberElement {
+func Signal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10612,7 +10612,7 @@ func Signal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Sitemap(children ...*engine.UberElement) *engine.UberElement {
+func Sitemap(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10625,7 +10625,7 @@ func Sitemap(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SitemapF(children ...*engine.UberElement) *engine.UberElement {
+func SitemapF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10638,7 +10638,7 @@ func SitemapF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Skull(children ...*engine.UberElement) *engine.UberElement {
+func Skull(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10651,7 +10651,7 @@ func Skull(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SkullF(children ...*engine.UberElement) *engine.UberElement {
+func SkullF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10664,7 +10664,7 @@ func SkullF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Skype(children ...*engine.UberElement) *engine.UberElement {
+func Skype(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10677,7 +10677,7 @@ func Skype(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SkypeCircle(children ...*engine.UberElement) *engine.UberElement {
+func SkypeCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10690,7 +10690,7 @@ func SkypeCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SkypeSquare(children ...*engine.UberElement) *engine.UberElement {
+func SkypeSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10703,7 +10703,7 @@ func SkypeSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Slack(children ...*engine.UberElement) *engine.UberElement {
+func Slack(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10716,7 +10716,7 @@ func Slack(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SlackCircle(children ...*engine.UberElement) *engine.UberElement {
+func SlackCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10729,7 +10729,7 @@ func SlackCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SlackSquare(children ...*engine.UberElement) *engine.UberElement {
+func SlackSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10742,7 +10742,7 @@ func SlackSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Smiley(children ...*engine.UberElement) *engine.UberElement {
+func Smiley(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10755,7 +10755,7 @@ func Smiley(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SmileyF(children ...*engine.UberElement) *engine.UberElement {
+func SmileyF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10768,7 +10768,7 @@ func SmileyF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Snapchat(children ...*engine.UberElement) *engine.UberElement {
+func Snapchat(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10781,7 +10781,7 @@ func Snapchat(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SnapchatCircle(children ...*engine.UberElement) *engine.UberElement {
+func SnapchatCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10794,7 +10794,7 @@ func SnapchatCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SnapchatSquare(children ...*engine.UberElement) *engine.UberElement {
+func SnapchatSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10807,7 +10807,7 @@ func SnapchatSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Snowboard(children ...*engine.UberElement) *engine.UberElement {
+func Snowboard(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10820,7 +10820,7 @@ func Snowboard(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SnowboardF(children ...*engine.UberElement) *engine.UberElement {
+func SnowboardF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10833,7 +10833,7 @@ func SnowboardF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Snowflake(children ...*engine.UberElement) *engine.UberElement {
+func Snowflake(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10846,7 +10846,7 @@ func Snowflake(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Soundcloud(children ...*engine.UberElement) *engine.UberElement {
+func Soundcloud(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10859,7 +10859,7 @@ func Soundcloud(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Speaker(children ...*engine.UberElement) *engine.UberElement {
+func Speaker(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10872,7 +10872,7 @@ func Speaker(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SpeakerF(children ...*engine.UberElement) *engine.UberElement {
+func SpeakerF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10885,7 +10885,7 @@ func SpeakerF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SpellCheck(children ...*engine.UberElement) *engine.UberElement {
+func SpellCheck(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10898,7 +10898,7 @@ func SpellCheck(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Spotify(children ...*engine.UberElement) *engine.UberElement {
+func Spotify(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10911,7 +10911,7 @@ func Spotify(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Square(children ...*engine.UberElement) *engine.UberElement {
+func Square(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10924,7 +10924,7 @@ func Square(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SquareF(children ...*engine.UberElement) *engine.UberElement {
+func SquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10937,7 +10937,7 @@ func SquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Squarespace(children ...*engine.UberElement) *engine.UberElement {
+func Squarespace(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10950,7 +10950,7 @@ func Squarespace(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SquarespaceCircle(children ...*engine.UberElement) *engine.UberElement {
+func SquarespaceCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10963,7 +10963,7 @@ func SquarespaceCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SquarespaceSquare(children ...*engine.UberElement) *engine.UberElement {
+func SquarespaceSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10976,7 +10976,7 @@ func SquarespaceSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Stackoverflow(children ...*engine.UberElement) *engine.UberElement {
+func Stackoverflow(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -10989,7 +10989,7 @@ func Stackoverflow(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func StackoverflowCircle(children ...*engine.UberElement) *engine.UberElement {
+func StackoverflowCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11002,7 +11002,7 @@ func StackoverflowCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func StackoverflowSquare(children ...*engine.UberElement) *engine.UberElement {
+func StackoverflowSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11015,7 +11015,7 @@ func StackoverflowSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Stamp(children ...*engine.UberElement) *engine.UberElement {
+func Stamp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11028,7 +11028,7 @@ func Stamp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func StampF(children ...*engine.UberElement) *engine.UberElement {
+func StampF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11041,7 +11041,7 @@ func StampF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Star(children ...*engine.UberElement) *engine.UberElement {
+func Star(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11054,7 +11054,7 @@ func Star(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func StarF(children ...*engine.UberElement) *engine.UberElement {
+func StarF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11067,7 +11067,7 @@ func StarF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func StarFull(children ...*engine.UberElement) *engine.UberElement {
+func StarFull(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11080,7 +11080,7 @@ func StarFull(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func StarHalf(children ...*engine.UberElement) *engine.UberElement {
+func StarHalf(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11093,7 +11093,7 @@ func StarHalf(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func StarHalfF(children ...*engine.UberElement) *engine.UberElement {
+func StarHalfF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11106,7 +11106,7 @@ func StarHalfF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Station(children ...*engine.UberElement) *engine.UberElement {
+func Station(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11119,7 +11119,7 @@ func Station(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Stop(children ...*engine.UberElement) *engine.UberElement {
+func Stop(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11132,7 +11132,7 @@ func Stop(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func StopSign(children ...*engine.UberElement) *engine.UberElement {
+func StopSign(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11145,7 +11145,7 @@ func StopSign(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Store(children ...*engine.UberElement) *engine.UberElement {
+func Store(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11158,7 +11158,7 @@ func Store(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Strikethrough(children ...*engine.UberElement) *engine.UberElement {
+func Strikethrough(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11171,7 +11171,7 @@ func Strikethrough(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Stumbleupon(children ...*engine.UberElement) *engine.UberElement {
+func Stumbleupon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11184,7 +11184,7 @@ func Stumbleupon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func StumbleuponCircle(children ...*engine.UberElement) *engine.UberElement {
+func StumbleuponCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11197,7 +11197,7 @@ func StumbleuponCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func StumbleuponSquare(children ...*engine.UberElement) *engine.UberElement {
+func StumbleuponSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11210,7 +11210,7 @@ func StumbleuponSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Subscript(children ...*engine.UberElement) *engine.UberElement {
+func Subscript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11223,7 +11223,7 @@ func Subscript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Subtraction(children ...*engine.UberElement) *engine.UberElement {
+func Subtraction(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11236,7 +11236,7 @@ func Subtraction(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Sun(children ...*engine.UberElement) *engine.UberElement {
+func Sun(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11249,7 +11249,7 @@ func Sun(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SunF(children ...*engine.UberElement) *engine.UberElement {
+func SunF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11262,7 +11262,7 @@ func SunF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Superscript(children ...*engine.UberElement) *engine.UberElement {
+func Superscript(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11275,7 +11275,7 @@ func Superscript(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SwitchLeft(children ...*engine.UberElement) *engine.UberElement {
+func SwitchLeft(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11288,7 +11288,7 @@ func SwitchLeft(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SwitchLeftF(children ...*engine.UberElement) *engine.UberElement {
+func SwitchLeftF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11301,7 +11301,7 @@ func SwitchLeftF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SwitchRight(children ...*engine.UberElement) *engine.UberElement {
+func SwitchRight(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11314,7 +11314,7 @@ func SwitchRight(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SwitchRightF(children ...*engine.UberElement) *engine.UberElement {
+func SwitchRightF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11327,7 +11327,7 @@ func SwitchRightF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Sword(children ...*engine.UberElement) *engine.UberElement {
+func Sword(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11340,7 +11340,7 @@ func Sword(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SwordF(children ...*engine.UberElement) *engine.UberElement {
+func SwordF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11353,7 +11353,7 @@ func SwordF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Tab(children ...*engine.UberElement) *engine.UberElement {
+func Tab(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11366,7 +11366,7 @@ func Tab(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Table(children ...*engine.UberElement) *engine.UberElement {
+func Table(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11379,7 +11379,7 @@ func Table(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TableCell(children ...*engine.UberElement) *engine.UberElement {
+func TableCell(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11392,7 +11392,7 @@ func TableCell(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TableCellMerge(children ...*engine.UberElement) *engine.UberElement {
+func TableCellMerge(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11405,7 +11405,7 @@ func TableCellMerge(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TableColAfter(children ...*engine.UberElement) *engine.UberElement {
+func TableColAfter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11418,7 +11418,7 @@ func TableColAfter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TableColBefore(children ...*engine.UberElement) *engine.UberElement {
+func TableColBefore(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11431,7 +11431,7 @@ func TableColBefore(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TableDelete(children ...*engine.UberElement) *engine.UberElement {
+func TableDelete(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11444,7 +11444,7 @@ func TableDelete(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TableLeftHeader(children ...*engine.UberElement) *engine.UberElement {
+func TableLeftHeader(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11457,7 +11457,7 @@ func TableLeftHeader(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TableRightHeader(children ...*engine.UberElement) *engine.UberElement {
+func TableRightHeader(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11470,7 +11470,7 @@ func TableRightHeader(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TableRowAbove(children ...*engine.UberElement) *engine.UberElement {
+func TableRowAbove(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11483,7 +11483,7 @@ func TableRowAbove(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TableRowAfter(children ...*engine.UberElement) *engine.UberElement {
+func TableRowAfter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11496,7 +11496,7 @@ func TableRowAfter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TableTopHeader(children ...*engine.UberElement) *engine.UberElement {
+func TableTopHeader(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11509,7 +11509,7 @@ func TableTopHeader(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Tablet(children ...*engine.UberElement) *engine.UberElement {
+func Tablet(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11522,7 +11522,7 @@ func Tablet(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TabletF(children ...*engine.UberElement) *engine.UberElement {
+func TabletF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11535,7 +11535,7 @@ func TabletF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Tag(children ...*engine.UberElement) *engine.UberElement {
+func Tag(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11548,7 +11548,7 @@ func Tag(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TagF(children ...*engine.UberElement) *engine.UberElement {
+func TagF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11561,7 +11561,7 @@ func TagF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Tags(children ...*engine.UberElement) *engine.UberElement {
+func Tags(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11574,7 +11574,7 @@ func Tags(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TagsF(children ...*engine.UberElement) *engine.UberElement {
+func TagsF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11587,7 +11587,7 @@ func TagsF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Target(children ...*engine.UberElement) *engine.UberElement {
+func Target(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11600,7 +11600,7 @@ func Target(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TaskList(children ...*engine.UberElement) *engine.UberElement {
+func TaskList(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11613,7 +11613,7 @@ func TaskList(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TaskListF(children ...*engine.UberElement) *engine.UberElement {
+func TaskListF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11626,7 +11626,7 @@ func TaskListF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Telegram(children ...*engine.UberElement) *engine.UberElement {
+func Telegram(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11639,7 +11639,7 @@ func Telegram(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Temperature(children ...*engine.UberElement) *engine.UberElement {
+func Temperature(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11652,7 +11652,7 @@ func Temperature(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Template(children ...*engine.UberElement) *engine.UberElement {
+func Template(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11665,7 +11665,7 @@ func Template(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Terminal(children ...*engine.UberElement) *engine.UberElement {
+func Terminal(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11678,7 +11678,7 @@ func Terminal(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Text(children ...*engine.UberElement) *engine.UberElement {
+func Text(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11691,7 +11691,7 @@ func Text(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Thunder(children ...*engine.UberElement) *engine.UberElement {
+func Thunder(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11704,7 +11704,7 @@ func Thunder(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ThunderF(children ...*engine.UberElement) *engine.UberElement {
+func ThunderF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11717,7 +11717,7 @@ func ThunderF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Ticket(children ...*engine.UberElement) *engine.UberElement {
+func Ticket(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11730,7 +11730,7 @@ func Ticket(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TicketF(children ...*engine.UberElement) *engine.UberElement {
+func TicketF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11743,7 +11743,7 @@ func TicketF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Tools(children ...*engine.UberElement) *engine.UberElement {
+func Tools(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11756,7 +11756,7 @@ func Tools(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ToolsF(children ...*engine.UberElement) *engine.UberElement {
+func ToolsF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11769,7 +11769,7 @@ func ToolsF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Torch(children ...*engine.UberElement) *engine.UberElement {
+func Torch(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11782,7 +11782,7 @@ func Torch(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TorchF(children ...*engine.UberElement) *engine.UberElement {
+func TorchF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11795,7 +11795,7 @@ func TorchF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Totem(children ...*engine.UberElement) *engine.UberElement {
+func Totem(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11808,7 +11808,7 @@ func Totem(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Train(children ...*engine.UberElement) *engine.UberElement {
+func Train(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11821,7 +11821,7 @@ func Train(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TrainF(children ...*engine.UberElement) *engine.UberElement {
+func TrainF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11834,7 +11834,7 @@ func TrainF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Transgender(children ...*engine.UberElement) *engine.UberElement {
+func Transgender(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11847,7 +11847,7 @@ func Transgender(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Trash(children ...*engine.UberElement) *engine.UberElement {
+func Trash(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11860,7 +11860,7 @@ func Trash(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TrashAlt(children ...*engine.UberElement) *engine.UberElement {
+func TrashAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11873,7 +11873,7 @@ func TrashAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TrashAltF(children ...*engine.UberElement) *engine.UberElement {
+func TrashAltF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11886,7 +11886,7 @@ func TrashAltF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TrashF(children ...*engine.UberElement) *engine.UberElement {
+func TrashF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11899,7 +11899,7 @@ func TrashF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Tree(children ...*engine.UberElement) *engine.UberElement {
+func Tree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11912,7 +11912,7 @@ func Tree(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TreeAlt(children ...*engine.UberElement) *engine.UberElement {
+func TreeAlt(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11925,7 +11925,7 @@ func TreeAlt(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TreeAltF(children ...*engine.UberElement) *engine.UberElement {
+func TreeAltF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11938,7 +11938,7 @@ func TreeAltF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TreeF(children ...*engine.UberElement) *engine.UberElement {
+func TreeF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11951,7 +11951,7 @@ func TreeF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Trello(children ...*engine.UberElement) *engine.UberElement {
+func Trello(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11964,7 +11964,7 @@ func Trello(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Triangle(children ...*engine.UberElement) *engine.UberElement {
+func Triangle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11977,7 +11977,7 @@ func Triangle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TriangleDanger(children ...*engine.UberElement) *engine.UberElement {
+func TriangleDanger(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -11990,7 +11990,7 @@ func TriangleDanger(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TriangleDangerF(children ...*engine.UberElement) *engine.UberElement {
+func TriangleDangerF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12003,7 +12003,7 @@ func TriangleDangerF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TriangleF(children ...*engine.UberElement) *engine.UberElement {
+func TriangleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12016,7 +12016,7 @@ func TriangleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Trophy(children ...*engine.UberElement) *engine.UberElement {
+func Trophy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12029,7 +12029,7 @@ func Trophy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TrophyF(children ...*engine.UberElement) *engine.UberElement {
+func TrophyF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12042,7 +12042,7 @@ func TrophyF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Tube(children ...*engine.UberElement) *engine.UberElement {
+func Tube(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12055,7 +12055,7 @@ func Tube(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Tumblr(children ...*engine.UberElement) *engine.UberElement {
+func Tumblr(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12068,7 +12068,7 @@ func Tumblr(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TumblrCircle(children ...*engine.UberElement) *engine.UberElement {
+func TumblrCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12081,7 +12081,7 @@ func TumblrCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TumblrSquare(children ...*engine.UberElement) *engine.UberElement {
+func TumblrSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12094,7 +12094,7 @@ func TumblrSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Twitch(children ...*engine.UberElement) *engine.UberElement {
+func Twitch(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12107,7 +12107,7 @@ func Twitch(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Twitter(children ...*engine.UberElement) *engine.UberElement {
+func Twitter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12120,7 +12120,7 @@ func Twitter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TwitterCircle(children ...*engine.UberElement) *engine.UberElement {
+func TwitterCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12133,7 +12133,7 @@ func TwitterCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TwitterSquare(children ...*engine.UberElement) *engine.UberElement {
+func TwitterSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12146,7 +12146,7 @@ func TwitterSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Umbrella(children ...*engine.UberElement) *engine.UberElement {
+func Umbrella(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12159,7 +12159,7 @@ func Umbrella(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UmbrellaClosed(children ...*engine.UberElement) *engine.UberElement {
+func UmbrellaClosed(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12172,7 +12172,7 @@ func UmbrellaClosed(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UmbrellaClosedF(children ...*engine.UberElement) *engine.UberElement {
+func UmbrellaClosedF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12185,7 +12185,7 @@ func UmbrellaClosedF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UmbrellaF(children ...*engine.UberElement) *engine.UberElement {
+func UmbrellaF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12198,7 +12198,7 @@ func UmbrellaF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Underline(children ...*engine.UberElement) *engine.UberElement {
+func Underline(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12211,7 +12211,7 @@ func Underline(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Undo(children ...*engine.UberElement) *engine.UberElement {
+func Undo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12224,7 +12224,7 @@ func Undo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Unindent(children ...*engine.UberElement) *engine.UberElement {
+func Unindent(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12237,7 +12237,7 @@ func Unindent(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Union(children ...*engine.UberElement) *engine.UberElement {
+func Union(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12250,7 +12250,7 @@ func Union(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Universe(children ...*engine.UberElement) *engine.UberElement {
+func Universe(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12263,7 +12263,7 @@ func Universe(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Unlink(children ...*engine.UberElement) *engine.UberElement {
+func Unlink(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12276,7 +12276,7 @@ func Unlink(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UnorderedList(children ...*engine.UberElement) *engine.UberElement {
+func UnorderedList(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12289,7 +12289,7 @@ func UnorderedList(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Unsplash(children ...*engine.UberElement) *engine.UberElement {
+func Unsplash(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12302,7 +12302,7 @@ func Unsplash(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UnsplashCircle(children ...*engine.UberElement) *engine.UberElement {
+func UnsplashCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12315,7 +12315,7 @@ func UnsplashCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UnsplashSquare(children ...*engine.UberElement) *engine.UberElement {
+func UnsplashSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12328,7 +12328,7 @@ func UnsplashSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Upload(children ...*engine.UberElement) *engine.UberElement {
+func Upload(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12341,7 +12341,7 @@ func Upload(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func User(children ...*engine.UberElement) *engine.UberElement {
+func User(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12354,7 +12354,7 @@ func User(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UserCircle(children ...*engine.UberElement) *engine.UberElement {
+func UserCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12367,7 +12367,7 @@ func UserCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UserMinus(children ...*engine.UberElement) *engine.UberElement {
+func UserMinus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12380,7 +12380,7 @@ func UserMinus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UserPlus(children ...*engine.UberElement) *engine.UberElement {
+func UserPlus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12393,7 +12393,7 @@ func UserPlus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UserRemove(children ...*engine.UberElement) *engine.UberElement {
+func UserRemove(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12406,7 +12406,7 @@ func UserRemove(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UserSquare(children ...*engine.UberElement) *engine.UberElement {
+func UserSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12419,7 +12419,7 @@ func UserSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Users(children ...*engine.UberElement) *engine.UberElement {
+func Users(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12432,7 +12432,7 @@ func Users(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Viadeo(children ...*engine.UberElement) *engine.UberElement {
+func Viadeo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12445,7 +12445,7 @@ func Viadeo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Viber(children ...*engine.UberElement) *engine.UberElement {
+func Viber(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12458,7 +12458,7 @@ func Viber(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ViberCircle(children ...*engine.UberElement) *engine.UberElement {
+func ViberCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12471,7 +12471,7 @@ func ViberCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func ViberSquare(children ...*engine.UberElement) *engine.UberElement {
+func ViberSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12484,7 +12484,7 @@ func ViberSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VideoCamera(children ...*engine.UberElement) *engine.UberElement {
+func VideoCamera(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12497,7 +12497,7 @@ func VideoCamera(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VideoCameraF(children ...*engine.UberElement) *engine.UberElement {
+func VideoCameraF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12510,7 +12510,7 @@ func VideoCameraF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VideoCameraVintage(children ...*engine.UberElement) *engine.UberElement {
+func VideoCameraVintage(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12523,7 +12523,7 @@ func VideoCameraVintage(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VideoCameraVintageF(children ...*engine.UberElement) *engine.UberElement {
+func VideoCameraVintageF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12536,7 +12536,7 @@ func VideoCameraVintageF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Vimeo(children ...*engine.UberElement) *engine.UberElement {
+func Vimeo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12549,7 +12549,7 @@ func Vimeo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VimeoCircle(children ...*engine.UberElement) *engine.UberElement {
+func VimeoCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12562,7 +12562,7 @@ func VimeoCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VimeoSquare(children ...*engine.UberElement) *engine.UberElement {
+func VimeoSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12575,7 +12575,7 @@ func VimeoSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Vine(children ...*engine.UberElement) *engine.UberElement {
+func Vine(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12588,7 +12588,7 @@ func Vine(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VineCircle(children ...*engine.UberElement) *engine.UberElement {
+func VineCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12601,7 +12601,7 @@ func VineCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VineSquare(children ...*engine.UberElement) *engine.UberElement {
+func VineSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12614,7 +12614,7 @@ func VineSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Voicemail(children ...*engine.UberElement) *engine.UberElement {
+func Voicemail(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12627,7 +12627,7 @@ func Voicemail(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Volume(children ...*engine.UberElement) *engine.UberElement {
+func Volume(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12640,7 +12640,7 @@ func Volume(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeCircle(children ...*engine.UberElement) *engine.UberElement {
+func VolumeCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12653,7 +12653,7 @@ func VolumeCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeCircleF(children ...*engine.UberElement) *engine.UberElement {
+func VolumeCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12666,7 +12666,7 @@ func VolumeCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeDown(children ...*engine.UberElement) *engine.UberElement {
+func VolumeDown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12679,7 +12679,7 @@ func VolumeDown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeDownCircle(children ...*engine.UberElement) *engine.UberElement {
+func VolumeDownCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12692,7 +12692,7 @@ func VolumeDownCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeDownCircleF(children ...*engine.UberElement) *engine.UberElement {
+func VolumeDownCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12705,7 +12705,7 @@ func VolumeDownCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeDownSquare(children ...*engine.UberElement) *engine.UberElement {
+func VolumeDownSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12718,7 +12718,7 @@ func VolumeDownSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeDownSquareF(children ...*engine.UberElement) *engine.UberElement {
+func VolumeDownSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12731,7 +12731,7 @@ func VolumeDownSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeMute(children ...*engine.UberElement) *engine.UberElement {
+func VolumeMute(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12744,7 +12744,7 @@ func VolumeMute(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeMuteCircle(children ...*engine.UberElement) *engine.UberElement {
+func VolumeMuteCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12757,7 +12757,7 @@ func VolumeMuteCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeMuteCircleF(children ...*engine.UberElement) *engine.UberElement {
+func VolumeMuteCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12770,7 +12770,7 @@ func VolumeMuteCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeMuteSquare(children ...*engine.UberElement) *engine.UberElement {
+func VolumeMuteSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12783,7 +12783,7 @@ func VolumeMuteSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeMuteSquareF(children ...*engine.UberElement) *engine.UberElement {
+func VolumeMuteSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12796,7 +12796,7 @@ func VolumeMuteSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeSquare(children ...*engine.UberElement) *engine.UberElement {
+func VolumeSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12809,7 +12809,7 @@ func VolumeSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeSquareF(children ...*engine.UberElement) *engine.UberElement {
+func VolumeSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12822,7 +12822,7 @@ func VolumeSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeUp(children ...*engine.UberElement) *engine.UberElement {
+func VolumeUp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12835,7 +12835,7 @@ func VolumeUp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeUpCircle(children ...*engine.UberElement) *engine.UberElement {
+func VolumeUpCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12848,7 +12848,7 @@ func VolumeUpCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeUpCircleF(children ...*engine.UberElement) *engine.UberElement {
+func VolumeUpCircleF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12861,7 +12861,7 @@ func VolumeUpCircleF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeUpSquare(children ...*engine.UberElement) *engine.UberElement {
+func VolumeUpSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12874,7 +12874,7 @@ func VolumeUpSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func VolumeUpSquareF(children ...*engine.UberElement) *engine.UberElement {
+func VolumeUpSquareF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12887,7 +12887,7 @@ func VolumeUpSquareF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Watch(children ...*engine.UberElement) *engine.UberElement {
+func Watch(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12900,7 +12900,7 @@ func Watch(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func WatchF(children ...*engine.UberElement) *engine.UberElement {
+func WatchF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12913,7 +12913,7 @@ func WatchF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func WaterDrop(children ...*engine.UberElement) *engine.UberElement {
+func WaterDrop(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12926,7 +12926,7 @@ func WaterDrop(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func WaterDropF(children ...*engine.UberElement) *engine.UberElement {
+func WaterDropF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12939,7 +12939,7 @@ func WaterDropF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Whatsapp(children ...*engine.UberElement) *engine.UberElement {
+func Whatsapp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12952,7 +12952,7 @@ func Whatsapp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Wifi(children ...*engine.UberElement) *engine.UberElement {
+func Wifi(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12965,7 +12965,7 @@ func Wifi(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Wikipedia(children ...*engine.UberElement) *engine.UberElement {
+func Wikipedia(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12978,7 +12978,7 @@ func Wikipedia(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Wordpress(children ...*engine.UberElement) *engine.UberElement {
+func Wordpress(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -12991,7 +12991,7 @@ func Wordpress(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func World(children ...*engine.UberElement) *engine.UberElement {
+func World(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13004,7 +13004,7 @@ func World(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Wrench(children ...*engine.UberElement) *engine.UberElement {
+func Wrench(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13017,7 +13017,7 @@ func Wrench(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func WrenchF(children ...*engine.UberElement) *engine.UberElement {
+func WrenchF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13030,7 +13030,7 @@ func WrenchF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Write(children ...*engine.UberElement) *engine.UberElement {
+func Write(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13043,7 +13043,7 @@ func Write(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func WriteF(children ...*engine.UberElement) *engine.UberElement {
+func WriteF(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13056,7 +13056,7 @@ func WriteF(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Yahoo(children ...*engine.UberElement) *engine.UberElement {
+func Yahoo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13069,7 +13069,7 @@ func Yahoo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func YahooCircle(children ...*engine.UberElement) *engine.UberElement {
+func YahooCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13082,7 +13082,7 @@ func YahooCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func YahooSquare(children ...*engine.UberElement) *engine.UberElement {
+func YahooSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13095,7 +13095,7 @@ func YahooSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Yelp(children ...*engine.UberElement) *engine.UberElement {
+func Yelp(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13108,7 +13108,7 @@ func Yelp(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func YelpCircle(children ...*engine.UberElement) *engine.UberElement {
+func YelpCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13121,7 +13121,7 @@ func YelpCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func YelpSquare(children ...*engine.UberElement) *engine.UberElement {
+func YelpSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13134,7 +13134,7 @@ func YelpSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Youtube(children ...*engine.UberElement) *engine.UberElement {
+func Youtube(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13147,7 +13147,7 @@ func Youtube(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func YoutubeCircle(children ...*engine.UberElement) *engine.UberElement {
+func YoutubeCircle(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),
@@ -13160,7 +13160,7 @@ func YoutubeCircle(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func YoutubeSquare(children ...*engine.UberElement) *engine.UberElement {
+func YoutubeSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 24 24"),

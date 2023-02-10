@@ -43,7 +43,7 @@ var sharedIconAttrs = []engine.Attributer{
 	engine.NewAttribute("height", "1em"),
 }
 
-func TurfAlong(children ...*engine.UberElement) *engine.UberElement {
+func TurfAlong(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -56,7 +56,7 @@ func TurfAlong(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfBboxPolygon(children ...*engine.UberElement) *engine.UberElement {
+func TurfBboxPolygon(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -69,7 +69,7 @@ func TurfBboxPolygon(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfBezier(children ...*engine.UberElement) *engine.UberElement {
+func TurfBezier(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -82,7 +82,7 @@ func TurfBezier(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfBuffer(children ...*engine.UberElement) *engine.UberElement {
+func TurfBuffer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -95,7 +95,7 @@ func TurfBuffer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfCenter(children ...*engine.UberElement) *engine.UberElement {
+func TurfCenter(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -108,7 +108,7 @@ func TurfCenter(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfCentroid(children ...*engine.UberElement) *engine.UberElement {
+func TurfCentroid(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -121,7 +121,7 @@ func TurfCentroid(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfConcave(children ...*engine.UberElement) *engine.UberElement {
+func TurfConcave(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -134,7 +134,7 @@ func TurfConcave(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfConvex(children ...*engine.UberElement) *engine.UberElement {
+func TurfConvex(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -147,7 +147,7 @@ func TurfConvex(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfDestination(children ...*engine.UberElement) *engine.UberElement {
+func TurfDestination(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -160,7 +160,7 @@ func TurfDestination(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfEnvelope(children ...*engine.UberElement) *engine.UberElement {
+func TurfEnvelope(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -173,7 +173,7 @@ func TurfEnvelope(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfErased(children ...*engine.UberElement) *engine.UberElement {
+func TurfErased(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -186,7 +186,7 @@ func TurfErased(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfExplode(children ...*engine.UberElement) *engine.UberElement {
+func TurfExplode(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -199,7 +199,7 @@ func TurfExplode(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfExtent(children ...*engine.UberElement) *engine.UberElement {
+func TurfExtent(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -212,7 +212,7 @@ func TurfExtent(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfIntersect(children ...*engine.UberElement) *engine.UberElement {
+func TurfIntersect(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -225,7 +225,7 @@ func TurfIntersect(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfKinks(children ...*engine.UberElement) *engine.UberElement {
+func TurfKinks(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -238,7 +238,7 @@ func TurfKinks(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfLineSlice(children ...*engine.UberElement) *engine.UberElement {
+func TurfLineSlice(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -251,7 +251,7 @@ func TurfLineSlice(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfMerge(children ...*engine.UberElement) *engine.UberElement {
+func TurfMerge(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -264,7 +264,7 @@ func TurfMerge(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfMidpoint(children ...*engine.UberElement) *engine.UberElement {
+func TurfMidpoint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -277,7 +277,7 @@ func TurfMidpoint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfPointGrid(children ...*engine.UberElement) *engine.UberElement {
+func TurfPointGrid(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -290,7 +290,7 @@ func TurfPointGrid(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfPointOnLine(children ...*engine.UberElement) *engine.UberElement {
+func TurfPointOnLine(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -303,7 +303,7 @@ func TurfPointOnLine(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfPointOnSurface(children ...*engine.UberElement) *engine.UberElement {
+func TurfPointOnSurface(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -316,7 +316,7 @@ func TurfPointOnSurface(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfSimplify(children ...*engine.UberElement) *engine.UberElement {
+func TurfSimplify(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -329,7 +329,7 @@ func TurfSimplify(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfSize(children ...*engine.UberElement) *engine.UberElement {
+func TurfSize(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -342,7 +342,7 @@ func TurfSize(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfSquare(children ...*engine.UberElement) *engine.UberElement {
+func TurfSquare(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -355,7 +355,7 @@ func TurfSquare(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfSquareGrid(children ...*engine.UberElement) *engine.UberElement {
+func TurfSquareGrid(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -368,7 +368,7 @@ func TurfSquareGrid(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfTin(children ...*engine.UberElement) *engine.UberElement {
+func TurfTin(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -381,7 +381,7 @@ func TurfTin(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfTriangleGrid(children ...*engine.UberElement) *engine.UberElement {
+func TurfTriangleGrid(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -394,7 +394,7 @@ func TurfTriangleGrid(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func TurfUnion(children ...*engine.UberElement) *engine.UberElement {
+func TurfUnion(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -407,7 +407,7 @@ func TurfUnion(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UiEarthEast(children ...*engine.UberElement) *engine.UberElement {
+func UiEarthEast(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),
@@ -420,7 +420,7 @@ func UiEarthEast(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func UiEarthWest(children ...*engine.UberElement) *engine.UberElement {
+func UiEarthWest(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 100 100"),

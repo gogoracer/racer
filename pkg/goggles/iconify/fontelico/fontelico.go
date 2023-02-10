@@ -47,7 +47,7 @@ var sharedIconAttrs = []engine.Attributer{
 	engine.NewAttribute("height", "1em"),
 }
 
-func Chrome(children ...*engine.UberElement) *engine.UberElement {
+func Chrome(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -60,7 +60,7 @@ func Chrome(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Crown(children ...*engine.UberElement) *engine.UberElement {
+func Crown(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -73,7 +73,7 @@ func Crown(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CrownMinus(children ...*engine.UberElement) *engine.UberElement {
+func CrownMinus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -86,7 +86,7 @@ func CrownMinus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func CrownPlus(children ...*engine.UberElement) *engine.UberElement {
+func CrownPlus(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -99,7 +99,7 @@ func CrownPlus(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoAngry(children ...*engine.UberElement) *engine.UberElement {
+func EmoAngry(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -112,7 +112,7 @@ func EmoAngry(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoBeer(children ...*engine.UberElement) *engine.UberElement {
+func EmoBeer(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -125,7 +125,7 @@ func EmoBeer(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoCoffee(children ...*engine.UberElement) *engine.UberElement {
+func EmoCoffee(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -138,7 +138,7 @@ func EmoCoffee(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoCry(children ...*engine.UberElement) *engine.UberElement {
+func EmoCry(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -151,7 +151,7 @@ func EmoCry(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoDevil(children ...*engine.UberElement) *engine.UberElement {
+func EmoDevil(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -164,7 +164,7 @@ func EmoDevil(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoDispleased(children ...*engine.UberElement) *engine.UberElement {
+func EmoDispleased(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -177,7 +177,7 @@ func EmoDispleased(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoGrin(children ...*engine.UberElement) *engine.UberElement {
+func EmoGrin(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -190,7 +190,7 @@ func EmoGrin(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoHappy(children ...*engine.UberElement) *engine.UberElement {
+func EmoHappy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -203,7 +203,7 @@ func EmoHappy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoLaugh(children ...*engine.UberElement) *engine.UberElement {
+func EmoLaugh(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -216,7 +216,7 @@ func EmoLaugh(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoSaint(children ...*engine.UberElement) *engine.UberElement {
+func EmoSaint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -229,7 +229,7 @@ func EmoSaint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoShoot(children ...*engine.UberElement) *engine.UberElement {
+func EmoShoot(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -242,7 +242,7 @@ func EmoShoot(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoSleep(children ...*engine.UberElement) *engine.UberElement {
+func EmoSleep(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -255,7 +255,7 @@ func EmoSleep(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoSquint(children ...*engine.UberElement) *engine.UberElement {
+func EmoSquint(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -268,7 +268,7 @@ func EmoSquint(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoSunglasses(children ...*engine.UberElement) *engine.UberElement {
+func EmoSunglasses(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -281,7 +281,7 @@ func EmoSunglasses(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoSurprised(children ...*engine.UberElement) *engine.UberElement {
+func EmoSurprised(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -294,7 +294,7 @@ func EmoSurprised(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoThumbsup(children ...*engine.UberElement) *engine.UberElement {
+func EmoThumbsup(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -307,7 +307,7 @@ func EmoThumbsup(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoTongue(children ...*engine.UberElement) *engine.UberElement {
+func EmoTongue(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -320,7 +320,7 @@ func EmoTongue(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoUnhappy(children ...*engine.UberElement) *engine.UberElement {
+func EmoUnhappy(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -333,7 +333,7 @@ func EmoUnhappy(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoWink(children ...*engine.UberElement) *engine.UberElement {
+func EmoWink(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -346,7 +346,7 @@ func EmoWink(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func EmoWinkTwo(children ...*engine.UberElement) *engine.UberElement {
+func EmoWinkTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -359,7 +359,7 @@ func EmoWinkTwo(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Firefox(children ...*engine.UberElement) *engine.UberElement {
+func Firefox(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -372,7 +372,7 @@ func Firefox(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Ie(children ...*engine.UberElement) *engine.UberElement {
+func Ie(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -385,7 +385,7 @@ func Ie(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Marquee(children ...*engine.UberElement) *engine.UberElement {
+func Marquee(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -398,7 +398,7 @@ func Marquee(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func Opera(children ...*engine.UberElement) *engine.UberElement {
+func Opera(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -411,7 +411,7 @@ func Opera(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SpinFive(children ...*engine.UberElement) *engine.UberElement {
+func SpinFive(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -424,7 +424,7 @@ func SpinFive(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SpinFour(children ...*engine.UberElement) *engine.UberElement {
+func SpinFour(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -437,7 +437,7 @@ func SpinFour(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SpinOne(children ...*engine.UberElement) *engine.UberElement {
+func SpinOne(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -450,7 +450,7 @@ func SpinOne(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SpinSix(children ...*engine.UberElement) *engine.UberElement {
+func SpinSix(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -463,7 +463,7 @@ func SpinSix(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SpinThree(children ...*engine.UberElement) *engine.UberElement {
+func SpinThree(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),
@@ -476,7 +476,7 @@ func SpinThree(children ...*engine.UberElement) *engine.UberElement {
 		Element(children...)
 }
 
-func SpinTwo(children ...*engine.UberElement) *engine.UberElement {
+func SpinTwo(children ...engine.UberChild) *engine.UberElement {
 	attrs := append(
 		[]engine.Attributer{
 			engine.NewAttribute("viewBox", "0 0 1000 1000"),

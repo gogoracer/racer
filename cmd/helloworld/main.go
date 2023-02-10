@@ -19,7 +19,7 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-var loadURLOnStart = "/step5"
+var loadURLOnStart = "/step1"
 
 // Step 1
 func homeStep1() engine.Pager {
@@ -72,7 +72,7 @@ func homeStep3() engine.Pager {
 			SRC("https://cdn.tailwindcss.com"),
 		),
 		SCRIPT().Attr(
-			DEFER(true),
+			DEFER(),
 		).Val().Str(`tailwind.config = {
 			theme: {
 				extend: {
@@ -83,7 +83,7 @@ func homeStep3() engine.Pager {
 			}
 		}`),
 		SCRIPT().Attr(
-			DEFER(true),
+			DEFER(),
 			SRC("https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"),
 		),
 	)

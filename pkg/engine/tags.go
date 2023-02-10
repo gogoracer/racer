@@ -352,7 +352,6 @@ func addElementToTag(t *Tag, v any) {
 		panic("You've added an event binding to a Tag. You can only add these to a Component. " +
 			"You can fix this by replacing l.T(\"div\"...) with l.C(\"div\"...)." +
 			"You can also turn any Tag into a Component by using the Wrap function.")
-
 	// Groups
 	case []any:
 		for i := 0; i < len(v); i++ {

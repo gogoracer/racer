@@ -528,8 +528,10 @@ export class Page {
 
         // TODO: talk to Sam about this
         if (!template.content.firstChild) {
-          debugger
-          throw new Error('template content is empty')
+          console.log('template content is empty')
+          return
+          // debugger
+          // throw new Error('template content is empty')
         }
 
         executeScripElements(template.content)
@@ -551,8 +553,10 @@ export class Page {
 
         // TODO: talk to Sam about this
         if (!template.content.firstChild) {
-          debugger
-          throw new Error('template content is empty')
+          console.log('template content is empty')
+          return
+          // debugger
+          // throw new Error('template content is empty')
         }
 
         template.innerHTML = diff.contents
