@@ -525,8 +525,8 @@ export class Page {
         // Only a single root element is allowed
         let template = document.createElement('template')
         template.innerHTML = diff.contents
-
         // TODO: talk to Sam about this
+        // Sam: I've not triggered this yet
         if (!template.content.firstChild) {
           console.log('template content is empty')
           return
@@ -550,17 +550,9 @@ export class Page {
         diff.contentType === ContentType.HTML
       ) {
         let template = document.createElement('template')
-
-        // TODO: talk to Sam about this
-        if (!template.content.firstChild) {
-          console.log('template content is empty')
-          return
-          // debugger
-          // throw new Error('template content is empty')
-        }
-
         template.innerHTML = diff.contents
-        target.replaceWith(template.content.firstChild)
+        executeScripElements(template.content)
+        target.replaceWith(template.content)
       }
 
       // Attributes

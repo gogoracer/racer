@@ -33,6 +33,10 @@ func (list *ComponentListSimple) GetNodes() *engine.NodeGroup {
 	return engine.G(list.items)
 }
 
+func (list *ComponentListSimple) GetComponent() engine.Componenter {
+	return list.Component
+}
+
 // Add an element to this ComponentListSimple.
 //
 // You can add Groups, UniqueTagger, EventBinding, or None Node Elements

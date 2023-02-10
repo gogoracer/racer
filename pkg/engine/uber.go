@@ -26,6 +26,11 @@ func (ue *UberElement) GetComponent() Componenter {
 	return ue.c
 }
 
+// TODO: do something better
+func (ue *UberElement) GetComponentPubSub() *ComponentPubSub {
+	return ue.c
+}
+
 func (ue *UberElement) Attr(attrs ...Attributer) *UberElement {
 	ue.c.AddAttributes(typeToAny(attrs)...)
 	return ue

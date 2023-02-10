@@ -316,9 +316,6 @@ func (p *Pipeline) walk(ctx context.Context, w io.Writer, node any) (any, error)
 		*string, *int, *int8, *int16, *int32, *int64, *uint, *uint8, *uint16, *uint32, *uint64, *float32, *float64:
 
 		return p.onSimpleNode(ctx, w, node)
-	// GetComponenter
-	case GetComponenter:
-		return p.walk(ctx, w, v.GetComponent())
 	// All Taggers wil be converted to a Tag
 	case Tagger:
 		if v.IsNil() {
@@ -364,6 +361,9 @@ func (p *Pipeline) walk(ctx context.Context, w io.Writer, node any) (any, error)
 		}
 
 		return tag, nil
+	// GetComponenter
+	case GetComponenter:
+		return p.walk(ctx, w, v.GetComponent())
 	//
 	// Lists, the following will all eventually be sent to the above simple node or Tagger cases
 	//
