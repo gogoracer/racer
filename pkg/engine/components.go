@@ -219,6 +219,10 @@ func (c *Component) on(binding *EventBinding) {
 	}
 }
 
+func (c *Component) GetComponent() Componenter {
+	return c
+}
+
 // Mounter wants to be notified after it's mounted.
 type Mounter interface {
 	UniqueTagger
